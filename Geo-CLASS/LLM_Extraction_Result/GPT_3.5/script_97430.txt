@@ -1,0 +1,35 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["The script processes Sentinel-2 data to generate vegetation indices and cloud/shadow masks."],
+  "Theme": ["Vegetation index calculation", "Cloud and shadow detection"],
+  "DataSource": ["COPERNICUS/S2_CLOUD_PROBABILITY", "COPERNICUS/S2"],
+  "Function": ["Filter Sentinel-2 data by location and date", "Join cloud probability data to Sentinel-2 data", "Add cloud probability and cloud mask bands to images", "Identify potential cloud shadow pixels", "Generate cloud-shadow mask", "Apply cloud-shadow mask to remove clouds and shadows", "Calculate and add SWI index to images", "Calculate and add MNDWI index to images", "Calculate and add NDVI index to images", "Calculate and add SAVI index to images"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2_CLOUD_PROBABILITY", "COPERNICUS/S2"],
+        "Function": [
+            "Filter Sentinel-2 data by location and date",
+            "Join cloud probability data to Sentinel-2 data",
+            "Add cloud probability and cloud mask bands to images",
+            "Identify potential cloud shadow pixels",
+            "Generate cloud-shadow mask",
+            "Apply cloud-shadow mask to remove clouds and shadows"
+        ]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": [
+            "Calculate and add SWI index to images",
+            "Calculate and add MNDWI index to images",
+            "Calculate and add NDVI index to images",
+            "Calculate and add SAVI index to images"
+        ]
+    }
+}
+```

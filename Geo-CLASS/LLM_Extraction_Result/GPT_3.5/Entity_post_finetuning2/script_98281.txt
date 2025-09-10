@@ -1,0 +1,32 @@
+{
+    "Summary": [
+        "The script processes Sentinel-2 and Sentinel-1 data to classify water bodies and extract water features."
+    ],
+    "Theme": [
+        "WATER COLOR",
+        "SURFACE WATER FEATURES"
+    ],
+    "DataSource": [
+        "users/LILANJING/CW_buffer",
+        "COPERNICUS/S2_SR",
+        "COPERNICUS/S1_GRD",
+        "UMN/PGC/ArcticDEM/V3/2m_mosaic"
+    ],
+    "Function": [
+        "Image Cloud Masking",
+        "Add NDWI Band To Images",
+        "Cloud And Water Masking",
+        "Water body Area Calculation",
+        "Spatial Clipping",
+        "Compute Difference Between Pre- And Post-Fire NBR",
+        "Slope calculation",
+        "Data Conversion",
+        "Refined Lee Speckle Filtering",
+        "Convert Vector To Raster",
+        "Vectorization",
+        "Angle Filtering",
+        "Edge Detection",
+        "Threshold Computation",
+        "Export Features"
+    ]
+}

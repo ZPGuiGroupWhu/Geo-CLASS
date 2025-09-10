@@ -1,0 +1,24 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover classification"],
+  "DataSource": ["USDA/NASS/CDL"],
+  "Function": ["Image collection creation", "Geometry definition", "Image filtering"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["USDA/NASS/CDL"],
+        "Function": ["Image collection creation", "Geometry definition", "Image filtering"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 9124, 'completion_tokens': 123, 'total_tokens': 9247}

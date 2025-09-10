@@ -1,0 +1,6 @@
+{
+  "Summary": ["The script processes Sentinel-2, Sentinel-1 SAR, and creates clusters for NDVI, GCI, and SAR data."],
+  "Theme": ["Vegetation clustering", "Water body detection"],
+  "DataSource": ["COPERNICUS/S2", "COPERNICUS/S1_GRD"],
+  "Function": ["Compute NDVI and GCI", "Cluster NDVI and NDWI data", "Filter and cluster SAR data"]
+}

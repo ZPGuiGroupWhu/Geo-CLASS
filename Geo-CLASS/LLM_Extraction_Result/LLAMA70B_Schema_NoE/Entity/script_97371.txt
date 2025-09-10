@@ -1,0 +1,22 @@
+{
+    "Theme": [
+        "Agricultural monitoring and crop analysis"
+    ],
+    "DataSource": [
+        "FAO/GAUL/2015/level1",
+        "USGS/GFSAD1000_V0",
+        "COPERNICUS/S2_SR"
+    ],
+    "Function": [
+        "Selecting 'landcover' band with pixel values 1",
+        "Filtering by 'ADM1_NAME' equals 'Piura'",
+        "Generating points using stratified sampling",
+        "Masking cloud and snow pixels",
+        "Adding NDVI band",
+        "Filtering by date and bounds",
+        "Calculating NDVI time series for a single location",
+        "Exporting time series to CSV",
+        "Charting maximum NDVI for all points",
+        "Merging observations for each day and taking the max NDVI value"
+    ]
+}

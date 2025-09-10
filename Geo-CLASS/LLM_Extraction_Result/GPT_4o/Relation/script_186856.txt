@@ -1,0 +1,15 @@
+{
+  "relation_1": {
+    "DataSource": ["COPERNICUS/S2"],
+    "Function": [
+      "Rescale image bands",
+      "Compute cloud score",
+      "Mask clouds using QA band",
+      "Mask dark outliers in time series",
+      "Project cloud shadows",
+      "Create daily mosaics",
+      "Filter image collection by date and location",
+      "Add layers to map"
+    ]
+  }
+}

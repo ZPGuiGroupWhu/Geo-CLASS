@@ -1,0 +1,35 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Forest loss detection", "Forest degradation detection"],
+  "DataSource": ["COPERNICUS/S1_GRD"],
+  "Function": ["Load image collection", "Filter images by polarization", "Filter images by date", "Filter images by location", "Count images", "Filter images by orbit direction", "Create composite image", "Display composite image", "Export composite image", "Export image properties", "Create linked maps", "Display images on maps", "Add markers on map click"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["COPERNICUS/S1_GRD"],
+    "Function": [
+      "Load image collection",
+      "Filter images by polarization",
+      "Filter images by date",
+      "Filter images by location",
+      "Count images",
+      "Filter images by orbit direction",
+      "Create composite image",
+      "Display composite image",
+      "Export composite image",
+      "Export image properties",
+      "Create linked maps",
+      "Display images on maps",
+      "Add markers on map click"
+    ]
+  }
+}
+```
+
+Total_Token_Usage:
+7495

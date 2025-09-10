@@ -1,0 +1,5 @@
+{
+  "Theme": ["Chinese Privet monitoring and NDVI analysis"],
+  "DataSource": ["TIGER/2018/States", "users/eisen520/chinesePrivet", "COPERNICUS/S2_SR"],
+  "Function": ["Filtering image collection by date", "Masking cloud and snow pixels", "Adding NDVI band", "Reducing regions to extract NDVI values", "Merging observations for each day", "Joining tables based on ID"]
+}

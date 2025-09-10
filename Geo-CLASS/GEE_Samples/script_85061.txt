@@ -1,0 +1,521 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var imageVisParam = {"opacity":1,"bands":["swir1","nir","red"],"min":-6,"max":5931,"gamma":1};
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+/// ajuste en ndsi fecha:16/02/2023 
+
+/// ajuste en valores de pixeles para qualy,cond1 2, 3 y prob
+
+
+
+var l5_col_02 = ee.ImageCollection('LANDSAT/LT05/C02/T1_L2').filterDate('1985-01-01', '1999-12-31');
+
+var l7_col_02 = ee.ImageCollection('LANDSAT/LE07/C02/T1_L2').filterDate('2000-01-01', '2012-12-31');    
+
+var l8_col_02 = ee.ImageCollection('LANDSAT/LC08/C02/T1_L2').filterDate('2013-01-01', '2021-12-31');
+
+
+
+
+
+
+
+
+
+
+
+// --------------------------------------------------------------------------------------------------------
+
+
+
+var pais_name = 'Suriname';
+
+
+
+var dataRange = 5;
+
+var grid = 2;
+
+
+
+var app = {
+
+  
+
+    amuestra:[ 
+
+          {},
+
+          {nameGrid: ['NB-21-Z'], year:[0, 1992, 2009, 2016, 1992, 2009, 2016], month:[0, 9, 9, 10, 11, 7, 7]},
+
+          {nameGrid: ['NA-21-X'], year:[0, 1992, 2004, 2016, 1995, 2004, 2019], month:[0, 10, 10, 10, 7, 12, 11]},
+
+    ],
+
+    
+
+};
+
+
+
+var gridName = app.amuestra[grid].nameGrid[0];
+
+var year = app.amuestra[grid].year[dataRange];
+
+var month = app.amuestra[grid].month[dataRange];
+
+
+
+print(gridName, year, month)
+
+
+
+var geometry = ee.FeatureCollection('projects/mapbiomas-raisg/PRODUCTOS/AGUA/DATOS_AUXILIARES/TEMP/bigGrids_' + pais_name)
+
+            .filter(ee.Filter.eq('grid_name', gridName));
+
+
+
+// --------------------------------------------------------------------------------------------------------
+
+
+
+
+
+function applyScaleFactors(image) {
+
+      var opticalBands = image.select('SR_B.').multiply(0.0000275).add(-0.2).multiply(10000);
+
+      return image.addBands(opticalBands, null, true)
+
+           .uint16()
+
+           .copyProperties(image)
+
+           .copyProperties(image,['system:time_start'])
+
+           .copyProperties(image,['system:index'])
+
+           .copyProperties(image,['system:footprint']);
+
+}
+
+
+
+
+
+var l5_col2 = l5_col_02.map(applyScaleFactors);
+
+var l7_col2 = l7_col_02.map(applyScaleFactors);
+
+var l8_col2 = l8_col_02.map(applyScaleFactors);
+
+
+
+l7_col2 = l7_col2
+
+
+
+var start = ee.Date.fromYMD(year, month, 1);
+
+var end = start.advance(1, 'month');
+
+
+
+var bandnamed = ['blue', 'green', 'red', 'nir', 'swir1', 'swir2'];
+
+
+
+
+
+
+
+
+
+
+
+var bands_l5_2 = ['SR_B1', 'SR_B2', 'SR_B3', 'SR_B4', 'SR_B5', 'SR_B7'];
+
+var bands_l7_2 = ['SR_B1', 'SR_B2', 'SR_B3', 'SR_B4', 'SR_B5', 'SR_B7'];
+
+var bands_l8_2 = ['SR_B2', 'SR_B3', 'SR_B4', 'SR_B5', 'SR_B6', 'SR_B7'];
+
+
+
+
+
+  var rename_bands = function (imgCol, input) {
+
+    return imgCol.select(input, bandnamed);
+
+  };
+
+  
+
+  var endmembers = [
+
+      [119.0, 475.0, 169.0, 6250.0, 2399.0, 675.0], /*gv*/
+
+      [1514.0, 1597.0, 1421.0, 3053.0, 7707.0, 1975.0], /*npv*/
+
+      [1799.0, 2479.0, 3158.0, 5437.0, 7707.0, 6646.0], /*soil*/
+
+      [4031.0, 8714.0, 7900.0, 8989.0, 7002.0, 6607.0] /*cloud*/
+
+  ];
+
+
+
+// aplica o sma
+
+
+
+  var sma = function (image) {
+
+      
+
+      var outBandNames = ['gv', 'npv', 'soil', 'cloud'];
+
+      
+
+      var fractions = ee.Image(image)
+
+          .select(bandnamed)
+
+          .unmix(endmembers)
+
+          .max(0)
+
+          .multiply(100)
+
+          .byte();
+
+      
+
+      fractions = fractions.rename(outBandNames);
+
+      
+
+      var summed = fractions.expression('b("gv") + b("npv") + b("soil")');
+
+      
+
+      var shade = summed
+
+          .subtract(100)
+
+          .abs()
+
+          .byte()
+
+          .rename("shade");
+
+      
+
+      fractions = fractions.addBands(shade);
+
+      
+
+      return image.addBands(fractions);
+
+  };
+
+  
+
+// filtro de nuvem  
+
+  
+
+  var cloudScore = function (image) {
+
+  
+
+  var rescale = function (obj) {
+
+  
+
+      var image = obj.image.subtract(obj.min).divide(ee.Number(obj.max).subtract(obj.min));
+
+  
+
+      return image;
+
+  };
+
+  
+
+      var cloudThresh = 10;
+
+  
+
+      // Compute several indicators of cloudiness and take the minimum of them.
+
+      var score = ee.Image(1.0);
+
+  
+
+      // Clouds are reasonably bright in the blue band.
+
+      score = score.min(rescale({
+
+          'image': image.select(['blue']),
+
+          'min': 1000,
+
+          'max': 3000
+
+      }));
+
+  
+
+      // Clouds are reasonably bright in all visible bands.
+
+      score = score.min(rescale({
+
+          'image': image.expression("b('red') + b('green') + b('blue')"),
+
+          'min': 2000,
+
+          'max': 8000
+
+      }));
+
+  
+
+      // Clouds are reasonably bright in all infrared bands.
+
+      score = score.min(rescale({
+
+          'image': image.expression("b('nir') + b('swir1') + b('swir2')"),
+
+          'min': 3000,
+
+          'max': 8000
+
+      }));
+
+  
+
+      // However, clouds are not snow.
+
+      var ndsi = image.normalizedDifference(['green', 'swir1']);
+
+  
+
+      score = score.min(rescale({
+
+          'image': ndsi,
+
+          'min': 0.8000,
+
+          'max': 0.6000
+
+      })).multiply(100).byte();
+
+  
+
+      var cond = score.lt(cloudThresh);
+
+      
+
+      return image.updateMask(cond);
+
+  };
+
+  
+
+// função para aplicar o sma cada imagem e padronizar o nome das bandas
+
+
+
+    var process_image = function (image) {
+
+      var date = image.date()
+
+      var d = ee.Date.fromYMD(date.get('year'),date.get('month'),date.get('day'))
+
+      var doy = d.getRelative('day', 'year').add(1);
+
+      var img = ee.Image(doy).toInt16().rename('doy')
+
+      
+
+      return sma(image).addBands(img);
+
+  };
+
+
+
+var l5_ready2_sma = rename_bands(l5_col2, bands_l5_2).map(process_image);
+
+var l7_ready2_sma = rename_bands(l7_col2, bands_l7_2).map(process_image);
+
+var l8_ready2_sma = rename_bands(l8_col2, bands_l8_2).map(process_image);
+
+
+
+var processed_sma_2 = l5_ready2_sma.merge(l7_ready2_sma).merge(l8_ready2_sma).filterDate(start, end).filterBounds(geometry).filter(ee.Filter.lte('CLOUD_COVER', 70));
+
+
+
+var shade_min = 65; 
+
+var shade_max = 75;
+
+
+
+var gv_soil_min = 0; 
+
+var gv_soil_max = 10;
+
+
+
+var cloud_desc_min = 25; 
+
+var cloud_desc_max = 35;
+
+
+
+var cloud_asc_min = 0;
+
+var cloud_asc_max = 8;
+
+
+
+var shade_Fit = ee.Dictionary(ee.List([[shade_min,0],[shade_max,1]]).reduce(ee.Reducer.linearFit()));
+
+var gv_soil_Fit = ee.Dictionary(ee.List([[gv_soil_min,1],[gv_soil_max,0]]).reduce(ee.Reducer.linearFit()));
+
+var cloud_asc_Fit = ee.Dictionary(ee.List([[cloud_asc_min,0],[cloud_asc_max,1]]).reduce(ee.Reducer.linearFit()));
+
+var cloud_desc_Fit = ee.Dictionary(ee.List([[cloud_desc_min,1],[cloud_desc_max,0]]).reduce(ee.Reducer.linearFit()));
+
+
+
+var class_1_probs2 = function (image) {
+
+  
+
+    var gv_soil = image.select('gv').addBands(image.select('soil')).reduce(ee.Reducer.sum());
+
+    
+
+    var cond_1 = image.select('shade').multiply(shade_Fit.getNumber('scale')).add(shade_Fit.getNumber('offset')).clamp(0, 1);
+
+    var cond_2 = gv_soil.multiply(ee.Number(gv_soil_Fit.get('scale'))).add(ee.Number(gv_soil_Fit.get('offset'))).clamp(0, 1);
+
+    var cond_3 = image.select('cloud').multiply(cloud_desc_Fit.getNumber('scale')).add(cloud_desc_Fit.getNumber('offset')).clamp(0, 1)
+
+                  .addBands(
+
+                  image.select('cloud').multiply(cloud_asc_Fit.getNumber('scale')).add(cloud_asc_Fit.getNumber('offset')).clamp(0, 1)  
+
+                  ).reduce(ee.Reducer.min());
+
+    
+
+    var image_prob = cond_1.addBands(cond_2).addBands(cond_3).reduce(ee.Reducer.mean()).rename('prob');
+
+    
+
+    var tmp_img = ee.Image(1).subtract(image_prob).rename('qualy');
+
+    image = image.addBands(tmp_img);
+
+    
+
+    image = image.addBands(cond_1.rename('cond_1'));
+
+    image = image.addBands(cond_2.rename('cond_2'));
+
+    image = image.addBands(cond_3.rename('cond_3'));
+
+    image = image.addBands(gv_soil.rename('gv_soil'));
+
+
+
+    
+
+    return image.addBands(image_prob);
+
+};
+
+
+
+var imgs_prob2 = processed_sma_2.map(cloudScore).map(class_1_probs2);
+
+var mosaic2 = imgs_prob2.qualityMosaic('qualy').clip(geometry)
+
+              .set('year', year)
+
+              .set('month', month)
+
+              .set('grid_name', gridName);
+
+
+
+
+
+
+
+var bands = ['qualy','cond_1','cond_2','cond_3','prob']
+
+
+
+var mosaicoEnteros = mosaic2.select(bands)
+
+                      .multiply(10000)
+
+                      .toInt16()
+
+
+
+var bands2 = ['gv_soil']
+
+
+
+var mosaicoEnteros2 = mosaic2.select(bands2)
+
+                      .toInt16()
+
+
+
+                      
+
+mosaic2 = mosaic2.addBands(mosaicoEnteros,null,true)
+
+mosaic2 = mosaic2.addBands(mosaicoEnteros2,null,true)
+
+
+
+print(mosaic2);
+
+Map.addLayer(mosaic2.clip(geometry), imageVisParam, 'Suriname mosaic') ; 
+
+
+
+print('enteros',mosaic2)
+
+ Export.image.toAsset({
+
+    image: mosaic2, 
+
+    description: 'mosaic_' + pais_name + '_' + gridName + '_' + year + '_' + month, 
+
+    assetId: 'projects/mapbiomas-raisg/PRODUCTOS/AGUA/mosaicos/' + 'mosaic_' + pais_name + '_' + gridName + '_' + year + '_' + month, 
+
+    
+
+    pyramidingPolicy: {
+
+      'classification': 'mode'
+
+    },
+
+    region: geometry, 
+
+    scale: 30, 
+
+    maxPixels: 1e13
+
+});
+

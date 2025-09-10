@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover classification and crop type identification"],
+  "DataSource": ["MODIS/006/MOD09Q1", "users/khoapv/Ranhgioi_DL"],
+  "Function": ["Filtering image collection by date", "Clipping images to a specific region", "Calculating NDVI", "Creating a multiband image", "Training a clusterer", "Clustering input data", "Merging classes", "Creating a refined classification"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["MODIS/006/MOD09Q1"],
+        "Function": ["Filtering image collection by date", "Calculating NDVI", "Creating a multiband image"]
+    },
+    "relation_2": {
+        "DataSource": ["users/khoapv/Ranhgioi_DL"],
+        "Function": ["Clipping images to a specific region", "Training a clusterer", "Clustering input data", "Merging classes", "Creating a refined classification"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3834, 'completion_tokens': 251, 'total_tokens': 4085}

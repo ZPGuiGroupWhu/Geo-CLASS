@@ -1,0 +1,18 @@
+{
+    "Summary": [
+        "Script prepares and analyzes Sentinel-2 imagery for NDVI calculation."
+    ],
+    "Theme": [
+        "NORMALIZED DIFFERENCE VEGETATION INDEX (NDVI)"
+    ],
+    "DataSource": [
+        "users/cesarnon/datos_cba_2017/Cordoba_limite",
+        "COPERNICUS/S2_SR"
+    ],
+    "Function": [
+        "Cloud Masking And Quality Filtering",
+        "NDWI (Normalized Difference Water Index calculation)",
+        "NDVI (Normalized Difference Vegetation Index calculation)",
+        "Time Series Clustering And Prediction"
+    ]
+}

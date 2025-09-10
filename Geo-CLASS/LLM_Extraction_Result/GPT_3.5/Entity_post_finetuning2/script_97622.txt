@@ -1,0 +1,18 @@
+{
+    "Summary": [
+        "Script processes Landsat 8 data for land cover classification in Yangon state."
+    ],
+    "Theme": [
+        "NORMALIZED DIFFERENCE VEGETATION INDEX (NDVI)"
+    ],
+    "DataSource": [
+        "users/eikhaingzinthan72019/gadm36_MMR_1",
+        "LANDSAT/LC08/C01/T1_TOA"
+    ],
+    "Function": [
+        "Cloud And Cloud Shadow Masking",
+        "Seasonal NDVI Analysis",
+        "Prepares Images For Classification",
+        "Random Forest Classification"
+    ]
+}

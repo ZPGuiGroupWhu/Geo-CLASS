@@ -1,0 +1,17 @@
+{
+    "Theme": [
+        "Land cover classification and flood detection"
+    ],
+    "DataSource": [
+        "FAO/GAUL_SIMPLIFIED_500m/2015/level2",
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "Filtering image collections by bounds and date",
+        "Sorting image collections by cloud percentage",
+        "Filtering image collections by cloud percentage",
+        "Calculating NDWI",
+        "Visualizing true color images",
+        "Visualizing NDWI images"
+    ]
+}

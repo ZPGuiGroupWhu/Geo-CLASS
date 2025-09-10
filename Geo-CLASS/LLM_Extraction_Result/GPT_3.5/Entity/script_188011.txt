@@ -1,0 +1,6 @@
+{
+  "Summary": ["Calculating seasonal temperatures from Landsat 8 TOA data and exporting results."],
+  "Theme": ["Temperature analysis"],
+  "DataSource": ["projects/ee-kimiachenaary/assets/msh", "LANDSAT/LC08/C01/T1_TOA"],
+  "Function": ["Temperature conversion from Kelvin to Celsius", "Clipping temperature data to specified geometry", "Calculating mean temperature for summer season", "Exporting temperature data as CSV files"]
+}

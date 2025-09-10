@@ -1,0 +1,24 @@
+{
+    "Summary": [
+        "Generate Land Surface Temperature (LST) map for Java and Bali"
+    ],
+    "Theme": [
+        "LAND SURFACE FEEDBACKS"
+    ],
+    "DataSource": [
+        "users/khoirurrizqi/Jawa",
+        "LANDSAT/LC08/C01/T1_SR"
+    ],
+    "Function": [
+        "Flood Mask Generation",
+        "Filter Image Collection",
+        "Seasonal NDVI Analysis",
+        "Display Selected Band",
+        "Compute Median Of NDVI",
+        "Fractional Vegetation Calculation",
+        "Emissivity Calculation",
+        "Area Calculation",
+        "Legend Creation",
+        "Visualization Setup"
+    ]
+}

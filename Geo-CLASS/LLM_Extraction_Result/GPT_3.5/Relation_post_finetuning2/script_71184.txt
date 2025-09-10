@@ -1,0 +1,13 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LE7_L1T_32DAY_TOA"
+        ],
+        "Function": [
+            "Cloud Score Computation",
+            "Addition Of NDWI",
+            "Calculates Normalized Difference Water Index (NDWI)",
+            "Data Visualization"
+        ]
+    }
+}

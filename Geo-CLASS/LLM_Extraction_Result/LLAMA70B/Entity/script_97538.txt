@@ -1,0 +1,5 @@
+{
+  "Theme": ["Land cover analysis using Landsat 8 imagery"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Filtering image collection by geometry and date", "Calculating median of image collection", "Clipping image to geometry", "Calculating NDVI and SAVI indices", "Exporting images to Drive"]
+}

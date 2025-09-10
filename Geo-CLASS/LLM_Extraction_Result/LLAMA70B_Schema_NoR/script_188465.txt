@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover classification and cloud probability analysis"],
+  "DataSource": ["COPERNICUS/S2_SR_HARMONIZED", "COPERNICUS/S2_CLOUD_PROBABILITY"],
+  "Function": ["Filtering image collection by date and bounds", "Creating mosaic of images", "Reducing image to a single value", "Masking clouds in images", "Calculating sum of images"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response that organizes the extracted information into a structured format:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2_SR_HARMONIZED"],
+        "Function": ["Filtering image collection by date and bounds", "Creating mosaic of images", "Reducing image to a single value", "Calculating sum of images"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2_CLOUD_PROBABILITY"],
+        "Function": ["Masking clouds in images"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4328, 'completion_tokens': 239, 'total_tokens': 4567}

@@ -1,0 +1,17 @@
+{
+    "Theme": [
+        "Land cover classification using Sentinel-1 data"
+    ],
+    "DataSource": [
+        "COPERNICUS/S1_GRD"
+    ],
+    "Function": [
+        "Filtering image collection by transmitter receiver polarisation",
+        "Applying Refined Lee speckle filter",
+        "Converting image to natural units",
+        "Converting image to dB",
+        "Classifying image using CART classifier",
+        "Compositing images",
+        "Calculating mean of image collection"
+    ]
+}

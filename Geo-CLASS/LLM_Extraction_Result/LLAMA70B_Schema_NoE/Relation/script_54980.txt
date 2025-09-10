@@ -1,0 +1,12 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/edimilsonrodriguessantos/MAPBIOMAS/INFRAURBANA6-FT-v6/"
+        ],
+        "Function": [
+            "Importing and processing land cover classification images for multiple years",
+            "Applying a remapping function to the classification images",
+            "Generating a video thumbnail from the classified images"
+        ]
+    }
+}

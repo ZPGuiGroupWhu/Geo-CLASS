@@ -1,0 +1,25 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Marsh bird survey", "Spectral indices analysis", "Landsat imagery"],
+  "DataSource": ["LANDSAT/LC8_L1T_TOA", "LANDSAT/LE7_L1T_TOA"],
+  "Function": ["Buffer survey points", "Merge feature collections", "Clip images to buffer", "Filter images by date", "Filter images by location", "Count images in collection", "Mask clouds in images", "Add NDVI band", "Add NDWBI band", "Add NDWI band", "Add time band", "Map functions over image collection", "Calculate mean values", "Generate monthly averages"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC8_L1T_TOA"],
+        "Function": ["Filter images by date", "Filter images by location", "Mask clouds in images", "Add NDVI band", "Add NDWBI band", "Add NDWI band", "Add time band", "Clip images to buffer", "Map functions over image collection", "Calculate mean values"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LE7_L1T_TOA"],
+        "Function": ["Filter images by date", "Filter images by location", "Mask clouds in images", "Add NDVI band", "Add NDWBI band", "Add NDWI band", "Add time band", "Clip images to buffer", "Map functions over image collection", "Calculate mean values", "Generate monthly averages"]
+    }
+}
+```
+
+Total_Token_Usage:
+6545

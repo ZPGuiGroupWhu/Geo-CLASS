@@ -1,0 +1,18 @@
+{
+    "Summary": [
+        "Buffering agricultural fields, filtering and processing Sentinel-1 satellite data for analysis."
+    ],
+    "Theme": [
+        "MARINE ENVIRONMENT MONITORING",
+        "GROSS PRIMARY PRODUCTION (GPP)"
+    ],
+    "DataSource": [
+        "users/dgilad/SA",
+        "users/dgilad/Fields",
+        "COPERNICUS/S1_GRD"
+    ],
+    "Function": [
+        "Buffering Points To Create Zones For Analysis",
+        "Visualize Multi-Temporal Satellite Data"
+    ]
+}

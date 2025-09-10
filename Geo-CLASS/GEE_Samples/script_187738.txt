@@ -1,0 +1,168 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var imageCollection = ee.ImageCollection("USDA/NAIP/DOQQ"),
+    geometry = 
+    /* color: #d63000 */
+    /* shown: false */
+    ee.Geometry.Polygon(
+        [[[-121.89511299133301, 38.98496606984683],
+          [-121.89511299133301, 38.909335196675435],
+          [-121.69358253479004, 38.909335196675435],
+          [-121.69358253479004, 38.98496606984683]]]),
+    cdl2016 = ee.Image("USDA/NASS/CDL/2016");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+
+// Load the NAIP collection.
+// ROI.
+// Load the CDL (2016).
+// Pull out the cropland layer and clip to the ROI.
+cdl2016 = cdl2016.select('cropland').clip(geometry);
+var bands = ['R', 'G', 'B', 'N'];
+
+// Create a mosaic from NAIP scenes taken between 2015 and 2017.
+var image = imageCollection
+  .filterDate('2015-01-01', '2017-01-01')
+  .filterBounds(geometry)
+  .mosaic();
+// Clip to the ROI, normalize from 0-1, and pull out the bands of interest.
+image = image.clip(geometry).divide(255).select(bands);
+
+Map.addLayer(image, {gamma: 0.8}, 'RGB');
+Map.centerObject(geometry, 13);
+
+
+// 1. 设置种子
+var seeds = ee.Algorithms.Image.Segmentation.seedGrid(36);
+// Sample training points from image with the CDL as the source-of-truth.
+var points = image
+  .addBands(cdl2016)
+  .updateMask(seeds)
+  // Sample from the ROI at a 5 meter resolution.
+  .sample(geometry, 5);
+print(points.limit(1));
+
+// Train a random forest classifier on points. Each point has a 'cropland' property
+
+// 10 meter per-pixel classification  面向像元分类 
+Map.addLayer(ee.Image.load('users/saicheems/classification'),{},'Classification');
+  
+// 2. 面向对象分类
+// 创建一个高斯核
+var kernel = ee.Kernel.gaussian(3);
+image = image.convolve(kernel);
+Map.addLayer(image, {gamma: 0.8}, 'RGB smooth');
+
+// Run SNIC on the regular square grid. 利用 SNIC 进行分割，得到对象
+var snic = ee.Algorithms.Image.Segmentation.SNIC({
+  image: image,
+  compactness: 2, 
+  connectivity: 8,
+  neighborhoodSize: 256,
+  seeds: seeds
+});
+
+// clusters分割得到的一个个对象
+var clusters = snic.select('clusters');
+print('clusters',clusters)
+
+Map.addLayer(clusters.randomVisualizer(), {}, 'Clusters');
+// Visualize the cluster means.
+var clusterVis = {bands: ['R_mean', 'G_mean', 'B_mean'], min: 0, max: 1};
+Map.addLayer(snic, clusterVis, 'Cluster means');
+
+var objectPropertiesImage = snic.select(
+  ['R_mean', 'G_mean', 'B_mean', 'N_mean']);
+// Sample training points from objectPropertiesImage with the CDL as the
+// source-of-truth.
+var points2 = objectPropertiesImage
+  .addBands(cdl2016)
+  .updateMask(seeds)
+  .sample(geometry, 5);
+// Train a random forest classifier on points2.
+var classifier2 = ee.Classifier.smileRandomForest(10).train(points2, 'cropland');
+
+Export.image.toAsset({
+  description: 'classification_snic',
+  image: objectPropertiesImage.classify(classifier2).randomVisualizer(),
+  region: geometry,
+  scale: 5,
+})
+Map.addLayer(ee.Image.load('users/saicheems/classification_snic'),{},'Classification snic');
+
+// Compute the standard deviation of each cluster.
+var stdDev = image.addBands(clusters).reduceConnectedComponents({
+  reducer: ee.Reducer.stdDev(),
+  labelBand: 'clusters',
+  maxSize: 256
+});
+Map.addLayer(stdDev, {min: 0, max: .1}, 'Std dev');
+
+// Compute the area of each cluster.
+var area = ee.Image.pixelArea()
+  .addBands(clusters).reduceConnectedComponents({
+    reducer: ee.Reducer.sum(),
+    labelBand: 'clusters',
+    maxSize: 256
+  });
+Map.addLayer(area, {min: 50000, max: 500000}, 'Area');
+
+// Compute the perimeter of each cluster.
+var minMax = clusters.reduceNeighborhood({
+  reducer: ee.Reducer.minMax(),
+  kernel: ee.Kernel.square(1)
+});
+var perimeterPixels = minMax.select(0).neq(minMax.select(1));
+var perimeter = perimeterPixels
+  .addBands(clusters).reduceConnectedComponents({
+    reducer: ee.Reducer.sum(),
+    labelBand: 'clusters',
+    maxSize: 256
+  });
+Map.addLayer(perimeter, {min: 0, max: 1000}, 'Perimeter');
+
+// Compute the width and height of each cluster.
+var sizes = ee.Image.pixelLonLat()
+  .addBands(clusters)
+  .reduceConnectedComponents({
+    reducer: ee.Reducer.minMax(),
+    labelBand: 'clusters',
+    maxSize: 256,
+  });
+var width = sizes
+  .select('longitude_max')
+  .subtract(sizes.select('longitude_min'))
+  .rename('width');
+var height = sizes
+  .select('latitude_max')
+  .subtract(sizes.select('latitude_min'))
+  .rename('height');
+
+
+
+// Create a new image, which contains the R/G/B/N_mean from snic, and the
+// new properties we just computed, and build a new classifier.
+var objectPropertiesImage2 = ee.Image.cat([
+  snic.select(['R_mean', 'G_mean', 'B_mean', 'N_mean']),
+  stdDev,
+  area,
+  perimeter,
+  width,
+  height
+]);
+var points3 = objectPropertiesImage2
+  .addBands(cdl2016)
+  .updateMask(seeds)
+  .sample(geometry, 5);
+
+var classifier3 = ee.Classifier.smileRandomForest(10).train(points3, 'cropland');
+
+// 计算混淆矩阵
+var test=points3.classify(classifier3,'classification');
+var confusionMatrix = test.errorMatrix('value', 'classify');
+print('Confusion Matrix', confusionMatrix);
+
+Export.image.toAsset({
+  description: 'classification_snic_2',
+  image: objectPropertiesImage2.classify(classifier3).randomVisualizer(),
+  region: geometry,
+  scale: 5,
+});

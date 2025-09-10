@@ -1,0 +1,29 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Crop monitoring and vegetation analysis"],
+  "DataSource": ["users/eduardosperanza-Embrapa/Projeto-Coplacana/Piracicaba-H2Copla-UTM", "COPERNICUS/S2_SR"],
+  "Function": ["Cloud and snow pixel removal", "NDVI calculation", "VARI calculation", "EVI calculation", "Buffer creation", "Image collection filtering", "Image masking", "NDVI median composite image creation", "VARI median composite image creation", "EVI median composite image creation", "Spatial join", "Property removal"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/eduardosperanza-Embrapa/Projeto-Coplacana/Piracicaba-H2Copla-UTM"],
+        "Function": ["Cloud and snow pixel removal", "NDVI calculation", "VARI calculation", "EVI calculation", "Buffer creation", "Image collection filtering", "Image masking", "NDVI median composite image creation", "VARI median composite image creation", "EVI median composite image creation"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["Cloud and snow pixel removal", "NDVI calculation", "VARI calculation", "EVI calculation", "Buffer creation", "Image collection filtering", "Image masking", "NDVI median composite image creation", "VARI median composite image creation", "EVI median composite image creation", "Spatial join", "Property removal"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3892, 'completion_tokens': 374, 'total_tokens': 4266}

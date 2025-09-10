@@ -1,0 +1,6 @@
+{
+  "Summary": ["Geoprocessing modeling for flooding, built-up areas, fire perimeters, and earthquake analysis."],
+  "Theme": ["Flooding", "Built-up areas", "Fire perimeters", "Earthquake analysis"],
+  "DataSource": ["users/eeranyartrodrigo/A_Hist", "users/eeranyartrodrigo/A_Conc", "users/eeranyartrodrigo/SSNMX_catalogo_20220801_20220810", "GLOBAL_FLOOD_DB/MODIS_EVENTS/V1", "JRC/GHSL/P2016/BUILT_LDSMT_GLOBE_V1", "JRC/GWIS/GlobFire/v2/DailyPerimeters/2020"],
+  "Function": ["Elevation visualization", "Flood event visualization", "Built-up area visualization", "Permanent water overlay", "Fire perimeter visualization", "Earthquake buffer generation"]
+}

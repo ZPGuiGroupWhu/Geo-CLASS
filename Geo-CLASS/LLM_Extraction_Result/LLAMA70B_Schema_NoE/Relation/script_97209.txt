@@ -1,0 +1,24 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016"
+        ],
+        "Function": [
+            "Filtering and mapping fire features",
+            "Creating image collections for before and after fire",
+            "Calculating indices for image classification",
+            "Classifying images using different classifiers"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Filtering and mapping fire features",
+            "Creating image collections for before and after fire",
+            "Calculating indices for image classification",
+            "Classifying images using different classifiers"
+        ]
+    }
+}

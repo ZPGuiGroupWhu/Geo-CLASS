@@ -1,0 +1,33 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Chinese Privet monitoring and NDVI analysis"],
+  "DataSource": ["TIGER/2018/States", "users/eisen520/chinesePrivet", "COPERNICUS/S2_SR"],
+  "Function": ["Filtering image collection by date", "Masking cloud and snow pixels", "Adding NDVI band", "Reducing regions to extract NDVI values", "Merging observations for each day", "Joining tables based on ID"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["TIGER/2018/States"],
+        "Function": ["Filtering image collection by date", "Merging observations for each day", "Joining tables based on ID"]
+    },
+    "relation_2": {
+        "DataSource": ["users/eisen520/chinesePrivet"],
+        "Function": ["Masking cloud and snow pixels", "Adding NDVI band", "Reducing regions to extract NDVI values"]
+    },
+    "relation_3": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["Masking cloud and snow pixels", "Adding NDVI band", "Reducing regions to extract NDVI values"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4147, 'completion_tokens': 314, 'total_tokens': 4461}

@@ -1,0 +1,5 @@
+{
+  "Theme": ["Forest classification", "Land cover analysis", "Seasonal mosaic creation"],
+  "DataSource": ["users/kindgard/ZWE_Forest_Plantations", "users/kindgard/Forest_Plantations_v2", "users/christinacorbane/MT_comp_proj", "JRC/GSW1_0/GlobalSurfaceWater"],
+  "Function": ["Create feature collections", "Filter image collections by date", "Filter image collections by cloud cover", "Create mosaics", "Add ratio bands", "Sample regions", "Train classifier", "Classify images", "Apply masks"]
+}

@@ -1,0 +1,32 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Water body extraction and analysis using Landsat and Sentinel-2 data"],
+  "DataSource": ["projects/ee-kimmmydanny/assets/tingxialiuyu", "LANDSAT/LC08/C01/T1_RT_TOA", "COPERNICUS/S2_SR"],
+  "Function": ["Cloud masking", "Image collection filtering", "MNDWI calculation", "Otsu thresholding", "Water body extraction", "Area calculation"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["projects/ee-kimmmydanny/assets/tingxialiuyu"],
+        "Function": ["Image collection filtering", "Cloud masking", "MNDWI calculation", "Otsu thresholding", "Water body extraction", "Area calculation"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_RT_TOA"],
+        "Function": ["Cloud masking", "MNDWI calculation", "Otsu thresholding", "Water body extraction", "Area calculation"]
+    },
+    "relation_3": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["Cloud masking", "MNDWI calculation", "Otsu thresholding", "Water body extraction", "Area calculation"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3943, 'completion_tokens': 348, 'total_tokens': 4291}

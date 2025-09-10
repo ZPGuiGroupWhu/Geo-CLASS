@@ -1,0 +1,16 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2_SR_HARMONIZED/20200720T110619_20200720T111156_T29SPB",
+            "COPERNICUS/S2_SR_HARMONIZED/20200908T110619_20200908T111404_T29SPB"
+        ],
+        "Function": [
+            "Calculate NBR for Post-Fire Image",
+            "Training Data Creation",
+            "Calculates Forest Structural Complexity Index (FSCI)",
+            "Generate Visualizations And Statistical Charts For Classification Results",
+            "Map Visualization Of Feature Collection",
+            "Classify And Visualize Burn Severity"
+        ]
+    }
+}

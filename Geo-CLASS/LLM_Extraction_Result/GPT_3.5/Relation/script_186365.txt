@@ -1,0 +1,6 @@
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_TOA", "LANDSAT/LT5_L1T_TOA"],
+        "Function": ["Image filtering by date and location", "NDVI calculation", "EVI calculation", "NDWI calculation", "NDBI calculation", "BAI calculation", "NBRT calculation", "NDSI calculation", "Linear transformation", "Principal Component Analysis", "Spectral unmixing", "HSV transformation"]
+    }
+}

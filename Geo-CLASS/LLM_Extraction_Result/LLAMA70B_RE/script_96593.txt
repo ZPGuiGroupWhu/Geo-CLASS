@@ -1,0 +1,40 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover and vegetation analysis"],
+  "DataSource": ["MODIS/MOD09GA_006_NDVI", "USGS/SRTMGL1_003", "MODIS/006/MCD12Q1", "COPERNICUS/S2_SR"],
+  "Function": ["Compute NDVI values", "Filter image collection by date and area", "Create buffer around sample points", "Compute mean NDVI values", "Visualize NDVI time series"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["MODIS/MOD09GA_006_NDVI"],
+        "Function": ["Compute NDVI values", "Filter image collection by date and area", "Compute mean NDVI values"]
+    },
+    "relation_2": {
+        "DataSource": ["USGS/SRTMGL1_003"],
+        "Function": ["None"]
+    },
+    "relation_3": {
+        "DataSource": ["MODIS/006/MCD12Q1"],
+        "Function": ["Filter image collection by date and area"]
+    },
+    "relation_4": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["Compute NDVI values", "Filter image collection by date and area", "Compute mean NDVI values", "Visualize NDVI time series"]
+    },
+    "relation_5": {
+        "DataSource": ["samples"],
+        "Function": ["Create buffer around sample points", "Visualize NDVI time series"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3486, 'completion_tokens': 394, 'total_tokens': 3880}

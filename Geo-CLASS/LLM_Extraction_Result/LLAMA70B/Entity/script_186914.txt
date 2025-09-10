@@ -1,0 +1,5 @@
+{
+  "Theme": ["Flood area detection and population analysis"],
+  "DataSource": ["COPERNICUS/S1_GRD", "CIESIN/GPWv4/population-count"],
+  "Function": ["Filtering image collection by date and polarization", "Mosaicking images", "Thresholding radar intensities", "Focal median smoothing", "Topological intersection", "Image visualization", "Image subtraction", "Masking and clipping", "Focal mode filtering", "Converting pixels to polygons", "Population count analysis", "Sampling regions", "Exporting table to drive"]
+}

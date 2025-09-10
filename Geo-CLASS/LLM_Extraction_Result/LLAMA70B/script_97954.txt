@@ -1,0 +1,29 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land cover classification and land change detection in the Bahamas"],
+  "DataSource": ["users/EL/Bahamas", "LANDSAT/LT5_L1T", "LANDSAT/LE7_L1T", "LANDSAT/LC08/C01/T1_RT", "users/EL/Bahamas_class"],
+  "Function": ["Filtering image collections by date and cloud cover", "Compositing images", "Calculating spectral ratios", "Masking non-forest areas", "Classifying land cover using CART algorithm"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/EL/Bahamas", "users/EL/Bahamas_class"],
+        "Function": ["Filtering image collections by date and cloud cover", "Classifying land cover using CART algorithm"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LT5_L1T", "LANDSAT/LE7_L1T", "LANDSAT/LC08/C01/T1_RT"],
+        "Function": ["Filtering image collections by date and cloud cover", "Compositing images", "Calculating spectral ratios", "Masking non-forest areas"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3584, 'completion_tokens': 309, 'total_tokens': 3893}

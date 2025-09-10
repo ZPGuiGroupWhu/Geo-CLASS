@@ -1,0 +1,29 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land cover classification and change detection"],
+  "DataSource": ["LANDSAT/LE07/C01/T1_TOA", "COPERNICUS/S2", "users/eeranyartrodrigo/ferrocarriles/coahuilaPols"],
+  "Function": ["Otsu thresholding for binary classification", "Image filtering and masking", "Image normalization and feature extraction", "Unmixing and classification", "Histogram analysis and thresholding"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LE07/C01/T1_TOA", "COPERNICUS/S2"],
+        "Function": ["Otsu thresholding for binary classification", "Image filtering and masking", "Image normalization and feature extraction", "Unmixing and classification"]
+    },
+    "relation_2": {
+        "DataSource": ["users/eeranyartrodrigo/ferrocarriles/coahuilaPols"],
+        "Function": ["Histogram analysis and thresholding"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 6309, 'completion_tokens': 271, 'total_tokens': 6580}

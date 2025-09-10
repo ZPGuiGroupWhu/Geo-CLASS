@@ -1,0 +1,18 @@
+{
+  "relation_1": {
+    "DataSource": ["users/jrmancerafGEE/POL_SUB_AE_1055"],
+    "Function": ["Define area of interest", "Add layers to map", "Clip images to area of interest"]
+  },
+  "relation_2": {
+    "DataSource": ["users/jrmancerafGEE/PTS_SUB_AE_1055"],
+    "Function": ["Define area of interest", "Add layers to map", "Export data to Google Drive"]
+  },
+  "relation_3": {
+    "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+    "Function": ["Filter image collection by date", "Mask clouds and shadows", "Clip images to area of interest", "Generate change detection map"]
+  },
+  "relation_4": {
+    "DataSource": ["users/emaprlab/public:Modules/LandTrendr.js"],
+    "Function": ["Run LandTrendr algorithm", "Generate change detection map"]
+  }
+}

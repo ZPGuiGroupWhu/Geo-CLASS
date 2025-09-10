@@ -1,0 +1,20 @@
+{
+    "Theme": [
+        "Land Surface Temperature Analysis"
+    ],
+    "DataSource": [
+        "users/juanjoseromeroacm21/MORELIA",
+        "users/juanjoseromeroacm21/michoacan_state",
+        "USDOS/LSIB_SIMPLE/2017",
+        "MODIS/MOD11A2"
+    ],
+    "Function": [
+        "Filtering country boundaries",
+        "Importing LST image collection",
+        "Scaling to Kelvin and converting to Celsius",
+        "Charting time series of LST",
+        "Calculating 8-day mean temperature",
+        "Testing trend with Sen's slope",
+        "Exporting images to Drive"
+    ]
+}

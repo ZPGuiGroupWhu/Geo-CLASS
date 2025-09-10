@@ -1,0 +1,5 @@
+{
+  "Theme": ["Land cover classification", "Water body detection", "Topographic analysis"],
+  "DataSource": ["MODIS/006/MOD09GA", "USGS/GMTED2010", "TIGER/2018/States"],
+  "Function": ["Cloud masking", "Water body masking", "Image collection filtering", "Hillshade generation", "Image visualization", "Percentile calculation", "Image clipping"]
+}

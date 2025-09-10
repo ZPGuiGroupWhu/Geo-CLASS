@@ -1,0 +1,20 @@
+{
+    "Theme": [
+        "Forest cover analysis in Cambodia"
+    ],
+    "DataSource": [
+        "USDOS/LSIB/2017",
+        "UMD/hansen/global_forest_change_2020_v1_8",
+        "users/ak_glaciers/NDVI_fitted_image_stack_from_LTOP_1990_start",
+        "users/ak_glaciers/NBR_fitted_image_stack_from_LTOP_1990_start"
+    ],
+    "Function": [
+        "Get user inputs and imports",
+        "Get AOI geometry",
+        "Get forest cover data",
+        "Get LTOP fitted outputs",
+        "Create training data",
+        "Train a model",
+        "Run classification"
+    ]
+}

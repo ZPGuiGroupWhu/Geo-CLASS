@@ -1,0 +1,16 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2_CLOUD_PROBABILITY",
+            "users/kitmyfaceplease2/eastsouth_asia",
+            "projects/ee-kitmyfaceplease2/assets/EAST_SOUTH_SPLIT2"
+        ],
+        "Function": [
+            "Cloud Masking And Quality Filtering",
+            "Data Fusion And Mosaicking",
+            "Cloud Masking And Quality Filtering",
+            "Data Visualization And Mapping",
+            "NDVI (Normalized Difference Vegetation Index calculation)"
+        ]
+    }
+}

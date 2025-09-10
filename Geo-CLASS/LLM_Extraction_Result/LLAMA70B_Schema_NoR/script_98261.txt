@@ -1,0 +1,35 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Flood extent analysis and mapping"],
+  "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2", "LANDSAT/LC08/C01/T1_SR", "JRC/GSW1_0/GlobalSurfaceWater", "WWF/HydroSHEDS/03VFDEM"],
+  "Function": ["Filtering image collection by bounds and date", "Sorting image collection by cloud cover", "Creating mosaic image and clipping to boundary", "Calculating normalized difference water index", "Applying threshold to difference image", "Refining flood result using additional datasets", "Masking out clouds and areas with high slope"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2"],
+        "Function": ["Filtering image collection by bounds and date", "Sorting image collection by cloud cover"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Creating mosaic image and clipping to boundary", "Calculating normalized difference water index", "Applying threshold to difference image"]
+    },
+    "relation_3": {
+        "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+        "Function": ["Refining flood result using additional datasets"]
+    },
+    "relation_4": {
+        "DataSource": ["WWF/HydroSHEDS/03VFDEM"],
+        "Function": ["Masking out clouds and areas with high slope"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3961, 'completion_tokens': 396, 'total_tokens': 4357}

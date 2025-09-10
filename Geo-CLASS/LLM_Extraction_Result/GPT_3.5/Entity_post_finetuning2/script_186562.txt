@@ -1,0 +1,18 @@
+{
+    "Summary": [
+        "Collects satellite images and calculates NDVI and NBR, exports images, detects forest loss, degradation, and fires in Bha Le, Tay Giang, Quang Nam using Landsat 8."
+    ],
+    "Theme": [
+        "EUPHAUSIIDS (KRILL)"
+    ],
+    "DataSource": [
+        "LANDSAT/LC8_L1T_TOA",
+        "LANDSAT/LC8_L1T_TOA",
+        "LANDSAT/LC8_L1T_TOA",
+        "LANDSAT/LC8_L1T_TOA"
+    ],
+    "Function": [
+        "Calculates Normalized Difference Water Index (NDWI)",
+        "Calculate dNBR For Fire Severity"
+    ]
+}

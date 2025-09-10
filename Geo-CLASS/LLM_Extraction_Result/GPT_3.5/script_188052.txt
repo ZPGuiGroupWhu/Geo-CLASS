@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["The script focuses on cloud removal, water detection, and area computation using Landsat and Sentinel-2 imagery."],
+  "Theme": ["Water extraction based on Otsu thresholding"],
+  "DataSource": ["projects/ee-kimmmydanny/assets/tingxialiuyu", "LANDSAT/LC08/C01/T1_RT_TOA", "COPERNICUS/S2_SR"],
+  "Function": ["Cloud masking for Landsat imagery", "Water detection using Otsu thresholding", "Area computation for water bodies"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["projects/ee-kimmmydanny/assets/tingxialiuyu"],
+        "Function": ["Cloud masking for Landsat imagery", "Water detection using Otsu thresholding", "Area computation for water bodies"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_RT_TOA"],
+        "Function": ["Cloud masking for Landsat imagery", "Water detection using Otsu thresholding", "Area computation for water bodies"]
+    },
+    "relation_3": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["Water detection using Otsu thresholding", "Area computation for water bodies"]
+    }
+}
+```

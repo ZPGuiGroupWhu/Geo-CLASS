@@ -1,0 +1,5 @@
+{
+  "Theme": ["Flood Mapping and Monitoring"],
+  "DataSource": ["COPERNICUS/S1_GRD", "ft:1nWJr3XY3hcsRSvydLLyK47W-r6N1bB7JHhTYuLle"],
+  "Function": ["Filtering image collection by date and bounds", "Converting image to natural scale", "Applying focal median smoothing", "Calculating band ratio", "Generating histogram", "Creating composite image"]
+}

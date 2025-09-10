@@ -1,0 +1,6 @@
+{
+  "Summary": ["Tracking Crop Greenness in Merced County using NDVI time series"],
+  "Theme": ["Crop greenness monitoring", "Bare earth analysis"],
+  "DataSource": ["LANDSAT/LC08/C02/T1_L2", "LANDSAT/LC08/C02/T1_L2"],
+  "Function": ["Calculate NDVI for image collection", "Generate NDVI time series by region"]
+}

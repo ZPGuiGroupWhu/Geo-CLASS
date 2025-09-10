@@ -1,0 +1,84 @@
+//Choose country using GEE Feature Collection
+
+var region = ee.FeatureCollection('TIGER/2016/States')
+    .filter(ee.Filter.or(
+        ee.Filter.eq('NAME', 'Florida')));
+
+//Add region outline to layer ‐ for selected states
+
+//Map.addLayer(region,{}, 'Florida');
+
+var landsat8 = ee.ImageCollection('LANDSAT/LC08/C01/T1_SR');
+
+// Fmask classification values var FMASK_CLEAR_GROUND = 0; var FMASK_WATER = 2; var FMASK_CLOUD_SHADOW = 3; var FMASK_SNOW = 4; var FMASK_CLOUD = 5;
+
+var non_mosaic = landsat8 .filterBounds(region) .filterDate('2017-01-01', '2017-12-31');
+
+var getQABits = function(image, start, end, newName) {
+    // Compute the bits we need to extract.
+    var pattern = 0;
+    for (var i = start; i <= end; i++) {
+       pattern += Math.pow(2, i);
+    }
+    // Return a single band image of the extracted QA bits, giving the band
+    // a new name.
+    return image.select([0], [newName])
+                  .bitwiseAnd(pattern)
+                  .rightShift(start);
+};
+
+// A function to mask out cloudy pixels.
+var cloud_shadows = function(image) {
+  // Select the QA band.
+  var QA = image.select(['pixel_qa']);
+  // Get the internal_cloud_algorithm_flag bit.
+  return getQABits(QA, 3,3, 'Cloud_shadows').eq(0);
+  // Return an image masking out cloudy areas.
+};
+
+// A function to mask out cloudy pixels.
+var clouds = function(image) {
+  // Select the QA band.
+  var QA = image.select(['pixel_qa']);
+  // Get the internal_cloud_algorithm_flag bit.
+  return getQABits(QA, 5,5, 'Cloud').eq(0);
+  // Return an image masking out cloudy areas.
+};
+
+var maskClouds = function(image) {
+  var cs = cloud_shadows(image);
+  var c = clouds(image);
+  image = image.updateMask(cs);
+  return image.updateMask(c);
+};
+
+var clouds_free = non_mosaic.map(maskClouds);
+
+
+var decision_tree = function(image){
+  var mndwi = image.normalizedDifference(['B3', 'B6']);
+  var evi = image.expression(
+    '(NIR - RED)/(NIR+6*RED-7.5*BLUE+1)*2.5', {
+      'BLUE': image.select('B2'),
+      'RED': image.select('B4'),
+      'NIR': image.select('B5'),
+    });
+  var ndvi = image.normalizedDifference(['B5', 'B4']);
+  var lswi = image.normalizedDifference(['B5', 'B6']);
+  var water = evi.lt(0.1).and(mndwi.gt(evi).or(mndwi.gt(ndvi))).rename('water');
+  var vegetation = evi.gte(0.1).and (ndvi.gte(0.2)).and (lswi.gt(0)).rename('vegetation');
+  return water.addBands(vegetation).copyProperties(image);  
+};
+
+var result = clouds_free.map(decision_tree);
+print (result);
+print (result.sum());
+print (result.count());
+var freq = result.sum().divide(result.count());
+print (freq);
+
+var VisParamWar = {"bands":["water"],"min":0,"max":1};
+var VisParamVeg = {"bands":["vegetation"],"min":0,"max":1};
+
+Map.addLayer(freq,VisParamWar,'Water freq');
+Map.addLayer(freq,VisParamVeg,'Vegetation freq');

@@ -1,0 +1,13 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2_SR"
+        ],
+        "Function": [
+            "maskS2clouds: cloud removal function",
+            "addNDVI: function to compute NDVI and add result as new band",
+            "addNDWI: function to compute NDWI and add result as new band",
+            "ui.Chart.image.seriesByRegion: function to plot NDVI and NDWI annual evolution"
+        ]
+    }
+}

@@ -1,0 +1,19 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Extracts Landsat 8 data, calculates NDVI and SAVI, exports images."],
+  "Theme": ["Remote sensing analysis"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Calculate NDVI and SAVI", "Export processed images"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Calculate NDVI and SAVI", "Export processed images"]
+    }
+}
+```

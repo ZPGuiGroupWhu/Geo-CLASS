@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["The script processes Sentinel-2 imagery to create NDVI mosaics for different time periods in Cordoba, Argentina."],
+  "Theme": ["NDVI Mosaic Generation"],
+  "DataSource": ["users/eemapascordoba/LCLU_2021/recetas_ago20_abr21_pstxcultivo_masLCollect_buffer2306", "users/eemapascordoba/var_ambientales_rindes/rindes_alf_rol_training_zona", "users/capas/provincia_wgs"],
+  "Function": ["Image Collection Filtering", "Band Renaming", "Quality Band Calculation", "Mosaic Creation", "Training Data Collection"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/eemapascordoba/LCLU_2021/recetas_ago20_abr21_pstxcultivo_masLCollect_buffer2306", "users/eemapascordoba/var_ambientales_rindes/rindes_alf_rol_training_zona"],
+        "Function": ["Image Collection Filtering", "Band Renaming", "Quality Band Calculation", "Mosaic Creation"]
+    },
+    "relation_2": {
+        "DataSource": ["users/capas/provincia_wgs"],
+        "Function": ["Training Data Collection"]
+    }
+}
+```

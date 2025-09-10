@@ -1,0 +1,5 @@
+{
+  "Theme": ["NDVI analysis", "Cloud masking", "Landsat imagery processing"],
+  "DataSource": ["users/kimambo/00_INPUT_TRAINING_VALIDATION/Tanzania_SouthernHighlands_reference_point_36LYR_13DEC2019_230_upto799_75PCTTRAINING", "LANDSAT/LC08/C01/T1_SR", "LANDSAT/LE07/C01/T1_SR", "LANDSAT/LT05/C01/T1_SR", "LANDSAT/LT04/C01/T1_SR"],
+  "Function": ["Print training points", "Center map on location", "Set map to satellite view", "Filter image collection by date", "Filter image collection by location", "Filter image collection by month", "Mask clouds in Landsat 8 images", "Add NDVI band to images", "Merge image collections", "Filter training points by class", "Rename NDVI bands with timestamps", "Sample regions from images", "Sort images by time", "Merge images into single image", "Sample regions from merged image"]
+}

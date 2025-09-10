@@ -1,0 +1,40 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/EL/Bahamas",
+            "LANDSAT/LT5_L1T",
+            "LANDSAT/LE7_L1T"
+        ],
+        "Function": [
+            "Filtering and compositing Landsat imagery for 2000 and 2017",
+            "Calculating spectral ratios for 2000 and 2017"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_RT"
+        ],
+        "Function": [
+            "Filtering and compositing Landsat imagery for 2000 and 2017",
+            "Calculating spectral ratios for 2000 and 2017"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "users/EL/Bahamas_class"
+        ],
+        "Function": [
+            "Land cover classification using CART algorithm"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "LANDSAT/LT5_L1T",
+            "LANDSAT/LE7_L1T",
+            "LANDSAT/LC08/C01/T1_RT"
+        ],
+        "Function": [
+            "Masking non-forest areas"
+        ]
+    }
+}

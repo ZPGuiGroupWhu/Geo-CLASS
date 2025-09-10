@@ -1,0 +1,18 @@
+{
+    "Summary": [
+        "The script focuses on cloud removal, water detection, and area computation using Landsat and Sentinel-2 imagery."
+    ],
+    "Theme": [
+        "ATTRITION/WEATHERING"
+    ],
+    "DataSource": [
+        "projects/ee-kimmmydanny/assets/tingxialiuyu",
+        "LANDSAT/LC08/C01/T1_RT_TOA",
+        "COPERNICUS/S2_SR"
+    ],
+    "Function": [
+        "Cloud Masking And Quality Filtering",
+        "Cloud Masking And Quality Filtering",
+        "Vegetation And Water Indices Calculation"
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "Theme": [
+        "Land Use Land Cover Classification"
+    ],
+    "DataSource": [
+        "users/abuhafsgaa/Makarfi",
+        "users/abuhafsgaa/ALLsample",
+        "users/abuhafsgaa/DATASET_COMPOSITION_2017_21",
+        "users/abuhafsgaa/TEST_SAR_2017_DATASET_BOXCAR"
+    ],
+    "Function": [
+        "Sample regions for training",
+        "Add random column to training dataset",
+        "Split data for training and testing",
+        "Define bands for classification",
+        "Train Random Forest classifier",
+        "Train CART classifier",
+        "Classify imagery",
+        "Compute variable importance",
+        "Display variable importance results",
+        "Get confusion matrices for accuracy assessment",
+        "Visualize classification results"
+    ]
+}

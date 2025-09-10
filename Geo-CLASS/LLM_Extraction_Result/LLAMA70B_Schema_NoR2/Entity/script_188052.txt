@@ -1,0 +1,5 @@
+{
+  "Theme": ["Water body extraction and analysis using Landsat and Sentinel-2 data"],
+  "DataSource": ["projects/ee-kimmmydanny/assets/tingxialiuyu", "LANDSAT/LC08/C01/T1_RT_TOA", "COPERNICUS/S2_SR"],
+  "Function": ["Cloud masking for Landsat images", "Calculating MNDWI index for water body detection", "Sentinel-2 cloud masking", "Otsu thresholding for water body extraction", "Image filtering and mosaicking", "Image clipping and masking", "Histogram calculation for thresholding", "Water body area calculation"]
+}

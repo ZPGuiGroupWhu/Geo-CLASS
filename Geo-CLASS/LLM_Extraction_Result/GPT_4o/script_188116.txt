@@ -1,0 +1,25 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Forest classification", "Water masking", "Landsat mosaics", "Sentinel mosaics"],
+  "DataSource": ["users/EL/mapa_forest_hybrid_Belize", "JRC/GSW1_0/GlobalSurfaceWater"],
+  "Function": ["Filter Landsat 8 images by date and cloud cover", "Create Landsat 8 mosaic", "Calculate band ratios for Landsat 8", "Filter Landsat 7 images by date and cloud cover", "Create Landsat 7 mosaic", "Calculate band ratios for Landsat 7", "Filter Sentinel-2 images by date and cloud cover", "Create Sentinel-2 mosaic", "Sample regions for training", "Train classifier", "Classify Sentinel-2 mosaic", "Apply water mask", "Edit classification"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/EL/mapa_forest_hybrid_Belize"],
+        "Function": ["Filter Landsat 8 images by date and cloud cover", "Create Landsat 8 mosaic", "Calculate band ratios for Landsat 8", "Filter Landsat 7 images by date and cloud cover", "Create Landsat 7 mosaic", "Calculate band ratios for Landsat 7", "Filter Sentinel-2 images by date and cloud cover", "Create Sentinel-2 mosaic", "Sample regions for training", "Train classifier", "Classify Sentinel-2 mosaic", "Edit classification"]
+    },
+    "relation_2": {
+        "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+        "Function": ["Apply water mask"]
+    }
+}
+```
+
+Total_Token_Usage:
+15636

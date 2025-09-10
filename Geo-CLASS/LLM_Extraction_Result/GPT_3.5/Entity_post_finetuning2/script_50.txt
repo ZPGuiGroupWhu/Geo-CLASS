@@ -1,0 +1,18 @@
+{
+    "Summary": [
+        "Generate tree cover maps using LT optimization outputs."
+    ],
+    "Theme": [
+        "LAND USE/LAND COVER CLASSIFICATION"
+    ],
+    "DataSource": [
+        "USDOS/LSIB/2017",
+        "UMD/hansen/global_forest_change_2020_v1_8",
+        "users/ak_glaciers/NDVI_fitted_image_stack_from_LTOP_1990_start",
+        "users/ak_glaciers/NBR_fitted_image_stack_from_LTOP_1990_start"
+    ],
+    "Function": [
+        "Random Point Generation",
+        "Random Forest Classification"
+    ]
+}

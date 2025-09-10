@@ -1,0 +1,18 @@
+{
+    "Summary": [
+        "The script processes Sentinel-2 images before and after a fire event for classification purposes."
+    ],
+    "Theme": [
+        "FIRE WEATHER INDEX"
+    ],
+    "DataSource": [
+        "users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016",
+        "COPERNICUS/S2",
+        "ESA/GLOBCOVER_L4_200901_200912_V2_3"
+    ],
+    "Function": [
+        "Load and Display Pre- And Post-Fire Satellite Image",
+        "Calculate Normalized Burn Ratio (NBR) For Images",
+        "Visualize Data Using Specific Band Combinations"
+    ]
+}

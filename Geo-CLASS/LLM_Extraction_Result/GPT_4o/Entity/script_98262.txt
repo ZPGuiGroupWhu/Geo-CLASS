@@ -1,0 +1,5 @@
+{
+  "Theme": ["Flood detection", "NDWI calculation", "Flood extent refinement"],
+  "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2", "MODIS/006/MOD09GA", "JRC/GSW1_0/GlobalSurfaceWater", "WWF/HydroSHEDS/03VFDEM"],
+  "Function": ["Filter regions by attribute", "Add layer to map", "Filter image collection by bounds and date", "Create mosaic and clip to boundary", "Calculate NDWI", "Compute difference image", "Thresholding", "Calculate pixel area", "Mask permanent water bodies", "Mask high slope areas"]
+}

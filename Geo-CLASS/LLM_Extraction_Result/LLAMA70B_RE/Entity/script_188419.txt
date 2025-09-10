@@ -1,0 +1,15 @@
+{
+    "Theme": [
+        "Land Surface Temperature (LST) analysis"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C01/T1_SR"
+    ],
+    "Function": [
+        "Cloud masking",
+        "Image collection filtering",
+        "NDVI calculation",
+        "LST calculation",
+        "Image visualization"
+    ]
+}

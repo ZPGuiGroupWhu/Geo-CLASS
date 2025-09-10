@@ -1,0 +1,5 @@
+{
+  "Theme": ["NDVI and precipitation correlation"],
+  "DataSource": ["MODIS/006/MOD13Q1", "UCSB-CHG/CHIRPS/DAILY", "FAO/GAUL/2015/level1"],
+  "Function": ["Filter region by geometry", "Sum monthly precipitation", "Mean monthly NDVI", "Resample precipitation data", "Join collections by time", "Calculate spatial correlation", "Aggregate pixel values", "Create scatter plot"]
+}

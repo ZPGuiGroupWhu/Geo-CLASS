@@ -1,0 +1,24 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "FAO/GAUL_SIMPLIFIED_500m/2015/level2"
+        ],
+        "Function": [
+            "Filtering feature collection to define area of interest (AOI)",
+            "Creating flood images over time",
+            "Setting visualization parameters",
+            "Displaying flood images on the map"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S1_GRD"
+        ],
+        "Function": [
+            "Filtering image collection to find flood images in a specific period",
+            "Creating flood images over time",
+            "Setting visualization parameters",
+            "Displaying flood images on the map"
+        ]
+    }
+}

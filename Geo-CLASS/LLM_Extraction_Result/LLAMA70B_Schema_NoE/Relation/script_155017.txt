@@ -1,0 +1,22 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "MODIS/006/MOD11A1"
+        ],
+        "Function": [
+            "Filtering MODIS images by bounds and date",
+            "Clipping images to Himachal Pradesh region",
+            "Scaling LST values",
+            "Reducing regions to mean LST values"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "Settlement points"
+        ],
+        "Function": [
+            "Joining tables by label and imageId",
+            "Exporting results to CSV"
+        ]
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "Summary": [
+        "Script generates cloud-free composite images from Sentinel-2 data for a specific region."
+    ],
+    "Theme": [
+        "LAND USE/LAND COVER CLASSIFICATION"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2_SR_HARMONIZED",
+        "COPERNICUS/S2_CLOUD_PROBABILITY"
+    ],
+    "Function": [
+        "Data Fusion And Mosaicking",
+        "Cloud Masking And Quality Filtering"
+    ]
+}

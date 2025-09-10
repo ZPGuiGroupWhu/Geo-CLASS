@@ -1,0 +1,24 @@
+{
+    "Summary": [
+        "The script processes Landsat imagery for geoprocessing modeling and analysis."
+    ],
+    "Theme": [
+        "LAND USE/LAND COVER CLASSIFICATION"
+    ],
+    "DataSource": [
+        "users/1915303017/CNBBW_SL_10kmBuffer",
+        "LANDSAT/LC08/C01/T1_SR",
+        "LANDSAT/LE07/C01/T1_SR",
+        "LANDSAT/LT05/C01/T1_SR",
+        "USGS/SRTMGL1_003"
+    ],
+    "Function": [
+        "Image Band Normalization",
+        "Cloud And Cloud Shadow Masking",
+        "Calculate Environmental And Vegetation Indices",
+        "Filter And Select",
+        "Generating Confusion Matrix",
+        "Fractional Vegetation Calculation",
+        "Training And Sampling For Land Cover Classification"
+    ]
+}

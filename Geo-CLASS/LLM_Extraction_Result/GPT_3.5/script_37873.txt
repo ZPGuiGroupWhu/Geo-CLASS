@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Script classifies land cover types using Landsat imagery."],
+  "Theme": ["Land cover classification"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR", "builtup", "water", "agriculture", "barren"],
+  "Function": ["Training data creation for classification", "Classifier training", "Image classification"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Training data creation for classification", "Classifier training", "Image classification"]
+    },
+    "relation_2": {
+        "DataSource": ["builtup", "water", "agriculture", "barren"],
+        "Function": ["Training data creation for classification", "Classifier training", "Image classification"]
+    }
+}
+```

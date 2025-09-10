@@ -1,0 +1,31 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Calculate seasonal precipitation deviation and export results."],
+  "Theme": ["Precipitation deviation analysis"],
+  "DataSource": ["users/eijulio/valles_altos_estados", "FAO/GAUL_SIMPLIFIED_500m/2015/level2", "ECMWF/ERA5/DAILY", "UCSB-CHG/CHIRPS/PENTAD"],
+  "Function": ["Filter and sum monthly precipitation data", "Compute long-term monthly averages", "Calculate seasonal deviation", "Export image and table data"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/eijulio/valles_altos_estados", "FAO/GAUL_SIMPLIFIED_500m/2015/level2"],
+        "Function": ["Filter and sum monthly precipitation data", "Compute long-term monthly averages"]
+    },
+    "relation_2": {
+        "DataSource": ["ECMWF/ERA5/DAILY"],
+        "Function": ["Calculate seasonal deviation"]
+    },
+    "relation_3": {
+        "DataSource": ["UCSB-CHG/CHIRPS/PENTAD"],
+        "Function": ["Filter and sum monthly precipitation data", "Compute long-term monthly averages"]
+    },
+    "relation_4": {
+        "DataSource": ["users/eijulio/valles_altos_estados"],
+        "Function": ["Export image and table data"]
+    }
+}
+```

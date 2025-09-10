@@ -1,0 +1,21 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/GeoForPy/Tesis/EcorregionAltoParana"
+        ],
+        "Function": [
+            "Image collection filtering",
+            "Map visualization"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LT05/C01/T1_SR"
+        ],
+        "Function": [
+            "Cloud masking for Landsat 5 images",
+            "Percentile calculation",
+            "Image compositing"
+        ]
+    }
+}

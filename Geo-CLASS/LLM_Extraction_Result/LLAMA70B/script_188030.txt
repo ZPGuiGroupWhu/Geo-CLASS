@@ -1,0 +1,29 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land cover analysis of Tehran using Landsat 8 imagery"],
+  "DataSource": ["projects/ee-kimiachenaary/assets/Tehran", "LANDSAT/LC08/C01/T1_TOA"],
+  "Function": ["Cloud masking of Landsat 8 images", "Calculating NDVI from Landsat 8 bands", "Filtering images by date and geometry", "Clipping images to geometry", "Calculating mean and max NDVI values", "Exporting results to CSV"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["projects/ee-kimiachenaary/assets/Tehran"],
+        "Function": ["Cloud masking of Landsat 8 images", "Filtering images by date and geometry", "Clipping images to geometry"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_TOA"],
+        "Function": ["Cloud masking of Landsat 8 images", "Calculating NDVI from Landsat 8 bands", "Calculating mean and max NDVI values", "Exporting results to CSV"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 5360, 'completion_tokens': 295, 'total_tokens': 5655}

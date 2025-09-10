@@ -1,0 +1,16 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_SR",
+            "ft:1BRQbpnAczAz2tTDe78RYFuzVM7Kz3j50m18yYbvr"
+        ],
+        "Function": [
+            "Data Acquisition And Preprocessing",
+            "NDVI (Normalized Difference Vegetation Index calculation)",
+            "Cloud Masking And Quality Filtering",
+            "NDVI (Normalized Difference Vegetation Index calculation)",
+            "NDVI (Normalized Difference Vegetation Index calculation)",
+            "Vegetation And Water Indices Calculation"
+        ]
+    }
+}

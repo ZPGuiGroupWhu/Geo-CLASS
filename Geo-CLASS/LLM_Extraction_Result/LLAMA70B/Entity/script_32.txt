@@ -1,0 +1,5 @@
+{
+  "Theme": ["Snow cover analysis using MODIS/VIIRS and Sentinel-1 data"],
+  "DataSource": ["users/ak_glaciers/NWCC_high_resolution_coordinates_2019_hucs", "USGS/WBD/2017/HUC8", "CGIAR/SRTM90_V4"],
+  "Function": ["Generate daily composites of optical data", "Create image collection of Sentinel-1 data", "Apply wet snow mask to Sentinel-1 data", "Update mask with optical data", "Export data to asset"]
+}

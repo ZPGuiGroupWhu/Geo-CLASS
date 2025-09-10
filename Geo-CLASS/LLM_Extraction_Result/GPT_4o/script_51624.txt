@@ -1,0 +1,21 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Flood monitoring in Myanmar"],
+  "DataSource": ["COPERNICUS/S1_GRD"],
+  "Function": ["Create weekly composite images", "Filter images by date and polarization", "Visualize images", "Create and configure maps", "Add layer selection widget", "Link maps in a split panel"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["COPERNICUS/S1_GRD"],
+    "Function": ["Create weekly composite images", "Filter images by date and polarization", "Visualize images", "Create and configure maps", "Add layer selection widget", "Link maps in a split panel"]
+  }
+}
+```
+
+Total_Token_Usage:
+4181

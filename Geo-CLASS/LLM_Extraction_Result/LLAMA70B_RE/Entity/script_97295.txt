@@ -1,0 +1,15 @@
+{
+    "Theme": [
+        "Land Use Land Cover (LULC) classification"
+    ],
+    "DataSource": [
+        "GOOGLE/DYNAMICWORLD/V1",
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "Filter image collection by date",
+        "Join image collections by system:index",
+        "Extract label and probability from image",
+        "Create visualization with hillshade"
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "Theme": [
+        "Land cover classification and cloud probability analysis"
+    ],
+    "DataSource": [
+        "users/kitmyfaceplease2/eastsouth_asia",
+        "projects/ee-kitmyfaceplease2/assets/EAST_SOUTH_SPLIT2",
+        "COPERNICUS/S2_CLOUD_PROBABILITY"
+    ],
+    "Function": [
+        "Filtering image collection by date and cloud probability",
+        "Creating a mosaic of images for each day",
+        "Masking clouds from images",
+        "Calculating the sum of images",
+        "Calculating the percentage of cloud probability"
+    ]
+}

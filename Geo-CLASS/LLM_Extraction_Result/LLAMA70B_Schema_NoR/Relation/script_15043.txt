@@ -1,0 +1,41 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/abuhafsgaa/Makarfi"
+        ],
+        "Function": [
+            "Sample regions for training",
+            "Define bands for classification",
+            "Classify imagery"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "users/abuhafsgaa/ALLsample"
+        ],
+        "Function": [
+            "Add random column to training dataset",
+            "Split data for training and testing",
+            "Train Random Forest classifier",
+            "Train CART classifier"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "users/abuhafsgaa/DATASET_COMPOSITION_2017_21"
+        ],
+        "Function": [
+            "Compute variable importance",
+            "Display variable importance results"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "users/abuhafsgaa/TEST_SAR_2017_DATASET_BOXCAR"
+        ],
+        "Function": [
+            "Get confusion matrices for accuracy assessment",
+            "Visualize classification results"
+        ]
+    }
+}

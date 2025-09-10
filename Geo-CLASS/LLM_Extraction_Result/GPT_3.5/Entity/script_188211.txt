@@ -1,0 +1,6 @@
+{
+  "Summary": ["The script processes Landsat data to calculate spectral indices and Suspended Sediment Concentration (SSC) in water bodies over time."],
+  "Theme": ["Water quality monitoring", "Spectral index calculation"],
+  "DataSource": ["users/hifengxu/TibetanPlateau", "users/KingDr/TPPoints", "CGIAR/SRTM90_V4", "LANDSAT/LT05/C02/T1_L2", "LANDSAT/LE07/C02/T1_L2", "LANDSAT/LC08/C02/T1_L2"],
+  "Function": ["Creation of Landsat image collection", "Calculation of spectral indices like NDVI, NDWI, EVI", "Extraction of water bodies using spectral indices", "Exporting processed images to Google Drive", "Exporting zonal statistics to CSV"]
+}

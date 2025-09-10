@@ -1,0 +1,29 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Fire area analysis and classification"],
+  "DataSource": ["users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016", "COPERNICUS/S2"],
+  "Function": ["Filtering and mapping of fire areas based on date and location", "Calculation of indices (EVI, NBR1, NBR2) from Sentinel-2 images", "Classification of burned and unburned areas based on indices and thresholds", "Evaluation of classification accuracy using confusion matrices and histograms"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016"],
+        "Function": ["Filtering and mapping of fire areas based on date and location", "Classification of burned and unburned areas based on indices and thresholds", "Evaluation of classification accuracy using confusion matrices and histograms"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Calculation of indices (EVI, NBR1, NBR2) from Sentinel-2 images", "Classification of burned and unburned areas based on indices and thresholds"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 5090, 'completion_tokens': 327, 'total_tokens': 5417}

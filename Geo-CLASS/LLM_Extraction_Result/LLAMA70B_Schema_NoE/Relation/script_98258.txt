@@ -1,0 +1,21 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "regions"
+        ],
+        "Function": [
+            "Filtering area of interest (AOI) from feature collection 'regions'"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S1_GRD"
+        ],
+        "Function": [
+            "Filtering flood images in the flood period",
+            "Creating flood images over time",
+            "Calculating NDFI (Normalized Difference Flood Index)",
+            "Thresholding for masking flood areas"
+        ]
+    }
+}

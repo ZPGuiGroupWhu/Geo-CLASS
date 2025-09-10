@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Filtering image collection by date and cloud coverage", "Computing Normalized Difference Vegetation Index (NDVI)", "Clustering using k-means algorithm"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Filtering SAR data by instrument mode and polarization", "Applying focal mean filter to reduce speckle", "Clustering SAR data using k-means algorithm"]
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["Filter satellite images by cloud cover", "Calculate median image", "Display satellite images", "Calculate NDVI", "Display NDVI", "Detect NDVI change", "Display NDVI change"]
+    },
+    "relation_2": {
+        "DataSource": ["MODIS/006/MOD14A1"],
+        "Function": ["Filter fire data by date", "Display fire mask", "Unmask fire data", "Generate fire power chart"]
+    },
+    "relation_3": {
+        "DataSource": ["MODIS/006/MOD11A1"],
+        "Function": ["Filter temperature data by date", "Convert temperature to Celsius", "Generate temperature chart"]
+    }
+}

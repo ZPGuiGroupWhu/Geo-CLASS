@@ -1,0 +1,34 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land cover analysis", "NDVI calculation", "Locust damage assessment"],
+  "DataSource": ["MODIS/MOD09GA_006_NDVI", "USGS/SRTMGL1_003", "MODIS/006/MCD12Q1", "COPERNICUS/S2_SR"],
+  "Function": ["addNDVI", "filterDate", "filterBounds", "filterMetadata", "mean", "clip", "map", "qualityMosaic", "buffer", "image.seriesByRegion"],
+  "Relationship": ["geometry is used to filter MODIS and Sentinel-2 data", "MODIS data is used to calculate NDVI", "Sentinel-2 data is used to compute NDVI and create RGB images", "Land cover data is used to create a land cover layer"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["MODIS/MOD09GA_006_NDVI", "MODIS/006/MCD12Q1"],
+        "Function": ["addNDVI", "filterDate", "filterBounds", "filterMetadata", "mean", "clip", "map", "qualityMosaic"]
+    },
+    "relation_2": {
+        "DataSource": ["USGS/SRTMGL1_003"],
+        "Function": ["buffer"]
+    },
+    "relation_3": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["filterDate", "filterBounds", "filterMetadata", "mean", "clip", "map", "qualityMosaic", "image.seriesByRegion"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3354, 'completion_tokens': 407, 'total_tokens': 3761}

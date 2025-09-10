@@ -1,0 +1,355 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var Asia = ee.ImageCollection("users/kindgard/Asia/Asia"),
+    Africa = ee.ImageCollection("users/kindgard/Africa"),
+    SUD = ee.ImageCollection("users/kindgard/SUD"),
+    AfricaS = ee.ImageCollection("users/kindgard/AfricaS"),
+    AmericaN = ee.ImageCollection("users/kindgard/AmericaN"),
+    Asia2 = ee.ImageCollection("users/kindgard/Asia2"),
+    Water = /* color: #26ffeb */ee.FeatureCollection(
+        [ee.Feature(
+            ee.Geometry.Point([31.647448539733887, -18.2671895299893]),
+            {
+              "Class": 5,
+              "system:index": "0"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([32.21028323750943, -18.358172401427616]),
+            {
+              "Class": 5,
+              "system:index": "1"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([32.75007245829329, -18.760512359918316]),
+            {
+              "Class": 5,
+              "system:index": "2"
+            })]);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+var countries = ee.FeatureCollection('ft:1tdSwUL7MVpOauSgRzqVTOwdfy17KDbw-1d9omPw');
+
+var Country = countries.filterMetadata('Country', 'equals','Zimbabwe');
+
+Map.centerObject(Country);
+
+
+
+var Landsat5 = ee.ImageCollection('LANDSAT/LT5_L1T');
+
+var Landsat7 = ee.ImageCollection('LANDSAT/LE7_L1T');
+
+var Landsat8 = ee.ImageCollection('LANDSAT/LC08/C01/T1_RT');
+
+
+
+var Asia = ee.ImageCollection("users/kindgard/Asia/Asia");
+
+var Africa = ee.ImageCollection("users/kindgard/Africa");
+
+var SUD = ee.ImageCollection("users/kindgard/SUD");
+
+var AfricaS = ee.ImageCollection("users/kindgard/AfricaS");
+
+var AmericaN = ee.ImageCollection("users/kindgard/AmericaN");
+
+var Asia2 = ee.ImageCollection("users/kindgard/Asia2");
+
+var GL30_Coll = ee.ImageCollection(Asia.merge(Africa).merge(SUD).merge(AfricaS).merge(AmericaN).merge(Asia2));
+
+var GL30 = GL30_Coll.mosaic().clip(Country);
+
+
+
+
+
+//Mask Cities
+
+var GL30_Coll = ee.ImageCollection(Asia.merge(Africa).merge(SUD).merge(AfricaS).merge(AmericaN).merge(Asia2));
+
+var GL30 = GL30_Coll.mosaic().clip(Country);
+
+var cities2 = GL30.eq(80);
+
+
+
+
+
+
+
+var water = ee.Image('JRC/GSW1_0/GlobalSurfaceWater').clip(Country);
+
+var water2 = water.select('transition').lte(2).or(water.select('transition').eq(7)).or(water.select('transition').eq(8)); 
+
+
+
+//Mosaic WET SEASON
+
+
+
+var Landsat8FilteredW = Landsat8.filterBounds(Country) //.filterBounds(geometry)  ->you can filter the collection also with one training point(geometry) to know exactly when an image was taken
+
+.filterDate('2013-01-01', '2017-12-31')
+
+.filter(ee.Filter.calendarRange(315, 120, 'day_of_year')) //WET SEASON (Nov-Apr)
+
+.filterMetadata('CLOUD_COVER','less_than', 10);
+
+var mosaicZ = ee.Algorithms.Landsat.simpleComposite(Landsat8FilteredW, 60, 10, 40, true).clip(Country);
+
+
+
+var rat43_W = mosaicZ.select('B4').divide(mosaicZ.select('B3'));
+
+var rat73_W = mosaicZ.select('B7').divide(mosaicZ.select('B3'));
+
+var rat54_W = mosaicZ.select('B5').divide(mosaicZ.select('B4'));
+
+var rat53_W = mosaicZ.select('B5').divide(mosaicZ.select('B3'));
+
+var imageW = mosaicZ.addBands(rat43_W).addBands(rat73_W).addBands(rat54_W).addBands(rat53_W);
+
+Map.addLayer (imageW, {bands: ['B5','B6','B4'],min: [0.16,0.09,0.01],max: [0.35, 0.5, 0.5] },'Zimbabwe wet season',true );
+
+
+
+//Mosaic SENTINEL
+
+var collection = ee.ImageCollection('COPERNICUS/S2')
+
+.filterBounds(Country)
+
+.filterDate('2016-01-01','2017-10-31')
+
+.filter(ee.Filter.calendarRange(250, 335, 'day_of_year')) // Dry season
+
+.filterMetadata('CLOUDY_PIXEL_PERCENTAGE', 'less_than' ,10);
+
+
+
+var qualityBands = function(image) {
+
+var newImage = image.addBands(image.normalizedDifference(['B8', 'B4' ]))
+
+return (newImage)
+
+};
+
+var S2qualityBands = collection.map(qualityBands);
+
+var mosaicQB = S2qualityBands.qualityMosaic('nd').clip(Country);
+
+
+
+
+
+// Mosaic Tobacco season
+
+var Landsat8Tobacco = Landsat8.filterBounds(Country)
+
+.filterDate('2015-06-01', '2017-12-31')
+
+.filter(ee.Filter.calendarRange(244, 365, 'day_of_year')) //DRY SEASON 
+
+.filterMetadata('CLOUD_COVER','less_than', 10);
+
+var mosaicT = ee.Algorithms.Landsat.simpleComposite(Landsat8Tobacco, 60, 10, 40, true).clip(Country);
+
+var rat43_T = mosaicT.select('B4').divide(mosaicT.select('B3'));
+
+var rat73_T = mosaicT.select('B7').divide(mosaicT.select('B3'));
+
+var rat54_T = mosaicT.select('B5').divide(mosaicT.select('B4'));
+
+var rat53_T = mosaicT.select('B5').divide(mosaicT.select('B3'));
+
+var imageT = mosaicT.addBands(rat43_T).addBands(rat73_T).addBands(rat54_T).addBands(rat53_T);
+
+
+
+
+
+
+
+//Mosaic 2016 - 2017 DRY SEASON
+
+var Landsat8FilteredD = Landsat8.filterBounds(Country)
+
+.filterDate('2016-01-01', '2017-12-31')
+
+.filter(ee.Filter.calendarRange(274, 335, 'day_of_year')) //DRY SEASON (April-Sept)
+
+.filterMetadata('CLOUD_COVER','less_than', 10);
+
+var mosaicZ2 = ee.Algorithms.Landsat.simpleComposite(Landsat8FilteredD, 50, 10, 40, true).clip(Country);
+
+var rat43_2016 = mosaicZ2.select('B4').divide(mosaicZ2.select('B3'));
+
+var rat73_2016 = mosaicZ2.select('B7').divide(mosaicZ2.select('B3'));
+
+var rat54_2016 = mosaicZ2.select('B5').divide(mosaicZ2.select('B4'));
+
+var rat53_2016 = mosaicZ2.select('B5').divide(mosaicZ2.select('B3'));
+
+var imageD = mosaicZ2.addBands(rat43_2016).addBands(rat73_2016).addBands(rat54_2016).addBands(rat53_2016);
+
+Map.addLayer (mosaicZ2, {bands: ['B5','B6','B4'],min: [0.01,0.1,0.01],max: [0.4, 0.54, 0.4] },'Zimbabwe dry season',true );
+
+
+
+
+
+var mosaic_all = mosaicZ.addBands(rat43_W).addBands(rat73_W).addBands(rat54_W).addBands(rat53_W)
+
+.addBands(mosaicT).addBands(rat43_T).addBands(rat73_T).addBands(rat54_T).addBands(rat53_T)
+
+.addBands(mosaicZ2).addBands(rat43_2016).addBands(rat73_2016).addBands(rat54_2016).addBands(rat53_2016);
+
+print (mosaic_all);
+
+
+
+
+
+
+
+var FRAquest = ee.FeatureCollection('ft:1gvizfsdJL2f4cr0OSI5744HnaAeWU39w4cDO9aLh');
+
+
+
+Map.addLayer(FRAquest, {color: '00FF00'} ,'FRAquest', true);
+
+
+
+var odk_13oct17 = ee.FeatureCollection('ft:1VyLhtXjayg1nD2auTSF73e-94uuuqEe0dLXkqk-y');
+
+
+
+Map.addLayer(odk_13oct17,{},'odk', true);
+
+
+
+var ESA_Africa = ee.Image('users/kindgard/ESACCI-LC-L4-LC10-Map-20m-P1Y-2016-v10');
+
+var ESA = ESA_Africa.clip(Country);
+
+
+
+var ESA_crops = ESA.eq(4);
+
+
+
+
+
+var map1992 = ee.Image('users/ValeriaContessa/Map_1992_rast');
+
+Map.addLayer(map1992.mask(map1992),{ min:1, max:12, palette: ['68d624', 'bdd6b5', '19d8c6', 'd81ac0', 'd0cad6', '078a11', 'd6ad71', 'd63000', 'e7e125', 'a56313', '060100', '060100'] },
+
+'Map 1992');
+
+
+
+var forest_1992 = map1992.eq(1).or(map1992.eq(6)).or(map1992.eq(8));
+
+Map.addLayer(forest_1992.mask(forest_1992), { min:1, max:1, palette: ['078a11']}, 'Forest in map 1992');
+
+
+
+//Mosaic SENTINEL
+
+var collection = ee.ImageCollection('COPERNICUS/S2')
+
+.filterBounds(Country)
+
+.filterDate('2016-01-01','2017-10-31')
+
+.filter(ee.Filter.calendarRange(250, 335, 'day_of_year')) // Dry season
+
+.filterMetadata('CLOUDY_PIXEL_PERCENTAGE', 'less_than' ,10);
+
+
+
+var qualityBands = function(image) {
+
+var newImage = image.addBands(image.normalizedDifference(['B8', 'B4' ]))
+
+return (newImage)
+
+};
+
+var S2qualityBands = collection.map(qualityBands);
+
+var mosaicQB = S2qualityBands.qualityMosaic('nd').clip(Country);
+
+
+
+Map.centerObject(Country);
+
+Map.addLayer (mosaicQB, {bands: ['B8', 'B4', 'B3'], min: [550, 500, 700], max: [4700, 3000, 2200]}, 'Mosaic quality Bands Sentinel', true );
+
+
+
+
+
+//Mosaic WET SEASON
+
+
+
+var Landsat8FilteredW = Landsat8.filterBounds(Country) //.filterBounds(geometry)  ->you can filter the collection also with one training point(geometry) to know exactly when an image was taken
+
+.filterDate('2013-01-01', '2017-12-31')
+
+.filter(ee.Filter.calendarRange(315, 120, 'day_of_year')) //WET SEASON (Nov-Apr)
+
+.filterMetadata('CLOUD_COVER','less_than', 10);
+
+var mosaicZ = ee.Algorithms.Landsat.simpleComposite(Landsat8FilteredW, 60, 10, 40, true).clip(Country);
+
+
+
+var rat43_W = mosaicZ.select('B4').divide(mosaicZ.select('B3'));
+
+var rat73_W = mosaicZ.select('B7').divide(mosaicZ.select('B3'));
+
+var rat54_W = mosaicZ.select('B5').divide(mosaicZ.select('B4'));
+
+var rat53_W = mosaicZ.select('B5').divide(mosaicZ.select('B3'));
+
+var imageW = mosaicZ.addBands(rat43_W).addBands(rat73_W).addBands(rat54_W).addBands(rat53_W);
+
+
+
+
+
+//Classification with algorithm Cart 
+
+var points = ee.FeatureCollection([Forest, Shrubland, Cropland, Grassland, Water, BareSoil]).flatten();
+
+var classZimbabwe = imageW.trainClassifier({'training_features': points,
+
+                                          'training_property':'Class',
+
+                                          'classifier_name': 'Cart',
+
+                                          'crs':'EPSG:4326',
+
+                                          'crs_transform':[0.0002694945852358564,0,-180,0,-0.0002694945852358564,90],});
+
+
+
+var classified = imageW.classify(classZimbabwe);
+
+
+
+//Application of Masks
+
+
+
+var classified_correct = classified.where(water2.eq(1),5);
+
+var classified_correct2 = classified_correct.where(cities2.eq(1),7);
+
+
+
+Map.addLayer(classified_correct2, {min:1, max:7, palette :[['1fbd0c','bf8c25', 'f6b29e','fffd20','26ffeb','b318c2', 'c20125']]},'landsat8Wet_Season');
+
+
+

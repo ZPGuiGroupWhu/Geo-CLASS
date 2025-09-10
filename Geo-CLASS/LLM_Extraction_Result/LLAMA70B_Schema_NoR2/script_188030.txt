@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover classification and vegetation health analysis in Tehran"],
+  "DataSource": ["projects/ee-kimiachenaary/assets/Tehran", "LANDSAT/LC08/C01/T1_TOA"],
+  "Function": ["Cloud masking", "Image collection filtering", "NDVI calculation", "Image clipping", "Counting pixels", "Filtering by range", "Mean value calculation", "Max value calculation", "Min value calculation", "Standard deviation calculation", "Region-based statistics calculation", "Data export to CSV"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["projects/ee-kimiachenaary/assets/Tehran"],
+        "Function": ["Image collection filtering", "Image clipping", "Counting pixels"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_TOA"],
+        "Function": ["Cloud masking", "NDVI calculation", "Filtering by range", "Mean value calculation", "Max value calculation", "Min value calculation", "Standard deviation calculation", "Region-based statistics calculation", "Data export to CSV"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4895, 'completion_tokens': 284, 'total_tokens': 5179}

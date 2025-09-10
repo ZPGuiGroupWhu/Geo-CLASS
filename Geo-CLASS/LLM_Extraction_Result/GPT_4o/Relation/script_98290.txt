@@ -1,0 +1,14 @@
+{
+  "relation_1": {
+    "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+    "Function": ["Mask clouds and shadows", "Filter image collection by date", "Calculate median composite", "Display image layer", "Sample regions for training", "Train classifier", "Classify image", "Assess classification accuracy", "Generate area chart by class", "Sum pixel areas by class", "Train Random Forest classifier", "Train Naive Bayes classifier", "Train SVM classifier", "Combine classifications using mode"]
+  },
+  "relation_2": {
+    "DataSource": ["LANDSAT/LC08/C01/T1"],
+    "Function": ["Display image layer"]
+  },
+  "relation_3": {
+    "DataSource": ["users/nclinton/demo_landcover_labels"],
+    "Function": ["Sample regions for training", "Train classifier", "Classify image", "Assess classification accuracy", "Train Random Forest classifier", "Train Naive Bayes classifier", "Train SVM classifier", "Combine classifications using mode"]
+  }
+}

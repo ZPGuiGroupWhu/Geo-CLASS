@@ -1,0 +1,29 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Phát hiện sớm mất rừng, suy thoái rừng và lửa rừng ở Sóc Sơn_Hà Nội bằng ảnh vệ tinh Sentinel 2"],
+  "DataSource": ["COPERNICUS/S2", "ft:1ovvyN_dzo01mRw8uSNMIYNg-HKyGTrqLErfg26X0"],
+  "Function": ["Filtering and sorting image collection", "Calculating NDVI and NBR", "Exporting image properties and mosaic", "Visualizing images with different visualization options"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Filtering and sorting image collection", "Calculating NDVI and NBR", "Exporting image properties and mosaic", "Visualizing images with different visualization options"]
+    },
+    "relation_2": {
+        "DataSource": ["ft:1ovvyN_dzo01mRw8uSNMIYNg-HKyGTrqLErfg26X0"],
+        "Function": ["Filtering and sorting image collection", "Calculating NDVI and NBR", "Exporting image properties and mosaic", "Visualizing images with different visualization options"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 5000, 'completion_tokens': 350, 'total_tokens': 5350}

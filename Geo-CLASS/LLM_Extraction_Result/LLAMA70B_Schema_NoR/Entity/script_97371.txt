@@ -1,0 +1,26 @@
+{
+    "Theme": [
+        "Crop monitoring and analysis in Piura, Peru"
+    ],
+    "DataSource": [
+        "FAO/GAUL/2015/level1",
+        "USGS/GFSAD1000_V0",
+        "COPERNICUS/S2_SR"
+    ],
+    "Function": [
+        "Selecting landcover band",
+        "Filtering by crop type",
+        "Generating points from image",
+        "Masking cloud and snow pixels",
+        "Adding NDVI band",
+        "Filtering by date",
+        "Filtering by bounds",
+        "Calculating median composite",
+        "Generating time series",
+        "Exporting to CSV",
+        "Charting NDVI values",
+        "Reducing regions",
+        "Joining tables",
+        "Merging observations"
+    ]
+}

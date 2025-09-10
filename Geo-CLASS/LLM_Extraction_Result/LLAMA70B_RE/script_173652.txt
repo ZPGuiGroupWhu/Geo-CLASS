@@ -1,0 +1,32 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover change analysis using Landsat 8 and LandTrendr"],
+  "DataSource": ["users/jrmancerafGEE/POL_SUB_AE_1055", "users/jrmancerafGEE/PTS_SUB_AE_1055", "LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Masking cloud shadows and clouds in Landsat 8 images", "Filtering Landsat 8 images by date", "Clipping images to area of interest", "Running LandTrendr algorithm", "Getting change map layers", "Exporting change data to Google Drive"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/jrmancerafGEE/POL_SUB_AE_1055"],
+        "Function": ["Clipping images to area of interest", "Running LandTrendr algorithm"]
+    },
+    "relation_2": {
+        "DataSource": ["users/jrmancerafGEE/PTS_SUB_AE_1055"],
+        "Function": ["Exporting change data to Google Drive"]
+    },
+    "relation_3": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Masking cloud shadows and clouds in Landsat 8 images", "Filtering Landsat 8 images by date", "Getting change map layers"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3823, 'completion_tokens': 362, 'total_tokens': 4185}

@@ -1,0 +1,17 @@
+{
+    "Theme": [
+        "Landcover classification using Landsat 8 imagery"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C01/T1"
+    ],
+    "Function": [
+        "Load Landsat 8 scaled radiance image collection",
+        "Make a cloud-free composite",
+        "Merge geometry layers into a single FeatureCollection",
+        "Sample the composite to generate training data",
+        "Train a CART classifier",
+        "Classify the composite",
+        "Perform accuracy assessment using random uniforms and testing partition"
+    ]
+}

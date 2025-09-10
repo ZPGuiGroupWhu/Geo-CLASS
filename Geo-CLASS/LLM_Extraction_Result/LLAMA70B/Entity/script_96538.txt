@@ -1,0 +1,5 @@
+{
+  "Theme": ["Panteon characterization using Sentinel-2 data"],
+  "DataSource": ["users/eeranyartrodrigo/panteones/polygonsData/polsPanteon", "projects/ee-vulnerability-gee4geo/assets/ranyartRodrigo/mexicoContorno", "COPERNICUS/S2"],
+  "Function": ["Buffering features", "Masking clouds and cirrus", "Calculating vegetation indices", "Clipping images to feature geometry", "Reducing image regions to median values"]
+}

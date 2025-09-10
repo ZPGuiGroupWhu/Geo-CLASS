@@ -1,0 +1,22 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_SR",
+            "LANDSAT/LE07/C01/T1_SR",
+            "LANDSAT/LT05/C01/T1_SR"
+        ],
+        "Function": [
+            "Harmonization of Landsat 8 to Landsat 7 reflectance bands",
+            "Retrieval of surface reflectance image collections for a given year and area of interest",
+            "Medoid compositing of image collections to reduce to single image per year"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "users/juandb/bloco_TIs_Kayapo"
+        ],
+        "Function": [
+            "Building of annual mosaic collection from medoid composites"
+        ]
+    }
+}

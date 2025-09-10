@@ -1,0 +1,15 @@
+{
+    "Theme": [
+        "Land Surface Temperature analysis"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C01/T1_SR",
+        "users/khoirurrizqi/Jawa"
+    ],
+    "Function": [
+        "Masking cloud shadows and clouds from Landsat 8 images",
+        "Calculating NDVI and thermal bands",
+        "Calculating fractional vegetation and emissivity",
+        "Calculating Land Surface Temperature (LST)"
+    ]
+}

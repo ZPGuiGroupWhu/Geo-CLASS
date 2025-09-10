@@ -1,0 +1,17 @@
+{
+    "Theme": [
+        "Land cover classification and Landsat image processing"
+    ],
+    "DataSource": [
+        "users/juandb/bloco_TIs_Kayapo",
+        "LANDSAT/LC08/C01/T1_SR",
+        "LANDSAT/LE07/C01/T1_SR",
+        "LANDSAT/LT05/C01/T1_SR"
+    ],
+    "Function": [
+        "Annual SR time series collection building",
+        "L8 to L7 harmonization",
+        "Retrieve a sensor SR collection",
+        "Reduce collection to single image per year by medoid"
+    ]
+}

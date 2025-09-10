@@ -1,0 +1,10 @@
+{
+  "relation_1": {
+    "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2"],
+    "Function": ["Filter regions by attribute", "Add layer to map"]
+  },
+  "relation_2": {
+    "DataSource": ["COPERNICUS/S1_GRD"],
+    "Function": ["Filter images by date", "Filter images by metadata", "Count images", "Set visualization parameters", "Mosaic images", "Clip images to AOI", "Center map on object", "Merge image collections", "Calculate mean of images", "Calculate minimum of images", "Calculate NDFI", "Reduce region to get mean", "Reduce region to get standard deviation", "Calculate threshold", "Mask image by threshold"]
+  }
+}

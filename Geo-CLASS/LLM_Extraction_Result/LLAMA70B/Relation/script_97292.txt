@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["USDA/NAIP/DOQQ"],
+        "Function": ["Filter image collection by date and bounds", "Clip image to area of interest", "Perform image segmentation", "Compute per-cluster standard deviation", "Compute cluster area and perimeter", "Compute cluster width and height"]
+    },
+    "relation_2": {
+        "DataSource": ["USDA/NASS/CDL/2016"],
+        "Function": ["Train classifier for land cover classification", "Classify objects using trained classifier", "Compute spectral angle between pixels and cluster means", "Find pixels with maximum spectral angle"]
+    }
+}

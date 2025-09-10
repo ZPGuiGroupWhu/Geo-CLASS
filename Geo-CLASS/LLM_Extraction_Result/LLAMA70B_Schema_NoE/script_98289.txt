@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Exploring Image Collection, Temporal Mosaics, Spectral Signatures"],
+  "DataSource": ["LANDSAT/LC08/C02/T1_L2"],
+  "Function": ["Filtering image collection by date range", "Filtering image collection by geography", "Flattening image collection into single image for display", "Removing images with more than 5% cloud cover", "Masking clouds in images", "Assigning colors and intensities to represent spectral bands"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C02/T1_L2"],
+        "Function": ["Filtering image collection by date range", "Filtering image collection by geography", "Flattening image collection into single image for display", "Removing images with more than 5% cloud cover", "Masking clouds in images", "Assigning colors and intensities to represent spectral bands"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3070, 'completion_tokens': 237, 'total_tokens': 3307}

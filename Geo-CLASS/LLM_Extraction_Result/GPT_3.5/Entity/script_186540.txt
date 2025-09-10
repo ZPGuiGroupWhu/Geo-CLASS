@@ -1,0 +1,6 @@
+{
+  "Summary": ["The script filters Landsat 8 images, calculates NDVI, and analyzes vegetation changes in specific regions."],
+  "Theme": ["Vegetation analysis", "Cloud cover removal", "NDVI calculation", "Change detection"],
+  "DataSource": ["LANDSAT/LC8_L1T_TOA_FMASK", "ft:1XPgyHDQHN4d5IF4x8u5ZkJxkVQ_xKWFFuUTi9ofT", "rich_forest", "no_forest"],
+  "Function": ["Cloud removal from images", "NDVI calculation", "Mean calculation for rich forest and no forest areas", "Time series visualization"]
+}

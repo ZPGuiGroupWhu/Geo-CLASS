@@ -1,0 +1,15 @@
+{
+    "Theme": [
+        "Waterbody surface area analysis"
+    ],
+    "DataSource": [
+        "LANDSAT/LT05/C01/T1"
+    ],
+    "Function": [
+        "Filter image collection by bound",
+        "Generate annual composite images",
+        "Calculate NDWI",
+        "Segment with Otsu method",
+        "Calculate area of segmented waterbody"
+    ]
+}

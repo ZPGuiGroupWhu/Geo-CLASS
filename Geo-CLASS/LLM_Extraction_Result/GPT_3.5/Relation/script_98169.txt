@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["users/elaurenyoung/usa_states"],
+        "Function": ["Masking clouds and water in Landsat 8 imagery", "Creating image composites for Landsat 8 L2 and SR", "Calculating NDVI for Landsat 8 L2 and SR imagery", "Exporting NDVI statistics to Google Drive"]
+    },
+    "relation_2": {
+        "DataSource": ["users/elaurenyoung/Site_summary_12_Apr_2022-point"],
+        "Function": ["Masking clouds and water in Landsat 8 imagery", "Creating image composites for Landsat 8 L2 and SR", "Calculating NDVI for Landsat 8 L2 and SR imagery", "Exporting NDVI statistics to Google Drive"]
+    }
+}

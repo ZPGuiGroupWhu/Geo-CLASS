@@ -1,0 +1,33 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land cover classification and change detection in Brazilian Amazon"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_TOA", "LANDSAT/LE07/C01/T1_TOA", "LANDSAT/LT05/C01/T1_TOA", "LANDSAT/LC08/C01/T1_SR", "LANDSAT/LE07/C01/T1_SR", "LANDSAT/LT05/C01/T1_SR"],
+  "Function": ["Filtering image collection by date and bounds", "Applying cloud score and masking", "Computing median or medoid composites", "Adding common indices", "Exporting composites to asset"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_TOA", "LANDSAT/LE07/C01/T1_TOA", "LANDSAT/LT05/C01/T1_TOA"],
+        "Function": ["Filtering image collection by date and bounds", "Applying cloud score and masking", "Computing median or medoid composites"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR", "LANDSAT/LE07/C01/T1_SR", "LANDSAT/LT05/C01/T1_SR"],
+        "Function": ["Filtering image collection by date and bounds", "Applying cloud score and masking", "Computing median or medoid composites", "Adding common indices"]
+    },
+    "relation_3": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_TOA", "LANDSAT/LE07/C01/T1_TOA", "LANDSAT/LT05/C01/T1_TOA", "LANDSAT/LC08/C01/T1_SR", "LANDSAT/LE07/C01/T1_SR", "LANDSAT/LT05/C01/T1_SR"],
+        "Function": ["Exporting composites to asset"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 7561, 'completion_tokens': 549, 'total_tokens': 8110}

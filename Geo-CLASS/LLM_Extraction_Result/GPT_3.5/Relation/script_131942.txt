@@ -1,0 +1,6 @@
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["Cloud masking for cloud-free image extraction", "Image clipping over study area", "Filtering Sentinel scenes by date and cloud cover percentage", "Creating training data for classification", "Running random forest classifier", "Accuracy assessment using confusion matrix", "Reprojecting classified image to UTM", "Converting classified image to vector", "Exporting classified and reprojected images"]
+    }
+}

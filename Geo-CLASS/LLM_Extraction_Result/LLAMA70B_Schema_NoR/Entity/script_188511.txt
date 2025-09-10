@@ -1,0 +1,19 @@
+{
+    "Theme": [
+        "Climate and precipitation analysis in East South Asia"
+    ],
+    "DataSource": [
+        "UCSB-CHG/CHIRPS/PENTAD",
+        "COPERNICUS/S2_CLOUD_PROBABILITY",
+        "users/kitmyfaceplease2/eastsouth_asia",
+        "projects/ee-kitmyfaceplease2/assets/EAST_SOUTH_SPLIT2"
+    ],
+    "Function": [
+        "Filtering image collection by date",
+        "Clipping image to region of interest",
+        "Calculating total precipitation",
+        "Masking clouds in images",
+        "Calculating percentage of cloud-free pixels",
+        "Computing correlation coefficient between images"
+    ]
+}

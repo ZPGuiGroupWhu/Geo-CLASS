@@ -1,0 +1,5 @@
+{
+  "Theme": ["Cloud masking", "Water detection", "Vegetation detection"],
+  "DataSource": ["TIGER/2016/States", "LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Filter image collection by region and date", "Extract QA bits for cloud masking", "Mask cloudy pixels", "Calculate MNDWI", "Calculate EVI", "Calculate NDVI", "Calculate LSWI", "Detect water", "Detect vegetation", "Calculate frequency of water and vegetation"]
+}

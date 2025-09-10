@@ -1,0 +1,458 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var LakePoint = /* color: #ff0101 */ee.Geometry.Point([-112.47061047089544, 41.094225632745065]),
+    GreatSaltLake = 
+    /* color: #1715d6 */
+    /* shown: false */
+    ee.Geometry.LinearRing(
+        [[-113.24040073373186, 41.80254690586626],
+         [-113.32221298593645, 41.64674109948993],
+         [-113.32691172044709, 41.490919077048645],
+         [-113.28159946420061, 41.20397716062476],
+         [-112.94102329232561, 40.722807453608716],
+         [-112.46311801888811, 40.489264038789194],
+         [-111.97422641732561, 40.54772639314761],
+         [-111.79866421244608, 40.71225332251785],
+         [-111.73547064238221, 40.82766485031438],
+         [-111.70506137826311, 40.95968268080942],
+         [-111.78745883920061, 41.35671528515572],
+         [-112.17198032357561, 41.788213295822814],
+         [-112.44641896294138, 41.86015589893777],
+         [-112.72129672982561, 41.89052588966761],
+         [-113.0084930163435, 41.89182503839424],
+         [-113.24040073373186, 41.80254690586626]]),
+    LakeBound = 
+    /* color: #4affd4 */
+    /* shown: false */
+    /* displayProperties: [
+      {
+        "type": "rectangle"
+      }
+    ] */
+    ee.Geometry.Polygon(
+        [[[-113.35433307005853, 41.95820849132824],
+          [-113.35433307005853, 40.453995798105005],
+          [-111.67067828490228, 40.453995798105005],
+          [-111.67067828490228, 41.95820849132824]]], null, false);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+
+
+
+
+// STUDENT NAME: Kenneth Ekpetere
+
+/////////////// ASSIGNMENT 8 ///////////////////////
+
+
+
+
+
+/////////////// PART 4 ///////////////////////
+
+print("#############// PART 4: Experience/ Issues/ Observations //##############")
+
+
+
+// This was by far my most challenging assignment for this course and most loved when i finally got it to run.
+
+// There was litrary no documentation out there to help with the thresholding over collections/composited collections.
+
+// I enjoyed the assignment until i got to the Otsu thresholding part. Initially I was using the Otsu wrongly by 
+
+// trying to threshold over collections using the default set up for a single Image. To solve this problem,
+
+// I had to set up a nexted function that includes the Otsu function during the segmentation stage. I decided to use a dafult bin
+
+// to make sure the optimal threshold is selected.
+
+// Another challenge i encountered was the NDWI bands i used for my analysis. During calculation of area segment, only INTEGER NDWI
+
+// could be selected. I had to use the "NDWI_1" integer type before i could proceed. Then the count for pixels did not work until i 
+
+// used the "NDWI_1_1" before charting.
+
+
+
+// As noticed in my past assignments, I have alternated between GreatSalt Lake and Clinton Lake. This is because of the GreatSalt Lake
+
+// is big and often breaks my code. I started this analysis using Clinton Lake (see code here: https://code.earthengine.google.com/3a1ce7092b7a25202561b89dbe57295d)
+
+// However, I insist on the GreatSalt Lake so as to show the decline in Lake surface area over time as I showed in my Homework7.
+
+// Because of the size of the lake, I used a scale of "500" against the default scale of "30". 
+
+// Also, I only used months without snow and ice to avoid misrepresentation of water. Hence i only selected images between June and October.
+
+// Overall, this assignment took me 10 days to complete, and really afford me the time to understand the underlying concepts.
+
+
+
+
+
+
+
+///////////////// PART 1 ////////////////////////
+
+print("#############// PART 1: Defining Waterbody and generating annual composite images using//##############")
+
+
+
+// Filter Image collection by Bound
+
+var L5Raw = ee.ImageCollection('LANDSAT/LT05/C01/T1').filterBounds(LakeBound);
+
+
+
+// set year list for colection interval
+
+var stepList = ee.List.sequence(1984, 2011);
+
+
+
+// Set Arguement/input variables for LandsatSimple Composite
+
+var percentile = 30;
+
+var cloudScoreRange = 30;
+
+var maxDepth = 40;
+
+
+
+// Filter image collection using SimpleComposite method
+
+var compositeImgsA = stepList.map(function(year){
+
+  var startDate = ee.Date.fromYMD(year,6,1); // summer month // start Month //
+
+  var endDate = ee.Date.fromYMD(year,10,31); // Fall month // End Month //
+
+  var collection = L5Raw.filterDate(startDate, endDate)
+
+  var compositeA = ee.Algorithms.Landsat.simpleComposite(collection, percentile, cloudScoreRange, maxDepth, true)
+
+      .set({"Year": year});
+
+  return compositeA;
+
+});
+
+
+
+//turn list of images to an image collection
+
+var compositeImgs = ee.ImageCollection(compositeImgsA);
+
+print('Yearly Filtered Composite images:', compositeImgs);
+
+
+
+
+
+
+
+///////////////// PART 2 ////////////////////////
+
+print("#############// PART 2: Calculate NDWI for composite Images and Segment with Otsu method//##############")
+
+
+
+//Compute NDWI
+
+//
+
+//Normalized difference water index (NDWI) by McFeeters (1996)
+
+var ndwi = function(img){
+
+  return img.expression(
+
+    '(GREEN - NIR) / (GREEN + NIR)', {
+
+    'NIR': img.select('B4'),
+
+    'GREEN': img.select('B2')
+
+    }).rename('NDWI')
+
+    .set({ //add year property
+
+      'Year': img.get('Year')
+
+    });
+
+    
+
+};
+
+
+
+// Establish Clip Function for clipping boundary
+
+var clipBound = function(img) {
+
+  return img.clip(LakeBound)
+
+};
+
+
+
+// map composite to Clip Bounday Function // reduce processing or computation time
+
+var compositeImgs = compositeImgs.map(clipBound);
+
+
+
+// Map NDWI to composite
+
+var ndwiImgs = compositeImgs.map(ndwi);
+
+var ndwiYearlyComposite = ndwiImgs; // assign to new object for clarity
+
+print('NDWI images', ndwiYearlyComposite);
+
+
+
+// Visualize image
+
+var vis = {'bands':['B4','B3','B2']}; 
+
+Map.centerObject(LakeBound, 8);
+
+Map.addLayer(compositeImgs, vis, 'composites');
+
+Map.addLayer(ndwiImgs, {},'NDWI Images',false);
+
+
+
+
+
+// //Segment NDWI image using Otsu
+
+
+
+var image = ndwiYearlyComposite;
+
+var polygon = LakeBound;
+
+
+
+
+
+// // set up function to map Otsu to collection.   
+
+var Otsu = function(OtsuComposite) {
+
+  
+
+  var histogram = OtsuComposite.select('NDWI').reduceRegion({
+
+  reducer: ee.Reducer.histogram(255)
+
+      .combine('mean', null, true)
+
+      .combine('variance', null, true), 
+
+  geometry: polygon, 
+
+  scale: 500,
+
+  bestEffort: true
+
+  });
+
+  histogram = histogram.get('NDWI_histogram');
+
+
+
+  var counts = ee.Array(ee.Dictionary(histogram).get('histogram'));
+
+  var means = ee.Array(ee.Dictionary(histogram).get('bucketMeans'));
+
+  var size = means.length().get([0]);
+
+  var total = counts.reduce(ee.Reducer.sum(), [0]).get([0]);
+
+  var sum = means.multiply(counts).reduce(ee.Reducer.sum(), [0]).get([0]);
+
+  var mean = sum.divide(total);
+
+  
+
+  var indices = ee.List.sequence(1, size);
+
+  
+
+  // Compute between sum of squares, where each mean partitions the data.
+
+  var bss = indices.map(function(i) {
+
+    var aCounts = counts.slice(0, 0, i);
+
+    var aCount = aCounts.reduce(ee.Reducer.sum(), [0]).get([0]);
+
+    var aMeans = means.slice(0, 0, i);
+
+    var aMean = aMeans.multiply(aCounts)
+
+        .reduce(ee.Reducer.sum(), [0]).get([0])
+
+        .divide(aCount);
+
+    var bCount = total.subtract(aCount);
+
+    var bMean = sum.subtract(aCount.multiply(aMean)).divide(bCount);
+
+    return aCount.multiply(aMean.subtract(mean).pow(2)).add(
+
+          bCount.multiply(bMean.subtract(mean).pow(2)));
+
+  });
+
+  
+
+  // print(ui.Chart.array.values(ee.Array(bss), 0, means));
+
+  
+
+  // Return the mean value corresponding to the maximum BSS.
+
+  var Thresh = means.sort(bss).get([-1]);
+
+  
+
+  ////extract water body pixels by converting NDWI >= mndwiThreshold to 1 and the rest to masked
+
+  var ndwiImg = OtsuComposite.select('NDWI');
+
+  var waterBodyImgs = ndwiImg.gt(Thresh).updateMask(ndwiImg.gt(Thresh));
+
+  return(OtsuComposite.addBands(waterBodyImgs))
+
+   .set({ //add year property
+
+            'Year': ndwiImg.get('Year')
+
+          });
+
+         
+
+};
+
+
+
+var threshold = ndwiYearlyComposite.map(Otsu);
+
+print('Yearly Thresholds:', threshold);
+
+
+
+
+
+
+
+///////////////// PART 3 ////////////////////////
+
+print("#############// PART 3: Calculate Area of Segmented Waterbody//##############")
+
+
+
+var ndwiThreshold = threshold;
+
+
+
+//calculate water body surface area (number of pixels) using reduceToVectors
+
+var waterBodyVectors = ndwiThreshold.map(function(waterBodyImg){
+
+  //vectorize water bodys and count water body pixels
+
+  var tndwi = waterBodyImg.select('NDWI_1'); // ONLY INTEGER NDWI band could be selected
+
+  var v = tndwi 
+
+    .addBands(tndwi) //add the band for counting the pixels in a water body
+
+    .reduceToVectors({
+
+      geometry: LakeBound, //region used to reduce the calculation
+
+      //crs: zones.projection(),
+
+      scale: 500,
+
+      geometryType: 'polygon',
+
+      eightConnected: true, //false,
+
+      labelProperty: 'Waterbodies',
+
+      reducer: ee.Reducer.count(), //ee.Reducer.sum()
+
+      maxPixels:1e10 //default is 1e7
+
+    });
+
+  //add year property to each vector
+
+  var vp = v.map(function(p){
+
+    return p.set({
+
+      'Year': waterBodyImg.get('Year')
+
+    });
+
+  });
+
+  
+
+  return vp;
+
+}).flatten();
+
+print('Water Body Vectors', waterBodyVectors);
+
+
+
+//
+
+//Filter the water body
+
+//
+
+var theWaterBodyVector = waterBodyVectors.filterBounds(LakePoint);
+
+print('The Waterbody Surface Area Vector', theWaterBodyVector);
+
+
+
+// Make a chart by feature.
+
+var chart = ui.Chart.feature.byFeature(theWaterBodyVector, 'Year','count')
+
+    .setChartType('ColumnChart')
+
+    .setOptions({
+
+      title: 'Total number of pixels by year',
+
+      hAxis: {title: 'Year'},
+
+      vAxis: {title: 'Pixels'}
+
+});
+
+
+
+// Print the charts.
+
+print(chart);
+
+
+
+//Show the image
+
+Map.centerObject(LakeBound, 8);
+
+Map.addLayer(theWaterBodyVector, {color:'AAAAFF'},'Waterbody Surface Vector');
+

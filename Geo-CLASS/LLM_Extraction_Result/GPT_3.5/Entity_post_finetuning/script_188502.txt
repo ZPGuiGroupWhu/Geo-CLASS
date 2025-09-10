@@ -1,0 +1,17 @@
+{
+    "Summary": [
+        "The script processes Sentinel-1 SAR data to detect water bodies and analyze their area changes over time."
+    ],
+    "Theme": [
+        "AEROSOL SIZE DISTRIBUTION"
+    ],
+    "DataSource": [
+        "COPERNICUS/S1_GRD"
+    ],
+    "Function": [
+        "NDVI (Normalized Difference Vegetation Index calculation)",
+        "Cloud Masking And Quality Filtering",
+        "Vegetation And Water Indices Calculation",
+        "MNDWI (Modified Normalized Difference Water Index calculation)"
+    ]
+}

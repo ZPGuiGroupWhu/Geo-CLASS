@@ -1,0 +1,6 @@
+{
+  "Summary": ["Script for pre- and post-fire monitoring using Earth observations."],
+  "Theme": ["Fire monitoring"],
+  "DataSource": ["FAO/GAUL/2015/level0", "COPERNICUS/S2", "LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Cloud and snow masking", "Mosaicking and clipping images", "Calculating NBR for pre- and post-fire images", "Calculating dNBR", "Adding layers to map", "Calculating burned area", "Exporting dNBR file", "Exporting burned area stats as CSV"]
+}

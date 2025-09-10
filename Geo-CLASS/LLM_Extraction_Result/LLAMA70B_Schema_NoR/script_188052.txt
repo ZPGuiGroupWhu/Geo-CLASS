@@ -1,0 +1,31 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Water Detection and Extraction"],
+  "DataSource": ["projects/ee-kimmmydanny/assets/tingxialiuyu", "LANDSAT/LC08/C01/T1_RT_TOA", "COPERNICUS/S2_SR"],
+  "Function": ["Cloud Masking", "Image Collection Filtering", "MNDWI Index Calculation", "Image Clipping", "Otsu Thresholding", "Water Extraction", "Area Calculation", "Image Exporting"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response that organizes the extracted information into a structured format:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["projects/ee-kimmmydanny/assets/tingxialiuyu"],
+        "Function": ["Cloud Masking", "Image Collection Filtering", "Image Clipping"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_RT_TOA"],
+        "Function": ["MNDWI Index Calculation", "Otsu Thresholding", "Water Extraction"]
+    },
+    "relation_3": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["Area Calculation", "Image Exporting"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3960, 'completion_tokens': 308, 'total_tokens': 4268}

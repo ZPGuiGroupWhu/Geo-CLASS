@@ -1,0 +1,18 @@
+{
+    "Theme": [
+        "Land cover classification and vegetation health analysis using Landsat 8 imagery"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C01/T1_TOA",
+        "projects/ee-kimiachenaary/assets/Tehran"
+    ],
+    "Function": [
+        "Cloud masking using BQA band",
+        "NDVI calculation using Landsat 8 bands",
+        "Clipping dataset according to geometry",
+        "Filtering dataset by date and bounds",
+        "Visualizing dataset using RGB and NDVI color palettes",
+        "Calculating mean and max values for each polygon",
+        "Exporting results to CSV files"
+    ]
+}

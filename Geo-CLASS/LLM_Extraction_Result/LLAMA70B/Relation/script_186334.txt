@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["MODIS/006/MOD09Q1"],
+        "Function": ["Image collection filtering by date", "NDVI calculation", "Image masking and clipping", "Image visualization with random colors"]
+    },
+    "relation_2": {
+        "DataSource": ["users/khoapv/Ranhgioi_DL"],
+        "Function": ["Buffer creation around sugar mills", "Image classification using k-means clustering", "Class merging and remapping", "Image refinement using sugar mill buffers"]
+    }
+}

@@ -1,0 +1,5 @@
+{
+  "Theme": ["Climate data analysis", "Precipitation measurement", "Evaporation measurement", "Runoff measurement", "Temperature analysis"],
+  "DataSource": ["ECMWF/ERA5_LAND/MONTHLY"],
+  "Function": ["Filter image collection by date", "Select specific variables", "Calculate mean within geometry", "Export data to Google Drive"]
+}

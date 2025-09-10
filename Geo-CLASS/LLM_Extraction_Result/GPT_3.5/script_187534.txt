@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Sentinel-1 flood mapping on Rakhine Coast using backscatter values."],
+  "Theme": ["Flood mapping", "Backscatter analysis"],
+  "DataSource": ["COPERNICUS/S1_GRD", "ft:1nWJr3XY3hcsRSvydLLyK47W-r6N1bB7JHhTYuLle"],
+  "Function": ["Image collection filtering based on polarization and date", "Image smoothing using focal median filter", "Histogram generation for backscatter values"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Image collection filtering based on polarization and date", "Image smoothing using focal median filter", "Histogram generation for backscatter values"]
+    },
+    "relation_2": {
+        "DataSource": ["ft:1nWJr3XY3hcsRSvydLLyK47W-r6N1bB7JHhTYuLle"],
+        "Function": ["Image collection filtering based on polarization and date"]
+    }
+}
+```

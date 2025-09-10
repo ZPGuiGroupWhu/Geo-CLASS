@@ -1,0 +1,17 @@
+{
+    "Summary": [
+        "Script performs Landsat image classification using Random Forest algorithm."
+    ],
+    "Theme": [
+        "SERICULTURE"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C01/T1"
+    ],
+    "Function": [
+        "Calculating terrain slope and aspect from DEMs",
+        "Data Standardization",
+        "Classification And Machine Learning",
+        "Data Visualization And Mapping"
+    ]
+}

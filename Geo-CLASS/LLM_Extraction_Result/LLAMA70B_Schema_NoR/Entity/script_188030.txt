@@ -1,0 +1,25 @@
+{
+    "Theme": [
+        "Land cover classification and vegetation health analysis in Tehran"
+    ],
+    "DataSource": [
+        "projects/ee-kimiachenaary/assets/Tehran",
+        "LANDSAT/LC08/C01/T1_TOA"
+    ],
+    "Function": [
+        "Cloud masking",
+        "Image collection filtering",
+        "NDVI calculation",
+        "Image clipping",
+        "Counting pixels",
+        "Filtering by range",
+        "Mean value calculation",
+        "Max value calculation",
+        "Min value calculation",
+        "Standard deviation calculation",
+        "Region-based statistics",
+        "Image visualization",
+        "Chart creation",
+        "Table export"
+    ]
+}

@@ -1,0 +1,5 @@
+{
+  "Theme": ["Tracking Crop Greenness in Merced County"],
+  "DataSource": ["TIGER/2018/Counties", "LANDSAT/LC08/C02/T1_L2"],
+  "Function": ["Filtering county dataset", "Loading Landsat 8 image collection", "Filtering images by location and date", "Extracting dates from image collection", "Creating visualization parameters", "Displaying images with dates"]
+}

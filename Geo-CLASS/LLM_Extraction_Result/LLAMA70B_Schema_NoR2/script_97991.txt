@@ -1,0 +1,49 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land cover classification and forest type analysis in Trinidad and Tobago"],
+  "DataSource": ["users/EL/TrinidadandTobago", "users/EL/trinidad_forest_type_landcover_28july2011", "users/EL/tobago_forest_type_landcover_06may2011", "LANDSAT/LC8_L1T", "COPERNICUS/S2", "users/christinacorbane/MT_comp_proj", "JRC/GSW1_0/GlobalSurfaceWater"],
+  "Function": ["Upload and visualize shapefile", "Filter Landsat images by date and cloud cover", "Create a polygon", "Filter satellite images by polygon", "Mosaic with Landsat simple Composite and ratio bands", "Classify image using training points", "Post-classification editing", "Use of masks for cities and water", "Export image to asset", "Print statistics for forest area"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/EL/TrinidadandTobago"],
+        "Function": ["Upload and visualize shapefile"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC8_L1T"],
+        "Function": ["Filter Landsat images by date and cloud cover", "Mosaic with Landsat simple Composite and ratio bands"]
+    },
+    "relation_3": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Filter satellite images by polygon"]
+    },
+    "relation_4": {
+        "DataSource": ["users/EL/trinidad_forest_type_landcover_28july2011", "users/EL/tobago_forest_type_landcover_06may2011"],
+        "Function": ["Classify image using training points", "Post-classification editing"]
+    },
+    "relation_5": {
+        "DataSource": ["users/christinacorbane/MT_comp_proj"],
+        "Function": ["Use of masks for cities and water"]
+    },
+    "relation_6": {
+        "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+        "Function": ["Use of masks for cities and water"]
+    },
+    "relation_7": {
+        "DataSource": ["users/EL/trinidad_forest_type_landcover_28july2011", "users/EL/tobago_forest_type_landcover_06may2011"],
+        "Function": ["Export image to asset", "Print statistics for forest area"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4369, 'completion_tokens': 642, 'total_tokens': 5011}

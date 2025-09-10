@@ -1,0 +1,11 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "MODIS/006/MOD09Q1"
+        ],
+        "Function": [
+            "NDVI (Normalized Difference Vegetation Index calculation)",
+            "Time Series Clustering And Prediction"
+        ]
+    }
+}

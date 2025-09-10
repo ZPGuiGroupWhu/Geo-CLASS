@@ -1,0 +1,19 @@
+{
+    "Theme": [
+        "Lake water surface analysis"
+    ],
+    "DataSource": [
+        "JRC/GSW1_0/GlobalSurfaceWater",
+        "users/sarinarinab/CitSci_Washington_Lakes",
+        "users/sntopp/Lakes_ply_20171106",
+        "users/sntopp/NCSC_Horsepen_Lake"
+    ],
+    "Function": [
+        "Load lake polygons",
+        "Load Landsat images",
+        "Calculate lake area",
+        "Reconstruct water surface",
+        "Extract lake mask",
+        "Calculate lake area statistics"
+    ]
+}

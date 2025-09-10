@@ -1,0 +1,18 @@
+{
+    "Theme": [
+        "Land cover and vegetation analysis"
+    ],
+    "DataSource": [
+        "MODIS/MOD09GA_006_NDVI",
+        "USGS/SRTMGL1_003",
+        "MODIS/006/MCD12Q1",
+        "COPERNICUS/S2_SR"
+    ],
+    "Function": [
+        "Compute NDVI values",
+        "Filter image collection by date and area",
+        "Create buffer around sample points",
+        "Compute mean NDVI values",
+        "Visualize NDVI time series"
+    ]
+}

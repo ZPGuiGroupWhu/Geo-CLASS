@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["ECMWF/ERA5/DAILY"],
+        "Function": ["Filtering image collection by date", "Converting temperature units", "Calculating minimum temperature", "Calculating maximum temperature", "Calculating average temperature"]
+    },
+    "relation_2": {
+        "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2"],
+        "Function": ["Clipping images to area of interest", "Visualizing data on a map", "Exporting images to drive"]
+    }
+}

@@ -1,0 +1,35 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Flood extent analysis using Sentinel-1 data"],
+  "DataSource": ["COPERNICUS/S1_GRD", "FAO/GAUL_SIMPLIFIED_500m/2015/level2", "JRC/GSW1_0/GlobalSurfaceWater", "WWF/HydroSHEDS/03VFDEM"],
+  "Function": ["Filtering image collections by date and polarization", "Mosaicking image collections", "Applying speckle filter", "Calculating difference between images", "Applying threshold", "Masking flood pixels from permanent water areas", "Computing connectivity of pixels", "Masking areas with high slope"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Filtering image collections by date and polarization", "Mosaicking image collections", "Applying speckle filter", "Calculating difference between images"]
+    },
+    "relation_2": {
+        "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2"],
+        "Function": []
+    },
+    "relation_3": {
+        "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+        "Function": ["Masking flood pixels from permanent water areas"]
+    },
+    "relation_4": {
+        "DataSource": ["WWF/HydroSHEDS/03VFDEM"],
+        "Function": ["Masking areas with high slope", "Computing connectivity of pixels"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3168, 'completion_tokens': 376, 'total_tokens': 3544}

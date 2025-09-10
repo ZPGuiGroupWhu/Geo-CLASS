@@ -1,0 +1,16 @@
+{
+    "Summary": [
+        "Script for Sentinel-1 flood mapping using backscatter values and image processing."
+    ],
+    "Theme": [
+        "SOIL WATER HOLDING CAPACITY"
+    ],
+    "DataSource": [
+        "COPERNICUS/S1_GRD"
+    ],
+    "Function": [
+        "Cloud Masking And Quality Filtering",
+        "Cloud Masking And Quality Filtering",
+        "Visualization And Output Generation"
+    ]
+}

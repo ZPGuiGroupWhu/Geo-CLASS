@@ -1,0 +1,14 @@
+{
+  "relation_1": {
+    "DataSource": ["users/dgilad/SA"],
+    "Function": ["Filter image collection by date", "Filter image collection by polarization", "Filter image collection by resolution", "Filter image collection by orbit", "Exclude specific dates", "Convert values to natural", "Calculate mean and standard deviation", "Export data to CSV"]
+  },
+  "relation_2": {
+    "DataSource": ["users/dgilad/Fields"],
+    "Function": ["Buffer features by distance", "Calculate mean and standard deviation", "Export data to CSV"]
+  },
+  "relation_3": {
+    "DataSource": ["COPERNICUS/S1_GRD"],
+    "Function": ["Filter image collection by date", "Filter image collection by polarization", "Filter image collection by resolution", "Filter image collection by orbit", "Exclude specific dates", "Convert values to natural", "Calculate mean and standard deviation", "Export data to CSV"]
+  }
+}

@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Landslide zone evaluation in Aldea Las Minas, Casillas, Santa Rosa"],
+  "DataSource": ["COPERNICUS/S2_HARMONIZED"],
+  "Function": ["Filtering image collection by date and cloud percentage", "Calculating NDVI index", "Mapping NDVI values to a color palette", "Charting NDVI values over time"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response that organizes the extracted information into a structured format:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2_HARMONIZED"],
+        "Function": ["Filtering image collection by date and cloud percentage", "Calculating NDVI index", "Mapping NDVI values to a color palette", "Charting NDVI values over time"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2673, 'completion_tokens': 186, 'total_tokens': 2859}

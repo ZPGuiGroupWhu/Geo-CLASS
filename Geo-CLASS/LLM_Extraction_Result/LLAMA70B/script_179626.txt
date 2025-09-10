@@ -1,0 +1,29 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land Surface Temperature Analysis"],
+  "DataSource": ["users/KARTIKA_EAA/Semarang", "LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Cloud masking", "Image collection filtering", "Median image calculation", "NDVI calculation", "Thermal band selection", "Land Surface Temperature calculation", "Image visualization"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/KARTIKA_EAA/Semarang"],
+        "Function": ["Cloud masking", "Image collection filtering", "Median image calculation", "NDVI calculation", "Thermal band selection", "Land Surface Temperature calculation"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Cloud masking", "Image collection filtering", "Median image calculation", "NDVI calculation", "Thermal band selection", "Land Surface Temperature calculation", "Image visualization"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3761, 'completion_tokens': 268, 'total_tokens': 4029}

@@ -1,0 +1,36 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Forest monitoring and land cover classification"],
+  "DataSource": ["COPERNICUS/S2", "ft:1Oaa3b2LdFGrAXL4jqFJzA-3iBeiNq6AQZkyFLVvp", "ft:1tAjm5bGsh0TWPSawKIsX-iWXd7vocIoG_98QjhU1", "ft:1iovW6_vHSX3JOx5OvcFr-ljJdx5mGmqK6Q_ETiSO", "ft:1zmsdCSa-do_XXh6-w6bpfXpz_kN7nGBGmKAcBRFQ", "ft:1gGjM2T5JEgKFoxbWORCn3WPqB98p2adAz42eqycf"],
+  "Function": ["Image collection filtering", "NDVI calculation", "NBR calculation", "Image mosaicking", "Image exporting"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Image collection filtering", "NDVI calculation", "NBR calculation", "Image mosaicking", "Image exporting"]
+    },
+    "relation_2": {
+        "DataSource": ["ft:1Oaa3b2LdFGrAXL4jqFJzA-3iBeiNq6AQZkyFLVvp"],
+        "Function": ["Image collection filtering"]
+    },
+    "relation_3": {
+        "DataSource": ["ft:1tAjm5bGsh0TWPSawKIsX-iWXd7vocIoG_98QjhU1"],
+        "Function": ["Image collection filtering"]
+    },
+    "relation_4": {
+        "DataSource": ["ft:1iovW6_vHSX3JOx5OvcFr-ljJdx5mGmqK6Q_ETiSO"],
+        "Function": ["Image collection filtering"]
+    },
+    "relation_5": {
+        "DataSource": ["ft:1zmsdCSa-do_XXh6-w6bpfXpz_kN7nGBGmK
+
+Total_Usage:
+{'prompt_tokens': 5102, 'completion_tokens': 547, 'total_tokens': 5649}

@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["TIGER/2016/States"],
+        "Function": ["Cloud and cloud shadow masking", "Decision tree classification for water and vegetation detection"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Cloud and cloud shadow masking", "Decision tree classification for water and vegetation detection"]
+    }
+}

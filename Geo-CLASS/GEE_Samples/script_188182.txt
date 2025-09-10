@@ -1,0 +1,660 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var Nochange = /* color: #ffecd7 */ee.FeatureCollection(
+        [ee.Feature(
+            ee.Geometry.Point([28.882369995117188, -18.527794013553013]),
+            {
+              "Class": 2,
+              "system:index": "0"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([28.499221801757812, -20.580724532849207]),
+            {
+              "Class": 2,
+              "system:index": "1"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([27.772064208984375, -20.77730104364387]),
+            {
+              "Class": 2,
+              "system:index": "2"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([28.497848510742188, -20.77152301951335]),
+            {
+              "Class": 2,
+              "system:index": "3"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([30.395050048828125, -21.309846141087192]),
+            {
+              "Class": 2,
+              "system:index": "4"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([31.376953125, -21.125497636606262]),
+            {
+              "Class": 2,
+              "system:index": "5"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([30.487060546875, -20.262197124246534]),
+            {
+              "Class": 2,
+              "system:index": "6"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([31.9427490234375, -19.394067895396613]),
+            {
+              "Class": 2,
+              "system:index": "7"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([30.733566284179688, -16.24615518680476]),
+            {
+              "Class": 2,
+              "system:index": "8"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([28.7347412109375, -17.046281225389063]),
+            {
+              "Class": 2,
+              "system:index": "9"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([32.6129150390625, -18.17716879354469]),
+            {
+              "Class": 2,
+              "system:index": "10"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([31.4483642578125, -17.219511333785114]),
+            {
+              "Class": 2,
+              "system:index": "11"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([31.33523941040039, -17.25049851752821]),
+            {
+              "Class": 2,
+              "system:index": "12"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([29.6905517578125, -21.42238990523137]),
+            {
+              "Class": 2,
+              "system:index": "13"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([27.125415802001953, -19.769772908575575]),
+            {
+              "Class": 2,
+              "system:index": "14"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([30.02666473388672, -21.74499085148564]),
+            {
+              "Class": 2,
+              "system:index": "15"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([29.56841468811035, -21.878385299249143]),
+            {
+              "Class": 2,
+              "system:index": "16"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([29.29306983947754, -21.851222441562005]),
+            {
+              "Class": 2,
+              "system:index": "17"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([29.2950439453125, -22.044913300245675]),
+            {
+              "Class": 2,
+              "system:index": "18"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([27.117691040039062, -19.86295624557121]),
+            {
+              "Class": 2,
+              "system:index": "19"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([29.893970489501953, -21.75631109174871]),
+            {
+              "Class": 2,
+              "system:index": "20"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([30.05207061767578, -21.70767557709369]),
+            {
+              "Class": 2,
+              "system:index": "21"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([29.31727409362793, -22.05708478342886]),
+            {
+              "Class": 2,
+              "system:index": "22"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([26.8450927734375, -19.129599439736836]),
+            {
+              "Class": 2,
+              "system:index": "23"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([25.82611083984375, -18.65665448654001]),
+            {
+              "Class": 2,
+              "system:index": "24"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([32.35743999481201, -20.561559189450442]),
+            {
+              "Class": 2,
+              "system:index": "25"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([32.355637550354004, -20.573894392910226]),
+            {
+              "Class": 2,
+              "system:index": "26"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([30.115070343017578, -22.060664432080852]),
+            {
+              "Class": 2,
+              "system:index": "27"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([32.356624603271484, -20.314686811099673]),
+            {
+              "Class": 2,
+              "system:index": "28"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([32.22487449645996, -20.647001171547565]),
+            {
+              "Class": 2,
+              "system:index": "29"
+            })]),
+    Africa = ee.ImageCollection("users/kindgard/Africa"),
+    Change = /* color: #d63000 */ee.FeatureCollection(
+        [ee.Feature(
+            ee.Geometry.Point([29.084930419921875, -18.431410551571794]),
+            {
+              "Class": 1,
+              "system:index": "0"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([30.923466682434082, -21.107722744225356]),
+            {
+              "Class": 1,
+              "system:index": "1"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([29.02484893798828, -18.453231820946478]),
+            {
+              "Class": 1,
+              "system:index": "2"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([29.09900665283203, -18.439878835902757]),
+            {
+              "Class": 1,
+              "system:index": "3"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([29.05712127685547, -18.501749774475094]),
+            {
+              "Class": 1,
+              "system:index": "4"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([29.084243774414062, -18.535280998306607]),
+            {
+              "Class": 1,
+              "system:index": "5"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([29.246978759765625, -18.06639230426427]),
+            {
+              "Class": 1,
+              "system:index": "6"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([29.333066940307617, -18.08083474158178]),
+            {
+              "Class": 1,
+              "system:index": "7"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([28.85756492614746, -18.2321230986928]),
+            {
+              "Class": 1,
+              "system:index": "8"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([28.922452926635742, -18.216307167661785]),
+            {
+              "Class": 1,
+              "system:index": "9"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([27.709836959838867, -18.611434266251912]),
+            {
+              "Class": 1,
+              "system:index": "10"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([27.74150848388672, -18.62005631565666]),
+            {
+              "Class": 1,
+              "system:index": "11"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([27.63190269470215, -18.615419984918567]),
+            {
+              "Class": 1,
+              "system:index": "12"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([32.16874122619629, -20.65824525255133]),
+            {
+              "Class": 1,
+              "system:index": "13"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([31.015777587890625, -21.2481822482305]),
+            {
+              "Class": 1,
+              "system:index": "14"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([28.131866455078125, -18.694383003553035]),
+            {
+              "Class": 1,
+              "system:index": "15"
+            })]),
+    c1a2 = /* color: #98ff00 */ee.FeatureCollection(
+        [ee.Feature(
+            ee.Geometry.Polygon(
+                [[[31.977081298828125, -21.167764494849457],
+                  [31.7230224609375, -21.394262074918807],
+                  [31.688690185546875, -21.591042935724214],
+                  [31.837005615234375, -21.737815589377057],
+                  [32.067718505859375, -21.80540827417748],
+                  [32.5579833984375, -21.336711029375635],
+                  [32.474212646484375, -21.18825317335947],
+                  [32.163848876953125, -21.14343050391291]]]),
+            {
+              "Class": 1,
+              "system:index": "0"
+            })]);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+
+
+var countries = ee.FeatureCollection("ft:1uRKhdFB2QPg6_om0fGjUs_wI8UZAi7ZIqdSKtbxI");
+
+var Country = countries.filterMetadata('ADM0_NAME', 'equals','Zimbabwe');
+
+
+
+var Asia = ee.ImageCollection("users/kindgard/Asia/Asia");
+
+var SUD = ee.ImageCollection("users/kindgard/SUD");
+
+var AfricaS = ee.ImageCollection("users/kindgard/AfricaS");
+
+var AmericaN = ee.ImageCollection("users/kindgard/AmericaN");
+
+var Asia2 = ee.ImageCollection("users/kindgard/Asia2");
+
+var GL30_Coll = ee.ImageCollection(Asia.merge(Africa).merge(SUD).merge(AfricaS).merge(AmericaN).merge(Asia2));
+
+var GL30 = GL30_Coll.mosaic().clip(Country);
+
+Map.centerObject(Country)
+
+
+
+
+
+
+
+/////////////////////LANDSAT////////////////////////////////////
+
+
+
+
+
+
+
+var Landsat5 = ee.ImageCollection('LANDSAT/LT5_L1T');
+
+var Landsat7 = ee.ImageCollection('LANDSAT/LE7_L1T');
+
+var Landsat8 = ee.ImageCollection('LANDSAT/LC08/C01/T1_RT');
+
+
+
+var Landsat5Filteredz = Landsat5.filterBounds(Country) //.filterBounds(geometry)  ->you can filter the collection also with one training point(geometry) to know exactly when an image was taken
+
+.filterDate('1990-01-01', '1991-12-31')
+
+.filter(ee.Filter.calendarRange(91, 150, 'day_of_year')) //WET SEASON (Nov-Apr)
+
+.filterMetadata('CLOUD_COVER','less_than', 80);
+
+var mosaic_90_Z = ee.Algorithms.Landsat.simpleComposite(Landsat5Filteredz, 50, 10, 40, true).clip(Country);
+
+
+
+var Landsat8FilteredW = Landsat8.filterBounds(Country) //.filterBounds(geometry)  ->you can filter the collection also with one training point(geometry) to know exactly when an image was taken
+
+.filterDate('2013-01-01', '2018-01-31')
+
+.filter(ee.Filter.calendarRange(241, 303, 'day_of_year')) //WET SEASON (Nov-Apr)
+
+.filterMetadata('CLOUD_COVER','less_than', 50);
+
+var mosaicZ = ee.Algorithms.Landsat.simpleComposite(Landsat8FilteredW, 60, 10, 40, true).clip(Country);
+
+
+
+var Landsat8FilteredW2 = Landsat8.filterBounds(Country) //.filterBounds(geometry)  ->you can filter the collection also with one training point(geometry) to know exactly when an image was taken
+
+.filterDate('2013-01-01', '2018-01-31')
+
+.filter(ee.Filter.calendarRange(304, 365, 'day_of_year')) //WET SEASON (Nov-Apr)
+
+.filterMetadata('CLOUD_COVER','less_than', 50); 
+
+var mosaicZ2 = ee.Algorithms.Landsat.simpleComposite(Landsat8FilteredW2, 60, 10, 40, true).clip(Country);
+
+
+
+var Landsat8FilteredW3 = Landsat8.filterBounds(Country) //.filterBounds(geometry)  ->you can filter the collection also with one training point(geometry) to know exactly when an image was taken
+
+.filterDate('2013-01-01', '2018-01-31')
+
+.filter(ee.Filter.calendarRange(1, 90, 'day_of_year')) //WET SEASON (Nov-Apr)
+
+.filterMetadata('CLOUD_COVER','less_than', 80);
+
+var mosaicZ3 = ee.Algorithms.Landsat.simpleComposite(Landsat8FilteredW3, 50, 10, 40, true).clip(Country);
+
+
+
+var Landsat8FilteredW4 = Landsat8.filterBounds(Country) //.filterBounds(geometry)  ->you can filter the collection also with one training point(geometry) to know exactly when an image was taken
+
+.filterDate('2016-01-01', '2018-01-31')
+
+.filter(ee.Filter.calendarRange(91, 150, 'day_of_year')) //WET SEASON (Nov-Apr)
+
+.filterMetadata('CLOUD_COVER','less_than', 80);
+
+var mosaicZ4 = ee.Algorithms.Landsat.simpleComposite(Landsat8FilteredW4, 50, 10, 40, true).clip(Country);
+
+
+
+var rat43_W = mosaicZ.select('B4').divide(mosaicZ.select('B3'));
+
+var rat73_W = mosaicZ.select('B7').divide(mosaicZ.select('B3'));
+
+var rat54_W = mosaicZ.select('B5').divide(mosaicZ.select('B4'));
+
+var rat53_W = mosaicZ.select('B5').divide(mosaicZ.select('B3'));
+
+var imageW = mosaicZ.addBands(rat43_W).addBands(rat73_W).addBands(rat54_W).addBands(rat53_W);
+
+
+
+
+
+
+
+var calcularRatios = function (image) {
+
+var rat43 = image.select('B5').divide(image.select('B4'));
+
+var rat73 = image.select('B8').divide(image.select('B4'));
+
+var rat54 = image.select('B6').divide(image.select('B5'));
+
+var rat53 = image.select('B6').divide(image.select('B4'));
+
+  return rat43.addBands(rat73).addBands(rat54).addBands(rat53);
+
+
+
+};
+
+
+
+//Calcular Ratios
+
+var ratiosMosaicoZ = calcularRatios(mosaicZ);
+
+var ratiosMosaicoZ2 = calcularRatios(mosaicZ2);
+
+var ratiosMosaicoZ3 = calcularRatios(mosaicZ3);
+
+var ratiosMosaicoZ4 = calcularRatios(mosaicZ4);
+
+
+
+var mosaicoSeason = mosaicZ.addBands(mosaicZ2).addBands(mosaicZ2).addBands(mosaicZ3).addBands(mosaicZ4).addBands(ratiosMosaicoZ)
+
+.addBands(ratiosMosaicoZ2).addBands(ratiosMosaicoZ3).addBands(ratiosMosaicoZ4);
+
+
+
+Map.addLayer (mosaicZ4, {bands: ['B5','B6','B4'],min: [0.01,0.05,0.01],max: [0.4, 0.5, 0.4] },'mosaic2017',
+
+true);
+
+
+
+Map.addLayer (mosaic_90_Z, {bands: ['B4','B5','B3'],min: [0.01,0.01,0.01],max: [0.35, 0.4, 0.4] },'Zimbabwe1990',true );
+
+
+
+
+
+//Mosaic 2000
+
+
+
+var Landsat7Filtered2000 = Landsat7.filterBounds(Country)
+
+.filterDate('2000-01-01', '2002-12-31')
+
+.filter(ee.Filter.calendarRange(91, 150, 'day_of_year')) //WET SEASON (Nov-Apr)
+
+.filterMetadata('CLOUD_COVER','less_than', 80);
+
+var mosaic2000 = ee.Algorithms.Landsat.simpleComposite(Landsat7Filtered2000, 50, 10, 40, true).clip(Country);
+
+
+
+Map.addLayer (mosaic2000, {bands: ['B4','B5','B3'],min: [0.01,0.1,0.01],max: [0.4, 0.5, 0.4] },'mosaic2000',
+
+true);
+
+
+
+
+
+//Bands ratio
+
+
+
+
+
+var rat43_2000 = mosaic2000.select('B4').divide(mosaic2000.select('B3'))
+
+
+
+
+
+
+
+var rat73_2000 = mosaic2000.select('B7').divide(mosaic2000.select('B3'))
+
+
+
+var rat54_2000 = mosaic2000.select('B5').divide(mosaic2000.select('B4'))
+
+
+
+var rat53_2000 = mosaic2000.select('B5').divide(mosaic2000.select('B3'))
+
+
+
+
+
+var image2000_m = mosaic2000.addBands(rat43_2000).addBands(rat73_2000).addBands(rat54_2000)
+
+.addBands(rat53_2000);
+
+
+
+
+
+//ALL
+
+
+
+var mosaic_all = mosaicZ4.addBands(mosaic2000).addBands(rat43_2000).addBands(rat73_2000).addBands(rat54_2000)
+
+.addBands(rat53_2000);
+
+
+
+
+
+//sample points and classification
+
+var samples = ee.FeatureCollection([Change, Nochange
+
+]).flatten();
+
+
+
+
+
+var training = mosaic_all.sampleRegions({
+
+collection: samples,
+
+properties: ['Class'],
+
+scale: 30
+
+});
+
+var bands = ['B4', 'B5', 'B6', 'B3_1', 'B4_1', 'B5_1'
+
+];
+
+
+
+var trained = ee.Classifier.cart().train(training, 'Class', bands);
+
+var e = trained.explain();
+
+
+
+
+
+
+
+var classified = mosaic_all.select(bands).classify(trained);
+
+
+
+
+
+//Masks
+
+var settlements = ee.FeatureCollection("users/ValeriaContessa/ZWEsettlements");
+
+var cities2 = settlements.reduceToImage(['ID'], ee.Reducer.first());
+
+
+
+var water = ee.Image('JRC/GSW1_0/GlobalSurfaceWater').clip(Country);
+
+var water1 = water.select('transition').lte(2).or(water.select('transition').eq(7)).or(water.select('transition').eq(8)); 
+
+
+
+var waterbodies = ee.FeatureCollection("users/ValeriaContessa/zim_waterbody");
+
+var water2 = waterbodies.reduceToImage(['id'], ee.Reducer.first());
+
+
+
+var classified_correct = classified.where(water2.eq(1),2);
+
+
+
+
+
+
+
+//Correcciones
+
+var corrector = function(geom, mal, bien, clasif) {
+
+  var binario = geom.reduceToImage(['Class'], ee.Reducer.first());
+
+  var condicion = binario.and(clasif.eq(mal));
+
+  var clasC = clasif.where(condicion, bien);
+
+  return clasC};
+
+
+
+var coreccion1 = corrector(c1a2,1,2,classified_correct);
+
+
+
+Map.addLayer(coreccion1, {min:1, max:2, palette: ['d63000', 'ffecd7']},'Changes 2000 - 2017');
+
+
+
+///EXAMPLE of application of the Forest - Non Forest mask 2017
+
+var imageclass = ee.Image('users/ValeriaContessa/Zimbabwe_Anderson'); //<-- your FNF 2017 classification
+
+
+
+var forest2017 = (imageclass.eq(4));
+
+
+
+///You can extract the forest from the FNF 2017 and use it to mask the mosaics, to be sure that you select the CHANGE training points
+
+//OUTSIDE the forest in 2017
+
+
+
+//EXAMPLE OF A MASKED MOSAIC:
+
+
+
+
+
+//Then, after running the classification for the changes (from line 122 to 162), you put what is in the forest 2017 mask inside the NO CHANGE class:
+
+
+
+var final_m = coreccion1.where(forest2017.eq(1),3);
+
+Map.addLayer(final_m, {min:1, max:3, palette: ['d63000', 'ffecd7', '2f7c00']},'Final map change_Richard');
+

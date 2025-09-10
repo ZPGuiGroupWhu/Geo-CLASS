@@ -1,0 +1,10 @@
+{
+  "relation_1": {
+    "DataSource": ["COPERNICUS/S2"],
+    "Function": ["Filter image collection by date", "Filter image collection by location", "Filter image collection by metadata", "Calculate median image", "Clip image to geometry", "Select image bands", "Add bands to image", "Sample image for training data", "Train KMeans clusterer", "Cluster image using trained clusterer", "Display image layer", "Export image to Drive"]
+  },
+  "relation_2": {
+    "DataSource": ["COPERNICUS/S1_GRD"],
+    "Function": ["Filter image collection by date", "Filter image collection by location", "Filter image collection by metadata", "Clip image to geometry", "Apply focal mean filter", "Display image layer", "Sample image for training data", "Train KMeans clusterer", "Cluster image using trained clusterer", "Export image to Drive"]
+  }
+}

@@ -1,0 +1,16 @@
+{
+    "Theme": [
+        "Land cover analysis in Los Angeles"
+    ],
+    "DataSource": [
+        "LANDSAT/LC09/C02/T1_L2",
+        "FAO/GAUL_SIMPLIFIED_500m/2015/level2"
+    ],
+    "Function": [
+        "Filter image collection by bounds",
+        "Mask clear pixels",
+        "Mask cloud and cloud shadow",
+        "Convert DN to SR",
+        "Median composite"
+    ]
+}

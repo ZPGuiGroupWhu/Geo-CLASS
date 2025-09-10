@@ -1,0 +1,33 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Urban area analysis", "Water area detection", "Vegetation area detection", "Rice paddy identification"],
+  "DataSource": ["COPERNICUS/S2", "COPERNICUS/S1_GRD", "users/eeranyartrodrigo/ferrocarriles/estaciones_prospectadas_area", "WWF/HydroSHEDS/03VFDEM"],
+  "Function": ["Filter image collection by date and location", "Remove clouds from images", "Calculate median of images", "Compute normalized difference index", "Apply threshold to index", "Mask and clip images", "Calculate percentile reduction", "Subtract images", "Compute terrain slope", "Mask areas based on slope"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["COPERNICUS/S2"],
+    "Function": ["Filter image collection by date and location", "Remove clouds from images", "Calculate median of images", "Compute normalized difference index", "Apply threshold to index", "Mask and clip images"]
+  },
+  "relation_2": {
+    "DataSource": ["COPERNICUS/S1_GRD"],
+    "Function": ["Filter image collection by date and location", "Calculate percentile reduction", "Subtract images", "Mask and clip images"]
+  },
+  "relation_3": {
+    "DataSource": ["users/eeranyartrodrigo/ferrocarriles/estaciones_prospectadas_area"],
+    "Function": ["Filter image collection by date and location", "Mask and clip images"]
+  },
+  "relation_4": {
+    "DataSource": ["WWF/HydroSHEDS/03VFDEM"],
+    "Function": ["Compute terrain slope", "Mask areas based on slope"]
+  }
+}
+```
+
+Total_Token_Usage:
+5297

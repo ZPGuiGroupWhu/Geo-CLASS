@@ -1,0 +1,16 @@
+{
+    "Theme": [
+        "Forest monitoring and early detection of forest loss and fire using Sentinel-2 images"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2",
+        "ft:1ovvyN_dzo01mRw8uSNMIYNg-HKyGTrqLErfg26X0"
+    ],
+    "Function": [
+        "Image collection filtering",
+        "NDVI calculation",
+        "NBR calculation",
+        "Image mosaicking",
+        "Image exporting"
+    ]
+}

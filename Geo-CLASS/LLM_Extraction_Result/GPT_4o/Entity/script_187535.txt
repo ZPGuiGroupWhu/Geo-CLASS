@@ -1,0 +1,5 @@
+{
+  "Theme": ["Flood mapping using Sentinel-1 data"],
+  "DataSource": ["COPERNICUS/S1_GRD"],
+  "Function": ["Define region of interest", "Set flood and water backscatter values", "Calculate date ranges", "Filter Sentinel-1 images by region", "Select most recent image", "Filter images by polarization", "Smooth images", "Calculate band ratio", "Threshold images for water detection", "Generate histograms", "Visualize results on map"]
+}

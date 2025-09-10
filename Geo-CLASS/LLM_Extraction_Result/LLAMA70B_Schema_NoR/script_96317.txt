@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover classification and vegetation index analysis"],
+  "DataSource": ["users/cesarnon/datos_cba_2017/Cordoba_limite", "COPERNICUS/S2_SR"],
+  "Function": ["Filtering image collections by date and cloud cover", "Renaming image bands", "Calculating vegetation indices", "Creating quality mosaics", "Clipping images to a specific geometry"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/cesarnon/datos_cba_2017/Cordoba_limite"],
+        "Function": ["Filtering image collections by date and cloud cover", "Clipping images to a specific geometry"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["Renaming image bands", "Calculating vegetation indices", "Creating quality mosaics"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4805, 'completion_tokens': 235, 'total_tokens': 5040}

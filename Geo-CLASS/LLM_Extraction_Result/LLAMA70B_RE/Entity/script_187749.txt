@@ -1,0 +1,16 @@
+{
+    "Theme": [
+        "NDVI trend analysis in Beijing"
+    ],
+    "DataSource": [
+        "users/kidsherry/Beijing",
+        "MODIS/006/MOD13A1"
+    ],
+    "Function": [
+        "Compose 20-year maximum NDVI images",
+        "Perform trend analysis",
+        "Display results",
+        "Select region of interest",
+        "Plot NDVI time series"
+    ]
+}

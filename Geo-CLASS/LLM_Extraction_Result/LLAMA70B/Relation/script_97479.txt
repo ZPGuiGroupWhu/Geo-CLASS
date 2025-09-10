@@ -1,0 +1,6 @@
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Filter image collection by date range", "Filter image collection by geography", "Apply cloud filter mask", "Calculate image statistics", "Clip image to ROI", "Create natural color image", "Create false color image"]
+    }
+}

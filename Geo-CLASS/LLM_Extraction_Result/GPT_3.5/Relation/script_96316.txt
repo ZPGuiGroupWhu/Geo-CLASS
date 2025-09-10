@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["users/cesarnon/datos_cba_2017/Cordoba_limite"],
+        "Function": ["Image collection filtering by date and location", "Quality band creation for NDVI calculation", "Mosaicking of quality NDVI images", "NDVI band stacking for multiple time periods"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["Image collection filtering by date and location", "Quality band creation for NDVI calculation", "Mosaicking of quality NDVI images", "NDVI band stacking for multiple time periods"]
+    }
+}

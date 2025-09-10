@@ -1,0 +1,19 @@
+{
+    "Summary": [
+        "The script collects satellite images and calculates NDVI and NBR, then detects forest loss, degradation, and fires in a specific area using Landsat 8 data."
+    ],
+    "Theme": [
+        "FOREST HARVESTING AND ENGINEERING"
+    ],
+    "DataSource": [
+        "LANDSAT/LC8_SR",
+        "LANDSAT/LC8_L1T_TOA",
+        "LANDSAT/LT5_L1T_TOA_FMASK",
+        "LANDSAT/LE7_L1T_TOA_FMASK",
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "NDVI (Normalized Difference Vegetation Index calculation)",
+        "Calculating terrain slope and aspect from DEMs"
+    ]
+}

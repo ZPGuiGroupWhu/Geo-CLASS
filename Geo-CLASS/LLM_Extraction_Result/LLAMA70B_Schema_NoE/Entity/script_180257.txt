@@ -1,0 +1,19 @@
+{
+    "Theme": [
+        "Land cover analysis using Landsat 7 imagery"
+    ],
+    "DataSource": [
+        "users/Katemiller125/Illilouette",
+        "LANDSAT/LE07/C02/T1_L2",
+        "LANDSAT/LE07/C01/T1_SR"
+    ],
+    "Function": [
+        "Filtering Landsat 7 imagery by date",
+        "Painting a feature collection onto an image",
+        "Buffering points",
+        "Calculating zonal statistics",
+        "Masking clouds and shadows in Landsat 7 imagery",
+        "Renaming bands in Landsat 7 imagery",
+        "Preparing Landsat 7 imagery for analysis"
+    ]
+}

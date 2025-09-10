@@ -1,0 +1,32 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Flood monitoring and analysis"],
+  "DataSource": ["COPERNICUS/S1_GRD", "regions"],
+  "Function": ["Filtering image collections", "Mosaicking images", "Clipping images", "Calculating NDFI", "Thresholding flood areas"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Filtering image collections", "Mosaicking images", "Clipping images"]
+    },
+    "relation_2": {
+        "DataSource": ["regions"],
+        "Function": ["Defining area of interest"]
+    },
+    "relation_3": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Calculating NDFI", "Thresholding flood areas"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4712, 'completion_tokens': 228, 'total_tokens': 4940}

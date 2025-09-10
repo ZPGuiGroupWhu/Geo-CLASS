@@ -1,0 +1,5 @@
+{
+  "Theme": ["Urbanization analysis", "Land cover classification", "Image normalization"],
+  "DataSource": ["users/kiniklihakan/milanshp", "LANDSAT/LC08/C02/T1_L2", "LANDSAT/LT05/C02/T1_L2", "LANDSAT/LE07/C02/T1_L2"],
+  "Function": ["Apply cloud and shadow mask", "Rename image bands", "Calculate vegetation indices", "Normalize image bands", "Print histogram", "Calculate class area", "Create land cover chart", "Blend images to fill gaps", "Reclassify land cover", "Reclassify built-up areas", "Combine layers with logical AND", "Buffer polygons by area"]
+}

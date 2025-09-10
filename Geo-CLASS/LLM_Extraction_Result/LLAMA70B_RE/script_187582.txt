@@ -1,0 +1,36 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover classification and vegetation index analysis"],
+  "DataSource": ["users/zolokiala/parthenium1", "users/zolokiala/buffer", "users/zolokiala/training", "users/zolokiala/test", "COPERNICUS/S2"],
+  "Function": ["Cloud masking using Sentinel-2 QA band", "Vegetation index computation", "Image classification using SVM", "Accuracy assessment"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/zolokiala/buffer"],
+        "Function": ["Cloud masking using Sentinel-2 QA band"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Cloud masking using Sentinel-2 QA band", "Vegetation index computation"]
+    },
+    "relation_3": {
+        "DataSource": ["users/zolokiala/training", "users/zolokiala/test"],
+        "Function": ["Image classification using SVM", "Accuracy assessment"]
+    },
+    "relation_4": {
+        "DataSource": ["users/zolokiala/parthenium1"],
+        "Function": ["Vegetation index computation"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 5488, 'completion_tokens': 329, 'total_tokens': 5817}

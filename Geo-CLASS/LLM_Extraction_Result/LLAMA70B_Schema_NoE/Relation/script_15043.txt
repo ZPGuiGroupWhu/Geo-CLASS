@@ -1,0 +1,35 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/abuhafsgaa/Makarfi",
+            "users/abuhafsgaa/ALLsample"
+        ],
+        "Function": [
+            "Sample regions for training data",
+            "Classify images using Random Forest and CART classifiers",
+            "Compute variable importance",
+            "Classify test data"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "users/abuhafsgaa/DATASET_COMPOSITION_2017_21"
+        ],
+        "Function": [
+            "Classify images using Random Forest and CART classifiers",
+            "Compute variable importance",
+            "Classify test data",
+            "Accuracy assessment"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "users/abuhafsgaa/TEST_SAR_2017_DATASET_BOXCAR"
+        ],
+        "Function": [
+            "Classify test data",
+            "Accuracy assessment",
+            "Visualize results"
+        ]
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "Theme": [
+        "FLOODING and DEM",
+        "Built-Up Multitemporal",
+        "Flood Events",
+        "Historical Flood Plain",
+        "Permanent Water",
+        "Archivos Históricos",
+        "Archivos Concentración",
+        "GlobFire"
+    ],
+    "DataSource": [
+        "users/eeranyartrodrigo/A_Hist",
+        "users/eeranyartrodrigo/A_Conc",
+        "users/eeranyartrodrigo/SSNMX_catalogo_20220801_20220810",
+        "USGS/GMTED2010",
+        "GLOBAL_FLOOD_DB/MODIS_EVENTS/V1",
+        "JRC/GHSL/P2016/BUILT_LDSMT_GLOBE_V1",
+        "JRC/GWIS/GlobFire/v2/DailyPerimeters"
+    ],
+    "Function": [
+        "Selecting elevation data from USGS/GMTED2010",
+        "Visualizing built-up areas using JRC/GHSL/P2016/BUILT_LDSMT_GLOBE_V1",
+        "Filtering flood events from GLOBAL_FLOOD_DB/MODIS_EVENTS/V1",
+        "Calculating historical flood plain using GFD",
+        "Identifying permanent water using JRC permanent water data",
+        "Buffering sismos features based on magnitude",
+        "Computing area of fire perimeters from JRC/GWIS/GlobFire/v2/DailyPerimeters"
+    ]
+}

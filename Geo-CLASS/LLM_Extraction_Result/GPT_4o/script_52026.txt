@@ -1,0 +1,25 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Ozone concentration analysis"],
+  "DataSource": ["users/bkkumarbittu371/Andhra_Pradesht", "COPERNICUS/S5P/OFFL/L3_O3"],
+  "Function": ["Filter images by region", "Filter images by date", "Calculate mean image", "Clip image to region", "Calculate mean value in region"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/bkkumarbittu371/Andhra_Pradesht"],
+        "Function": ["Filter images by region", "Clip image to region", "Calculate mean value in region"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S5P/OFFL/L3_O3"],
+        "Function": ["Filter images by date", "Calculate mean image"]
+    }
+}
+```
+
+Total_Token_Usage:
+6667

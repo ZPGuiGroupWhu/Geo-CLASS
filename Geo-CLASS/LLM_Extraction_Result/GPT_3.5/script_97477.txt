@@ -1,0 +1,19 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Script filters Landsat 8 images, computes NDVI, EVI, and SABI, and adds layers to the map."],
+  "Theme": ["Land cover analysis"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Cloud cover filtering", "Image collection filtering", "Image clipping to ROI", "NDVI computation", "EVI computation", "SABI computation", "Legend setup for SABI value"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Cloud cover filtering", "Image collection filtering", "Image clipping to ROI", "NDVI computation", "EVI computation", "SABI computation", "Legend setup for SABI value"]
+    }
+}
+```

@@ -1,0 +1,452 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var geometry = /* color: #d63000 */ee.Geometry.Polygon(
+        [[[-89.13482666015625, 17.640750276284912],
+          [-88.54362487792969, 17.658417028799768],
+          [-88.55598449707031, 18.025751281356246],
+          [-88.7530517578125, 18.037503867571385],
+          [-88.77900024434769, 17.98300197144063],
+          [-88.86257941414448, 17.884071019295153],
+          [-88.9914851506935, 17.947756698412988],
+          [-89.05586242675781, 17.988529584688845],
+          [-89.13414001464844, 17.95391289081594]]]),
+    Forest = /* color: #1f9d08 */ee.FeatureCollection(
+        [ee.Feature(
+            ee.Geometry.Point([-89.07495975494385, 17.75889431581938]),
+            {
+              "class": 1,
+              "system:index": "0"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([-89.00247573852539, 17.80833039841404]),
+            {
+              "class": 1,
+              "system:index": "1"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([-88.76322269439697, 17.676654495775292]),
+            {
+              "class": 1,
+              "system:index": "2"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([-88.61644148826599, 17.763916191069573]),
+            {
+              "class": 1,
+              "system:index": "3"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([-88.65270495414734, 17.778245385237557]),
+            {
+              "class": 1,
+              "system:index": "4"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([-89.09096717834473, 17.68356462227246]),
+            {
+              "class": 1,
+              "system:index": "5"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([-89.13092136383057, 17.85631289525769]),
+            {
+              "class": 1,
+              "system:index": "6"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([-88.5767126083374, 17.86789293948614]),
+            {
+              "class": 1,
+              "system:index": "7"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([-88.75219345092773, 17.96273099440688]),
+            {
+              "class": 1,
+              "system:index": "8"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([-88.84416103363037, 17.87859410852048]),
+            {
+              "class": 1,
+              "system:index": "9"
+            })]),
+    NoForest = /* color: #f0ff13 */ee.FeatureCollection(
+        [ee.Feature(
+            ee.Geometry.Point([-88.85242223739624, 17.87669490228432]),
+            {
+              "class": 2,
+              "system:index": "0"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([-89.08598899841309, 17.908386523202452]),
+            {
+              "class": 2,
+              "system:index": "1"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([-88.98099660873413, 17.89374618775319]),
+            {
+              "class": 2,
+              "system:index": "2"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([-88.83497714996338, 17.88649703895401]),
+            {
+              "class": 2,
+              "system:index": "3"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([-88.87922286987305, 17.712060974461494]),
+            {
+              "class": 2,
+              "system:index": "4"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([-88.87690544128418, 17.680866024604587]),
+            {
+              "class": 2,
+              "system:index": "5"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([-88.83480548858643, 17.780605377621317]),
+            {
+              "class": 2,
+              "system:index": "6"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([-88.84137153625488, 17.795071143093615]),
+            {
+              "class": 2,
+              "system:index": "7"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([-88.69975090026855, 17.844058059084908]),
+            {
+              "class": 2,
+              "system:index": "8"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([-88.64361763000488, 18.002774342140512]),
+            {
+              "class": 2,
+              "system:index": "9"
+            })]);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+//Upload (own) raster file on GEE
+
+var raster = ee.Image("users/EL/mapa_forest_hybrid_Belize");
+
+
+
+//Upload (own) vector(shape) files on GEE
+
+
+
+
+
+//Zoom on the country selected
+
+
+
+
+
+//Upload Landsat imagery
+
+
+
+//Landsat 5 Imagery availability: March 1984 -Jan 2013
+
+var Landsat5 = ee.ImageCollection('LANDSAT/LT5_L1T'); 
+
+// Landsat 7 Imagery availability: April 1999 - now
+
+var Landsat7 = ee.ImageCollection('LANDSAT/LE7_L1T'); 
+
+// Landsat 8 Imagery availability: February 2013 - now
+
+var Landsat8 = ee.ImageCollection('LANDSAT/LC08/C01/T1_RT'); 
+
+
+
+
+
+//Upload SENTINEL imagery
+
+
+
+//Sentinel 2 Imagery availability: Jun 23, 2015 - now
+
+var Sentinel2 = ee.ImageCollection('COPERNICUS/S2') 
+
+
+
+// Water mask according to JRC Global Surface Water Mapping Layers, v1.0
+
+// Data availability (time) Mar 16, 1984 - Oct 18, 2015
+
+var water = ee.Image('JRC/GSW1_0/GlobalSurfaceWater').clip(geometry);
+
+var water2 = water.select('transition').lte(2).or(water.select('transition').eq(4)).or(water.select('transition').eq(7)).or(water.select('transition').eq(8)); 
+
+
+
+/*Index of the previous mask: 
+
+0 - No change
+
+1 - Permanent
+
+2 - New permanent
+
+3 - Lost permanent
+
+4 - Seasonal
+
+5 - New seasonal
+
+6 - Lost seasonal
+
+7 - Seasonal to permanent
+
+8 - Permanent to seasonal
+
+9 - Ephemeral permanent
+
+10 - Ephemeral seasonal*/
+
+
+
+
+
+//--------------------LANDSAT mosaics   December - May
+
+//Landsat 8 mosaic 2016-2018
+
+//Filter the collection
+
+var Landsat8Filtered = Landsat8.filterBounds(geometry)
+
+.filterDate('2016-01-01', '2018-06-01')
+
+.filter(ee.Filter.calendarRange(335, 151, 'day_of_year')) // December - May
+
+.filterMetadata('CLOUD_COVER','less_than', 10);
+
+var mosaicZ = ee.Algorithms.Landsat.simpleComposite(Landsat8Filtered, 60, 10, 40, true).clip(geometry);
+
+var rat43_2015 = mosaicZ.select('B4').divide(mosaicZ.select('B3'))
+
+var rat73_2015 = mosaicZ.select('B7').divide(mosaicZ.select('B3'))
+
+var rat54_2015 = mosaicZ.select('B5').divide(mosaicZ.select('B4'))
+
+var rat53_2015 = mosaicZ.select('B5').divide(mosaicZ.select('B3'))
+
+var image8 = mosaicZ.addBands(rat43_2015).addBands(rat73_2015).addBands(rat54_2015).addBands(rat53_2015);
+
+
+
+//Landsat 7 mosaic 2013 - 2018
+
+//Filter the collection
+
+var Landsat7Filtered = Landsat7.filterBounds(geometry)
+
+.filterDate('2013-01-01', '2018-06-01')
+
+.filter(ee.Filter.calendarRange(335, 151, 'day_of_year')) // December - May
+
+.filterMetadata('CLOUD_COVER','less_than', 90);
+
+var mosaic2000 = ee.Algorithms.Landsat.simpleComposite(Landsat7Filtered, 60, 10, 40, true).clip(geometry);
+
+var rat43_2000 = mosaic2000.select('B4').divide(mosaic2000.select('B3'))
+
+var rat73_2000 = mosaic2000.select('B7').divide(mosaic2000.select('B3'))
+
+var rat54_2000 = mosaic2000.select('B5').divide(mosaic2000.select('B4'))
+
+var rat53_2000 = mosaic2000.select('B5').divide(mosaic2000.select('B3'))
+
+var image7 = mosaic2000.addBands(rat43_2000).addBands(rat73_2000).addBands(rat54_2000).addBands(rat53_2000);
+
+
+
+
+
+//Visualisation Landsat 7 and 8 mosaic layers
+
+Map.addLayer (image7, {bands: ['B4','B5','B3'],min: [0.1665,0.0932,0.03747],max: [0.32127,0.2671,0.1145] },'LANDSAT7',true );
+
+Map.addLayer (image8, {bands: ['B5','B6','B4'],min: [0.1665,0.0932,0.03747],max: [0.32127,0.2671,0.1145] },'LANDSAT8',true );
+
+
+
+
+
+//-------------SENTINEL mosaic 2016-2017  December - May
+
+
+
+// Filter the collection
+
+var Sentinel2Filtered = Sentinel2.filterBounds(geometry)
+
+    .filterDate('2016-01-01', '2018-06-01')
+
+    .filter(ee.Filter.calendarRange(335, 151, 'day_of_year')) 
+
+    .filterMetadata('CLOUDY_PIXEL_PERCENTAGE', 'less_than' ,10) 
+
+
+
+
+
+//Sentinel Mosaic with quality Bands
+
+var qualityBands = function(image) {
+
+var newImage = image.addBands(image.normalizedDifference(['B8', 'B4' ]))
+
+return (newImage)
+
+};
+
+var L8qualityBands = Sentinel2Filtered.map(qualityBands);
+
+var mosaicQB = L8qualityBands.qualityMosaic('nd').clip(geometry);
+
+Map.addLayer (mosaicQB, {bands: ['B8', 'B3', 'B4'], min: [1000 , 500, 300], max:[3500, 1300, 1400] }, 'Sentinel', true );
+
+
+
+
+
+
+
+
+
+//-------------------------------------------------------------------------------------------------------------------------------
+
+// Classification
+
+
+
+//sample points and classification
+
+var points = ee.FeatureCollection([Forest, NoForest
+
+]).flatten();
+
+
+
+
+
+var trainingS = mosaicQB.sampleRegions({
+
+collection: points,
+
+properties: ['class'],
+
+scale: 30
+
+});
+
+var bandsSent = ['B2',   'B3',    'B4',  'B8',  'B11',    'B12'
+
+];
+
+var trainedS = ee.Classifier.cart().train(trainingS, 'class', bandsSent);
+
+var classifiedsentinel = mosaicQB.select(bandsSent).classify(trainedS);
+
+
+
+
+
+//Mask 
+
+var classified_correct = classifiedsentinel.where(water2.eq(1),3);
+
+
+
+
+
+Map.addLayer(classified_correct,{ min:1, max:3, palette: ['1f9d08', 'f0ff13', '11f4ff'] },'Classification sentinel with mask');
+
+
+
+
+
+// Editing
+
+var corrector = function(geom, mal, bien, clasif) {
+
+  var binario = geom.reduceToImage(['class'], ee.Reducer.first());
+
+  var condicion = binario.and(clasif.eq(mal));
+
+  var clasC = clasif.where(condicion, bien);
+
+  return clasC};
+
+
+
+
+
+
+
+
+
+
+
+// Print Statistics for Forest
+
+
+
+var A_f = classified_correct.eq(1);
+
+var areaForest = A_f.multiply(ee.Image.pixelArea().divide(10000));
+
+var stats_areaF = areaForest.reduceRegion({
+
+  reducer: ee.Reducer.sum(),
+
+  
+
+  scale: 30,
+
+  maxPixels: 500000000000
+
+});
+
+print ('Forest area:',stats_areaF.get('classification'), 'ha');
+
+
+
+
+
+
+
+//Exercise 6: Export Image to Asset (takes 1h usually)
+
+
+
+Export.image.toDrive({
+
+  image: classified_correct,
+
+  description: "forest_noforest_Jamaica",
+
+  region: geometry,
+
+  scale: 30,
+
+maxPixels: 50e9});
+
+
+
+
+
+
+

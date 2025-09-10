@@ -1,0 +1,18 @@
+{
+    "Theme": [
+        "NDVI calculation and analysis using Landsat 8 images"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C02/T1_L2",
+        "LANDSAT/LC08/C01/T1_SR",
+        "users/elaurenyoung/usa_states",
+        "users/elaurenyoung/Site_summary_12_Apr_2022-point"
+    ],
+    "Function": [
+        "Filtering and masking of Landsat 8 images",
+        "Calculation of NDVI using Landsat 8 images",
+        "Buffering and clipping of ROI and transect locations",
+        "Calculation of mean, standard deviation, and variance of NDVI values",
+        "Exporting results to Google Drive"
+    ]
+}

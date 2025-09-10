@@ -1,0 +1,5 @@
+{
+  "Theme": ["Fire analysis", "Burned area detection", "Image classification"],
+  "DataSource": ["users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016", "COPERNICUS/S2", "ESA/GLOBCOVER_L4_200901_200912_V2_3"],
+  "Function": ["Set date range", "Define fire area", "Filter features by date", "Filter features by location", "Compute image collections", "Calculate indices", "Classify images", "Sample training data", "Sample validation data", "Train classifiers", "Evaluate classifiers"]
+}

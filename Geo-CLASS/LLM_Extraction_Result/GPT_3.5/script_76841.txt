@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Generate NDVI and LSWI for a specific region over a defined time period."],
+  "Theme": ["Vegetation health monitoring"],
+  "DataSource": ["users/cxliu2015/PA_Qinghai_EnglishNames", "users/cxliu2015/PA_Qinghai_cdm_studiedRectangle", "LANDSAT/LT05/C01/T1_SR", "LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Cloud and shadow masking", "NDVI and LSWI computation"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/cxliu2015/PA_Qinghai_EnglishNames", "users/cxliu2015/PA_Qinghai_cdm_studiedRectangle"],
+        "Function": ["Cloud and shadow masking"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LT05/C01/T1_SR", "LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["NDVI and LSWI computation"]
+    }
+}
+```

@@ -1,0 +1,6 @@
+{
+  "Summary": ["The script processes Landsat imagery for the Bahamas, focusing on land change classification."],
+  "Theme": ["Land change classification"],
+  "DataSource": ["users/EL/Bahamas", "LANDSAT/LT5_L1T", "LANDSAT/LE7_L1T", "LANDSAT/LC08/C01/T1_RT", "users/EL/Bahamas_class"],
+  "Function": ["Filtering Landsat imagery by date, location, and cloud cover", "Creating composite images for 2000 and 2017", "Calculating spectral ratios for different bands", "Masking forest areas for land change classification", "Training a CART classifier for classification"]
+}

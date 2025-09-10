@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["users/kidsherry/Beijing"],
+        "Function": ["Visualize trend analysis", "Define regions of interest", "Add regions to map"]
+    },
+    "relation_2": {
+        "DataSource": ["MODIS/006/MOD13A1"],
+        "Function": ["Filter image collection by date", "Select maximum NDVI value", "Set image timestamp", "Create image collection from list", "Perform linear trend analysis", "Generate NDVI time series chart", "Display NDVI time series chart"]
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "Training Data Creation",
+            "Training CART Classifier",
+            "Elevation Classification"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "builtup",
+            "water",
+            "agriculture",
+            "barren"
+        ],
+        "Function": [
+            "Training Data Creation",
+            "Training CART Classifier",
+            "Elevation Classification"
+        ]
+    }
+}

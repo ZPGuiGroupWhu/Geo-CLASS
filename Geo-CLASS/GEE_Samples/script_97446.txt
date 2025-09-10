@@ -1,0 +1,79 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var geometry = /* color: #d63000 */ee.Geometry.Polygon(
+        [[[114.98906209121583, -2.293685458996674],
+          [115.05329735522037, -2.3480082237203104],
+          [115.07406889649246, -2.3625716606599907],
+          [115.1903172577097, -2.2822924895310432],
+          [115.2429641318738, -2.239403902001103],
+          [115.30659476484982, -2.1882795959192007],
+          [115.70801343629023, -1.4838288951612437],
+          [115.7796318835218, -0.6562712641010038],
+          [115.1777987375126, -0.24787027285090327],
+          [114.60894227644974, 0.21545726016301162],
+          [114.25581007469327, 0.44953625396563224],
+          [113.93561589278579, 0.6726068191209643],
+          [113.15674896879091, 0.054669154044706354],
+          [112.41310952259687, -0.5672236904220389],
+          [113.8796881221707, -1.6120108864593012],
+          [114.82280761045081, -2.1943842744467914]]]),
+    geometry2 = /* color: #98ff00 */ee.Geometry.Polygon(
+        [[[110.98184495505564, -1.469505492763082],
+          [110.71540806432824, -2.4519900943991364],
+          [110.92093733830256, -3.001222502792518],
+          [111.3283150602299, -3.096159749990164],
+          [111.49406547906824, -3.2787580014987916],
+          [111.86313915282949, -3.422694614517153],
+          [112.14438768744151, -3.7198064681147445],
+          [113.37228319658561, -3.8858960852415305],
+          [113.91846999767336, -3.711045428143443],
+          [114.28275374455256, -3.648321383615839],
+          [114.59037093205256, -3.6373572533638865],
+          [114.71687151122421, -2.8691937559052962],
+          [114.86502913517756, -2.639113370195706],
+          [114.78812483830256, -2.4909465835397366],
+          [114.61785418301997, -2.359418840185904],
+          [114.4735769323238, -2.2468987392848594],
+          [114.06567726697529, -2.030041901083377],
+          [113.62357405705256, -1.771844672059772],
+          [112.56320814166133, -1.3052534488256946],
+          [111.64603499455256, -0.7503771825403981]]]),
+    geometry3 = 
+    /* color: #0b4a8b */
+    /* shown: false */
+    ee.Geometry.Polygon(
+        [[[110.71989903853864, 4.068247354137885],
+          [107.38005528853864, 0.7318064419384639],
+          [110.36833653853864, -5.937207030012794],
+          [116.16911778853864, -5.5874215428058935],
+          [120.91521153853864, 1.9619115866566104],
+          [120.03630528853864, 5.294587425539359],
+          [116.16911778853864, 7.913576275898828]]]);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+function maskS2clouds(image) {
+  var qa = image.select('QA60')
+
+  // Bits 10 and 11 are clouds and cirrus, respectively.
+  var cloudBitMask = 1 << 10;
+  var cirrusBitMask = 1 << 11;
+
+  // Both flags should be set to zero, indicating clear conditions.
+  var mask = qa.bitwiseAnd(cloudBitMask).eq(0)
+      .and(qa.bitwiseAnd(cirrusBitMask).eq(0))
+
+  return image.updateMask(mask).divide(10000)
+}
+var dataset = ee.ImageCollection('COPERNICUS/S2')
+                  .filterDate('2018-06-01', '2019-06-30')
+                  // Pre-filter to get less cloudy granules.
+                  .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE', 40))
+                  .filterBounds(geometry3)
+                  .map(maskS2clouds);
+var exportImage = dataset.median().select('B2')
+print(exportImage)
+var imageName='southern_centralkalimantanMedianB2'
+var region = ee.Geometry(geometry2.bounds(1).getInfo()).toGeoJSONString();
+print(exportImage.getDownloadURL({scale: 30, region: region, name: imageName}))
+
+imageName='northern_centralkalimantanMedianB2'
+region = ee.Geometry(geometry.bounds(1).getInfo()).toGeoJSONString();
+print(exportImage.getDownloadURL({scale: 30, region: region, name: imageName}))

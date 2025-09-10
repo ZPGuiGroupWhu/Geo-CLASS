@@ -1,0 +1,247 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var roi = ee.FeatureCollection("users/b20203080616/HB-data/Zhangjiakou"),
+    roi1 = /* color: #d63000 */ee.Geometry.Point([114.77292855657036, 39.89642333377198]),
+    roi2 = /* color: #999900 */ee.Geometry.Point([115.19590218938286, 40.15091902426266]),
+    roi3 = /* color: #009999 */ee.Geometry.Point([114.66751639549229, 39.61965320211606]),
+    roi4 = /* color: #ff00ff */ee.Geometry.Point([114.83609994328911, 39.621941222249085]),
+    roi5 = /* color: #ff9999 */ee.Geometry.Point([115.94798905421224, 40.26478061189334]),
+    roi6 = /* color: #99ff99 */ee.Geometry.Point([115.07163088346752, 40.949304049910225]),
+    roi7 = /* color: #9999ff */ee.Geometry.Point([116.14072640813286, 41.03105549549494]),
+    roi8 = /* color: #ffff99 */ee.Geometry.Point([114.63559945500786, 41.7645137091782]),
+    roi9 = /* color: #99ffff */ee.Geometry.Point([115.65732797063286, 41.698923599341676]),
+    roi10 = /* color: #ff99ff */ee.Geometry.Point([115.95395883000786, 41.7686108672195]),
+    roi11 = /* color: #d63000 */ee.Geometry.Point([114.28325044691886, 41.12906187640473]),
+    roi01 = /* color: #98ff00 */ee.Geometry.Point([114.00546184024651, 41.12137618077818]),
+    roi02 = /* color: #0b4a8b */ee.Geometry.Point([114.24833138860161, 41.758367481528325]);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+var im1_JK=ee.ImageCollection("COPERNICUS/S2_SR")
+
+           .filterBounds(roi)
+
+           .filterDate('2020-08-25','2020-08-28')
+
+           .sort('CLOUD_COVER')
+
+          // .first();
+
+print(im1_JK);//0825
+
+var im2_JK=ee.ImageCollection("COPERNICUS/S2_SR")
+
+           .filterBounds(roi)
+
+           .filterDate('2020-08-28','2020-08-30')
+
+           .sort('CLOUD_COVER')
+
+          // .first();
+
+print(im2_JK);//0828
+
+
+
+var im1=ee.ImageCollection("COPERNICUS/S2_SR")
+
+           .filterBounds(roi)
+
+           .filterDate('2020-08-25','2020-08-28')
+
+           .sort('CLOUD_COVER')
+
+           .first();
+
+// print(im1);
+
+
+
+var im2=ee.ImageCollection("COPERNICUS/S2_SR")
+
+           .filterBounds(roi1)
+
+           .filterDate('2020-08-25','2020-08-28')
+
+           .sort('CLOUD_COVER')
+
+           .first();
+
+// print(im1);
+
+
+
+var im3=ee.ImageCollection("COPERNICUS/S2_SR")
+
+           .filterBounds(roi2)
+
+           .filterDate('2020-08-25','2020-08-28')
+
+           .sort('CLOUD_COVER')
+
+           .first();
+
+// print(im1);
+
+
+
+var im4=ee.ImageCollection("COPERNICUS/S2_SR")
+
+           .filterBounds(roi3)
+
+           .filterDate('2020-08-25','2020-08-28')
+
+           .sort('CLOUD_COVER')
+
+           .first();
+
+// print(im1);
+
+
+
+var im5=ee.ImageCollection("COPERNICUS/S2_SR")
+
+           .filterBounds(roi4)
+
+           .filterDate('2020-08-25','2020-08-28')
+
+           .sort('CLOUD_COVER')
+
+           .first();
+
+// print(im1);
+
+
+
+var im6=ee.ImageCollection("COPERNICUS/S2_SR")
+
+           .filterBounds(roi5)
+
+           .filterDate('2020-08-25','2020-08-28')
+
+           .sort('CLOUD_COVER')
+
+           .first();
+
+// print(im1);
+
+
+
+var im7=ee.ImageCollection("COPERNICUS/S2_SR")
+
+           .filterBounds(roi6)
+
+           .filterDate('2020-08-25','2020-08-28')
+
+           .sort('CLOUD_COVER')
+
+           .first();
+
+// print(im1);
+
+
+
+var im8=ee.ImageCollection("COPERNICUS/S2_SR")
+
+           .filterBounds(roi7)
+
+           .filterDate('2020-08-25','2020-08-28')
+
+           .sort('CLOUD_COVER')
+
+           .first();
+
+// print(im1);
+
+
+
+var im9=ee.ImageCollection("COPERNICUS/S2_SR")
+
+           .filterBounds(roi8)
+
+           .filterDate('2020-08-25','2020-08-28')
+
+           .sort('CLOUD_COVER')
+
+           .first();
+
+var im10=ee.ImageCollection("COPERNICUS/S2_SR")
+
+           .filterBounds(roi9)
+
+           .filterDate('2020-08-25','2020-08-28')
+
+           .sort('CLOUD_COVER')
+
+           .first();
+
+var im11=ee.ImageCollection("COPERNICUS/S2_SR")
+
+           .filterBounds(roi10)
+
+           .filterDate('2020-08-25','2020-08-28')
+
+           .sort('CLOUD_COVER')
+
+           .first();
+
+var im12=ee.ImageCollection("COPERNICUS/S2_SR")
+
+           .filterBounds(roi01)
+
+           .filterDate('2020-08-28','2020-08-30')
+
+           .sort('CLOUD_COVER')
+
+           .first();
+
+var im13=ee.ImageCollection("COPERNICUS/S2_SR")
+
+           .filterBounds(roi02)
+
+           .filterDate('2020-08-28','2020-08-30')
+
+           .sort('CLOUD_COVER')
+
+           .first();
+
+var mosaic_1 = ee.ImageCollection.fromImages([im13,im12,im11,im10,im9,im8,im7,im6,im5,im4,im3,im2,im1]).mosaic();
+
+var sen2=mosaic_1.clip(roi);
+
+var sen2_select=sen2.select(['B2','B3','B4','B8'])
+
+print(sen2_select);
+
+Export.image.toDrive({
+
+  image:sen2_select,
+
+  description:'Zhangjiakou_0825',
+
+  scale:10,
+
+  maxPixels:1e13,
+
+  region:roi,
+
+  crs:'EPSG:4326',
+
+  fileFormat:'GeoTiff',
+
+  formatOptions:{
+
+    cloudOptimized:false
+
+  }});
+
+
+
+Map.centerObject(roi, 7);
+
+Map.addLayer(roi,{color:"yellow"},'roi');
+
+// Map.addLayer(roi2);
+
+Map.addLayer(im1_JK, {bands:['B4','B3','B2'],min:0.0, max: 3000},'s2 0825');
+
+Map.addLayer(im2_JK, {bands:['B4','B3','B2'],min:0.0, max: 3000},'s2 0828');
+
+Map.addLayer(sen2_select, {bands:['B4','B3','B2'],min:0.0, max: 3000},'s2 0825');

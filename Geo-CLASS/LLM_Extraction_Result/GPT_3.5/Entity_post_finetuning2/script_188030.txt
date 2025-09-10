@@ -1,0 +1,17 @@
+{
+    "Summary": [
+        "The script processes Landsat 8 TOA data for NDVI analysis and exports time-series data."
+    ],
+    "Theme": [
+        "NORMALIZED DIFFERENCE VEGETATION INDEX (NDVI)"
+    ],
+    "DataSource": [
+        "projects/ee-kimiachenaary/assets/Tehran",
+        "LANDSAT/LC08/C01/T1_TOA"
+    ],
+    "Function": [
+        "Image Cloud Masking",
+        "Calculate Normalized Infrared Vegetation Index (NIRV)",
+        "Buffering Points For Sample Expansion"
+    ]
+}

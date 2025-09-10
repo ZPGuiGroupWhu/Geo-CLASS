@@ -1,0 +1,17 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2",
+            "urban",
+            "water",
+            "forest",
+            "agriculture"
+        ],
+        "Function": [
+            "Vegetation And Water Indices Calculation",
+            "Spatial Intersection And Algebra",
+            "Classification And Machine Learning",
+            "Classification And Machine Learning"
+        ]
+    }
+}

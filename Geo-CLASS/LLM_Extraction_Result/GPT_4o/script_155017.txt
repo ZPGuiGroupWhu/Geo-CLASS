@@ -1,0 +1,31 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land Surface Temperature Analysis"],
+  "DataSource": ["MODIS/006/MOD11A1"],
+  "Function": ["Define spatial area", "Create feature collection", "Filter image collection by bounds", "Filter image collection by date", "Clip images to region", "Select specific band", "Scale temperature values", "Add layer to map", "Calculate mean temperature for points", "Format results", "Export results to Drive"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["MODIS/006/MOD11A1"],
+    "Function": [
+      "Filter image collection by bounds",
+      "Filter image collection by date",
+      "Clip images to region",
+      "Select specific band",
+      "Scale temperature values",
+      "Add layer to map",
+      "Calculate mean temperature for points",
+      "Format results",
+      "Export results to Drive"
+    ]
+  }
+}
+```
+
+Total_Token_Usage:
+4359

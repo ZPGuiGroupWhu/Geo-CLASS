@@ -1,0 +1,24 @@
+{
+  "relation_1": {
+    "DataSource": ["COPERNICUS/S1_GRD"],
+    "Function": [
+      "Filter image collection by date and polarization",
+      "Mosaic images to create composite",
+      "Apply speckle filter to images",
+      "Calculate difference between images",
+      "Apply threshold to detect flooded areas"
+    ]
+  },
+  "relation_2": {
+    "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2"],
+    "Function": ["Filter image collection by date and polarization"]
+  },
+  "relation_3": {
+    "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+    "Function": ["Mask permanent water bodies"]
+  },
+  "relation_4": {
+    "DataSource": ["WWF/HydroSHEDS/03VFDEM"],
+    "Function": ["Mask areas with high slope"]
+  }
+}

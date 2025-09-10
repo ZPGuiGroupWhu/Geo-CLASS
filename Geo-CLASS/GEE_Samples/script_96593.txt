@@ -1,0 +1,192 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var geometry = 
+    /* color: #d63000 */
+    /* shown: false */
+    ee.Geometry.Polygon(
+        [[[35.5359522684153, 11.297976569355416],
+          [35.5359522684153, 5.890317670875707],
+          [41.6223780496653, 5.890317670875707],
+          [41.6223780496653, 11.297976569355416]]], null, false),
+    modis = ee.ImageCollection("MODIS/MOD09GA_006_NDVI"),
+    srtm = ee.Image("USGS/SRTMGL1_003"),
+    samples = /* color: #3ff1ff */ee.FeatureCollection(
+        [ee.Feature(
+            ee.Geometry.Point([39.1100847536454, 7.6587655714153975]),
+            {
+              "system:index": "0"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([38.12131992308872, 7.162524508157685]),
+            {
+              "system:index": "1"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([37.81646412710025, 8.588694096016736]),
+            {
+              "system:index": "2"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([36.86443927869148, 7.508105639803437]),
+            {
+              "system:index": "3"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([40.062080570187945, 7.07959729547862]),
+            {
+              "system:index": "4"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([39.411062790938765, 9.238518371716124]),
+            {
+              "system:index": "5"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([37.79442413927246, 9.86258492024323]),
+            {
+              "system:index": "6"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([37.672130705948376, 11.026817933366415]),
+            {
+              "system:index": "7"
+            })]),
+    lc = ee.ImageCollection("MODIS/006/MCD12Q1"),
+    sen2 = ee.ImageCollection("COPERNICUS/S2_SR");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+// function that computes NDVI values for a given image
+
+function addNDVI(image) {
+
+    // calculate NDVI
+
+    var ndvi = image.normalizedDifference(['B8', 'B4']).rename('NDVI')
+
+    // add NDVI to the image bands
+
+    return image.addBands(ndvi);
+
+      }
+
+
+
+// visualization parameters for RGB, NDVI and land cover images
+
+var rgb_vis = {min: 0, max: 3000, bands:['B4','B3', 'B2']};
+
+var NDVI_vis = {min:-1, max: 1, bands: 'NDVI', palette: ['blue', 'white', 'green']};
+
+var lc_vis = {
+
+  min: 1.0,
+
+  max: 17.0,
+
+  palette: [
+
+    '05450a', '086a10', '54a708', '78d203', '009900', 'c6b044', 'dcd159',
+
+    'dade48', 'fbff13', 'b6ff05', '27ff87', 'c24f44', 'a5a5a5', 'ff6d4c',
+
+    '69fff8', 'f9ffa4', '1c0dff'
+
+  ],
+
+};
+
+
+
+// filter the data by date range, area of interest and cloud cover
+
+var sen2Filtered = sen2.filterDate('2019-10-01', '2020-04-15').filterBounds(geometry).filterMetadata('CLOUD_COVERAGE_ASSESSMENT', 'less_than', 15)
+
+
+
+var modisFiltered = modis.filterDate('2019-10-01', '2020-04-15').filterBounds(geometry)
+
+
+
+var lcFiltered  = lc.filterDate('2018-01-01', '2018-12-31').filterBounds(geometry).select('LC_Type1')
+
+
+
+// create two images that have mean MODIS NDVI values of 4 month period before and after assumed locust damages
+
+var image1 = modis.filterDate('2019-08-01', '2019-11-30').filterBounds(geometry).mean().clip(geometry);
+
+
+
+var image2 = modis.filterDate('2019-12-22', '2020-04-22').filterBounds(geometry).mean().clip(geometry);
+
+
+
+
+
+// Add the images to the map
+
+Map.addLayer(image1, NDVI_vis, 'Image 1',false)
+
+Map.addLayer(image2, NDVI_vis, 'Image 2',false)
+
+
+
+// Compute the NDVI for the Sentinel-2 collection
+
+var sen2Ndvi = sen2_filtered.map(addNDVI);
+
+
+
+// Extract RGB image with the greenest pixels 
+
+var greenest = sen2Ndvi.qualityMosaic('NDVI');
+
+Map.addLayer(greenest, rgb_vis, 'RGB (greenest pixel)',false);
+
+
+
+// Define a function that creates a buffer around sample points
+
+var bufferPoints = function(feature) {
+
+  return feature.buffer(100)
+
+}
+
+// Compute the buffer using the previous function
+
+var geom = samples.map(bufferPoints)
+
+
+
+// Create a chart to visualize NDVI time series around the sample points
+
+var timeSeries = ui.Chart.image.seriesByRegion(
+
+  sen2Ndvi,
+
+  geom,
+
+  // Calculate mean NDVI values for each step
+
+  ee.Reducer.mean(),
+
+  'NDVI',
+
+  30)
+
+  
+
+print(timeSeries)
+
+
+
+// Add land cover layer to the map
+
+Map.addLayer(filtered3.first()
+
+// Clip the image to match the area of interest
+
+.clip(geometry), lc_vis, 'Land Cover');
+
+
+
+

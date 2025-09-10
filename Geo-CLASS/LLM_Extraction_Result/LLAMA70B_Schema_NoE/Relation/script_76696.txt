@@ -1,0 +1,41 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/cxliu2015/Arctic_treeline_Project_Russia"
+        ],
+        "Function": [
+            "maskClouds function for cloud removal",
+            "maskCloudLC08 function for cloud masking from the quality band of Landsat 8",
+            "maskCloudLT5 function for cloud masking from the quality band of Landsat 4/5/7",
+            "oli2tm function for harmonizing Landsat 8 and Landsat 7"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "ft:1XXheLy1fnGiQKRtkcP9iD9s3gqdcx2PqtkKJP7Ig"
+        ],
+        "Function": [
+            "maskCloudLC08 function for cloud masking from the quality band of Landsat 8",
+            "oli2tm function for harmonizing Landsat 8 and Landsat 7"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "LANDSAT/LT04/C01/T1_TOA",
+            "LANDSAT/LT05/C01/T1_TOA",
+            "LANDSAT/LE07/C01/T1_TOA"
+        ],
+        "Function": [
+            "maskCloudLT5 function for cloud masking from the quality band of Landsat 4/5/7"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_TOA"
+        ],
+        "Function": [
+            "maskCloudLC08 function for cloud masking from the quality band of Landsat 8",
+            "oli2tm function for harmonizing Landsat 8 and Landsat 7"
+        ]
+    }
+}

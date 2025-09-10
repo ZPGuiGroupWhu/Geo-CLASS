@@ -1,0 +1,32 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Urban land use classification"],
+  "DataSource": ["LANDSAT/LE07/C01/T1_TOA", "COPERNICUS/S2", "users/eeranyartrodrigo/ferrocarriles/coahuilaPols"],
+  "Function": ["Image collection filtering", "Image normalization", "Feature extraction", "Unmixing", "Histogram analysis", "Thresholding"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LE07/C01/T1_TOA"],
+        "Function": ["Image collection filtering", "Image normalization", "Feature extraction"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Image collection filtering", "Image normalization", "Feature extraction"]
+    },
+    "relation_3": {
+        "DataSource": ["users/eeranyartrodrigo/ferrocarriles/coahuilaPols"],
+        "Function": ["Feature extraction", "Unmixing", "Histogram analysis", "Thresholding"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 6520, 'completion_tokens': 288, 'total_tokens': 6808}

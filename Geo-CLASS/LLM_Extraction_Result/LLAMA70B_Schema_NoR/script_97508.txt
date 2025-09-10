@@ -1,0 +1,35 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Tracking Crop Greenness in Merced County"],
+  "DataSource": ["LANDSAT/LC08/C02/T1_L2"],
+  "Function": ["Create feature collection", "Load image collection", "Filter image collection", "Calculate NDVI", "Create chart series by region", "Set chart options", "Load reference image", "Add map layer", "Center map"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response that organizes the extracted information into a structured format:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C02/T1_L2"],
+        "Function": ["Load image collection", "Filter image collection", "Calculate NDVI"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C02/T1_L2"],
+        "Function": ["Create feature collection", "Add map layer", "Center map"]
+    },
+    "relation_3": {
+        "DataSource": ["Reference image"],
+        "Function": ["Load reference image"]
+    },
+    "relation_4": {
+        "DataSource": ["None"],
+        "Function": ["Create chart series by region", "Set chart options"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2875, 'completion_tokens': 292, 'total_tokens': 3167}

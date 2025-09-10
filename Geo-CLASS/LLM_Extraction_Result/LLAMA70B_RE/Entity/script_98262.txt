@@ -1,0 +1,19 @@
+{
+    "Theme": [
+        "Flood extent analysis"
+    ],
+    "DataSource": [
+        "FAO/GAUL_SIMPLIFIED_500m/2015/level2",
+        "MODIS/006/MOD09GA",
+        "JRC/GSW1_0/GlobalSurfaceWater",
+        "WWF/HydroSHEDS/03VFDEM"
+    ],
+    "Function": [
+        "Filter image collection by bounds and date",
+        "Create mosaic image",
+        "Clip image to boundary",
+        "Calculate NDWI",
+        "Filter image by threshold",
+        "Mask out areas with high slope"
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "Theme": [
+        "Land Use Land Cover (LULC) classification using optical and SAR data"
+    ],
+    "DataSource": [
+        "users/abuhafsgaa/Makarfi",
+        "users/abuhafsgaa/ALLsample",
+        "users/abuhafsgaa/DATASET_COMPOSITION_2017_21",
+        "users/abuhafsgaa/TEST_SAR_2017_DATASET_BOXCAR"
+    ],
+    "Function": [
+        "Sample regions for training data",
+        "Classify images using Random Forest and CART classifiers",
+        "Compute variable importance",
+        "Classify test data",
+        "Accuracy assessment",
+        "Visualize results"
+    ]
+}

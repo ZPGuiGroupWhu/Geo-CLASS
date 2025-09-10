@@ -1,0 +1,6 @@
+{
+  "Summary": ["Geoprocessing workflow for Landsat 8 data focusing on MNDWI calculation and quality assessment."],
+  "Theme": ["Water quality assessment"],
+  "DataSource": ["users/eggenm/chad_rivers", "LANDSAT/LC08/C01/T1_TOA"],
+  "Function": ["Calculate MNDWI index", "Assess cloud cover", "Apply cloud cover mask", "Filter images by date and location", "Generate quality mosaic", "Calculate median values"]
+}

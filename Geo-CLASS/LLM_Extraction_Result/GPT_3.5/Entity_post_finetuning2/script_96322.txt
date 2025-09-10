@@ -1,0 +1,20 @@
+{
+    "Summary": [
+        "The script processes Sentinel-2 imagery to create NDVI mosaics for different time periods in Cordoba, Argentina."
+    ],
+    "Theme": [
+        "NORMALIZED DIFFERENCE VEGETATION INDEX (NDVI)"
+    ],
+    "DataSource": [
+        "users/eemapascordoba/LCLU_2021/recetas_ago20_abr21_pstxcultivo_masLCollect_buffer2306",
+        "users/eemapascordoba/var_ambientales_rindes/rindes_alf_rol_training_zona",
+        "users/capas/provincia_wgs"
+    ],
+    "Function": [
+        "Filter Image Collection",
+        "Band Correction",
+        "Standard Deviation Calculation",
+        "Legend Creation",
+        "Training Data Creation"
+    ]
+}

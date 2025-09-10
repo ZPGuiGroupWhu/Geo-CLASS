@@ -1,0 +1,18 @@
+{
+    "Summary": [
+        "Identifying flood areas using Sentinel-1 data in Thua Thien - Hue region."
+    ],
+    "Theme": [
+        "FLOOD FREQUENCY"
+    ],
+    "DataSource": [
+        "FAO/GAUL_SIMPLIFIED_500m/2015/level2",
+        "COPERNICUS/S1_GRD"
+    ],
+    "Function": [
+        "Filter Images By Date And Region",
+        "Visualize Satellite Imagery Changes Over Time",
+        "Calculate Normalized Difference Flood Index (NDFI)",
+        "Thresholding For Identification"
+    ]
+}

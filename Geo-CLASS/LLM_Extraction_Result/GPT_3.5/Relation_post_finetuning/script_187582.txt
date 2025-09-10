@@ -1,0 +1,22 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/zolokiala/parthenium1",
+            "users/zolokiala/buffer"
+        ],
+        "Function": [
+            "Cloud Masking And Quality Filtering"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "users/zolokiala/training",
+            "users/zolokiala/test",
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Vegetation And Water Indices Calculation",
+            "Classification And Machine Learning"
+        ]
+    }
+}

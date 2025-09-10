@@ -1,0 +1,6 @@
+{
+  "Summary": ["Geoprocessing workflow analyzing land cover changes using Landsat imagery."],
+  "Theme": ["Land cover change detection"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR", "ft:1BRQbpnAczAz2tTDe78RYFuzVM7Kz3j50m18yYbvr"],
+  "Function": ["Composite Landsat imagery for two time periods", "Random Forest classification for land cover mapping", "Change detection using spectral indices", "Accuracy assessment using error matrices"]
+}

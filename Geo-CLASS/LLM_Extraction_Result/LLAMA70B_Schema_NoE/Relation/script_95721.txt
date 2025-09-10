@@ -1,0 +1,28 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/eduardosperanza-Embrapa/Projeto-Coplacana/Piracicaba-H2Copla-UTM"
+        ],
+        "Function": [
+            "maskCloudAndShadows: Function to remove cloud and snow pixels",
+            "addNDVI: Function to calculate and add an NDVI band",
+            "addVARI: Function to calculate and add a VARI band",
+            "addEVI: Function to calculate and add an EVI band",
+            "bufferBy: Function to create a buffer",
+            "reduceRegions: Function to reduce regions and calculate mean NDVI, VARI, and EVI"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2_SR"
+        ],
+        "Function": [
+            "maskCloudAndShadows: Function to remove cloud and snow pixels",
+            "addNDVI: Function to calculate and add an NDVI band",
+            "addVARI: Function to calculate and add a VARI band",
+            "addEVI: Function to calculate and add an EVI band",
+            "bufferBy: Function to create a buffer",
+            "reduceRegions: Function to reduce regions and calculate mean NDVI, VARI, and EVI"
+        ]
+    }
+}

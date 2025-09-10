@@ -1,0 +1,13 @@
+{
+    "Theme": [
+        "Air quality analysis using NO2 column number density"
+    ],
+    "DataSource": [
+        "COPERNICUS/S5P/NRTI/L3_NO2"
+    ],
+    "Function": [
+        "Filtering image collection by date",
+        "Clipping images to a specific border",
+        "Visualizing NO2 column number density"
+    ]
+}

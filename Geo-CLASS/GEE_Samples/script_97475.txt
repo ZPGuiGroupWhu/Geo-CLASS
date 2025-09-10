@@ -1,0 +1,234 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var BND = 
+    /* color: #d63000 */
+    /* shown: false */
+    ee.Geometry.Polygon(
+        [[[-112.15470193582651, 41.993858258151505],
+          [-112.15470193582651, 41.55963113814126],
+          [-111.03958963113901, 41.55963113814126],
+          [-111.03958963113901, 41.993858258151505]]], null, false),
+    S2 = ee.ImageCollection("COPERNICUS/S2"),
+    VP = {"opacity":1,"bands":["B12","B08A","B04"],"min":267.34000000000003,"max":4651.66,"gamma":1},
+    NED = ee.Image("USGS/NED");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+
+
+/* ANS for Q6: There is a huge difference between the first image with the single cluster and 2nd image; the 2nd image has multiple
+classifications for several different land cover types, whereas the first image only has one classification for one land cover type
+
+ANS for Q7: I do see confusion in some of the clusters for the final 22-band classification. For example, water surfaces have the same color 
+of classification as some land surfaces that are slightly darker shaded in the Sentinel 2 imagery. To correct this, the number of clusters used
+could be increases, although it would be more time-consuming to generate results. Supervised classification may also be another possible
+way to correct confusion from unsupervised classification with more control and knowledge of the land surfaces.*/
+
+
+//***************** MASK CLOUDS **************************
+function maskS2clouds(image) {
+  var qa = image.select('QA60');
+
+  // Bits 10 and 11 are clouds and cirrus, respectively.
+  var cloudBitMask = 1 << 10;
+  var cirrusBitMask = 1 << 11;
+
+  // Both flags should be set to zero, indicating clear conditions.
+  var mask = qa.bitwiseAnd(cloudBitMask).eq(0)
+      .and(qa.bitwiseAnd(cirrusBitMask).eq(0));
+
+  return image.updateMask(mask);
+}
+//*******************************************************
+//****************** SET PARAMETERS *********************
+
+//  Make a list of the bands to use in the classification
+var bands_sum = ['B2','B3','B4','B5','B6','B7','B8','B8A','B11','B12'];
+var bands_fall = ['B2','B3','B4','B5','B6','B7','B8','B8A','B11','B12'];
+// Have to rename the bands since some of the functions below alphabetize the bands and therefore are not
+//    plotted in the proper order.
+var summer_bndnames = ['B02','B03','B04','B05','B06','B07','B08','B08A','B11','B12'];
+var fall_bndnames = ['B02','B03','B04','B05','B06','B07','B08','B08A','B11','B12'];
+var maxClusters = ee.Number(15);
+
+//*******************************************************
+//****************** INPUT DATA *************************
+
+var input = S2.filterDate('2020-06-15','2020-07-31').filterBounds(BND).map(maskS2clouds) 
+                 .select(bands_sum).median().clip(BND).rename(summer_bndnames);
+            
+var fall = S2.filterDate('2020-09-22','2020-10-31').filterBounds(BND).map(maskS2clouds) // Extract fall image from Sentinel-2 Image collection 
+                 .select(bands_fall).median().clip(BND).rename(fall_bndnames);
+                 
+// Display the Image
+Map.centerObject(BND, 10);
+Map.addLayer(input,VP,'Sentinel2');
+print(input);
+
+//  From the NED Elevation dataset, subset to same bnd, generate slope and aspect and stack DEM, slope, and aspect with imagery
+
+var DEM = NED.clip(BND).rename('DEM');
+var Terrain = ee.Terrain.products(DEM)
+print(Terrain)
+
+//  Add the terrain data to the input image
+var combined = input.addBands(Terrain,['DEM','slope']).addBands(fall); 
+print(combined)
+
+//*************************************************************************
+
+
+// Develop the training dataset.
+var training = combined.sample({
+  region: BND,
+  scale: 100,
+  numPixels: 5000,
+  tileScale: 16
+});
+print('Training Samples',training)
+
+// Generate the clusters.
+var clusterer = ee.Clusterer.wekaXMeans(15,maxClusters).train(training); // Changed the number of clusters from 5 to 15. 
+print('Clusters',clusterer)
+
+// Apply the clusters to the image.
+var result = combined.cluster(clusterer);
+
+// Display the clusters with random colors.  Set the visibility to false so it can be queried
+Map.addLayer(result.randomVisualizer(), {}, 'clusters', false);
+Map.addLayer(result.mask(result.eq(14)), {palette: ['red'], opacity: 0.75}, '1 cluster');  // used to evaluate one cluster at a time.
+print('Result',result)
+
+
+
+//*************************************************************************
+//************** CODE BELOW THIS LINE GENERATES GRAPHS  *******************
+//*****I'M SURE THERE'S A MORE STRAIGHTFORWARD WAY OF MAKING GRAPHS *******
+
+// Generate a list of cluster numbers to iterate with in the function below
+var Clusters = ee.List.sequence(0,maxClusters.subtract(1));
+//  These are the bands to plot in the scatter plots
+var bnds2plt = ['B04','B08'];  
+//Extract the two bands from the image and add the classification as a third layer
+var SubBnds2plt = combined.select(bnds2plt).addBands(result);  
+
+//  Function to iterate across all clusters to mask pixels in the input file and generate cluster means
+
+var bndMeans = Clusters.map(function (C) {
+  var X = ee.Number(C);
+  var msk = SubBnds2plt.mask(result.eq(X));  // Mask the image with a single cluster
+  // Calculate the means of each pixel that corresponds with a particular cluster
+  var Means = msk.reduceRegion({
+  reducer: ee.Reducer.mean(),
+  scale: 10,  //Pixel size is 10m, changing it to 100 resamples by a factor of 10, reducing Google resources need
+  tileScale: 16,
+  maxPixels: 1e10,
+  bestEffort: true
+  }).toArray().toList();  // The initial output is a dictionary.  I need a list so I have to convert to an array first.  I'm sure there's a better way
+  return Means;
+});
+
+// The only way I know how to plot these values in a scatter plot is to convert the bndMeans lists into a
+//  FeatureCollection.  This means I have to 'map' a function across each list and cast each as a Feature
+//  to be included in the FeatureCollection.
+
+var ClusterMeans = ee.FeatureCollection(bndMeans.map(function(el){
+  el = ee.List(el) // cast every element of the list
+  var geom = ee.Geometry.Point([ee.Number(0), ee.Number(0)])
+  return ee.Feature(geom, {'Red':ee.Number(el.get(0)), 'NIR':ee.Number(el.get(1)), 'Cluster':ee.Number(el.get(2))})
+}))
+print('bndMeans',bndMeans)
+print('ClusterMeans',ClusterMeans);  // This is the conversion of the bndMeans list to a FeatureCollection
+
+//***************************************************************
+//******* GENERATE A FREQUENCY HISTOGRAM OF THE CLUSTERS ********
+
+var Hist =
+  ui.Chart.image.histogram({
+    image: result,
+    region: BND,
+    scale: 10,
+    maxBuckets: maxClusters,
+    minBucketWidth: 1,
+    maxPixels: 1e12,
+    })
+    .setChartType('ColumnChart')
+    .setOptions({
+      title: 'Cluster Frequency',
+      legend: {position: 'none'},
+      hAxis: {title: 'Cluster'},
+      vAxis: {title: 'Frequency'}
+    });
+print('Cluster Frequency',Hist);
+
+
+//*******************************************************
+//******** SCATTER PLOT OF ALL TRAINING POINTS **********
+
+//Define the chart
+var scatterChart = ui.Chart.feature.groups({
+  features: training.cluster(clusterer),  // Use the trainin data, but add the cluster number to it
+  xProperty: 'B04',
+  yProperty: 'B08',
+  seriesProperty: 'cluster',
+}).setChartType('ScatterChart');
+
+scatterChart.setOptions({title: 'Scatter plot for each training point',
+  hAxis: {title: 'Red (B04)'},
+  vAxis: {title: 'NIR (B08)'},
+  min: 0,
+  max: maxClusters.subtract(1),
+  //  Just random colors
+  colors: ['#ff0000','#00ff00','#0000ff','#ffff00','#ff00ff','#00ffff','#000000',
+           '#990000','#009900','#000099','#999900','#990099','#009999','#999999','ff9900'],
+
+  pointSize: 4
+});
+print('Scatter Plot',scatterChart)
+//*******************************************************
+//************ SCATTER PLOT of CLUSTER MEANS ************
+//  This scatter plot will just lay out the cluster means.
+
+//Define the chart
+var scatterChart2 = ui.Chart.feature.groups({
+  features: ClusterMeans,
+  xProperty: 'Red',
+  yProperty: 'NIR',
+  seriesProperty: 'Cluster',
+}).setChartType('ScatterChart');
+
+scatterChart2.setOptions({title: 'Scatter plot of spectral cluster means',
+  hAxis: {title: 'Red (B04)'},
+  vAxis: {title: 'NIR (B08)'},
+  min: 0,
+  max: maxClusters.subtract(1),
+  colors: ['#ff0000','#00ff00','#0000ff','#ffff00','#ff00ff','#00ffff','#000000',
+           '#990000','#009900','#000099','#999900','#990099','#009999','#999999','ff9900'],
+
+  pointSize: 8
+});
+print('Scatter Plot',scatterChart2)
+
+
+//*******************************************************
+//******************* SIGNATURE PLOT **********************
+
+
+var addClusters = combined.addBands(result);
+// Create the chart and set options.
+var spectraChart = ui.Chart.image.byClass({
+  image: addClusters, 
+  classBand: 'cluster', 
+  region: BND, 
+  reducer: ee.Reducer.mean(), 
+  scale: 100,
+  }).setChartType('ScatterChart');
+
+spectraChart.setOptions({title: 'Signature plots for each spectral cluster',
+  hAxis: {title: 'Spectral Band'},
+  vAxis: {title: 'Scaled Reflectance (X0.0001)'},
+  lineWidth: 1,
+  pointSize: 4
+});
+
+print('Signature Plot',spectraChart)
+
+
+

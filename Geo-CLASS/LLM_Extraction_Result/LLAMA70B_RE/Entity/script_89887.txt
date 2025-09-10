@@ -1,0 +1,17 @@
+{
+    "Theme": [
+        "Land cover classification and visualization"
+    ],
+    "DataSource": [
+        "TIGER/2018/States",
+        "MODIS/006/MOD09GA",
+        "USGS/GMTED2010"
+    ],
+    "Function": [
+        "Cloud masking",
+        "Water masking",
+        "Image collection filtering",
+        "Hillshade generation",
+        "Image visualization"
+    ]
+}

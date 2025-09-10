@@ -1,0 +1,5 @@
+{
+  "Theme": ["Cloud and shadow masking", "Water masking", "Sentinel-2 imagery analysis"],
+  "DataSource": ["COPERNICUS/S2"],
+  "Function": ["Convert image to top-of-atmosphere reflectance", "Compute cloud score", "Compute shadow mask", "Compute water mask", "Filter image collection by date", "Filter image collection by location", "Apply cloud and shadow mask", "Create mosaic of images", "Compute mean of images"]
+}

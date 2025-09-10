@@ -1,0 +1,53 @@
+{
+  "relation_1": {
+    "DataSource": ["MODIS/006/MOD11A2"],
+    "Function": [
+      "Filter image collection by date",
+      "Convert temperature from Kelvin to Celsius",
+      "Calculate mean temperature",
+      "Clip image to region",
+      "Visualize results on map"
+    ]
+  },
+  "relation_2": {
+    "DataSource": ["MODIS/006/MOD13A1"],
+    "Function": [
+      "Filter image collection by date",
+      "Mask NDVI by cloud",
+      "Clip image to region",
+      "Visualize results on map"
+    ]
+  },
+  "relation_3": {
+    "DataSource": ["USGS/SRTMGL1_003"],
+    "Function": [
+      "Clip image to region",
+      "Visualize results on map"
+    ]
+  },
+  "relation_4": {
+    "DataSource": ["MODIS/006/MOD09A1"],
+    "Function": [
+      "Filter image collection by date",
+      "Calculate NMDI",
+      "Clip image to region",
+      "Visualize results on map"
+    ]
+  },
+  "relation_5": {
+    "DataSource": ["MODIS/MOD09GA_006_BAI"],
+    "Function": [
+      "Filter image collection by date",
+      "Clip image to region",
+      "Visualize results on map"
+    ]
+  },
+  "relation_6": {
+    "DataSource": ["LC8_L1T"],
+    "Function": [
+      "Filter image collection by date",
+      "Clip image to region",
+      "Visualize results on map"
+    ]
+  }
+}

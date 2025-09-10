@@ -1,0 +1,379 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var table = ee.FeatureCollection("users/cxliu2015/BYDwater20210325");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+var PartID ='BYD';  
+
+var empty = ee.Image().byte();
+
+var outline2 = empty.paint({
+
+featureCollection: table,
+
+color: 1,
+
+width: 1 
+
+});
+
+Map.addLayer(outline2,{palette: '00fbff'}, 'studyArea');
+
+// Visualize NDVI
+
+var ndviPalette = ['FFFFFF', 'CE7E45', 'DF923D', 'F1B555', 'FCD163', '99B718',
+
+               '74A901', '66A000', '529400', '3E8601', '207401', '056201',
+
+               '004C00', '023B01', '012E01', '011D01', '011301'];
+
+var rgbVis = {
+
+  min: 0,
+
+  max: 3000,
+
+  bands: ['B4', 'B3', 'B2'],
+
+};
+
+var rgbVisP90 = {
+
+  min: 0,
+
+  max: 3000,
+
+  bands: ['B4_p90', 'B3_p90', 'B2_p90'],
+
+};
+
+// Sentinel 2--------------------------
+
+//Define date range
+
+var startDate = ee.Date.fromYMD(2021,5,04);
+
+var endDate = ee.Date.fromYMD(2021,5,08);
+
+//////////SOME OTHER FILTERING METHODS
+
+
+
+
+
+//Filter Sentinel-2 collection for ROI and cloud-coverage.
+
+
+
+var s2 = ee.ImageCollection("COPERNICUS/S2");
+
+  var coll_s2_filtered = s2.filterDate(startDate, endDate)
+
+                              .filterBounds(table)
+
+                              .sort('system:time_start',false);
+
+print(coll_s2_filtered)
+
+var maskClouds = function(image){
+
+  // Bits 10 and 11 are clouds and cirrus, respectively.
+
+  var cloudBitMask = ee.Number(2).pow(10).int();
+
+  var cirrusBitMask = ee.Number(2).pow(11).int();
+
+  // extract pixel quality band
+
+  var qa = image.select('QA60');    
+
+  // create and apply mask
+
+  var mask = qa.bitwiseAnd(cloudBitMask).eq(0).and(
+
+             qa.bitwiseAnd(cirrusBitMask).eq(0));
+
+  return image.updateMask(mask);  
+
+};  
+
+// use "map" to apply the function to each image in the collection
+
+var collmasked = coll_s2_filtered.map(maskClouds);
+
+
+
+// create function to add NDVI using NIR (B8) and the red band (B4)
+
+var getNDVI = function(img){
+
+  return img.addBands(img.normalizedDifference(['B8','B4']).rename('NDVI'));
+
+};
+
+// map over image collection
+
+var collndvi = collmasked.map(getNDVI);
+
+print(collndvi,'collndvi')
+
+// NDVI function
+
+function computeNdvi(i) {
+
+  return i.normalizedDifference(['B8', 'B4'])
+
+}
+
+// MNDWI function
+
+function computeMndwi(i) {
+
+  return i.normalizedDifference(['B3', 'B11'])
+
+}
+
+// NDMI
+
+function computeNdmi(i) {
+
+  return i.normalizedDifference(['B8', 'B11'])
+
+}
+
+// NBR
+
+function computeNBR(i) {
+
+  return i.normalizedDifference(['B8', 'B12'])
+
+}
+
+// NDVIreln
+
+function computeNDVIreln(i) {
+
+  return i.normalizedDifference(['B8A', 'B5'])
+
+}
+
+// NDVIrel
+
+function computeNDVIrel(i) {
+
+  return i.normalizedDifference(['B6', 'B4'])
+
+}
+
+// CI
+
+function computeCI(i){
+
+  var CI=i.expression('B7/B5-1',{B7:i.select('B7'),B5:i.select('B5'),});
+
+  return CI;
+
+}
+
+
+
+// percentile NDVI
+
+
+
+var NDVIp90 = collmasked.map(computeNdvi).reduce(ee.Reducer.percentile([90])).clip(table).multiply(10000).int16().rename('NDVIp90');//*
+
+var NDVIp10= collmasked.map(computeNdvi).reduce(ee.Reducer.percentile([10])).clip(table).multiply(10000).int16().rename('NDVIp10');//*
+
+var NDVIMedian=collmasked.map(computeNdvi).median().clip(table).multiply(10000).int16().rename('NDVIp50');//** NDVImedian and 90p, 10p
+
+
+
+// percentile MNDWI
+
+var MNDWIp90 = collmasked.map(computeMndwi).reduce(ee.Reducer.percentile([90])).clip(table).multiply(10000).int16().rename('MNDWIp90');//*
+
+var MNDWIp10 = collmasked.map(computeMndwi).reduce(ee.Reducer.percentile([10])).clip(table).multiply(10000).int16().rename('MNDWIp10');//*
+
+var MNDWIMedian = collmasked.map(computeMndwi).median().clip(table).multiply(10000).int16().rename('MNDWIp50');
+
+// percentile NDMI
+
+var NDMIp90 = collmasked.map(computeNdmi).reduce(ee.Reducer.percentile([90])).clip(table).multiply(10000).int16().rename('NDMIp90');//*
+
+var NDMIp10 = collmasked.map(computeNdmi).reduce(ee.Reducer.percentile([10])).clip(table).multiply(10000).int16().rename('NDMIp10');//*
+
+var NDMIMedian = collmasked.map(computeNdmi).median().clip(table).multiply(10000).int16().rename('NDMIp50');
+
+// ND1
+
+var ND1 = NDVIp90.addBands(NDVIMedian).addBands(NDVIp10).addBands(MNDWIp90).addBands(MNDWIMedian)
+
+         .addBands(MNDWIp10).addBands(NDMIp90).addBands(NDMIMedian).addBands(NDMIp10);
+
+// NBR
+
+var NBRp90 = collmasked.map(computeNBR).reduce(ee.Reducer.percentile([90])).clip(table).multiply(10000).int16().rename('NBRp90');//*
+
+var NBRp10 = collmasked.map(computeNBR).reduce(ee.Reducer.percentile([10])).clip(table).multiply(10000).int16().rename('NBRp10');//*
+
+var NBRMedian = collmasked.map(computeNBR).median().clip(table).multiply(10000).int16().rename('NBRp50');
+
+// NDVIreln
+
+var NDVIrelnp90 = collmasked.map(computeNDVIreln).reduce(ee.Reducer.percentile([90])).clip(table).multiply(10000).int16().rename('NDVIrelnp90');//*
+
+var NDVIrelnp10 = collmasked.map(computeNDVIreln).reduce(ee.Reducer.percentile([10])).clip(table).multiply(10000).int16().rename('NDVIrelnp10');//*
+
+var NDVIrelnMedian = collmasked.map(computeNDVIreln).median().clip(table).multiply(10000).int16().rename('NDVIrelnp50');
+
+// NDVIrel
+
+var NDVIrelp90 = collmasked.map(computeNDVIrel).reduce(ee.Reducer.percentile([90])).clip(table).multiply(10000).int16().rename('NDVIrelp90');//*
+
+var NDVIrelp10 = collmasked.map(computeNDVIrel).reduce(ee.Reducer.percentile([10])).clip(table).multiply(10000).int16().rename('NDVIrelp10');//*
+
+var NDVIrelMedian = collmasked.map(computeNDVIrel).median().clip(table).multiply(10000).int16().rename('NDVIrelp50');
+
+// CI
+
+var CIp90 = collmasked.map(computeCI).reduce(ee.Reducer.percentile([90])).clip(table).multiply(10000).int16().rename('CIp90');//*
+
+var CIp10 = collmasked.map(computeCI).reduce(ee.Reducer.percentile([10])).clip(table).multiply(10000).int16().rename('CIp10');//*
+
+var CIMedian = collmasked.map(computeCI).median().clip(table).multiply(10000).int16().rename('CIp50');
+
+// ND2
+
+var ND2 = NBRp90.addBands(NBRMedian).addBands(NBRp10).addBands(NDVIrelnp90).addBands(NDVIrelnMedian).addBands(NDVIrelnp10)
+
+          .addBands(NDVIrelp90).addBands(NDVIrelMedian).addBands(NDVIrelp10);
+
+var ND3= CIp90.addBands(CIMedian).addBands(CIp10);
+
+// bands used
+
+var BandsUsed=['B2','B3','B4','B5','B6','B7','B8','B8A','B11','B12'];
+
+var AllBandsMedian=collmasked.select(BandsUsed).median();//* Median
+
+print(AllBandsMedian,'AllBandsMedian')
+
+var s2_mosaic = AllBandsMedian.select(['B8','B3','B2']);
+
+Map.addLayer(s2_mosaic,{min: 900, max : 5000},'MosaicMedian');
+
+
+
+
+
+// for each pixel, select the "best" set of bands from available images
+
+// based on the maximum NDVI/greenness
+
+var comBands=['B2','B3','B4','B5','B6','B7','B8','B8A','B11','B12','NDVI'];
+
+var compositeAll = collndvi.select(comBands).qualityMosaic('NDVI').clip(table);
+
+print(compositeAll,'compositeAll');
+
+var comBandUsed=['B2','B3','B4','B5','B6','B7','B8','B8A','B11','B12'];
+
+var compositeBandUsed=compositeAll.select(comBandUsed).int16();
+
+var compositeBandNDVI=compositeAll.select('NDVI').multiply(10000).int16();
+
+var composite=compositeBandUsed.addBands(compositeBandNDVI);//* maxNDVI and bands
+
+print('composite',composite);
+
+Map.addLayer(compositeBandNDVI,{min:2000, max: 10000, palette: ndviPalette}, 'ndvi');
+
+Map.addLayer(CIp90,{min:2000, max: 10000, palette: ndviPalette}, 'CIp90');
+
+
+
+// ------------------export-------------------
+
+Export.image.toDrive({
+
+image: ND1 ,
+
+description: 'S2'+PartID+'_ND1_2020_4_5',
+
+folder:'BYD_S2',
+
+region: table,
+
+scale: 30,
+
+maxPixels: 1e13}); 
+
+
+
+Export.image.toDrive({
+
+image: ND2 ,
+
+description: 'S2'+PartID+'_ND2_2020_4_5',
+
+folder:'BYD_S2',
+
+region: table,
+
+scale: 30,
+
+maxPixels: 1e13}); 
+
+
+
+Export.image.toDrive({
+
+image: ND3 ,
+
+description: 'S2'+PartID+'_ND3_2020_4_5',
+
+folder:'BYD_S2',
+
+region: table,
+
+scale: 30,
+
+maxPixels: 1e13}); 
+
+
+
+Export.image.toDrive({
+
+image: AllBandsMedian ,
+
+description: 'S2'+PartID+'_AllBandsMedian2020_4_5',
+
+folder:'BYD_S2',
+
+region: table,
+
+scale: 30,
+
+maxPixels: 1e13});
+
+
+
+Export.image.toDrive({
+
+image: composite ,
+
+description: 'S2'+PartID+'_composite2020_4_5',
+
+folder:'BYD_S2',
+
+region: table,
+
+scale: 30,
+
+maxPixels: 1e13});
+
+
+
+
+
+
+

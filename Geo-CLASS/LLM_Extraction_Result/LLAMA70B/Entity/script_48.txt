@@ -1,0 +1,5 @@
+{
+  "Theme": ["Land cover change detection and analysis in Cambodia"],
+  "DataSource": ["USDOS/LSIB/2017", "users/ak_glaciers/ltop_snic_seed_points75k_kmeans_cambodia_c2_1990", "users/ak_glaciers/LTOP_Cambodia_config_selected_220_kmeans_pts_new_weights", "users/ak_glaciers/Optimized_LT_1990_start_Cambodia_remapped_cluster_ids", "projects/servir-mekong/composites/"],
+  "Function": ["Clipping image to area of interest", "Applying LandTrendr fit algorithm", "Calculating indices from image bands", "Preparing breakpoints for LandTrendr", "Running LandTrendr fit", "Converting LandTrendr output to desired format", "Calculating time since last vertex", "Calculating segment length"]
+}

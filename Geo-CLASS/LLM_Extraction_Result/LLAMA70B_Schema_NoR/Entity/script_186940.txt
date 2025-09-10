@@ -1,0 +1,18 @@
+{
+    "Theme": [
+        "Landsat Time Series Analysis for Land Cover Change Detection"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C01/T1_SR",
+        "LANDSAT/LE07/C01/T1_SR",
+        "LANDSAT/LT05/C01/T1_SR",
+        "users/juandb/bloco_TIs_Kayapo"
+    ],
+    "Function": [
+        "Annual SR Time Series Collection Building",
+        "L8 to L7 Harmonization",
+        "Retrieve a Sensor SR Collection",
+        "Medoid Mosaic Compositing",
+        "Annual Mosaic Collection Building"
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Compute Median Of NDVI",
+            "Visualize NDVI And Date Information"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S1_GRD"
+        ],
+        "Function": [
+            "Filter And Merge"
+        ]
+    }
+}

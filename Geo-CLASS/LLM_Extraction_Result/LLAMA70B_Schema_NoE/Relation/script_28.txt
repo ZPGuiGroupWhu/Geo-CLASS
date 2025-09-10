@@ -1,0 +1,41 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "MODIS/006/MOD10A1"
+        ],
+        "Function": [
+            "Retrieval of surface reflectance collections",
+            "Harmonization of Landsat 8 to Landsat 7"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_SR",
+            "LANDSAT/LE07/C01/T1_SR",
+            "LANDSAT/LT04/C01/T1_SR",
+            "LANDSAT/LT05/C01/T1_SR"
+        ],
+        "Function": [
+            "Harmonization of TM and ETM+ to OLI",
+            "Harmonization of Landsat 8 to Landsat 7"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "users/ak_glaciers/points_w_ids_OR",
+            "users/ak_glaciers/or_snotel_sites",
+            "users/ak_glaciers/NWCC_high_resolution_coordinates_2019_edited_updated_fields_final"
+        ],
+        "Function": [
+            "Calculation of snow persistence"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "USGS/WBD/2017/HUC08"
+        ],
+        "Function": [
+            "Generation of HUC-based statistics"
+        ]
+    }
+}

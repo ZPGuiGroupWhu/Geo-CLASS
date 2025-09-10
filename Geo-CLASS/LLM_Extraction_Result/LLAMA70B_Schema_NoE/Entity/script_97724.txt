@@ -1,0 +1,20 @@
+{
+    "Theme": [
+        "Land cover analysis",
+        "Vegetation monitoring"
+    ],
+    "DataSource": [
+        "TIGER/2018/States",
+        "users/eisen520/chinesePrivet",
+        "COPERNICUS/S2_SR"
+    ],
+    "Function": [
+        "Filtering and mapping of feature collections",
+        "Cloud and snow pixel masking",
+        "NDVI calculation",
+        "Image collection filtering and mapping",
+        "Chart creation",
+        "Region-based reduction",
+        "Joining and merging of tables"
+    ]
+}

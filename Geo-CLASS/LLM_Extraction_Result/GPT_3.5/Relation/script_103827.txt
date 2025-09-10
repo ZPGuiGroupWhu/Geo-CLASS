@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["users/hrishippatel/IndiaStates"],
+        "Function": ["Create weekly Sentinel-1 composites for flood monitoring", "Add layer selection widget for user comparison"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Create weekly Sentinel-1 composites for flood monitoring"]
+    }
+}

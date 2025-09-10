@@ -1,0 +1,25 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Entity Recognition": {
+    "Theme": ["Land cover classification in Florida"],
+    "DataSource": ["TIGER/2016/States", "LANDSAT/LC08/C01/T1_SR"],
+    "Function": ["Filtering image collection by region", "Masking cloudy pixels", "Calculating water and vegetation indices", "Classifying land cover"]
+  },
+  "Relation Extraction": {
+    "relation_1": {
+      "DataSource": ["TIGER/2016/States"],
+      "Function": ["Filtering image collection by region"]
+    },
+    "relation_2": {
+      "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+      "Function": ["Masking cloudy pixels", "Calculating water and vegetation indices", "Classifying land cover"]
+    }
+  }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2413, 'completion_tokens': 218, 'total_tokens': 2631}

@@ -1,0 +1,18 @@
+{
+    "relation_1": {
+        "DataSource": ["users/juanjoseromeroacm21/MORELIA"],
+        "Function": ["Filter country boundaries"]
+    },
+    "relation_2": {
+        "DataSource": ["users/juanjoseromeroacm21/michoacan_state"],
+        "Function": ["Filter country boundaries"]
+    },
+    "relation_3": {
+        "DataSource": ["USDOS/LSIB_SIMPLE/2017"],
+        "Function": []
+    },
+    "relation_4": {
+        "DataSource": ["MODIS/MOD11A2"],
+        "Function": ["Import LST image collection", "Scale to Kelvin and convert to Celsius", "Calculate 8-day mean temperature", "Chart time series of LST", "Test trend with Sen's slope", "Export image to drive"]
+    }
+}

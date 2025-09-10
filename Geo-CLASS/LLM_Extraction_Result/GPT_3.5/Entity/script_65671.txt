@@ -1,0 +1,6 @@
+{
+  "Summary": ["Generate median temperature of Landsat 5 TM images for 1996 and 2006", "Generate median temperature of Landsat 8 images for 2017"],
+  "Theme": ["Landsat 5 TM temperature analysis for 1996 and 2006", "Landsat 8 temperature analysis for 2017"],
+  "DataSource": ["LANDSAT/LT05/C01/T1_SR", "LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Cloud masking for Landsat 5 images", "Cloud masking for Landsat 8 images"]
+}

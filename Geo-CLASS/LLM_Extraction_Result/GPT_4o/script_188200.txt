@@ -1,0 +1,33 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Forest classification", "Land cover analysis", "Seasonal mosaic creation"],
+  "DataSource": ["users/kindgard/ZWE_Forest_Plantations", "users/kindgard/Forest_Plantations_v2", "users/christinacorbane/MT_comp_proj", "JRC/GSW1_0/GlobalSurfaceWater"],
+  "Function": ["Create feature collections", "Filter image collections by date", "Filter image collections by cloud cover", "Create mosaics", "Add ratio bands", "Sample regions", "Train classifier", "Classify images", "Apply masks"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/kindgard/ZWE_Forest_Plantations"],
+        "Function": ["Create feature collections"]
+    },
+    "relation_2": {
+        "DataSource": ["users/kindgard/Forest_Plantations_v2"],
+        "Function": ["Create feature collections", "Sample regions", "Train classifier", "Classify images", "Apply masks"]
+    },
+    "relation_3": {
+        "DataSource": ["users/christinacorbane/MT_comp_proj"],
+        "Function": ["Apply masks"]
+    },
+    "relation_4": {
+        "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+        "Function": ["Apply masks"]
+    }
+}
+```
+
+Total_Token_Usage:
+16434

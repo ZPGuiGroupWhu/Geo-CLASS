@@ -1,0 +1,6 @@
+{
+  "Summary": ["Script extracts zonal statistics from Landsat images for specific points."],
+  "Theme": ["Landsat image zonal statistics extraction"],
+  "DataSource": ["users/Katemiller125/Illilouette", "LANDSAT/LE07/C02/T1_L2", "LANDSAT/LE07/C01/T1_SR"],
+  "Function": ["Buffering points for analysis", "Calculating zonal statistics for Landsat images"]
+}

@@ -1,0 +1,5 @@
+{
+  "Theme": ["Vegetation monitoring using Sentinel-2 imagery"],
+  "DataSource": ["COPERNICUS/S2_SR"],
+  "Function": ["Filtering image collection by cloud coverage", "Computing NDVI and adding as new band", "Masking cloudy pixels", "Computing NDWI and adding as new band", "Plotting NDVI and NDWI time series"]
+}

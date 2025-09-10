@@ -1,0 +1,37 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land cover classification and forest area analysis in Belize"],
+  "DataSource": ["users/EL/mapa_forest_hybrid_Belize", "LANDSAT/LT5_L1T", "LANDSAT/LE7_L1T", "LANDSAT/LC08/C01/T1_RT", "COPERNICUS/S2", "JRC/GSW1_0/GlobalSurfaceWater"],
+  "Function": ["Filtering image collections by date and cloud cover", "Creating mosaics from Landsat and Sentinel imagery", "Calculating spectral indices", "Classifying land cover using machine learning", "Masking water areas", "Calculating forest area statistics"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LT5_L1T", "LANDSAT/LE7_L1T", "LANDSAT/LC08/C01/T1_RT"],
+        "Function": ["Filtering image collections by date and cloud cover", "Creating mosaics from Landsat and Sentinel imagery", "Calculating spectral indices"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Creating mosaics from Landsat and Sentinel imagery", "Calculating spectral indices"]
+    },
+    "relation_3": {
+        "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+        "Function": ["Masking water areas"]
+    },
+    "relation_4": {
+        "DataSource": ["users/EL/mapa_forest_hybrid_Belize"],
+        "Function": ["Classifying land cover using machine learning", "Calculating forest area statistics"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 6685, 'completion_tokens': 423, 'total_tokens': 7108}

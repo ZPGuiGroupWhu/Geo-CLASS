@@ -1,0 +1,20 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016"
+        ],
+        "Function": [
+            "Data Acquisition And Preprocessing",
+            "Vegetation And Water Indices Calculation"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Data Acquisition And Preprocessing",
+            "Vegetation And Water Indices Calculation"
+        ]
+    }
+}

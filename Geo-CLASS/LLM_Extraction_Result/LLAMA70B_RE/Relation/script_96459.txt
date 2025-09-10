@@ -1,0 +1,33 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LE07/C01/T1_TOA"
+        ],
+        "Function": [
+            "Image collection filtering",
+            "Image normalization",
+            "Feature extraction"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Image collection filtering",
+            "Image normalization",
+            "Feature extraction"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "users/eeranyartrodrigo/ferrocarriles/coahuilaPols"
+        ],
+        "Function": [
+            "Feature extraction",
+            "Unmixing",
+            "Histogram analysis",
+            "Thresholding"
+        ]
+    }
+}

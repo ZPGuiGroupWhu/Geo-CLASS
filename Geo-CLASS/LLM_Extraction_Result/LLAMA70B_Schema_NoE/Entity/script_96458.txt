@@ -1,0 +1,20 @@
+{
+    "Theme": [
+        "Land cover classification and rice paddy detection"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2",
+        "COPERNICUS/S1_GRD",
+        "users/eeranyartrodrigo/ferrocarriles/estaciones_prospectadas_area",
+        "WWF/HydroSHEDS/03VFDEM"
+    ],
+    "Function": [
+        "Filtering Sentinel-2 data by date and geometry",
+        "Filtering Sentinel-1 data by date, geometry, and polarization",
+        "Removing clouds from Sentinel-2 data",
+        "Calculating median of cloud-free Sentinel-2 data",
+        "Calculating normalized difference indices (NDVI, NDBI, NDWI)",
+        "Applying thresholds to classify land cover",
+        "Detecting rice paddies using Sentinel-1 data and terrain analysis"
+    ]
+}

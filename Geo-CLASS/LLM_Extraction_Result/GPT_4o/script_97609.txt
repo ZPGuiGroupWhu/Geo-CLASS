@@ -1,0 +1,33 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Rainfall deviation analysis", "Seasonal precipitation monitoring"],
+  "DataSource": ["users/eijulio/valles_altos_estados", "FAO/GAUL_SIMPLIFIED_500m/2015/level2", "ECMWF/ERA5/DAILY", "UCSB-CHG/CHIRPS/PENTAD"],
+  "Function": ["Filter image collection by date", "Filter image collection by year and month", "Sum images to get monthly totals", "Compute average for each month", "Calculate monthly average rainfall", "Calculate seasonal deviation", "Clip image to area of interest", "Add layer to map", "Center map on area of interest", "Reduce regions to mean", "Paint feature collection", "Export image to Drive", "Export table to Drive"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/eijulio/valles_altos_estados"],
+        "Function": ["Clip image to area of interest", "Add layer to map", "Center map on area of interest", "Reduce regions to mean", "Paint feature collection", "Export image to Drive", "Export table to Drive"]
+    },
+    "relation_2": {
+        "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2"],
+        "Function": ["None"]
+    },
+    "relation_3": {
+        "DataSource": ["ECMWF/ERA5/DAILY"],
+        "Function": ["Filter image collection by date"]
+    },
+    "relation_4": {
+        "DataSource": ["UCSB-CHG/CHIRPS/PENTAD"],
+        "Function": ["Filter image collection by year and month", "Sum images to get monthly totals", "Compute average for each month", "Calculate monthly average rainfall", "Calculate seasonal deviation"]
+    }
+}
+```
+
+Total_Token_Usage:
+5406

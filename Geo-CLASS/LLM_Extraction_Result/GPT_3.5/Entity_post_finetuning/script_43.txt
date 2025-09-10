@@ -1,0 +1,17 @@
+{
+    "Summary": [
+        "Identifying analog regions for community forests based on biophysical and socio-economic characteristics."
+    ],
+    "Theme": [
+        "DIGITAL ELEVATION/TERRAIN MODEL (DEM)"
+    ],
+    "DataSource": [
+        "users/ak_glaciers/All_CF_Cambodia_July_2016",
+        "users/ak_glaciers/reem_cf_outputs/reem_canopy_cover_2000_pts_rma_nbr_timeseries_remapped_full",
+        "USDOS/LSIB/2017"
+    ],
+    "Function": [
+        "Calculating terrain slope and aspect from DEMs",
+        "NDVI (Normalized Difference Vegetation Index calculation)"
+    ]
+}

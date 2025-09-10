@@ -1,0 +1,18 @@
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC8_SR", "LANDSAT/LC8_L1T_TOA", "LANDSAT/LE7_L1T_TOA_FMASK"],
+        "Function": ["Image collection filtering", "NDVI calculation", "NBR calculation"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Image casting", "Image exporting", "Mosaic creation"]
+    },
+    "relation_3": {
+        "DataSource": ["ft:1Oaa3b2LdFGrAXL4jqFJzA-3iBeiNq6AQZkyFLVvp", "ft:1tAjm5bGsh0TWPSawKIsX-iWXd7vocIoG_98QjhU1"],
+        "Function": ["Image visualization"]
+    },
+    "relation_4": {
+        "DataSource": ["ft:1iovW6_vHSX3JOx5OvcFr-ljJdx5mGmqK6Q_ETiSO", "ft:1zmsdCSa-do_XXh6-w6bpfXpz_kN7nGBGmKAcBRFQ", "ft:1gGjM2T5JEgKFoxbWORCn3WPqB98p2adAz42eqycf"],
+        "Function": ["Image exporting", "Mosaic creation"]
+    }
+}

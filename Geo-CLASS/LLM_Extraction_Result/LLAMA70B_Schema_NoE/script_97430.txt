@@ -1,0 +1,39 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Cloud and Shadow Detection", "Vegetation Index Calculation"],
+  "DataSource": ["COPERNICUS/S2_CLOUD_PROBABILITY", "COPERNICUS/S2"],
+  "Function": [
+    "get_s2_sr_cld_col: Filter S2 SR and S2 cloud probability collections by AOI and date range, and join them by system:index",
+    "add_cloud_bands: Add cloud probability and cloud mask bands to an image",
+    "add_shadow_bands: Identify dark NIR pixels and project cloud shadows, adding shadow bands to an image",
+    "add_cld_shdw_mask: Combine cloud and shadow masks, remove small patches, and dilate remaining pixels",
+    "apply_cld_shdw_mask: Apply the cloud-shadow mask to an image",
+    "addSWI: Calculate the Soil Water Index (SWI) for an image",
+    "addMNDWI_S2: Calculate the Modified Normalized Difference Water Index (MNDWI) for an image",
+    "addNDVI_S2: Calculate the Normalized Difference Vegetation Index (NDVI) for an image",
+    "addSAVI_S2: Calculate the Soil Adjusted Vegetation Index (SAVI) for an image"
+  ]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2_CLOUD_PROBABILITY"],
+        "Function": ["get_s2_sr_cld_col", "add_cloud_bands", "add_cld_shdw_mask", "apply_cld_shdw_mask"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["get_s2_sr_cld_col", "add_cloud_bands", "add_shadow_bands", "add_cld_shdw_mask", "apply_cld_shdw_mask", "addSWI", "addMNDWI_S2", "addNDVI_S2", "addSAVI_S2"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4079, 'completion_tokens': 526, 'total_tokens': 4605}

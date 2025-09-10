@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["users/philipegeo/pol_jeremoabo"],
+        "Function": ["Filtering image collection by cloud cover and date", "Clipping images to a specific geometry"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LT05/C01/T1_TOA"],
+        "Function": ["Calculating median and mean of image collection", "Computing NDVI and SAVI indices", "Visualizing results on a map"]
+    }
+}

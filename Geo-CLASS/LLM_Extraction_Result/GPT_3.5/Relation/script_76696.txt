@@ -1,0 +1,26 @@
+{
+    "relation_1": {
+        "DataSource": ["users/cxliu2015/Arctic_treeline_Project_Russia"],
+        "Function": ["Cloud removal function for Landsat TM and later sensors", "Cloud mask function for Landsat 8 quality band", "Cloud mask function for Landsat 4/5/7 quality band", "Image collection filtering and mapping operations", "Image band manipulation and renaming function", "Landsat 8 and Landsat 7 harmonization function", "Image export to Google Drive function"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LT04/C01/T1_TOA"],
+        "Function": ["Cloud removal function for Landsat TM and later sensors", "Image collection filtering and mapping operations", "Image band manipulation and renaming function"]
+    },
+    "relation_3": {
+        "DataSource": ["LANDSAT/LT05/C01/T1_TOA"],
+        "Function": ["Cloud removal function for Landsat TM and later sensors", "Image collection filtering and mapping operations", "Image band manipulation and renaming function"]
+    },
+    "relation_4": {
+        "DataSource": ["LANDSAT/LE07/C01/T1_TOA"],
+        "Function": ["Cloud removal function for Landsat TM and later sensors", "Image collection filtering and mapping operations", "Image band manipulation and renaming function"]
+    },
+    "relation_5": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_TOA"],
+        "Function": ["Cloud removal function for Landsat TM and later sensors", "Cloud mask function for Landsat 8 quality band", "Image collection filtering and mapping operations", "Image band manipulation and renaming function", "Landsat 8 and Landsat 7 harmonization function", "Image export to Google Drive function"]
+    },
+    "relation_6": {
+        "DataSource": ["ft:1XXheLy1fnGiQKRtkcP9iD9s3gqdcx2PqtkKJP7Ig"],
+        "Function": ["Cloud removal function for Landsat TM and later sensors", "Cloud mask function for Landsat 8 quality band", "Cloud mask function for Landsat 4/5/7 quality band", "Image collection filtering and mapping operations", "Image band manipulation and renaming function", "Landsat 8 and Landsat 7 harmonization function", "Image export to Google Drive function"]
+    }
+}

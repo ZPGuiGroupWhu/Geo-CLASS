@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Flood monitoring and analysis"],
+  "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2", "COPERNICUS/S2"],
+  "Function": ["Filtering image collections by bounds and date", "Sorting images by cloud percentage", "Filtering images by cloud percentage", "Calculating normalized difference water index", "Reducing images to mean", "Displaying true color images", "Displaying NDWI images"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2"],
+        "Function": ["Filtering image collections by bounds and date", "Reducing images to mean"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Sorting images by cloud percentage", "Filtering images by cloud percentage", "Calculating normalized difference water index", "Displaying true color images", "Displaying NDWI images"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2520, 'completion_tokens': 259, 'total_tokens': 2779}

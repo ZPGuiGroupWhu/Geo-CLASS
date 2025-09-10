@@ -1,0 +1,6 @@
+{
+  "Summary": ["The script collects Landsat 8 images, calculates NDVI and NBR, exports image properties, and generates mosaics and individual scenes. It also detects forest loss, degradation, and fires using Landsat 8 satellite images in Xa Tong, Lai Chau."],
+  "Theme": ["Image collection and processing", "NDVI and NBR calculation", "Image export and mosaic creation", "Forest loss, degradation, and fire detection"],
+  "DataSource": ["LANDSAT/LC8_SR", "LANDSAT/LC8_L1T_TOA", "LANDSAT/LC08/C01/T1_TOA", "LANDSAT/LT5_L1T_TOA_FMASK", "LANDSAT/LE7_L1T_TOA_FMASK", "LANDSAT/LE7_L1T_TOA", "ft:1Fp3oWwAiWxh1XyXIc1HYl_eWBP9Uh8froBiiC9CG", "users/khoapv/xatong"],
+  "Function": ["NDVI calculation", "NBR calculation", "Image export to Drive", "Mosaic creation", "Individual scene export", "Forest loss, degradation, and fire detection"]
+}

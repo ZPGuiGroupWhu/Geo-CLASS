@@ -1,0 +1,19 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LE07/C01/T1_SR"
+        ],
+        "Function": [
+            "Image collection filtering",
+            "Cloud masking"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LE07/C01/T1_SR"
+        ],
+        "Function": [
+            "Image exporting"
+        ]
+    }
+}

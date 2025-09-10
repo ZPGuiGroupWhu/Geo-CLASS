@@ -1,0 +1,211 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var hist = ee.FeatureCollection("users/eeranyartrodrigo/A_Hist"),
+    conc = ee.FeatureCollection("users/eeranyartrodrigo/A_Conc"),
+    geometry = 
+    /* color: #d63000 */
+    /* shown: false */
+    ee.Geometry.Point([-102.30218174199275, 21.881872234624158]),
+    sismos = ee.FeatureCollection("users/eeranyartrodrigo/SSNMX_catalogo_20220801_20220810"),
+    coalcoman = /* color: #d63000 */ee.Geometry.Point([-103.18531469000358, 18.757862907611884]);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+/********************* FLOODING and DEM ********************************/
+
+var datasetFlood = ee.Image('USGS/GMTED2010');
+
+var elevation = datasetFlood.select('be75');
+
+var elevationVis = {
+
+  min: -100.0,
+
+  max: 6500.0,
+
+  gamma: 3.5,
+
+};
+
+Map.addLayer(elevation, elevationVis, 'Elevation', false, 0.999);
+
+/*************************************************************************/
+
+var gfd = ee.ImageCollection('GLOBAL_FLOOD_DB/MODIS_EVENTS/V1');
+
+var durationPalette = ['C3EFFE', '1341E8', '051CB0', '001133'];
+
+
+
+var builtUp = ee.Image('JRC/GHSL/P2016/BUILT_LDSMT_GLOBE_V1');
+
+var builtUpMultitemporal = builtUp.select('built');
+
+var visParamsB = {
+
+  min: 1.0,
+
+  max: 6.0,
+
+  palette: ['0c1d60', '000000', '448564', '70daa4', '83ffbf', 'ffffff'],
+
+};
+
+
+
+Map.addLayer(builtUpMultitemporal, visParamsB, 'Built-Up Multitemporal', false);
+
+
+
+
+
+Map.addLayer(sismos,{color:'magenta'},'SISMOS')
+
+
+
+
+
+/**************************************************************************/
+
+
+
+// An individual flood event - flooding due to Hurricane Isaac in the USA.
+
+var hurricaneIsaacDartmouthId = 3977;
+
+var hurricaneIsaacUsa = ee.Image(
+
+    gfd.filterMetadata('id', 'equals', hurricaneIsaacDartmouthId).first());
+
+
+
+
+// Map all floods to generate the satellite-observed historical flood plain.
+
+var gfdFloodedSum = gfd.select('flooded').sum();
+
+Map.addLayer(
+
+  gfdFloodedSum.selfMask(),
+
+  {min: 0, max: 10, palette: durationPalette},
+
+  'GFD Satellite Observed Flood Plain');
+
+
+
+// Overlay permanent water to distinguish flood water.
+
+var jrc = gfd.select('jrc_perm_water').sum().gte(1);
+
+Map.addLayer(
+
+  jrc.selfMask(),
+
+  {min: 0, max: 1, palette: 'C3EFFE'},
+
+  'JRC Permanent Water');
+
+  
+
+/*************************************************************************/
+
+
+
+
+
+
+
+Map.addLayer(hist,{color:'green'},'Archivos Históricos')
+
+Map.addLayer(conc,{color:'purple'},'Archivos Concentración')
+
+
+
+// Folder name for a series of tables.
+
+var folder = 'JRC/GWIS/GlobFire/v2/DailyPerimeters';
+
+
+
+
+// Define a table name (table id) identified from the list of available tables.
+
+var tableName = 'JRC/GWIS/GlobFire/v2/DailyPerimeters/2020';
+
+
+
+var computeArea = function (f) {
+
+  return f.set({'area': f.area()});
+
+}
+
+// Import a selected table as a FeatureCollection.
+
+var features = ee.FeatureCollection(tableName).map(computeArea);
+
+
+
+// Visualization parameters for linear fire area gradient.
+
+var visParams = {
+
+  palette: ['f5ff64', 'b5ffb4', 'beeaff', 'ffc0e8', '8e8dff', 'adadad'],
+
+  min: 0.0,
+
+  max: 600000000.0,
+
+  opacity: 0.8,
+
+};
+
+
+
+// Paint fire perimeters to an image using computed fire area as the value property.
+
+var image = ee.Image().float().paint(features, 'area')
+
+
+
+// Display the image to the map (include features for exploring with Inspector).
+
+Map.addLayer(image, visParams, 'GlobFire 2020');
+
+Map.addLayer(features, null, 'For Inspector', false);
+
+Map.centerObject(geometry, 8)
+
+Map.setOptions('SATELLITE')
+
+
+
+
+
+
+
+
+
+var new_sismos = sismos.map(function(feature){
+
+  var mag = feature.get('Magnitud')
+
+  var radius = (ee.Number(mag).divide(1.01).subtract(-0.13).exp()).multiply(300)
+
+  
+
+  return ee.Feature(feature.buffer(radius).geometry(),{radio_magnitud:radius})
+
+})
+
+print('new:', new_sismos)
+
+
+
+Map.addLayer(new_sismos,{color:'red'},'buffered Quakes')
+
+
+
+
+var array_mg = sismos.aggregate_array('Magnitud')
+
+print(array_mg)
+

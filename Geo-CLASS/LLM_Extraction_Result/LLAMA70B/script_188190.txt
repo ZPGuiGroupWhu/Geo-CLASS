@@ -1,0 +1,45 @@
+Entity Recognition:
+{
+"Theme": ["Land cover classification and forest monitoring in Zimbabwe"],
+"DataSource": ["users/ValeriaContessa/n_regions", "ft:1tdSwUL7MVpOauSgRzqVTOwdfy17KDbw-1d9omPw", "LANDSAT/LT5_L1T", "LANDSAT/LE7_L1T", "LANDSAT/LC08/C01/T1_RT", "users/kindgard/Asia/Asia", "users/kindgard/Africa", "users/kindgard/SUD", "users/kindgard/AfricaS", "users/kindgard/AmericaN", "users/kindgard/Asia2", "JRC/GSW1_0/GlobalSurfaceWater", "users/kindgard/ESACCI-LC-L4-LC10-Map-20m-P1Y-2016-v10", "users/ValeriaContessa/Map_1992_rast", "COPERNICUS/S2"],
+"Function": ["Filtering image collections by date and cloud cover", "Clipping images to a specific country boundary", "Merging image collections", "Applying quality bands to images", "Calculating ratios of image bands", "Classifying land cover using CART algorithm", "Masking water and urban areas", "Creating mosaics of images"]
+}
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/ValeriaContessa/n_regions", "users/ValeriaContessa/Map_1992_rast"],
+        "Function": ["Filtering image collections by date and cloud cover", "Clipping images to a specific country boundary", "Classifying land cover using CART algorithm"]
+    },
+    "relation_2": {
+        "DataSource": ["ft:1tdSwUL7MVpOauSgRzqVTOwdfy17KDbw-1d9omPw"],
+        "Function": ["Filtering image collections by date and cloud cover", "Merging image collections"]
+    },
+    "relation_3": {
+        "DataSource": ["LANDSAT/LT5_L1T", "LANDSAT/LE7_L1T", "LANDSAT/LC08/C01/T1_RT"],
+        "Function": ["Applying quality bands to images", "Calculating ratios of image bands", "Merging image collections"]
+    },
+    "relation_4": {
+        "DataSource": ["users/kindgard/Asia/Asia", "users/kindgard/Africa", "users/kindgard/SUD", "users/kindgard/AfricaS", "users/kindgard/AmericaN", "users/kindgard/Asia2"],
+        "Function": ["Clipping images to a specific country boundary", "Masking water and urban areas"]
+    },
+    "relation_5": {
+        "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+        "Function": ["Masking water and urban areas"]
+    },
+    "relation_6": {
+        "DataSource": ["users/kindgard/ESACCI-LC-L4-LC10-Map-20m-P1Y-2016-v10"],
+        "Function": ["Classifying land cover using CART algorithm"]
+    },
+    "relation_7": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["None"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 7845, 'completion_tokens': 802, 'total_tokens': 8647}

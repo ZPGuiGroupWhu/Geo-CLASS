@@ -1,0 +1,6 @@
+{
+    "relation_1": {
+        "DataSource": ["MODIS/006/MOD11A1"],
+        "Function": ["Filtering image collection by bounds", "Filtering image collection by date", "Clipping images to region", "Scaling land surface temperature", "Reducing regions to mean", "Joining tables by label", "Formatting table for export"]
+    }
+}

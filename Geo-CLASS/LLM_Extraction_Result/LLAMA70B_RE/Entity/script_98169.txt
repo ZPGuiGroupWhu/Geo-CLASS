@@ -1,0 +1,18 @@
+{
+    "Theme": [
+        "Vegetation Index Analysis using Landsat 8"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C02/T1_L2",
+        "LANDSAT/LC08/C01/T1_SR",
+        "users/elaurenyoung/usa_states",
+        "users/elaurenyoung/Site_summary_12_Apr_2022-point"
+    ],
+    "Function": [
+        "Image Collection Filtering",
+        "Cloud and Water Masking",
+        "Image Composite Creation",
+        "NDVI Calculation",
+        "Statistical Analysis"
+    ]
+}

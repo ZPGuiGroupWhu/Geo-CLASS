@@ -1,0 +1,6 @@
+{
+  "Summary": ["The script processes Landsat imagery to detect flooded areas before and after refinement."],
+  "Theme": ["Flood detection and refinement"],
+  "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2", "LANDSAT/LC08/C01/T1_SR", "JRC/GSW1_0/GlobalSurfaceWater", "WWF/HydroSHEDS/03VFDEM"],
+  "Function": ["Filtering Landsat imagery by region, date, and cloud cover", "Creating NDWI, refining flood areas, and masking out clouds"]
+}

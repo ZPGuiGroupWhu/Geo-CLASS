@@ -1,0 +1,11 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Calculating terrain slope and aspect from DEMs",
+            "Vegetation And Water Indices Calculation"
+        ]
+    }
+}

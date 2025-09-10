@@ -1,0 +1,21 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "ft:12Ca5CZlFISuiE7Nf-3fpuTcvFgYNobv-4EJdCkGh"
+        ],
+        "Function": [
+            "Cloud Masking And Quality Filtering",
+            "Calculating terrain slope and aspect from DEMs"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "ft:1-uk71GdY0SUx0Gf4oX2C0LWSvdns18hkRVz7D8C4",
+            "ft:1NzCJgmYE2fzkwPn9dlO-u1W-CbjOshmaqauD2rza"
+        ],
+        "Function": [
+            "Cloud Masking And Quality Filtering",
+            "Calculating terrain slope and aspect from DEMs"
+        ]
+    }
+}

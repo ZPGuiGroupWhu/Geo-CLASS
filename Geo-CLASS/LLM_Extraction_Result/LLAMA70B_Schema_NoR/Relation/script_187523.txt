@@ -1,0 +1,18 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S1_GRD"
+        ],
+        "Function": [
+            "Filtering Image Collection by Geometry",
+            "Converting to Natural Scale",
+            "Smoothing Image",
+            "Calculating Band Ratio",
+            "Generating Histogram",
+            "Applying Focal Median Filter",
+            "Creating RGB Image",
+            "Masking Flood Image",
+            "Masking River Image"
+        ]
+    }
+}

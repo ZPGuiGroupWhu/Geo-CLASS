@@ -1,0 +1,39 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/dgilad/SA"
+        ],
+        "Function": [
+            "Buffering features by distance",
+            "Filtering image collection by date and polarization"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "users/dgilad/Fields"
+        ],
+        "Function": [
+            "Calculating mean and standard deviation of image values",
+            "Reducing regions to obtain mean and standard deviation values"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "COPERNICUS/S1_GRD"
+        ],
+        "Function": [
+            "Converting dB values to natural values",
+            "Filtering image collection by date and polarization",
+            "Calculating mean and standard deviation of image values"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "users/dgilad/SA",
+            "users/dgilad/Fields"
+        ],
+        "Function": [
+            "Exporting data tables to drive"
+        ]
+    }
+}

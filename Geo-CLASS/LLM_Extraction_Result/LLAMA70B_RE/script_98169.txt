@@ -1,0 +1,36 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Vegetation Index Analysis using Landsat 8"],
+  "DataSource": ["LANDSAT/LC08/C02/T1_L2", "LANDSAT/LC08/C01/T1_SR", "users/elaurenyoung/usa_states", "users/elaurenyoung/Site_summary_12_Apr_2022-point"],
+  "Function": ["Image Collection Filtering", "Cloud and Water Masking", "Image Composite Creation", "NDVI Calculation", "Statistical Analysis"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C02/T1_L2"],
+        "Function": ["Image Collection Filtering", "Cloud and Water Masking", "Image Composite Creation", "NDVI Calculation"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Image Collection Filtering", "Cloud and Water Masking", "Image Composite Creation", "NDVI Calculation"]
+    },
+    "relation_3": {
+        "DataSource": ["users/elaurenyoung/usa_states"],
+        "Function": ["State Boundary Definition"]
+    },
+    "relation_4": {
+        "DataSource": ["users/elaurenyoung/Site_summary_12_Apr_2022-point"],
+        "Function": ["Transect Point Definition", "Buffer Creation"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 6032, 'completion_tokens': 387, 'total_tokens': 6419}

@@ -1,0 +1,614 @@
+ID,Script_ID,Entity_Type,Value
+1,script_102957.txt,Theme,Landsat imagery analysis for Los Angeles
+2,script_10376.txt,Theme,Landsat 8 imagery analysis for September 2021
+3,script_103827.txt,Theme,Flood analysis in Gujarat using Sentinel-1 imagery
+4,script_106121.txt,Theme,Sentinel-2 image reprojection
+5,script_106121.txt,Theme,Cloud filtering
+6,script_106121.txt,Theme,Export to Google Drive
+7,script_10828.txt,Theme,NIRv calculation
+8,script_10828.txt,Theme,Cloud masking
+9,script_10828.txt,Theme,Linear interpolation
+10,script_110133.txt,Theme,Flood mapping
+11,script_110133.txt,Theme,Damage assessment
+12,script_110133.txt,Theme,Population exposure
+13,script_115907.txt,Theme,NDVI analysis
+14,script_115907.txt,Theme,Vegetation monitoring
+15,script_115907.txt,Theme,Temporal analysis
+16,script_118175.txt,Theme,Cloud masking
+17,script_118175.txt,Theme,NDVI calculation
+18,script_118175.txt,Theme,NDWI calculation
+19,script_118175.txt,Theme,MNDWI calculation
+20,script_118175.txt,Theme,NDSI calculation
+21,script_118175.txt,Theme,EWI calculation
+22,script_118175.txt,Theme,ICE detection
+23,script_119133.txt,Theme,Burn severity analysis
+24,script_119133.txt,Theme,Post-fire classification
+25,script_11983.txt,Theme,NDVI analysis
+26,script_11983.txt,Theme,Time series analysis
+27,script_11983.txt,Theme,Cloud masking
+28,script_11983.txt,Theme,Image differencing
+29,script_11983.txt,Theme,Anomaly detection
+30,script_120271.txt,Theme,NDVI calculation
+31,script_120271.txt,Theme,Gradient bar creation
+32,script_120271.txt,Theme,Map styling
+33,script_120557.txt,Theme,Cloud masking
+34,script_120557.txt,Theme,Water detection
+35,script_120557.txt,Theme,Vegetation detection
+36,script_125294.txt,Theme,Cloud masking
+37,script_125294.txt,Theme,Landsat image analysis
+38,script_125294.txt,Theme,Percentile reduction
+39,script_125294.txt,Theme,RGB composition
+40,script_131942.txt,Theme,Sentinel-2 imagery classification
+41,script_131942.txt,Theme,Cloud-free image generation
+42,script_131942.txt,Theme,Land cover classification
+43,script_144864.txt,Theme,Satellite image processing
+44,script_144864.txt,Theme,Cloud masking
+45,script_144864.txt,Theme,NDVI classification
+46,script_146128.txt,Theme,Burned area classification
+47,script_146128.txt,Theme,Vegetation analysis
+48,script_146128.txt,Theme,Bare soil detection
+49,script_146128.txt,Theme,Water body identification
+50,script_15043.txt,Theme,Land cover classification
+51,script_15043.txt,Theme,Variable importance analysis
+52,script_15043.txt,Theme,Accuracy assessment
+53,script_155017.txt,Theme,Land Surface Temperature Analysis
+54,script_159299.txt,Theme,Land cover classification in Gujrat City
+55,script_165234.txt,Theme,MODIS data processing
+56,script_165234.txt,Theme,NDVI calculation
+57,script_165234.txt,Theme,Greenest pixel analysis
+58,script_173652.txt,Theme,Land cover change detection
+59,script_173652.txt,Theme,Cloud masking
+60,script_173652.txt,Theme,Landsat imagery analysis
+61,script_174376.txt,Theme,Land cover classification
+62,script_174376.txt,Theme,Urban area analysis
+63,script_174376.txt,Theme,Water body analysis
+64,script_174376.txt,Theme,Vegetation analysis
+65,script_174474.txt,Theme,Landsat imagery analysis
+66,script_174474.txt,Theme,Cloud masking
+67,script_174474.txt,Theme,NDVI calculation
+68,script_174747.txt,Theme,Temperature analysis in Mexico
+69,script_176914.txt,Theme,Land cover classification
+70,script_176914.txt,Theme,Area calculation
+71,script_176914.txt,Theme,Accuracy assessment
+72,script_179626.txt,Theme,Land Surface Temperature Analysis
+73,script_179626.txt,Theme,NDVI Calculation
+74,script_179626.txt,Theme,Cloud Masking
+75,script_180257.txt,Theme,Landsat imagery analysis
+76,script_180257.txt,Theme,Zonal statistics extraction
+77,script_180257.txt,Theme,Cloud masking
+78,script_180257.txt,Theme,Point buffering
+79,script_186294.txt,Theme,Forest classification using NDVI
+80,script_186319.txt,Theme,Forest loss detection
+81,script_186319.txt,Theme,Forest degradation
+82,script_186319.txt,Theme,Forest fire detection
+83,script_186320.txt,Theme,Forest loss detection
+84,script_186320.txt,Theme,Forest degradation
+85,script_186320.txt,Theme,Forest fire detection
+86,script_186321.txt,Theme,Forest loss detection
+87,script_186321.txt,Theme,Forest degradation
+88,script_186321.txt,Theme,Forest fire detection
+89,script_186323.txt,Theme,Forest loss detection
+90,script_186323.txt,Theme,Forest degradation
+91,script_186323.txt,Theme,Forest fire detection
+92,script_186325.txt,Theme,Forest loss detection
+93,script_186325.txt,Theme,Forest degradation
+94,script_186325.txt,Theme,Forest fire detection
+95,script_186326.txt,Theme,Forest loss detection
+96,script_186326.txt,Theme,Forest degradation detection
+97,script_186326.txt,Theme,Forest fire detection
+98,script_186329.txt,Theme,Forest loss detection
+99,script_186329.txt,Theme,Forest degradation
+100,script_186329.txt,Theme,Forest fire detection
+101,script_186332.txt,Theme,NDVI calculation
+102,script_186332.txt,Theme,Unsupervised classification
+103,script_186332.txt,Theme,Crop type analysis
+104,script_186333.txt,Theme,Sugarcane crop classification
+105,script_186333.txt,Theme,NDVI time-series analysis
+106,script_186333.txt,Theme,Unsupervised classification
+107,script_186334.txt,Theme,Sugarcane crop classification
+108,script_186334.txt,Theme,NDVI time-series analysis
+109,script_186334.txt,Theme,Unsupervised clustering
+110,script_186338.txt,Theme,Terrain analysis
+111,script_186338.txt,Theme,Seasonal signal removal
+112,script_186338.txt,Theme,Time series analysis
+113,script_186356.txt,Theme,Land cover classification using Sentinel-1 data
+114,script_186365.txt,Theme,Vegetation analysis
+115,script_186365.txt,Theme,Water analysis
+116,script_186365.txt,Theme,Burn analysis
+117,script_186365.txt,Theme,Snow analysis
+118,script_186365.txt,Theme,Principal Component Analysis
+119,script_186365.txt,Theme,Spectral unmixing
+120,script_186365.txt,Theme,HSV transform
+121,script_186378.txt,Theme,NDVI and backscatter analysis
+122,script_186378.txt,Theme,Time series analysis
+123,script_186378.txt,Theme,Sentinel-1 and Landsat-8 data integration
+124,script_186380.txt,Theme,Marsh bird survey
+125,script_186380.txt,Theme,Spectral indices analysis
+126,script_186380.txt,Theme,Landsat imagery
+127,script_186411.txt,Theme,Burned area detection
+128,script_186411.txt,Theme,Vegetation classification
+129,script_186411.txt,Theme,Water classification
+130,script_186411.txt,Theme,Bare land classification
+131,script_186418.txt,Theme,Land Surface Temperature Retrieval
+132,script_186418.txt,Theme,NDVI Analysis
+133,script_186418.txt,Theme,Atmospheric Data Integration
+134,script_186442.txt,Theme,Plague detection using remote sensing data
+135,script_186449.txt,Theme,Land cover classification using Landsat imagery
+136,script_186466.txt,Theme,Forest loss detection
+137,script_186466.txt,Theme,Forest degradation detection
+138,script_186503.txt,Theme,Land cover classification using Sentinel-1 data
+139,script_186507.txt,Theme,Landsat imagery processing
+140,script_186507.txt,Theme,Cloud and shadow masking
+141,script_186507.txt,Theme,Time series analysis
+142,script_186507.txt,Theme,Composite image creation
+143,script_186521.txt,Theme,Vegetation and water classification
+144,script_186521.txt,Theme,Fire impact analysis
+145,script_186521.txt,Theme,Spectral differencing
+146,script_186528.txt,Theme,Sentinel-1 SAR data processing
+147,script_186528.txt,Theme,Land cover classification
+148,script_186540.txt,Theme,Forest NDVI analysis
+149,script_186548.txt,Theme,Surface water detection using Sentinel-1 SAR data
+150,script_186562.txt,Theme,Forest loss detection
+151,script_186562.txt,Theme,Forest degradation
+152,script_186562.txt,Theme,Forest fire detection
+153,script_186570.txt,Theme,Forest loss detection
+154,script_186570.txt,Theme,Forest degradation
+155,script_186570.txt,Theme,Forest fire detection
+156,script_186601.txt,Theme,Forest loss detection
+157,script_186601.txt,Theme,Forest degradation detection
+158,script_186605.txt,Theme,Forest loss detection
+159,script_186605.txt,Theme,Forest degradation
+160,script_186605.txt,Theme,Forest fire detection
+161,script_186607.txt,Theme,Forest loss detection
+162,script_186607.txt,Theme,Forest degradation
+163,script_186607.txt,Theme,Forest fire detection
+164,script_186815.txt,Theme,Forest loss detection
+165,script_186815.txt,Theme,Forest degradation
+166,script_186815.txt,Theme,Forest fire detection
+167,script_186822.txt,Theme,Agricultural field analysis
+168,script_186822.txt,Theme,Buffer effect reduction
+169,script_186822.txt,Theme,Satellite data filtering
+170,script_186822.txt,Theme,Rainy day exclusion
+171,script_186822.txt,Theme,Value conversion
+172,script_186822.txt,Theme,Statistical analysis
+173,script_186829.txt,Theme,Forest change analysis
+174,script_186829.txt,Theme,Temperature analysis
+175,script_186856.txt,Theme,Cloud masking
+176,script_186856.txt,Theme,Shadow projection
+177,script_186856.txt,Theme,Sentinel-2 imagery analysis
+178,script_186886.txt,Theme,Forest loss detection
+179,script_186886.txt,Theme,Forest degradation
+180,script_186886.txt,Theme,Forest fire detection
+181,script_186888.txt,Theme,Landsat 7 analysis
+182,script_186888.txt,Theme,NDVI calculation
+183,script_186888.txt,Theme,Cloud masking
+184,script_186888.txt,Theme,Radiance calculation
+185,script_186888.txt,Theme,Temperature mapping
+186,script_186892.txt,Theme,Forest loss detection
+187,script_186892.txt,Theme,Forest degradation detection
+188,script_186892.txt,Theme,Forest fire detection
+189,script_186914.txt,Theme,Flood detection using Sentinel-1 SAR data
+190,script_186915.txt,Theme,Flood detection using Sentinel-1 SAR data
+191,script_186940.txt,Theme,Landsat image harmonization
+192,script_186940.txt,Theme,Annual mosaic creation
+193,script_186940.txt,Theme,Medoid compositing
+194,script_186974.txt,Theme,Surface reflectance analysis
+195,script_186974.txt,Theme,Cloud masking
+196,script_186974.txt,Theme,NDWI and MNDWI calculation
+197,script_187038.txt,Theme,Water classification
+198,script_187038.txt,Theme,Cloud cover analysis
+199,script_187038.txt,Theme,Temporal filtering
+200,script_187038.txt,Theme,Spatial filtering
+201,script_187125.txt,Theme,Water detection using Sentinel-2 imagery
+202,script_187131.txt,Theme,Fire damage assessment in Russian regions
+203,script_187137.txt,Theme,Temperature analysis
+204,script_187137.txt,Theme,Monthly temperature trends
+205,script_187137.txt,Theme,Annual temperature range
+206,script_187138.txt,Theme,Forest change
+207,script_187138.txt,Theme,Surface temperature
+208,script_187138.txt,Theme,Deforestation analysis
+209,script_187226.txt,Theme,Cloud and shadow masking
+210,script_187226.txt,Theme,Water masking
+211,script_187226.txt,Theme,Sentinel-2 imagery analysis
+212,script_187248.txt,Theme,Land Surface Temperature Analysis
+213,script_187248.txt,Theme,NDVI Calculation
+214,script_187248.txt,Theme,Cloud Masking
+215,script_187481.txt,Theme,Flood mapping using Sentinel-1 imagery
+216,script_187523.txt,Theme,Flood mapping using Sentinel-1 imagery
+217,script_187528.txt,Theme,Flood mapping using Sentinel-1 data
+218,script_187530.txt,Theme,Flood mapping using Sentinel-1 imagery
+219,script_187532.txt,Theme,Flood mapping using Sentinel-1 data
+220,script_187533.txt,Theme,Flood mapping using Sentinel-1 data
+221,script_187534.txt,Theme,Flood mapping using Sentinel-1 data
+222,script_187535.txt,Theme,Flood mapping using Sentinel-1 data
+223,script_187582.txt,Theme,Parthenium classification
+224,script_187582.txt,Theme,Vegetation indices
+225,script_187582.txt,Theme,Cloud masking
+226,script_187582.txt,Theme,Accuracy assessment
+227,script_187585.txt,Theme,MODIS EVI analysis
+228,script_187585.txt,Theme,Principal Component Analysis
+229,script_187586.txt,Theme,MODIS EVI annual average
+230,script_187586.txt,Theme,Principal Component Analysis
+231,script_187587.txt,Theme,MODIS EVI analysis
+232,script_187587.txt,Theme,Principal Component Analysis
+233,script_187738.txt,Theme,Cropland classification
+234,script_187738.txt,Theme,Object-based image analysis
+235,script_187738.txt,Theme,Random forest classification
+236,script_187749.txt,Theme,NDVI trend analysis in Beijing
+237,script_187821.txt,Theme,Fire monitoring
+238,script_187821.txt,Theme,Burn severity analysis
+239,script_187821.txt,Theme,Burned area calculation
+240,script_187822.txt,Theme,Fire monitoring
+241,script_187822.txt,Theme,Burn severity analysis
+242,script_187822.txt,Theme,Burned area calculation
+243,script_187825.txt,Theme,Fire monitoring
+244,script_187825.txt,Theme,Burn severity analysis
+245,script_187825.txt,Theme,Burned area calculation
+246,script_187888.txt,Theme,NDVI analysis
+247,script_187888.txt,Theme,Cloud masking
+248,script_187888.txt,Theme,Landsat imagery processing
+249,script_187895.txt,Theme,Land cover classification
+250,script_187895.txt,Theme,Cloud masking
+251,script_187895.txt,Theme,BSI calculation
+252,script_187895.txt,Theme,Temporal analysis
+253,script_188011.txt,Theme,Land Surface Temperature Analysis
+254,script_188030.txt,Theme,NDVI calculation
+255,script_188030.txt,Theme,Cloud masking
+256,script_188030.txt,Theme,EVI calculation
+257,script_188030.txt,Theme,Time series analysis
+258,script_188052.txt,Theme,Water detection using satellite imagery
+259,script_188068.txt,Theme,Flood impact analysis
+260,script_188068.txt,Theme,Population exposure
+261,script_188068.txt,Theme,Agricultural impact
+262,script_188068.txt,Theme,Urban area impact
+263,script_188073.txt,Theme,Flood analysis
+264,script_188073.txt,Theme,Population impact
+265,script_188073.txt,Theme,Agricultural impact
+266,script_188073.txt,Theme,Urban impact
+267,script_188116.txt,Theme,Forest classification
+268,script_188116.txt,Theme,Water masking
+269,script_188116.txt,Theme,Landsat mosaics
+270,script_188116.txt,Theme,Sentinel mosaics
+271,script_188147.txt,Theme,Forest classification
+272,script_188147.txt,Theme,Land cover analysis
+273,script_188147.txt,Theme,Water detection
+274,script_188147.txt,Theme,Urban area masking
+275,script_188163.txt,Theme,Land cover classification
+276,script_188163.txt,Theme,Seasonal mosaics
+277,script_188163.txt,Theme,Water detection
+278,script_188163.txt,Theme,Urban area masking
+279,script_188182.txt,Theme,Land cover change detection in Zimbabwe
+280,script_188190.txt,Theme,Forest classification
+281,script_188190.txt,Theme,Land cover analysis
+282,script_188190.txt,Theme,Temporal analysis
+283,script_188190.txt,Theme,Spatial analysis
+284,script_188200.txt,Theme,Forest classification
+285,script_188200.txt,Theme,Land cover analysis
+286,script_188200.txt,Theme,Seasonal mosaic creation
+287,script_188211.txt,Theme,Water body detection
+288,script_188211.txt,Theme,SSC estimation
+289,script_188211.txt,Theme,Index calculation
+290,script_188211.txt,Theme,Landsat data processing
+291,script_188217.txt,Theme,Urbanization analysis
+292,script_188217.txt,Theme,Land cover classification
+293,script_188217.txt,Theme,Image normalization
+294,script_188221.txt,Theme,Climate data analysis
+295,script_188221.txt,Theme,Precipitation measurement
+296,script_188221.txt,Theme,Evaporation measurement
+297,script_188221.txt,Theme,Runoff measurement
+298,script_188221.txt,Theme,Temperature analysis
+299,script_188378.txt,Theme,Crop classification
+300,script_188386.txt,Theme,Agricultural land cover analysis
+301,script_188389.txt,Theme,Crop classification
+302,script_188397.txt,Theme,Burned area detection
+303,script_188400.txt,Theme,NO2 concentration analysis
+304,script_188401.txt,Theme,Temperature analysis over specific region
+305,script_188412.txt,Theme,Land Surface Temperature Analysis
+306,script_188412.txt,Theme,NDVI Calculation
+307,script_188412.txt,Theme,Cloud Masking
+308,script_188413.txt,Theme,Cloud masking
+309,script_188413.txt,Theme,NDVI calculation
+310,script_188413.txt,Theme,LST calculation
+311,script_188413.txt,Theme,Image export
+312,script_188414.txt,Theme,Land Surface Temperature Analysis
+313,script_188414.txt,Theme,NDVI Calculation
+314,script_188414.txt,Theme,Cloud Masking
+315,script_188419.txt,Theme,Land Surface Temperature
+316,script_188419.txt,Theme,NDVI Analysis
+317,script_188419.txt,Theme,Cloud Masking
+318,script_188454.txt,Theme,Cloud probability analysis
+319,script_188454.txt,Theme,Temporal cloud coverage
+320,script_188455.txt,Theme,Cloud probability analysis
+321,script_188455.txt,Theme,Image mosaicking
+322,script_188455.txt,Theme,Cloud masking
+323,script_188455.txt,Theme,Percentage calculation
+324,script_188458.txt,Theme,Cloud probability analysis in East and South Asia
+325,script_188465.txt,Theme,Cloud masking
+326,script_188465.txt,Theme,Daily mosaics
+327,script_188465.txt,Theme,Image summation
+328,script_188502.txt,Theme,Water area change detection
+329,script_188506.txt,Theme,Cloud probability analysis
+330,script_188506.txt,Theme,Region-specific cloud masking
+331,script_188509.txt,Theme,Precipitation analysis
+332,script_188509.txt,Theme,Cloud probability analysis
+333,script_188509.txt,Theme,Correlation analysis
+334,script_188511.txt,Theme,Precipitation analysis
+335,script_188511.txt,Theme,Cloud probability
+336,script_188511.txt,Theme,Correlation analysis
+337,script_19155.txt,Theme,Land cover classification
+338,script_19155.txt,Theme,Agricultural analysis
+339,script_19155.txt,Theme,Urban analysis
+340,script_23533.txt,Theme,Land cover change analysis
+341,script_28.txt,Theme,Snow cover analysis
+342,script_28.txt,Theme,Landsat data harmonization
+343,script_28.txt,Theme,Time series analysis
+344,script_28.txt,Theme,Hydrologic unit statistics
+345,script_3043.txt,Theme,Water frequency analysis
+346,script_3043.txt,Theme,Vegetation frequency analysis
+347,script_3043.txt,Theme,Tidal flats detection
+348,script_3043.txt,Theme,Deciduous vegetation detection
+349,script_3043.txt,Theme,Evergreen vegetation detection
+350,script_32.txt,Theme,MODIS/VIIRS snow product bias determination
+351,script_35538.txt,Theme,Waterbody extraction using NDVI
+352,script_35538.txt,Theme,Landsat 8 imagery analysis
+353,script_37873.txt,Theme,Landcover classification using satellite imagery
+354,script_41838.txt,Theme,Land cover classification
+355,script_41838.txt,Theme,Mangrove mapping
+356,script_41838.txt,Theme,Water body identification
+357,script_41838.txt,Theme,Open land detection
+358,script_41838.txt,Theme,Built-up area analysis
+359,script_42.txt,Theme,Forest cover mapping in Cambodia
+360,script_43.txt,Theme,Community forest analogue regions
+361,script_43803.txt,Theme,Satellite imagery analysis for Zhangjiakou region
+362,script_45435.txt,Theme,MODIS LAI analysis
+363,script_45435.txt,Theme,Vegetation cover analysis
+364,script_48.txt,Theme,Annual change detection
+365,script_48.txt,Theme,LandTrendr analysis
+366,script_48.txt,Theme,Time series analysis
+367,script_48.txt,Theme,Segment length calculation
+368,script_48.txt,Theme,Time since last vertex
+369,script_49902.txt,Theme,Satellite index calculation
+370,script_49902.txt,Theme,NDVI analysis
+371,script_49902.txt,Theme,NDMI analysis
+372,script_49902.txt,Theme,Legend incorporation
+373,script_50.txt,Theme,Forest cover mapping in Cambodia
+374,script_51624.txt,Theme,Flood monitoring in Myanmar
+375,script_52026.txt,Theme,Ozone concentration analysis
+376,script_54980.txt,Theme,Urban infrastructure mapping
+377,script_59099.txt,Theme,"Landslide evaluation in Las Minas, Santa Rosa"
+378,script_62526.txt,Theme,Cirrus cloud area analysis
+379,script_62526.txt,Theme,Time series analysis
+380,script_65671.txt,Theme,Median temperature analysis
+381,script_65671.txt,Theme,Landsat 5 TM
+382,script_65671.txt,Theme,Landsat 8
+383,script_67562.txt,Theme,Supervised classification
+384,script_67562.txt,Theme,Cloud removal
+385,script_67562.txt,Theme,Image scaling
+386,script_67562.txt,Theme,NDVI calculation
+387,script_67562.txt,Theme,NDWI calculation
+388,script_67562.txt,Theme,NDBI calculation
+389,script_67562.txt,Theme,DEM analysis
+390,script_71184.txt,Theme,Cloud detection and removal
+391,script_71184.txt,Theme,Water body analysis
+392,script_72.txt,Theme,LandTrendr temporal segmentation
+393,script_72.txt,Theme,Change detection
+394,script_72.txt,Theme,Vegetation index analysis
+395,script_7366.txt,Theme,Land cover classification
+396,script_75448.txt,Theme,Waterbody surface area analysis
+397,script_75448.txt,Theme,Decline in lake surface area
+398,script_75448.txt,Theme,NDWI calculation
+399,script_75448.txt,Theme,Otsu thresholding
+400,script_76696.txt,Theme,Landsat NDVI analysis in Russia
+401,script_76709.txt,Theme,NDVI analysis
+402,script_76709.txt,Theme,MNDWI analysis
+403,script_76709.txt,Theme,NDMI analysis
+404,script_76709.txt,Theme,NBR analysis
+405,script_76709.txt,Theme,CI analysis
+406,script_76805.txt,Theme,Arctic greening patterns
+407,script_76805.txt,Theme,NDVI/EVI trends
+408,script_76839.txt,Theme,NDVI and LSWI analysis
+409,script_76839.txt,Theme,Landsat imagery processing
+410,script_76839.txt,Theme,Cloud masking
+411,script_76840.txt,Theme,NDVI and LSWI calculation
+412,script_76840.txt,Theme,Cloud masking
+413,script_76840.txt,Theme,Landsat imagery analysis
+414,script_76841.txt,Theme,NDVI and LSWI analysis in Qinghai region
+415,script_78663.txt,Theme,Land cover correction using Sentinel-1 data
+416,script_78805.txt,Theme,NDVI calculation
+417,script_78805.txt,Theme,SAVI calculation
+418,script_78805.txt,Theme,Image collection filtering
+419,script_78805.txt,Theme,Median and mean reduction
+420,script_85061.txt,Theme,Landsat image processing
+421,script_85061.txt,Theme,Cloud detection
+422,script_85061.txt,Theme,Spectral mixture analysis
+423,script_85061.txt,Theme,Suriname mosaic creation
+424,script_85217.txt,Theme,Land cover classification using Landsat 8 imagery
+425,script_85219.txt,Theme,Fire severity analysis
+426,script_85219.txt,Theme,Vegetation index comparison
+427,script_85219.txt,Theme,Cloud masking
+428,script_89887.txt,Theme,Water masking
+429,script_89887.txt,Theme,Cloud masking
+430,script_89887.txt,Theme,True color visualization
+431,script_95721.txt,Theme,Vegetation indices analysis
+432,script_95721.txt,Theme,Cloud and snow masking
+433,script_95721.txt,Theme,Buffer creation
+434,script_95950.txt,Theme,NDVI analysis
+435,script_95950.txt,Theme,Cloud masking
+436,script_95950.txt,Theme,Time series analysis
+437,script_96316.txt,Theme,Sentinel-2 imagery analysis for Cordoba
+438,script_96317.txt,Theme,Sentinel-2 imagery analysis for Cordoba
+439,script_96322.txt,Theme,NDVI analysis
+440,script_96322.txt,Theme,Sentinel-2 imagery
+441,script_96322.txt,Theme,Agricultural yield
+442,script_96332.txt,Theme,Sentinel-2 imagery processing for Cordoba region
+443,script_96361.txt,Theme,Landsat data processing
+444,script_96361.txt,Theme,Cloud and water masking
+445,script_96361.txt,Theme,Texture analysis
+446,script_96424.txt,Theme,Water occurrence analysis
+447,script_96424.txt,Theme,Cloud masking
+448,script_96424.txt,Theme,Lake shoreline stats
+449,script_96424.txt,Theme,Lake extent reconstruction
+450,script_96426.txt,Theme,Lake area analysis
+451,script_96426.txt,Theme,Water surface reconstruction
+452,script_96427.txt,Theme,Lake area change analysis
+453,script_96458.txt,Theme,Urban area analysis
+454,script_96458.txt,Theme,Water area detection
+455,script_96458.txt,Theme,Vegetation area detection
+456,script_96458.txt,Theme,Rice paddy identification
+457,script_96459.txt,Theme,Urban change detection
+458,script_96459.txt,Theme,Vegetation analysis
+459,script_96459.txt,Theme,Soil analysis
+460,script_96519.txt,Theme,Flooding analysis
+461,script_96519.txt,Theme,Elevation mapping
+462,script_96519.txt,Theme,Built-up area analysis
+463,script_96519.txt,Theme,Earthquake analysis
+464,script_96537.txt,Theme,Land cover classification
+465,script_96537.txt,Theme,NDVI calculation
+466,script_96537.txt,Theme,NDWI calculation
+467,script_96537.txt,Theme,BSI calculation
+468,script_96537.txt,Theme,Cloud masking
+469,script_96537.txt,Theme,Accuracy assessment
+470,script_96538.txt,Theme,Cemetery characterization using Sentinel-2 imagery
+471,script_96558.txt,Theme,NDVI and precipitation correlation
+472,script_96578.txt,Theme,Fire detection
+473,script_96578.txt,Theme,Temperature analysis
+474,script_96578.txt,Theme,NDVI change detection
+475,script_96593.txt,Theme,NDVI analysis
+476,script_96593.txt,Theme,Land cover classification
+477,script_96593.txt,Theme,Time series analysis
+478,script_96593.txt,Theme,Locust damage assessment
+479,script_96611.txt,Theme,Landsat 8 composite creation
+480,script_96611.txt,Theme,NDVI calculation
+481,script_96611.txt,Theme,Cloud-free composite generation
+482,script_97207.txt,Theme,Fire impact analysis using NDVI
+483,script_97208.txt,Theme,Fire area analysis
+484,script_97208.txt,Theme,Burn severity assessment
+485,script_97209.txt,Theme,Fire analysis
+486,script_97209.txt,Theme,Burned area detection
+487,script_97209.txt,Theme,Pre and post-fire comparison
+488,script_97210.txt,Theme,Fire analysis
+489,script_97210.txt,Theme,Burned area detection
+490,script_97210.txt,Theme,Pre and post-fire imagery
+491,script_97211.txt,Theme,Fire analysis
+492,script_97211.txt,Theme,Burned area detection
+493,script_97211.txt,Theme,Image classification
+494,script_97211.txt,Theme,Vegetation indices calculation
+495,script_97212.txt,Theme,Fire analysis
+496,script_97212.txt,Theme,Burned area detection
+497,script_97212.txt,Theme,Image classification
+498,script_97250.txt,Theme,Nighttime lights distribution
+499,script_97250.txt,Theme,Urban vs. agricultural areas
+500,script_97292.txt,Theme,Image segmentation and classification
+501,script_97292.txt,Theme,Agricultural land analysis
+502,script_97292.txt,Theme,Outlier detection
+503,script_97295.txt,Theme,Land use and land cover classification
+504,script_97367.txt,Theme,Cloud-free Landsat composites
+505,script_97367.txt,Theme,Colombia
+506,script_97367.txt,Theme,NDVI calculation
+507,script_97371.txt,Theme,Rice and wheat crop analysis
+508,script_97371.txt,Theme,NDVI time series analysis
+509,script_97430.txt,Theme,Cloud and shadow masking
+510,script_97430.txt,Theme,Vegetation indices calculation
+511,script_97431.txt,Theme,Water body analysis
+512,script_97446.txt,Theme,Cloud-free Sentinel-2 imagery analysis
+513,script_97475.txt,Theme,Land cover classification
+514,script_97475.txt,Theme,Cloud masking
+515,script_97475.txt,Theme,Cluster analysis
+516,script_97475.txt,Theme,Terrain analysis
+517,script_97477.txt,Theme,Water body analysis
+518,script_97477.txt,Theme,Vegetation index calculation
+519,script_97479.txt,Theme,Landsat 8 Surface Reflectance Analysis
+520,script_97479.txt,Theme,Cloud and Cloud Shadow Masking
+521,script_97479.txt,Theme,Image Collection Filtering
+522,script_97479.txt,Theme,Statistical Analysis of Images
+523,script_97479.txt,Theme,Visualization of Natural and False Color Images
+524,script_97507.txt,Theme,Crop greenness tracking in Merced County
+525,script_97508.txt,Theme,Tracking Crop Greenness in Merced County
+526,script_97509.txt,Theme,Burn severity analysis of Mendocino Complex Fire
+527,script_97510.txt,Theme,Burn severity analysis of Mendocino Complex Fire
+528,script_97512.txt,Theme,Burn severity analysis of Mendocino Complex Fire
+529,script_97538.txt,Theme,Vegetation index calculation
+530,script_97538.txt,Theme,Landsat 8 imagery analysis
+531,script_97539.txt,Theme,Vegetation index calculation
+532,script_97539.txt,Theme,Satellite image processing
+533,script_97539.txt,Theme,Exporting processed images
+534,script_97582.txt,Theme,Burned patches confirmation
+535,script_97582.txt,Theme,Monthly Landsat imagery analysis
+536,script_97609.txt,Theme,Rainfall deviation analysis
+537,script_97609.txt,Theme,Seasonal precipitation monitoring
+538,script_97610.txt,Theme,Temperature analysis in Sinaloa
+539,script_97622.txt,Theme,Land cover classification
+540,script_97622.txt,Theme,NDVI analysis
+541,script_97622.txt,Theme,Cloud masking
+542,script_97622.txt,Theme,Monthly NDVI calculation
+543,script_97651.txt,Theme,Landsat imagery cloud masking
+544,script_97651.txt,Theme,Autumn season analysis
+545,script_97683.txt,Theme,Satellite image mosaics export
+546,script_97700.txt,Theme,Vegetation Index Calculation
+547,script_97700.txt,Theme,Water Index Calculation
+548,script_97700.txt,Theme,SAR Analysis
+549,script_97704.txt,Theme,Global DEM extraction
+550,script_97718.txt,Theme,NDVI analysis
+551,script_97718.txt,Theme,MSI analysis
+552,script_97718.txt,Theme,Time series analysis
+553,script_97724.txt,Theme,NDVI time series analysis
+554,script_97724.txt,Theme,Cloud and snow masking
+555,script_97724.txt,Theme,Chinese Privet mapping
+556,script_97954.txt,Theme,Land cover change detection
+557,script_97954.txt,Theme,Forest classification
+558,script_97954.txt,Theme,Dry season analysis
+559,script_97955.txt,Theme,Forest and non-forest classification
+560,script_97955.txt,Theme,Land cover change detection
+561,script_97974.txt,Theme,Forest classification
+562,script_97974.txt,Theme,Land change detection
+563,script_97974.txt,Theme,Landsat imagery analysis
+564,script_97988.txt,Theme,Forest classification
+565,script_97988.txt,Theme,Water masking
+566,script_97988.txt,Theme,Landsat mosaic creation
+567,script_97988.txt,Theme,Sentinel mosaic creation
+568,script_97991.txt,Theme,Shapefile upload and visualization
+569,script_97991.txt,Theme,Raster data visualization
+570,script_97991.txt,Theme,Landsat image filtering
+571,script_97991.txt,Theme,Polygon creation
+572,script_97991.txt,Theme,Mosaic creation
+573,script_97991.txt,Theme,Band ratio calculation
+574,script_97991.txt,Theme,Sentinel image filtering
+575,script_97991.txt,Theme,Training points creation
+576,script_97991.txt,Theme,Classification
+577,script_97991.txt,Theme,Post-classification editing
+578,script_97991.txt,Theme,Masking
+579,script_97991.txt,Theme,Exporting image to asset
+580,script_97991.txt,Theme,Forest area statistics
+581,script_98169.txt,Theme,NDVI calculation
+582,script_98169.txt,Theme,Landsat 8 analysis
+583,script_98169.txt,Theme,Cloud masking
+584,script_98169.txt,Theme,Vegetation index statistics
+585,script_98257.txt,Theme,Flood monitoring in Thua Thien - Hue
+586,script_98258.txt,Theme,Flood monitoring in Thua Thien - Hue
+587,script_98259.txt,Theme,Flood detection using NDWI
+588,script_98260.txt,Theme,Flood analysis in Thua Thien - Hue
+589,script_98260.txt,Theme,NDWI calculation for flood detection
+590,script_98261.txt,Theme,Flood detection and analysis
+591,script_98262.txt,Theme,Flood detection
+592,script_98262.txt,Theme,NDWI calculation
+593,script_98262.txt,Theme,Flood extent refinement
+594,script_98263.txt,Theme,Flood detection using Sentinel-2 imagery
+595,script_98266.txt,Theme,Flood detection using satellite imagery
+596,script_98267.txt,Theme,Flood detection using SAR imagery
+597,script_98275.txt,Theme,Flood monitoring in Thua Thien - Hue
+598,script_98281.txt,Theme,Water body detection
+599,script_98281.txt,Theme,Cloud masking
+600,script_98281.txt,Theme,NDWI calculation
+601,script_98281.txt,Theme,NDSI calculation
+602,script_98281.txt,Theme,Water classification
+603,script_98281.txt,Theme,Water mask
+604,script_98281.txt,Theme,Study area clipping
+605,script_98281.txt,Theme,HH-HV subtraction
+606,script_98281.txt,Theme,Slope calculation
+607,script_98281.txt,Theme,Histogram analysis
+608,script_98287.txt,Theme,NDVI and NDWI analysis using Sentinel-2 imagery
+609,script_98289.txt,Theme,Landsat 8 Surface Reflectance Analysis
+610,script_98289.txt,Theme,Cloud and Cloud Shadow Filtering
+611,script_98289.txt,Theme,Temporal Mosaics
+612,script_98289.txt,Theme,Spectral Signatures
+613,script_98290.txt,Theme,Land cover classification using Landsat 8 imagery

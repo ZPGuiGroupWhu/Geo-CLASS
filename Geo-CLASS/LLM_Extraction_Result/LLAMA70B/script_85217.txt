@@ -1,0 +1,25 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land cover classification using Landsat 8 imagery"],
+  "DataSource": ["LANDSAT/LC08/C01/T1"],
+  "Function": ["Load Landsat 8 image collection", "Create cloud-free composite", "Sample composite for training data", "Train CART classifier", "Classify composite", "Perform accuracy assessment"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1"],
+        "Function": ["Load Landsat 8 image collection", "Create cloud-free composite", "Sample composite for training data", "Train CART classifier", "Classify composite", "Perform accuracy assessment"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2645, 'completion_tokens': 188, 'total_tokens': 2833}

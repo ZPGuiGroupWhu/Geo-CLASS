@@ -1,0 +1,17 @@
+{
+    "Summary": [
+        "Script performs unsupervised classification on MODIS NDVI data for land cover mapping."
+    ],
+    "Theme": [
+        "LAND USE/LAND COVER CLASSIFICATION"
+    ],
+    "DataSource": [
+        "MODIS/006/MOD09Q1"
+    ],
+    "Function": [
+        "Seasonal NDVI Analysis",
+        "Unsupervised Clustering",
+        "Classification",
+        "Refinement Of Results"
+    ]
+}

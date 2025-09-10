@@ -1,0 +1,14 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Filtering Sentinel-2 image collection by cloud percentage, date, and geometry",
+            "Selecting a single band from the filtered image collection",
+            "Reprojecting the image to EPSG:4326",
+            "Exporting the reprojected image to Google Drive",
+            "Visualizing the raw and reprojected images on a map"
+        ]
+    }
+}

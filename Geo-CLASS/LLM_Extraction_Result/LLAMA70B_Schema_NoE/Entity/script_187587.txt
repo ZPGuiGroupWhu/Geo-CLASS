@@ -1,0 +1,12 @@
+{
+    "Theme": [
+        "MODIS EVI analysis and PCA"
+    ],
+    "DataSource": [
+        "MODIS/006/MOD13Q1"
+    ],
+    "Function": [
+        "Calculate average of MODIS EVI of each year",
+        "Perform Principal Component Analysis (PCA)"
+    ]
+}

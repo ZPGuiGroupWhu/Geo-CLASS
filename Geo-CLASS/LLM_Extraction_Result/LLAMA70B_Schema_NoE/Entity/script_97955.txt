@@ -1,0 +1,19 @@
+{
+    "Theme": [
+        "Land cover classification and land change detection using Landsat imagery"
+    ],
+    "DataSource": [
+        "LANDSAT/LT5_L1T",
+        "LANDSAT/LE7_L1T",
+        "LANDSAT/LC08/C01/T1_RT",
+        "users/EL/Bahamas",
+        "users/lw/Bah_Class_2017"
+    ],
+    "Function": [
+        "Filtering and compositing Landsat imagery",
+        "Calculating spectral indices",
+        "Masking non-forest areas",
+        "Training a classifier for land cover classification",
+        "Classifying land cover using the trained classifier"
+    ]
+}

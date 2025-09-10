@@ -1,0 +1,187 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var AmazonBasin = /* color: #d63000 */ee.Geometry.Polygon(
+        [[[-72.3951813491052, 5.597975900829917],
+          [-73.46095031446339, 5.179678107099043],
+          [-74.01245572965354, 5.647211044824675],
+          [-76.07361493101041, 0.8939539679640539],
+          [-76.74505002891124, 0.9292215771320206],
+          [-77.64914328274278, -0.49256647273537935],
+          [-79.3167109231569, -6.300959394221316],
+          [-73.03992150731779, -13.515488747963026],
+          [-72.24693629333217, -13.731305813147555],
+          [-71.54154605984257, -13.689796942935219],
+          [-68.81101129070458, -15.740743911624602],
+          [-69.0293739282796, -14.078728615264623],
+          [-57.43501813912155, -13.777859117348969],
+          [-49.85588532740462, -12.90264291436437],
+          [-35.63221755202875, -6.445238294695358],
+          [-38.05760504495629, -3.361461863417571],
+          [-44.35424123519414, -1.460627824936828],
+          [-49.50163731463306, -0.1409538099796538],
+          [-52.72677874104687, 4.762377232993842],
+          [-57.67127308751225, 5.2355714032813045],
+          [-63.8267559821644, 4.422028622832131],
+          [-67.82077093524805, 5.036362568172111]]]),
+    l8 = ee.ImageCollection("LANDSAT/LC08/C01/T2_SR"),
+    imageVisParam = {"opacity":1,"bands":["lossyear"],"gamma":9.443999999999999},
+    AmazonNorthEast = /* color: #fff81c */ee.Geometry.Polygon(
+        [[[-63.40440920642931, 5.287560569202432],
+          [-62.57888845439811, -0.9668958975407661],
+          [-45.917299270788476, -2.3504536767159476],
+          [-46.08722122136078, -2.1091062134429515],
+          [-45.86249266039789, -1.824431204860904],
+          [-45.66345330514457, -1.8359885392390407],
+          [-45.71678667684267, -2.257258601031427],
+          [-45.478523595744036, -1.5481521683843504],
+          [-50.734212140150476, -0.2639259576729891],
+          [-49.97677416991928, 1.5371930090222974],
+          [-50.93334421212353, 2.635162942918501],
+          [-51.06524620411176, 3.5127106222367166],
+          [-51.32893787380124, 4.082662051742334],
+          [-51.81231432266941, 4.564591590110748],
+          [-52.69113151555217, 5.04617894459108],
+          [-53.39416888786786, 5.439951945241288],
+          [-54.27294454107164, 5.7023283710853985],
+          [-55.59109566592872, 5.789787945359265],
+          [-55.94260669616449, 5.702367039564653],
+          [-57.17286330555038, 5.96470812926261],
+          [-58.09546868401736, 6.881680470319897],
+          [-59.76486068440022, 8.31900984718952],
+          [-60.29217909922079, 7.753538957821265],
+          [-60.73162484777845, 7.274464746300011],
+          [-60.24837904187075, 6.925584585940035],
+          [-60.775654841084815, 6.751175210226831],
+          [-66.70710599652, 7.014409899805687],
+          [-67.4983813574213, 5.879542977958637]]]),
+    AmazonCentral = /* color: #fca508 */ee.Geometry.Polygon(
+        [[[-69.2578125, -1.1425024037061522],
+          [-69.3017578125, -4.565473550710278],
+          [-71.2353515625, -8.450638800331003],
+          [-61.34765625, -9.318990192397905],
+          [-60.9521484375, -1.318243056862001]]]),
+    AmazonW = /* color: #49abff */ee.Geometry.Polygon(
+        [[[-75.849609375, 1.6696855009865839],
+          [-76.5966796875, 1.6696855009865839],
+          [-77.3876953125, 0.3076157096439005],
+          [-79.1015625, -5.659718554577274],
+          [-72.9052734375, -12.683214911818654],
+          [-71.3232421875, -12.983147716796566],
+          [-68.642578125, -14.987239525774244],
+          [-68.73046875, -13.368243250897288],
+          [-70.6201171875, -11.005904459659451],
+          [-72.24609375, -10.531020008464976],
+          [-69.3896484375, -4.434044005032582],
+          [-69.43359375, -1.1425024037061522],
+          [-62.6220703125, -1.098565496040652],
+          [-63.5009765625, 5.266007882805497],
+          [-72.24609375, 6.358975327235661],
+          [-73.2568359375, 6.053161295714067],
+          [-73.828125, 6.533645130567531]]]),
+    AmazonSE = /* color: #280eff */ee.Geometry.Polygon(
+        [[[-71.19140625, -8.624472107633936],
+          [-72.2021484375, -10.444597722834875],
+          [-70.576171875, -10.876464994816281],
+          [-68.73046875, -12.940322128384615],
+          [-68.4228515625, -14.944784875088372],
+          [-67.32421875, -16.383391123608387],
+          [-64.51171875, -17.26672782352052],
+          [-63.984375, -16.25686733062343],
+          [-60.9521484375, -13.539200668930814],
+          [-59.4580078125, -13.667338259654947],
+          [-58.974609375, -13.581920900545844],
+          [-58.18359375, -12.254127737657367],
+          [-57.3486328125, -13.282718960896403],
+          [-56.77734375, -12.683214911818654],
+          [-56.07421875, -13.966054081318301],
+          [-54.755859375, -14.136575651477944],
+          [-46.0107421875, -2.591888984149953],
+          [-60.6884765625, -1.3621763466641585],
+          [-61.2158203125, -9.535748998133615]]]),
+    hansenImage = ee.Image("UMD/hansen/global_forest_change_2017_v1_5"),
+    DayLST = ee.ImageCollection("Oxford/MAP/LST_Day_5km_Monthly"),
+    SurfaceTemperature = ee.ImageCollection("NCEP_RE/surface_temp");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+var F_AmazonW = ee.Feature(AmazonW, {label: 'AmazonW'});
+var F_AmazonNorthEast = ee.Feature(AmazonNorthEast, {label: 'AmazonNorthEast'});
+var F_AmazonCentral = ee.Feature(AmazonCentral, {label: 'AmazonCentral'});
+var F_AmazonSE = ee.Feature(AmazonSE, {label: 'AmazonSE'});
+
+var Regions = new ee.FeatureCollection([F_AmazonW, F_AmazonNorthEast, F_AmazonCentral, F_AmazonSE]);
+
+
+
+
+
+var COLOR = {
+  FOREST: 'ff0000',
+  NORTH: '0000ff',
+  SOUTH: '00ff00'
+};
+    
+// Define start and stop date for the NDVI download:
+var start_date1 = '2001-01-01';
+var stop_date1 = '2018-09-20';
+// Define start and stop date for the Temperature downloads:
+var start_date2 = '2017-01-01';
+var stop_date2 = '2018-09-20';
+   
+   
+   // Load or import the Hansen et al. forest change dataset.
+
+var datamask = hansenImage.select('loss');
+// Create a binary mask.
+var maskForested = datamask.eq(0);
+var maskDeforested = datamask.eq(1);
+// Update the composite mask with the water mask.
+
+
+var maskForests = function(image){
+  return image.updateMask(maskForested);
+}
+
+var maskLogging = function(image){
+  return image.updateMask(maskDeforested);
+}
+
+var l8masked = l8.map(maskForests).filterBounds(Regions);
+
+
+
+
+// --------------- Air surface temperature ---------------------
+var collectionST = ee.ImageCollection('NCEP_RE/surface_temp') 
+    .filterDate(start_date2, stop_date2)
+    .filterBounds(AmazonBasin)
+    .select('air');
+
+
+    var count = collectionST.size();
+    print('Size of Collection for Amazon: ', count);
+    var collectionMasked = collectionST.map(maskForests);    
+
+
+// Prepare FeatureCollection for export.
+
+var to_list = collectionMasked.size();  // full
+var temp_list_of_fc = collectionMasked.select(['air']).toList(to_list).map(function(i) {
+  // get data over regions
+  var data_fc = ee.Image(i).reduceRegions({
+    collection: Regions,
+    reducer: ee.Reducer.mean(),
+    scale: 200
+  });
+  
+  
+  var date = ee.Image(i).date(); // other way
+  return data_fc.map(function(f) {
+    return f.set('date', date);
+  });
+});
+var TemperatureTimeSeries = ee.FeatureCollection(temp_list_of_fc).flatten();
+
+
+
+Export.table.toDrive({collection:TemperatureTimeSeries, 
+                      description: "TemperatureForestedAreas", 
+                      folder:"from_GEE", 
+                      fileFormat:"CSV"});

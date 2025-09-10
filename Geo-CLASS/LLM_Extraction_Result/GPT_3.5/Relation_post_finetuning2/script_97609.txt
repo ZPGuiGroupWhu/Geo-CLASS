@@ -1,0 +1,37 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/eijulio/valles_altos_estados",
+            "FAO/GAUL_SIMPLIFIED_500m/2015/level2"
+        ],
+        "Function": [
+            "Filter Image Collection By Month",
+            "Calculate Long-Term Averages"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "ECMWF/ERA5/DAILY"
+        ],
+        "Function": [
+            "Calculate Annual Precipitation"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "UCSB-CHG/CHIRPS/PENTAD"
+        ],
+        "Function": [
+            "Filter Image Collection By Month",
+            "Calculate Long-Term Averages"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "users/eijulio/valles_altos_estados"
+        ],
+        "Function": [
+            "Export Composite Image"
+        ]
+    }
+}

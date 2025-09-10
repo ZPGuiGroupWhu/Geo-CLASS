@@ -1,0 +1,18 @@
+{
+    "Theme": [
+        "Land cover analysis using Landsat 5 imagery"
+    ],
+    "DataSource": [
+        "users/philipegeo/pol_jeremoabo",
+        "LANDSAT/LT05/C01/T1_TOA"
+    ],
+    "Function": [
+        "Image collection filtering",
+        "Image masking",
+        "Image clipping",
+        "Image reduction",
+        "NDVI calculation",
+        "SAVI calculation",
+        "Image visualization"
+    ]
+}

@@ -1,0 +1,6 @@
+{
+  "Summary": ["Extracts NDVI and LSWI for a specific region over a defined time period."],
+  "Theme": ["Vegetation health monitoring"],
+  "DataSource": ["users/cxliu2015/PA_Qinghai_EnglishNames", "users/cxliu2015/PA_Qinghai_cdm_studiedRectangle", "LANDSAT/LT05/C01/T1_SR", "LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Cloud and shadow masking", "NDVI and LSWI computation", "Exporting processed images"]
+}

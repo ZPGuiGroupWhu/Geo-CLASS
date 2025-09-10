@@ -1,0 +1,5 @@
+{
+  "Theme": ["Land cover classification and vegetation monitoring"],
+  "DataSource": ["users/kimambo/00_INPUT_TRAINING_VALIDATION/Tanzania_SouthernHighlands_reference_point_36LYR_13DEC2019_230_upto799_75PCTTRAINING", "LANDSAT/LC08/C01/T1_SR", "LANDSAT/LE07/C01/T1_SR", "LANDSAT/LT05/C01/T1_SR", "LANDSAT/LT04/C01/T1_SR"],
+  "Function": ["Filtering image collection by date and location", "Masking clouds and shadows in Landsat images", "Calculating NDVI from Landsat images", "Merging image collections", "Renaming bands with timestamps", "Sampling regions of interest", "Merging images into a single image", "Iterating over image collection for sampling"]
+}

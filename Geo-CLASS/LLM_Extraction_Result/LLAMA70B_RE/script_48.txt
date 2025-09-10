@@ -1,0 +1,40 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover change detection and analysis in Cambodia"],
+  "DataSource": ["USDOS/LSIB/2017", "users/ak_glaciers/ltop_snic_seed_points75k_kmeans_cambodia_c2_1990", "users/ak_glaciers/LTOP_Cambodia_config_selected_220_kmeans_pts_new_weights", "users/ak_glaciers/Optimized_LT_1990_start_Cambodia_remapped_cluster_ids", "projects/servir-mekong/composites/"],
+  "Function": ["Annual change detection processing", "LandTrendr fit algorithm", "Image collection filtering", "Index calculation", "Breakpoint preparation", "Segment length calculation", "Time since last vertex calculation"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["USDOS/LSIB/2017"],
+        "Function": ["Annual change detection processing", "Image collection filtering"]
+    },
+    "relation_2": {
+        "DataSource": ["users/ak_glaciers/ltop_snic_seed_points75k_kmeans_cambodia_c2_1990"],
+        "Function": ["Breakpoint preparation", "LandTrendr fit algorithm"]
+    },
+    "relation_3": {
+        "DataSource": ["users/ak_glaciers/LTOP_Cambodia_config_selected_220_kmeans_pts_new_weights"],
+        "Function": ["LandTrendr fit algorithm"]
+    },
+    "relation_4": {
+        "DataSource": ["users/ak_glaciers/Optimized_LT_1990_start_Cambodia_remapped_cluster_ids"],
+        "Function": ["Breakpoint preparation", "LandTrendr fit algorithm"]
+    },
+    "relation_5": {
+        "DataSource": ["projects/servir-mekong/composites/"],
+        "Function": ["Image collection filtering", "Index calculation", "LandTrendr fit algorithm", "Segment length calculation", "Time since last vertex calculation"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 5055, 'completion_tokens': 541, 'total_tokens': 5596}

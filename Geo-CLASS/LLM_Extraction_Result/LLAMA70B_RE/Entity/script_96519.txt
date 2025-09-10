@@ -1,0 +1,22 @@
+{
+    "Theme": [
+        "Flood analysis and natural disaster monitoring"
+    ],
+    "DataSource": [
+        "users/eeranyartrodrigo/A_Hist",
+        "users/eeranyartrodrigo/A_Conc",
+        "users/eeranyartrodrigo/SSNMX_catalogo_20220801_20220810",
+        "USGS/GMTED2010",
+        "GLOBAL_FLOOD_DB/MODIS_EVENTS/V1",
+        "JRC/GHSL/P2016/BUILT_LDSMT_GLOBE_V1",
+        "JRC/GWIS/GlobFire/v2/DailyPerimeters"
+    ],
+    "Function": [
+        "Elevation data processing",
+        "Flood event analysis",
+        "Built-up area analysis",
+        "Flood plain mapping",
+        "Fire perimeter analysis",
+        "Buffering seismic data"
+    ]
+}

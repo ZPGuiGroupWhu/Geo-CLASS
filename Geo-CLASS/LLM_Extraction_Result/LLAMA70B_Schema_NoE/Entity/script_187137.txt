@@ -1,0 +1,19 @@
+{
+    "Theme": [
+        "Land Surface Temperature Analysis"
+    ],
+    "DataSource": [
+        "users/khoapv_vnuf/Thanhhoa_t",
+        "MODIS/MOD11A2"
+    ],
+    "Function": [
+        "Extracting Land Surface Temperature (LST) from MODIS images",
+        "Transforming Kelvin to Celsius",
+        "Aggregating images by year",
+        "Calculating annual percentiles",
+        "Generating dates by months for all years",
+        "Calculating monthly max, min, and mean temperatures",
+        "Visualizing monthly min, max, and mean temperatures",
+        "Calculating temperature max, min, and mean by month of the year"
+    ]
+}

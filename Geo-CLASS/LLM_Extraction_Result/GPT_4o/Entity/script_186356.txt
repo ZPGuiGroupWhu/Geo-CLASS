@@ -1,0 +1,5 @@
+{
+  "Theme": ["Land cover classification using Sentinel-1 data"],
+  "DataSource": ["COPERNICUS/S1_GRD"],
+  "Function": ["Define region of interest", "Create feature collections", "Apply speckle filter", "Convert image to natural units", "Convert image to dB", "Filter image collection", "Create composite image", "Visualize results", "Merge feature collections", "Sample training data", "Train classifier", "Classify image"]
+}

@@ -1,0 +1,13 @@
+{
+    "Theme": [
+        "Temperature analysis"
+    ],
+    "DataSource": [
+        "NOAA/GFS0P25"
+    ],
+    "Function": [
+        "Filter image collection by date",
+        "Clip image by polygon",
+        "Select temperature component"
+    ]
+}

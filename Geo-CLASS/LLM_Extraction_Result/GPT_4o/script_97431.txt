@@ -1,0 +1,25 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Water body analysis"],
+  "DataSource": ["users/eggenm/chad_rivers", "LANDSAT/LC08/C01/T1_TOA"],
+  "Function": ["Calculate MNDWI index", "Compute cloud score", "Mask clouds", "Filter image collection by bounds", "Filter image collection by cloud cover", "Filter image collection by date", "Select specific bands", "Filter images by month", "Create quality mosaic", "Compute median image"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/eggenm/chad_rivers"],
+        "Function": ["None"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_TOA"],
+        "Function": ["Calculate MNDWI index", "Compute cloud score", "Mask clouds", "Filter image collection by bounds", "Filter image collection by cloud cover", "Filter image collection by date", "Select specific bands", "Filter images by month", "Create quality mosaic", "Compute median image"]
+    }
+}
+```
+
+Total_Token_Usage:
+4767

@@ -1,0 +1,18 @@
+{
+    "Summary": [
+        "The script calculates the correlation between total precipitation and cloud cover percentage in East Asia for a specific time period."
+    ],
+    "Theme": [
+        "STRATOSPHERIC CLOUDS (OBSERVED/ANALYZED)"
+    ],
+    "DataSource": [
+        "UCSB-CHG/CHIRPS/PENTAD",
+        "COPERNICUS/S2_CLOUD_PROBABILITY"
+    ],
+    "Function": [
+        "Cloud Masking And Quality Filtering",
+        "Cloud Masking And Quality Filtering",
+        "Visualization And Output Generation",
+        "Merging (Combining multiple bands into one dataset)"
+    ]
+}

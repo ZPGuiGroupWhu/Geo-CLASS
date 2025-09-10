@@ -1,0 +1,10 @@
+{
+  "relation_1": {
+    "DataSource": ["LANDSAT/LT05/C01/T1_SR"],
+    "Function": ["Mask clouds and shadows", "Load image collection", "Filter by date", "Select specific band", "Filter by location", "Compute median image", "Clip image to region", "Export image to Drive", "Export table to Drive", "Count images in collection", "Get date range of images"]
+  },
+  "relation_2": {
+    "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+    "Function": ["Mask clouds and shadows", "Load image collection", "Filter by date", "Select specific band", "Filter by location", "Compute median image", "Clip image to region", "Export image to Drive", "Export table to Drive", "Count images in collection", "Get date range of images"]
+  }
+}

@@ -1,0 +1,21 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Waterbody surface area analysis", "Decline in lake surface area", "NDWI calculation", "Otsu thresholding"],
+  "DataSource": ["LANDSAT/LT05/C01/T1"],
+  "Function": ["Filter image collection by boundary", "Generate annual composite images", "Calculate NDWI for images", "Clip images to boundary", "Segment images using Otsu method", "Calculate waterbody surface area", "Vectorize waterbody pixels", "Filter waterbody vectors by point", "Create chart of waterbody area by year"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LT05/C01/T1"],
+        "Function": ["Filter image collection by boundary", "Generate annual composite images", "Calculate NDWI for images", "Clip images to boundary", "Segment images using Otsu method", "Calculate waterbody surface area", "Vectorize waterbody pixels", "Filter waterbody vectors by point", "Create chart of waterbody area by year"]
+    }
+}
+```
+
+Total_Token_Usage:
+7780

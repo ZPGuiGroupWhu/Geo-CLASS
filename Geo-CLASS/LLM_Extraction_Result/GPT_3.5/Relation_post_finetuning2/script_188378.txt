@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "USDA/NASS/CDL"
+        ],
+        "Function": [
+            "Filter Image Collection By Time"
+        ]
+    }
+}

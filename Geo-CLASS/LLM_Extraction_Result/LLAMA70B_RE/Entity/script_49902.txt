@@ -1,0 +1,15 @@
+{
+    "Theme": [
+        "Satellite imagery analysis for vegetation health"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2_SR"
+    ],
+    "Function": [
+        "Image collection filtering",
+        "Image clipping",
+        "NDVI calculation",
+        "Normalized difference calculation",
+        "Legend creation"
+    ]
+}

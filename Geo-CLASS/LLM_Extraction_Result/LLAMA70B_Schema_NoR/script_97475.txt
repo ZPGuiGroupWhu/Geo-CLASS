@@ -1,0 +1,29 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land cover classification and analysis"],
+  "DataSource": ["COPERNICUS/S2", "USGS/NED"],
+  "Function": ["Masking clouds from Sentinel-2 images", "Filtering image collection by date and bounds", "Calculating median of image collection", "Clipping image to bounds", "Renaming bands", "Generating slope and aspect from DEM", "Stacking DEM, slope, and aspect with imagery", "Developing training dataset", "Generating clusters using Weka XMeans", "Applying clusters to image", "Calculating means of each pixel for each cluster", "Generating scatter plots", "Generating frequency histogram of clusters", "Generating signature plots for each spectral cluster"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Masking clouds from Sentinel-2 images", "Filtering image collection by date and bounds", "Calculating median of image collection", "Clipping image to bounds", "Renaming bands"]
+    },
+    "relation_2": {
+        "DataSource": ["USGS/NED"],
+        "Function": ["Generating slope and aspect from DEM", "Stacking DEM, slope, and aspect with imagery"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4812, 'completion_tokens': 317, 'total_tokens': 5129}

@@ -1,0 +1,5 @@
+{
+  "Theme": ["Land cover correction using Sentinel-1 data"],
+  "DataSource": ["users/danielp/LC-SLIAC:LC-SLIAC_global"],
+  "Function": ["Center map on region of interest", "Load external land cover correction module", "Set parameters for correction", "Apply land cover correction", "Print corrected image collection", "Create time series chart", "Display time series chart"]
+}

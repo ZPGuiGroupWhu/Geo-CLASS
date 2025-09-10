@@ -1,0 +1,21 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "TIGER/2018/Counties"
+        ],
+        "Function": [
+            "Filtering US county dataset to extract Merced County"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LC08/C02/T1_L2"
+        ],
+        "Function": [
+            "Loading and filtering Landsat 8 Image Collection",
+            "Extracting dates from the image collection",
+            "Displaying images with extracted dates",
+            "Creating visualization parameters"
+        ]
+    }
+}

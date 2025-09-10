@@ -1,0 +1,26 @@
+{
+    "Theme": [
+        "Satellite Image Processing and Export"
+    ],
+    "DataSource": [
+        "NOAA/VIIRS/DNB/MONTHLY_V1/VCMCFG",
+        "VITO/PROBAV/C1/S1_TOC_100M",
+        "NOAA/VIIRS/001/VNP09GA",
+        "MODIS/006/MCD43A1",
+        "ASTER/AST_L1T_003",
+        "LANDSAT/LT04/C01/T1_TOA",
+        "LANDSAT/LT05/C01/T1_TOA",
+        "LANDSAT/LE07/C01/T1_TOA",
+        "LANDSAT/LC08/C01/T1_TOA",
+        "COPERNICUS/S3/OLCI",
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "Filtering and clipping satellite images",
+        "Applying median filter to image collections",
+        "Exporting images to Google Drive",
+        "Clipping images to a specified geometry",
+        "Applying filters to image collections based on date and cloud cover",
+        "Converting radiance values to reflectance"
+    ]
+}

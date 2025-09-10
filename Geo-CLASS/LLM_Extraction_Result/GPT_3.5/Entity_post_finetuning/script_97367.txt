@@ -1,0 +1,19 @@
+{
+    "Summary": [
+        "Creates cloud-free Landsat composites over specified intervals for Colombia."
+    ],
+    "Theme": [
+        "STRATOSPHERIC CLOUDS (OBSERVED/ANALYZED)"
+    ],
+    "DataSource": [
+        "FAO/GAUL/2015/level0"
+    ],
+    "Function": [
+        "Data Acquisition And Preprocessing",
+        "Data Fusion And Mosaicking",
+        "Cloud Masking And Quality Filtering",
+        "Cloud Masking And Quality Filtering",
+        "NDWI (Normalized Difference Water Index calculation)",
+        "Exporting And Data Conversion"
+    ]
+}

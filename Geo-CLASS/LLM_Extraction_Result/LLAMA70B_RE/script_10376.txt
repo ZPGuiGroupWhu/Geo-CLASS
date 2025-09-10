@@ -1,0 +1,21 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Entity Recognition": {
+    "Theme": ["Landsat 8 image analysis"],
+    "DataSource": ["LANDSAT/LC08/C02/T1_L2"],
+    "Function": ["Image collection filtering", "Image clipping", "Reflectance conversion", "Image visualization", "Image exporting"]
+  },
+  "Relation Extraction": {
+    "relation_1": {
+      "DataSource": ["LANDSAT/LC08/C02/T1_L2"],
+      "Function": ["Image collection filtering", "Image clipping", "Reflectance conversion", "Image visualization", "Image exporting"]
+    }
+  }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2485, 'completion_tokens': 167, 'total_tokens': 2652}

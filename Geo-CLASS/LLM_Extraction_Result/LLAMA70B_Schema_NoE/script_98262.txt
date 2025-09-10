@@ -1,0 +1,33 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Flood extent analysis and mapping"],
+  "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2", "MODIS/006/MOD09GA", "JRC/GSW1_0/GlobalSurfaceWater", "WWF/HydroSHEDS/03VFDEM"],
+  "Function": ["Filtering and clipping of MODIS images", "Calculation of NDWI", "Difference image calculation", "Thresholding and masking", "Flood extent area calculation", "Refining flood results using additional datasets"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["MODIS/006/MOD09GA"],
+        "Function": ["Filtering and clipping of MODIS images", "Calculation of NDWI", "Difference image calculation", "Thresholding and masking"]
+    },
+    "relation_2": {
+        "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2"],
+        "Function": ["Flood extent area calculation"]
+    },
+    "relation_3": {
+        "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater", "WWF/HydroSHEDS/03VFDEM"],
+        "Function": ["Refining flood results using additional datasets"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3605, 'completion_tokens': 338, 'total_tokens': 3943}

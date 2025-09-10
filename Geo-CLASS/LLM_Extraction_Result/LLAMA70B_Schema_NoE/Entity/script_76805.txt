@@ -1,0 +1,20 @@
+{
+    "Theme": [
+        "Arctic greening patterns - MODIS max NDVI/EVI robust regression trends"
+    ],
+    "DataSource": [
+        "users/liuchongwhu/Arctic/Arctic_greeness/treeline_country",
+        "MODIS/006/MOD13Q1",
+        "MODIS/006/MOD44W"
+    ],
+    "Function": [
+        "Mask pixels with high SummaryQA",
+        "Mask out water",
+        "Calculate NDVI and EVI annual max values",
+        "Prepare images for regression analysis",
+        "Calculate slopes using Theil-Sen regression",
+        "Map the coefficients",
+        "Calculate average NDVI and EVI in region from image",
+        "Data export"
+    ]
+}

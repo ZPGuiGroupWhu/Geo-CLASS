@@ -1,0 +1,29 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Wildfire analysis and classification"],
+  "DataSource": ["users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016", "COPERNICUS/S2"],
+  "Function": ["Filtering image collection by date and bounds", "Calculating NDVI index", "Classifying burned and unburned areas", "Evaluating classification accuracy"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016"],
+        "Function": ["Filtering image collection by date and bounds", "Calculating NDVI index", "Classifying burned and unburned areas", "Evaluating classification accuracy"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Filtering image collection by date and bounds", "Calculating NDVI index", "Classifying burned and unburned areas", "Evaluating classification accuracy"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 5283, 'completion_tokens': 283, 'total_tokens': 5566}

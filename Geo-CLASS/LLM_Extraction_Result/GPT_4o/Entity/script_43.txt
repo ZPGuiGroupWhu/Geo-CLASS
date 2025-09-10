@@ -1,0 +1,5 @@
+{
+  "Theme": ["Community forest analogue regions"],
+  "DataSource": ["users/ak_glaciers/All_CF_Cambodia_July_2016", "users/ak_glaciers/reem_cf_outputs/reem_canopy_cover_2000_pts_rma_nbr_timeseries_remapped_full", "USDOS/LSIB/2017"],
+  "Function": ["Calculate mean canopy cover", "Filter features by country", "Filter features by non-overlapping regions", "Filter features by canopy cover similarity", "Randomly move polygons", "Export feature collection"]
+}

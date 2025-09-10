@@ -1,0 +1,15 @@
+{
+    "Theme": [
+        "Climate data analysis for precipitation and evaporation in a specific region"
+    ],
+    "DataSource": [
+        "ECMWF/ERA5_LAND/MONTHLY"
+    ],
+    "Function": [
+        "Filtering image collection by date range",
+        "Selecting variables of interest",
+        "Reducing region to mean values",
+        "Exporting feature collection to CSV",
+        "Visualizing image layer on a map"
+    ]
+}

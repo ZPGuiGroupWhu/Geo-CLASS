@@ -1,0 +1,25 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Sentinel-2 image reprojection and export"],
+  "DataSource": ["COPERNICUS/S2"],
+  "Function": ["Filtering image collection by cloud percentage and date", "Selecting specific bands from image", "Reprojecting image to EPSG:4326", "Exporting image to Google Drive", "Visualizing image on Google Map API"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Filtering image collection by cloud percentage and date", "Selecting specific bands from image", "Reprojecting image to EPSG:4326", "Exporting image to Google Drive", "Visualizing image on Google Map API"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2925, 'completion_tokens': 197, 'total_tokens': 3122}

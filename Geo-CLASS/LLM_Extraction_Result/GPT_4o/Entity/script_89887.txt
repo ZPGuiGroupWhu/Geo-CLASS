@@ -1,0 +1,5 @@
+{
+  "Theme": ["Water masking", "Cloud masking", "True color visualization"],
+  "DataSource": ["TIGER/2018/States", "USGS/GMTED2010", "MODIS/006/MOD09GA"],
+  "Function": ["Mask clouds from images", "Mask water from images", "Filter state boundaries", "Generate hillshade", "Filter image collection by date", "Calculate median of image collection", "Clip image to boundary", "Calculate percentiles", "Visualize true color image"]
+}

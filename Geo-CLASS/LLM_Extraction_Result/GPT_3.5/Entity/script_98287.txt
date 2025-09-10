@@ -1,0 +1,6 @@
+{
+  "Summary": ["The script processes Sentinel-2 imagery to calculate NDVI and NDWI, then visualizes the results."],
+  "Theme": ["Vegetation health monitoring"],
+  "DataSource": ["COPERNICUS/S2_SR"],
+  "Function": ["Cloud removal from images", "NDVI and NDWI calculation"]
+}

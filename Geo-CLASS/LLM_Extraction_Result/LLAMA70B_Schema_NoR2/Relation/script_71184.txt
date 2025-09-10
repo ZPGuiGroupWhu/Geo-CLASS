@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LE7_L1T_32DAY_TOA"],
+        "Function": ["Cloud scoring", "Image filtering"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LE7_L1T_32DAY_TOA"],
+        "Function": ["MNDWI calculation", "Gap filling using flooding frequency"]
+    }
+}

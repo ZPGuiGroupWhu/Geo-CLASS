@@ -1,0 +1,6 @@
+{
+  "Summary": ["The script processes Landsat and MODIS data for land cover classification and accuracy assessment."],
+  "Theme": ["Land cover classification", "Accuracy assessment"],
+  "DataSource": ["users/eeranyartrodrigo/geoMediana/gm_2018_MX_014009", "users/eeranyartrodrigo/geoMediana/gm_2019_MX_014009", "users/eeranyartrodrigo/Pabellon", "LANDSAT/LE07/C01/T1_SR", "MODIS/006/MCD12Q1", "MODIS/NTSG/MOD16A2/105"],
+  "Function": ["Cloud masking for Landsat images", "Reprojection and aggregation of data", "NDVI, NDWI, and BSI calculation", "Stratified sampling for training and testing data", "Random forest classification", "Accuracy assessment using confusion matrix", "Histogram generation for predicted land cover", "Evapotranspiration visualization"]
+}

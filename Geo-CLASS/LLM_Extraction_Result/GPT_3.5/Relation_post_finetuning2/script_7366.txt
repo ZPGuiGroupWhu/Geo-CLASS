@@ -1,0 +1,17 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2",
+            "urban",
+            "water",
+            "forest",
+            "agriculture"
+        ],
+        "Function": [
+            "Filter Image Collection By Date",
+            "Filter Image Collection By Cloud Coverage",
+            "Training Model",
+            "Filter And Process"
+        ]
+    }
+}

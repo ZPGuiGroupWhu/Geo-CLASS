@@ -1,0 +1,26 @@
+{
+    "relation_1": {
+        "DataSource": ["users/kimambo/00_INPUT_TRAINING_VALIDATION/Tanzania_SouthernHighlands_reference_point_36LYR_13DEC2019_230_upto799_75PCTTRAINING"],
+        "Function": ["Sampling regions for land cover classification", "Merging images into a single image"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Cloud masking for Landsat 8 images", "Calculating NDVI for Landsat images", "Renaming bands with timestamps"]
+    },
+    "relation_3": {
+        "DataSource": ["LANDSAT/LE07/C01/T1_SR"],
+        "Function": ["Calculating NDVI for Landsat images", "Filtering images by date and location", "Iterating over image collection for sampling"]
+    },
+    "relation_4": {
+        "DataSource": ["LANDSAT/LT05/C01/T1_SR"],
+        "Function": ["Calculating NDVI for Landsat images", "Filtering images by date and location", "Iterating over image collection for sampling"]
+    },
+    "relation_5": {
+        "DataSource": ["LANDSAT/LT04/C01/T1_SR"],
+        "Function": ["Calculating NDVI for Landsat images", "Filtering images by date and location", "Iterating over image collection for sampling"]
+    },
+    "relation_6": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR", "LANDSAT/LE07/C01/T1_SR", "LANDSAT/LT05/C01/T1_SR", "LANDSAT/LT04/C01/T1_SR"],
+        "Function": ["Merging image collections"]
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/GeoForPy/Tesis/EcorregionAltoParana"
+        ],
+        "Function": [
+            "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover",
+            "Filter Image Collection By Cloud Coverage",
+            "Temporal Compositing",
+            "Export Processed Images To Google Drive"
+        ]
+    }
+}

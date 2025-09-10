@@ -1,0 +1,35 @@
+Entity Recognition:
+```json
+{
+"Theme": ["Land cover classification and cloud cover analysis"],
+"DataSource": ["LANDSAT/LC8_SR", "LANDSAT/LE7_SR", "LANDSAT/LT5_SR", "USGS/NED", "ft:1_RZgjlcqixp-L9hyS6NYGqLaKOlnhSC35AB5M5Ll"],
+"Function": ["Filtering image collections by date and location", "Applying cloud cover calculation", "Classifying land cover using band 5 threshold", "Merging image collections", "Computing total cloud and snow cover", "Normalizing by total number of images", "Masking outer edges to max scene", "Exporting final image to Drive"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC8_SR", "LANDSAT/LE7_SR", "LANDSAT/LT5_SR"],
+        "Function": ["Filtering image collections by date and location", "Merging image collections", "Classifying land cover using band 5 threshold"]
+    },
+    "relation_2": {
+        "DataSource": ["USGS/NED"],
+        "Function": ["Masking outer edges to max scene"]
+    },
+    "relation_3": {
+        "DataSource": ["ft:1_RZgjlcqixp-L9hyS6NYGqLaKOlnhSC35AB5M5Ll"],
+        "Function": ["Exporting final image to Drive"]
+    },
+    "relation_4": {
+        "DataSource": ["LANDSAT/LC8_SR", "LANDSAT/LE7_SR", "LANDSAT/LT5_SR"],
+        "Function": ["Applying cloud cover calculation", "Computing total cloud and snow cover", "Normalizing by total number of images"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4443, 'completion_tokens': 427, 'total_tokens': 4870}

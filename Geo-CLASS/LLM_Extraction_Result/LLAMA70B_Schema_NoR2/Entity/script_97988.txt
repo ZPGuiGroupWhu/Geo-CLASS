@@ -1,0 +1,5 @@
+{
+"Theme": ["Land cover classification and forest area analysis in Belize"],
+"DataSource": ["users/EL/mapa_forest_hybrid_Belize", "LANDSAT/LT5_L1T", "LANDSAT/LE7_L1T", "LANDSAT/LC08/C01/T1_RT", "COPERNICUS/S2", "JRC/GSW1_0/GlobalSurfaceWater"],
+"Function": ["Filtering image collections by date and cloud cover", "Creating mosaics from Landsat and Sentinel imagery", "Calculating spectral indices", "Classifying land cover using machine learning", "Masking water areas", "Calculating forest area statistics", "Exporting classified image to asset"]
+}

@@ -1,0 +1,19 @@
+{
+    "Summary": [
+        "Script classifies land cover using Landsat 8 imagery."
+    ],
+    "Theme": [
+        "LAND USE/LAND COVER CLASSIFICATION"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C01/T1"
+    ],
+    "Function": [
+        "Generate Image Composites",
+        "Visualize Data Layers",
+        "Training Data Sampling",
+        "Training CART Classifier",
+        "Filter And Composite",
+        "Accuracy Assessment"
+    ]
+}

@@ -1,0 +1,5 @@
+{
+  "Theme": ["Land cover classification using Sentinel-2 and Sentinel-1 data"],
+  "DataSource": ["COPERNICUS/S2", "COPERNICUS/S1_GRD"],
+  "Function": ["Filtering image collection by date and cloud coverage", "Computing Normalized Difference Vegetation Index (NDVI)", "Clustering using k-means algorithm", "Filtering SAR data by instrument mode and polarization", "Applying focal mean filter to reduce speckle", "Clustering SAR data using k-means algorithm"]
+}

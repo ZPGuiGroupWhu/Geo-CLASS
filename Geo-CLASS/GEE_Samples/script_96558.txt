@@ -1,0 +1,147 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var NDVI_250m = ee.ImageCollection("MODIS/006/MOD13Q1"),
+    CHIRPS = ee.ImageCollection("UCSB-CHG/CHIRPS/DAILY"),
+    provincias = ee.FeatureCollection("FAO/GAUL/2015/level1"),
+    geometry = 
+    /* color: #bf04c2 */
+    /* shown: false */
+    ee.Geometry.Point([19.395315308099033, 46.693314537729435]);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+//Correlations II
+var region = provincias.filterBounds(geometry).geometry()
+
+Map.addLayer(region, {}, "Region Hungary (somewhere)")
+
+
+
+//////// CHIRPS
+
+var month_sum = ee.List.sequence(0, 18*12).map(function(n){
+  
+  var start = ee.Date("2001-01-01").advance(n, "month")
+  
+  var end = start.advance(1, "month")
+  
+  return CHIRPS.filterDate(start, end).sum().set("system:time_start", start.millis())
+})
+
+var CHIRPS_monthlyCol = ee.ImageCollection(month_sum)
+
+Map.addLayer(CHIRPS_monthlyCol.first().clip(region))
+print(CHIRPS_monthlyCol, "CHIRPS monthly col")
+
+//////// MODIS (NDVI)
+
+var month_mean = ee.List.sequence(0, 18*12).map(function(n){
+  
+  var start = ee.Date("2001-01-01").advance(n, "month")
+  
+  var end = start.advance(1, "month")
+  
+  return NDVI_250m.filterDate(start, end).mean().set("system:time_start", start.millis())
+})
+
+var NDVI_250m_monthlyCol = ee.ImageCollection(month_mean).select("NDVI")
+
+print(NDVI_250m_monthlyCol, "NDVI monthly col")
+
+///////////////////////////////////////////////// Resample CHIRPS data from 5Km to 250m
+
+var imagen_NDVI = NDVI_250m_monthlyCol.first()
+
+///// Ver la proyeccion de MODIS
+
+var proyeccion = imagen_NDVI.projection()
+
+print(proyeccion, "MODIS projection")
+
+var MODIS_scale = imagen_NDVI.projection().nominalScale()  
+
+///////////// Funcion resample
+
+var resample = function (image){
+  
+  return image.resample("bilinear").reproject(proyeccion, null, 250)
+  .set("system:time_start", image.get("system:time_start"))
+}
+
+var resampled_CHIRPS = CHIRPS_monthlyCol.map(resample)
+
+print(resampled_CHIRPS.first().projection())
+print(resampled_CHIRPS.first().projection().nominalScale())
+
+
+Map.addLayer(resampled_CHIRPS.first().clip(region), {min:50, max:60, palette:["red", "blue"]}, "CHIRPS")
+Map.addLayer(NDVI_250m_monthlyCol.first().clip(region), {min:0, max:10000, palette: ["yellow", "green"]}, "NDVI modis")
+
+///////////////////////////////////////////////////  Juntar las colecciones
+
+var innerJoin = ee.Join.inner()
+
+var filterEq = ee.Filter.equals({
+  
+  leftField: "system:time_start",
+  rightField: "system:time_start"
+})
+
+var Join_CHIRPS_MODIS = innerJoin.apply(NDVI_250m_monthlyCol,resampled_CHIRPS, filterEq)
+
+print(Join_CHIRPS_MODIS, "Joined Col")
+
+////////// Funcion para pasar de Feature Collection a Image Collection
+
+var joinedCollections = ee.ImageCollection(Join_CHIRPS_MODIS.map(
+  
+  function (feature){
+    
+    return ee.Image.cat(feature.get("primary"), feature.get("secondary"))}));
+    
+print(joinedCollections, "Final Collection")
+
+//////////////////// Mapear la distribucion espacial de la relacion entre NDVI y precipitacion
+
+var correlationSpatial = joinedCollections.select("NDVI", "precipitation").reduce(ee.Reducer.pearsonsCorrelation()).select("correlation")
+    
+Map.addLayer(correlationSpatial.clip(region), {min:0, max:0.7, palette:["red", "orange", "yellow", "green", "blue"]}, "Spatial Correlation")   
+
+/////////////////////////////////////////// Scatter Plot
+
+////////// Sacar un valor agregando todos los pixeles de cada una de las imagenes
+
+function zonalStats (col){
+  
+  var reducer = col.reduceRegions({
+    collection: region,
+    scale:250,
+    reducer:ee.Reducer.mean()
+  })
+  
+  return reducer
+}
+
+
+var dataScatter = joinedCollections.map(zonalStats)
+
+print(dataScatter)
+
+///////////////// Convertir dataScatter en una tabla 
+
+var tabla = dataScatter.flatten()
+
+print(tabla, "tabla scatter")
+
+
+/////////// Scatter
+
+var grafico = ui.Chart.feature.byFeature(tabla, "precipitation", "NDVI").setChartType("ScatterChart")
+
+print(grafico)
+
+
+
+
+
+
+
+
+

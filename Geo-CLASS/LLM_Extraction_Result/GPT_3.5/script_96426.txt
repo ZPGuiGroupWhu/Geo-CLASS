@@ -1,0 +1,19 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Script focuses on monitoring changes in lake areas using Landsat imagery and water classification methods."],
+  "Theme": ["Lake area monitoring"],
+  "DataSource": ["users/sarinarinab/CitSci_Washington_Lakes", "users/sntopp/Lakes_ply_20171106", "users/sntopp/NCSC_Horsepen_Lake", "JRC/GSW1_0/GlobalSurfaceWater"],
+  "Function": ["Calculate water area changes", "Fill in clouded areas", "Extract lake area information"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/sarinarinab/CitSci_Washington_Lakes", "users/sntopp/Lakes_ply_20171106", "users/sntopp/NCSC_Horsepen_Lake", "JRC/GSW1_0/GlobalSurfaceWater"],
+        "Function": ["Calculate water area changes", "Fill in clouded areas", "Extract lake area information"]
+    }
+}
+```

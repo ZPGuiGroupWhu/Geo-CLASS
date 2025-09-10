@@ -1,0 +1,24 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Water body area analysis"],
+  "DataSource": ["COPERNICUS/S1_GRD"],
+  "Function": ["Filtering image collection", "Applying OTSU thresholding", "Calculating water body area", "Generating chart"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Filtering image collection", "Applying OTSU thresholding", "Calculating water body area", "Generating chart"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4148, 'completion_tokens': 154, 'total_tokens': 4302}

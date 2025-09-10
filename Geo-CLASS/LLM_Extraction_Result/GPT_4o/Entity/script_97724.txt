@@ -1,0 +1,5 @@
+{
+  "Theme": ["NDVI time series analysis", "Cloud and snow masking", "Chinese Privet mapping"],
+  "DataSource": ["TIGER/2018/States", "users/eisen520/chinesePrivet", "COPERNICUS/S2_SR"],
+  "Function": ["Filter state by name", "Draw state outline", "Center map on feature", "Add layer to map", "Map feature collection", "Mask clouds and snow", "Add NDVI band", "Filter image collection by date", "Filter image collection by bounds", "Create image series chart", "Reduce regions", "Join feature collections", "Export table to Drive"]
+}

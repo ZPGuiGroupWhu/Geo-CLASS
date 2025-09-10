@@ -1,0 +1,543 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var roi = ee.FeatureCollection("users/kiniklihakan/milanshp"),
+    geometry = 
+    /* color: #999900 */
+    /* shown: false */
+    ee.Geometry.Polygon(
+        [[[8.676989012860652, 45.737150782851835],
+          [8.676989012860652, 45.263582226914025],
+          [9.560015135907527, 45.263582226914025],
+          [9.560015135907527, 45.737150782851835]]], null, false),
+    crop15 = /* color: #009999 */ee.FeatureCollection([]),
+    bare15 = /* color: #ff00ff */ee.FeatureCollection([]),
+    crop10 = /* color: #ff9999 */ee.FeatureCollection([]),
+    bare10 = /* color: #99ff99 */ee.FeatureCollection([]),
+    crop05 = /* color: #9999ff */ee.FeatureCollection([]),
+    bare05 = /* color: #ffff99 */ee.FeatureCollection([]),
+    crop00 = /* color: #99ffff */ee.FeatureCollection([]),
+    bare00 = /* color: #ff99ff */ee.FeatureCollection([]);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+
+
+
+
+Map.addLayer(geometry)
+
+Map.addLayer(roi)
+
+function maskL457sr(image) {
+
+  // Bit 0 - Fill
+
+  // Bit 1 - Dilated Cloud
+
+  // Bit 2 - Unused
+
+  // Bit 3 - Cloud
+
+  // Bit 4 - Cloud Shadow
+
+  var qaMask = image.select('QA_PIXEL').bitwiseAnd(parseInt('11111', 2)).eq(0);
+
+  var saturationMask = image.select('QA_RADSAT').eq(0);
+
+
+
+  // Apply the scaling factors to the appropriate bands.
+
+  var opticalBands = image.select('SR_B.').multiply(0.0000275).add(-0.2);
+
+  var thermalBand = image.select('ST_B6').multiply(0.00341802).add(149.0);
+
+
+
+  // Replace the original bands with the scaled ones and apply the masks.
+
+  return image.addBands(opticalBands, null, true)
+
+      .addBands(thermalBand, null, true)
+
+      .updateMask(qaMask)
+
+      .updateMask(saturationMask);
+
+}
+
+
+
+//***********************************************************************//
+
+// This example demonstrates the use of the Landsat 8 Collection 2, Level 2
+
+// QA_PIXEL band (CFMask) to mask unwanted pixels.
+
+
+
+function maskL8sr(image) {
+
+  // Bit 0 - Fill
+
+  // Bit 1 - Dilated Cloud
+
+  // Bit 2 - Cirrus
+
+  // Bit 3 - Cloud
+
+  // Bit 4 - Cloud Shadow
+
+  var qaMask = image.select('QA_PIXEL').bitwiseAnd(parseInt('11111', 2)).eq(0);
+
+  var saturationMask = image.select('QA_RADSAT').eq(0);
+
+
+
+  // Apply the scaling factors to the appropriate bands.
+
+  var opticalBands = image.select('SR_B.').multiply(0.0000275).add(-0.2);
+
+  var thermalBands = image.select('ST_B.*').multiply(0.00341802).add(149.0);
+
+
+
+  // Replace the original bands with the scaled ones and apply the masks.
+
+  return image.addBands(opticalBands, null, true)
+
+      .addBands(thermalBands, null, true)
+
+      .updateMask(qaMask)
+
+      .updateMask(saturationMask);
+
+}
+
+
+
+
+
+//rename Landsat 8 bands in the order of previous missions to make it processable with same functions used for other
+
+//image collections
+
+//renaming should be done after cloud masking and scaling steps of image collections.(it is done by fame function maskL8sr)
+
+function renameBandsL8(image) {
+
+    var bands = ['SR_B1','SR_B2', 'SR_B3', 'SR_B4', 'SR_B5', 'SR_B6', 'SR_B7'];
+
+    var new_bands = ['SR_B0','SR_B1', 'SR_B2', 'SR_B3', 'SR_B4', 'SR_B5', 'SR_B7'];
+
+    return image.select(bands).rename(new_bands).select(['SR_B1', 'SR_B2', 'SR_B3', 'SR_B4', 'SR_B5', 'SR_B7']);
+
+}
+
+
+
+
+
+// indices for landsat 7 images ** change band combinations for different satellite missions
+
+var addIndices = function(image) {
+
+  var ndvi = image.normalizedDifference(['SR_B4', 'SR_B3']).rename(['ndvi']);
+
+  var ndbi = image.normalizedDifference(['SR_B5', 'SR_B4']).rename(['ndbi']);
+
+  var mndwi = image.normalizedDifference(['SR_B2', 'SR_B5']).rename(['mndwi']); 
+
+  var mbi = image.expression(
+
+      '((( X - Y - Z )/( X + Y + Z))) ', {
+
+        'X': image.select('SR_B7'), //swir2
+
+        'Y': image.select('SR_B5'),  //swir1
+
+        'Z': image.select('SR_B4'), //nir
+
+  }).rename('mbi');
+
+  return image.addBands(ndvi).addBands(ndbi).addBands(mndwi).addBands(mbi)
+
+};
+
+
+
+// Pixel Values should be between 0 and 1 for better performance
+
+// Formula is (x - xmin) / (xmax - xmin)
+
+//************************************************************************** 
+
+function normalize(image,geometry){
+
+  var bandNames = image.bandNames();
+
+  // Compute min and max of the image
+
+  var minDict = image.reduceRegion({
+
+    reducer: ee.Reducer.min(),
+
+    geometry: geometry,
+
+    scale: 30,
+
+    maxPixels: 1e9,
+
+    bestEffort: true,
+
+    tileScale: 16
+
+  });
+
+  var maxDict = image.reduceRegion({
+
+    reducer: ee.Reducer.max(),
+
+    geometry: geometry,
+
+    scale: 30,
+
+    maxPixels: 1e9,
+
+    bestEffort: true,
+
+    tileScale: 16
+
+  });
+
+  var mins = ee.Image.constant(minDict.values(bandNames));
+
+  var maxs = ee.Image.constant(maxDict.values(bandNames));
+
+
+
+  var normalized = image.subtract(mins).divide(maxs.subtract(mins))
+
+  return normalized
+
+}
+
+
+
+// Prints a histogram of the polygons
+
+var print_hist = function(image, poly, title){
+
+  var options = {
+
+    title: title,
+
+    fontSize: 20,
+
+    hAxis: {title: 'DN'},
+
+    vAxis: {title: 'count of DN'},
+
+    explorer: {},
+
+  };
+
+  
+
+  var histogram = ui.Chart.image.histogram(image, poly, 30).setOptions(options);
+
+  
+
+  print(histogram);
+
+};
+
+
+
+//calculate the area of each class
+
+var classArea = function(image){
+
+  var areaImage = ee.Image.pixelArea().addBands(
+
+        image);
+
+   
+
+  var areas = areaImage.reduceRegion({
+
+        reducer: ee.Reducer.sum().group({
+
+        groupField: 1,
+
+        groupName: 'classification',
+
+      }),
+
+      geometry: image.geometry(),
+
+      scale: 30, 
+
+      maxPixels: 1e10
+
+      }); 
+
+  
+
+  var classAreas = ee.List(areas.get('groups'));
+
+   
+
+  var classAreaLists = classAreas.map(function(item) { // Function within a function to create a dictionary with the values for every group
+
+    var areaDict = ee.Dictionary(item);
+
+    var classNumber = ee.Number(areaDict.get('classification')).format();
+
+    var area = ee.Number(
+
+      areaDict.get('sum')).divide(1e6).round(); // The result will be in square meters, this converts them into square kilometers
+
+    return ee.List([classNumber, area]);
+
+  });
+
+   
+
+  var result = ee.Dictionary(classAreaLists.flatten()); // Flattens said dictionary so it is readable for us
+
+  return(result);
+
+};
+
+
+
+//create landcover charts after classification
+
+//takes classified image, region of classes and classlist as input
+
+var create_chart = function(classification, AOI, classList){ // for classList, create a list of your classes as strings
+
+  var options = {
+
+    hAxis: {title: 'Class'},
+
+    vAxis: {title: 'Area'},
+
+    title: 'Area by class',
+
+    bestEffort:true,
+
+    maxPixels: 1e12,
+
+    series: { // You can change these to be whatever colours you'd like. Simply add numbers to match how many classes you have
+
+    0:{color:'0000FF'},//water(0)
+
+    1:{color:'B22222'},//urban(1)
+
+    2:{color:'F0E68C'}, //bareland(2)
+
+    3:{color:'ADFF2F'},//Irrigated(3)
+
+    4:{color:'6e6d35'},//Non Irrigated(4)
+
+    5:{color:'006400'}//Forest(5)
+
+  }};
+
+  var areaChart = ui.Chart.image.byClass({
+
+    image: ee.Image.pixelArea().addBands(classification),
+
+    classBand: 'classification', 
+
+    scale: 500,
+
+    region: AOI,
+
+    reducer: ee.Reducer.sum()
+
+
+
+  }).setSeriesNames(classList)
+
+  .setOptions(options)
+
+  ;
+
+  print(areaChart);
+
+  
+
+
+
+};
+
+
+
+//fill gaps by blending median image and mean of the same image 
+
+var blend_image=function(image_median){
+
+  var image1=image_median.focal_mean(2,'square','pixels',2).blend(image_median)
+
+  return image1
+
+}
+
+
+
+//fills gaps of image collection 
+
+var fillImage=function(collection){
+
+  var listOfImages = collection.toList(collection.size())
+
+  var fill=listOfImages.map(function(image){
+
+    var finalimage=ee.Image(image).focal_mean(1,'square','pixels',8).blend(image);
+
+    var id=ee.String(ee.Image(image).get('system:id'));
+
+    return ee.Image(finalimage).set('system:id',id)
+
+  return ee.List(listOfImages)
+
+  })
+
+  }; 
+
+  
+
+//reclassify classified image as only urbanized area left 
+
+var lulcreclassification=function(image){
+
+  var new_image= ee.Image(image).where(image.eq(0),0)
+
+  .where(image.eq(1),1).where(image.eq(2),0)
+
+  .where(image.eq(3),0).where(image.eq(4),0).where(image.eq(5),0)
+
+  return new_image
+
+}
+
+
+
+// reclassify the built-up area into classes as urban(2),sub-urban(1) and rural(0) according to built-up density 
+
+var focal_reclass=function(image){
+
+  var image_new=ee.Image(image).where(image.lte(278),0)
+
+  .where(image.gt(278).and(image.lt(556)),1).where(image.gt(556),2)
+
+  return image_new
+
+}
+
+
+
+//applies AND logical operations to two layers and crate a new image 
+
+var combinatorialAnd= function(image1_reclassified_focal,image2_reclassified_builtup){
+
+  var new_image= ee.Image(image1_reclassified_focal).where(image1_reclassified_focal.eq(0).or(image2_reclassified_builtup.eq(0)),0)
+
+  .where(image1_reclassified_focal.eq(1).and(image2_reclassified_builtup.eq(1)),1)
+
+  .where(image1_reclassified_focal.eq(2).and(image2_reclassified_builtup.eq(1)),2)
+
+  return new_image
+
+}
+
+
+
+// buffer given polygon to 1.25 times of its previous area by applying a general formula 
+
+var  buffer_by_area=function(featureCol){
+
+  var ar = featureCol.area(1);
+
+  var perim = featureCol.perimeter(1);
+
+
+
+  var rooted = (((ar.multiply(3.14)).add(perim.pow(2))).sqrt()).subtract(perim);
+
+  var nom= rooted.divide(2*3.14)
+
+
+
+  var buff = featureCol.buffer(nom);
+
+
+
+  return buff;
+
+}
+
+
+
+// Load the city boundaries as "roi"
+
+
+
+// Map the function over one year of data.
+
+var collection1 = ee.ImageCollection("LANDSAT/LC08/C02/T1_L2")
+
+                     .filterDate('2015-08-01', '2015-10-01').filter(ee.Filter.gte('IMAGE_QUALITY_OLI',6)).filter(ee.Filter.lte('CLOUD_COVER', 40)).filterBounds(geometry).map(maskL8sr);
+
+var collection1=collection1.map(renameBandsL8);
+
+var collection2 = ee.ImageCollection("LANDSAT/LT05/C02/T1_L2")
+
+                     .filterDate('2010-08-01', '2010-10-01').filter(ee.Filter.gte('IMAGE_QUALITY',7)).filter(ee.Filter.lte('CLOUD_COVER', 30)).filterBounds(geometry).map(maskL457sr);    
+
+var collection3 = ee.ImageCollection("LANDSAT/LT05/C02/T1_L2")
+
+                     .filterDate('2005-05-01', '2005-06-01').filter(ee.Filter.gte('IMAGE_QUALITY',6)).filter(ee.Filter.lte('CLOUD_COVER', 70)).filterBounds(geometry).map(maskL457sr); 
+
+var collection4= ee.ImageCollection("LANDSAT/LE07/C02/T1_L2")
+
+                      .filterDate('2000-08-15', '2000-09-01').filter(ee.Filter.gte('IMAGE_QUALITY',6)).filter(ee.Filter.lte('CLOUD_COVER',30)).filterBounds(geometry).map(maskL457sr);
+
+//reduce collection into one image as the median of collection
+
+//clip composite within geometry extent
+
+var composite1 = blend_image(collection1.median()).clip(geometry);
+
+
+
+var composite2 = blend_image(collection2.median()).clip(geometry);
+
+var composite3 = blend_image(collection3.median()).clip(geometry);
+
+var composite4 = blend_image(collection4.median()).clip(geometry);
+
+var composite=[composite1,composite2,composite3,composite4];
+
+print(composite2)
+
+
+
+
+
+Map.setCenter( 9.188540,45.464664, 10);  // Dar es Salaam
+
+Map.addLayer(composite1, {bands: ['SR_B3', 'SR_B2', 'SR_B1'], min: 0, max: 0.3},'Composite RGB1');
+
+
+
+Map.addLayer(composite2, {bands: ['SR_B3', 'SR_B2', 'SR_B1'], min: 0, max: 0.3},'Composite RGB2')
+
+Map.addLayer(composite3, {bands: ['SR_B3', 'SR_B2', 'SR_B1'], min: 0, max: 0.3},'Composite RGB3')
+
+Map.addLayer(composite4, {bands: ['SR_B3', 'SR_B2', 'SR_B1'], min: 0, max: 0.3},'Composite RGB4')
+
+
+
+
+

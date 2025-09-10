@@ -1,0 +1,24 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/cesarnon/datos_cba_2017/Cordoba_limite"
+        ],
+        "Function": [
+            "Filter Image Collection By Date",
+            "Visualization Selection",
+            "Geometric Index Calculation",
+            "Image Mosaicking"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Filter Image Collection By Date",
+            "Visualization Selection",
+            "Geometric Index Calculation",
+            "Image Mosaicking"
+        ]
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "Theme": [
+        "Land cover analysis using Landsat 8 imagery"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C01/T1_SR"
+    ],
+    "Function": [
+        "maskL8sr (cloud masking and image correction)",
+        "ndvi (calculating Normalized Difference Vegetation Index)",
+        "image filtering and compositing",
+        "image differencing and anomaly calculation"
+    ],
+    "Entities": [
+        "studyArea1",
+        "roi1",
+        "roi2",
+        "roi3",
+        "roi4",
+        "roi5",
+        "ROI1",
+        "y2014",
+        "y2015",
+        "y2016",
+        "y2017",
+        "y2018",
+        "y2019",
+        "y2020",
+        "ndviCollection",
+        "yearlyComposites",
+        "filterCollection",
+        "stepList",
+        "imageCollection",
+        "SimpleImageDiff",
+        "yMean",
+        "AvgImageDiff",
+        "stdImg",
+        "Anomaly2020",
+        "Anomaly2018",
+        "Anomaly2016",
+        "Anomaly2014"
+    ]
+}

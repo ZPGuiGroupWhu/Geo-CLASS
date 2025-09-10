@@ -1,0 +1,11 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "MODIS/006/MOD09Q1"
+        ],
+        "Function": [
+            "Add NDVI Band To Images",
+            "Unsupervised Clustering"
+        ]
+    }
+}

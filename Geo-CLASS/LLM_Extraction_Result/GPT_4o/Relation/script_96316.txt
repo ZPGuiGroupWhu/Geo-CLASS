@@ -1,0 +1,10 @@
+{
+  "relation_1": {
+    "DataSource": ["users/cesarnon/datos_cba_2017/Cordoba_limite"],
+    "Function": ["Filter images by location", "Clip images to region"]
+  },
+  "relation_2": {
+    "DataSource": ["COPERNICUS/S2_SR"],
+    "Function": ["Filter images by date", "Filter images by location", "Filter images by cloud cover", "Rename image bands", "Calculate NDVI", "Calculate NDWI", "Calculate NDWI1", "Add bands to images", "Create quality mosaics", "Clip images to region", "Display images on map", "Stack NDVI bands"]
+  }
+}

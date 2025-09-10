@@ -1,0 +1,33 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land cover analysis and temperature monitoring in the Amazon Basin"],
+  "DataSource": ["LANDSAT/LC08/C01/T2_SR", "UMD/hansen/global_forest_change_2017_v1_5", "Oxford/MAP/LST_Day_5km_Monthly", "NCEP_RE/surface_temp"],
+  "Function": ["Masking forested and deforested areas using Hansen et al. forest change dataset", "Filtering Landsat 8 images by forested areas", "Calculating mean air surface temperature over forested areas in the Amazon Basin"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["UMD/hansen/global_forest_change_2017_v1_5"],
+        "Function": ["Masking forested and deforested areas using Hansen et al. forest change dataset"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T2_SR"],
+        "Function": ["Filtering Landsat 8 images by forested areas", "Calculating mean air surface temperature over forested areas in the Amazon Basin"]
+    },
+    "relation_3": {
+        "DataSource": ["Oxford/MAP/LST_Day_5km_Monthly", "NCEP_RE/surface_temp"],
+        "Function": ["Calculating mean air surface temperature over forested areas in the Amazon Basin"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 5959, 'completion_tokens': 374, 'total_tokens': 6333}

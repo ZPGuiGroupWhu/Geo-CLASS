@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Landsat 7 Image Processing for Cloud Masking and Filtering"],
+  "DataSource": ["LANDSAT/LE07/C01/T1_SR"],
+  "Function": ["Filtering Image Collection by Date and Path/Row", "Masking Clouds and Shadows in Images", "Exporting Image Collection to Drive"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LE07/C01/T1_SR"],
+        "Function": ["Filtering Image Collection by Date and Path/Row", "Masking Clouds and Shadows in Images", "Exporting Image Collection to Drive"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4525, 'completion_tokens': 167, 'total_tokens': 4692}

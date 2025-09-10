@@ -1,0 +1,16 @@
+{
+    "Theme": [
+        "Land cover classification and vegetation analysis"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2_CLOUD_PROBABILITY",
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "Filter image collection by cloud probability",
+        "Add cloud probability band to image",
+        "Identify cloud shadows",
+        "Apply cloud and shadow mask",
+        "Calculate vegetation indices"
+    ]
+}

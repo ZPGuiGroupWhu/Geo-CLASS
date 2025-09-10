@@ -1,0 +1,19 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["The script processes USDA/NASS/CDL image collections within specified geometries."],
+  "Theme": ["Land cover classification"],
+  "DataSource": ["USDA/NASS/CDL"],
+  "Function": ["Image collection filtering based on geometry"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["USDA/NASS/CDL"],
+        "Function": ["Image collection filtering based on geometry"]
+    }
+}
+```

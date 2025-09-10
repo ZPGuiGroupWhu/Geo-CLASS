@@ -1,0 +1,5 @@
+{
+  "Theme": ["Land use classification and urbanization analysis"],
+  "DataSource": ["LANDSAT/LE07/C01/T1_TOA", "COPERNICUS/S2", "users/eeranyartrodrigo/ferrocarriles/coahuilaPols"],
+  "Function": ["Filtering image collections by date and cloud cover", "Calculating spectral indices", "Unmixing images for land cover classification", "Generating histograms for thresholding", "Applying Otsu's thresholding method", "Creating binary urban masks"]
+}

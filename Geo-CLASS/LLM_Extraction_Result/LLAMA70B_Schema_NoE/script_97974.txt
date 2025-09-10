@@ -1,0 +1,33 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land cover classification and change detection"],
+  "DataSource": ["users/EL/Grenada", "LANDSAT/LE7_L1T", "LANDSAT/LC08/C01/T1_RT", "users/EL/G_forest"],
+  "Function": ["Buffering country borders", "Filtering Landsat imagery by date and cloud cover", "Compositing Landsat imagery", "Calculating spectral indices", "Visualizing mosaics", "Merging bands", "Masking non-forest areas", "Sampling regions for training", "Training a classifier", "Classifying land cover"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/EL/Grenada"],
+        "Function": ["Buffering country borders", "Masking non-forest areas", "Sampling regions for training", "Training a classifier", "Classifying land cover"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LE7_L1T", "LANDSAT/LC08/C01/T1_RT"],
+        "Function": ["Filtering Landsat imagery by date and cloud cover", "Compositing Landsat imagery", "Calculating spectral indices", "Merging bands", "Visualizing mosaics"]
+    },
+    "relation_3": {
+        "DataSource": ["users/EL/G_forest"],
+        "Function": ["Masking non-forest areas"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3281, 'completion_tokens': 362, 'total_tokens': 3643}

@@ -1,0 +1,35 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Rice paddy monitoring", "Urban area detection", "Water body detection", "Vegetation monitoring"],
+  "DataSource": ["COPERNICUS/S2", "COPERNICUS/S1_GRD", "users/eeranyartrodrigo/ferrocarriles/estaciones_prospectadas_area", "WWF/HydroSHEDS/03VFDEM"],
+  "Function": ["Filtering image collections by date and geometry", "Removing clouds from images", "Calculating median of image collection", "Computing normalized difference indices", "Applying thresholds to indices", "Clipping images to geometry", "Reducing image collection to percentiles", "Calculating difference between wet and dry conditions", "Removing mountains from data", "Updating mask with slope values"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Filtering image collections by date and geometry", "Removing clouds from images", "Calculating median of image collection"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Computing normalized difference indices", "Applying thresholds to indices", "Clipping images to geometry"]
+    },
+    "relation_3": {
+        "DataSource": ["users/eeranyartrodrigo/ferrocarriles/estaciones_prospectadas_area"],
+        "Function": ["Reducing image collection to percentiles"]
+    },
+    "relation_4": {
+        "DataSource": ["WWF/HydroSHEDS/03VFDEM"],
+        "Function": ["Calculating difference between wet and dry conditions", "Removing mountains from data", "Updating mask with slope values"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2933, 'completion_tokens': 418, 'total_tokens': 3351}

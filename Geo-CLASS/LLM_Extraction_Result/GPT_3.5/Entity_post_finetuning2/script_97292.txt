@@ -1,0 +1,18 @@
+{
+    "Summary": [
+        "Segmentation and classification of agricultural land using NAIP and CDL data."
+    ],
+    "Theme": [
+        "AGRICULTURAL LANDS"
+    ],
+    "DataSource": [
+        "USDA/NAIP/DOQQ",
+        "USDA/NASS/CDL/2016"
+    ],
+    "Function": [
+        "Filter Image Collection By Date",
+        "Image Segmentation",
+        "Cloud Score Computation",
+        "Training CART Classifier"
+    ]
+}

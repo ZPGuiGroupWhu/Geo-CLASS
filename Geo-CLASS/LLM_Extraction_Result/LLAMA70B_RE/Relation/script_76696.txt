@@ -1,0 +1,32 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/cxliu2015/Arctic_treeline_Project_Russia"
+        ],
+        "Function": [
+            "Count Landsat observations",
+            "Image collection filtering"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "ft:1XXheLy1fnGiQKRtkcP9iD9s3gqdcx2PqtkKJP7Ig"
+        ],
+        "Function": [
+            "Image masking"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "LANDSAT/LT04/C01/T1_TOA",
+            "LANDSAT/LT05/C01/T1_TOA",
+            "LANDSAT/LE07/C01/T1_TOA",
+            "LANDSAT/LC08/C01/T1_TOA"
+        ],
+        "Function": [
+            "Cloud removal",
+            "NDVI calculation",
+            "Harmonize Landsat 8 and Landsat 7"
+        ]
+    }
+}

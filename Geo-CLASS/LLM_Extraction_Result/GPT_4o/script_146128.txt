@@ -1,0 +1,21 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Burned area classification", "Vegetation analysis", "Bare soil detection", "Water body identification"],
+  "DataSource": ["COPERNICUS/S2"],
+  "Function": ["Define region of interest", "Load satellite image", "Merge feature collections", "Create training data", "Train classifier", "Run classification", "Display classification"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["COPERNICUS/S2"],
+    "Function": ["Load satellite image", "Create training data", "Train classifier", "Run classification", "Display classification"]
+  }
+}
+```
+
+Total_Token_Usage:
+10037

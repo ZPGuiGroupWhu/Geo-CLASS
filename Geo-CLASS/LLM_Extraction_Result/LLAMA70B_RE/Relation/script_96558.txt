@@ -1,0 +1,31 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "MODIS/006/MOD13Q1"
+        ],
+        "Function": [
+            "Filtering image collections by date",
+            "Calculating monthly means",
+            "Calculating spatial correlation"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "UCSB-CHG/CHIRPS/DAILY"
+        ],
+        "Function": [
+            "Filtering image collections by date",
+            "Calculating monthly sums",
+            "Resampling images",
+            "Calculating spatial correlation"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "FAO/GAUL/2015/level1"
+        ],
+        "Function": [
+            "Filtering regions"
+        ]
+    }
+}

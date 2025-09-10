@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Wildfire monitoring and analysis"],
+  "DataSource": ["LANDSAT/LC08/C02/T1_TOA", "users/avaise99/KP_Boundary"],
+  "Function": ["Filtering image collection by date and cloud cover", "Masking clouds from images", "Mosaicking images", "Clipping images to boundary", "Visualizing images with specific bands"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C02/T1_TOA"],
+        "Function": ["Filtering image collection by date and cloud cover", "Masking clouds from images", "Mosaicking images", "Visualizing images with specific bands"]
+    },
+    "relation_2": {
+        "DataSource": ["users/avaise99/KP_Boundary"],
+        "Function": ["Clipping images to boundary"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3821, 'completion_tokens': 221, 'total_tokens': 4042}

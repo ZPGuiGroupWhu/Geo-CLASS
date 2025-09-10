@@ -1,0 +1,23 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "MODIS/006/MOD09GA"
+        ],
+        "Function": [
+            "Filtering MODIS data by year (2019) and applying cloud mask",
+            "Scaling MODIS data",
+            "Calculating NDVI",
+            "Extracting date, month, and day of year from MODIS data",
+            "Creating a quality mosaic of NDVI",
+            "Visualizing NDVI, greenest pixel, greenest month, and greenest day of year"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "users/giswqs/public/countries"
+        ],
+        "Function": [
+            "None"
+        ]
+    }
+}

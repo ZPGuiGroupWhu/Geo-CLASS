@@ -1,0 +1,31 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/zolokiala/parthenium1",
+            "users/zolokiala/training",
+            "users/zolokiala/test"
+        ],
+        "Function": [
+            "Classifying land cover using SVM classifier",
+            "Accuracy assessment using confusion matrix and kappa coefficient"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "users/zolokiala/buffer"
+        ],
+        "Function": [
+            "Masking clouds using Sentinel-2 QA band"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Masking clouds using Sentinel-2 QA band",
+            "Computing vegetation indices (NDVI, SAVI, DVI, GNDVI, EVI, chl, SRI, GDVI, IPVI, NDWI, GI, GRVI)",
+            "Classifying land cover using SVM classifier"
+        ]
+    }
+}

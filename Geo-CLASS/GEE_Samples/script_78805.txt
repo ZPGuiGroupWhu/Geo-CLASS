@@ -1,0 +1,114 @@
+/// Exemplo 2 Image Collection
+
+
+var clip = ee.FeatureCollection("users/philipegeo/pol_jeremoabo").geometry() //informações relacionadas ao arquivo: ID do Asset
+var ini = ee.Date("2005-01-01") // separar dentro da coleção de imagens o período de estudo
+var fim = ee.Date("2009-12-31")
+
+var colimage= ee.ImageCollection("LANDSAT/LT05/C01/T1_TOA") //variável que vai guardar a coleção de imagens (vem entre aspas) do satélite xxx
+                 
+                 
+                 .filterMetadata("CLOUD_COVER", "less_than", 3 ) //filtra menos de 3% de nuvens, dentro dos dados (metadata) do conjunto
+                 .filterDate(ini,fim)
+                 .filterBounds(clip)
+                 
+print(colimage.limit(2000), "Collection L05") //verificações e gerar uma saída, quais variáveis estão retornando
+
+// .limit limitar a quantidade de imagens, pode dar erro de visualização se tiver mais de 5mil imagens
+// Collection 05 --> nome para ver
+
+var printout = ee.Image(0).mask(0).paint(clip, "AA0000", 2)
+var visgrid = {
+"pallette" : "000000",
+"opacity": 0.6
+}
+
+Map.addLayer(printout, visgrid, "Limite", true) //ver resultado final, cria geometria vazia
+var size= colimage.size()
+print(size, "número de imagens") // mostra nº imagens que existem com os filtros dentro da coleção
+
+var imagelist=colimage.toList(size)
+print(imagelist,"Lista selecionada")
+
+var imagee = ee.Image(imagelist.get(2))
+print(imagee, "Imagem selecionada")
+// get para escolher elemento de uma lista com a posição
+
+var vistoa= {
+  bands:["B5","B4","B3"],
+  min:[0],
+  max:[0.3],
+}
+Map.addLayer(imagee.clip(clip), vistoa, "Imagem Lista", true)
+
+
+
+var reductmediana=colimage.reduce(ee.Reducer.median()) //usa estatísticas
+var reductmedia=colimage.reduce(ee.Reducer.mean()) // qual é a média pixel a pixel das imagens todas ao longo do período, concentrada em uma imagem só?
+
+print(reductmediana, 'Mediana') 
+print(reductmedia, 'Média')
+
+// fórmula é calculada pelo "expression"
+//abre parêntesis e inclui a fórmula, abre chaves e e insere o que é cada um: NIR, RED
+var ndvimediana = reductmediana.expression(
+  "(NIR-RED)/(NIR+RED)",{
+"NIR" : reductmediana.select("B4_median"),
+"RED" : reductmediana.select("B3_median")
+});
+print(ndvimediana, "NDVI mediano")
+
+var ndvimedia = reductmedia.expression(
+  "(NIR-RED)/(NIR+RED)",{
+"NIR" : reductmedia.select("B4_mean"),
+"RED" : reductmedia.select("B3_mean")
+});
+
+print(ndvimedia, "NDVI da média")
+
+
+
+
+var visndvi= {
+  min: -0.2,
+  max: 0.8,
+  palette: "ff0000, FF6347, 940002, EA7503, F3C50B, ECE708, CCDB0B, B1CA07, 89B205, 4B8702"
+}
+Map.addLayer(ndvimediana.clip(clip),visndvi," NDVI MEDIANO",true)
+Map.addLayer(ndvimedia.clip(clip),visndvi," NDVI DA MEDIA",true)//visndvi tem os parâmetros
+
+
+
+
+var   SAVIdamediana = reductmediana.expression (
+  "(1+L)* (NIR - RED) / (L + NIR + RED)", {
+  "NIR" : reductmediana.select ("B4_median"),
+  "RED" : reductmediana.select ("B3_median"),
+  "L" : 0.5
+});
+
+var visudoSAVI = {
+  min: -0.2,
+  max: 0.8,
+  palette: "ff0000, FF6347, 940002, EA7503, F3C50B, ECE708, CCDB0B, B1CA07, 89B205, 4B8702"
+};
+
+Map.addLayer(SAVIdamediana.clip(clip),visudoSAVI," SAVI DA MEDIANA",true)
+
+
+var   SAVIdamedia = reductmedia.expression (
+  "(1+L)* (NIR - RED) / (L + NIR + RED)", {
+  "NIR" : reductmedia.select ("B4_mean"),
+  "RED" : reductmedia.select ("B3_mean"),
+  "L" : 0.5
+});
+
+var visSAVIdamedia = {
+  min: -0.2,
+  max: 0.8,
+  palette: "ff0000, FF6347, 940002, EA7503, F3C50B, ECE708, CCDB0B, B1CA07, 89B205, 4B8702"
+};
+
+Map.addLayer(SAVIdamedia.clip(clip),visSAVIdamedia," SAVI DA MEDIA",true)
+
+

@@ -1,0 +1,33 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LT05/C01/T1_SR",
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "Image collection filtering",
+            "Image masking",
+            "Band selection",
+            "Median calculation"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "users/cxliu2015/QHPA_Yege"
+        ],
+        "Function": [
+            "Image clipping",
+            "Region boundary drawing"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "LANDSAT/LT05/C01/T1_SR",
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "Vegetation index calculation",
+            "Image exporting"
+        ]
+    }
+}

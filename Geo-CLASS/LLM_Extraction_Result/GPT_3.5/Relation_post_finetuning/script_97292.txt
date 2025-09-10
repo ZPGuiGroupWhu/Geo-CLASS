@@ -1,0 +1,14 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "USDA/NAIP/DOQQ",
+            "USDA/NASS/CDL/2016"
+        ],
+        "Function": [
+            "Vegetation And Water Indices Calculation",
+            "Data Acquisition And Preprocessing",
+            "Vegetation And Water Indices Calculation",
+            "Classification And Machine Learning"
+        ]
+    }
+}

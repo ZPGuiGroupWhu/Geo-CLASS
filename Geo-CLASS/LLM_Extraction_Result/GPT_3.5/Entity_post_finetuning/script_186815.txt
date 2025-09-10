@@ -1,0 +1,27 @@
+{
+    "Summary": [
+        "Script collects Landsat and Sentinel-2 images, calculates NDVI and NBR, exports image properties, and creates mosaics."
+    ],
+    "Theme": [
+        "FEED PROCESSING"
+    ],
+    "DataSource": [
+        "LANDSAT/LC8_SR",
+        "LANDSAT/LC8_L1T_TOA",
+        "LANDSAT/LT5_L1T_TOA_FMASK",
+        "LANDSAT/LE7_L1T_TOA_FMASK",
+        "COPERNICUS/S2",
+        "ft:1Oaa3b2LdFGrAXL4jqFJzA-3iBeiNq6AQZkyFLVvp",
+        "ft:1tAjm5bGsh0TWPSawKIsX-iWXd7vocIoG_98QjhU1",
+        "ft:1iovW6_vHSX3JOx5OvcFr-ljJdx5mGmqK6Q_ETiSO",
+        "ft:1zmsdCSa-do_XXh6-w6bpfXpz_kN7nGBGmKAcBRFQ",
+        "ft:1gGjM2T5JEgKFoxbWORCn3WPqB98p2adAz42eqycf"
+    ],
+    "Function": [
+        "NDVI (Normalized Difference Vegetation Index calculation)",
+        "Vegetation And Water Indices Calculation",
+        "Exporting And Data Conversion",
+        "Exporting And Data Conversion",
+        "Exporting And Data Conversion"
+    ]
+}

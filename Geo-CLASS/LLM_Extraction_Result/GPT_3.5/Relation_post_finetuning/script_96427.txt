@@ -1,0 +1,20 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "JRC/GSW1_0/GlobalSurfaceWater"
+        ],
+        "Function": [
+            "Vegetation And Water Indices Calculation"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "users/sntopp/Lakes_ply_20171106",
+            "users/sntopp/NCSC_Horsepen_Lake",
+            "users/sarinarinab/CitSci_Washington_Lakes"
+        ],
+        "Function": [
+            "Vegetation And Water Indices Calculation"
+        ]
+    }
+}

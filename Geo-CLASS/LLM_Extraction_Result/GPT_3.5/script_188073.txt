@@ -1,0 +1,39 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Script focuses on flood analysis using Sentinel-1 data before and after the event."],
+  "Theme": ["Flood analysis"],
+  "DataSource": ["users/kimyrae1/Tanggamus", "COPERNICUS/S1_GRD", "JRC/GSW1_0/GlobalSurfaceWater", "MODIS/006/MCD12Q1", "JRC/GHSL/P2016/POP_GPW_GLOBE_V1/2015", "WWF/HydroSHEDS/03VFDEM"],
+  "Function": ["Data filtering based on specified parameters", "Mosaicking selected data for analysis", "Noise reduction using smoothing techniques", "Calculating flood-affected areas", "Minimizing uncertainty in flood analysis", "Population exposure assessment", "Estimating affected agricultural land", "Estimating affected urban areas"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/kimyrae1/Tanggamus"],
+        "Function": ["Data filtering based on specified parameters", "Mosaicking selected data for analysis", "Noise reduction using smoothing techniques", "Calculating flood-affected areas", "Minimizing uncertainty in flood analysis", "Population exposure assessment", "Estimating affected agricultural land", "Estimating affected urban areas"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Data filtering based on specified parameters", "Mosaicking selected data for analysis", "Noise reduction using smoothing techniques", "Calculating flood-affected areas", "Minimizing uncertainty in flood analysis", "Population exposure assessment", "Estimating affected agricultural land", "Estimating affected urban areas"]
+    },
+    "relation_3": {
+        "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+        "Function": ["Minimizing uncertainty in flood analysis", "Population exposure assessment"]
+    },
+    "relation_4": {
+        "DataSource": ["MODIS/006/MCD12Q1"],
+        "Function": ["Estimating affected agricultural land", "Estimating affected urban areas"]
+    },
+    "relation_5": {
+        "DataSource": ["JRC/GHSL/P2016/POP_GPW_GLOBE_V1/2015"],
+        "Function": ["Population exposure assessment"]
+    },
+    "relation_6": {
+        "DataSource": ["WWF/HydroSHEDS/03VFDEM"],
+        "Function": ["Minimizing uncertainty in flood analysis", "Estimating affected agricultural land", "Estimating affected urban areas"]
+    }
+}
+```

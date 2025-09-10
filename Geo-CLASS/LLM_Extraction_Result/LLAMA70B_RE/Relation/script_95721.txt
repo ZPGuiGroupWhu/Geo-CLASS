@@ -1,0 +1,26 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/eduardosperanza-Embrapa/Projeto-Coplacana/Piracicaba-H2Copla-UTM"
+        ],
+        "Function": [
+            "Buffer creation",
+            "Region reduction",
+            "Feature joining",
+            "Property removal"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2_SR"
+        ],
+        "Function": [
+            "Cloud and shadow pixel removal",
+            "NDVI calculation",
+            "VARI calculation",
+            "EVI calculation",
+            "Image collection filtering",
+            "Image masking"
+        ]
+    }
+}

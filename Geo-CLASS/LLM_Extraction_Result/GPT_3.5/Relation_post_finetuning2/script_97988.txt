@@ -1,0 +1,58 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/EL/mapa_forest_hybrid_Belize"
+        ],
+        "Function": [
+            "Mosaic Landsat Images",
+            "Mosaic Landsat Images",
+            "Image Mosaicking",
+            "Area Degradation Assessment",
+            "Classification And Machine Learning",
+            "Cloud And Water Masking",
+            "Forest Area Calculation",
+            "Export Processed Images To Google Drive"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "JRC/GSW1_0/GlobalSurfaceWater"
+        ],
+        "Function": [
+            "Cloud And Water Masking"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "LANDSAT/LT5_L1T"
+        ],
+        "Function": [
+            "Mosaic Landsat Images"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "LANDSAT/LE7_L1T"
+        ],
+        "Function": [
+            "Mosaic Landsat Images"
+        ]
+    },
+    "relation_5": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_RT"
+        ],
+        "Function": [
+            "Mosaic Landsat Images"
+        ]
+    },
+    "relation_6": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Image Mosaicking",
+            "Area Degradation Assessment"
+        ]
+    }
+}

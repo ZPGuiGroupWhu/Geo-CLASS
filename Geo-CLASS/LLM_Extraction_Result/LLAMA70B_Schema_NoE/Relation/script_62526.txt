@@ -1,0 +1,28 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/ce15btech11022/Final_Cities/Ahmedabad"
+        ],
+        "Function": [
+            "Filtering Sentinel-2 images by date and ROI",
+            "Iterating over dates to create daily mosaics",
+            "Adding NDWI band to images",
+            "Calculating water area using pixel area method"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Filtering Sentinel-2 images by date and ROI",
+            "Iterating over dates to create daily mosaics",
+            "Adding NDWI band to images",
+            "Calculating water area using pixel area method",
+            "Creating a list of dates",
+            "Calculating difference in days between start and finish dates",
+            "Creating a time series chart of water area",
+            "Exporting results to Google Drive"
+        ]
+    }
+}

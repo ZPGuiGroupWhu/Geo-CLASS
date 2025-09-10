@@ -1,0 +1,32 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LC8_SR",
+            "LANDSAT/LE7_SR",
+            "LANDSAT/LT5_SR"
+        ],
+        "Function": [
+            "Image collection filtering and renaming",
+            "Image masking and cloud cover calculation",
+            "Image classification and water class extraction",
+            "Image collection merging and reduction"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "USGS/NED"
+        ],
+        "Function": [
+            "Vector region creation and raster exporting"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "ft:1_RZgjlcqixp-L9hyS6NYGqLaKOlnhSC35AB5M5Ll"
+        ],
+        "Function": [
+            "Metadata extraction and exporting to CSV",
+            "Image exporting to Drive"
+        ]
+    }
+}

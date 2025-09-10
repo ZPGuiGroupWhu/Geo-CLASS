@@ -1,0 +1,205 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var EML = 
+    /* color: #ff9999 */
+    /* shown: false */
+    ee.Geometry.Polygon(
+        [[[-149.27286960289877, 63.88808976917939],
+          [-149.27286960289877, 63.86813679656651],
+          [-149.22497607872884, 63.86813679656651],
+          [-149.22497607872884, 63.88808976917939]]], null, false),
+    MIN = 
+    /* color: #99ff99 */
+    ee.Geometry.Polygon(
+        [[[-149.24772627057743, 63.87740369445923],
+          [-149.24772627057743, 63.876964374404054],
+          [-149.24607402982426, 63.876964374404054],
+          [-149.24607402982426, 63.87740369445923]]], null, false),
+    MOD = 
+    /* color: #9999ff */
+    ee.Geometry.Polygon(
+        [[[-149.25203926267338, 63.8796285324788],
+          [-149.25203926267338, 63.87913728828437],
+          [-149.25032264890385, 63.87913728828437],
+          [-149.25032264890385, 63.8796285324788]]], null, false),
+    EXT = 
+    /* color: #ffff99 */
+    ee.Geometry.Polygon(
+        [[[-149.25768916932617, 63.88200872570235],
+          [-149.25768916932617, 63.88160253957234],
+          [-149.2561442169336, 63.88160253957234],
+          [-149.2561442169336, 63.88200872570235]]], null, false);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+//Convert gometries into Feature Collection
+
+var regions = ee.FeatureCollection([
+
+  ee.Feature(MIN,{label : 'MIN'}),
+
+  ee.Feature(MOD,{label : 'MOD'}),
+
+  ee.Feature(EXT,{label : 'EXT'})]
+
+  );
+
+
+
+// Center map on the plot
+
+Map.centerObject(EML);
+
+// Load image collection of Sentinel-2 imagery
+
+// (choose SR for atmospheric corrections to surface reflectance)
+
+var S2 = ee.ImageCollection('COPERNICUS/S2_SR') 
+
+  // Remove cloudy images from the collection
+
+  .filterMetadata('CLOUDY_PIXEL_PERCENTAGE', 'less_than', 20)
+
+  // Filter to study period
+
+  .filterDate('2019-01-01', '2022-12-22');
+
+
+
+//Cloud removal
+
+function maskS2clouds(image) {
+
+  var qa = image.select('QA60');
+
+  // Bits 10 and 11 are clouds and cirrus, respectively.
+
+  var cloudBitMask = 1 << 10;
+
+  var cirrusBitMask = 1 << 11;
+
+  // Both flags should be set to zero, indicating clear conditions.
+
+  var mask = qa.bitwiseAnd(cloudBitMask).eq(0)
+
+      .and(qa.bitwiseAnd(cirrusBitMask).eq(0));
+
+  return image.updateMask(mask);
+
+}
+
+
+
+  // Function to compute NDVI and add result as new band
+
+var addNDVI = function(image) {
+
+return image.addBands(image.normalizedDifference(['B8', 'B4']));
+
+};
+
+
+
+// Add NDVI band to image collection
+
+var S2 = S2.map(addNDVI);
+
+// Apply second filter
+
+var S2 = S2.map(maskS2clouds);
+
+
+
+// Plot results
+
+var plotNDVI = ui.Chart.image.seriesByRegion(
+
+  S2, 
+
+  regions,
+
+  ee.Reducer.mean(),
+
+  'nd',10)
+
+  .setChartType('LineChart')
+
+  .setSeriesNames(['MIN', 'MOD', 'EXT'])
+
+  .setOptions({
+
+    interpolateNulls: true,
+
+    lineWidth: 1,
+
+    pointSize: 3,
+
+    title: 'NDVI annual evolution',
+
+    hAxis: {title: 'Date'},
+
+    vAxis: {title: 'NDVI'},
+
+    series: {0:{color: 'red'}}
+
+  });
+
+ 
+
+print(plotNDVI)
+
+
+
+var addNDWI = function(image) {
+
+return image.addBands(image.normalizedDifference(['B3', 'B8']));
+
+};
+
+
+
+// Add NDVI band to image collection
+
+var S2_NDWI = S2.map(addNDWI);
+
+// Apply second filter
+
+var S2_NDWI = S2.map(maskS2clouds);
+
+
+
+// Plot results
+
+var plotNDWI = ui.Chart.image.seriesByRegion(
+
+  S2_NDWI, 
+
+  regions,
+
+  ee.Reducer.mean(),
+
+  'nd',10)
+
+  .setChartType('LineChart')
+
+  .setSeriesNames(['MIN', 'MOD', 'EXT'])
+
+  .setOptions({
+
+    interpolateNulls: true,
+
+    lineWidth: 1,
+
+    pointSize: 3,
+
+    title: 'NDWI annual evolution',
+
+    hAxis: {title: 'Date'},
+
+    vAxis: {title: 'NDWI'},
+
+    series: {0:{color: 'red'}}
+
+  });
+
+ 
+
+print(plotNDWI)
+

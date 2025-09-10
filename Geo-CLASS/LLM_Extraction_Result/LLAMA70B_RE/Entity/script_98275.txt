@@ -1,0 +1,15 @@
+{
+    "Theme": [
+        "Flood monitoring and analysis"
+    ],
+    "DataSource": [
+        "FAO/GAUL_SIMPLIFIED_500m/2015/level2",
+        "COPERNICUS/S1_GRD"
+    ],
+    "Function": [
+        "Filtering image collection by bounds and date",
+        "Filtering image collection by metadata",
+        "Creating flood image collection",
+        "Displaying flood image on the map"
+    ]
+}

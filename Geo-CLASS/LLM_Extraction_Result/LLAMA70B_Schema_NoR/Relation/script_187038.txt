@@ -1,0 +1,33 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LC8_SR",
+            "LANDSAT/LE7_SR",
+            "LANDSAT/LT5_SR"
+        ],
+        "Function": [
+            "Filtering image collections by date and location",
+            "Renaming image bands",
+            "Computing cloud cover percentage",
+            "Classifying land cover using band thresholds",
+            "Masking images based on cloud cover and land cover"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "USGS/NED"
+        ],
+        "Function": [
+            "Reducing image collections to vectors"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "ft:1_RZgjlcqixp-L9hyS6NYGqLaKOlnhSC35AB5M5Ll"
+        ],
+        "Function": [
+            "Exporting images to Drive",
+            "Extracting metadata to CSV file"
+        ]
+    }
+}

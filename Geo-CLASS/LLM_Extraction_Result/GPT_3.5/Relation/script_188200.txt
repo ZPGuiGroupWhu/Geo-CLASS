@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["users/kindgard/ZWE_Forest_Plantations", "users/kindgard/Forest_Plantations_v2"],
+        "Function": ["Training a classifier for land cover classification", "Applying the classifier to classify land cover", "Post-classification editing to refine classification results"]
+    },
+    "relation_2": {
+        "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+        "Function": ["Creating masks for water bodies and cities to exclude them from classification"]
+    }
+}

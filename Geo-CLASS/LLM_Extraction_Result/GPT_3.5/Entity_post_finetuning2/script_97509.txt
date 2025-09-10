@@ -1,0 +1,16 @@
+{
+    "Summary": [
+        "Visualize pre and post fire images using Landsat imagery."
+    ],
+    "Theme": [
+        "ATLANTIC MULTIDECADAL OSCILLATION LONG VERSION"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C01/T1_SR/LC08_045033_20170925",
+        "LANDSAT/LC08/C01/T1_SR/LC08_045033_20180928"
+    ],
+    "Function": [
+        "Load and Display Pre- And Post-Fire Satellite Image",
+        "Calculate Normalized Infrared Vegetation Index (NIRV)"
+    ]
+}

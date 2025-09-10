@@ -1,0 +1,6 @@
+{
+  "Summary": ["Exploring Landsat 8 Surface Reflectance collection and spectral signatures"],
+  "Theme": ["Image collection filtering", "Cloud masking", "Spectral band visualization"],
+  "DataSource": ["LANDSAT/LC08/C02/T1_L2", "ROI"],
+  "Function": ["Filtering image collection by date and location", "Masking clouds in images"]
+}

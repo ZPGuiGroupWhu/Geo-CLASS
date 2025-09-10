@@ -1,0 +1,5 @@
+{
+"Theme": ["Land cover classification and vegetation analysis"],
+"DataSource": ["LANDSAT/LC8_L1T_TOA_FMASK", "ft:1XPgyHDQHN4d5IF4x8u5ZkJxkVQ_xKWFFuUTi9ofT"],
+"Function": ["Filtering image collection by date and location", "Cloud masking and scoring", "Calculating NDVI", "Reducing and exporting results"]
+}

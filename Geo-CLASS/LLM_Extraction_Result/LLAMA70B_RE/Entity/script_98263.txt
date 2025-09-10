@@ -1,0 +1,15 @@
+{
+    "Theme": [
+        "Flood monitoring and analysis"
+    ],
+    "DataSource": [
+        "FAO/GAUL_SIMPLIFIED_500m/2015/level2",
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "Filtering image collections",
+        "Calculating NDWI",
+        "Displaying true color images",
+        "Reducing to mean"
+    ]
+}

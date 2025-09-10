@@ -1,0 +1,18 @@
+{
+    "relation_1": {
+        "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+        "Function": ["Load lake polygons", "Filter Landsat images", "Calculate water mask"]
+    },
+    "relation_2": {
+        "DataSource": ["users/sarinarinab/CitSci_Washington_Lakes"],
+        "Function": ["Load lake polygons", "Calculate lake area"]
+    },
+    "relation_3": {
+        "DataSource": ["users/sntopp/Lakes_ply_20171106"],
+        "Function": ["Reconstruct water surface", "Calculate lake area"]
+    },
+    "relation_4": {
+        "DataSource": ["users/sntopp/NCSC_Horsepen_Lake"],
+        "Function": ["Reconstruct water surface", "Generate chart for lake area changes"]
+    }
+}

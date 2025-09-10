@@ -1,0 +1,24 @@
+{
+    "Summary": [
+        "Script for pre- and post-fire monitoring using Earth observations."
+    ],
+    "Theme": [
+        "FIRE MANAGEMENT"
+    ],
+    "DataSource": [
+        "FAO/GAUL/2015/level0",
+        "LANDSAT/LC08/C01/T1_SR",
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "Cloud Masking And Quality Filtering",
+        "Data Fusion And Mosaicking",
+        "Time Series Clustering And Prediction",
+        "Vegetation And Water Indices Calculation",
+        "Terrain And Hydrological Analysis",
+        "Vegetation And Water Indices Calculation",
+        "Change Detection",
+        "Exporting And Data Conversion",
+        "Exporting And Data Conversion"
+    ]
+}

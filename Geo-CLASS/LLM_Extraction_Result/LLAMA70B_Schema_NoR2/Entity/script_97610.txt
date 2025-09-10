@@ -1,0 +1,5 @@
+{
+  "Theme": ["Climate Analysis"],
+  "DataSource": ["ECMWF/ERA5/DAILY", "FAO/GAUL_SIMPLIFIED_500m/2015/level2"],
+  "Function": ["Filtering image collection by date", "Converting temperature units", "Clipping images to area of interest", "Calculating minimum temperature", "Calculating maximum temperature", "Calculating average temperature", "Visualizing data on a map", "Exporting images to drive"]
+}

@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016"],
+        "Function": ["Filtering fires in the general area", "Calculating indices for image analysis"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Filtering fires in the general area", "Calculating indices for image analysis"]
+    }
+}

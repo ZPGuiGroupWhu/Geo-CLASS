@@ -1,0 +1,33 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Landsat Time Series Analysis for Land Cover Change Detection"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR", "LANDSAT/LE07/C01/T1_SR", "LANDSAT/LT05/C01/T1_SR", "users/juandb/bloco_TIs_Kayapo"],
+  "Function": ["Annual SR Time Series Collection Building", "L8 to L7 Harmonization", "Retrieve Sensor SR Collection", "Medoid Mosaic Compositing", "Annual Mosaic Collection Building"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR", "LANDSAT/LE07/C01/T1_SR", "LANDSAT/LT05/C01/T1_SR"],
+        "Function": ["Annual SR Time Series Collection Building", "Retrieve Sensor SR Collection"]
+    },
+    "relation_2": {
+        "DataSource": ["users/juandb/bloco_TIs_Kayapo"],
+        "Function": ["Medoid Mosaic Compositing", "Annual Mosaic Collection Building"]
+    },
+    "relation_3": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["L8 to L7 Harmonization"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4816, 'completion_tokens': 358, 'total_tokens': 5174}

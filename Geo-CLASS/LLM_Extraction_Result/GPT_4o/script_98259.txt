@@ -1,0 +1,25 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Flood detection using NDWI"],
+  "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2", "LANDSAT/LT05/C01/T1_SR"],
+  "Function": ["Filter regions by attribute", "Add layer to map", "Filter image collection by location", "Filter image collection by date", "Filter image collection by cloud cover", "Sort image collection by cloud cover", "Create mosaic image", "Clip image to region", "Center map on region", "Calculate NDWI", "Subtract images", "Threshold image", "Mask image", "Add layer to map with palette"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2"],
+    "Function": ["Filter regions by attribute", "Add layer to map", "Center map on region"]
+  },
+  "relation_2": {
+    "DataSource": ["LANDSAT/LT05/C01/T1_SR"],
+    "Function": ["Filter image collection by location", "Filter image collection by date", "Filter image collection by cloud cover", "Sort image collection by cloud cover", "Create mosaic image", "Clip image to region", "Calculate NDWI", "Subtract images", "Threshold image", "Mask image", "Add layer to map with palette"]
+  }
+}
+```
+
+Total_Token_Usage:
+4894

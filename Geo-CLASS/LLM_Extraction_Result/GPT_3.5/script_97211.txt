@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Script extracts and analyzes Sentinel-2 images pre and post fire events for classification."],
+  "Theme": ["Fire event analysis"],
+  "DataSource": ["users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016", "COPERNICUS/S2"],
+  "Function": ["Image collection filtering for pre and post-fire images", "Calculation of various vegetation indices for classification"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016"],
+        "Function": ["Image collection filtering for pre and post-fire images", "Calculation of various vegetation indices for classification"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Image collection filtering for pre and post-fire images", "Calculation of various vegetation indices for classification"]
+    }
+}
+```

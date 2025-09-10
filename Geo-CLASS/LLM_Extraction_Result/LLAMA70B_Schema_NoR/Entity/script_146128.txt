@@ -1,0 +1,17 @@
+{
+    "Theme": [
+        "Land cover classification"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "Filter image collection by date",
+        "Sort images by cloud cover",
+        "Filter images by region of interest",
+        "Merge feature collections",
+        "Create training data",
+        "Train classifier",
+        "Run classification"
+    ]
+}

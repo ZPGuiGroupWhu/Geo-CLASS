@@ -1,0 +1,24 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "FAO/GAUL_SIMPLIFIED_500m/2015/level2"
+        ],
+        "Function": [
+            "Vegetation And Water Indices Calculation",
+            "Merging (Combining multiple bands into one dataset)",
+            "NDWI (Normalized Difference Water Index calculation)",
+            "Vegetation And Water Indices Calculation"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S1_GRD"
+        ],
+        "Function": [
+            "Vegetation And Water Indices Calculation",
+            "Merging (Combining multiple bands into one dataset)",
+            "NDWI (Normalized Difference Water Index calculation)",
+            "Vegetation And Water Indices Calculation"
+        ]
+    }
+}

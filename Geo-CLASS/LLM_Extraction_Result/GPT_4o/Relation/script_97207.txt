@@ -1,0 +1,10 @@
+{
+  "relation_1": {
+    "DataSource": ["users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016"],
+    "Function": ["Filter fires by area and date", "Mask invalid zones", "Classify burned areas", "Evaluate classification accuracy"]
+  },
+  "relation_2": {
+    "DataSource": ["COPERNICUS/S2"],
+    "Function": ["Select Sentinel-2 bands", "Filter image collection by date and area", "Calculate mean image", "Normalize image", "Clip image to fire area", "Calculate NDVI", "Calculate NDVI difference", "Display results on map", "Generate histogram chart", "Generate accuracy chart"]
+  }
+}

@@ -1,0 +1,40 @@
+Entity Recognition:
+```
+{
+  "Theme": ["Vegetation Cover Analysis using MODIS Data"],
+  "DataSource": ["MODIS/006/MOD15A2H", "MODIS/006/MOD44B"],
+  "Function": [
+    "Filtering image collections by date",
+    "Selecting specific bands from image collections",
+    "Reducing image collections using mean reducer",
+    "Performing arithmetic operations on image collections",
+    "Applying data quality control to MODIS data",
+    "Visualizing and exporting image data to Drive"
+  ]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["MODIS/006/MOD15A2H", "MODIS/006/MOD44B"],
+        "Function": [
+            "Filtering image collections by date",
+            "Selecting specific bands from image collections",
+            "Reducing image collections using mean reducer",
+            "Performing arithmetic operations on image collections",
+            "Applying data quality control to MODIS data"
+        ]
+    },
+    "relation_2": {
+        "DataSource": ["MODIS/006/MOD15A2H", "MODIS/006/MOD44B"],
+        "Function": ["Visualizing and exporting image data to Drive"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2352, 'completion_tokens': 321, 'total_tokens': 2673}

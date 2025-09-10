@@ -1,0 +1,5 @@
+{
+  "Theme": ["Water area change detection"],
+  "DataSource": ["COPERNICUS/S1_GRD"],
+  "Function": ["Filter image collection by region", "Filter image collection by date", "Filter image collection by polarization", "Filter image collection by instrument mode", "Filter image collection by orbit number", "Select specific band", "Mask image values", "Set image date property", "Join image collections by date", "Calculate mean image", "Clip image to region", "Compute histogram", "Apply Otsu thresholding", "Detect water areas", "Mask small water areas", "Calculate water area", "Generate time series chart", "Create image thumbnail", "Add UI panel for image navigation"]
+}

@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["users/khoapv_vnuf/Thanhhoa_t"],
+        "Function": ["Filtering images by date", "Transforming Kelvin to Celsius", "Aggregating images by year", "Calculating annual percentiles", "Generating dates by months", "Calculating monthly max and min", "Calculating mean temperature", "Charting temperature series"]
+    },
+    "relation_2": {
+        "DataSource": ["MODIS/MOD11A2"],
+        "Function": ["Filtering images by date", "Transforming Kelvin to Celsius", "Aggregating images by year", "Calculating annual percentiles", "Generating dates by months", "Calculating monthly max and min", "Calculating mean temperature", "Charting temperature series"]
+    }
+}

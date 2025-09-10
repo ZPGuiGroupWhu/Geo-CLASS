@@ -1,0 +1,21 @@
+{
+    "Summary": [
+        "Correlations between NDVI and precipitation in Hungary region."
+    ],
+    "Theme": [
+        "NORMALIZED DIFFERENCE VEGETATION INDEX (NDVI)"
+    ],
+    "DataSource": [
+        "MODIS/006/MOD13Q1",
+        "UCSB-CHG/CHIRPS/DAILY"
+    ],
+    "Function": [
+        "Time Series Graphs And Statistics",
+        "NDVI (Normalized Difference Vegetation Index calculation)",
+        "MNDWI (Modified Normalized Difference Water Index calculation)",
+        "NDVI (Normalized Difference Vegetation Index calculation)",
+        "NDVI (Normalized Difference Vegetation Index calculation)",
+        "Spatial Statistics And Cluster Analysis",
+        "NDVI (Normalized Difference Vegetation Index calculation)"
+    ]
+}

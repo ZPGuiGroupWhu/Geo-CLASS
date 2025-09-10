@@ -1,0 +1,6 @@
+{
+  "Summary": ["The script conducts geoprocessing tasks to analyze changes in land cover over time using Landsat imagery."],
+  "Theme": ["Land cover change detection"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR", "ft:1BRQbpnAczAz2tTDe78RYFuzVM7Kz3j50m18yYbvr"],
+  "Function": ["Compositing Landsat imagery for before and after periods", "Training a random forest classifier for land cover classification", "Classifying land cover change using random forest classifier", "Calculating NBR (Normalized Burn Ratio) for burn area detection", "Calculating NDSI (Normalized Difference Snow Index) for snow detection", "Calculating spectral difference and angle for change analysis"]
+}

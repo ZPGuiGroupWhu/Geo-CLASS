@@ -1,0 +1,6 @@
+{
+  "Summary": ["Filtering and processing Landsat and Sentinel-2 images for Pune district in 2020."],
+  "Theme": ["Land cover classification"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_TOA", "COPERNICUS/S2", "users/chaitanyaks/Maharashtra/Pune_District"],
+  "Function": ["Temporal and spatial filtering of image collections", "Median image creation", "Image clipping to region of interest", "NDVI calculation", "Threshold-based image masking"]
+}

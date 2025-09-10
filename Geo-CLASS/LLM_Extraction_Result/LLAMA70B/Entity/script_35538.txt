@@ -1,0 +1,5 @@
+{
+  "Theme": ["Land cover analysis", "Waterbody extraction"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_TOA", "COPERNICUS/S2", "users/chaitanyaks/Maharashtra/Pune_District"],
+  "Function": ["Filtering image collection by date and bounds", "Calculating median image", "Clipping image to ROI", "Calculating NDVI", "Masking image based on threshold value", "Generating histogram for NDVI image"]
+}

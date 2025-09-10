@@ -1,0 +1,16 @@
+{
+    "Theme": [
+        "Flood Mapping using Sentinel-1 data"
+    ],
+    "DataSource": [
+        "COPERNICUS/S1_GRD"
+    ],
+    "Function": [
+        "Filtering Sentinel-1 images by geometry and date",
+        "Converting images from dB to natural scale",
+        "Smoothing images using focal median filter",
+        "Calculating band ratio and flood extent",
+        "Generating histograms of backscatter values",
+        "Visualizing flood and river extent using RGB composites"
+    ]
+}

@@ -1,0 +1,5 @@
+{
+  "Theme": ["MODIS vegetation analysis", "Country boundary analysis"],
+  "DataSource": ["MODIS/006/MOD09GA", "users/giswqs/public/countries"],
+  "Function": ["Filtering image collection by year", "Cloud masking", "Scaling image values", "Calculating NDVI", "Adding date to image", "Adding month to image", "Adding day of year to image", "Quality mosaic", "Selecting greenest pixel", "Visualizing NDVI", "Visualizing greenest month", "Visualizing greenest day of year"]
+}

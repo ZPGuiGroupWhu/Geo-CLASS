@@ -1,0 +1,95 @@
+// ----------------------------------------------------------------------
+// Sample application for MODIS.
+// ----------------------------------------------------------------------
+var tools = require('users/jhowarth/eePrimer:modules/image_tools.js');
+
+var scaleMODIS = function(image) {
+  return image.multiply(0.0001);
+};
+
+var MODIS = ee.ImageCollection("MODIS/006/MOD09GA")
+  .filter(ee.Filter.calendarRange(2019, 2019, 'year'))
+  // .filter(ee.Filter.calendarRange(startMonth, endMonth, 'month'))
+  .map(tools.cloudMask_MODIS)
+  .map(scaleMODIS)
+;
+
+print(MODIS.first());
+
+var viz_MODIS = {
+  bands: ['sur_refl_b01', 'sur_refl_b04', 'sur_refl_b03'],
+  min: 0.0,
+  max: 0.3,
+};
+
+Map.addLayer(MODIS, viz_MODIS, 'MODIS', 0);
+
+
+
+var countries = ee.FeatureCollection('users/giswqs/public/countries');
+
+Map.addLayer(countries, {}, 'coutries');
+
+var roi = countries.filter(ee.Filter.eq('id', 'USA'));
+Map.addLayer(roi, {}, 'roi');
+
+
+
+
+var addNDVI = function(image){
+  var ndvi = image.normalizedDifference(['sur_refl_b01', 'sur_refl_b02']).rename('NDVI');
+  return image.addBands(ndvi);
+};
+
+var addDate = function(image) {
+  var i_date = ee.Date(ee.Date(image.get('system:index')));
+  var img_date = ee.Number.parse(i_date.format('YYYYMMdd'))
+  return image.addBands(ee.Image(img_date).rename('date').toInt());
+};
+ 
+var addMonth = function(image) {
+  var img_date = ee.Date(ee.Date(image.get('system:index')));
+  var img_doy = ee.Number.parse(img_date.format('M'));
+  return image.addBands(ee.Image(img_doy).rename('month').toInt());
+};
+
+var addDOY = function(image) {
+  var img_date = ee.Date(ee.Date(image.get('system:index')));
+  var img_doy = ee.Number.parse(img_date.format('D'));
+  return image.addBands(ee.Image(img_doy).rename('doy').toInt());
+};
+
+var withNDVI = MODIS.map(addNDVI).map(addDate).map(addMonth).map(addDOY);
+
+var greenest = withNDVI.qualityMosaic('NDVI');
+
+// var greenest.bandNames().getInfo()
+
+var ndvi = greenest.select('NDVI');
+
+var palette = [
+    '#d73027',
+    '#f46d43',
+    '#fdae61',
+    '#fee08b',
+    '#d9ef8b',
+    '#a6d96a',
+    '#66bd63',
+    '#1a9850',
+];
+
+Map.addLayer(ndvi, {'palette': palette}, 'NDVI');
+
+Map.addLayer(greenest, viz_MODIS, 'Greenest pixel');
+
+Map.addLayer(
+    greenest.select('month'),
+    {'palette': ['red', 'blue'], 'min': 1, 'max': 12},
+    'Greenest month'
+  );
+
+Map.addLayer(
+    greenest.select('doy'),
+    {'palette': ['brown', 'green'], 'min': 1, 'max': 365},
+    'Greenest doy'
+  );

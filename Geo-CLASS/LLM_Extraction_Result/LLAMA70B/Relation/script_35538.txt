@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_TOA", "COPERNICUS/S2"],
+        "Function": ["Filtering image collection by date and bounds", "Calculating median image", "Calculating NDVI", "Masking image based on threshold value"]
+    },
+    "relation_2": {
+        "DataSource": ["users/chaitanyaks/Maharashtra/Pune_District"],
+        "Function": ["Clipping image to ROI", "Generating histogram for NDVI image"]
+    }
+}

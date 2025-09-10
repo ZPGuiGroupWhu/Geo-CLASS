@@ -1,0 +1,19 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Generating annual composite images of a waterbody and analyzing its surface area over time."],
+  "Theme": ["Waterbody surface area analysis"],
+  "DataSource": ["LANDSAT/LT05/C01/T1"],
+  "Function": ["Image collection filtering by date", "NDWI calculation for water detection", "Otsu threshold segmentation", "Waterbody surface area calculation"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LT05/C01/T1"],
+        "Function": ["Image collection filtering by date", "NDWI calculation for water detection", "Otsu threshold segmentation", "Waterbody surface area calculation"]
+    }
+}
+```

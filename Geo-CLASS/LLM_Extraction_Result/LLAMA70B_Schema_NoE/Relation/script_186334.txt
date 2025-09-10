@@ -1,0 +1,24 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "MODIS/006/MOD09Q1"
+        ],
+        "Function": [
+            "Image collection creation and filtering",
+            "NDVI calculation and addition to image collection",
+            "Multiband image creation for unsupervised classification"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "users/khoapv/Ranhgioi_DL"
+        ],
+        "Function": [
+            "Buffer creation around sugar mills",
+            "Training dataset creation",
+            "Unsupervised classification using k-means clustering",
+            "Class merging and refinement",
+            "Image visualization and mapping"
+        ]
+    }
+}

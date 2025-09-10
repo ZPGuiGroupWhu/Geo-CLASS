@@ -1,0 +1,20 @@
+{
+    "Summary": [
+        "Script filters Landsat images for flood detection and calculates NDWI, then applies Otsu thresholding for classification."
+    ],
+    "Theme": [
+        "FLOOD FREQUENCY",
+        "SUPERSATURATION",
+        "SOIL CLASSIFICATION"
+    ],
+    "DataSource": [
+        "FAO/GAUL_SIMPLIFIED_500m/2015/level2",
+        "LANDSAT/LT05/C01/T1_SR"
+    ],
+    "Function": [
+        "Filter Image Collection By Date And Region",
+        "Buffering Points To Create Zones For Analysis",
+        "Calculate NBR For Pre-Fire Image",
+        "Generate And Display a Histogram"
+    ]
+}

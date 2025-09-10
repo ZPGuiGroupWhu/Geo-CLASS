@@ -1,0 +1,14 @@
+{
+    "Theme": [
+        "Flood analysis and monitoring using Sentinel-1 imagery"
+    ],
+    "DataSource": [
+        "users/hrishippatel/IndiaStates",
+        "COPERNICUS/S1_GRD"
+    ],
+    "Function": [
+        "getWeeklySentinelComposite function for compositing Sentinel-1 images",
+        "addLayerSelector function for adding layer selection widgets to maps",
+        "updateMap function for updating maps based on user selection"
+    ]
+}

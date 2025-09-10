@@ -1,0 +1,15 @@
+{
+    "Summary": [
+        "Compares Sentinel-1 imagery for Myanmar flooding in 2018."
+    ],
+    "Theme": [
+        "SEA LEVEL RECONSTRUCTION"
+    ],
+    "DataSource": [
+        "COPERNICUS/S1_GRD"
+    ],
+    "Function": [
+        "Data Fusion And Mosaicking",
+        "Data Visualization And Mapping"
+    ]
+}

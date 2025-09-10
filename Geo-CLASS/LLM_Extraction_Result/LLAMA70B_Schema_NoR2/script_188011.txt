@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+"Theme": ["Land Surface Temperature Analysis"],
+"DataSource": ["projects/ee-kimiachenaary/assets/msh", "LANDSAT/LC08/C01/T1_TOA"],
+"Function": ["Filtering image collection by geometry", "Converting Kelvin to Celsius", "Clipping images to geometry", "Calculating seasonal temperatures", "Reducing image collection to mean", "Exporting data to CSV", "Calculating NDVI with count", "Filtering by count range", "Reducing columns to max", "Calculating mean values for each polygon", "Calculating max values for each polygon", "Calculating min values for each polygon"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["projects/ee-kimiachenaary/assets/msh"],
+        "Function": ["Filtering image collection by geometry", "Clipping images to geometry", "Calculating mean values for each polygon", "Calculating max values for each polygon", "Calculating min values for each polygon"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_TOA"],
+        "Function": ["Converting Kelvin to Celsius", "Calculating seasonal temperatures", "Reducing image collection to mean", "Exporting data to CSV", "Calculating NDVI with count", "Filtering by count range", "Reducing columns to max"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4197, 'completion_tokens': 336, 'total_tokens': 4533}

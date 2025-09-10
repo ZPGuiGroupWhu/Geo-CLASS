@@ -1,0 +1,14 @@
+{
+    "Theme": [
+        "Land cover analysis using Sentinel-2 imagery"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2_SR"
+    ],
+    "Function": [
+        "Filter image collection by cloud cover",
+        "Compute NDVI and add as new band",
+        "Compute NDWI and add as new band",
+        "Plot NDVI and NDWI time series"
+    ]
+}

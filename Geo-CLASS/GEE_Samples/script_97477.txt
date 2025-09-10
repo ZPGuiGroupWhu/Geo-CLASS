@@ -1,0 +1,144 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var Landsat8_Collection = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR"),
+    Oneida_Lake = 
+    /* color: #98ff00 */
+    /* shown: false */
+    ee.Geometry.Polygon(
+        [[[-76.17455252054954, 43.29590652576258],
+          [-76.17455252054954, 43.104198956847384],
+          [-75.6561351621511, 43.104198956847384],
+          [-75.6561351621511, 43.29590652576258]]], null, false);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+
+
+// Filter cloud cover for Landsat 8
+
+function maskL8sr(image) {
+  // Bits 3 and 5 are cloud shadow and cloud, respectively.
+  var cloudShadowBitMask = (1 << 3);
+  var cloudsBitMask = (1 << 5);
+  // Get the pixel QA band.
+  var qa = image.select('pixel_qa');
+  // Both flags should be set to zero, indicating clear conditions.
+  var mask = qa.bitwiseAnd(cloudShadowBitMask).eq(0)
+                 .and(qa.bitwiseAnd(cloudsBitMask).eq(0));
+  return image.updateMask(mask);
+}
+
+
+
+
+var MyL8Collection_Oneida = Landsat8_Collection.filterDate('2015-06-10','2015-08-31')
+                     
+                     .filterBounds(Oneida_Lake)
+                     
+                     .filterMetadata('CLOUD_COVER', 'less_than', 5)
+                     .map(function(image){return image.clip(Oneida_Lake)}); // Clip Image to ROI
+
+
+var Oneida_Image = MyL8Collection_Oneida.median(); 
+
+
+    
+
+// Setting the parameters for a natural color Landsat 8 image 
+var VizParamsNatural = {
+    bands: ['B4', 'B3', 'B2'],
+    min: 0,
+    max: 3000,
+    gamma: 1.4
+};
+
+
+Map.addLayer(Oneida_Image, VizParamsNatural, 'RGB');
+
+
+
+//// Normalized Difference (NDVI) 
+var NDVI = Oneida_Image.normalizedDifference(['B5','B4']);
+
+
+
+var NDVIvisParam = {
+min: -1,
+max: 1,
+palette: ['blue','cyan','lime','green']
+};
+
+
+// Compute the EVI using an expression.
+var evi = Oneida_Image.expression(
+    '2.5 * ((NIR - RED) / (NIR + 6 * RED - 7.5 * BLUE + 1))', {
+      'NIR': Oneida_Image.select('B5'),
+      'RED': Oneida_Image.select('B4'),
+      'BLUE': Oneida_Image.select('B2')
+});
+
+
+var EVIvisParam = {min: -1, max: 1, palette: ['Blue','cyan','Lime','Green']};
+
+Map.addLayer(evi, {min: -1, max: 1, palette: ['Blue','cyan','Lime','Green']}, 'EVI');
+
+
+// Compute the SABI using an expression
+var SABI = Oneida_Image.expression(
+    '(NIR - Red) / (Blue + Green)', {
+      'NIR': Oneida_Image.select('B5'),
+      'Green': Oneida_Image.select('B3'),
+      'Blue' : Oneida_Image.select('B2'),
+      'Red': Oneida_Image.select('B4'),
+});
+
+var SABIvisParam = {min: -1, max: 1, palette: ['Blue','cyan','Lime','Green']};
+
+Map.addLayer(SABI, {min: -1, max: 1, palette: ['blue','cyan','lime','green']}, 'SABI');
+
+
+
+/*
+ * Legend setup
+ */
+
+// Creates a color bar thumbnail image for use in legend from the given color
+
+function makeColorBarParams(palette) {
+  return {
+    bbox: [0, 0, 1, 0.1],
+    dimensions: '50x10',
+    format: 'png',
+    min: 0,
+    max: 1,
+    palette: palette,
+  };
+}
+
+// Create the color bar for the legend.
+var colorBar = ui.Thumbnail({
+  image: ee.Image.pixelLonLat().select(0),
+  params: makeColorBarParams(SABIvisParam.palette),
+  style: {stretch: 'horizontal', margin: '0px 100px', maxHeight: '10px'},
+});
+
+// Create a panel with three numbers for the legend.
+var legendLabels = ui.Panel({
+  widgets: [
+    ui.Label(SABIvisParam.min, {margin: '2px 100px'}),
+    ui.Label(0,{margin: '2px 8px', textAlign: 'center', stretch: 'horizontal'}),
+    ui.Label(SABIvisParam.max, {margin: '2px 100px'})
+  ],
+  layout: ui.Panel.Layout.flow('horizontal')
+});
+
+var legendTitle = ui.Label({
+  value: 'SABI Value',
+  style: {fontWeight: 'bold'}
+});
+
+// Add the legendPanel to the map.
+var legendPanel = ui.Panel([legendTitle, colorBar, legendLabels]);
+Map.add(legendPanel);
+
+
+///// Add Map Layers
+Map.addLayer(NDVI, NDVIvisParam,'NDVI Color Palette');
+

@@ -1,0 +1,18 @@
+{
+    "Theme": [
+        "Climate and vegetation analysis in Hungary"
+    ],
+    "DataSource": [
+        "MODIS/006/MOD13Q1",
+        "UCSB-CHG/CHIRPS/DAILY",
+        "FAO/GAUL/2015/level1"
+    ],
+    "Function": [
+        "Filtering image collections by date",
+        "Calculating monthly sums and means",
+        "Resampling images",
+        "Joining image collections",
+        "Calculating spatial correlation",
+        "Creating scatter plots"
+    ]
+}

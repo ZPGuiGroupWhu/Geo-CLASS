@@ -1,0 +1,25 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Sentinel-2 imagery processing for Cordoba region"],
+  "DataSource": ["users/cesarnon/datos_cba_2017/Cordoba_limite", "COPERNICUS/S2"],
+  "Function": ["Filter images by date", "Filter images by location", "Filter images by cloud coverage", "Rename image bands", "Calculate NDWI", "Calculate NDWI1", "Create image mosaics", "Display image layers"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["users/cesarnon/datos_cba_2017/Cordoba_limite"],
+    "Function": ["Filter images by location"]
+  },
+  "relation_2": {
+    "DataSource": ["COPERNICUS/S2"],
+    "Function": ["Filter images by date", "Filter images by location", "Filter images by cloud coverage", "Rename image bands", "Calculate NDWI", "Calculate NDWI1", "Create image mosaics", "Display image layers"]
+  }
+}
+```
+
+Total_Token_Usage:
+5365

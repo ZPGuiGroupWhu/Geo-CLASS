@@ -1,0 +1,23 @@
+Entity Recognition:
+```
+{
+  "Theme": ["NDVI calculation and visualization"],
+  "DataSource": ["COPERNICUS/S2_SR"],
+  "Function": ["addNDVI function to calculate NDVI band", "median function to calculate median image", "clip function to clip image to testing area", "select function to select NDVI band", "reduceRegion function to calculate percentile", "Map.addLayer function to add layers to the map"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["addNDVI function to calculate NDVI band", "median function to calculate median image", "clip function to clip image to testing area", "select function to select NDVI band", "reduceRegion function to calculate percentile", "Map.addLayer function to add layers to the map"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2785, 'completion_tokens': 208, 'total_tokens': 2993}

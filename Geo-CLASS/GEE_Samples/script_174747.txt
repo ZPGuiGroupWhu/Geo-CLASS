@@ -1,0 +1,178 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var sd = ee.FeatureCollection("users/juanjoseromeroacm21/MORELIA"),
+    michi = ee.FeatureCollection("users/juanjoseromeroacm21/michoacan_state");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+// Import country boundaries feature collection.
+
+var dataset = ee.FeatureCollection('USDOS/LSIB_SIMPLE/2017');
+
+
+
+// Apply filter where country name equals Uganda.
+
+var spainBorder = dataset.filter(ee.Filter.eq('country_na', 'Mexico'));
+
+
+
+// Print new "ugandaBorder" object and explorer features and properties.
+
+// There should only be one feature representing Uganda.
+
+print(michi);
+
+
+
+// Add Uganda outline to the Map as a layer.
+
+Map.centerObject(sd, 6);
+
+Map.addLayer(michi);
+
+//
+
+// Import LST image collection.
+
+var modis = ee.ImageCollection('MODIS/MOD11A2');
+
+
+
+// Define a date range of interest; here, a start date is defined and the end
+
+// date is determined by advancing 1 year from the start date.
+
+var start = ee.Date('2000-01-01');
+
+var dateRange = ee.DateRange(start, '2018-01-01');
+
+
+
+// Filter the LST collection to include only images intersecting the desired
+
+// date range.
+
+var mod11a2 = modis.filterDate(dateRange);
+
+
+
+// Select only the 1km day LST data band.
+
+var modLSTday = mod11a2.select('LST_Day_1km');
+
+
+
+// Scale to Kelvin and convert to Celsius, set image acquisition time.
+
+var modLSTc = modLSTday.map(function(img) {
+
+  return img
+
+    .multiply(0.02)
+
+    .subtract(273.15)
+
+    .copyProperties(img, ['system:time_start']);
+
+});
+
+
+
+// Chart time series of LST.
+
+var ts1 = ui.Chart.image.series({
+
+  imageCollection: modLSTc,
+
+  region: sd,
+
+  reducer: ee.Reducer.mean(),
+
+  scale: 1000,
+
+  xProperty: 'system:time_start'})
+
+  .setOptions({
+
+     title: 'LST 2001-2017 Time Series',
+
+     vAxis: {title: 'LST Celsius'}});
+
+print(ts1);
+
+
+
+
+
+// Calculate 8-day mean temperature .
+
+var clippedLSTc = modLSTc.mean().clip(michi);
+
+
+
+// Add clipped image layer to the map.
+
+Map.addLayer(clippedLSTc, {
+
+  min: 20, max: 40,
+
+  palette: ['blue', 'limegreen', 'yellow', 'darkorange', 'red']},
+
+  'Mean temperature,');
+
+  7
+
+  ///
+
+  ///
+
+  // Pruebas de tendencia
+
+  
+
+    // test trend with Sen's slope
+
+var senslope = ee.ImageCollection(clippedLSTc)
+
+    .reduce(ee.Reducer.sensSlope()
+
+    );
+
+  var senslope
+
+/// This function adds a band representing the image timestamp.
+
+
+
+  // Add clipped image layer to the map.
+
+
+
+Export.image.toDrive({// for testing the significance level
+
+image:image4,
+
+description: 'SLOPE',
+
+ scale: 250, 
+
+ maxPixels:1000000000000,
+
+ region: michi
+
+});
+
+
+
+Export.image.toDrive({// for testing the significance level
+
+image:clippedLSTc,
+
+description: 'meanLST',
+
+ scale: 250, 
+
+ maxPixels:1000000000000,
+
+ region: michi
+
+});
+

@@ -1,0 +1,16 @@
+{
+    "Summary": [
+        "Script focuses on Sentinel-1 flood mapping in Upper Ayeyarwaddy region."
+    ],
+    "Theme": [
+        "SOIL WATER HOLDING CAPACITY"
+    ],
+    "DataSource": [
+        "COPERNICUS/S1_GRD"
+    ],
+    "Function": [
+        "NDWI (Normalized Difference Water Index calculation)",
+        "Cloud Masking And Quality Filtering",
+        "Visualization And Output Generation"
+    ]
+}

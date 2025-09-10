@@ -1,0 +1,22 @@
+{
+    "Theme": [
+        "Annual change detection processing"
+    ],
+    "DataSource": [
+        "USDOS/LSIB/2017",
+        "users/ak_glaciers/ltop_snic_seed_points75k_kmeans_cambodia_c2_1990",
+        "users/ak_glaciers/LTOP_Cambodia_config_selected_220_kmeans_pts_new_weights",
+        "users/ak_glaciers/Optimized_LT_1990_start_Cambodia_remapped_cluster_ids",
+        "projects/servir-mekong/composites"
+    ],
+    "Function": [
+        "Filtering and buffering of AOI",
+        "Importing kmeans cluster image",
+        "Selecting LT params",
+        "Importing vertices image from LTOP",
+        "Preparing image collection and LT breakpoints",
+        "Running LT fit",
+        "Converting LT fit to LT prem",
+        "Calculating time since last vertex and segment length"
+    ]
+}

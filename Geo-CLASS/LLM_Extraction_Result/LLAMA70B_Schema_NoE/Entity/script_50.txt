@@ -1,0 +1,19 @@
+{
+    "Theme": [
+        "Land cover classification and mapping"
+    ],
+    "DataSource": [
+        "USDOS/LSIB/2017",
+        "UMD/hansen/global_forest_change_2020_v1_8",
+        "users/ak_glaciers/NDVI_fitted_image_stack_from_LTOP_1990_start",
+        "users/ak_glaciers/NBR_fitted_image_stack_from_LTOP_1990_start"
+    ],
+    "Function": [
+        "Filtering feature collection by country",
+        "Selecting bands from images",
+        "Reducing regions to get canopy cover",
+        "Creating random points for training",
+        "Training a random forest classifier",
+        "Classifying images using the trained model"
+    ]
+}

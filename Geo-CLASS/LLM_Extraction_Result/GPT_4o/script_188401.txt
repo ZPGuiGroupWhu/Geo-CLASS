@@ -1,0 +1,21 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Temperature analysis over specific region"],
+  "DataSource": ["NOAA/GFS0P25"],
+  "Function": ["Define region boundaries", "Load temperature data", "Filter data by date", "Clip data to region", "Visualize data", "Create animation"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["NOAA/GFS0P25"],
+    "Function": ["Load temperature data", "Filter data by date", "Clip data to region", "Visualize data", "Create animation"]
+  }
+}
+```
+
+Total_Token_Usage:
+9871

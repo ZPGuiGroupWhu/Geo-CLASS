@@ -1,0 +1,18 @@
+{
+    "relation_1": {
+        "DataSource": ["users/EL/mapa_forest_hybrid_Belize", "JRC/GSW1_0/GlobalSurfaceWater"],
+        "Function": ["Image mosaicking and quality band creation"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LT5_L1T", "LANDSAT/LE7_L1T", "LANDSAT/LC08/C01/T1_RT"],
+        "Function": ["Classification training and application"]
+    },
+    "relation_3": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Masking water areas"]
+    },
+    "relation_4": {
+        "DataSource": ["ft:1VyLhtXjayg1nD2auTSF73e-94uuuqEe0dLXkqk-y"],
+        "Function": ["Classification correction"]
+    }
+}

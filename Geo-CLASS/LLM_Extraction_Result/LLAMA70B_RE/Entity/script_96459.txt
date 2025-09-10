@@ -1,0 +1,18 @@
+{
+    "Theme": [
+        "Urban land use classification"
+    ],
+    "DataSource": [
+        "LANDSAT/LE07/C01/T1_TOA",
+        "COPERNICUS/S2",
+        "users/eeranyartrodrigo/ferrocarriles/coahuilaPols"
+    ],
+    "Function": [
+        "Image collection filtering",
+        "Image normalization",
+        "Feature extraction",
+        "Unmixing",
+        "Histogram analysis",
+        "Thresholding"
+    ]
+}

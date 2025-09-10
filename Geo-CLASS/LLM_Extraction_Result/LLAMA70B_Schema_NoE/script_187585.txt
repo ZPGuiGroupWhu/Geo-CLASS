@@ -1,0 +1,23 @@
+Entity Recognition:
+```
+{
+  "Theme": ["MODIS EVI analysis and PCA"],
+  "DataSource": ["MODIS/006/MOD13Q1"],
+  "Function": ["Calculate average of MODIS EVI of each year", "Perform Principal Component Analysis (PCA) on the average EVI images"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["MODIS/006/MOD13Q1"],
+        "Function": ["Calculate average of MODIS EVI of each year", "Perform Principal Component Analysis (PCA) on the average EVI images"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3490, 'completion_tokens': 153, 'total_tokens': 3643}

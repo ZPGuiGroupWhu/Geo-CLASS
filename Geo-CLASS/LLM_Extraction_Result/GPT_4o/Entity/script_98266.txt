@@ -1,0 +1,18 @@
+{
+  "Theme": ["Flood detection using satellite imagery"],
+  "DataSource": [
+    "COPERNICUS/S1_GRD",
+    "FAO/GAUL_SIMPLIFIED_500m/2015/level2",
+    "JRC/GSW1_0/GlobalSurfaceWater",
+    "WWF/HydroSHEDS/03VFDEM"
+  ],
+  "Function": [
+    "Filter image collection by date and region",
+    "Create image mosaics",
+    "Apply speckle filter",
+    "Calculate difference between images",
+    "Compute histogram",
+    "Determine optimal threshold",
+    "Refine flood detection using additional datasets"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "Summary": ["Script calculates correlation between precipitation and cloud cover for East Asia in 2021."],
+  "Theme": ["Correlation analysis between precipitation and cloud cover"],
+  "DataSource": ["UCSB-CHG/CHIRPS/PENTAD", "COPERNICUS/S2_CLOUD_PROBABILITY"],
+  "Function": ["Image collection filtering based on date and region", "Mosaicking daily cloud probability images", "Summing cloud probability images", "Calculating percentage of cloud cover", "Cross-correlation analysis between precipitation and cloud cover"]
+}

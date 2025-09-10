@@ -1,0 +1,25 @@
+Entity Recognition:
+{
+  "Theme": ["Land use classification and urbanization analysis"],
+  "DataSource": ["LANDSAT/LE07/C01/T1_TOA", "COPERNICUS/S2", "users/eeranyartrodrigo/ferrocarriles/coahuilaPols"],
+  "Function": ["Filtering image collections by date and cloud cover", "Calculating spectral indices", "Unmixing images for land cover classification", "Generating histograms for thresholding", "Applying Otsu thresholding for binary classification"]
+}
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LE07/C01/T1_TOA", "COPERNICUS/S2"],
+        "Function": ["Filtering image collections by date and cloud cover", "Calculating spectral indices", "Unmixing images for land cover classification"]
+    },
+    "relation_2": {
+        "DataSource": ["users/eeranyartrodrigo/ferrocarriles/coahuilaPols"],
+        "Function": ["Generating histograms for thresholding", "Applying Otsu thresholding for binary classification"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 6941, 'completion_tokens': 279, 'total_tokens': 7220}

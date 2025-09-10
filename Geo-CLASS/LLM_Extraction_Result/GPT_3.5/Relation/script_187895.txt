@@ -1,0 +1,6 @@
+{
+    "relation_1": {
+        "DataSource": ["users/kimambo/00_INPUT_TRAINING_VALIDATION/Tanzania_SouthernHighlands_reference_point_36LYR_13DEC2019_230_upto799_75PCTTRAINING"],
+        "Function": ["Cloud masking for Landsat 8", "Cloud masking for Landsat 4-7", "BSI calculation for Landsat 8, 7, 5, 4", "Image collection filtering by date and location", "Feature sampling at training points", "Exporting processed data to CSV"]
+    }
+}

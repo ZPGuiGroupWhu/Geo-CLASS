@@ -1,0 +1,131 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var S2A = ee.ImageCollection("COPERNICUS/S2_SR_HARMONIZED"),
+    roi = 
+    /* color: #0b4a8b */
+    /* shown: false */
+    ee.FeatureCollection(
+        [ee.Feature(
+            ee.Geometry.Polygon(
+                [[[98.2521088408623, 27.979075671372623],
+                  [98.4278900908623, 27.823728331220835],
+                  [98.6915619658623, 26.631945741869576],
+                  [98.2301361846123, 26.15958240641316],
+                  [97.5270111846123, 24.651213745501668],
+                  [97.7467377471123, 24.231139253776107],
+                  [98.6476166533623, 24.231139253776107],
+                  [98.7794525908623, 23.749352239371746],
+                  [98.9991791533623, 23.285960449396672],
+                  [99.3727143096123, 22.942411780755034],
+                  [99.1969330596123, 22.150984374655405],
+                  [99.6144135283623, 22.049192980869453],
+                  [100.1637299346123, 21.804595091753388],
+                  [100.4054291533623, 21.824994283811446],
+                  [101.2843354033623, 21.76378799181932],
+                  [101.82655172841385, 21.35508151386844],
+                  [101.45301657216385, 22.45591608849167],
+                  [101.93641500966385, 22.679107718384323],
+                  [104.04579000966385, 22.496523238496263],
+                  [106.01846466668378, 23.42716521782123],
+                  [106.21621857293378, 23.869967802523743],
+                  [105.46914826043378, 24.191059341830357],
+                  [104.91983185418378, 25.010157092622265],
+                  [104.85391388543378, 25.526781313487742],
+                  [105.02969513543378, 26.59265608103442],
+                  [104.15078888543378, 27.336836878547988],
+                  [105.45979171243505, 28.250395386041767],
+                  [104.55891280618505, 27.88200971557572],
+                  [103.81184249368505, 28.578928864617417],
+                  [103.54817061868505, 27.92084655863917],
+                  [102.88899093118505, 27.375867596907824],
+                  [102.93293624368505, 26.435362656641356],
+                  [102.25178389993505, 26.139858751346427],
+                  [100.88947921243505, 27.940259751400827],
+                  [100.23029952493505, 28.11482133534019],
+                  [100.20832686868505, 28.347128624394905],
+                  [99.57111983743505, 28.61751275289496],
+                  [99.41731124368505, 28.443773832968642],
+                  [99.19758468118505, 28.96412856468193],
+                  [98.86799483743505, 29.06020582445132],
+                  [98.62629561868505, 28.73317933975008],
+                  [98.64826827493505, 28.21167748618113],
+                  [98.12092452493505, 28.26974906671348]]]),
+            {
+              "probability": 0,
+              "system:index": "0"
+            })]),
+    imageVisParam = {"opacity":1,"bands":["probability"],"max":72,"palette":["585dff","5cd2ff","58ff6d","efff6e","ffce1b","ff0404"]};
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+var start = ee.Date('2020-1-01');
+var finish = ee.Date('2020-1-31');
+cloud_probability=50
+
+var collection =ee.ImageCollection('COPERNICUS/S2_CLOUD_PROBABILITY')
+                  .filterBounds(roi.geometry())
+                  .filterDate(start, finish);
+
+// Difference in days between start and finish
+var diff = finish.difference(start, 'day')
+print(diff)
+ 
+// Make a list of all dates
+var range = ee.List.sequence(0, diff.subtract(1)).map(function(day){return start.advance(day,'day')})
+
+// Funtion for iteraton over the range of dates
+var day_mosaics = function(date, newlist) {
+  // Cast
+  date = ee.Date(date)
+  newlist = ee.List(newlist)
+  
+  // Filter collection between date and the next day
+  var filtered = collection.filterDate(date, date.advance(1,'day'))
+  
+  // Make the mosaic
+  var image = ee.Image(filtered.mosaic())
+  
+  // Add the mosaic to a list only if the collection has images
+  return ee.List(ee.Algorithms.If(filtered.size(), newlist.add(image), newlist))
+}
+
+// Iterate over the range to make a new list, and then cast the list to an imagecollection
+var newcol = ee.ImageCollection(ee.List(range.iterate(day_mosaics, ee.List([]))))
+
+print(newcol)
+Map.addLayer(newcol)
+Map.addLayer(newcol.first())
+
+var ROI_TOImg = roi.reduceToImage({
+      properties: ['probability'],
+      reducer: ee.Reducer.first()
+  });
+  
+var ROI_IMAGE=ROI_TOImg.uint8().select("first").rename("probability")
+Map.addLayer(ROI_TOImg)
+
+
+function maskClouds(img) {
+            var img_roi_collection=ee.ImageCollection.fromImages([ROI_IMAGE.clip(roi.geometry()),img.clip(roi.geometry()).gt(cloud_probability)]);
+            var ROI_TOImg_add=img_roi_collection.qualityMosaic("probability")
+            return ROI_TOImg_add
+      }
+      
+function GPP_pre(collection){
+        //调用GPP_clip
+        
+        var myCollection = collection;
+        //获取collection的合成值 先将Collection转为数组list，再对每个图像的list进行合成                   
+        //collection转为数组
+        var listOfImages = myCollection.toList(myCollection.size());
+        var sum_image = ee.Image(listOfImages.get(0));
+        //合成
+        var A=listOfImages.length()
+        for(var order=1;order<30;order++){
+          sum_image=sum_image.add(ee.Image(listOfImages.get(order)))
+          }
+        return sum_image
+      }
+var s2Clouds=newcol.map(maskClouds)
+var sum_image=GPP_pre(s2Clouds)
+print(sum_image)
+Map.addLayer(sum_image,imageVisParam)
+
+

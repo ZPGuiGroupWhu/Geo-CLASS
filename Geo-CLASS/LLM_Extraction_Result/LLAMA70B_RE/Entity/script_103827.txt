@@ -1,0 +1,15 @@
+{
+    "Theme": [
+        "Flood monitoring and analysis"
+    ],
+    "DataSource": [
+        "users/hrishippatel/IndiaStates",
+        "COPERNICUS/S1_GRD"
+    ],
+    "Function": [
+        "Get weekly Sentinel-1 composite image",
+        "Filter image collection by date and polarization",
+        "Clip image to region",
+        "Visualize image"
+    ]
+}

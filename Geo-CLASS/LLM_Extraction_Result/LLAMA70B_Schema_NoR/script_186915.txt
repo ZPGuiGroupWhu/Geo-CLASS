@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Flood area detection and population analysis"],
+  "DataSource": ["COPERNICUS/S1_GRD", "CIESIN/GPWv4/population-count"],
+  "Function": ["Filtering Sentinel-1 C-band SAR images", "Mosaicking images", "Thresholding radar intensities", "Topological intersection", "Focal median smoothing", "Image visualization", "Vectorization of flooded areas", "Population count analysis", "Polygon geometry calculation", "Feature area calculation", "Sampling population data", "Exporting flooded area to Drive"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response that organizes the extracted information into a structured format:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Filtering Sentinel-1 C-band SAR images", "Mosaicking images", "Thresholding radar intensities", "Focal median smoothing", "Image visualization", "Vectorization of flooded areas", "Exporting flooded area to Drive"]
+    },
+    "relation_2": {
+        "DataSource": ["CIESIN/GPWv4/population-count"],
+        "Function": ["Population count analysis", "Polygon geometry calculation", "Feature area calculation", "Sampling population data"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3445, 'completion_tokens': 304, 'total_tokens': 3749}

@@ -1,0 +1,6 @@
+{
+  "Summary": ["Script performs classification of forest and non-forest areas using Landsat and Sentinel imagery."],
+  "Theme": ["Forest classification", "Water mask application", "Image correction"],
+  "DataSource": ["users/EL/mapa_forest_hybrid_Belize", "JRC/GSW1_0/GlobalSurfaceWater", "LANDSAT/LT5_L1T", "LANDSAT/LE7_L1T", "LANDSAT/LC08/C01/T1_RT", "COPERNICUS/S2", "ft:1VyLhtXjayg1nD2auTSF73e-94uuuqEe0dLXkqk-y"],
+  "Function": ["Image mosaicking and quality band creation", "Classification training and application", "Masking water areas", "Classification correction"]
+}

@@ -1,0 +1,35 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["The script processes Landsat imagery for geoprocessing modeling and analysis."],
+  "Theme": ["Land cover classification"],
+  "DataSource": ["users/1915303017/CNBBW_SL_10kmBuffer", "LANDSAT/LC08/C01/T1_SR", "LANDSAT/LE07/C01/T1_SR", "LANDSAT/LT05/C01/T1_SR", "USGS/SRTMGL1_003"],
+  "Function": ["Image band selection and renaming", "Cloud and shadow masking", "Calculation of vegetation indices", "Collection filtering and preparation", "Composite generation", "Water and vegetation frequency calculation", "Land cover classification based on indices and elevation"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/1915303017/CNBBW_SL_10kmBuffer"],
+        "Function": ["Image band selection and renaming", "Cloud and shadow masking", "Calculation of vegetation indices", "Collection filtering and preparation", "Composite generation", "Water and vegetation frequency calculation", "Land cover classification based on indices and elevation"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Image band selection and renaming", "Collection filtering and preparation", "Composite generation", "Water and vegetation frequency calculation", "Land cover classification based on indices and elevation"]
+    },
+    "relation_3": {
+        "DataSource": ["LANDSAT/LE07/C01/T1_SR"],
+        "Function": ["Image band selection and renaming", "Collection filtering and preparation", "Composite generation", "Water and vegetation frequency calculation", "Land cover classification based on indices and elevation"]
+    },
+    "relation_4": {
+        "DataSource": ["LANDSAT/LT05/C01/T1_SR"],
+        "Function": ["Image band selection and renaming", "Collection filtering and preparation", "Composite generation", "Water and vegetation frequency calculation", "Land cover classification based on indices and elevation"]
+    },
+    "relation_5": {
+        "DataSource": ["USGS/SRTMGL1_003"],
+        "Function": ["Land cover classification based on indices and elevation"]
+    }
+}
+```

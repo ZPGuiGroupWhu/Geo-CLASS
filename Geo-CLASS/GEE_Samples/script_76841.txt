@@ -1,0 +1,131 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var L5_sr = ee.ImageCollection("LANDSAT/LT05/C01/T1_SR"),
+    L8_sr = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR"),
+    table2 = ee.FeatureCollection("users/cxliu2015/PA_Qinghai_EnglishNames"),
+    table = ee.FeatureCollection("users/cxliu2015/PA_Qinghai_cdm_studiedRectangle");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+// please draw a geometry as ROI
+var regionName ='cdm'; 
+
+var startYear = 2018;
+var endYear = 2019; 
+var startMonth = 7;
+var endMonth = 8;
+// add edge
+var empty = ee.Image().byte(); 
+var outline2 = empty.paint({
+  featureCollection:table,
+  color: 1,
+  width: 1 
+});
+Map.addLayer(outline2,{palette: '00fbff'}, 'edges')
+// Load surface reflectance images
+var bands_5_7 = ['B1', 'B2', 'B3', 'B4', 'B5', 'B7','pixel_qa'];
+var bands_8   = ['B2', 'B3', 'B4', 'B5', 'B6', 'B7','pixel_qa'];
+var bands = ['B1', 'B2', 'B3', 'B4', 'B5', 'B7','pixel_qa'];
+// Rename all the bands with the same rules
+var L5sr = L5_sr.select(bands_5_7, bands);
+
+var L8sr = L8_sr.select(bands_8, bands);
+
+
+var collection = ee.ImageCollection(L5sr.merge(L8sr));
+var L = collection.filter(ee.Filter.calendarRange(startYear,endYear,'year'))
+                  .filter(ee.Filter.calendarRange(startMonth,endMonth,'month'))
+                  .filterBounds(table)
+                  .sort('system:time_start',false);
+
+// mask bad QA pixels                              
+var maskClouds = function(image){
+  // bit positions: find by raising 2 to the bit flag code 
+  var cloudBit = Math.pow(2, 5); //32
+  var shadowBit = Math.pow(2, 3); // 8
+  var snowBit = Math.pow(2, 4); //16
+  var fillBit = Math.pow(2,0); // 1
+  // extract pixel quality band
+  var qa = image.select('pixel_qa');    
+  // create and apply mask
+  var mask = qa.bitwiseAnd(cloudBit).eq(0).and(  // no clouds
+              qa.bitwiseAnd(shadowBit).eq(0)).and( // no cloud shadows
+              qa.bitwiseAnd(snowBit).eq(0)).and(   // no snow
+              qa.bitwiseAnd(fillBit).eq(0))   ; // no fill
+  return image.updateMask(mask);   
+};                                
+// use "map" to apply the function to each image in the collection
+var Landsatmasked = L.map(maskClouds);
+var BandsUsed=['B1','B2','B3','B4','B5','B7'];
+// Bands Median
+Landsatmasked=Landsatmasked.select(BandsUsed);
+
+// median
+var AllBandsMedian=Landsatmasked.median().clip(table).int16();
+
+
+function computeNdvi(i) {
+  return i.normalizedDifference(['B4', 'B3']);
+}
+
+function computeLswi(i){
+  return i.normalizedDifference(['B4','B5']);
+}
+
+// ndwi
+var NDVI = Landsatmasked.map(computeNdvi).median().clip(table).multiply(10000).int16().rename('NDVI');
+var LSWI = Landsatmasked.map(computeLswi).median().clip(table).multiply(10000).int16().rename('LSWI');
+
+// multiple layers if normalized difference water index
+var ND = AllBandsMedian.addBands(NDVI).addBands(LSWI);
+
+var rgbVis = {
+  min: 0,
+  max: 3000,
+  bands: ['B4', 'B3', 'B2'],
+};
+
+Map.addLayer(AllBandsMedian,rgbVis,'MedianRGB')
+
+// Visualize Index
+var ndviPalette = ['FFFFFF', 'CE7E45', 'DF923D', 'F1B555', 'FCD163', '99B718',
+               '74A901', '66A000', '529400', '3E8601', '207401', '056201',
+               '004C00', '023B01', '012E01', '011D01', '011301'];
+Map.addLayer(NDVI,{min:200, max: 10000, palette: ndviPalette}, 'NDVI');
+Map.addLayer(LSWI,{min:-2000, max: 10000, palette: ndviPalette}, 'LSWI');
+var PAs = ee.FeatureCollection(table2);
+var region = PAs.filter(ee.Filter.eq('Name',regionName));
+
+var empty = ee.Image().byte(); 
+var outline = empty.paint({
+  featureCollection: region,
+  color: 1,
+  width: 1 
+});
+Map.addLayer(outline,{palette: '00fbff'}, 'region');
+
+// NDVI
+var outname='PAQinghai_'+regionName+'_rectangle_NDVI_'+startYear+'_'+endYear;
+Export.image.toDrive({
+image: NDVI.clip(table) ,
+description: outname,
+region: table,
+scale: 30,
+folder:'QHPA_NDVI_LSWI_Multibands',
+maxPixels: 1e13}); 
+// LSWI
+var outname='PAQinghai_'+regionName+'_rectangle_LSWI_'+startYear+'_'+endYear;
+Export.image.toDrive({
+image: LSWI.clip(table) ,
+description: outname,
+region: table,
+scale: 30,
+folder:'QHPA_NDVI_LSWI_Multibands',
+maxPixels: 1e13}); 
+
+
+
+
+
+
+
+
+
+

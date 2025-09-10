@@ -1,0 +1,44 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Image collection filtering",
+            "Cloud removal",
+            "Median calculation",
+            "Normalized difference index calculation",
+            "Thresholding",
+            "Image masking"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S1_GRD"
+        ],
+        "Function": [
+            "Image collection filtering",
+            "Percentile calculation",
+            "Difference calculation",
+            "Terrain analysis",
+            "Slope calculation"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "users/eeranyartrodrigo/ferrocarriles/estaciones_prospectadas_area"
+        ],
+        "Function": [
+            "Image masking"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "WWF/HydroSHEDS/03VFDEM"
+        ],
+        "Function": [
+            "Terrain analysis",
+            "Slope calculation"
+        ]
+    }
+}

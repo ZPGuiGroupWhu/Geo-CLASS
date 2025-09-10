@@ -1,0 +1,22 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/b20203080616/HB-data/Zhangjiakou"
+        ],
+        "Function": [
+            "Data Fusion And Mosaicking",
+            "Vegetation And Water Indices Calculation",
+            "Exporting And Data Conversion"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2_SR"
+        ],
+        "Function": [
+            "Data Fusion And Mosaicking",
+            "Vegetation And Water Indices Calculation",
+            "Exporting And Data Conversion"
+        ]
+    }
+}

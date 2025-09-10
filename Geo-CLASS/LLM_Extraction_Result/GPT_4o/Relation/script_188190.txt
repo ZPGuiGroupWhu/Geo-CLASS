@@ -1,0 +1,26 @@
+{
+    "relation_1": {
+        "DataSource": ["users/ValeriaContessa/n_regions"],
+        "Function": ["Clip image to region", "Add layer to map"]
+    },
+    "relation_2": {
+        "DataSource": ["users/kindgard/Asia/Asia", "users/kindgard/Africa", "users/kindgard/SUD", "users/kindgard/AfricaS", "users/kindgard/AmericaN", "users/kindgard/Asia2"],
+        "Function": ["Create image mosaic", "Clip image to region", "Add layer to map"]
+    },
+    "relation_3": {
+        "DataSource": ["users/kindgard/ESACCI-LC-L4-LC10-Map-20m-P1Y-2016-v10"],
+        "Function": ["Clip image to region", "Add layer to map"]
+    },
+    "relation_4": {
+        "DataSource": ["users/ValeriaContessa/Map_1992_rast"],
+        "Function": ["Add layer to map"]
+    },
+    "relation_5": {
+        "DataSource": ["UMD/hansen/global_forest_change_2016_v1_4"],
+        "Function": ["Clip image to region", "Add layer to map"]
+    },
+    "relation_6": {
+        "DataSource": ["None"],
+        "Function": ["Filter image collection by date", "Filter image collection by location", "Calculate band ratios", "Train classifier", "Classify image"]
+    }
+}

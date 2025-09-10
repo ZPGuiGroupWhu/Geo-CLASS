@@ -1,0 +1,29 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Entity Recognition": {
+    "Theme": ["Fire risk analysis in Tasmania"],
+    "DataSource": ["COPERNICUS/S2_SR", "MODIS/006/MOD14A1", "MODIS/006/MOD11A1"],
+    "Function": ["Filtering image collection by date", "Converting Kelvin to Celsius", "Calculating maximum temperature", "Unmasking image collection", "Calculating NDVI", "Subtracting NDVI values"]
+  },
+  "Relation Extraction": {
+    "relation_1": {
+      "DataSource": ["COPERNICUS/S2_SR"],
+      "Function": ["Filtering image collection by date", "Calculating NDVI", "Subtracting NDVI values"]
+    },
+    "relation_2": {
+      "DataSource": ["MODIS/006/MOD14A1"],
+      "Function": ["Filtering image collection by date", "Unmasking image collection", "Calculating maximum radiative power"]
+    },
+    "relation_3": {
+      "DataSource": ["MODIS/006/MOD11A1"],
+      "Function": ["Converting Kelvin to Celsius", "Calculating maximum temperature"]
+    }
+  }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3700, 'completion_tokens': 304, 'total_tokens': 4004}

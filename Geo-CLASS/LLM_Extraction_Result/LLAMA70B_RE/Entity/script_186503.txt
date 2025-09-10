@@ -1,0 +1,18 @@
+{
+    "Theme": [
+        "Land cover classification using Sentinel-1 data"
+    ],
+    "DataSource": [
+        "COPERNICUS/S1_GRD",
+        "ee.FeatureCollection(urban)",
+        "ee.FeatureCollection(forest)",
+        "ee.FeatureCollection(water)"
+    ],
+    "Function": [
+        "Filtering Sentinel-1 image collection",
+        "Applying Refined Lee speckle filter",
+        "Converting to natural units",
+        "Converting to dB",
+        "Classifying land cover using CART algorithm"
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LC08/C02/T1_L2"
+        ],
+        "Function": [
+            "Load landsat image for reference",
+            "Apply NDVI function to image collection",
+            "Create an NDVI time series for a vegetated and bare earth area"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LC08/C02/T1_L2"
+        ],
+        "Function": [
+            "Create a chart series by region",
+            "Add map layer"
+        ]
+    }
+}

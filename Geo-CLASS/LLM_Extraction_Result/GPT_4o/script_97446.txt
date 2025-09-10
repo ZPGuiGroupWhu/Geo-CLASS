@@ -1,0 +1,21 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Cloud-free Sentinel-2 imagery analysis"],
+  "DataSource": ["COPERNICUS/S2"],
+  "Function": ["Mask clouds and cirrus", "Filter images by date", "Filter images by cloudiness", "Filter images by location", "Compute median image", "Select specific band", "Export image"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Mask clouds and cirrus", "Filter images by date", "Filter images by cloudiness", "Filter images by location", "Compute median image", "Select specific band", "Export image"]
+    }
+}
+```
+
+Total_Token_Usage:
+5322

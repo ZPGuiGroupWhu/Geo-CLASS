@@ -1,0 +1,21 @@
+{
+    "Summary": [
+        "Geoprocessing workflow analyzing Landsat and Sentinel imagery for land cover classification."
+    ],
+    "Theme": [
+        "LAND USE/LAND COVER CLASSIFICATION"
+    ],
+    "DataSource": [
+        "LANDSAT/LE07/C01/T1_TOA",
+        "COPERNICUS/S2",
+        "users/eeranyartrodrigo/ferrocarriles/coahuilaPols"
+    ],
+    "Function": [
+        "Cloud Masking And Quality Filtering",
+        "Vegetation And Water Indices Calculation",
+        "Vegetation And Water Indices Calculation",
+        "NDVI (Normalized Difference Vegetation Index calculation)",
+        "Terrain And Hydrological Analysis",
+        "Vegetation And Water Indices Calculation"
+    ]
+}

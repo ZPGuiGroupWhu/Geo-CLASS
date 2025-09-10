@@ -1,0 +1,34 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "JRC/GSW1_0/GlobalSurfaceWater"
+        ],
+        "Function": [
+            "Load lake polygons",
+            "Calculate lake area statistics"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "users/sarinarinab/CitSci_Washington_Lakes",
+            "users/sntopp/Lakes_ply_20171106",
+            "users/sntopp/NCSC_Horsepen_Lake"
+        ],
+        "Function": [
+            "Load lake polygons",
+            "Calculate lake area",
+            "Extract lake mask"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "users/eeProject/water_surface_interpolation:functions_landsat.js"
+        ],
+        "Function": [
+            "Load Landsat images",
+            "Reconstruct water surface",
+            "Extract lake mask",
+            "Calculate lake area statistics"
+        ]
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "Filtering Landsat 8 images by date and cloud cover",
+            "Clipping images to a region of interest",
+            "Selecting bands for classification",
+            "Classifying land cover",
+            "Visualizing classification results"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "Merging feature collections",
+            "Sampling regions for training",
+            "Training a random forest classifier"
+        ]
+    }
+}

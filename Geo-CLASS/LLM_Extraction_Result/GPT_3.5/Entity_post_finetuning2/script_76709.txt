@@ -1,0 +1,23 @@
+{
+    "Summary": [
+        "Generates NDVI, MNDWI, NDMI, NBR, NDVIreln, NDVIrel, CI, and composite images from Sentinel-2 data for a specific study area."
+    ],
+    "Theme": [
+        "VEGETATION WATER POTENTIAL"
+    ],
+    "DataSource": [
+        "users/cxliu2015/BYDwater20210325",
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "Image Cloud Masking",
+        "Compute Median Of NDVI",
+        "Compute Median Of NDVI",
+        "Addition Of NDWI",
+        "Entropy Computation",
+        "Addition Of NDWI",
+        "Addition Of NDWI",
+        "Entropy Computation",
+        "Export Composite Image"
+    ]
+}

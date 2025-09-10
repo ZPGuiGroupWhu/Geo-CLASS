@@ -1,0 +1,21 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/kidsherry/Beijing"
+        ],
+        "Function": [
+            "Visualize NDVI Results",
+            "Seasonal NDVI Analysis",
+            "Visualize NDVI Results"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "MODIS/006/MOD13A1"
+        ],
+        "Function": [
+            "Visualize NDVI Results",
+            "Seasonal NDVI Analysis"
+        ]
+    }
+}

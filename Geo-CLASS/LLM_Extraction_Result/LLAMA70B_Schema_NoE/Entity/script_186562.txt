@@ -1,0 +1,20 @@
+{
+    "Theme": [
+        "Land cover classification and change detection using Landsat and Sentinel-2 images"
+    ],
+    "DataSource": [
+        "LANDSAT/LC8_SR",
+        "LANDSAT/LC8_L1T_TOA",
+        "LANDSAT/LT5_L1T_TOA_FMASK",
+        "LANDSAT/LE7_L1T_TOA_FMASK",
+        "COPERNICUS/S2",
+        "ft:1jAZtLqcNzJvkjSwTMe9CGASiWffqNQRuDRynFPAe"
+    ],
+    "Function": [
+        "Filtering and sorting image collections by date and spatial bounds",
+        "Calculating NDVI and NBR indices",
+        "Exporting images to Google Drive",
+        "Visualizing images using different visualization options",
+        "Detecting forest loss and land cover changes"
+    ]
+}

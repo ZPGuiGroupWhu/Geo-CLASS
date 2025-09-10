@@ -1,0 +1,27 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "FAO/GAUL_SIMPLIFIED_500m/2015/level2",
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "Vegetation And Water Indices Calculation"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "JRC/GSW1_0/GlobalSurfaceWater"
+        ],
+        "Function": [
+            "NDWI (Normalized Difference Water Index calculation)"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "WWF/HydroSHEDS/03VFDEM"
+        ],
+        "Function": [
+            "NDWI (Normalized Difference Water Index calculation)"
+        ]
+    }
+}

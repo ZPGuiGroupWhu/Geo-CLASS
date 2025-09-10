@@ -1,0 +1,16 @@
+{
+    "Summary": [
+        "Script extracts NDVI from Sentinel-2 images in the CA Basin."
+    ],
+    "Theme": [
+        "NORMALIZED DIFFERENCE VEGETATION INDEX (NDVI)"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2",
+        "ft:1XPgyHDQHN4d5IF4x8u5ZkJxkVQ_xKWFFuUTi9ofT"
+    ],
+    "Function": [
+        "Cloud Masking And Quality Filtering",
+        "NDWI (Normalized Difference Water Index calculation)"
+    ]
+}

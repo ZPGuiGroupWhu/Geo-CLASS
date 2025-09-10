@@ -1,0 +1,37 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Water surface analysis", "Lake extent reconstruction"],
+  "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+  "Function": [
+    "Clipping the global surface water image to the area of interest",
+    "Selecting the occurrence band from the global surface water image",
+    "Creating a cloud mask layer from the feature collection",
+    "Calculating the lake shore extent using focal operations",
+    "Reconstructing the lake extent using the shoreline occurrence statistics"
+  ]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+        "Function": [
+            "Clipping the global surface water image to the area of interest",
+            "Selecting the occurrence band from the global surface water image",
+            "Creating a cloud mask layer from the feature collection",
+            "Calculating the lake shore extent using focal operations",
+            "Reconstructing the lake extent using the shoreline occurrence statistics"
+        ]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3304, 'completion_tokens': 260, 'total_tokens': 3564}

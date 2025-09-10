@@ -1,0 +1,30 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2_SR"
+        ],
+        "Function": [
+            "Filtering image collections by date",
+            "Unmasking image collection",
+            "Calculating NDVI"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "MODIS/006/MOD14A1"
+        ],
+        "Function": [
+            "Converting Kelvin to Celsius",
+            "Calculating maximum temperature"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "MODIS/006/MOD11A1"
+        ],
+        "Function": [
+            "Calculating NDVI",
+            "Identifying fire masks using NDVI difference"
+        ]
+    }
+}

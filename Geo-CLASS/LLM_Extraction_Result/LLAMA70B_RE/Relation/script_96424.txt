@@ -1,0 +1,21 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "JRC/GSW1_0/GlobalSurfaceWater"
+        ],
+        "Function": [
+            "Clip image to area of interest",
+            "Select image band",
+            "Create water mask"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "JRC/GSW1_0/GlobalSurfaceWater"
+        ],
+        "Function": [
+            "Calculate occurrence stats",
+            "Reconstruct lake extent"
+        ]
+    }
+}

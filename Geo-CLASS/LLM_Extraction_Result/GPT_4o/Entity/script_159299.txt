@@ -1,0 +1,5 @@
+{
+  "Theme": ["Land cover classification in Gujrat City"],
+  "DataSource": ["COPERNICUS/S2", "users/jannat/gujratCityExt"],
+  "Function": ["Filter image collection by date and cloud cover", "Clip image to area of interest", "Merge feature collections", "Sample regions for training data", "Train classifier", "Classify image", "Export classified image to Drive"]
+}

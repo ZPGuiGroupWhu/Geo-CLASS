@@ -1,0 +1,28 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover classification and cloud probability analysis"],
+  "DataSource": ["COPERNICUS/S2_CLOUD_PROBABILITY", "users/kitmyfaceplease2/eastsouth_asia"],
+  "Function": ["Filter image collection by date and bounds", "Create mosaic from image collection", "Mask clouds from image", "Calculate sum of image collection", "Reduce image collection to single band"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2_CLOUD_PROBABILITY"],
+        "Function": ["Filter image collection by date and bounds", "Create mosaic from image collection", "Mask clouds from image", "Calculate sum of image collection"]
+    },
+    "relation_2": {
+        "DataSource": ["users/kitmyfaceplease2/eastsouth_asia"],
+        "Function": ["Reduce image collection to single band"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4887, 'completion_tokens': 238, 'total_tokens': 5125}

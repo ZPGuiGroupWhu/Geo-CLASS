@@ -1,0 +1,21 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S1_GRD"
+        ],
+        "Function": [
+            "Filtering image collection by polarization and date",
+            "Creating composite image from means at different polarizations and look angles",
+            "Exporting images to Drive"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "ft:10RV_TKg9w5SMTutAz-XZpGcd2ejYgbQs6IVy2TF7"
+        ],
+        "Function": [
+            "Filtering image collection by geometry",
+            "Creating composite image from means at different polarizations and look angles"
+        ]
+    }
+}

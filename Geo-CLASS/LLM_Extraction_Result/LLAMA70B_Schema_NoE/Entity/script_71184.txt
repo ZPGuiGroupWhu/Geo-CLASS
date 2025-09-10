@@ -1,0 +1,14 @@
+{
+    "Theme": [
+        "Cloud scoring and filtering of Landsat 7 images"
+    ],
+    "DataSource": [
+        "LANDSAT/LE7_L1T_32DAY_TOA"
+    ],
+    "Function": [
+        "Cloud scoring function using blue, red, green, nir, swir1, swir2, and temp bands",
+        "Add MNDWI function using normalized difference of green and swir1 bands",
+        "Filter function using cloudscore and MNDWI thresholds",
+        "FillClouds function using flooding frequency for gap filling"
+    ]
+}

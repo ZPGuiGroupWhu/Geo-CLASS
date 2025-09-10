@@ -1,0 +1,6 @@
+{
+  "Summary": ["The script processes MODIS data to calculate and visualize Normalized Difference Vegetation Index (NDVI) values using linear interpolation."],
+  "Theme": ["NDVI calculation and visualization"],
+  "DataSource": ["MODIS/006/MOD09A1"],
+  "Function": ["Cloud masking to remove cloud, shadow, and snow effects", "Calculation of NDVI and NIRV values", "Linear interpolation for filling missing values", "Feature collection creation for point information extraction"]
+}

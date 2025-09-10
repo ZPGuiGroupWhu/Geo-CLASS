@@ -1,0 +1,33 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Flood detection", "NDWI calculation", "Flood extent refinement"],
+  "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2", "MODIS/006/MOD09GA", "JRC/GSW1_0/GlobalSurfaceWater", "WWF/HydroSHEDS/03VFDEM"],
+  "Function": ["Filter regions by attribute", "Add layer to map", "Filter image collection by bounds and date", "Create mosaic and clip to boundary", "Calculate NDWI", "Compute difference image", "Thresholding", "Calculate pixel area", "Mask permanent water bodies", "Mask high slope areas"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2"],
+    "Function": ["Filter regions by attribute", "Add layer to map"]
+  },
+  "relation_2": {
+    "DataSource": ["MODIS/006/MOD09GA"],
+    "Function": ["Filter image collection by bounds and date", "Create mosaic and clip to boundary", "Calculate NDWI", "Compute difference image", "Thresholding", "Calculate pixel area"]
+  },
+  "relation_3": {
+    "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+    "Function": ["Mask permanent water bodies"]
+  },
+  "relation_4": {
+    "DataSource": ["WWF/HydroSHEDS/03VFDEM"],
+    "Function": ["Mask high slope areas"]
+  }
+}
+```
+
+Total_Token_Usage:
+6359

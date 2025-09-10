@@ -1,0 +1,21 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover classification"],
+  "DataSource": ["COPERNICUS/S2"],
+  "Function": ["Filter image collection by date", "Filter image collection by location", "Sort image collection by cloud cover", "Select first image", "Merge feature collections", "Sample image regions", "Train classifier", "Classify image", "Display image", "Display classification"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["COPERNICUS/S2"],
+    "Function": ["Filter image collection by date", "Filter image collection by location", "Sort image collection by cloud cover", "Select first image", "Sample image regions", "Train classifier", "Classify image", "Display image", "Display classification"]
+  }
+}
+```
+
+Total_Token_Usage:
+13539

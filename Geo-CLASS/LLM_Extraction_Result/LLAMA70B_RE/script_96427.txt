@@ -1,0 +1,28 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Lake water surface analysis"],
+  "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater", "users/sntopp/Lakes_ply_20171106", "users/sntopp/NCSC_Horsepen_Lake", "users/sarinarinab/CitSci_Washington_Lakes"],
+  "Function": ["Water surface interpolation", "Lake polygon area calculation", "Water classification", "Image collection filtering", "Lake area estimation", "Change detection"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+        "Function": ["Water surface interpolation", "Lake area estimation"]
+    },
+    "relation_2": {
+        "DataSource": ["users/sntopp/Lakes_ply_20171106", "users/sntopp/NCSC_Horsepen_Lake", "users/sarinarinab/CitSci_Washington_Lakes"],
+        "Function": ["Lake polygon area calculation", "Water classification", "Image collection filtering", "Change detection"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4123, 'completion_tokens': 291, 'total_tokens': 4414}

@@ -1,0 +1,18 @@
+{
+  "relation_1": {
+    "DataSource": ["users/LILANJING/CW_buffer"],
+    "Function": ["Clip image to study area", "Extract water features using thresholds", "Buffer features", "Calculate feature area", "Filter features by area"]
+  },
+  "relation_2": {
+    "DataSource": ["COPERNICUS/S2_SR"],
+    "Function": ["Mask clouds and cirrus", "Calculate NDWI", "Calculate NDSI", "Classify water bodies", "Generate water mask", "Clip image to study area", "Extract water features"]
+  },
+  "relation_3": {
+    "DataSource": ["COPERNICUS/S1_GRD"],
+    "Function": ["Subtract HH from HV", "Apply Refined Lee filter", "Convert to natural units", "Convert to dB", "Extract water features"]
+  },
+  "relation_4": {
+    "DataSource": ["UMN/PGC/ArcticDEM/V3/2m_mosaic"],
+    "Function": ["Calculate slope", "Extract water features"]
+  }
+}

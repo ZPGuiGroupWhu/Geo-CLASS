@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+"Theme": ["Vegetation monitoring using MODIS EVI"],
+"DataSource": ["MODIS/006/MOD13Q1"],
+"Function": ["Filtering image collection by date and month", "Calculating average of MODIS EVI", "Clipping images to a specific region", "Performing principal component analysis", "Exporting images to Google Drive"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response that organizes the extracted information into a structured format:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["MODIS/006/MOD13Q1"],
+        "Function": ["Filtering image collection by date and month", "Calculating average of MODIS EVI", "Clipping images to a specific region", "Performing principal component analysis", "Exporting images to Google Drive"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3732, 'completion_tokens': 189, 'total_tokens': 3921}

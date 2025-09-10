@@ -1,0 +1,10 @@
+{
+  "relation_1": {
+    "DataSource": ["projects/ee-kimiachenaary/assets/Tehran"],
+    "Function": ["Filter images by location", "Clip images to region", "Count pixels in region", "Filter images by pixel count", "Generate time series chart", "Calculate mean values", "Calculate max values", "Export data to CSV"]
+  },
+  "relation_2": {
+    "DataSource": ["LANDSAT/LC08/C01/T1_TOA"],
+    "Function": ["Mask clouds in images", "Filter images by date", "Select specific bands", "Calculate NDVI", "Visualize NDVI", "Count pixels in region", "Filter images by pixel count", "Generate time series chart", "Calculate mean values", "Calculate max values", "Export data to CSV"]
+  }
+}

@@ -1,0 +1,25 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["NO2_column_number_density analysis"],
+  "DataSource": ["COPERNICUS/S5P/NRTI/L3_NO2"],
+  "Function": ["clipBorder", "filterDate", "limit", "select", "clip", "map"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S5P/NRTI/L3_NO2"],
+        "Function": ["clipBorder", "filterDate", "limit", "select", "clip", "map"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 8527, 'completion_tokens': 157, 'total_tokens': 8684}

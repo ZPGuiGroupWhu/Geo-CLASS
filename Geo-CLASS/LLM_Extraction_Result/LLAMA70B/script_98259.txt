@@ -1,0 +1,29 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Flood monitoring and water detection in Hue, Vietnam"],
+  "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2", "LANDSAT/LT05/C01/T1_SR"],
+  "Function": ["Filtering image collection by bounds and date", "Sorting image collection by cloud cover", "Creating mosaic image", "Clipping image to boundary", "Calculating normalized difference water index", "Subtracting images", "Applying threshold to image", "Detecting edges in image"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2"],
+        "Function": ["Filtering image collection by bounds and date", "Clipping image to boundary"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LT05/C01/T1_SR"],
+        "Function": ["Sorting image collection by cloud cover", "Creating mosaic image", "Calculating normalized difference water index", "Subtracting images", "Applying threshold to image", "Detecting edges in image"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3212, 'completion_tokens': 302, 'total_tokens': 3514}

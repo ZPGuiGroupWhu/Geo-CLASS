@@ -1,0 +1,11 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "MODIS/006/MOD13Q1"
+        ],
+        "Function": [
+            "Calculate Normalized Infrared Vegetation Index (NIRV)",
+            "Visualize The Processed Data"
+        ]
+    }
+}

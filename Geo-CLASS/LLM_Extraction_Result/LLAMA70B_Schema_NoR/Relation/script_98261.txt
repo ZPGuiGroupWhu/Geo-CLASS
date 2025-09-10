@@ -1,0 +1,37 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "FAO/GAUL_SIMPLIFIED_500m/2015/level2"
+        ],
+        "Function": [
+            "Filtering image collection by bounds and date",
+            "Sorting image collection by cloud cover"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "Creating mosaic image and clipping to boundary",
+            "Calculating normalized difference water index",
+            "Applying threshold to difference image"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "JRC/GSW1_0/GlobalSurfaceWater"
+        ],
+        "Function": [
+            "Refining flood result using additional datasets"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "WWF/HydroSHEDS/03VFDEM"
+        ],
+        "Function": [
+            "Masking out clouds and areas with high slope"
+        ]
+    }
+}

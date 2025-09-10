@@ -1,0 +1,5 @@
+{
+  "Theme": ["Urban infrastructure mapping"],
+  "DataSource": ["users/edimilsonrodriguessantos/MAPBIOMAS/INFRAURBANA6-FT-v6/"],
+  "Function": ["Create initial image", "Iterate over years", "Select previous year's classification", "Select current year's classification", "Combine classifications", "Add new classification band", "Remap classification values", "Create image collection", "Generate video thumbnail URL"]
+}

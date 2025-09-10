@@ -1,0 +1,14 @@
+{
+    "Summary": [
+        "Iteratively generates land cover classification images from 1986 to 2020."
+    ],
+    "Theme": [
+        "LAND USE/LAND COVER CLASSIFICATION"
+    ],
+    "DataSource": [
+        "users/edimilsonrodriguessantos/MAPBIOMAS/INFRAURBANA6-FT-v6/"
+    ],
+    "Function": [
+        "Classify Images Based On Trained Model"
+    ]
+}

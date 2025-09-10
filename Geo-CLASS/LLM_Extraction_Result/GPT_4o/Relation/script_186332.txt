@@ -1,0 +1,19 @@
+{
+  "relation_1": {
+    "DataSource": ["MODIS/006/MOD09Q1"],
+    "Function": [
+      "Filter image collection by date",
+      "Clip images to study area",
+      "Calculate NDVI",
+      "Create multiband image",
+      "Sample training data",
+      "Train KMeans clusterer",
+      "Cluster images",
+      "Merge classes",
+      "Refine single crop class",
+      "Refine double crop class",
+      "Refine perennial crop class",
+      "Create mosaic of refined classes"
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_TOA"
+        ],
+        "Function": [
+            "Filtering image collection by date and bounds",
+            "Calculating median image",
+            "Clipping image to ROI"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_TOA"
+        ],
+        "Function": [
+            "Calculating NDVI",
+            "Masking image based on NDVI threshold"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "users/chaitanyaks/Maharashtra/Pune_District"
+        ],
+        "Function": [
+            "Filtering image collection by bounds",
+            "Clipping image to ROI"
+        ]
+    }
+}

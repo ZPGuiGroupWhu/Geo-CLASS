@@ -1,0 +1,22 @@
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC8_SR", "LANDSAT/LC8_L1T_TOA", "LANDSAT/LC08/C01/T1_TOA"],
+        "Function": ["Image collection filtering", "NDVI calculation", "NBR calculation"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LE7_L1T_TOA_FMASK", "LANDSAT/LE7_L1T_TOA"],
+        "Function": ["Image casting", "Image mosaicking"]
+    },
+    "relation_3": {
+        "DataSource": ["LANDSAT/LT5_L1T_TOA_FMASK"],
+        "Function": ["Image exporting"]
+    },
+    "relation_4": {
+        "DataSource": ["users/khoapv/xatong"],
+        "Function": ["Feature collection creation", "Image visualization"]
+    },
+    "relation_5": {
+        "DataSource": ["ft:1Fp3oWwAiWxh1XyXIc1HYl_eWBP9Uh8froBiiC9CG"],
+        "Function": ["None"]
+    }
+}

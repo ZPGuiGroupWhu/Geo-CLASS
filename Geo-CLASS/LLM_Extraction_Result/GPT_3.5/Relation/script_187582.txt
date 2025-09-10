@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["users/zolokiala/parthenium1", "users/zolokiala/buffer"],
+        "Function": ["Cloud masking using Sentinel-2 QA band"]
+    },
+    "relation_2": {
+        "DataSource": ["users/zolokiala/training", "users/zolokiala/test", "COPERNICUS/S2"],
+        "Function": ["Vegetation index computation", "Classification training and mapping"]
+    }
+}

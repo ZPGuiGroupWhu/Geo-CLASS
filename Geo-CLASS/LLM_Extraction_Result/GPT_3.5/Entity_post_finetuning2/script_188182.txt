@@ -1,0 +1,31 @@
+{
+    "Summary": [
+        "Script processes Landsat and other image collections for change detection in Zimbabwe."
+    ],
+    "Theme": [
+        "LAND USE/LAND COVER"
+    ],
+    "DataSource": [
+        "users/kindgard/Africa",
+        "users/kindgard/SUD",
+        "users/kindgard/AfricaS",
+        "users/kindgard/AmericaN",
+        "users/kindgard/Asia2",
+        "LANDSAT/LT5_L1T",
+        "LANDSAT/LE7_L1T",
+        "LANDSAT/LC08/C01/T1_RT",
+        "JRC/GSW1_0/GlobalSurfaceWater",
+        "users/ValeriaContessa/zim_waterbody",
+        "users/ValeriaContessa/Zimbabwe_Anderson"
+    ],
+    "Function": [
+        "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover",
+        "Mosaic Landsat Images",
+        "Calculate Ratio Between Recent And Historical Images",
+        "Run Algorithm For Change Detection",
+        "Land Cover Change Analysis",
+        "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover",
+        "Classify Images Based On Pre And Post Fire Data",
+        "Apply Mask To Classification Results"
+    ]
+}

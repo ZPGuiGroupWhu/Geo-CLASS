@@ -1,0 +1,31 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover analysis using Sentinel-2 imagery"],
+  "DataSource": ["COPERNICUS/S2_SR"],
+  "Function": ["Filtering image collection by cloud cover", "Computing NDVI and adding as new band", "Masking clouds from images", "Computing NDWI and adding as new band", "Plotting NDVI and NDWI time series"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response that organizes the extracted information into a structured format:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["Filtering image collection by cloud cover", "Masking clouds from images"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["Computing NDVI and adding as new band", "Computing NDWI and adding as new band"]
+    },
+    "relation_3": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["Plotting NDVI and NDWI time series"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3351, 'completion_tokens': 261, 'total_tokens': 3612}

@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["The script generates annual surface reflectance time series stacks for Landsat sensors and calculates statistics for specific HUC regions in the Pacific Northwest."],
+  "Theme": ["Surface reflectance time series analysis", "Statistical analysis for HUC regions"],
+  "DataSource": ["MODIS/006/MOD10A1", "users/ak_glaciers/points_w_ids_OR", "users/ak_glaciers/or_snotel_sites", "users/ak_glaciers/NWCC_high_resolution_coordinates_2019_edited_updated_fields_final", "USGS/WBD/2017/HUC08"],
+  "Function": ["Harmonization of Landsat sensors for consistent analysis", "Generation of surface reflectance image collections", "Calculation of normalized difference vegetation index (NDVI)", "Statistical analysis and region-specific statistics calculation"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["MODIS/006/MOD10A1"],
+        "Function": ["Generation of surface reflectance image collections"]
+    },
+    "relation_2": {
+        "DataSource": ["users/ak_glaciers/points_w_ids_OR", "users/ak_glaciers/or_snotel_sites", "users/ak_glaciers/NWCC_high_resolution_coordinates_2019_edited_updated_fields_final"],
+        "Function": ["Harmonization of Landsat sensors for consistent analysis", "Statistical analysis and region-specific statistics calculation"]
+    },
+    "relation_3": {
+        "DataSource": ["USGS/WBD/2017/HUC08"],
+        "Function": ["Statistical analysis and region-specific statistics calculation"]
+    }
+}
+```

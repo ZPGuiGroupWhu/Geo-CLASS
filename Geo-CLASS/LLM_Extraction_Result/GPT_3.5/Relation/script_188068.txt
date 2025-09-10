@@ -1,0 +1,6 @@
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S1_GRD", "JRC/GSW1_0/GlobalSurfaceWater", "WWF/HydroSHEDS/03VFDEM", "MODIS/006/MCD12Q1", "JRC/GHSL/P2016/POP_GPW_GLOBE_V1/2015"],
+        "Function": ["Data filtering based on polarization, pass direction, and resolution", "Noise reduction through smoothing", "Calculating flooded area by comparing before and after images", "Minimizing uncertainty by excluding perennial water bodies", "Analyzing flooded area based on slope", "Calculating flooded area in hectares", "Estimating exposed population", "Estimating affected cropland area", "Estimating affected urban area"]
+    }
+}

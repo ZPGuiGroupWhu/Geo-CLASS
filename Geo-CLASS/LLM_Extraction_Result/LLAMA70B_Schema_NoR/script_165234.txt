@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["MODIS vegetation analysis", "Country boundary analysis"],
+  "DataSource": ["MODIS/006/MOD09GA", "users/giswqs/public/countries"],
+  "Function": ["Filtering image collection by year", "Cloud masking", "Scaling image values", "Calculating NDVI", "Adding date to image", "Adding month to image", "Adding day of year to image", "Quality mosaic", "Selecting greenest pixel", "Visualizing NDVI", "Visualizing greenest month", "Visualizing greenest day of year"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response that organizes the extracted information into a structured format:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["MODIS/006/MOD09GA"],
+        "Function": ["Filtering image collection by year", "Cloud masking", "Scaling image values", "Calculating NDVI", "Adding date to image", "Adding month to image", "Adding day of year to image"]
+    },
+    "relation_2": {
+        "DataSource": ["users/giswqs/public/countries"],
+        "Function": ["Visualizing NDVI", "Visualizing greenest month", "Visualizing greenest day of year", "Quality mosaic", "Selecting greenest pixel"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2450, 'completion_tokens': 301, 'total_tokens': 2751}

@@ -1,0 +1,5 @@
+{
+  "Theme": ["Land Surface Temperature", "NDVI Analysis", "Cloud Masking"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Center map on geometry", "Mask clouds in image collection", "Set visualization parameters", "Load and filter image collection", "Clip images to geometry", "Calculate median image", "Add layer to map", "Compute NDVI", "Reduce image collection to list", "Map function over image collection", "Calculate fractional vegetation", "Calculate emissivity", "Calculate land surface temperature", "Export image to Drive"]
+}

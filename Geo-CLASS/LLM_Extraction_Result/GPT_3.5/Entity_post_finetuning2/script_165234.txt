@@ -1,0 +1,22 @@
+{
+    "Summary": [
+        "Script processes MODIS data for NDVI analysis and visualization."
+    ],
+    "Theme": [
+        "NORMALIZED DIFFERENCE VEGETATION INDEX (NDVI)",
+        "INFRARED RADIANCE",
+        "ERUPTION DYNAMICS"
+    ],
+    "DataSource": [
+        "MODIS/006/MOD09GA",
+        "users/giswqs/public/countries"
+    ],
+    "Function": [
+        "Image Cloud Masking",
+        "Seasonal NDVI Analysis",
+        "Burn Date Extraction",
+        "Burn Date Extraction",
+        "Boundary Extraction",
+        "Quality Mosaic Generation"
+    ]
+}

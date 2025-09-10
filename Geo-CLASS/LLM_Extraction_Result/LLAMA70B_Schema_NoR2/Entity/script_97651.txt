@@ -1,0 +1,5 @@
+{
+  "Theme": ["Landsat 7 image processing and cloud masking"],
+  "DataSource": ["LANDSAT/LE07/C01/T1_SR"],
+  "Function": ["Filtering image collections by date and path/row", "Masking occluded pixels in images", "Exporting image collections to Google Drive"]
+}

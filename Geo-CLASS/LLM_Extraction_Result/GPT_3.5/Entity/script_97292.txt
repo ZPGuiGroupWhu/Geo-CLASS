@@ -1,0 +1,6 @@
+{
+  "Summary": ["Segmentation and classification of agricultural land using NAIP and CDL data."],
+  "Theme": ["Agricultural land classification"],
+  "DataSource": ["USDA/NAIP/DOQQ", "USDA/NASS/CDL/2016"],
+  "Function": ["Image filtering based on date and location", "Image segmentation using SNIC algorithm", "Cluster properties computation", "Classifier training and object classification"]
+}

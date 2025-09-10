@@ -1,0 +1,18 @@
+{
+  "relation_1": {
+    "DataSource": ["COPERNICUS/S2"],
+    "Function": ["Filter image collection by date and location", "Remove clouds from images", "Calculate median of images", "Compute normalized difference index", "Apply threshold to index", "Mask and clip images"]
+  },
+  "relation_2": {
+    "DataSource": ["COPERNICUS/S1_GRD"],
+    "Function": ["Filter image collection by date and location", "Calculate percentile reduction", "Subtract images", "Mask and clip images"]
+  },
+  "relation_3": {
+    "DataSource": ["users/eeranyartrodrigo/ferrocarriles/estaciones_prospectadas_area"],
+    "Function": ["Filter image collection by date and location", "Mask and clip images"]
+  },
+  "relation_4": {
+    "DataSource": ["WWF/HydroSHEDS/03VFDEM"],
+    "Function": ["Compute terrain slope", "Mask areas based on slope"]
+  }
+}

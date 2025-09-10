@@ -1,0 +1,19 @@
+{
+    "Theme": [
+        "Land cover classification and vegetation monitoring"
+    ],
+    "DataSource": [
+        "LANDSAT/LT4_L1T_TOA",
+        "LANDSAT/LT5_L1T_TOA",
+        "LANDSAT/LC8_L1T_TOA",
+        "LANDSAT/LE7_L1T_TOA",
+        "FAO/GAUL/2015/level0"
+    ],
+    "Function": [
+        "Cloud masking and shadow detection",
+        "Image collection filtering",
+        "NDVI calculation",
+        "Image compositing",
+        "Cloud and shadow masking"
+    ]
+}

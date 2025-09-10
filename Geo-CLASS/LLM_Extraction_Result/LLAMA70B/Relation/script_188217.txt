@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C02/T1_L2", "LANDSAT/LT05/C02/T1_L2", "LANDSAT/LE07/C02/T1_L2"],
+        "Function": ["Masking Landsat 8 images", "Masking Landsat 7 images", "Renaming Landsat 8 bands", "Calculating indices", "Normalizing image values", "Printing histograms", "Filling gaps in images", "Reclassifying images"]
+    },
+    "relation_2": {
+        "DataSource": ["users/kiniklihakan/milanshp"],
+        "Function": ["Calculating class areas", "Creating land cover charts", "Buffering polygons"]
+    }
+}

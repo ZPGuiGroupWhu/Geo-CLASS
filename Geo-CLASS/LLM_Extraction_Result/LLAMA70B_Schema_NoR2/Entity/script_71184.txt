@@ -1,0 +1,5 @@
+{
+  "Theme": ["Lake water quality monitoring"],
+  "DataSource": ["LANDSAT/LE7_L1T_32DAY_TOA"],
+  "Function": ["Cloud scoring", "Image filtering", "MNDWI calculation", "Gap filling using flooding frequency"]
+}

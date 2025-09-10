@@ -1,0 +1,6 @@
+{
+  "Summary": ["Script processes Landsat imagery for land change classification in Grenada."],
+  "Theme": ["Land cover change detection"],
+  "DataSource": ["users/EL/Grenada", "LANDSAT/LE7_L1T", "LANDSAT/LC08/C01/T1_RT", "users/EL/G_forest"],
+  "Function": ["Image collection filtering based on date and cloud cover", "Buffer creation around country borders", "Composite creation for Landsat 7 and Landsat 8", "Band ratio calculation for different spectral bands", "Land change classification using CART classifier"]
+}

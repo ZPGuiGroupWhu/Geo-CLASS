@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Water quality analysis of Oneida Lake"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Filtering cloud cover from Landsat 8 images", "Clipping images to a region of interest", "Computing median of image collection", "Generating natural color composite", "Calculating normalized difference vegetation index", "Computing enhanced vegetation index", "Computing soil adjusted vegetation index", "Creating legend for visualization"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response that organizes the extracted information into a structured format:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Filtering cloud cover from Landsat 8 images", "Clipping images to a region of interest", "Computing median of image collection", "Generating natural color composite", "Calculating normalized difference vegetation index", "Computing enhanced vegetation index", "Computing soil adjusted vegetation index", "Creating legend for visualization"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3037, 'completion_tokens': 240, 'total_tokens': 3277}

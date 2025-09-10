@@ -1,0 +1,6 @@
+{
+  "Summary": ["The script calculates the correlation between total precipitation and cloud cover percentage in East Asia for a specific time period."],
+  "Theme": ["Correlation analysis between precipitation and cloud cover"],
+  "DataSource": ["UCSB-CHG/CHIRPS/PENTAD", "COPERNICUS/S2_CLOUD_PROBABILITY"],
+  "Function": ["Image collection filtering based on date and location", "Cloud masking operation for cloud probability images", "Summation of cloud-free images to create a composite image", "Calculation of correlation coefficient between two images"]
+}

@@ -1,0 +1,83 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Flood impact analysis", "Population exposure", "Agricultural impact", "Urban area impact"],
+  "DataSource": [
+    "COPERNICUS/S1_GRD",
+    "JRC/GSW1_0/GlobalSurfaceWater",
+    "WWF/HydroSHEDS/03VFDEM",
+    "JRC/GHSL/P2016/POP_GPW_GLOBE_V1/2015",
+    "MODIS/006/MCD12Q1"
+  ],
+  "Function": [
+    "Define analysis period",
+    "Set parameters",
+    "Filter image collection",
+    "Create mosaics",
+    "Apply smoothing",
+    "Calculate difference",
+    "Apply threshold",
+    "Mask permanent water bodies",
+    "Mask areas with slope",
+    "Calculate flood area",
+    "Calculate exposed population",
+    "Calculate affected cropland",
+    "Calculate affected urban area",
+    "Display results on map",
+    "Export flood extent",
+    "Export exposed population"
+  ]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["COPERNICUS/S1_GRD"],
+    "Function": [
+      "Filter image collection",
+      "Create mosaics",
+      "Apply smoothing",
+      "Calculate difference",
+      "Apply threshold",
+      "Calculate flood area",
+      "Display results on map",
+      "Export flood extent"
+    ]
+  },
+  "relation_2": {
+    "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+    "Function": [
+      "Mask permanent water bodies",
+      "Calculate flood area"
+    ]
+  },
+  "relation_3": {
+    "DataSource": ["WWF/HydroSHEDS/03VFDEM"],
+    "Function": [
+      "Mask areas with slope",
+      "Calculate flood area"
+    ]
+  },
+  "relation_4": {
+    "DataSource": ["JRC/GHSL/P2016/POP_GPW_GLOBE_V1/2015"],
+    "Function": [
+      "Calculate exposed population",
+      "Display results on map",
+      "Export exposed population"
+    ]
+  },
+  "relation_5": {
+    "DataSource": ["MODIS/006/MCD12Q1"],
+    "Function": [
+      "Calculate affected cropland",
+      "Calculate affected urban area",
+      "Display results on map"
+    ]
+  }
+}
+```
+
+Total_Token_Usage:
+12907

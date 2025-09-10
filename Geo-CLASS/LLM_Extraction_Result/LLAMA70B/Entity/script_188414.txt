@@ -1,0 +1,5 @@
+{
+  "Theme": ["Land Surface Temperature Analysis"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Cloud masking", "Image filtering", "NDVI calculation", "LST calculation", "Emissivity calculation", "Fractional vegetation calculation", "Image reduction", "Image clipping", "Image visualization"]
+}

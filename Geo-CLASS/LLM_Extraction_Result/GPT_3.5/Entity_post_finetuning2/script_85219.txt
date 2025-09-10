@@ -1,0 +1,20 @@
+{
+    "Summary": [
+        "Script compares false-color images and NBR index using Sentinel 2 data."
+    ],
+    "Theme": [
+        "WILDFIRE SUPPRESSION"
+    ],
+    "DataSource": [
+        "users/diegogmzd/CHACO",
+        "COPERNICUS/S2",
+        "COPERNICUS/S3/OLCI"
+    ],
+    "Function": [
+        "Image Cloud Masking",
+        "Filter Image Collection",
+        "Image Mosaicking",
+        "Add Normalized Difference Band",
+        "Visualization Setup"
+    ]
+}

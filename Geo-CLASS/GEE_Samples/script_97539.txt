@@ -1,0 +1,148 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var geometry = 
+    /* color: #d63000 */
+    /* shown: false */
+    ee.Geometry.Polygon(
+        [[[47.62195900822489, 33.03646309286458],
+          [47.62195900822489, 29.878925916922945],
+          [50.58826760197489, 29.878925916922945],
+          [50.58826760197489, 33.03646309286458]]], null, false);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+Map.centerObject(geometry);
+
+Map.addLayer(geometry);
+
+var landsat8 = ee.ImageCollection('LANDSAT/LC08/C01/T1_SR')
+
+.filterBounds(geometry)
+
+.filterDate('2020-03-01','2020-07-01')
+
+.filter(ee.Filter.lessThanOrEquals('WRS_PATH' , 166))
+
+.filter(ee.Filter.greaterThanOrEquals('WRS_PATH' , 164))
+
+.filter(ee.Filter.lessThanOrEquals('WRS_ROW',39))
+
+.filter(ee.Filter.greaterThanOrEquals('WRS_ROW',37))
+
+.filter(ee.Filter.lessThan('CLOUD_COVER' , 1));
+
+
+
+print(landsat8);
+
+
+
+var l8new = landsat8.median().clip(geometry);
+
+Map.addLayer(l8new);
+
+print(l8new);
+
+
+
+
+
+var ndvi = l8new.expression(
+
+    '(N - R)/(N + R)', {
+
+      'NIR': l8new.select('B5'),
+
+      'RED': l8new.select('B4')
+
+});
+
+
+
+
+
+var savi = l8new.expression(
+
+    '(1.5*(N - R))/(N + R+ 0.5)', {
+
+      'NIR': l8new.select('B5'),
+
+      'RED': l8new.select('B4')
+
+});
+
+
+
+  Export.image.toDrive({
+
+    image : ndvi,
+
+    description :"ndvi",
+
+    scale : 500,
+
+    region : geometry
+
+  }); 
+
+  
+
+    Export.image.toDrive({
+
+    image : savi,
+
+    description :"savi",
+
+    scale : 500,
+
+    region : geometry
+
+  }); 
+
+
+
+
+
+
+
+
+
+
+
+var B10 = l8new.select("B10").multiply(0.1);
+
+
+
+var B11 = l8new.select("B11").multiply(0.1);
+
+
+
+   
+
+
+
+  Export.image.toDrive({
+
+    image : B10,
+
+    description :"landsat_B10",
+
+    scale : 30,
+
+    region : geometry
+
+  }); 
+
+  
+
+  Export.image.toDrive({
+
+    image : B11,
+
+    description :"landsat_B11",
+
+    scale : 30,
+
+    region : geometry
+
+  });  
+
+
+

@@ -1,0 +1,44 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover classification and forest type analysis"],
+  "DataSource": ["users/EL/TrinidadandTobago", "users/EL/trinidad_forest_type_landcover_28july2011", "users/EL/tobago_forest_type_landcover_06may2011", "LANDSAT/LC8_L1T", "COPERNICUS/S2", "users/christinacorbane/MT_comp_proj", "JRC/GSW1_0/GlobalSurfaceWater"],
+  "Function": ["Vector upload and visualization", "Raster upload and visualization", "Image collection filtering", "Image filtering by date and cloud cover", "Polygon creation", "Mosaic creation with Landsat simple composite", "Ratio band calculation", "Image classification", "Post-classification editing", "Masking", "Image exporting"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/EL/TrinidadandTobago"],
+        "Function": ["Vector upload and visualization"]
+    },
+    "relation_2": {
+        "DataSource": ["users/EL/trinidad_forest_type_landcover_28july2011", "users/EL/tobago_forest_type_landcover_06may2011"],
+        "Function": ["Raster upload and visualization"]
+    },
+    "relation_3": {
+        "DataSource": ["LANDSAT/LC8_L1T"],
+        "Function": ["Image collection filtering", "Image filtering by date and cloud cover", "Mosaic creation with Landsat simple composite", "Ratio band calculation"]
+    },
+    "relation_4": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Image filtering by date and cloud cover", "Image classification", "Post-classification editing"]
+    },
+    "relation_5": {
+        "DataSource": ["users/christinacorbane/MT_comp_proj"],
+        "Function": ["Masking"]
+    },
+    "relation_6": {
+        "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+        "Function": ["Masking"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4293, 'completion_tokens': 540, 'total_tokens': 4833}

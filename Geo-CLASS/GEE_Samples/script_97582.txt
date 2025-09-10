@@ -1,0 +1,249 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var KPboundary = ee.FeatureCollection("users/avaise99/KP_Boundary"),
+    April_2018 = 
+    /* color: #d63000 */
+    /* shown: false */
+    ee.Geometry.MultiPoint(
+        [[70.13914714781875, 32.700352874542105],
+         [70.6610450028148, 31.328584166183152],
+         [70.70660248696134, 31.35644032568043],
+         [70.68059578835295, 31.39806256988187],
+         [70.71355477272795, 31.409344295989627],
+         [70.64597905314545, 31.563688791342106],
+         [70.84737845804229, 31.978134240727424],
+         [70.86496163219445, 31.990656001836243],
+         [71.1776454229292, 32.24274101223262],
+         [71.17562993545533, 32.96958602529106],
+         [71.40565618057252, 32.99953647126801],
+         [71.41835912246705, 33.02803754966324],
+         [73.30374501455042, 34.468434119681994]]),
+    May = 
+    /* color: #fff716 */
+    /* shown: false */
+    ee.Geometry.MultiPoint(
+        [[72.9133844038962, 34.08493771498938],
+         [72.91098114461886, 34.083800337170274],
+         [72.90909799714917, 34.05210677673186],
+         [73.06157431725693, 33.95009282251503]]),
+    June = 
+    /* color: #188b1b */
+    /* shown: false */
+    ee.Geometry.Point([73.56583540778807, 35.516075680953456]);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+Map.centerObject(KPboundary, 8); 
+
+
+
+//----------------------------------------------------------------------------------------------------
+
+
+
+// DISPLAYING KP BOUNDARY
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   width: 2
+
+
+
+
+
+
+
+// ----------------------------------------------------------------------------------------------------
+
+
+
+// lOADING LANDSAT 1 MONTH PREVIOUS IMAGE FOR BURNED PATCHES CONFIRMATION
+
+
+
+var l8 = ee.ImageCollection("LANDSAT/LC08/C02/T1_TOA").filterBounds(KPboundary)
+
+    .filterDate("2018-02-01","2018-03-31")
+
+    .sort("CLOUD_COVER", false)
+
+    .map(function(img) {
+
+        var cloud = img.select("QA_PIXEL").eq(4).not();
+
+        return img.updateMask(cloud);
+
+    });
+
+    
+
+print(l8);
+
+
+
+var KPfire = l8.mosaic().clip(KPboundary);
+
+
+
+var visParams = {bands: ['B7', 'B5', 'B4'], min:0, max: 0.3};
+
+  Map.addLayer(KPfire, visParams , 'March Image 2018');
+
+
+
+// ----------------------------------------------------------------------------------------------------
+
+
+
+// lOADING LANDSAT 8 TOA COLECTION FOR THE MOMTH APRIL 2018
+
+
+
+var l8 = ee.ImageCollection("LANDSAT/LC08/C02/T1_TOA").filterBounds(KPboundary)
+
+    .filterDate("2018-04-01","2018-04-30")
+
+    .sort("CLOUD_COVER", false)
+
+    .map(function(img) {
+
+        var cloud = img.select("QA_PIXEL").eq(4).not();
+
+        return img.updateMask(cloud);
+
+    });
+
+    
+
+print(l8);
+
+
+
+var KPfire = l8.mosaic().clip(KPboundary);
+
+
+
+var visParams = {bands: ['B7', 'B5', 'B4'], min:0, max: 0.3};
+
+  Map.addLayer(KPfire, visParams , 'April Image 2018');
+
+  
+
+  //.................................................................................................
+
+  
+
+  // lOADING LANDSAT 8 TOA COLECTION FOR THE MOMTH MAY 2018
+
+
+
+var l8 = ee.ImageCollection("LANDSAT/LC08/C02/T1_TOA").filterBounds(KPboundary)
+
+    .filterDate("2018-05-01","2018-05-30")
+
+    .sort("CLOUD_COVER", false)
+
+    .map(function(img) {
+
+        var cloud = img.select("QA_PIXEL").eq(4).not();
+
+        return img.updateMask(cloud);
+
+    });
+
+    
+
+print(l8);
+
+
+
+var KPfire = l8.mosaic().clip(KPboundary);
+
+
+
+var visParams = {bands: ['B7', 'B5', 'B4'], min:0, max: 0.3};
+
+  Map.addLayer(KPfire, visParams , 'May Image 2018');
+
+  
+
+  //...............................................................................................
+
+  
+
+  // lOADING LANDSAT 8 TOA COLECTION FOR THE MOMTH JUNE 2018
+
+
+
+var l8 = ee.ImageCollection("LANDSAT/LC08/C02/T1_TOA").filterBounds(KPboundary)
+
+    .filterDate("2018-06-01","2018-06-30")
+
+    .sort("CLOUD_COVER", false)
+
+    .map(function(img) {
+
+        var cloud = img.select("QA_PIXEL").eq(4).not();
+
+        return img.updateMask(cloud);
+
+    });
+
+    
+
+print(l8);
+
+
+
+var KPfire = l8.mosaic().clip(KPboundary);
+
+
+
+var visParams = {bands: ['B7', 'B5', 'B4'], min:0, max: 0.3};
+
+  Map.addLayer(KPfire, visParams , 'June Image 2018');
+
+  
+
+  //.....................................................................................
+
+  
+
+  // lOADING LANDSAT 8 TOA COLECTION FOR THE MOMTH JULY 2018
+
+
+
+var l8 = ee.ImageCollection("LANDSAT/LC08/C02/T1_TOA").filterBounds(KPboundary)
+
+    .filterDate("2018-07-01","2018-07-30")
+
+    .sort("CLOUD_COVER", false)
+
+    .map(function(img) {
+
+        var cloud = img.select("QA_PIXEL").eq(4).not();
+
+        return img.updateMask(cloud);
+
+    });
+
+    
+
+print(l8);
+
+
+
+var KPfire = l8.mosaic().clip(KPboundary);
+
+
+
+var visParams = {bands: ['B7', 'B5', 'B4'], min:0, max: 0.3};
+
+  Map.addLayer(KPfire, visParams , 'July Image 2018');

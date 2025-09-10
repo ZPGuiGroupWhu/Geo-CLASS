@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Script processes Landsat 8 data for land cover classification."],
+  "Theme": ["Land cover classification"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR", "LANDSAT/LC08/C01/T1", "users/nclinton/demo_landcover_labels"],
+  "Function": ["Cloud masking for image preprocessing", "Training a classification model", "Accuracy assessment using error matrix", "Generating area chart for land cover classes", "Applying different classifiers for classification"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR", "LANDSAT/LC08/C01/T1"],
+        "Function": ["Cloud masking for image preprocessing", "Training a classification model", "Accuracy assessment using error matrix", "Applying different classifiers for classification"]
+    },
+    "relation_2": {
+        "DataSource": ["users/nclinton/demo_landcover_labels"],
+        "Function": ["Generating area chart for land cover classes"]
+    }
+}
+```

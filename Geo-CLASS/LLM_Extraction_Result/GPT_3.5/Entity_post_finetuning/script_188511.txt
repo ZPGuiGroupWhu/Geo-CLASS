@@ -1,0 +1,19 @@
+{
+    "Summary": [
+        "Script calculates correlation between precipitation and cloud cover for East Asia in 2021."
+    ],
+    "Theme": [
+        "STRATOSPHERIC CLOUDS (OBSERVED/ANALYZED)"
+    ],
+    "DataSource": [
+        "UCSB-CHG/CHIRPS/PENTAD",
+        "COPERNICUS/S2_CLOUD_PROBABILITY"
+    ],
+    "Function": [
+        "Cloud Masking And Quality Filtering",
+        "Data Fusion And Mosaicking",
+        "Spatial Intersection And Algebra",
+        "Calculating terrain slope and aspect from DEMs",
+        "Terrain And Hydrological Analysis"
+    ]
+}

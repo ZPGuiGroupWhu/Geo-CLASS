@@ -1,0 +1,17 @@
+{
+    "Theme": [
+        "Vegetation analysis using Sentinel-2 imagery"
+    ],
+    "DataSource": [
+        "users/cxliu2015/BYDwater20210325",
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "Image collection filtering",
+        "Cloud masking",
+        "NDVI calculation",
+        "Image compositing",
+        "Percentile calculation",
+        "Image exporting"
+    ]
+}

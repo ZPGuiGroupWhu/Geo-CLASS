@@ -1,0 +1,25 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land use/land cover classification"],
+  "DataSource": ["users/edimilsonrodriguessantos/MAPBIOMAS/INFRAURBANA6-FT-v6/"],
+  "Function": ["Image collection creation", "Image masking and renaming", "Image band addition", "Image remapping", "Video generation"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/edimilsonrodriguessantos/MAPBIOMAS/INFRAURBANA6-FT-v6/"],
+        "Function": ["Image collection creation", "Image masking and renaming", "Image band addition", "Image remapping", "Video generation"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2879, 'completion_tokens': 194, 'total_tokens': 3073}

@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Generates weekly Sentinel-1 composites for floods in Gujarat and allows user comparison."],
+  "Theme": ["Flood monitoring in Gujarat"],
+  "DataSource": ["users/hrishippatel/IndiaStates", "COPERNICUS/S1_GRD"],
+  "Function": ["Create weekly Sentinel-1 composites for flood monitoring", "Add layer selection widget for user comparison"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/hrishippatel/IndiaStates"],
+        "Function": ["Create weekly Sentinel-1 composites for flood monitoring", "Add layer selection widget for user comparison"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Create weekly Sentinel-1 composites for flood monitoring"]
+    }
+}
+```

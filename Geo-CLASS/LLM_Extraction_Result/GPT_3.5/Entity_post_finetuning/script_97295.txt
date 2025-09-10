@@ -1,0 +1,20 @@
+{
+    "Summary": [
+        "Blend Dynamic World LULC labels with Sentinel-2 imagery."
+    ],
+    "Theme": [
+        "LAND USE/LAND COVER CLASSIFICATION"
+    ],
+    "DataSource": [
+        "GOOGLE/DYNAMICWORLD/V1",
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "Cloud Masking And Quality Filtering",
+        "NDVI (Normalized Difference Vegetation Index calculation)",
+        "Data Visualization And Mapping",
+        "MNDWI (Modified Normalized Difference Water Index calculation)",
+        "Time Series Analysis",
+        "Merging (Combining multiple bands into one dataset)"
+    ]
+}

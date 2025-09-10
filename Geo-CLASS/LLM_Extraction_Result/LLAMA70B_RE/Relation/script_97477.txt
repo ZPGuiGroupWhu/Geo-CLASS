@@ -1,0 +1,14 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "Filter cloud cover",
+            "Clip image to ROI",
+            "Compute NDVI",
+            "Compute EVI",
+            "Compute SABI"
+        ]
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "Summary": [
+        "Tracking Crop Greenness in Merced County using NDVI time series"
+    ],
+    "Theme": [
+        "CROPLAND",
+        "SOIL EROSION"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C02/T1_L2",
+        "LANDSAT/LC08/C02/T1_L2"
+    ],
+    "Function": [
+        "NDVI (Normalized Difference Vegetation Index calculation)",
+        "NDVI (Normalized Difference Vegetation Index calculation)"
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/elaurenyoung/usa_states"
+        ],
+        "Function": [
+            "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover",
+            "Calculates And Displays Area For Each Land Cover Category",
+            "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover",
+            "Visualize NDVI And Date Information"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "users/elaurenyoung/Site_summary_12_Apr_2022-point"
+        ],
+        "Function": [
+            "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover",
+            "Calculates And Displays Area For Each Land Cover Category",
+            "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover",
+            "Visualize NDVI And Date Information"
+        ]
+    }
+}

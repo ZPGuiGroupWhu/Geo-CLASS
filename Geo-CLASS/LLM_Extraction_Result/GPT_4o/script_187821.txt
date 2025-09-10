@@ -1,0 +1,29 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Fire monitoring", "Burn severity analysis", "Burned area calculation"],
+  "DataSource": ["FAO/GAUL/2015/level0", "COPERNICUS/S2", "LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Select study area", "Set time frame", "Select satellite platform", "Filter image collection by date", "Filter image collection by location", "Mask clouds and snow", "Mosaic and clip images", "Calculate normalized burn ratio", "Calculate difference in burn ratio", "Add layers to map", "Classify burn severity", "Calculate burned area", "Export image", "Export burned area stats"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["FAO/GAUL/2015/level0"],
+    "Function": ["Select study area"]
+  },
+  "relation_2": {
+    "DataSource": ["COPERNICUS/S2"],
+    "Function": ["Select satellite platform", "Filter image collection by date", "Filter image collection by location", "Mask clouds and snow", "Mosaic and clip images", "Calculate normalized burn ratio", "Calculate difference in burn ratio", "Add layers to map", "Classify burn severity", "Calculate burned area", "Export image", "Export burned area stats"]
+  },
+  "relation_3": {
+    "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+    "Function": ["Select satellite platform", "Filter image collection by date", "Filter image collection by location", "Mask clouds and snow", "Mosaic and clip images", "Calculate normalized burn ratio", "Calculate difference in burn ratio", "Add layers to map", "Classify burn severity", "Calculate burned area", "Export image", "Export burned area stats"]
+  }
+}
+```
+
+Total_Token_Usage:
+13623

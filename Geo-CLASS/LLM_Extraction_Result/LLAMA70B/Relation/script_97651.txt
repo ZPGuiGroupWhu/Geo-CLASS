@@ -1,0 +1,6 @@
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LE07/C01/T1_SR"],
+        "Function": ["Filter image collection by date and path/row", "Mask occluded pixels using cloud confidence and other flags", "Export image collection to Google Drive"]
+    }
+}

@@ -1,0 +1,27 @@
+Entity Recognition:
+```
+{
+  "Theme": ["Land cover classification and analysis using Sentinel-1, Landsat 8, and Sentinel-2 data"],
+  "DataSource": ["users/khoapv/xatong", "COPERNICUS/S1_GRD", "LANDSAT/LC08/C01/T1_SR", "COPERNICUS/S2"],
+  "Function": ["Add NDVI and time to images", "Filter images by date and bounds", "Map functions to image collections", "Join image collections by date", "Reduce regions for each station"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/khoapv/xatong"],
+        "Function": ["Add NDVI and time to images", "Filter images by date and bounds", "Map functions to image collections"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S1_GRD", "LANDSAT/LC08/C01/T1_SR", "COPERNICUS/S2"],
+        "Function": ["Add NDVI and time to images", "Filter images by date and bounds", "Map functions to image collections", "Join image collections by date", "Reduce regions for each station"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3859, 'completion_tokens': 304, 'total_tokens': 4163}

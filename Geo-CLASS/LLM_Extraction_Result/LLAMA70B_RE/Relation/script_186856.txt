@@ -1,0 +1,31 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Cloud Masking",
+            "Shadow Detection",
+            "Image Collection Filtering",
+            "Image Rescaling"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Cloud Score Calculation",
+            "Dark Pixel Detection",
+            "Shadow Projection"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Image Mosaicking"
+        ]
+    }
+}

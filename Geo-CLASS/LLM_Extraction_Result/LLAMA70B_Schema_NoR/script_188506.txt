@@ -1,0 +1,31 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover classification and cloud probability analysis"],
+  "DataSource": ["users/kitmyfaceplease2/eastsouth_asia", "projects/ee-kitmyfaceplease2/assets/EAST_SOUTH_SPLIT2", "COPERNICUS/S2_CLOUD_PROBABILITY"],
+  "Function": ["Filtering image collection by date and cloud probability", "Creating mosaic of images", "Masking clouds from images", "Calculating sum of images", "Dividing images to calculate percentage"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/kitmyfaceplease2/eastsouth_asia"],
+        "Function": ["Filtering image collection by date and cloud probability", "Creating mosaic of images"]
+    },
+    "relation_2": {
+        "DataSource": ["projects/ee-kitmyfaceplease2/assets/EAST_SOUTH_SPLIT2"],
+        "Function": ["Masking clouds from images", "Calculating sum of images"]
+    },
+    "relation_3": {
+        "DataSource": ["COPERNICUS/S2_CLOUD_PROBABILITY"],
+        "Function": ["Dividing images to calculate percentage"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 5363, 'completion_tokens': 290, 'total_tokens': 5653}

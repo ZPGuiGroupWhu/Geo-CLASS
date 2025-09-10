@@ -1,0 +1,5 @@
+{
+  "Theme": ["Flood monitoring and mapping"],
+  "DataSource": ["COPERNICUS/S1_GRD", "FAO/GAUL_SIMPLIFIED_500m/2015/level2", "JRC/GSW1_0/GlobalSurfaceWater", "WWF/HydroSHEDS/03VFDEM"],
+  "Function": ["Filtering image collection by date and metadata", "Mosaicking image collections", "Applying speckle filter", "Creating difference image", "Finding optimal threshold using Otsu method", "Refining flood result using additional datasets"]
+}

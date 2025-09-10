@@ -1,0 +1,5 @@
+{
+  "Theme": ["Flood monitoring in Myanmar"],
+  "DataSource": ["COPERNICUS/S1_GRD"],
+  "Function": ["Create weekly composite images", "Filter images by date and polarization", "Visualize images", "Create and configure maps", "Add layer selection widget", "Link maps in a split panel"]
+}

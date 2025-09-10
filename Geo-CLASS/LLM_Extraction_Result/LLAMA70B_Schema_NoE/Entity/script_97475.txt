@@ -1,0 +1,29 @@
+{
+    "Theme": [
+        "Land cover classification and analysis using Sentinel-2 imagery and NED elevation data"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2",
+        "USGS/NED"
+    ],
+    "Function": [
+        "maskS2clouds",
+        "filterDate",
+        "filterBounds",
+        "map",
+        "select",
+        "median",
+        "clip",
+        "rename",
+        "sample",
+        "train",
+        "cluster",
+        "addBands",
+        "reduceRegion",
+        "toArray",
+        "toList",
+        "image.histogram",
+        "feature.groups",
+        "image.byClass"
+    ]
+}

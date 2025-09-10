@@ -1,0 +1,67 @@
+/*
+AUTHOR: Erin Hestir 
+DATE UPDATED: 02/24/2023
+TITLE: Tracking Crop Greenness in Merced County 
+////////////////////////////////////////////////////////////////////
+If you see these in the script
+*UC* uncomment this section to see what it does
+*CQ* Challenge question. If you fill comfortable with coding then see if you can asnwer this question
+*/
+
+
+
+// Set map center over Merced County
+Map.setCenter(-120.7, 37.25, 8);
+// Load US county dataset.
+var countyData = ee.FeatureCollection('TIGER/2018/Counties');
+// Filter the counties that are Merced County. 
+var countyMerced = countyData.filter(ee.Filter.eq('NAME', 'Merced'));
+print(countyMerced);
+
+
+
+// Read in the Landsat 8 Image Collection
+// Filter for our location, and dates of your choice
+
+var imgCol = ee.ImageCollection('LANDSAT/LC08/C02/T1_L2')
+    .filterMetadata('CLOUD_COVER','less_than',20)
+    .filter(ee.Filter.eq('WRS_PATH', 43))
+    .filter(ee.Filter.eq('WRS_ROW', 34))
+    .filterDate('2014-04-01', '2022-01-01');
+print(imgCol)
+
+
+
+var imgCol =  imgCol.map(function(image){
+  var imgDat = ee.Date(image.get('DATE_ACQUIRED')).format("YYYY-MM-dd")
+  return image.set('rDate', imgDat)
+
+});
+
+// extract dates from the image collection
+var dateExtract =  imgCol.aggregate_array('rDate')
+
+// create viz parameters
+var imageVisParam = {bands: ['SR_B4', 'SR_B3', 'SR_B2'], min: 8000, max: 18000, gamma: 2};
+
+// function for extract dates and displaying them 
+dateExtract.evaluate(function (timeStarts, error) {
+  if (error) print('Error: ' + error);
+  try {
+    timeStarts.forEach(function (timeStart, i) {
+      var image = imgCol
+        .filterMetadata('rDate', 'equals', timeStart)
+        .first();
+      Map.addLayer(image, imageVisParam, new Date(timeStart).toISOString(), false);
+
+    }); 
+  } catch(e) {
+    print('Error: ' + e);
+  }
+});
+
+//Add map center
+Map.centerObject(countyMerced,9)
+Map.addLayer(countyMerced, {color: '006a4e'}, "extent")
+
+

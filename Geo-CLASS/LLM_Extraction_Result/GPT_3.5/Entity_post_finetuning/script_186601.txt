@@ -1,0 +1,18 @@
+{
+    "Summary": [
+        "The script collects and combines Sentinel-1 images for geoprocessing modeling."
+    ],
+    "Theme": [
+        "SEA SURFACE HEIGHT ANOMALY (SSHA)"
+    ],
+    "DataSource": [
+        "COPERNICUS/S1_GRD",
+        "ft:12Ca5CZlFISuiE7Nf-3fpuTcvFgYNobv-4EJdCkGh",
+        "ft:1-uk71GdY0SUx0Gf4oX2C0LWSvdns18hkRVz7D8C4",
+        "ft:1NzCJgmYE2fzkwPn9dlO-u1W-CbjOshmaqauD2rza"
+    ],
+    "Function": [
+        "Cloud Masking And Quality Filtering",
+        "Calculating terrain slope and aspect from DEMs"
+    ]
+}

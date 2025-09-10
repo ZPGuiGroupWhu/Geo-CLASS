@@ -1,0 +1,59 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/eeranyartrodrigo/A_Hist"
+        ],
+        "Function": [
+            "Elevation data processing"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "users/eeranyartrodrigo/A_Conc"
+        ],
+        "Function": [
+            "Elevation data processing"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "users/eeranyartrodrigo/SSNMX_catalogo_20220801_20220810"
+        ],
+        "Function": [
+            "Buffering seismic data"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "USGS/GMTED2010"
+        ],
+        "Function": [
+            "Elevation data processing"
+        ]
+    },
+    "relation_5": {
+        "DataSource": [
+            "GLOBAL_FLOOD_DB/MODIS_EVENTS/V1"
+        ],
+        "Function": [
+            "Flood event analysis",
+            "Flood plain mapping"
+        ]
+    },
+    "relation_6": {
+        "DataSource": [
+            "JRC/GHSL/P2016/BUILT_LDSMT_GLOBE_V1"
+        ],
+        "Function": [
+            "Built-up area analysis"
+        ]
+    },
+    "relation_7": {
+        "DataSource": [
+            "JRC/GWIS/GlobFire/v2/DailyPerimeters"
+        ],
+        "Function": [
+            "Fire perimeter analysis"
+        ]
+    }
+}

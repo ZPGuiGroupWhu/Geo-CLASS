@@ -1,0 +1,19 @@
+{
+    "Theme": [
+        "Flood extent analysis using Sentinel-1 data"
+    ],
+    "DataSource": [
+        "COPERNICUS/S1_GRD",
+        "FAO/GAUL_SIMPLIFIED_500m/2015/level2",
+        "JRC/GSW1_0/GlobalSurfaceWater",
+        "WWF/HydroSHEDS/03VFDEM"
+    ],
+    "Function": [
+        "Filter image collection by date and polarization",
+        "Mosaic image collections",
+        "Apply speckle filter",
+        "Calculate difference between images",
+        "Apply threshold",
+        "Refine flood result using additional datasets"
+    ]
+}

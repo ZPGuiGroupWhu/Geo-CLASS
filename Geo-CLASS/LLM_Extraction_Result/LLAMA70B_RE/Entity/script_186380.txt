@@ -1,0 +1,18 @@
+{
+    "Theme": [
+        "Marsh bird survey and spectral indices analysis"
+    ],
+    "DataSource": [
+        "LANDSAT/LC8_L1T_TOA",
+        "LANDSAT/LE7_L1T_TOA",
+        "ft:1QKw5K7582CuFBKiqDcYEPADrvjHTLAkz3EIxL_TI",
+        "ft:1iQ8RECwcWSVF3AkSPVdxgpnENRJc-su6G6c1CZiF"
+    ],
+    "Function": [
+        "Buffering survey points",
+        "Clipping images to buffer",
+        "Cloud masking",
+        "Adding spectral indices",
+        "Calculating mean values around survey points"
+    ]
+}

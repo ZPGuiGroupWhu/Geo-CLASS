@@ -1,0 +1,34 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "GOOGLE/DYNAMICWORLD/V1",
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Cloud Masking And Quality Filtering",
+            "NDVI (Normalized Difference Vegetation Index calculation)"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "GOOGLE/DYNAMICWORLD/V1"
+        ],
+        "Function": [
+            "Data Visualization And Mapping",
+            "MNDWI (Modified Normalized Difference Water Index calculation)",
+            "Time Series Analysis",
+            "Merging (Combining multiple bands into one dataset)"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Data Visualization And Mapping",
+            "MNDWI (Modified Normalized Difference Water Index calculation)",
+            "Time Series Analysis",
+            "Merging (Combining multiple bands into one dataset)"
+        ]
+    }
+}

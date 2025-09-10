@@ -1,0 +1,90 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var regions = ee.FeatureCollection("FAO/GAUL_SIMPLIFIED_500m/2015/level2");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+var hue = regions
+
+var Ref = ee.ImageCollection("COPERNICUS/S2")
+                  .filterBounds(AOI)
+                  .filterDate('2020-08-15', '2020-10-07')
+                  .sort('CLOUDY_PIXEL_PERCENTAGE', false)
+                  .filterMetadata('CLOUDY_PIXEL_PERCENTAGE', 'less_than', 10)
+                  ;
+    
+var RGB =  {bands: ['B4', 'B3', 'B2'], min: 700, max: 9000, gamma: 2.0};                  
+    
+    Map.addLayer(Ref, RGB, 'Reference RGB');
+    
+    print (Ref.size(), 'Ref count');
+    print(Ref, 'Reference Image Collection');
+    
+var Ref1 =ee.ImageCollection("COPERNICUS/S2")
+                  .filterBounds(AOI)
+                  .filterDate('2020-10-08', '2020-10-30')
+                  .sort('CLOUDY_PIXEL_PERCENTAGE', false)
+                  .filterMetadata('CLOUDY_PIXEL_PERCENTAGE', 'less_than', 10)
+                  ;
+                  
+            Map.addLayer(Ref1, RGB, 'Reference RGB1'); 
+                  
+var Ref2 =ee.ImageCollection("COPERNICUS/S2")
+                  .filterBounds(hue)
+                  .filterDate('2020-09-21', '2020-09-22')
+                  .filterMetadata('CLOUDY_PIXEL_PERCENTAGE', 'less_than', 25)
+                  ;
+
+      Map.addLayer(Ref2, RGB, 'Reference RGB2');
+      print(Ref2, 'ref2')
+
+var Ref3 =ee.ImageCollection("COPERNICUS/S2")
+                  .filterBounds(AOI)
+                  .filterDate('2020-08-27', '2020-08-28')
+                  .sort('CLOUDY_PIXEL_PERCENTAGE', false)
+                  .filterMetadata('CLOUDY_PIXEL_PERCENTAGE', 'less_than', 25)
+                  ;
+
+      Map.addLayer(Ref3, RGB, 'Reference RGB3'); 
+
+
+
+// Import the Sentinel 2 collection as sentinel 2
+
+var Flood = ee.ImageCollection("COPERNICUS/S2")
+    .filterBounds(AOI)
+    .filterDate ('2020-10-08', '2020-10-29')
+    .sort ('CLOUDY_PIXEL_PERCENTAGE', false);
+    
+                  
+                  
+                  
+print (Flood.size(), 'Flood count');
+print (Flood, 'Flood image collection');
+
+//reduce to mean
+var mean = ee.Reducer.mean();
+
+
+                  
+// Calculate NDWI
+var ndwi_ref = Ref.normalizedDifference ('B3', 'B8');
+var ndwi_flood = Flood.normalizedDifference ('B3', 'B8');
+
+// Display the true color images
+
+Map.addLayer(
+  HueRefS2, 
+{min: 0, max: 0.5, bands: ['B4', 'B3', 'B2']},
+'Ref true color'
+);
+
+Map.addLayer(
+  HueFloodS2, 
+  {min: 0, max: 0.3, bands: ['B4', 'B3', 'B2']},
+  'Floods true Colour'
+  );
+  
+
+
+var waterPalette = ['red', 'yellow', 'green', 'blue'];
+Map.addLayer(ndwi_ref, {min: -1, max: 0.5, palette: waterPalette}, 'Floods NDWI');
+Map.addLayer(ndwi_flood, {min: -1, max: 0.5, palette: waterPalette}, 'Ref NDWI');
+Map.centerObject(AOI, 8);

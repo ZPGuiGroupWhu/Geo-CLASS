@@ -1,0 +1,6 @@
+{
+  "Summary": ["Sentinel-1 flood mapping in Moddle Ayeyarwaddy region."],
+  "Theme": ["Flood mapping using Sentinel-1 data"],
+  "DataSource": ["COPERNICUS/S1_GRD"],
+  "Function": ["Image collection filtering based on polarization and date", "Image smoothing using focal median filter", "Histogram generation for backscatter values"]
+}

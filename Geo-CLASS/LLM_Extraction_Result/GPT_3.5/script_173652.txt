@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["The script processes Landsat 8 satellite imagery for change detection in a specified area of interest."],
+  "Theme": ["Land cover change detection"],
+  "DataSource": ["users/jrmancerafGEE/POL_SUB_AE_1055", "users/jrmancerafGEE/PTS_SUB_AE_1055", "LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Cloud and shadow masking", "LandTrendr change detection algorithm execution"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/jrmancerafGEE/POL_SUB_AE_1055", "users/jrmancerafGEE/PTS_SUB_AE_1055"],
+        "Function": ["Cloud and shadow masking"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["LandTrendr change detection algorithm execution"]
+    }
+}
+```

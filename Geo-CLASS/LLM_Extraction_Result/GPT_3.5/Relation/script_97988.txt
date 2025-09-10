@@ -1,0 +1,26 @@
+{
+    "relation_1": {
+        "DataSource": ["users/EL/mapa_forest_hybrid_Belize"],
+        "Function": ["Image mosaicking for Landsat 8", "Image mosaicking for Landsat 7", "Image mosaicking for Sentinel 2", "Quality band addition to Sentinel imagery", "Classification training and application", "Masking of water bodies in classification", "Area calculation for forested regions", "Image export to Google Drive"]
+    },
+    "relation_2": {
+        "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+        "Function": ["Masking of water bodies in classification"]
+    },
+    "relation_3": {
+        "DataSource": ["LANDSAT/LT5_L1T"],
+        "Function": ["Image mosaicking for Landsat 8"]
+    },
+    "relation_4": {
+        "DataSource": ["LANDSAT/LE7_L1T"],
+        "Function": ["Image mosaicking for Landsat 7"]
+    },
+    "relation_5": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_RT"],
+        "Function": ["Image mosaicking for Landsat 8"]
+    },
+    "relation_6": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Image mosaicking for Sentinel 2", "Quality band addition to Sentinel imagery"]
+    }
+}

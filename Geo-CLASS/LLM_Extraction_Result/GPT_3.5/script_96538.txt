@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Characterizing features in panteones using Sentinel-2 data."],
+  "Theme": ["Land cover classification"],
+  "DataSource": ["users/eeranyartrodrigo/panteones/polygonsData/polsPanteon", "projects/ee-vulnerability-gee4geo/assets/ranyartRodrigo/mexicoContorno", "COPERNICUS/S2"],
+  "Function": ["Cloud masking for Sentinel-2 images", "Adding spectral indices to the image"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/eeranyartrodrigo/panteones/polygonsData/polsPanteon", "projects/ee-vulnerability-gee4geo/assets/ranyartRodrigo/mexicoContorno"],
+        "Function": ["Cloud masking for Sentinel-2 images", "Adding spectral indices to the image"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Cloud masking for Sentinel-2 images", "Adding spectral indices to the image"]
+    }
+}
+```

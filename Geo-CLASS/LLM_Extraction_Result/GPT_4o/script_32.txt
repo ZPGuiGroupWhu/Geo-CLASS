@@ -1,0 +1,33 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["MODIS/VIIRS snow product bias determination"],
+  "DataSource": ["users/emaprlab/broberts:snow_persistence/image_processing_funcs", "users/ak_glaciers/NWCC_high_resolution_coordinates_2019_hucs", "USGS/WBD/2017/HUC", "CGIAR/SRTM90_V4"],
+  "Function": ["Calculate week difference", "Create list of start dates", "Filter feature collection by bounds", "Generate daily composites", "Create snow cover area composite", "Generate wet snow image collection", "Update mask of image"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/emaprlab/broberts:snow_persistence/image_processing_funcs"],
+        "Function": ["Generate daily composites", "Create snow cover area composite", "Generate wet snow image collection"]
+    },
+    "relation_2": {
+        "DataSource": ["users/ak_glaciers/NWCC_high_resolution_coordinates_2019_hucs"],
+        "Function": ["Filter feature collection by bounds"]
+    },
+    "relation_3": {
+        "DataSource": ["USGS/WBD/2017/HUC"],
+        "Function": ["Filter feature collection by bounds"]
+    },
+    "relation_4": {
+        "DataSource": ["CGIAR/SRTM90_V4"],
+        "Function": ["Update mask of image"]
+    }
+}
+```
+
+Total_Token_Usage:
+4849

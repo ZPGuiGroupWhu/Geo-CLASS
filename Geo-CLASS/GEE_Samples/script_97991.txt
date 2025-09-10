@@ -1,0 +1,374 @@
+//Tutorial 1---------------------------------------------------------------------------------------------
+
+  
+
+//Lesson 1: shapefile/vector upload and visualisation 
+
+var Country = ee.FeatureCollection("users/EL/TrinidadandTobago"); 
+
+
+
+
+
+//Exercise 1: change name (chack the Layers box)
+
+
+
+
+
+//Lesson 2: raster
+
+var raster = ee.Image("users/EL/trinidad_forest_type_landcover_28july2011");
+
+
+
+var rasterB = ee.Image("users/EL/tobago_forest_type_landcover_06may2011");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Map.centerObject (Country);
+
+//Exercise 3: choose another country and visualize
+
+
+
+//Tutorial 2---------------------------------------------------------------------------------------------
+
+//copy and paste the code given after tutorial 1
+
+
+
+//Lesson 1: upload landsat images preferred Raw images
+
+var Landsat8 = ee.ImageCollection('LANDSAT/LC8_L1T');
+
+var collection = ee.ImageCollection('COPERNICUS/S2')
+
+//Exercise 1: search and upload on the script the images of landsat 5 and 7 
+
+
+
+
+
+
+
+//Lesson 2: filter landsat images
+
+var Landsat8Filtered = Landsat8.filterBounds(Country)
+
+.filterDate('2015-01-01', '2017-12-31')
+
+.filter(ee.Filter.calendarRange(335, 150, 'day_of_year')) //DRY SEASON (Oct-Apr)
+
+.filterMetadata('CLOUD_COVER','less_than', 20);
+
+//Exercise 2: change season and year 
+
+
+
+
+
+
+
+
+
+//Lesson 3: create a polygon 
+
+// >left box on map > last symbol >draw >change name
+
+//Exercise 3: filter the satellite images as before but substituting the name with the name of polygon created 
+
+
+
+
+
+
+
+
+
+print(Landsat8Filtered); //obtain information about a particular element >features >Image >id
+
+var ImagenL8 =	ee.Image('LANDSAT/LC8_L1T/LC82330532016351LGN00');
+
+
+
+
+
+
+
+
+
+//Tutorial 3---------------------------------------------------------------------------------------------
+
+//copy and paste the code given after tutorial 2
+
+
+
+//Lesson 1: Mosaic with Algorithm Landsat simple Composite and ratio bands
+
+//Carring on from the Lesson 2 of Tutorial 2:
+
+var Landsat8Filtered = Landsat8.filterBounds(Country)
+
+.filterDate('2016-01-01', '2016-12-31')
+
+.filter(ee.Filter.calendarRange(335, 151, 'day_of_year')) //WET SEASON (Oct-Apr)
+
+.filterMetadata('CLOUD_COVER','less_than', 20);
+
+var mosaicZ = ee.Algorithms.Landsat.simpleComposite(Landsat8Filtered, 60, 10, 40, true).clip(Country);
+
+var rat43_2015 = mosaicZ.select('B4').divide(mosaicZ.select('B3'));
+
+var rat73_2015 = mosaicZ.select('B7').divide(mosaicZ.select('B3'));
+
+var rat54_2015 = mosaicZ.select('B5').divide(mosaicZ.select('B4'));
+
+var rat53_2015 = mosaicZ.select('B5').divide(mosaicZ.select('B3'));
+
+var image8 = mosaicZ.addBands(rat43_2015).addBands(rat73_2015).addBands(rat54_2015).addBands(rat53_2015);
+
+
+
+
+
+
+
+
+
+//Exercise 1.2: do the best cloud-free mosaic for the dry season
+
+
+
+//Exercise 1.3: do mosaic of one month
+
+
+
+//Lesson 2: filter the sentinel images and quality Bands
+
+var collection = ee.ImageCollection('COPERNICUS/S2')
+
+    .filterBounds(Country)
+
+    .filterDate('2015-11-01', '2017-08-10')
+
+    .filter(ee.Filter.calendarRange(335,151, 'day_of_year')) 
+
+    .filterMetadata('CLOUDY_PIXEL_PERCENTAGE', 'less_than' ,90)
+
+//---Rename bands
+
+var coll_S2_1 = function(image) {
+
+  return image.select(
+
+  ['B2','B3','B4','B5','B6','B7','B8','B8A','B11','B12'],  
+
+  ['BLUE','GREEN', 'RED','RedE1','RedE2','RedE3','NIR','RedE4','SWIR1','SWIR2'])};  
+
+  
+
+var coll_S2 = coll_S2_1(collection)
+
+//----Mosaic with quality Bands
+
+var qualityBands = function(image) {
+
+var newImage = image.addBands(image.normalizedDifference(['NIR', 'RED' ]))
+
+return (newImage)
+
+};
+
+var L8qualityBands = coll_S2.map(qualityBands);
+
+var mosaicQB = L8qualityBands.qualityMosaic('nd').clip(Country);
+
+
+
+
+
+
+
+
+
+//Tutorial 4---------------------------------------------------------------------------------------------
+
+//copy and paste the code given after tutorial 3
+
+
+
+//Lesson 1:	Appropriate training points choice >drawing tool tab on the map >add a marker
+
+// create the forestry class (Tutorial 4 page 1)
+
+//Exercise 1: create the other 2 classes, 6 training points each
+
+
+
+
+
+     
+
+//Lesson 2: unite all the training points in one variable 
+
+
+
+var points = ee.FeatureCollection([Forest, Crops, Shrubland]).flatten();
+
+//Exercise 2: unite your training points in one variable
+
+
+
+
+
+
+
+//Lesson 3: Appropriate classification algorithm selection and classification
+
+var classTT = mosaicZ.trainClassifier({'training_features': points,
+
+                                          'training_property':'class',
+
+                                          'classifier_name': 'Cart',
+
+                                          'crs':'EPSG:4326',
+
+                                          'crs_transform':[0.0002694945852358564,0,-180,0,-0.0002694945852358564,90],
+
+                                          });
+
+
+
+var classing_TT = mosaicZ.classify(classTT);
+
+//Exercise 3: visualise with 3 classes
+
+
+
+
+
+//Lesson 4: Post-classification editing 
+
+var corrector = function(geom, wrong, good, clasif) {
+
+  var binario = geom.reduceToImage(['class'], ee.Reducer.first());
+
+  var condicion = binario.and(clasif.eq(wrong));
+
+  var clasC = clasif.where(condicion, good);
+
+  return clasC};
+
+
+
+var correction  = corrector (c2to1, 2, 1, classing_TT);
+
+var correction1 = corrector (c3to1, 3, 1, correction);
+
+//Exercise 4: Visualise the correction and add correction if needed
+
+
+
+
+
+
+
+//Lesson 5: Use fo masks
+
+//Mask Cities
+
+var city = ee.Image('users/christinacorbane/MT_comp_proj').clip(Country);
+
+var cities = city.gte(3);
+
+//Mask Water
+
+var water = ee.Image('JRC/GSW1_0/GlobalSurfaceWater').clip(Country);
+
+//Exercise 5: Select simple basic functions to personalize the water mask
+
+//(page 6 tutorial 4 https://code.earthengine.google.com/dataset/JRC/GSW1_0/GlobalSurfaceWater)
+
+//eq (),    neq (),   gt (),           gte (),   lt (), lte () 
+
+//equal, not equal, greater, greater or equal, smaller, less or equal
+
+var water2 = water.select('transition').lte(2).or(water.select('transition').eq(4)).or(water.select('transition').eq(5)).or(water.select('transition').eq(7)).or(water.select('transition').eq(8)); 
+
+
+
+
+
+//Lesson 6 Mask Use
+
+var classified_correct = correction1.where(water2.eq(1),4);
+
+var classified_correct2 = classified_correct.where(cities.eq(1),5);
+
+//Exercise 6 Visualisation of classified mosaic with masks
+
+
+
+//Lesson 7: Export Image to Asset
+
+Export.image.toAsset({
+
+  image: classified_correct2,
+
+  description: "TT_forest",
+
+  region: geometry,
+
+  scale: 30,
+
+maxPixels: 50e9});
+
+// Exercise 7  >go to the Tasks tab om the upper left corner of GEE  >hit RUN and again also in the window opened, and wait
+
+
+
+//Lesson 8: Print Statistics for Forest
+
+
+
+
+
+var TT_f = classified_correct2.eq(1);
+
+var areaForest = TT_f.multiply(ee.Image.pixelArea().divide(10000));
+
+var stats_areaF = areaForest.reduceRegion({
+
+  reducer: ee.Reducer.sum(),
+
+  geometry: Country.geometry(),
+
+  scale: 30,
+
+  maxPixels: 500000000000
+
+});
+
+print ('Forest area:',stats_areaF.get('classification'), 'ha');
+
+
+
+
+
+// The Tutorial 5 will be done on another script
+
+
+

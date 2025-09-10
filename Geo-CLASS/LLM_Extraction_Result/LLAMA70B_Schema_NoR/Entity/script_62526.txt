@@ -1,0 +1,16 @@
+{
+    "Theme": [
+        "Water Area Analysis using Sentinel-2 Imagery"
+    ],
+    "DataSource": [
+        "users/ce15btech11022/Final_Cities/Ahmedabad",
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "Filtering Image Collection by Date and Bounds",
+        "Creating Mosaics from Filtered Images",
+        "Calculating Water Area using NDWI Index",
+        "Creating Time Series Chart of Water Area",
+        "Reducing Region to Calculate Mean Water Area"
+    ]
+}

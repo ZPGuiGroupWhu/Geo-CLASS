@@ -1,0 +1,15 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S5P/NRTI/L3_NO2"
+        ],
+        "Function": [
+            "clipBorder",
+            "filterDate",
+            "limit",
+            "select",
+            "clip",
+            "map"
+        ]
+    }
+}

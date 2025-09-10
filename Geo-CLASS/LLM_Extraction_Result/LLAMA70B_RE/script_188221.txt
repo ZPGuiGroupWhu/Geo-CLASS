@@ -1,0 +1,28 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Climate data analysis"],
+  "DataSource": ["ECMWF/ERA5_LAND/MONTHLY"],
+  "Function": ["Filter image collection by date", "Select variables from image collection", "Reduce region to mean value", "Export feature collection to CSV"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["ECMWF/ERA5_LAND/MONTHLY"],
+        "Function": ["Filter image collection by date", "Select variables from image collection", "Reduce region to mean value"]
+    },
+    "relation_2": {
+        "DataSource": ["ECMWF/ERA5_LAND/MONTHLY"],
+        "Function": ["Export feature collection to CSV"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4331, 'completion_tokens': 195, 'total_tokens': 4526}

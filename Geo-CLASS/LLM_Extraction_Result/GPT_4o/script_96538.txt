@@ -1,0 +1,29 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Cemetery characterization using Sentinel-2 imagery"],
+  "DataSource": ["users/eeranyartrodrigo/panteones/polygonsData/polsPanteon", "projects/ee-vulnerability-gee4geo/assets/ranyartRodrigo/mexicoContorno", "COPERNICUS/S2"],
+  "Function": ["Create bounding box around features", "Mask clouds and cirrus from images", "Add NDVI, NDWI, NDWI2, NDBI, NDBSI, BAEI, EVI bands", "Add BUI band", "Calculate median values for bands", "Export results to asset"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["users/eeranyartrodrigo/panteones/polygonsData/polsPanteon"],
+    "Function": ["Create bounding box around features", "Export results to asset"]
+  },
+  "relation_2": {
+    "DataSource": ["projects/ee-vulnerability-gee4geo/assets/ranyartRodrigo/mexicoContorno"],
+    "Function": ["Create bounding box around features"]
+  },
+  "relation_3": {
+    "DataSource": ["COPERNICUS/S2"],
+    "Function": ["Mask clouds and cirrus from images", "Add NDVI, NDWI, NDWI2, NDBI, NDBSI, BAEI, EVI bands", "Add BUI band", "Calculate median values for bands"]
+  }
+}
+```
+
+Total_Token_Usage:
+6614

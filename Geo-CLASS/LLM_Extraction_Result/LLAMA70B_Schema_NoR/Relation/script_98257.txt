@@ -1,0 +1,21 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "FAO/GAUL_SIMPLIFIED_500m/2015/level2"
+        ],
+        "Function": [
+            "Filtering image collections by date and metadata",
+            "Calculating mean and standard deviation of image collections"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S1_GRD"
+        ],
+        "Function": [
+            "Mosaicking and clipping images",
+            "Creating and displaying flood images",
+            "Calculating NDFI and thresholding for flood detection"
+        ]
+    }
+}

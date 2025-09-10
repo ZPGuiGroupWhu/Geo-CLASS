@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Identifying flooded areas using Sentinel-1 SAR data before and after an event."],
+  "Theme": ["Flood monitoring"],
+  "DataSource": ["COPERNICUS/S1_GRD", "CIESIN/GPWv4/population-count"],
+  "Function": ["Mosaic images before and after event", "Threshold radar intensities to identify flooded areas", "Topological intersection to detect changes", "Clean-up of false positive pixels", "Convert pixels to polygons"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Mosaic images before and after event", "Threshold radar intensities to identify flooded areas", "Topological intersection to detect changes", "Clean-up of false positive pixels", "Convert pixels to polygons"]
+    },
+    "relation_2": {
+        "DataSource": ["CIESIN/GPWv4/population-count"],
+        "Function": ["Population data clipping"]
+    }
+}
+```

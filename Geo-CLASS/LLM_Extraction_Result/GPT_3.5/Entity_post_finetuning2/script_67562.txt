@@ -1,0 +1,24 @@
+{
+    "Summary": [
+        "Supervised classification of land cover using Landsat 8 imagery within a defined region of interest (ROI)."
+    ],
+    "Theme": [
+        "LAND USE/LAND COVER CLASSIFICATION"
+    ],
+    "DataSource": [
+        "users/wangweihappy0/training01/l8ClassifySample",
+        "LANDSAT/LC08/C01/T1_SR",
+        "USGS/SRTMGL1_003"
+    ],
+    "Function": [
+        "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover",
+        "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover",
+        "Computes Normalized Difference Vegetation Index (NDVI)",
+        "Calculates Normalized Difference Water Index (NDWI)",
+        "Calculates Normalized Difference Water Index (NDWI)",
+        "Filter Image Collection By Date And Region",
+        "Visualize Elevation Data (DEM)",
+        "Buffering Points To Create Zones For Analysis",
+        "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover"
+    ]
+}

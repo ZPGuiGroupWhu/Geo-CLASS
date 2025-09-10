@@ -1,0 +1,42 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Satellite Imagery Analysis"],
+  "DataSource": ["NOAA/VIIRS/DNB/MONTHLY_V1/VCMCFG", "VITO/PROBAV/C1/S1_TOC_100M", "NOAA/VIIRS/001/VNP09GA", "MODIS/006/MCD43A1", "ASTER/AST_L1T_003", "LANDSAT/LT04/C01/T1_TOA", "LANDSAT/LT05/C01/T1_TOA", "LANDSAT/LE07/C01/T1_TOA", "LANDSAT/LC08/C01/T1_TOA", "COPERNICUS/S3/OLCI", "COPERNICUS/S2"],
+  "Function": ["Image Collection Filtering", "Image Median Calculation", "Image Clipping", "Image Export"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["NOAA/VIIRS/DNB/MONTHLY_V1/VCMCFG"],
+        "Function": ["Image Collection Filtering", "Image Median Calculation", "Image Clipping", "Image Export"]
+    },
+    "relation_2": {
+        "DataSource": ["VITO/PROBAV/C1/S1_TOC_100M"],
+        "Function": ["Image Collection Filtering", "Image Median Calculation", "Image Clipping", "Image Export"]
+    },
+    "relation_3": {
+        "DataSource": ["NOAA/VIIRS/001/VNP09GA"],
+        "Function": ["Image Collection Filtering", "Image Median Calculation", "Image Clipping", "Image Export"]
+    },
+    "relation_4": {
+        "DataSource": ["MODIS/006/MCD43A1"],
+        "Function": ["Image Collection Filtering", "Image Median Calculation", "Image Clipping", "Image Export"]
+    },
+    "relation_5": {
+        "DataSource": ["ASTER/AST_L1T_003"],
+        "Function": ["Image Collection Filtering", "Image Median Calculation", "Image Clipping", "Image Export"]
+    },
+    "relation_6": {
+        "DataSource": ["LANDSAT/LT04/C01/T1_TOA"],
+        "Function": ["Image Collection Filtering", "Image Median Calculation", "Image Clipping", "Image Export"]
+   
+
+Total_Usage:
+{'prompt_tokens': 5332, 'completion_tokens': 625, 'total_tokens': 5957}

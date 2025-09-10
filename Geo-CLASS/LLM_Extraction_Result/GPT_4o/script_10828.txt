@@ -1,0 +1,29 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["NIRv calculation", "Cloud masking", "Linear interpolation"],
+  "DataSource": ["MODIS/006/MOD09A1", "users/kongdd/public:Math/pkg_smooth.js", "users/kongdd/public:pkg_vis.js"],
+  "Function": ["Define global region of interest", "Add layer to map", "Mask clouds and shadows", "Calculate NIRv", "Apply linear interpolation", "Visualize data", "Filter image collection by date", "Reduce regions to points", "Export data to Drive"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["MODIS/006/MOD09A1"],
+        "Function": ["Mask clouds and shadows", "Calculate NIRv", "Filter image collection by date", "Reduce regions to points", "Export data to Drive"]
+    },
+    "relation_2": {
+        "DataSource": ["users/kongdd/public:Math/pkg_smooth.js"],
+        "Function": ["Apply linear interpolation"]
+    },
+    "relation_3": {
+        "DataSource": ["users/kongdd/public:pkg_vis.js"],
+        "Function": ["Visualize data"]
+    }
+}
+```
+
+Total_Token_Usage:
+5086

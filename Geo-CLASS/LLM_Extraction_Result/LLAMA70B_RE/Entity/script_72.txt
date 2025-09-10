@@ -1,0 +1,21 @@
+{
+    "Theme": [
+        "Land cover change detection and analysis in Cambodia"
+    ],
+    "DataSource": [
+        "USDOS/LSIB/2017",
+        "users/emaprlab/public:Modules/LandTrendr.js",
+        "users/emaprlab/broberts:LTOP_mekong/06lt_Transfer_FTV_modules.js"
+    ],
+    "Function": [
+        "Buffering geometry",
+        "Filtering feature collection",
+        "Running LandTrendr temporal segmentation",
+        "Building spectral response collection",
+        "Calculating NBR index",
+        "Fitting LandTrendr model",
+        "Converting LT fit output",
+        "Getting change map layers",
+        "Exporting image to asset"
+    ]
+}

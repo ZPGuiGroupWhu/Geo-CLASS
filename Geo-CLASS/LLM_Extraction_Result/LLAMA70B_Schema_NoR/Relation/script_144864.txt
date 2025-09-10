@@ -1,0 +1,21 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/thao226355/share/VietNam_Ranh_gioi_tinh"
+        ],
+        "Function": [
+            "Filtering image collection by cloud cover percentage",
+            "Applying cloud mask to images"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2_SR"
+        ],
+        "Function": [
+            "Calculating NDVI index",
+            "Classifying land cover based on NDVI values",
+            "Calculating area of classified land cover"
+        ]
+    }
+}

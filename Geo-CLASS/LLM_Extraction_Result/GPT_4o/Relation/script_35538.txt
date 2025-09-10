@@ -1,0 +1,14 @@
+{
+  "relation_1": {
+    "DataSource": ["LANDSAT/LC08/C01/T1_TOA"],
+    "Function": ["Filter images by date", "Filter images by location", "Create median image", "Clip image to region", "Display image on map", "Calculate NDVI", "Mask image by threshold"]
+  },
+  "relation_2": {
+    "DataSource": ["COPERNICUS/S2"],
+    "Function": ["None"]
+  },
+  "relation_3": {
+    "DataSource": ["users/chaitanyaks/Maharashtra/Pune_District"],
+    "Function": ["Filter images by location", "Clip image to region"]
+  }
+}

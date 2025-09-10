@@ -1,0 +1,5 @@
+{
+"Theme": ["Surface water detection and analysis"],
+"DataSource": ["COPERNICUS/S1_GRD", "NOAA/CFSV2/FOR6H", "users/gena/GlobalHAND/30m/hand-5000"],
+"Function": ["Filtering image collection by date and metadata", "Masking out image edges using angle", "Filtering out windy days using climate forecasts", "Converting to/from dB", "Applying Refined Lee filter", "Performing angle correction", "Computing surface water mask using Canny Edge detector and Otsu thresholding"]
+}

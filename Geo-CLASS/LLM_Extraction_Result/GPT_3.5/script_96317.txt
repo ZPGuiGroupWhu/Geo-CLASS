@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["The script processes Sentinel-2 satellite imagery to generate NDVI mosaics for Cordoba, Argentina."],
+  "Theme": ["NDVI Mosaicking"],
+  "DataSource": ["users/cesarnon/datos_cba_2017/Cordoba_limite", "COPERNICUS/S2_SR"],
+  "Function": ["Image Collection Filtering", "Band Renaming", "Index Calculation", "Quality Band Addition", "Mosaicking"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/cesarnon/datos_cba_2017/Cordoba_limite"],
+        "Function": ["Image Collection Filtering", "Band Renaming", "Index Calculation", "Quality Band Addition", "Mosaicking"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["Image Collection Filtering", "Band Renaming", "Index Calculation", "Quality Band Addition", "Mosaicking"]
+    }
+}
+```

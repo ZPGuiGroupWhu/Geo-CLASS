@@ -1,0 +1,14 @@
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Masking clouds from Sentinel-2 images", "Filtering image collection by date and bounds", "Calculating median of image collection", "Clipping image to bounds", "Renaming bands"]
+    },
+    "relation_2": {
+        "DataSource": ["USGS/NED"],
+        "Function": ["Generating slope and aspect from DEM", "Stacking DEM, slope, and aspect with imagery"]
+    },
+    "relation_3": {
+        "DataSource": ["COPERNICUS/S2", "USGS/NED"],
+        "Function": ["Developing training dataset", "Generating clusters using Weka XMeans", "Applying clusters to image", "Calculating means of each pixel for each cluster", "Generating scatter plots of cluster means", "Generating frequency histogram of clusters", "Generating signature plots for each spectral cluster"]
+    }
+}

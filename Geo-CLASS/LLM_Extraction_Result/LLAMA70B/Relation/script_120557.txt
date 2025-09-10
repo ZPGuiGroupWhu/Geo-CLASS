@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["TIGER/2016/States"],
+        "Function": ["Filtering image collection by region"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Masking cloudy pixels", "Computing QA bits", "Classifying land cover using decision tree"]
+    }
+}

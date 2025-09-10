@@ -1,0 +1,42 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "USDA/NAIP/DOQQ"
+        ],
+        "Function": [
+            "Filter image collection by date and bounds",
+            "Clip image to ROI",
+            "Extract specific bands from image"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "USDA/NASS/CDL/2016"
+        ],
+        "Function": [
+            "Normalize image values",
+            "Compute cluster means",
+            "Compute standard deviation of clusters"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "users/saicheems/classification"
+        ],
+        "Function": [
+            "Perform object-based image segmentation",
+            "Train random forest classifier",
+            "Classify image using trained classifier"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "users/saicheems/classification_snic"
+        ],
+        "Function": [
+            "Compute area of clusters",
+            "Compute perimeter of clusters",
+            "Compute width and height of clusters"
+        ]
+    }
+}

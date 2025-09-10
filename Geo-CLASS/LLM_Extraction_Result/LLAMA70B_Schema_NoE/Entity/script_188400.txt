@@ -1,0 +1,16 @@
+{
+    "Theme": [
+        "NO2_column_number_density analysis"
+    ],
+    "DataSource": [
+        "COPERNICUS/S5P/NRTI/L3_NO2"
+    ],
+    "Function": [
+        "clipBorder",
+        "filterDate",
+        "limit",
+        "select",
+        "clip",
+        "map"
+    ]
+}

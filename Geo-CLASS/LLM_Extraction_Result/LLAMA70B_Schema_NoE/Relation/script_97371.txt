@@ -1,0 +1,33 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "FAO/GAUL/2015/level1"
+        ],
+        "Function": [
+            "Selecting 'landcover' band with pixel values 1",
+            "Filtering by 'ADM1_NAME' equals 'Piura'"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "USGS/GFSAD1000_V0"
+        ],
+        "Function": [
+            "Generating points using stratified sampling",
+            "Masking cloud and snow pixels",
+            "Adding NDVI band"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "COPERNICUS/S2_SR"
+        ],
+        "Function": [
+            "Filtering by date and bounds",
+            "Calculating NDVI time series for a single location",
+            "Exporting time series to CSV",
+            "Charting maximum NDVI for all points",
+            "Merging observations for each day and taking the max NDVI value"
+        ]
+    }
+}

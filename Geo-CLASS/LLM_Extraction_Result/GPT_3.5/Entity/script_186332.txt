@@ -1,0 +1,6 @@
+{
+  "Summary": ["Unsupervised classification of crop types using NDVI from MODIS imagery."],
+  "Theme": ["Crop classification based on NDVI values"],
+  "DataSource": ["MODIS/006/MOD09Q1"],
+  "Function": ["NDVI calculation from MODIS bands", "Unsupervised clustering using KMeans algorithm"]
+}

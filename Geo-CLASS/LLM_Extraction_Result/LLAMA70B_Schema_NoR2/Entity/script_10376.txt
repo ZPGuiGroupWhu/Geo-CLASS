@@ -1,0 +1,5 @@
+{
+  "Theme": ["Land surface analysis using Landsat 8 imagery"],
+  "DataSource": ["LANDSAT/LC08/C02/T1_L2"],
+  "Function": ["Filtering image collection by date and bounds", "Converting image to reflectance", "Clipping image to extent", "Visualizing image bands", "Exporting images to Drive"]
+}

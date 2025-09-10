@@ -1,0 +1,34 @@
+Entity Recognition:
+```
+{
+  "Theme": ["Land Surface Temperature Analysis in Michoacan, Mexico"],
+  "DataSource": ["users/juanjoseromeroacm21/MORELIA", "users/juanjoseromeroacm21/michoacan_state", "USDOS/LSIB_SIMPLE/2017", "MODIS/MOD11A2"],
+  "Function": ["Filter feature collection by country name", "Import and filter image collection by date range", "Scale and convert image data to Celsius", "Calculate mean temperature", "Chart time series of LST", "Calculate Sen's slope for trend analysis", "Export images to Drive"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/juanjoseromeroacm21/MORELIA"],
+        "Function": ["Filter feature collection by country name", "Export images to Drive"]
+    },
+    "relation_2": {
+        "DataSource": ["users/juanjoseromeroacm21/michoacan_state"],
+        "Function": ["Filter feature collection by country name"]
+    },
+    "relation_3": {
+        "DataSource": ["USDOS/LSIB_SIMPLE/2017"],
+        "Function": ["Import and filter image collection by date range", "Scale and convert image data to Celsius", "Calculate mean temperature", "Chart time series of LST", "Calculate Sen's slope for trend analysis"]
+    },
+    "relation_4": {
+        "DataSource": ["MODIS/MOD11A2"],
+        "Function": ["Import and filter image collection by date range", "Scale and convert image data to Celsius", "Calculate mean temperature", "Chart time series of LST", "Calculate Sen's slope for trend analysis"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3055, 'completion_tokens': 421, 'total_tokens': 3476}

@@ -1,0 +1,52 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "NOAA/NGDC/ETOPO1",
+            "USGS/GMTED2010",
+            "USGS/GTOPO30"
+        ],
+        "Function": [
+            "DEM data extraction",
+            "Elevation data selection"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "NASA/ASTER_GED/AG100_003",
+            "JAXA/ALOS/AW3D30_V1_1"
+        ],
+        "Function": [
+            "Image clipping",
+            "Image visualization"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "OSU/GIMP/DEM",
+            "CPOM/CryoSat2/ANTARCTICA_DEM"
+        ],
+        "Function": [
+            "DEM data extraction",
+            "Image export"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "USGS/SRTMGL1_003"
+        ],
+        "Function": [
+            "Histogram generation"
+        ]
+    },
+    "relation_5": {
+        "DataSource": [
+            "WWF/HydroSHEDS/03CONDEM",
+            "WWF/HydroSHEDS/30CONDEM",
+            "WWF/HydroSHEDS/15CONDEM"
+        ],
+        "Function": [
+            "Image visualization",
+            "Image export"
+        ]
+    }
+}

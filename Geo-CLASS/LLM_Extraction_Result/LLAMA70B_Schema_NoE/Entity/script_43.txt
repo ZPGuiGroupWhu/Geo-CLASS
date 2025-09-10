@@ -1,0 +1,18 @@
+{
+    "Theme": [
+        "Community forests and analogue regions with similar biophysical and socio-economic characteristics"
+    ],
+    "DataSource": [
+        "users/ak_glaciers/All_CF_Cambodia_July_2016",
+        "users/ak_glaciers/reem_cf_outputs/reem_canopy_cover_2000_pts_rma_nbr_timeseries_remapped_full",
+        "USDOS/LSIB/2017"
+    ],
+    "Function": [
+        "Get average canopy cover across a feature",
+        "Get coordinate list of a feature",
+        "Define a threshold for the example feature",
+        "Create a mask based on the canopy cover of the CF",
+        "Move the features around",
+        "Filter the features based on country, overlap with existing CF, and similar canopy cover"
+    ]
+}

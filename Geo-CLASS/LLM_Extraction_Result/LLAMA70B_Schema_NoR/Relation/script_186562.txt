@@ -1,0 +1,34 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LC8_SR",
+            "LANDSAT/LC8_L1T_TOA",
+            "LANDSAT/LE7_L1T_TOA_FMASK",
+            "LANDSAT/LT5_L1T_TOA_FMASK"
+        ],
+        "Function": [
+            "Filtering image collection by date",
+            "Sorting image collection by time",
+            "Filtering image collection by bounds"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Calculating NDVI",
+            "Calculating NBR",
+            "Detecting forest loss and land cover change"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "ft:1jAZtLqcNzJvkjSwTMe9CGASiWffqNQRuDRynFPAe"
+        ],
+        "Function": [
+            "Exporting images to Drive",
+            "Creating map visualizations"
+        ]
+    }
+}

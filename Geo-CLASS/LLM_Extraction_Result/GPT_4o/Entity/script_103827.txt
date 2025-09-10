@@ -1,0 +1,5 @@
+{
+  "Theme": ["Flood analysis in Gujarat using Sentinel-1 imagery"],
+  "DataSource": ["users/hrishippatel/IndiaStates", "COPERNICUS/S1_GRD"],
+  "Function": ["Filter image collection by date range", "Filter image collection by polarization", "Filter image collection by instrument mode", "Select specific polarization band", "Calculate mean of image collection", "Clip image to region", "Visualize image with specific parameters", "Create and configure map", "Add layer selection widget to map", "Link maps for synchronized navigation"]
+}

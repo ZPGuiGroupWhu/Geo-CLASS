@@ -1,0 +1,44 @@
+{
+  "relation_1": {
+    "DataSource": ["users/kitmyfaceplease2/eastsouth_asia"],
+    "Function": [
+      "Convert feature collection to image",
+      "Add layer to map"
+    ]
+  },
+  "relation_2": {
+    "DataSource": ["projects/ee-kitmyfaceplease2/assets/EAST_SOUTH_SPLIT2"],
+    "Function": [
+      "Filter image collection by region"
+    ]
+  },
+  "relation_3": {
+    "DataSource": ["UCSB-CHG/CHIRPS/PENTAD"],
+    "Function": [
+      "Filter image collection by date",
+      "Filter image collection by region",
+      "Reduce image collection to sum",
+      "Clip image to region",
+      "Add layer to map",
+      "Calculate cross-correlation",
+      "Export image to Drive"
+    ]
+  },
+  "relation_4": {
+    "DataSource": ["COPERNICUS/S2_CLOUD_PROBABILITY"],
+    "Function": [
+      "Filter image collection by date",
+      "Filter image collection by region",
+      "Create list of dates",
+      "Iterate over date range",
+      "Filter collection by date",
+      "Create mosaic image",
+      "Count images in collection",
+      "Mask clouds in image",
+      "Sum images in collection",
+      "Divide images to get percentage",
+      "Calculate cross-correlation",
+      "Export image to Drive"
+    ]
+  }
+}

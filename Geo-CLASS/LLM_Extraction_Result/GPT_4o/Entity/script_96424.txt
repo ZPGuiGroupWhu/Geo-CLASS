@@ -1,0 +1,5 @@
+{
+  "Theme": ["Water occurrence analysis", "Cloud masking", "Lake shoreline stats", "Lake extent reconstruction"],
+  "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+  "Function": ["Select water occurrence band", "Clip image to area of interest", "Center map on area of interest", "Add water occurrence layer to map", "Create and configure water level slider", "Generate true lake extent mask", "Create cloud mask layer", "Generate clouded water mask layer", "Add water mask layer to map", "Add cloud mask layer to map", "Calculate lake shore occurrence stats", "Compute shoreline statistics", "Reconstruct lake extent under cloud cover", "Add reconstructed lake extent layer to map", "Add true shoreline layer to map"]
+}

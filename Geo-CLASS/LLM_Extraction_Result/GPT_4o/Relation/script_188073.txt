@@ -1,0 +1,69 @@
+{
+  "relation_1": {
+    "DataSource": ["users/kimyrae1/Tanggamus"],
+    "Function": [
+      "Filter image collection by parameters",
+      "Select images by date range",
+      "Print selected image dates",
+      "Create mosaics and clip to study area",
+      "Apply smoothing filter",
+      "Calculate difference between images",
+      "Apply threshold to create flood area",
+      "Mask permanent water bodies",
+      "Mask areas with slope greater than 5%",
+      "Calculate flood area in hectares",
+      "Calculate exposed population",
+      "Calculate affected cropland area",
+      "Calculate affected urban area",
+      "Display layers on map",
+      "Export flood extent as raster and vector",
+      "Export exposed population as raster"
+    ]
+  },
+  "relation_2": {
+    "DataSource": ["COPERNICUS/S1_GRD"],
+    "Function": [
+      "Filter image collection by parameters",
+      "Select images by date range",
+      "Print selected image dates",
+      "Create mosaics and clip to study area",
+      "Apply smoothing filter",
+      "Calculate difference between images",
+      "Apply threshold to create flood area",
+      "Display layers on map",
+      "Export flood extent as raster and vector"
+    ]
+  },
+  "relation_3": {
+    "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+    "Function": [
+      "Mask permanent water bodies",
+      "Apply threshold to create flood area",
+      "Display layers on map"
+    ]
+  },
+  "relation_4": {
+    "DataSource": ["WWF/HydroSHEDS/03VFDEM"],
+    "Function": [
+      "Mask areas with slope greater than 5%",
+      "Apply threshold to create flood area",
+      "Display layers on map"
+    ]
+  },
+  "relation_5": {
+    "DataSource": ["JRC/GHSL/P2016/POP_GPW_GLOBE_V1/2015"],
+    "Function": [
+      "Calculate exposed population",
+      "Display layers on map",
+      "Export exposed population as raster"
+    ]
+  },
+  "relation_6": {
+    "DataSource": ["MODIS/006/MCD12Q1"],
+    "Function": [
+      "Calculate affected cropland area",
+      "Calculate affected urban area",
+      "Display layers on map"
+    ]
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "Theme": ["Temperature analysis"],
+  "DataSource": ["NOAA/GFS0P25"],
+  "Function": ["Filtering image collection by date", "Selecting temperature component", "Clipping image to boundary"]
+}

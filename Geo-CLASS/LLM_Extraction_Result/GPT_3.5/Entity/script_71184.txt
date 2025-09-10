@@ -1,0 +1,6 @@
+{
+  "Summary": ["Cloud scoring and filtering Landsat imagery over a specific region with MNDWI calculation and chart visualization."],
+  "Theme": ["Cloud cover assessment for Landsat imagery"],
+  "DataSource": ["LANDSAT/LE7_L1T_32DAY_TOA"],
+  "Function": ["Cloud scoring algorithm", "MNDWI calculation", "Filtering based on cloud and ND thresholds", "Chart visualization"]
+}

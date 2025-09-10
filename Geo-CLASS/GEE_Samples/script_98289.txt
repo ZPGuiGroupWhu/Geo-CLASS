@@ -1,0 +1,119 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var L8SR = ee.ImageCollection("LANDSAT/LC08/C02/T1_L2"),
+    ROI = 
+    /* color: #91d698 */
+    /* shown: false */
+    ee.Geometry.Polygon(
+        [[[-126.5712487080256, 52.487661650046505],
+          [-126.5712487080256, 51.160259028341244],
+          [-122.6656090595881, 51.160259028341244],
+          [-122.6656090595881, 52.487661650046505]]], null, false),
+    Vis = {"opacity":1,"bands":["SR_B4","SR_B3","SR_B2"],"min":6580.9400000000005,"max":44546.06,"gamma":0.842};
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+// Lab 02- Exploring Image Collection, Temporl Mosaics, Spectral Signatures
+
+// Author Elexis Bernstein
+// Date September 13, 2022
+
+//Q1: What are the start and end dates for the Landsat 8 Surface Reflectance collection?
+//A1:2013-03-18 to 2022-09-02
+
+//Q2: What Bits in the QA_PIXEL layer are associated with cloud and cloud shadow?
+//A2: Bit 3: Cloud and Bit 4: Cloud Shadow
+
+print(L8SR.size()); //landsite 8 reflectance size images 
+
+//Q3: How many different Landsat 8 surface reflectance images are stored in this collection?
+//A3: There are 1,447,433 images
+
+//Filter L8SR collection for dates between june 1- sept. 30 2022
+var MyCollection = L8SR.filterDate('2020-06-01','2020-09-30');
+print(MyCollection.size())
+
+//Q4: How many images are in your collection after filtering for a date range?? (No rightanswer since it will depend on your date range)
+//A4: 60,655 images
+
+
+var MyCollection = L8SR
+                  .filterDate('2020-06-01','2020-09-30')
+                  .filterBounds(ROI)
+print('Collection Size 2', MyCollection.size());
+
+// Q4b: How many images are in your collection after filtering for date range and geography?
+// A4b: 79 images
+
+//Flatten image collection into single image for display
+var MyImage = MyCollection.median()
+Map.addLayer(MyImage,Vis,'Median Composite Image') // add first layer
+
+var MyImageFirst = MyCollection.first();
+print('MyImageFirst', MyImageFirst);
+
+
+print(MyCollection); //using this in your console under features, you can see when the image was collected and the bands used
+print(MyImage);
+
+// get rid of images with more than 5% cloud cover
+var MyCollection = L8SR.filterDate('2020-06-01','2020-09-30')
+                  .filterBounds(ROI)
+                  .filter(ee.Filter.lt ('CLOUD_COVER',5)); //eq is equal, you can find less than, more than, and other filters in Docs
+print(MyCollection)                  
+
+// You can use code to select a particular image,ie if you want #36
+
+// Filter the image collection to remove clouds
+function maskClouds(image) {
+ var qa = image.select('QA_PIXEL');
+ // Bits 3 and 4 are cloud shadow and cloud, respectively.
+ var cloudShadowBitMask = (1 << 4);
+ var cloudsBitMask = (1 << 3);
+ // Both flags should be set to zero, indicating clear conditions.
+ var mask = qa.bitwiseAnd(cloudShadowBitMask).eq(0)
+ .and(qa.bitwiseAnd(cloudsBitMask).eq(0));
+ return image.updateMask(mask);
+}
+
+var MyCollection = L8SR
+                  .filterDate('2020-06-01','2020-09-30')
+                  .filterBounds(ROI)
+                  .map(maskClouds);
+Map.addLayer(MyCollection.median(),Vis, 'Cloud Filtered Image');
+
+
+
+
+
+//Spectral Signatures//
+
+// Q5a: What image collection am I using and how is it filtered?
+// Q5answer: LANDSAT/LC08/C02/T1_L2 and it is filtered by removing the QA pixels bits that focus on clouds (bits 3 and 4)
+
+// Q5b: What does this section of script do?
+// Q5banswer: assigns colors and intensities to represent the spectral bands that are being used (RGB)
+
+// Q5b1: What does ‘ff0000’ or the other entries like it mean?
+// Q5b1answer: It means which pixel colors you are selecting and their intensity. Broken up into scales from 1-6 and a-f for intensity.RRGGBB for spectral band selection
+
+// Q5c. On line 43, why do I only select spectral bands1-7?
+// Q5c: Because bands 1-7 are the main segments from the electromagnetic spectrum
+
+// Q5d: What spectral bands am I displaying for the image on the screen?
+// Q5danswer: bands 7,5,3
+
+
+
+
+// Q5e2: Why do fire scars appear red in the image (not the graph)?
+// Q5e2answer: Because the vegetation is dead, so the red band is reflecting more red light than it would be if the vegetation were alive
+
+// Q5e3:Why does vegetation appear green?
+// Q5e3answer: Because vegetation's physical and chemcial properities reflect green light
+
+// Q5e4:Why does water look dark blue and black?
+// Q5e4answer: Because of the physical and chemical properties of water, they reflect the light, absorbing the RG band segments
+
+// Q5e4i: Why is Strawberry Reservoir closer to a black color than Utah lake which appears dark blue?
+// Q5e4ianswer: Utah lake is more polluted, with green algal blooms that can reflect the G band of light more than the strawberry Reservoir
+
+// Q5e5:In the visParams section of the script, change bands: ['B7', 'B5', 'B3'] to bands: 'B5', 'B3', 'B7'] and hit ‘Run’……., what happened??
+// Q5e5answer: the layer becomes more of a fusia color... by assigning different bands to the visulation parameters, you're able to create band combinations to extract specific information from an image

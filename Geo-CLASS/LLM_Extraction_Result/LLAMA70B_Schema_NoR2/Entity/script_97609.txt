@@ -1,0 +1,5 @@
+{
+  "Theme": ["Drought monitoring and seasonal rainfall analysis"],
+  "DataSource": ["users/eijulio/valles_altos_estados", "FAO/GAUL_SIMPLIFIED_500m/2015/level2", "ECMWF/ERA5/DAILY", "UCSB-CHG/CHIRPS/PENTAD"],
+  "Function": ["Filtering image collections by date", "Calculating monthly totals from image collections", "Computing long-term means for each month", "Calculating seasonal deviation from normal rainfall", "Clipping images to area of interest", "Reducing regions to calculate mean values", "Styling vectors for visualization", "Exporting images and tables to drive"]
+}

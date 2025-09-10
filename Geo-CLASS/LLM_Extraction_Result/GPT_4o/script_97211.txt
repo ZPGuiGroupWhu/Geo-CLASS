@@ -1,0 +1,25 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Fire analysis", "Burned area detection", "Image classification", "Vegetation indices calculation"],
+  "DataSource": ["users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016", "COPERNICUS/S2"],
+  "Function": ["Set time range for fire event", "Define fire area polygon", "Filter fires by area and date", "Create image collections before and after fire", "Mask invalid fire zones", "Calculate vegetation indices", "Prepare image for classification", "Sample training and validation data", "Train classifiers", "Evaluate classification accuracy"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016"],
+    "Function": ["Filter fires by area and date", "Mask invalid fire zones", "Prepare image for classification", "Sample training and validation data", "Train classifiers", "Evaluate classification accuracy"]
+  },
+  "relation_2": {
+    "DataSource": ["COPERNICUS/S2"],
+    "Function": ["Create image collections before and after fire", "Calculate vegetation indices", "Prepare image for classification"]
+  }
+}
+```
+
+Total_Token_Usage:
+10013

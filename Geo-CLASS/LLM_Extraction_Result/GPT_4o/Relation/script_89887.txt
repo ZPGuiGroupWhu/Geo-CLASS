@@ -1,0 +1,14 @@
+{
+  "relation_1": {
+    "DataSource": ["TIGER/2018/States"],
+    "Function": ["Filter state boundaries", "Clip image to boundary"]
+  },
+  "relation_2": {
+    "DataSource": ["USGS/GMTED2010"],
+    "Function": ["Generate hillshade"]
+  },
+  "relation_3": {
+    "DataSource": ["MODIS/006/MOD09GA"],
+    "Function": ["Mask clouds from images", "Mask water from images", "Filter image collection by date", "Calculate median of image collection", "Clip image to boundary", "Calculate percentiles", "Visualize true color image"]
+  }
+}

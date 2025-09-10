@@ -1,0 +1,5 @@
+{
+  "Theme": ["Landsat imagery processing", "Cloud and shadow masking", "Time series analysis", "Composite image creation"],
+  "DataSource": ["users/ianhousman/brasil-test", "LANDSAT/LC08/C01/T1_TOA", "LANDSAT/LE07/C01/T1_TOA", "LANDSAT/LT05/C01/T1_TOA", "LANDSAT/LC08/C01/T1_SR", "LANDSAT/LE07/C01/T1_SR", "LANDSAT/LT05/C01/T1_SR"],
+  "Function": ["Define study area", "Set date range", "Set export parameters", "Select compositing method", "Select cloud masking method", "Filter Landsat collections", "Apply cloud score", "Apply TDOM", "Add indices", "Create composites", "Export composites"]
+}

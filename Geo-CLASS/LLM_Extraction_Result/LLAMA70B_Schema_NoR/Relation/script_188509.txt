@@ -1,0 +1,36 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "UCSB-CHG/CHIRPS/PENTAD"
+        ],
+        "Function": [
+            "Filtering image collection by date",
+            "Reducing image collection to sum"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2_CLOUD_PROBABILITY"
+        ],
+        "Function": [
+            "Masking clouds in images",
+            "Calculating percentage of cloud probability"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "users/kitmyfaceplease2/eastsouth_asia"
+        ],
+        "Function": [
+            "Clipping image to ROI geometry"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "projects/ee-kitmyfaceplease2/assets/EAST_SOUTH_SPLIT2"
+        ],
+        "Function": [
+            "Computing cross-correlation between images"
+        ]
+    }
+}

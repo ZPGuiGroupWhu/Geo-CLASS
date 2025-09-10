@@ -1,0 +1,25 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land cover classification and crop type analysis"],
+  "DataSource": ["MODIS/006/MOD09Q1"],
+  "Function": ["Clipping image collection to a specific region", "Calculating NDVI from image bands", "Creating a multiband image from time-series data", "Training a clusterer for unsupervised classification", "Clustering input data using a trained clusterer", "Merging classes based on specific criteria", "Creating a refined classification layer"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["MODIS/006/MOD09Q1"],
+        "Function": ["Clipping image collection to a specific region", "Calculating NDVI from image bands", "Creating a multiband image from time-series data", "Training a clusterer for unsupervised classification", "Clustering input data using a trained clusterer", "Merging classes based on specific criteria", "Creating a refined classification layer"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4536, 'completion_tokens': 245, 'total_tokens': 4781}

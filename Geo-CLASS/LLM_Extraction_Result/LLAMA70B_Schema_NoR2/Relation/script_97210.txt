@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016"],
+        "Function": ["Filtering image collection by date and bounds", "Calculating vegetation indices"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Classifying images using machine learning algorithms", "Creating image composites for classification"]
+    }
+}

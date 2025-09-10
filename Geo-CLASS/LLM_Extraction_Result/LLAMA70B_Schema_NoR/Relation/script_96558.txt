@@ -1,0 +1,30 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "MODIS/006/MOD13Q1"
+        ],
+        "Function": [
+            "Filtering image collections by date",
+            "Calculating monthly sums and means",
+            "Resampling images to match projection"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "UCSB-CHG/CHIRPS/DAILY"
+        ],
+        "Function": [
+            "Calculating spatial correlation",
+            "Zonal statistics calculation"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "FAO/GAUL/2015/level1"
+        ],
+        "Function": [
+            "Joining image collections",
+            "Scatter plot creation"
+        ]
+    }
+}

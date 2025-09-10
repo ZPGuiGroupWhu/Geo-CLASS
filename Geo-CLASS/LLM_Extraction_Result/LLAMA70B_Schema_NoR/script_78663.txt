@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land Cover Classification and Correction"],
+  "DataSource": ["users/danielp/LC-SLIAC:LC-SLIAC_global"],
+  "Function": ["Apply Land Cover Classification and Correction", "Create Time Series Chart of Corrected Data"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/danielp/LC-SLIAC:LC-SLIAC_global"],
+        "Function": ["Apply Land Cover Classification and Correction", "Create Time Series Chart of Corrected Data"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2119, 'completion_tokens': 142, 'total_tokens': 2261}

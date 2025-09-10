@@ -1,0 +1,25 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land cover classification and cloud masking using Landsat 7 images"],
+  "DataSource": ["LANDSAT/LE07/C01/T1_SR"],
+  "Function": ["Filtering image collections by date and WRS path/row", "Masking occluded pixels using cloud confidence, cloud shadow, snow, water, and terrain occlusion", "Applying mask to image collections", "Exporting results to Google Drive"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LE07/C01/T1_SR"],
+        "Function": ["Filtering image collections by date and WRS path/row", "Masking occluded pixels using cloud confidence, cloud shadow, snow, water, and terrain occlusion", "Applying mask to image collections", "Exporting results to Google Drive"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4325, 'completion_tokens': 219, 'total_tokens': 4544}

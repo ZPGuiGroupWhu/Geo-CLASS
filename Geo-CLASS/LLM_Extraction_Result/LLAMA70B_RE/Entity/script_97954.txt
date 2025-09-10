@@ -1,0 +1,19 @@
+{
+    "Theme": [
+        "Land cover classification and land change detection in the Bahamas"
+    ],
+    "DataSource": [
+        "users/EL/Bahamas",
+        "LANDSAT/LT5_L1T",
+        "LANDSAT/LE7_L1T",
+        "LANDSAT/LC08/C01/T1_RT",
+        "users/EL/Bahamas_class"
+    ],
+    "Function": [
+        "Filtering image collections by date and cloud cover",
+        "Compositing images",
+        "Calculating spectral ratios",
+        "Classifying land cover",
+        "Masking non-forest areas"
+    ]
+}

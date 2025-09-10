@@ -1,0 +1,18 @@
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T2_SR"],
+        "Function": ["Filtering image collection by region", "Calculating mean surface temperature over regions"]
+    },
+    "relation_2": {
+        "DataSource": ["UMD/hansen/global_forest_change_2017_v1_5"],
+        "Function": ["Creating binary mask for forested areas"]
+    },
+    "relation_3": {
+        "DataSource": ["Oxford/MAP/LST_Day_5km_Monthly"],
+        "Function": ["Calculating mean surface temperature over regions"]
+    },
+    "relation_4": {
+        "DataSource": ["NCEP_RE/surface_temp"],
+        "Function": ["Calculating mean surface temperature over regions"]
+    }
+}

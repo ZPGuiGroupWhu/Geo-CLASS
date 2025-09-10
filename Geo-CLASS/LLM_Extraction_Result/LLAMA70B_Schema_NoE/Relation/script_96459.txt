@@ -1,0 +1,22 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LE07/C01/T1_TOA",
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Otsu thresholding for binary classification",
+            "Image filtering and masking",
+            "Image normalization and feature extraction",
+            "Unmixing and classification"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "users/eeranyartrodrigo/ferrocarriles/coahuilaPols"
+        ],
+        "Function": [
+            "Histogram analysis and thresholding"
+        ]
+    }
+}

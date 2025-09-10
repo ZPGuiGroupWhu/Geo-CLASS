@@ -1,0 +1,29 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land cover analysis using Landsat 5 imagery"],
+  "DataSource": ["users/philipegeo/pol_jeremoabo", "LANDSAT/LT05/C01/T1_TOA"],
+  "Function": ["Filtering image collection by cloud cover and date", "Clipping images to a specific geometry", "Calculating median and mean of image collection", "Computing NDVI and SAVI indices", "Visualizing results on a map"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/philipegeo/pol_jeremoabo"],
+        "Function": ["Filtering image collection by cloud cover and date", "Clipping images to a specific geometry"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LT05/C01/T1_TOA"],
+        "Function": ["Calculating median and mean of image collection", "Computing NDVI and SAVI indices", "Visualizing results on a map"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3402, 'completion_tokens': 263, 'total_tokens': 3665}

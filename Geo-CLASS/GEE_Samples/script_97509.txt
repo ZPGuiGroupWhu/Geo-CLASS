@@ -1,0 +1,132 @@
+/*
+
+AUTHOR: Christiana Ade 
+
+DATE UPDATED: 02/16/2022
+
+TITLE: Burn Severity of Mendocino Complex Fire 
+
+////////////////////////////////////////////////////////////////////
+
+If you see these in the script
+
+*UC* uncomment this section to see what it does
+
+*CQ* Challenge question. If you fill comfortable with coding then see if you can asnwer this question
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////* Step 1: Visualize pre and post fire images */////////////////////
+
+// We will load in two pre-selected images captured over the affected area. 
+
+// They were collected approximately one year apart 
+
+// Our pre fire image is from 2017 
+
+// Our post fire image is from 2018. 
+
+// We are using Landsat imagery, which is a very important series of satellites that has
+
+// shaped how we understand the Earth. The pixel size is 30 meters. 
+
+
+
+// Load in pre-fire image 
+
+var preImg = ee.Image('LANDSAT/LC08/C01/T1_SR/LC08_045033_20170925')
+
+// Load in post fire image
+
+var postImg = ee.Image('LANDSAT/LC08/C01/T1_SR/LC08_045033_20180928')
+
+
+
+// Let's check some information about these images 
+
+print('preImage information',preImg)
+
+print('postImage information', postImg)
+
+// Check your Console to view the information
+
+//*CQ* can you figure out a way to list the band names in the console? 
+
+// Hint - check bandNames function
+
+
+
+
+
+
+
+// A true color image display is how you would expect to see everything in the 
+
+// real world. The trees are green, water is blue/green, buildings are white and grey. 
+
+var vizTC = {bands: ['B4', 'B3', 'B2'], min: 0, max: 6000, gamma: 2};
+
+/* We need to center the map display on our area otherwise we won't be able to 
+
+see the image when we add it */ 
+
+Map.centerObject(preImg,9)
+
+// display map layers 
+
+Map.addLayer(preImg, vizTC, 'pre image true color');
+
+Map.addLayer(postImg, vizTC, 'post image true color');
+
+
+
+
+
+/* Now we will change to a band display to false color infrared 
+
+It is common for examining vegetation which will now show up as bright red. */
+
+
+
+// *UC*  display CIR
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Change to a false color SWIR
+
+// Vegetation will be bright green, soil ares will be brown, water will be dark
+
+
+
+// *UC* display false swir
+
+
+
+
+
+
+
+
+
+
+

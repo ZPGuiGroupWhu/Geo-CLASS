@@ -1,0 +1,13 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2_HARMONIZED"
+        ],
+        "Function": [
+            "Filtering image collection by date and cloud percentage",
+            "Calculating NDVI index",
+            "Mapping NDVI values to a visualization palette",
+            "Charting NDVI values over time"
+        ]
+    }
+}

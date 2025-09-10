@@ -1,0 +1,20 @@
+{
+    "Theme": [
+        "Flood extent analysis using Sentinel-1 data and ancillary datasets"
+    ],
+    "DataSource": [
+        "COPERNICUS/S1_GRD",
+        "FAO/GAUL_SIMPLIFIED_500m/2015/level2",
+        "JRC/GSW1_0/GlobalSurfaceWater",
+        "WWF/HydroSHEDS/03VFDEM"
+    ],
+    "Function": [
+        "Filtering and mosaicking Sentinel-1 images for before and after flood events",
+        "Applying speckle filter to mosaicked images",
+        "Calculating difference between before and after flood images",
+        "Applying threshold to difference image",
+        "Refining flood result using additional datasets",
+        "Computing connectivity of pixels to eliminate noise",
+        "Masking out areas with high slope using a Digital Elevation Model"
+    ]
+}

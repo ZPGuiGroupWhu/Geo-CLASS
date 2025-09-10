@@ -1,0 +1,10 @@
+{
+  "relation_1": {
+    "DataSource": ["COPERNICUS/S2"],
+    "Function": ["Filter image collection by date and cloud cover", "Clip image to area of interest", "Sample regions for training data", "Train classifier", "Classify image", "Export classified image to Drive"]
+  },
+  "relation_2": {
+    "DataSource": ["users/jannat/gujratCityExt"],
+    "Function": ["Clip image to area of interest", "Export classified image to Drive"]
+  }
+}

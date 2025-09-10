@@ -1,0 +1,52 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var imageCollection = ee.ImageCollection("LANDSAT/LC08/C02/T1_L2");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+var extent=ee.Geometry.BBox(54.75,24.7,55.05,24.9);
+var dataset = ee.ImageCollection('LANDSAT/LC08/C02/T1_L2')
+    .filterDate('2021-09-01','2021-09-30')
+    .filterBounds(extent);
+    print('Dataset',dataset);
+    
+////////////////////////////////////////DATASET"DS" LAYERS/////////////////////////////////////////////////
+Map.addLayer(dataset.select('SR_B5'),undefined,'DS_B5'); 
+Map.addLayer(dataset.select('SR_B5'),{min:5000,max:30000},'DS_NIR'); 
+Map.addLayer(dataset.select('SR_B5'),{min:5000,max:30000, palette: ['blue', 'green', 'red']}, 'DS_NIR palette'); 
+Map.addLayer(dataset.select('SR_B5'),{min:6000,max:25000},'DS_NIR2'); 
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+var image = dataset.first(); 
+print(image);
+
+Map.centerObject(extent,11);
+image=image.clip(extent); 
+
+
+//convert to reflectance
+function applyScaleFactors(image) {
+  var opticalBands= image.select('SR_B.') .multiply(0.0000275) .add(-0.2);
+  var thermalBands= image.select('ST_B.*') .multiply(0.00341802) .add(149.0);
+  return image.addBands(opticalBands, null, true)
+              .addBands(thermalBands, null, true);
+}
+image=applyScaleFactors(image);
+
+////////////////////////////////////////image LAYERS/////////////////////////////////////////////////
+Map.addLayer(image.select('SR_B5'),undefined,'image_B5'); 
+Map.addLayer(image.select('SR_B5'),{min:0,max:0.6},'image_NIR'); 
+Map.addLayer(image.select('SR_B5'),{min:0,max:0.6, palette: ['blue', 'green', 'red']}, 'image_NIR palette'); 
+Map.addLayer(image.select('SR_B5'),{min:0,max:0.6},'image NIR2'); 
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+var visualize_RGB = {bands: ['SR_B4' , 'SR_B3', 'SR_B2'], min: 0.0,max: 0.6,};
+var visualize_CIR = {bands: ['SR_B5' , 'SR_B3', 'SR_B2'],min: 0.0,max: 0.6,};
+
+var image_RGB = image.visualize({bands: ['SR_B4' , 'SR_B3', 'SR_B2'], min: 0.0,max: 0.6,}); 
+var image_CIR = image.visualize({bands: ['SR_B5' , 'SR_B3', 'SR_B2'], min: 0.0,max: 0.6,});
+var image_B5 = image.visualize({bands: ['SR_B5'], min: 0.0,max: 0.6,});
+Map.addLayer(image, visualize_RGB, 'True Color (432)'); 
+Map.addLayer(image,visualize_CIR,'CIR'); 
+
+Export.image.toDrive({image:image_RGB,description:'IMAGE_RGB',scale:30, region:extent})
+Export.image.toDrive({image:image_CIR,description:'IMAGE_CIR',scale:30, region:extent})
+Export.image.toDrive({image:image_B5,description:'IMAGE_B5',scale:30, region:extent})

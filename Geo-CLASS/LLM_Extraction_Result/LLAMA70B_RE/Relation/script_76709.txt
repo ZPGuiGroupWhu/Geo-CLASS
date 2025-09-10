@@ -1,0 +1,22 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/cxliu2015/BYDwater20210325"
+        ],
+        "Function": [
+            "Image collection filtering",
+            "Cloud masking",
+            "Image compositing"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "NDVI calculation",
+            "Percentile calculation",
+            "Image exporting"
+        ]
+    }
+}

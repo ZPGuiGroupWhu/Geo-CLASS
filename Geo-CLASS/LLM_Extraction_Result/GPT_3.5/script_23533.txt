@@ -1,0 +1,19 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["The script remaps land cover data from different years and applies a geoprocessing model to track changes over time."],
+  "Theme": ["Land cover change tracking"],
+  "DataSource": ["USGS/NLCD/NLCD1992", "USGS/NLCD/NLCD2001", "USGS/NLCD/NLCD2006"],
+  "Function": ["Remapping land cover classes", "Assembling image collection for events", "Executing geoprocessing model for change tracking"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["USGS/NLCD/NLCD1992", "USGS/NLCD/NLCD2001", "USGS/NLCD/NLCD2006"],
+        "Function": ["Remapping land cover classes", "Assembling image collection for events", "Executing geoprocessing model for change tracking"]
+    }
+}
+```

@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Landsat 8 Surface Reflectance Analysis", "Cloud Masking", "Image Filtering", "Geographic Analysis"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Filtering image collection by date range", "Filtering image collection by geographic bounds", "Applying cloud mask to images", "Calculating image statistics", "Clipping images to ROI", "Creating image collection list", "Applying visualization parameters to images"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Filtering image collection by date range", "Filtering image collection by geographic bounds", "Applying cloud mask to images", "Calculating image statistics", "Clipping images to ROI", "Creating image collection list", "Applying visualization parameters to images"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3555, 'completion_tokens': 224, 'total_tokens': 3779}

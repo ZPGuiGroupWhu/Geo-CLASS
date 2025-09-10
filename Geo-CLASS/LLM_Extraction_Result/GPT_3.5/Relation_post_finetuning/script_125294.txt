@@ -1,0 +1,13 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/GeoForPy/Tesis/EcorregionAltoParana"
+        ],
+        "Function": [
+            "Cloud Masking And Quality Filtering",
+            "Cloud Masking And Quality Filtering",
+            "Visualization And Output Generation",
+            "Exporting And Data Conversion"
+        ]
+    }
+}

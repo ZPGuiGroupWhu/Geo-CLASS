@@ -1,0 +1,25 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Wildfire analysis"],
+  "DataSource": ["MODIS/006/MCD64A1"],
+  "Function": ["Filtering image collection by date", "Selecting specific image band", "Creating video thumbnail from image collection"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["MODIS/006/MCD64A1"],
+        "Function": ["Filtering image collection by date", "Selecting specific image band", "Creating video thumbnail from image collection"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 8984, 'completion_tokens': 149, 'total_tokens': 9133}

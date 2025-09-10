@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["Filtering image collection by date and cloud coverage", "Calculating NDVI band", "Applying median reduction to image collection", "Clipping image to testing area"]
+    },
+    "relation_2": {
+        "DataSource": ["users/gena/packages:colorbrewer", "users/gena/packages:palettes", "users/gena/packages:style", "users/gena/packages:utils"],
+        "Function": ["Generating gradient bar", "Creating frame", "Drawing scale bar"]
+    }
+}

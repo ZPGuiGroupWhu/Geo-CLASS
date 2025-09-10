@@ -1,0 +1,6 @@
+{
+  "Summary": ["The script processes Landsat imagery to calculate NDVI and analyze vegetation changes over time."],
+  "Theme": ["Vegetation analysis", "NDVI calculation", "Temporal vegetation change monitoring"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Cloud and shadow masking", "NDVI calculation", "Image collection filtering", "Image differencing", "Anomaly calculation"]
+}

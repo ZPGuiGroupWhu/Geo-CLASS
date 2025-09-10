@@ -1,0 +1,15 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "MODIS/006/MOD09Q1"
+        ],
+        "Function": [
+            "Image collection creation and filtering by date",
+            "NDVI calculation and addition to image collection",
+            "Multiband image creation for unsupervised classification",
+            "Unsupervised classification and clustering",
+            "Merging and refining of classes",
+            "Visualization of results"
+        ]
+    }
+}

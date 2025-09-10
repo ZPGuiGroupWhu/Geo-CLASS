@@ -1,0 +1,5 @@
+{
+  "Theme": ["Ecorregion Alto Parana analysis"],
+  "DataSource": ["users/GeoForPy/Tesis/EcorregionAltoParana", "LANDSAT/LT05/C01/T1_SR"],
+  "Function": ["Cloud masking for Landsat 5 images", "Image collection filtering by date and cloud cover", "Percentile calculation for image collection", "Image clipping to region of interest", "Image visualization with multiple bands", "Image export to Drive"]
+}

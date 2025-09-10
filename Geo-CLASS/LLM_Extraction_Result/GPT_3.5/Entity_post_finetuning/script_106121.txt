@@ -1,0 +1,16 @@
+{
+    "Summary": [
+        "Reprojection of Sentinel-2 images to EPSG:4326 for export."
+    ],
+    "Theme": [
+        "BATHYMETRY/SEAFLOOR TOPOGRAPHY"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "Cloud Masking And Quality Filtering",
+        "Data Acquisition And Preprocessing",
+        "Exporting And Data Conversion"
+    ]
+}

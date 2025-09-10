@@ -1,0 +1,6 @@
+{
+  "Summary": ["Correlations between NDVI and precipitation in Hungary region."],
+  "Theme": ["NDVI-precipitation correlation analysis"],
+  "DataSource": ["MODIS/006/MOD13Q1", "UCSB-CHG/CHIRPS/DAILY"],
+  "Function": ["Temporal aggregation of CHIRPS data", "Temporal aggregation of NDVI data", "Resampling CHIRPS data to match NDVI scale", "Joining NDVI and CHIRPS data collections", "Calculating spatial correlation between NDVI and precipitation", "Zonal statistics calculation for scatter plot", "Creating scatter plot of NDVI vs. precipitation"]
+}

@@ -1,0 +1,35 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["The script utilizes Landsat 8 imagery to classify land cover types in a specified region."],
+  "Theme": ["Land cover classification"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR", "Mangrove", "BadanAir", "LahanTerbuka", "LahanTerbangun"],
+  "Function": ["Image collection filtering based on date and location", "Building training samples for classification", "Training a Random Forest classifier", "Classifying land cover using the trained classifier"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Image collection filtering based on date and location", "Classifying land cover using the trained classifier"]
+    },
+    "relation_2": {
+        "DataSource": ["Mangrove"],
+        "Function": ["Building training samples for classification"]
+    },
+    "relation_3": {
+        "DataSource": ["BadanAir"],
+        "Function": ["Building training samples for classification"]
+    },
+    "relation_4": {
+        "DataSource": ["LahanTerbuka"],
+        "Function": ["Building training samples for classification"]
+    },
+    "relation_5": {
+        "DataSource": ["LahanTerbangun"],
+        "Function": ["Building training samples for classification"]
+    }
+}
+```

@@ -1,0 +1,19 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Compares Sentinel-1 imagery for Myanmar flooding in 2018."],
+  "Theme": ["Flood monitoring and comparison"],
+  "DataSource": ["COPERNICUS/S1_GRD"],
+  "Function": ["Composite Sentinel-1 imagery for comparison", "Add layer selection widget for visualization"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Composite Sentinel-1 imagery for comparison", "Add layer selection widget for visualization"]
+    }
+}
+```

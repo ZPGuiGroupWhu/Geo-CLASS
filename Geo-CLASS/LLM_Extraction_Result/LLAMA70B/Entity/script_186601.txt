@@ -1,0 +1,5 @@
+{
+  "Theme": ["Forest monitoring and land cover classification"],
+  "DataSource": ["COPERNICUS/S1_GRD", "ft:12Ca5CZlFISuiE7Nf-3fpuTcvFgYNobv-4EJdCkGh", "ft:1-uk71GdY0SUx0Gf4oX2C0LWSvdns18hkRVz7D8C4", "ft:1NzCJgmYE2fzkwPn9dlO-u1W-CbjOshmaqauD2rza"],
+  "Function": ["Filtering Sentinel-1 images by polarization and date", "Creating composite images from means at different polarizations and look angles", "Exporting images to Google Drive", "Detecting water bodies using SAR data"]
+}

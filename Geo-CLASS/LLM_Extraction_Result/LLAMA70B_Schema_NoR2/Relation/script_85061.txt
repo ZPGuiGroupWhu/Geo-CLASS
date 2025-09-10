@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LT05/C02/T1_L2", "LANDSAT/LE07/C02/T1_L2", "LANDSAT/LC08/C02/T1_L2"],
+        "Function": ["Apply scale factors to Landsat images", "Unmix image bands to extract land cover fractions", "Filter images by cloud cover", "Compute shade and cloud scores"]
+    },
+    "relation_2": {
+        "DataSource": ["projects/mapbiomas-raisg/PRODUCTOS/AGUA/DATOS_AUXILIARES/TEMP/bigGrids_Suriname"],
+        "Function": ["Classify images based on land cover probabilities"]
+    }
+}

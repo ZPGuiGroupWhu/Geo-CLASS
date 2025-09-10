@@ -1,0 +1,59 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover classification and change detection in Zimbabwe using Landsat and Sentinel-2 data"],
+  "DataSource": ["users/kindgard/Asia/Asia", "users/kindgard/Africa", "users/kindgard/SUD", "users/kindgard/AfricaS", "users/kindgard/AmericaN", "users/kindgard/Asia2", "ft:1tdSwUL7MVpOauSgRzqVTOwdfy17KDbw-1d9omPw", "ft:1gvizfsdJL2f4cr0OSI5744HnaAeWU39w4cDO9aLh", "ft:1VyLhtXjayg1nD2auTSF73e-94uuuqEe0dLXkqk-y", "LANDSAT/LT5_L1T", "LANDSAT/LE7_L1T", "LANDSAT/LC08/C01/T1_RT", "COPERNICUS/S2", "JRC/GSW1_0/GlobalSurfaceWater", "users/kindgard/ESACCI-LC-L4-LC10-Map-20m-P1Y-2016-v10", "users/ValeriaContessa/Map_1992_rast"],
+  "Function": ["Image collection creation and filtering", "Feature collection creation and filtering", "Image masking and clipping", "Image compositing and mosaicking", "Image classification using CART algorithm", "Image ratio calculation", "Image quality assessment", "Change detection analysis"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/kindgard/Asia/Asia", "users/kindgard/Asia2"],
+        "Function": ["Image collection creation and filtering", "Image compositing and mosaicking"]
+    },
+    "relation_2": {
+        "DataSource": ["users/kindgard/Africa", "users/kindgard/AfricaS"],
+        "Function": ["Image collection creation and filtering", "Image masking and clipping"]
+    },
+    "relation_3": {
+        "DataSource": ["users/kindgard/SUD"],
+        "Function": ["Image collection creation and filtering"]
+    },
+    "relation_4": {
+        "DataSource": ["users/kindgard/AmericaN"],
+        "Function": ["Image collection creation and filtering", "Image ratio calculation"]
+    },
+    "relation_5": {
+        "DataSource": ["ft:1tdSwUL7MVpOauSgRzqVTOwdfy17KDbw-1d9omPw"],
+        "Function": ["Image quality assessment"]
+    },
+    "relation_6": {
+        "DataSource": ["ft:1gvizfsdJL2f4cr0OSI5744HnaAeWU39w4cDO9aLh"],
+        "Function": ["Image quality assessment"]
+    },
+    "relation_7": {
+        "DataSource": ["ft:1VyLhtXjayg1nD2auTSF73e-94uuuqEe0dLXkqk-y"],
+        "Function": ["Image quality assessment"]
+    },
+    "relation_8": {
+        "DataSource": ["LANDSAT/LT5_L1T", "LANDSAT/LE7_L1T", "LANDSAT/LC08/C01/T1_RT"],
+        "Function": ["Image classification using CART algorithm", "Change detection analysis"]
+    },
+    "relation_9": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Image classification using CART algorithm", "Change detection analysis"]
+    },
+    "relation_10": {
+        "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+        "Function": ["Image masking and clipping"]
+    },
+    "relation_11": {
+        "DataSource": ["users/kind
+
+Total_Usage:
+{'prompt_tokens': 7736, 'completion_tokens': 934, 'total_tokens': 8670}

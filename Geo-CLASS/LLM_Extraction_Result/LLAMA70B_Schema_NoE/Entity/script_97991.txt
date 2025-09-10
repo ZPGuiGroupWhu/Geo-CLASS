@@ -1,0 +1,31 @@
+{
+    "Theme": [
+        "Vector data upload and visualization",
+        "Raster data upload and visualization",
+        "Landsat image filtering and mosaicking",
+        "Sentinel image filtering and quality band creation",
+        "Classification and post-classification editing",
+        "Masking and export"
+    ],
+    "DataSource": [
+        "users/EL/TrinidadandTobago",
+        "users/EL/trinidad_forest_type_landcover_28july2011",
+        "users/EL/tobago_forest_type_landcover_06may2011",
+        "LANDSAT/LC8_L1T",
+        "COPERNICUS/S2",
+        "users/christinacorbane/MT_comp_proj",
+        "JRC/GSW1_0/GlobalSurfaceWater"
+    ],
+    "Function": [
+        "Feature collection creation",
+        "Image collection creation",
+        "Image filtering by bounds and date",
+        "Image filtering by cloud cover and day of year",
+        "Image mosaicking",
+        "Ratio band creation",
+        "Image classification",
+        "Post-classification editing",
+        "Masking",
+        "Image export to asset"
+    ]
+}

@@ -1,0 +1,55 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/EL/TrinidadandTobago"
+        ],
+        "Function": [
+            "Vegetation And Water Indices Calculation",
+            "Calculating terrain slope and aspect from DEMs",
+            "Classification And Machine Learning",
+            "Vegetation And Water Indices Calculation"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "users/EL/trinidad_forest_type_landcover_28july2011",
+            "users/EL/tobago_forest_type_landcover_06may2011"
+        ],
+        "Function": [
+            "Vegetation And Water Indices Calculation",
+            "Calculating terrain slope and aspect from DEMs",
+            "Classification And Machine Learning",
+            "Vegetation And Water Indices Calculation"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "LANDSAT/LC8_L1T"
+        ],
+        "Function": [
+            "Vegetation And Water Indices Calculation",
+            "Calculating terrain slope and aspect from DEMs",
+            "Classification And Machine Learning",
+            "Vegetation And Water Indices Calculation"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Vegetation And Water Indices Calculation",
+            "Calculating terrain slope and aspect from DEMs",
+            "Classification And Machine Learning",
+            "Vegetation And Water Indices Calculation"
+        ]
+    },
+    "relation_5": {
+        "DataSource": [
+            "JRC/GSW1_0/GlobalSurfaceWater"
+        ],
+        "Function": [
+            "Vegetation And Water Indices Calculation"
+        ]
+    }
+}

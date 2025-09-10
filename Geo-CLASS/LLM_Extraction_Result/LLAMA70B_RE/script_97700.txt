@@ -1,0 +1,28 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Vegetation Index Analysis", "SAR Image Analysis"],
+  "DataSource": ["COPERNICUS/S2", "COPERNICUS/S1_GRD"],
+  "Function": ["Image Collection Filtering", "NDVI Calculation", "GCI Calculation", "Image Clustering", "SAR Image Filtering", "SAR Image Clustering"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Image Collection Filtering", "NDVI Calculation", "GCI Calculation", "Image Clustering"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["SAR Image Filtering", "SAR Image Clustering"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4020, 'completion_tokens': 217, 'total_tokens': 4237}

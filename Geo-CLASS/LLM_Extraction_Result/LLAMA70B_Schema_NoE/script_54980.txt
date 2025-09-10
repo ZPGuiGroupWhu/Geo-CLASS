@@ -1,0 +1,23 @@
+Entity Recognition:
+```
+{
+  "Theme": ["Land cover classification and change detection"],
+  "DataSource": ["users/edimilsonrodriguessantos/MAPBIOMAS/INFRAURBANA6-FT-v6/"],
+  "Function": ["Importing and processing land cover classification images for multiple years", "Applying a remapping function to the classification images", "Generating a video thumbnail from the classified images"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/edimilsonrodriguessantos/MAPBIOMAS/INFRAURBANA6-FT-v6/"],
+        "Function": ["Importing and processing land cover classification images for multiple years", "Applying a remapping function to the classification images", "Generating a video thumbnail from the classified images"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2245, 'completion_tokens': 203, 'total_tokens': 2448}

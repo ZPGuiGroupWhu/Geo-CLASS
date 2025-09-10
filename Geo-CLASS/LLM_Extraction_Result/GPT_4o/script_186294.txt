@@ -1,0 +1,21 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Forest classification using NDVI"],
+  "DataSource": ["COPERNICUS/S2"],
+  "Function": ["Define time series start", "Define time series end", "Filter image collection by date", "Filter image collection by bounds", "Mask clouds in images", "Calculate NDVI", "Apply NDVI function to collection", "Visualize NDVI", "Export NDVI image to Drive"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["COPERNICUS/S2"],
+    "Function": ["Filter image collection by date", "Filter image collection by bounds", "Mask clouds in images", "Calculate NDVI", "Apply NDVI function to collection", "Visualize NDVI", "Export NDVI image to Drive"]
+  }
+}
+```
+
+Total_Token_Usage:
+9264

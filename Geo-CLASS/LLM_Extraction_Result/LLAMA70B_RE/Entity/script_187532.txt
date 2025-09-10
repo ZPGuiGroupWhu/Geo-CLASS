@@ -1,0 +1,16 @@
+{
+    "Theme": [
+        "Flood Mapping"
+    ],
+    "DataSource": [
+        "COPERNICUS/S1_GRD"
+    ],
+    "Function": [
+        "Filtering image collection",
+        "Converting to natural scale",
+        "Smoothing image",
+        "Calculating band ratio",
+        "Generating histogram",
+        "Flood mapping"
+    ]
+}

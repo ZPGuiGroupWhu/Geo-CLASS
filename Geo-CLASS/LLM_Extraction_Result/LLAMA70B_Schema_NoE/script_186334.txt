@@ -1,0 +1,48 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land cover classification and crop type identification"],
+  "DataSource": ["MODIS/006/MOD09Q1", "users/khoapv/Ranhgioi_DL"],
+  "Function": [
+    "Buffer creation around sugar mills",
+    "Image collection creation and filtering",
+    "NDVI calculation and addition to image collection",
+    "Multiband image creation for unsupervised classification",
+    "Training dataset creation",
+    "Unsupervised classification using k-means clustering",
+    "Class merging and refinement",
+    "Image visualization and mapping"
+  ]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["MODIS/006/MOD09Q1"],
+        "Function": [
+            "Image collection creation and filtering",
+            "NDVI calculation and addition to image collection",
+            "Multiband image creation for unsupervised classification"
+        ]
+    },
+    "relation_2": {
+        "DataSource": ["users/khoapv/Ranhgioi_DL"],
+        "Function": [
+            "Buffer creation around sugar mills",
+            "Training dataset creation",
+            "Unsupervised classification using k-means clustering",
+            "Class merging and refinement",
+            "Image visualization and mapping"
+        ]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3647, 'completion_tokens': 332, 'total_tokens': 3979}

@@ -1,0 +1,18 @@
+{
+    "Summary": [
+        "Script analyzes changes in lake areas using Landsat images and water occurrence maps."
+    ],
+    "Theme": [
+        "MARINE ENVIRONMENT MONITORING"
+    ],
+    "DataSource": [
+        "JRC/GSW1_0/GlobalSurfaceWater",
+        "users/sntopp/Lakes_ply_20171106",
+        "users/sntopp/NCSC_Horsepen_Lake",
+        "users/sarinarinab/CitSci_Washington_Lakes"
+    ],
+    "Function": [
+        "Surface water area computation",
+        "Generate Time Series Charts Of Water Area"
+    ]
+}

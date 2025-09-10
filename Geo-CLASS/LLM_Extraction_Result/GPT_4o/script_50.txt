@@ -1,0 +1,52 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Forest cover mapping in Cambodia"],
+  "DataSource": [
+    "USDOS/LSIB/2017",
+    "UMD/hansen/global_forest_change_2020_v1_8",
+    "users/ak_glaciers/NDVI_fitted_image_stack_from_LTOP_1990_start",
+    "users/ak_glaciers/NBR_fitted_image_stack_from_LTOP_1990_start"
+  ],
+  "Function": [
+    "Filter feature collection by country name",
+    "Select specific bands from image",
+    "Create random points within a region",
+    "Reduce regions to extract canopy cover",
+    "Filter points by random column value",
+    "Sample image regions to get spectral values",
+    "Train random forest classifier",
+    "Classify images using trained model",
+    "Create image collection from classified images",
+    "Add layer to map"
+  ]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["USDOS/LSIB/2017"],
+    "Function": ["Filter feature collection by country name", "Create random points within a region"]
+  },
+  "relation_2": {
+    "DataSource": ["UMD/hansen/global_forest_change_2020_v1_8"],
+    "Function": ["Select specific bands from image", "Reduce regions to extract canopy cover"]
+  },
+  "relation_3": {
+    "DataSource": ["users/ak_glaciers/NDVI_fitted_image_stack_from_LTOP_1990_start", "users/ak_glaciers/NBR_fitted_image_stack_from_LTOP_1990_start"],
+    "Function": [
+      "Select specific bands from image",
+      "Sample image regions to get spectral values",
+      "Train random forest classifier",
+      "Classify images using trained model",
+      "Create image collection from classified images",
+      "Add layer to map"
+    ]
+  }
+}
+```
+
+Total_Token_Usage:
+5034

@@ -1,0 +1,31 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "FAO/GAUL/2015/level1"
+        ],
+        "Function": [
+            "Selecting landcover band",
+            "Generating points"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "USGS/GFSAD1000_V0"
+        ],
+        "Function": [
+            "Selecting landcover band",
+            "Masking cloud and snow pixels"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "COPERNICUS/S2_SR"
+        ],
+        "Function": [
+            "Masking cloud and snow pixels",
+            "Adding NDVI band",
+            "Filtering image collection",
+            "Calculating NDVI time series"
+        ]
+    }
+}

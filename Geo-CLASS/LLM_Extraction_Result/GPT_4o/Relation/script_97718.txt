@@ -1,0 +1,20 @@
+{
+  "relation_1": {
+    "DataSource": ["COPERNICUS/S2"],
+    "Function": [
+      "Filter image collection by date",
+      "Filter image collection by boundary",
+      "Mask clouds",
+      "Calculate NDVI",
+      "Create NDVI composite",
+      "Display NDVI on map",
+      "Export NDVI to Drive",
+      "Calculate MSI",
+      "Create MSI composite",
+      "Display MSI on map",
+      "Export MSI to Drive",
+      "Create NDVI time series chart",
+      "Create MSI time series chart"
+    ]
+  }
+}

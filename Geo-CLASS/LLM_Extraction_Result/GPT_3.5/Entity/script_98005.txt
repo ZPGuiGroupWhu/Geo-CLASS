@@ -1,0 +1,6 @@
+{
+  "Summary": ["The script generates mosaics for different years using Landsat and Sentinel data for specific countries."],
+  "Theme": ["Landsat and Sentinel data mosaicking for land cover analysis"],
+  "DataSource": ["users/EL/L5_2000_BelizeCubaCRP", "users/EL/L7_2010_BelizeCubaCRP", "users/EL/L8_2017_BelizeCubaCRP", "users/EL/S2_2017_BelizeCubaCRP"],
+  "Function": ["Cloud score computation for cloud detection", "Cloud masking based on cloud score threshold"]
+}

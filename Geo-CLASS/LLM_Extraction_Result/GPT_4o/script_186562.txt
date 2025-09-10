@@ -1,0 +1,21 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Forest loss detection", "Forest degradation", "Forest fire detection"],
+  "DataSource": ["LANDSAT/LC8_SR", "LANDSAT/LC8_L1T_TOA", "LANDSAT/LT5_L1T_TOA_FMASK", "LANDSAT/LE7_L1T_TOA_FMASK", "COPERNICUS/S2"],
+  "Function": ["Filter image collection by date", "Filter image collection by location", "Sort images by date", "Select specific bands", "Calculate NDVI", "Calculate NBR", "Export images to Google Drive", "Create mosaic of images", "Visualize images on map", "Link maps for synchronized navigation", "Add point marker on map click"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["LANDSAT/LC8_SR", "LANDSAT/LC8_L1T_TOA", "LANDSAT/LT5_L1T_TOA_FMASK", "LANDSAT/LE7_L1T_TOA_FMASK", "COPERNICUS/S2"],
+    "Function": ["Filter image collection by date", "Filter image collection by location", "Sort images by date", "Select specific bands", "Calculate NDVI", "Calculate NBR", "Export images to Google Drive", "Create mosaic of images", "Visualize images on map", "Link maps for synchronized navigation", "Add point marker on map click"]
+  }
+}
+```
+
+Total_Token_Usage:
+6801

@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Mosaic images before and after event", "Threshold radar intensities to identify flooded areas", "Topological intersection to detect changes", "Clean-up of false positive pixels", "Convert pixels to polygons"]
+    },
+    "relation_2": {
+        "DataSource": ["CIESIN/GPWv4/population-count"],
+        "Function": ["Population data clipping"]
+    }
+}

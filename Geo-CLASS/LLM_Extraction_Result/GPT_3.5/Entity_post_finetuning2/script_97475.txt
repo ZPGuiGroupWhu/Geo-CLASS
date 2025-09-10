@@ -1,0 +1,16 @@
+{
+    "Summary": [
+        "The script processes Sentinel-2 imagery to classify land cover clusters using XMeans clustering."
+    ],
+    "Theme": [
+        "LAND USE/LAND COVER CLASSIFICATION"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2",
+        "USGS/NED"
+    ],
+    "Function": [
+        "Cloud And Snow Masking",
+        "Sort Images By Acquisition Time"
+    ]
+}

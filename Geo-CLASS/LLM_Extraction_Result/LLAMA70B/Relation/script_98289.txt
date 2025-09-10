@@ -1,0 +1,6 @@
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C02/T1_L2"],
+        "Function": ["Filter image collection by date range", "Filter image collection by geography", "Calculate median image", "Mask clouds from image", "Filter image collection by cloud cover", "Assign spectral bands for visualization"]
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "Theme": [
+        "Land cover classification and crop type identification"
+    ],
+    "DataSource": [
+        "MODIS/006/MOD09Q1",
+        "users/khoapv/Ranhgioi_DL"
+    ],
+    "Function": [
+        "Buffer creation around sugar mills",
+        "Image collection creation and filtering",
+        "NDVI calculation and addition to image collection",
+        "Multiband image creation for unsupervised classification",
+        "Training dataset creation",
+        "Unsupervised classification using k-means clustering",
+        "Class merging and refinement",
+        "Image visualization and mapping"
+    ]
+}

@@ -1,0 +1,6 @@
+{
+  "relation_1": {
+    "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+    "Function": ["Filter image collection by bounds", "Mask clouds and shadows", "Compute median composite", "Calculate NDVI", "Clip images to study area", "Create time series charts", "Generate GIF animation", "Compute image difference", "Calculate mean image", "Compute standard deviation", "Calculate anomalies"]
+  }
+}

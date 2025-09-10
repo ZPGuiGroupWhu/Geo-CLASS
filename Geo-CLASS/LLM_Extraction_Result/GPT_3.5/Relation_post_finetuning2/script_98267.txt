@@ -1,0 +1,31 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S1_GRD",
+            "FAO/GAUL_SIMPLIFIED_500m/2015/level2"
+        ],
+        "Function": [
+            "Filter Image Collection By Date And Region",
+            "Generates Visual Comparisons Of Pre- And Post-Event Images",
+            "Speckle Noise Reduction",
+            "Convert Flood Detection Results To Vector Polygons",
+            "Buffering Points To Create Zones For Analysis"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "JRC/GSW1_0/GlobalSurfaceWater"
+        ],
+        "Function": [
+            "Convert Flood Detection Results To Vector Polygons"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "WWF/HydroSHEDS/03VFDEM"
+        ],
+        "Function": [
+            "Buffering Points To Create Zones For Analysis"
+        ]
+    }
+}

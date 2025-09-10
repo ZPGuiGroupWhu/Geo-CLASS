@@ -1,0 +1,6 @@
+{
+  "Summary": ["Analyzing NDVI changes before and after a fire incident."],
+  "Theme": ["Fire impact assessment through NDVI analysis"],
+  "DataSource": ["users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016", "COPERNICUS/S2"],
+  "Function": ["Image collection filtering based on date and location", "NDVI calculation for pre and post-fire images"]
+}

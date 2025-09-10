@@ -1,0 +1,15 @@
+{
+    "Theme": [
+        "Fire area analysis and classification"
+    ],
+    "DataSource": [
+        "users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016",
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "Filtering fires by date and location",
+        "Creating image collections before and after the fire",
+        "Calculating indices for image classification",
+        "Classifying images using different classifiers"
+    ]
+}

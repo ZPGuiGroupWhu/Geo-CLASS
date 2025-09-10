@@ -1,0 +1,16 @@
+{
+    "Theme": [
+        "Land Surface Temperature Analysis"
+    ],
+    "DataSource": [
+        "users/khoapv_vnuf/Thanhhoa_t",
+        "MODIS/MOD11A2"
+    ],
+    "Function": [
+        "Image Collection Filtering",
+        "Temperature Unit Conversion",
+        "Annual Image Aggregation",
+        "Monthly Max/Min/Mean Temperature Calculation",
+        "Image Series Chart Generation"
+    ]
+}

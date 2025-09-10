@@ -1,0 +1,10 @@
+{
+  "relation_1": {
+    "DataSource": ["users/thao226355/share/VietNam_Ranh_gioi_tinh"],
+    "Function": ["Filter boundary by metadata", "Add boundary layer to map", "Filter images by boundary", "Clip images by boundary", "Calculate image area"]
+  },
+  "relation_2": {
+    "DataSource": ["COPERNICUS/S2_SR"],
+    "Function": ["Select QA60 band", "Create cloud mask", "Apply cloud mask", "Filter images by date", "Filter images by cloud percentage", "Apply cloud mask and merge images", "Select specific bands", "Add satellite image layer to map", "Calculate NDVI", "Mask NDVI values", "Classify NDVI values", "Add classified NDVI layer to map"]
+  }
+}

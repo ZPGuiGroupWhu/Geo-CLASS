@@ -1,0 +1,25 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Vegetation health monitoring using satellite indices"],
+  "DataSource": ["COPERNICUS/S2_SR"],
+  "Function": ["Filtering image collection by date and geometry", "Calculating NDVI index", "Calculating NDMI index", "Creating legend for NDMI index"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["Filtering image collection by date and geometry", "Calculating NDVI index", "Calculating NDMI index", "Creating legend for NDMI index"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3800, 'completion_tokens': 164, 'total_tokens': 3964}

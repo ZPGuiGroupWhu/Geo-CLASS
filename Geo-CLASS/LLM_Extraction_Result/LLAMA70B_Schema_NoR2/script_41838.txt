@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover classification using Landsat 8 imagery"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Filtering image collection by date and cloud cover", "Clipping image to region of interest", "Merging feature collections", "Selecting bands for classification", "Sampling regions for training", "Training random forest classifier", "Classifying land cover", "Visualizing classification results"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Filtering image collection by date and cloud cover", "Clipping image to region of interest", "Selecting bands for classification", "Classifying land cover"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Merging feature collections", "Sampling regions for training", "Training random forest classifier", "Visualizing classification results"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 6615, 'completion_tokens': 255, 'total_tokens': 6870}

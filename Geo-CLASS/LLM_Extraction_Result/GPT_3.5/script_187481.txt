@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Sentinel-1 flood mapping script with backscatter analysis and histogram visualization."],
+  "Theme": ["Flood mapping", "Backscatter analysis", "Histogram visualization"],
+  "DataSource": ["COPERNICUS/S1_GRD", "ft:1nWJr3XY3hcsRSvydLLyK47W-r6N1bB7JHhTYuLle"],
+  "Function": ["Backscatter value filtering", "Image smoothing", "Histogram generation"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Backscatter value filtering", "Image smoothing", "Histogram generation"]
+    },
+    "relation_2": {
+        "DataSource": ["ft:1nWJr3XY3hcsRSvydLLyK47W-r6N1bB7JHhTYuLle"],
+        "Function": ["Backscatter value filtering", "Image smoothing", "Histogram generation"]
+    }
+}
+```

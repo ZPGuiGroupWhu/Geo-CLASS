@@ -1,0 +1,40 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/felixgeooperations/Drin/20210112_Drin_flood"
+        ],
+        "Function": [
+            "Filtering Sentinel-1 GRD data by predefined parameters",
+            "Calculating flood extent",
+            "Calculating flood extent area"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S1_GRD"
+        ],
+        "Function": [
+            "Filtering Sentinel-1 GRD data by predefined parameters",
+            "Selecting images by predefined dates",
+            "Applying reduce radar speckle by smoothing"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "JRC/GSW1_0/GlobalSurfaceWater",
+            "WWF/HydroSHEDS/03VFDEM"
+        ],
+        "Function": [
+            "Refining flood result using additional datasets"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "JRC/GHSL/P2016/POP_GPW_GLOBE_V1/2015"
+        ],
+        "Function": [
+            "Exposed population density calculation",
+            "Damage assessment"
+        ]
+    }
+}

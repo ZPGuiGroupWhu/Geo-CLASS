@@ -1,0 +1,26 @@
+{
+  "relation_1": {
+    "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2"],
+    "Function": ["Filter regions by name", "Add layer to map"]
+  },
+  "relation_2": {
+    "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+    "Function": [
+      "Filter image collection by area and date",
+      "Sort images by cloud cover",
+      "Create mosaic and clip to boundary",
+      "Calculate NDWI",
+      "Compute difference image",
+      "Thresholding",
+      "Mask clouds"
+    ]
+  },
+  "relation_3": {
+    "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+    "Function": ["Mask permanent water"]
+  },
+  "relation_4": {
+    "DataSource": ["WWF/HydroSHEDS/03VFDEM"],
+    "Function": ["Mask areas with high slope"]
+  }
+}

@@ -1,0 +1,224 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var l7 = ee.ImageCollection("LANDSAT/LE07/C01/T1_TOA"),
+    veg = 
+    /* color: #d63000 */
+    /* shown: false */
+    ee.Geometry.MultiPolygon(
+        [[[[-110.79763383671083, 27.930263588384665],
+           [-110.79763383671083, 27.928661604641043],
+           [-110.79538078113832, 27.928661604641043],
+           [-110.79538078113832, 27.930263588384665]]],
+         [[[-110.93970863311421, 27.937830025825583],
+           [-110.93970863311421, 27.93610019306979],
+           [-110.93797592609059, 27.93610019306979],
+           [-110.93797592609059, 27.937830025825583]]],
+         [[[-110.81071996939534, 27.952145102933564],
+           [-110.81071996939534, 27.950969923291876],
+           [-110.80975437414997, 27.950969923291876],
+           [-110.80975437414997, 27.952145102933564]]]], null, false),
+    soil = 
+    /* color: #009999 */
+    /* shown: false */
+    ee.Geometry.MultiPolygon(
+        [[[[-102.90046114536989, 25.66795087746485],
+           [-102.90046114536989, 25.66044663701405],
+           [-102.88827318760622, 25.66044663701405],
+           [-102.88827318760622, 25.66795087746485]]],
+         [[[-110.78317588619649, 27.939050381427766],
+           [-110.78317588619649, 27.933514881647056],
+           [-110.78017181209981, 27.933514881647056],
+           [-110.78017181209981, 27.939050381427766]]],
+         [[[-110.78712409786641, 27.943012260208146],
+           [-110.78712409786641, 27.942936436140812],
+           [-110.78712409786641, 27.942936436140812],
+           [-110.78712409786641, 27.943012260208146]]],
+         [[[-110.78712409786641, 27.943107040217438],
+           [-110.78712409786641, 27.93510731474999],
+           [-110.78401273540914, 27.93510731474999],
+           [-110.78401273540914, 27.943107040217438]]],
+         [[[-110.82114839804524, 27.95203137643046],
+           [-110.82114839804524, 27.947349531425363],
+           [-110.81685686362141, 27.947349531425363],
+           [-110.81685686362141, 27.95203137643046]]]], null, false),
+    urban = 
+    /* color: #ff9999 */
+    /* shown: false */
+    ee.Geometry.MultiPolygon(
+        [[[[-110.79925553436986, 27.954080564477433],
+           [-110.79925553436986, 27.953540372204177],
+           [-110.79364435311071, 27.953540372204177],
+           [-110.79364435311071, 27.954080564477433]]],
+         [[[-110.78671595034355, 27.95708813735012],
+           [-110.78671595034355, 27.95547707447881],
+           [-110.78430196223015, 27.95547707447881],
+           [-110.78430196223015, 27.95708813735012]]],
+         [[[-99.12319171991943, 19.396836928106502],
+           [-99.12319171991943, 19.39555169852691],
+           [-99.12088502016663, 19.39555169852691],
+           [-99.12088502016663, 19.396836928106502]]],
+         [[[-110.79544359037017, 27.957960108469933],
+           [-110.79544359037017, 27.956723392928737],
+           [-110.79424732514953, 27.956723392928737],
+           [-110.79424732514953, 27.957960108469933]]],
+         [[[-110.81599855673664, 27.949699956719726],
+           [-110.81599855673664, 27.944108135210598],
+           [-110.81361675513142, 27.944108135210598],
+           [-110.81361675513142, 27.949699956719726]]]], null, false),
+    sentinel = ee.ImageCollection("COPERNICUS/S2"),
+    predios = ee.FeatureCollection("users/eeranyartrodrigo/ferrocarriles/coahuilaPols");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+//Otu's function
+var otsu = function(histogram){
+  var counts = ee.Array(ee.Dictionary(histogram).get('histogram'));
+  var means = ee.Array(ee.Dictionary(histogram).get('bucketMeans'));
+  var size = means.length().get([0]);
+  var total = counts.reduce(ee.Reducer.sum(), [0]).get([0]);
+  var sum = means.multiply(counts).reduce(ee.Reducer.sum(), [0]).get([0]);
+  var mean = sum.divide(total);
+  
+  var indices = ee.List.sequence(1, size);
+  
+  // Compute between sum of squares, where each mean partitions the data.
+  var bss = indices.map(function(i) {
+    var aCounts = counts.slice(0, 0, i);
+    var aCount = aCounts.reduce(ee.Reducer.sum(), [0]).get([0]);
+    var aMeans = means.slice(0, 0, i);
+    var aMean = aMeans.multiply(aCounts)
+        .reduce(ee.Reducer.sum(), [0]).get([0])
+        .divide(aCount);
+    var bCount = total.subtract(aCount);
+    var bMean = sum.subtract(aCount.multiply(aMean)).divide(bCount);
+    return aCount.multiply(aMean.subtract(mean).pow(2)).add(
+           bCount.multiply(bMean.subtract(mean).pow(2)));
+  });
+  
+  
+  
+  // Return the mean value corresponding to the maximum BSS.
+  return means.sort(bss).get([-1]);
+};
+
+Map.addLayer(predios.filterBounds(aoi).geometry(),{},'administratives')
+////// Filtrar el predio
+var aoi = predios.filter(ee.Filter.eq('Folio','852-00')).geometry()
+///// definir las bandas
+var bands = ['B1','B2','B3','B4','B5','NDVI','BSI','NDBI']
+var bands2 = ['B11','B2','B3','B4','B8','NDVI','BSI','NDBI']
+
+Map.centerObject(aoi)
+
+// crear la coleccion de las muestras
+var fc_pts = ee.FeatureCollection([
+        ee.Feature(soil,{'class':'soil'}),
+				ee.Feature(veg,{'class':'veg'}),
+				ee.Feature(urban,{'class':'urban'}),
+				]);
+
+
+var img_old = l7.filterDate("2015-01-01","2015-12-31")
+     .select(['B1','B2','B3','B4','B5'])
+		
+		.filterMetadata('CLOUD_COVER','less_than',30)
+		.median()
+		
+		
+var img_new = l7.filterDate("2020-01-01","2020-12-31")
+     .select(['B1','B2','B3','B4','B5'])
+		
+		.filterMetadata('CLOUD_COVER','less_than',30)
+		.median()
+		
+
+img_old = img_old.addBands(img_old.normalizedDifference(['B4','B3']).rename('NDVI'))
+          .addBands(img_old.normalizedDifference(['B5','B4']).rename('NDBI'))
+          .addBands(img_old.expression(
+                  '((B5+B3)-(B4+B1))/((B5+B3)+(B4+B1))',
+                  {'B5':img_old.select('B5'), 'B3':img_old.select('B3'),
+                    'B4':img_old.select('B4'), 'B1':img_old.select('B1')}).rename('BSI'))
+          
+          
+img_new = img_new.addBands(img_new.normalizedDifference(['B4','B3']).rename('NDVI'))
+          .addBands(img_new.normalizedDifference(['B5','B4']).rename('NDBI'))
+          .addBands(img_new.expression(
+                  '((B5+B3)-(B4+B1))/((B5+B3)+(B4+B1))',
+                  {'B5':img_new.select('B5'), 'B3':img_new.select('B3'),
+                    'B4':img_new.select('B4'), 'B1':img_new.select('B1')}).rename('BSI'))
+          
+///// sentinel
+var img_se = sentinel.filterDate("2020-01-01","2020-12-31")
+     .select(['B11','B2','B3','B4','B8'])
+		
+		.filterMetadata('CLOUDY_PIXEL_PERCENTAGE','less_than',40)
+		.median()
+
+img_se = img_se.addBands(img_se.normalizedDifference(['B8','B4']).rename('NDVI'))
+          .addBands(img_se.normalizedDifference(['B11','B8']).rename('NDBI'))
+          .addBands(img_se.expression(
+                  '((B11+B4)-(B8+B2))/((B11+B4)+(B8+B2))',
+                  {'B11':img_se.select('B11'), 'B8':img_se.select('B8'),
+                    'B4':img_se.select('B4'), 'B2':img_se.select('B2')}).rename('BSI'))
+
+var spectralStatsNew = img_new.reduceRegions({collection:fc_pts,
+            reducer:ee.Reducer.median(),
+            scale: 30});
+var spectralStatsOld = img_old.reduceRegions({collection:fc_pts,
+            reducer:ee.Reducer.median(),
+            scale: 30});
+var spectralStatsSe = img_se.reduceRegions({collection:fc_pts,
+            reducer:ee.Reducer.median(),
+            scale: 10});
+print(spectralStatsSe)
+spectralStatsNew = spectralStatsNew.makeArray(bands,'BandsMeanValue');
+spectralStatsOld = spectralStatsOld.makeArray(bands,'BandsMeanValue');
+spectralStatsSe = spectralStatsSe.makeArray(bands2,'BandsMeanValue');
+
+//// obtener las clases: soil, veg y urban
+var classes = spectralStatsNew.aggregate_array('class');
+
+var bandValuesNew = spectralStatsNew.aggregate_array('BandsMeanValue');
+var bandValuesOld = spectralStatsOld.aggregate_array('BandsMeanValue');
+var bandValuesSe = spectralStatsSe.aggregate_array('BandsMeanValue');
+
+function ConvertArrayToList(thisArray){
+	var thisList = ee.Array(thisArray).toList();
+	return thisList;
+}
+
+bandValuesNew = bandValuesNew.map(ConvertArrayToList);
+bandValuesOld = bandValuesOld.map(ConvertArrayToList);
+bandValuesSe = bandValuesSe.map(ConvertArrayToList);
+
+var unmixedNew = img_new.unmix(bandValuesNew,true,true).rename(classes);
+var unmixedOld = img_old.unmix(bandValuesNew,true,true).rename(classes);
+var unmixedSe = img_se.unmix(bandValuesSe,true,true).rename(classes);
+
+Map.addLayer(unmixedNew.clip(aoi),{bands:['soil','veg','urban']},'unmixed New')
+Map.addLayer(unmixedOld.clip(aoi),{bands:['soil','veg','urban']},'unmixed Old')
+Map.addLayer(unmixedSe.clip(aoi),{bands:['soil','veg','urban']},'unmixed Se')
+
+
+///Sacar histogramas para obtener valor de threshold binario
+var histNew = unmixedNew.select('urban').reduceRegion(ee.Reducer.histogram(),aoi,30)
+var histOld = unmixedOld.select('urban').reduceRegion(ee.Reducer.histogram(),aoi,30)
+
+var otsuNew = otsu(histNew.get('urban'))
+var otsuOld = otsu(histOld.get('urban'))
+print('otsuNew: ', otsuNew)
+print('otsuOld: ', otsuOld)
+var urbanBinaryNew = unmixedNew.clip(aoi).select("urban")
+                  .where(unmixedNew.clip(aoi).select("urban").gte(0.5),1)
+urbanBinaryNew = urbanBinaryNew.where(urbanBinaryNew.lt(0.5),0)
+
+var urbanBinaryOld = unmixedOld.clip(aoi).select("urban")
+                  .where(unmixedOld.clip(aoi).select("urban").gte(0.5),1)
+urbanBinaryOld = urbanBinaryOld.where(urbanBinaryOld.lt(0.5),0)
+
+Map.addLayer(unmixedNew.select('urban').clip(aoi),{min:0, max:1},'Urban New')
+Map.addLayer(unmixedOld.select('urban').clip(aoi),{min:0, max:1},'Urban Old')
+
+var urbanMax = unmixedOld.select('urban').gt(unmixedOld.select('veg')).and(unmixedOld.select('urban').gt(unmixedOld.select('soil')))
+var urbanMax2 = unmixedNew.select('urban').gt(unmixedNew.select('veg')).and(unmixedNew.select('urban').gt(unmixedNew.select('soil')))
+Map.addLayer(urbanMax.clip(aoi),{min:0, max:1, palette: ['black','yellow']},'urbanMax')
+Map.addLayer(urbanMax2.clip(aoi),{min:0, max:1, palette: ['black','yellow']},'urbanMax2')
+Map.addLayer(urbanBinaryNew,{min:0, max:1},'Urban Binary New')
+Map.addLayer(urbanBinaryOld,{min:0, max:1},'Urban Binary Old')

@@ -1,0 +1,27 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "MODIS/006/MOD13Q1"
+        ],
+        "Function": [
+            "NDVI (Normalized Difference Vegetation Index calculation)",
+            "NDVI (Normalized Difference Vegetation Index calculation)",
+            "NDVI (Normalized Difference Vegetation Index calculation)",
+            "Spatial Statistics And Cluster Analysis",
+            "NDVI (Normalized Difference Vegetation Index calculation)"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "UCSB-CHG/CHIRPS/DAILY"
+        ],
+        "Function": [
+            "Time Series Graphs And Statistics",
+            "MNDWI (Modified Normalized Difference Water Index calculation)",
+            "NDVI (Normalized Difference Vegetation Index calculation)",
+            "NDVI (Normalized Difference Vegetation Index calculation)",
+            "Spatial Statistics And Cluster Analysis",
+            "NDVI (Normalized Difference Vegetation Index calculation)"
+        ]
+    }
+}

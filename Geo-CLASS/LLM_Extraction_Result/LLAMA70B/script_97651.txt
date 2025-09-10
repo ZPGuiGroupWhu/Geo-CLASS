@@ -1,0 +1,25 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Landsat 7 image processing for cloud masking and export"],
+  "DataSource": ["LANDSAT/LE07/C01/T1_SR"],
+  "Function": ["Filter image collection by date and path/row", "Mask occluded pixels using cloud confidence and other flags", "Export image collection to Google Drive"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LE07/C01/T1_SR"],
+        "Function": ["Filter image collection by date and path/row", "Mask occluded pixels using cloud confidence and other flags", "Export image collection to Google Drive"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4939, 'completion_tokens': 179, 'total_tokens': 5118}

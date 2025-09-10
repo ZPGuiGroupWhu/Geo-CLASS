@@ -1,0 +1,35 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Rice paddy monitoring", "Urban area detection", "Water body detection", "Vegetation monitoring"],
+  "DataSource": ["COPERNICUS/S2", "COPERNICUS/S1_GRD", "users/eeranyartrodrigo/ferrocarriles/estaciones_prospectadas_area", "WWF/HydroSHEDS/03VFDEM"],
+  "Function": ["Filtering image collections by date and geometry", "Removing clouds from images", "Calculating median of image collection", "Computing normalized difference indices", "Applying thresholds to indices", "Clipping images to geometry", "Reducing image collection to percentiles", "Calculating difference between images", "Updating mask of image", "Selecting areas based on slope"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response that organizes the extracted information into a structured format:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Filtering image collections by date and geometry", "Removing clouds from images", "Calculating median of image collection", "Clipping images to geometry"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Computing normalized difference indices", "Applying thresholds to indices", "Reducing image collection to percentiles", "Calculating difference between images"]
+    },
+    "relation_3": {
+        "DataSource": ["users/eeranyartrodrigo/ferrocarriles/estaciones_prospectadas_area"],
+        "Function": ["Selecting areas based on slope"]
+    },
+    "relation_4": {
+        "DataSource": ["WWF/HydroSHEDS/03VFDEM"],
+        "Function": ["Updating mask of image"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2985, 'completion_tokens': 422, 'total_tokens': 3407}

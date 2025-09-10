@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Extracts MODIS LST data, calculates temperature statistics, and generates charts."],
+  "Theme": ["Temperature analysis"],
+  "DataSource": ["users/khoapv_vnuf/Thanhhoa_t", "MODIS/MOD11A2"],
+  "Function": ["Data transformation from Kelvin to Celsius", "Image collection filtering by date and aggregation"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/khoapv_vnuf/Thanhhoa_t"],
+        "Function": ["Data transformation from Kelvin to Celsius", "Image collection filtering by date and aggregation"]
+    },
+    "relation_2": {
+        "DataSource": ["MODIS/MOD11A2"],
+        "Function": ["Data transformation from Kelvin to Celsius", "Image collection filtering by date and aggregation"]
+    }
+}
+```

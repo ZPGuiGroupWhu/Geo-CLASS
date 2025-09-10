@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["users/cxliu2015/BYDwater20210325"],
+        "Function": ["Cloud masking", "NDVI computation", "MNDWI computation", "NDMI computation", "NBR computation", "NDVIreln computation", "NDVIrel computation", "CI computation", "Image export"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Cloud masking", "NDVI computation", "MNDWI computation", "NDMI computation", "NBR computation", "NDVIreln computation", "NDVIrel computation", "CI computation", "Image export"]
+    }
+}

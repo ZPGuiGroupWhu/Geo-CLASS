@@ -1,0 +1,35 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LT05/C01/T1_SR"
+        ],
+        "Function": [
+            "Cloud masking and band selection for Landsat 5",
+            "Merging and renaming of satellite collections",
+            "Calculation of NDWI and MNDWI indices",
+            "Generation of annual means for NDWI and MNDWI"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LE07/C01/T1_SR"
+        ],
+        "Function": [
+            "Cloud masking and band selection for Landsat 7",
+            "Merging and renaming of satellite collections",
+            "Calculation of NDWI and MNDWI indices",
+            "Generation of annual means for NDWI and MNDWI"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "Cloud masking and band selection for Landsat 8",
+            "Merging and renaming of satellite collections",
+            "Calculation of NDWI and MNDWI indices",
+            "Generation of annual means for NDWI and MNDWI"
+        ]
+    }
+}

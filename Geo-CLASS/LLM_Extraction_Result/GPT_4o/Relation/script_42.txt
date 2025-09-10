@@ -1,0 +1,14 @@
+{
+  "relation_1": {
+    "DataSource": ["USDOS/LSIB/2017"],
+    "Function": ["Filter feature collection by country name", "Create random points within a region"]
+  },
+  "relation_2": {
+    "DataSource": ["UMD/hansen/global_forest_change_2020_v1_8"],
+    "Function": ["Select specific bands from an image", "Add image layer to map", "Reduce regions to extract values"]
+  },
+  "relation_3": {
+    "DataSource": ["users/ak_glaciers/NDVI_fitted_image_stack_from_LTOP_1990_start", "users/ak_glaciers/NBR_fitted_image_stack_from_LTOP_1990_start"],
+    "Function": ["Select specific bands from an image", "Add image layer to map", "Sample image regions", "Train random forest classifier", "Classify image using trained model"]
+  }
+}

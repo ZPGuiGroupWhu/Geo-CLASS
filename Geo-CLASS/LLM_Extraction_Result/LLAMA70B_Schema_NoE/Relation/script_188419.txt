@@ -1,0 +1,18 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "Cloud masking using pixel QA band",
+            "Image filtering by date and geometry",
+            "Image clipping to geometry",
+            "Median image calculation",
+            "NDVI calculation",
+            "LST calculation using thermal band 10",
+            "Emissivity calculation",
+            "Fractional vegetation calculation",
+            "Image visualization and export to Drive"
+        ]
+    }
+}

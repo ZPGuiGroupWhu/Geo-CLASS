@@ -1,0 +1,14 @@
+{
+    "Summary": [
+        "The script generates an animation of NO2 column density within a specific region."
+    ],
+    "Theme": [
+        "AIR QUALITY"
+    ],
+    "DataSource": [
+        "COPERNICUS/S5P/NRTI/L3_NO2"
+    ],
+    "Function": [
+        "Filter Image Collection By Date"
+    ]
+}

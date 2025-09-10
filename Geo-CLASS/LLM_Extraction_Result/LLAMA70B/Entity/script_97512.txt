@@ -1,0 +1,5 @@
+{
+  "Theme": ["Burn severity analysis of Medocino Complex Fire"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR/LC08_045033_20170925", "LANDSAT/LC08/C01/T1_SR/LC08_045033_20180928", "users/cade/ca_MendocinoComplex"],
+  "Function": ["Compute normalized difference burn ratio", "Clip image to fire perimeter", "Reclassify image to burn severity map", "Create histogram of burn severity zones", "Generate thumbnail of burn severity map"]
+}

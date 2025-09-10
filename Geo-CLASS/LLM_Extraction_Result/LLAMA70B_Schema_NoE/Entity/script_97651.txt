@@ -1,0 +1,14 @@
+{
+    "Theme": [
+        "Land cover classification and cloud masking using Landsat 7 images"
+    ],
+    "DataSource": [
+        "LANDSAT/LE07/C01/T1_SR"
+    ],
+    "Function": [
+        "Filtering image collections by date and WRS path/row",
+        "Masking occluded pixels using cloud confidence, cloud shadow, snow, water, and terrain occlusion",
+        "Applying mask to image collections",
+        "Exporting results to Google Drive"
+    ]
+}

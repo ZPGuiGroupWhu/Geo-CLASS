@@ -1,0 +1,14 @@
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Filtering image collection by geometry", "Applying normalized difference water index", "Computing threshold using Otsu method", "Detecting water bodies using thresholding"]
+    },
+    "relation_2": {
+        "DataSource": ["JRC/GSW1_0/MonthlyHistory"],
+        "Function": ["Computing histogram for thresholding"]
+    },
+    "relation_3": {
+        "DataSource": ["users/christinacorbane/MT_comp_proj"],
+        "Function": ["Clipping image edges", "Buffering around NDWI edges"]
+    }
+}

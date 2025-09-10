@@ -1,0 +1,17 @@
+{
+    "Theme": [
+        "Land cover classification using Sentinel-1 data"
+    ],
+    "DataSource": [
+        "COPERNICUS/S1_GRD",
+        "User-defined polygons for urban, forest, and water areas"
+    ],
+    "Function": [
+        "Refined Lee speckle filtering",
+        "CART classification",
+        "Image clipping",
+        "Image conversion between dB and natural units",
+        "Image filtering using mean and variance calculations",
+        "Image visualization"
+    ]
+}

@@ -1,0 +1,38 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "USDOS/LSIB/2017"
+        ],
+        "Function": [
+            "Create random points within an area of interest",
+            "Extract spectral information from images"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "UMD/hansen/global_forest_change_2020_v1_8"
+        ],
+        "Function": [
+            "Extract spectral information from images",
+            "Train a random forest classifier"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "users/ak_glaciers/NDVI_fitted_image_stack_from_LTOP_1990_start"
+        ],
+        "Function": [
+            "Extract spectral information from images",
+            "Classify images using a trained model"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "users/ak_glaciers/NBR_fitted_image_stack_from_LTOP_1990_start"
+        ],
+        "Function": [
+            "Extract spectral information from images",
+            "Classify images using a trained model"
+        ]
+    }
+}

@@ -1,0 +1,229 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var geometry = /* color: #d63000 */ee.Geometry.Polygon(
+        [[[42.2314453125, 67.03905648839232],
+          [34.453125, 65.11550550747751],
+          [38.3642578125, 59.918548525327715],
+          [51.767578125, 60.22549314697341],
+          [50.9326171875, 66.50176434229384]]]);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+//Выбор года для определения территорий пострадавших от пожаров
+var year = 2014;
+//Выбираем вариант 1 - Выбор региона России, 2 - выбор лесничества Архангельской области
+//reg - номер региона, NAME_LES - названия лесничества
+var variant = 1;
+var reg = 29;
+var NAME_LES = 'Мезенское';
+//Значение NBR менее которого считается гарью
+var BurnedValue = 0.3;
+
+//Выбор года для определения территорий пострадавших от пожаров
+if (variant==1){
+//Загружаем границы регионов России
+var Russia = ee.FeatureCollection('ft:1iovW6_vHSX3JOx5OvcFr-ljJdx5mGmqK6Q_ETiSO');
+//Фильтруем регионг по номеру региона
+var region = Russia.filterMetadata('name', 'equals', reg);
+} else if(variant==2){
+//Загружаем границы регионов России
+var Arh_les = ee.FeatureCollection('ft:1iovW6_vHSX3JOx5OvcFr-ljJdx5mGmqK6Q_ETiSO');
+//Фильтруем регионг по номеру региона
+var region = Arh_les.filterMetadata('NAME_LES', 'equals', NAME_LES);
+}
+
+//KML файл с Hot Spots на Архангельскую область за 2006-2015 годы
+var HotSpotsKML = ee.FeatureCollection('ft:1iovW6_vHSX3JOx5OvcFr-ljJdx5mGmqK6Q_ETiSO');
+//Фильтруем Hot spots по году и по выбранному для анализа региону
+var HotSpots = HotSpotsKML.filterMetadata('YEAR', 'equals', year).filterBounds(region);
+
+//Каналы используемые в обработке снимков
+var B2 = 'B2';
+var B3 = 'B3';
+var B4 = 'B4';
+var B5 = 'B5';
+var B7 = 'B7';
+
+//Условие выбора спутника для анализа
+if(year==2015){
+var satellite = 'Landsat 7 ETM+';
+var sat = 'LE7_L1T_TOA';
+} else if(year>=2016){
+var satellite = 'Landsat 8 OLI';
+var sat = 'LC8_L1T_TOA';
+var B2 = 'B3';  //т. к. Landsat 8 отличается по каналам
+var B3 = 'B4';
+var B4 = 'B5';
+var B5 = 'B6';
+var B7 = 'B7';
+} else if (year>=2001){
+var satellite = 'Landsat 5 TM';
+var sat = 'LT5_L1T_TOA';
+} else {
+var satellite = 'Нет данных FIRMS';
+var sat = 'LT5_L1T_TOA';
+}  
+print(satellite);
+print(sat);
+
+//Даты для FIRMS период определения гарей
+var StarFire = year + '-05-01';
+var EndFire = year + '-10-01';
+
+//Даты для создания безоблачного композита
+var Start = '2000-7-1';
+var End = '2009-9-1';
+
+//Даты для создания до-пожарного композита
+var StartUntilFire = (year-1) + '-08-01';
+var EndUntilFire = (year-1) + '-10-01';
+
+//Даты для создания после- пожарного композита
+var StartAfterFire = year + '-08-01';
+var EndAfterFire = year + '-10-01';
+
+/////////////////////////FIRMS////////////////////////////////////
+
+//Архив FIRMS
+var FIRMS = ee.ImageCollection('FIRMS')
+  .filterBounds(region)
+  .filterDate(StarFire, EndFire);
+var T21 = FIRMS.mosaic()
+  .clip(region)
+  .select('T21');
+
+//Создание маски для векторизации
+var zones = T21.gt(0);
+zones = zones.updateMask(zones.neq(0));
+
+//Создание вектора
+var vectors = zones.addBands(T21).reduceToVectors({
+  geometry: region,
+  crs: T21.projection(),
+  scale: 500,
+  geometryType: 'polygon',
+  eightConnected: false,
+  labelProperty: 'zone',
+  reducer: ee.Reducer.mean()
+});
+
+//Функция для создания буфера для каждого полигона
+var buffer = function(feature) {
+  return feature.buffer(3000);
+};
+//Расширение границ vectors на 1000 м
+var bounds = vectors.map(buffer);
+
+///////////////////////Landsat////////////////////////////////////
+
+//Создание безоблачного композита
+var L5 = ee.ImageCollection('LANDSAT/LT5_L1T');
+var free_clouds = ee.Algorithms.Landsat.simpleComposite({
+collection: L5.filterDate(Start, End),
+asFloat: true});
+
+//Создание до-пожарного композита
+var collection_1 = ee.ImageCollection('LANDSAT/'+sat) 
+  .filterBounds(region)
+  .filterDate(StartUntilFire, EndUntilFire)
+  .sort('CLOUD_COVER',false);
+
+//Создание после-пожарного композита
+var collection_2 = ee.ImageCollection('LANDSAT/'+sat) 
+  .filterBounds(region)
+  .filterDate(StartAfterFire, EndAfterFire)
+  .sort('CLOUD_COVER',false);
+
+//Функуция удаления облаков
+var fDeleteClouds = function(image) {
+  var cloud =  ee.Algorithms.Landsat.simpleCloudScore(image); 
+  var score =  cloud.select(['cloud']).lte(20);
+  return image.updateMask(score);
+};
+
+//Удаление облаков из композитов
+var composite_1 = collection_1.map(fDeleteClouds)
+  .mosaic()
+  .clip(region);
+var composite_2 = collection_2.map(fDeleteClouds)
+  .mosaic()
+  .clip(region);
+
+//Создание масок облачности и водной маски
+var clouds_1 = composite_1.select(B3).subtract(free_clouds.select(B3));
+var cloud_mask_1 = clouds_1.expression('float(b("'+B3+'"))>0.03 ? 1:0');
+var clouds_2 = composite_2.select(B3).subtract(free_clouds.select(B3));
+var cloud_mask_2 = clouds_2.expression('float(b("'+B3+'"))>0.03 ? 1:0').clip(bounds);
+var water_mask = free_clouds.expression('float(b("'+B4+'"))<0.05&&float(b("'+B5+'"))<0.05?1:0'); 
+
+//Вычисляем индексы NBR
+var NBR_1 = composite_1.expression('float(b("'+B4+'") - b("'+B7+'")) / (b("'+B4+'") + b("'+B7+'"))'); 
+var NBR_2 = composite_2.expression('float(b("'+B4+'") - b("'+B7+'")) / (b("'+B4+'") + b("'+B7+'"))'); 
+//Убираем из NBR_1 и NBR_2 облачность
+var other_mask_1 = cloud_mask_1.expression('b("constant")>0?0:1').clip(geometry);
+var NBR_1 = NBR_1.updateMask(other_mask_1);
+var other_mask_2 = cloud_mask_2.expression('b("constant")>0?0:1').clip(geometry);
+var NBR_2 = NBR_2.updateMask(other_mask_2);
+
+
+//Создание маски гарей
+var burned_mask = NBR_2.lt(BurnedValue);
+burned_mask = burned_mask.updateMask(burned_mask.eq(1));
+
+//Создание вектора маски
+var burned_vectors = burned_mask.addBands(NBR_2).reduceToVectors({
+  geometry: geometry,       //geometry-region
+  crs: NBR_2.projection(),
+  scale: 30,
+  geometryType: 'polygon',
+  eightConnected: false,
+  labelProperty: 'zone',
+  reducer: ee.Reducer.mean(),
+  maxPixels: 5000000000
+});
+
+
+
+//Отображение полученных данных
+var region = ee.Image(0).updateMask(0).paint(region, '000000',2);
+Map.addLayer(region,{palette:'#000000'},'Boundary region',0); 
+var display = ee.Image(0).updateMask(0).paint(vectors, '000000',2);
+Map.addLayer(display,{palette: '#4B0082'},'FIRMS'+(year), 0);
+Map.addLayer(HotSpots,{color:'ff0000'},'hot spots '+year,0);
+Map.addLayer(composite_1, {bands: [B7, B4, B2],min:0, max: 0.3}, 'collection '+(year-1),0);
+Map.addLayer(composite_2, {bands: [B7, B4, B2],min:0, max: 0.3}, 'collection '+year,1);
+Map.addLayer(NBR_1,{},'NBR '+(year-1),0);
+Map.addLayer(NBR_2,{},'NBR '+(year),0);
+
+Map.addLayer(cloud_mask_2,{},'cloud_mask '+(year),0);
+var burned = ee.Image(0).updateMask(0).paint(burned_vectors, '000000',2);
+Map.addLayer(burned,{palette: 'ff0000'},'burned '+(year),0);
+
+//Экспорт вектора гарей
+Export.table.toDrive({
+  collection: burned_vectors,
+  description:'burned',
+  fileFormat: 'KML'
+});
+
+
+//Экспорт слоев NBR
+Export.image.toDrive({
+image: NBR_1,
+description: 'NBR_'+(year-1),
+scale: 30,
+region: geometry,
+maxPixels: 2697651327
+});
+
+Export.image.toDrive({
+image: NBR_2,
+description: 'NBR_'+year,
+scale: 30,
+region: geometry,
+maxPixels: 2697651327
+});
+
+//Экспорт вектора гарей
+Export.table.toDrive({
+  collection: bounds,
+  description:'bounds '+year,
+  fileFormat: 'KML'
+});

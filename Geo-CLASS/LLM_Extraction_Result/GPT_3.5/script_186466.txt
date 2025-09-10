@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["The script collects and combines Sentinel-1 images for geoprocessing modeling."],
+  "Theme": ["Forest loss detection and degradation monitoring using Sentinel-1 imagery"],
+  "DataSource": ["COPERNICUS/S1_GRD", "ft:10RV_TKg9w5SMTutAz-XZpGcd2ejYgbQs6IVy2TF7"],
+  "Function": ["Filtering images by polarization and date", "Creating composites from different look angles"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Filtering images by polarization and date", "Creating composites from different look angles"]
+    },
+    "relation_2": {
+        "DataSource": ["ft:10RV_TKg9w5SMTutAz-XZpGcd2ejYgbQs6IVy2TF7"],
+        "Function": ["Filtering images by polarization and date", "Creating composites from different look angles"]
+    }
+}
+```

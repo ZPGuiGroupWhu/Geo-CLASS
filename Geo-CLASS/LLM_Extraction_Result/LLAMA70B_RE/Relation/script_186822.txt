@@ -1,0 +1,29 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/dgilad/SA"
+        ],
+        "Function": [
+            "Buffering features"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "users/dgilad/Fields"
+        ],
+        "Function": [
+            "Buffering features",
+            "Calculating mean and standard deviation"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "COPERNICUS/S1_GRD"
+        ],
+        "Function": [
+            "Filtering image collection",
+            "Converting dB to natural values",
+            "Calculating mean and standard deviation"
+        ]
+    }
+}

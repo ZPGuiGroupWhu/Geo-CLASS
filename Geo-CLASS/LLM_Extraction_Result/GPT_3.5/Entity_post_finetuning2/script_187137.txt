@@ -1,0 +1,16 @@
+{
+    "Summary": [
+        "Extracts MODIS LST data, calculates temperature statistics, and generates charts."
+    ],
+    "Theme": [
+        "TEMPERATURE INDICATORS"
+    ],
+    "DataSource": [
+        "users/khoapv_vnuf/Thanhhoa_t",
+        "MODIS/MOD11A2"
+    ],
+    "Function": [
+        "Derive Land Surface Temperature Using Thermal Properties",
+        "Filter Image Collection By Date And Region"
+    ]
+}

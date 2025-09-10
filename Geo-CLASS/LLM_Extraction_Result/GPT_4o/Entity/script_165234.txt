@@ -1,0 +1,5 @@
+{
+  "Theme": ["MODIS data processing", "NDVI calculation", "Greenest pixel analysis"],
+  "DataSource": ["MODIS/006/MOD09GA", "users/giswqs/public/countries"],
+  "Function": ["Apply cloud mask", "Scale image values", "Filter by year", "Add NDVI band", "Add date band", "Add month band", "Add day of year band", "Create quality mosaic", "Visualize data"]
+}

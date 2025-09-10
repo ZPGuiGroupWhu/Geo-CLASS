@@ -1,0 +1,6 @@
+{
+  "Summary": ["Script corrects Sentinel-1 data using LIA Correction function and generates time series chart."],
+  "Theme": ["Land cover correction and time series analysis"],
+  "DataSource": ["users/danielp/LC-SLIAC:LC-SLIAC_global"],
+  "Function": ["Apply land cover correction", "Generate time series chart"]
+}

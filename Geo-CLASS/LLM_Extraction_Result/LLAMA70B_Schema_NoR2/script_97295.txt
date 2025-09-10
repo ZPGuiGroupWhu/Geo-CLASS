@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land Use Land Cover classification"],
+  "DataSource": ["GOOGLE/DYNAMICWORLD/V1", "COPERNICUS/S2"],
+  "Function": ["Filtering image collections by region and date", "Joining corresponding images by system index", "Extracting example images", "Creating visualization of class label with probability", "Applying hillshade to probability image", "Combining RGB image with hillshade"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["GOOGLE/DYNAMICWORLD/V1"],
+        "Function": ["Filtering image collections by region and date", "Extracting example images", "Creating visualization of class label with probability", "Applying hillshade to probability image"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Joining corresponding images by system index", "Combining RGB image with hillshade"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2973, 'completion_tokens': 223, 'total_tokens': 3196}

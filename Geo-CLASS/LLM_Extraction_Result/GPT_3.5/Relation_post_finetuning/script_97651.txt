@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LE07/C01/T1_SR"
+        ],
+        "Function": [
+            "Cloud Masking And Quality Filtering"
+        ]
+    }
+}

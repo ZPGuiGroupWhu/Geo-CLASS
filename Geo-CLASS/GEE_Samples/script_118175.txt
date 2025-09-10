@@ -1,0 +1,671 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var roi = /* color: #d63000 */ee.Geometry.Point([120.22838446464925, 36.165625282387474]),
+    position = /* color: #d63000 */ee.Geometry.Point([120.09174200859458, 36.26617319155689]);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+var jzw = ee.Geometry.Polygon({
+
+          coords:[[120.07,35.95],[120.40,35.95],[120.40,36.31],[120.07,36.31],[120.07,35.95]],
+
+          geodesic:false
+
+  
+
+});
+
+
+
+var visualization = {
+
+  // bands: ['B4', 'B3', 'B2'],
+
+  min: 0.0,
+
+  max: 0.33,
+
+
+
+};
+
+
+
+Map.centerObject(roi, 10);
+
+
+
+
+
+
+
+
+
+function applyScaleFactors(image) {
+
+  var opticalBands = image.select('SR_B.').multiply(0.0000275).add(-0.2);
+
+  var thermalBands = image.select('ST_B.*').multiply(0.00341802).add(149.0);
+
+  return image.addBands(opticalBands, null, true)
+
+              .addBands(thermalBands, null, true);
+
+}
+
+
+
+function maskS2Clouds(image) {
+
+  var qa = image.select('QA60');
+
+  var cloudBitMask = 1 << 10;
+
+  var cirrusBitMask = 1 << 11;
+
+  var mask = qa.bitwiseAnd(cloudBitMask).eq(0).and(
+
+             qa.bitwiseAnd(cirrusBitMask).eq(0));
+
+  var bBands = image.select('B.').divide(10000);
+
+  return image.addBands(bBands,null,true).updateMask(mask);
+
+}
+
+
+
+
+
+
+
+//NDVI//
+
+//NDWI = (NIR-RED)/(NIR+RED)//
+
+function add_NDVI(image){
+
+  var NDVI=image.normalizedDifference(["B8","B4"]).rename("NDVI");
+
+  return image.addBands(NDVI);
+
+}
+
+
+
+
+
+//NDWI//
+
+//NDWI = (Green-NIR)/(Green+NIR)//
+
+function add_NDWI(image){
+
+  var NDWI=image.normalizedDifference(["B3","B8"]).rename("NDWI");
+
+  return image.addBands(NDWI);
+
+}
+
+
+
+
+
+//MNDWI//
+
+//MNDWI = (Green-MIR)/(Green+MIR)//
+
+function add_MNDWI(image){
+
+  var MNDWI=image.normalizedDifference(["B3","B12"]).rename("MNDWI");
+
+  return image.addBands(MNDWI);
+
+}
+
+
+
+
+
+//NDSI//
+
+//NDSI = (Green-SWIR)/(Green+SWIR)//
+
+function add_NDSI(image){
+
+  var NDSI = image.normalizedDifference(["B3","B11"]).rename("NDSI");
+
+  return image.addBands(NDSI);
+
+}
+
+
+
+
+
+//NDISI
+
+//NDISI = (TIR-((GREEN+NIR+MIR)/3))/(TIR+((GREEN+NIR+MIR))/3)
+
+// function add_NDISI(image){
+
+//   var NDISI=image.expression('(TIR-((GREEN+NIR+MIR)/3))/(TIR+((GREEN+NIR+MIR)/3))',{
+
+    
+
+//     TIR:image.select('ST_B10'),
+
+//     NIR:image.select('B8'),
+
+//     MIR:image.select('B12'),
+
+//     GREEN:image.select('B3'),
+
+
+
+//   }).rename("NDISI");
+
+//   return image.addBands(NDISI);
+
+// }
+
+
+
+//EWI
+
+//EWI= (GREEN-NIR-MIR)/(GREEN+NIR+MIR)
+
+function add_EWI(image){
+
+  var EWI=image.expression('(GREEN-NIR-MIR)/(GREEN+NIR+MIR)',{
+
+    
+
+    NIR:image.select('B8'),
+
+    MIR:image.select('B12'),
+
+    GREEN:image.select('B3'),
+
+
+
+  }).rename("EWI");
+
+  return image.addBands(EWI);
+
+}
+
+
+
+function add_ICE(image){
+
+  
+
+  var ICE = image.select('SCL').eq(11).eq(0).rename('ICE');
+
+  return(image.addBands(ICE));
+
+} 
+
+
+
+var L9T1ImgCol = ee.ImageCollection("LANDSAT/LC09/C02/T1_L2")
+
+            .filterDate('2021-12-01','2022-03-01')
+
+            .filterBounds(jzw)
+
+            .filter(ee.Filter.lte('CLOUD_COVER',30))
+
+            .map(applyScaleFactors);
+
+
+
+var L8T1ImgCol = ee.ImageCollection("LANDSAT/LC08/C02/T1_L2")
+
+            .filterDate('2021-12-01','2022-03-01')
+
+            .filterBounds(jzw)
+
+            .filter(ee.Filter.lte('CLOUD_COVER',30))
+
+            .map(applyScaleFactors);
+
+
+
+          
+
+var L89T1ImgCol = L8T1ImgCol.merge(L9T1ImgCol).sort('DATE_ACQUIRED');
+
+
+
+print(L89T1ImgCol);
+
+
+
+var S2ImgCol = ee.ImageCollection("COPERNICUS/S2_SR")
+
+            .filterDate('2021-12-01','2022-03-01')
+
+            .filterBounds(jzw)
+
+            .filter(ee.Filter.lte('CLOUDY_PIXEL_PERCENTAGE',10))
+
+            .sort('CLOUDY_PIXEL_PERCENTAGE')
+
+            .map(maskS2Clouds)
+
+            .map(add_NDVI)
+
+            .map(add_NDWI)
+
+            .map(add_MNDWI)
+
+            .map(add_NDSI)
+
+            // .map(add_NDISI)
+
+            .map(add_EWI)
+
+            .map(add_ICE);
+
+
+
+print(S2ImgCol);
+
+
+
+// var imageFirst = S2ImgCol.first().clip(jzw);
+
+// print(imageFirst);
+
+
+
+
+
+
+
+var utils = require('users/gena/packages:utils');
+
+var text = require('users/gena/packages:text');
+
+var palettes = require('users/gena/packages:palettes');
+
+var ndviPalette = palettes.colorbrewer.RdYlGn[9];
+
+var ndwiPalette = palettes.colorbrewer.RdYlBu[9];
+
+var mndwiPalette = palettes.colorbrewer.PuBu[9];
+
+var ndsiPalette = palettes.colorbrewer.YlGn[5];
+
+var ewiPalette = palettes.colorbrewer.BrBG[9];
+
+
+
+var textProperties = {
+
+  fontSize: 24,
+
+  textColor: 'ffffff',
+
+  outlineColor: '000000',
+
+  outlineWidth: 2,
+
+  outlineOpacity: 0.6
+
+};
+
+
+
+var iceImgVis = {
+
+  min : 0,
+
+  max : 1,
+
+  palette:['888888','bb0000']
+
+  
+
+};
+
+
+
+var scale = Map.getScale();
+
+
+
+var oneDayMills = 1*24*60*60*1000; // 1 day = 86400000 millseconds
+
+var maxDiffrenceFilter = ee.Filter.maxDifference({
+
+  
+
+  difference : oneDayMills,
+
+  leftField : 'system:time_start',
+
+  rightField : 'system:time_start'
+
+  
+
+});
+
+
+
+// var s2InL89Col = ee.Join.simple();
+
+var s2InL89Col = ee.Join.saveAll({
+
+  matchesKey:'S2_match',
+
+  ordering:'system_start',
+
+  ascending:true
+
+});
+
+
+
+s2InL89Col = s2InL89Col.apply(L89T1ImgCol,S2ImgCol,maxDiffrenceFilter);
+
+print('s2InL89Col',s2InL89Col);
+
+
+
+var l8ImagList = s2InL89Col.reduceColumns(ee.Reducer.toList(),['system:index']).get('list');
+
+print('l8ImagList',l8ImagList)
+
+
+
+l8ImagList.evaluate(function(index){
+
+  for(var k=0;k<index.length;k++){
+
+    var l89Img = s2InL89Col.filter(ee.Filter.eq('system:index',index[k])).first();
+
+    l89Img = ee.Image(l89Img).clip(jzw);
+
+    // print(l89Img);
+
+    Map.addLayer(l89Img.select(['SR_B4', 'SR_B3', 'SR_B2']),visualization,k+'_'+index[k]);
+
+
+
+  }
+
+});
+
+
+
+
+
+var imgList = s2InL89Col.reduceColumns(ee.Reducer.toList(),['S2_match']).get('list');//.getInfo();
+
+
+
+imgList = ee.List(imgList);
+
+// print('imgList',imgList);
+
+
+
+
+
+var mosaicImgList = imgList.map(function(index){
+
+  
+
+  var subList = ee.List(index);
+
+  var subImgCol = ee.ImageCollection(subList);
+
+  return subImgCol.qualityMosaic('ICE').clip(jzw);
+
+  
+
+});
+
+
+
+var maxImgList = imgList.map(function(index){
+
+  
+
+  var subList = ee.List(index);
+
+  var subImgCol = ee.ImageCollection(subList);
+
+  return subImgCol.max().clip(jzw);
+
+  
+
+});
+
+
+
+// print(mosaicImgList,maxImgList);
+
+
+
+mosaicImgList = ee.List(mosaicImgList);
+
+maxImgList = ee.List(maxImgList);
+
+
+
+var lth = mosaicImgList.length().getInfo();
+
+
+
+for(var i=0;i<lth;i++){
+
+  var img1 = ee.Image(mosaicImgList.get(i));
+
+  var img2 = ee.Image(maxImgList.get(i));
+
+  Map.addLayer(img1.select(['B4', 'B3', 'B2']),visualization,i+'_mosaicImg');
+
+  Map.addLayer(img2.select(['B4', 'B3', 'B2']),visualization,i+'_maxImg');
+
+}
+
+
+
+// for(var j=0;j<lth;j++){
+
+//   var img = ee.Image(maxImgList.get(j));
+
+//   Map.addLayer(img.select(['B4', 'B3', 'B2']),visualization,j+'_maxImg');
+
+// }
+
+
+
+
+
+
+
+  
+
+// print('ok');
+
+
+
+// var i0Col = imgList.get(0);
+
+
+
+// i0Col = ee.List(i0Col);
+
+// i0Col = ee.ImageCollection(i0Col);
+
+// print(i0Col);
+
+// var mosaicImg = i0Col.qualityMosaic('ICE').clip(jzw);
+
+// var maxImg = i0Col.max().clip(jzw);
+
+// print(mosaicImg,maxImg);
+
+// Map.addLayer(mosaicImg.select(['B4', 'B3', 'B2']),visualization,'mosaicImg');
+
+// Map.addLayer(maxImg.select(['B4', 'B3', 'B2']),visualization,'maxImg');
+
+
+
+// var img0 = ee.Image(i0Col.get(0));
+
+// Map.addLayer(img0.select(['B4', 'B3', 'B2']),visualization);
+
+// // Map.addLayer(img1);
+
+// print('img0',img0)
+
+
+
+
+
+
+
+
+
+
+
+// var trueColorText = text.draw('TRUE COLOR',position,scale,textProperties);
+
+// var iceText = text.draw('ICE',position,scale,textProperties);
+
+// var ndviText = text.draw('NDVI',position,scale,textProperties);
+
+// var ndwiText = text.draw('NDWI',position,scale,textProperties);
+
+// var mndwiText = text.draw('MNDWI',position,scale,textProperties);
+
+// var ndsiText = text.draw('NDSI',position,scale,textProperties);
+
+// var ewiText = text.draw('EWI',position,scale,textProperties);
+
+
+
+
+
+// var imageTrueColor = imageFirst.visualize(visualization).blend(trueColorText);
+
+// var imageICE = imageFirst.select('ICE').visualize(iceImgVis).blend(iceText);
+
+// var imageNDVI = imageFirst.select('NDVI').visualize({palette:ndviPalette,min:0,max:0.5}).blend(ndviText);
+
+// var imageNDWI = imageFirst.select('NDWI').visualize({palette:ndwiPalette,min:-0.5,max:0.5}).blend(ndwiText);
+
+// var imageMNDWI = imageFirst.select('MNDWI').visualize({palette:mndwiPalette,min:0,max:0.5}).blend(mndwiText);
+
+// var imageNDSI = imageFirst.select('NDSI').visualize({palette:ndsiPalette,min:0,max:1}).blend(ndsiText);
+
+// var imageEWI = imageFirst.select('EWI').visualize({palette:ewiPalette,min:-1,max:1}).blend(ewiText);
+
+
+
+// // var firstCol = ee.ImageCollection([imageTrueColor,imageICE,imageNDVI,imageNDWI,imageMNDWI,imageNDSI,imageEWI]);
+
+// // print(firstCol);
+
+
+
+// // var gifParams = { 
+
+// //   crs: 'EPSG:4326', 
+
+// //   framesPerSecond: 0.5, 
+
+// //   region: jzw, 
+
+// //   dimensions: 512, 
+
+// //   format: 'gif'
+
+// //   }; 
+
+
+
+// // var thumbnail = ui.Thumbnail(firstCol,gifParams);
+
+// // var gifURL = firstCol.getVideoThumbURL(gifParams);
+
+
+
+// // print(thumbnail,gifURL);
+
+
+
+// // Map.addLayer(imageICE, {}, 'ICE');
+
+// // Map.addLayer(imageTrueColor, {}, 'True Color');
+
+
+
+// Map.addLayer(imageFirst, visualization, 'True Color (432)');
+
+// // Map.addLayer(imageFirst.select('ICE'), {palette:['888888','bb0000']}, 'ICE');
+
+// // Map.addLayer(imageFirst.select('NDVI'), {palette:ndviPalette,min:0,max:0.5}, 'NDVI');
+
+// // Map.addLayer(imageFirst.select('NDWI'), {palette:ndwiPalette,min:-0.5,max:0.5}, 'NDWI');
+
+// // Map.addLayer(imageFirst.select('MNDWI'), {palette:mndwiPalette,min:0,max:0.5}, 'MNDWI');
+
+// // Map.addLayer(imageFirst.select('NDSI'), {palette:ndsiPalette,min:0,max:1}, 'NDSI');
+
+// // Map.addLayer(imageFirst.select('EWI'), {palette:ewiPalette,min:-1,max:1}, 'EWI');
+
+
+
+
+
+
+
+// // var iceCounts = S2ImgCol.map(function(image){
+
+// //   return  = image.updateMask(image.select('ICE'));
+
+// //   }).select('ICE').count().clip(jzw);
+
+
+
+// var iceCounts = S2ImgCol.select('ICE').count().clip(jzw);
+
+// var countVis = {min: 10, max: 50,opacity: 0.9, palette: ['aaaaaa','aaaadd','8888dd', 
+
+//                                           '6666dd','4444dd','2222dd','0000dd']};
+
+ 
+
+// Map.addLayer(iceCounts, countVis, 'Ice or sonw cover.');
+
+
+
+// // var indexList = S2ImgCol.reduceColumns(ee.Reducer.toList(),['system:index']).get('list')
+
+
+
+// // indexList.evaluate(function(index){
+
+// //   for(var i = 0; i<index.length; i++){
+
+
+
+// //     var image = S2ImgCol.filter(ee.Filter.eq("system:index", index[i]))
+
+// //                 .first()
+
+// //                 .clip(jzw);
+
+// //     // image = image.updateMask(image.select('ICE'));
+
+// //     Map.addLayer(image.select('ICE'), {palette:['888888','bb0000']}, index[i],false)
+
+// //   }
+
+// // }
+
+// // )

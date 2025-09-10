@@ -1,0 +1,253 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var imageVisParam = {"opacity":1,"bands":["B4","B3","B2"],"min":200,"max":7364,"gamma":1};
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+var geometry = 
+
+    /* color: #98ff00 */
+
+    /* shown: false */
+
+    ee.Geometry.Polygon(
+
+        [[[-83.59061349894112, 35.03110611787915],
+
+          [-83.05228342081612, 34.98611348957641],
+
+          [-82.50296701456612, 35.21980467708555],
+
+          [-81.78885568644112, 35.6137525993965],
+
+          [-81.76138986612862, 35.899048030720834],
+
+          [-81.23953928019112, 36.263084970686606],
+
+          [-81.22305978800362, 36.49747899770224],
+
+          [-81.61856760050362, 36.62984147036256],
+
+          [-82.08548654581612, 36.51955515670681],
+
+          [-82.53592599894112, 36.23207448341418],
+
+          [-83.00284494425362, 36.09015564097761],
+
+          [-83.50821603800362, 35.903497650789646],
+
+          [-83.92020334269112, 35.71639837716396],
+
+          [-84.24979318644112, 35.47519529362246],
+
+          [-84.39261545206612, 35.156953739728436],
+
+          [-83.71695627237862, 35.1344951975199]]]);
+
+
+
+//1985
+
+
+
+var L5coll = ee.ImageCollection('LANDSAT/LT05/C01/T1_SR');
+
+var L5collfilter1985 = L5coll//.filterBounds(geometry)
+
+.filter(ee.Filter.lt('CLOUD_COVER',10))
+
+.filterDate('1984-11-01', '1985-03-01')
+
+print(L5collfilter1985)
+
+var composite1985 = L5collfilter1985.median().clip(geometry)
+
+
+
+function maskL5srClouds(image) {
+
+  var cloudShadowBitMask = (1 << 3);
+
+  var cloudsBitMask = (1 << 5);
+
+  var qa = image.select(['pixel_qa']);
+
+  var mask = qa.bitwiseAnd(cloudShadowBitMask).eq(0)
+
+                .and(qa.bitwiseAnd(cloudsBitMask).eq(0));
+
+  return image.updateMask(mask);
+
+}
+
+
+
+var L51985Masked = L5collfilter1985
+
+                .map(maskL5srClouds);
+
+print('L5 1985 collection filtered and masked', L51985Masked);
+
+var L51985compositeMasked = L51985Masked.median().clip(geometry);
+
+
+
+
+
+
+
+var makeNDVI = function NDVI(image) {
+
+       var NDVIband = image.normalizedDifference(['B4', 'B3']).rename('NDVI');
+
+      return image.addBands(NDVIband);
+
+     };
+
+
+
+var L51985MaskedNDVI = L51985Masked
+
+                        .map(makeNDVI);
+
+print ('L5 1985 collection filtered and masked with NDVI', L51985MaskedNDVI)
+
+
+
+Map.addLayer(L51985MaskedNDVI,{bands: ['B4', 'B3', 'NDVI'], min: 300, max: 5800}, "1985 Masked NDVI")
+
+
+
+
+
+
+
+//1986
+
+var L5coll = ee.ImageCollection('LANDSAT/LT05/C01/T1_SR');
+
+var L5collfilter1986 = L5coll.filterBounds(geometry)
+
+.filter(ee.Filter.lt('CLOUD_COVER',10))
+
+.filterBounds(geometry)
+
+.filterDate('1985-11-01', '1986-03-01')
+
+print(L5collfilter1986)
+
+
+
+var L51986Masked = L5collfilter1986
+
+                .map(maskL5srClouds);
+
+print('L5 1986 collection filtered and masked', L51986Masked);
+
+var L51986compositeMasked = L51986Masked.median().clip(geometry);
+
+
+
+Map.addLayer(L51986compositeMasked,{bands: ['B4', 'B3', 'B2'], min: 300, max: 5800})
+
+
+
+
+
+
+
+//1987
+
+var L5coll = ee.ImageCollection('LANDSAT/LT05/C01/T1_SR');
+
+var L5collfilter1987 = L5coll.filterBounds(geometry)
+
+.filter(ee.Filter.lt('CLOUD_COVER',10))
+
+.filterBounds(geometry)
+
+.filterDate('1986-11-01', '1987-03-01')
+
+print(L5collfilter1987)
+
+
+
+var L51987Masked = L5collfilter1987
+
+                .map(maskL5srClouds);
+
+print('L5 1986 collection filtered and masked', L51987Masked);
+
+var L51987compositeMasked = L51987Masked.median().clip(geometry);
+
+
+
+Map.addLayer(L51987compositeMasked,{bands: ['B4', 'B3', 'B2'], min: 300, max: 5800})
+
+
+
+
+
+//1988
+
+var L5coll = ee.ImageCollection('LANDSAT/LT05/C01/T1_SR');
+
+var L5collfilter1988 = L5coll.filterBounds(geometry)
+
+.filter(ee.Filter.lt('CLOUD_COVER',10))
+
+.filterBounds(geometry)
+
+.filterDate('1987-11-01', '1988-03-01')
+
+print(L5collfilter1988)
+
+
+
+var L51988Masked = L5collfilter1988
+
+                .map(maskL5srClouds);
+
+print('L5 1988 collection filtered and masked', L51988Masked);
+
+var L51988compositeMasked = L51988Masked.median().clip(geometry);
+
+
+
+Map.addLayer(L51988compositeMasked,{bands: ['B4', 'B3', 'B2'], min: 300, max: 5800})
+
+
+
+
+
+//1989
+
+var L5coll = ee.ImageCollection('LANDSAT/LT05/C01/T1_SR');
+
+var L5collfilter1989 = L5coll.filterBounds(geometry)
+
+.filter(ee.Filter.lt('CLOUD_COVER',10))
+
+.filterBounds(geometry)
+
+.filterDate('1988-11-01', '1989-03-01')
+
+print(L5collfilter1989)
+
+
+
+
+
+
+
+//1990
+
+var L5coll = ee.ImageCollection('LANDSAT/LT05/C01/T1_SR');
+
+var L5collfilter1990 = L5coll.filterBounds(geometry)
+
+.filter(ee.Filter.lt('CLOUD_COVER',10))
+
+.filterBounds(geometry)
+
+.filterDate('1989-11-01', '1990-03-01')
+
+print(L5collfilter1990)
+

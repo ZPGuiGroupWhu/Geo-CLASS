@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Script calculates NDVI and NDMI indices from Sentinel-2 satellite imagery."],
+  "Theme": ["Vegetation health assessment"],
+  "DataSource": ["COPERNICUS/S2_SR", "COPERNICUS/S2_SR/20200928T140101_20200928T140058_T20HNE"],
+  "Function": ["NDVI calculation using NIR and Red bands", "NDMI calculation using B8 and B11 bands"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["NDVI calculation using NIR and Red bands", "NDMI calculation using B8 and B11 bands"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2_SR/20200928T140101_20200928T140058_T20HNE"],
+        "Function": ["NDVI calculation using NIR and Red bands", "NDMI calculation using B8 and B11 bands"]
+    }
+}
+```

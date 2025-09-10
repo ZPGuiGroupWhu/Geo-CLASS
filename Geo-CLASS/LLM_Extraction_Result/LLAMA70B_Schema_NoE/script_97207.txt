@@ -1,0 +1,29 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Fire area analysis using Sentinel-2 imagery and NDVI index"],
+  "DataSource": ["users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016", "COPERNICUS/S2"],
+  "Function": ["Filtering fires with valid dates and within the general fire area", "Calculating NDVI index from Sentinel-2 imagery", "Classifying burned and unburned areas based on NDVI threshold", "Evaluating classification accuracy using confusion matrix"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016"],
+        "Function": ["Filtering fires with valid dates and within the general fire area", "Classifying burned and unburned areas based on NDVI threshold", "Evaluating classification accuracy using confusion matrix"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Calculating NDVI index from Sentinel-2 imagery", "Classifying burned and unburned areas based on NDVI threshold"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4677, 'completion_tokens': 312, 'total_tokens': 4989}

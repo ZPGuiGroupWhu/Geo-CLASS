@@ -1,0 +1,16 @@
+{
+    "Summary": [
+        "Calculate MODIS EVI averages for Mongol region and perform PCA analysis."
+    ],
+    "Theme": [
+        "VEGETATION INDEX",
+        "CHANDLER CIRCULAR COMPONENT"
+    ],
+    "DataSource": [
+        "MODIS/006/MOD13Q1"
+    ],
+    "Function": [
+        "NDWI (Normalized Difference Water Index calculation)",
+        "Spatial Analysis"
+    ]
+}

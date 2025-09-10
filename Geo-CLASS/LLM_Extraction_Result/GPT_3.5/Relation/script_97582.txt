@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["users/avaise99/KP_Boundary"],
+        "Function": ["Filtering images by date and location", "Masking clouds in images", "Mosaicking images", "Clipping images to KP boundary", "Adding layers to the map"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C02/T1_TOA"],
+        "Function": ["Filtering images by date and location", "Masking clouds in images", "Mosaicking images", "Clipping images to KP boundary", "Adding layers to the map"]
+    }
+}

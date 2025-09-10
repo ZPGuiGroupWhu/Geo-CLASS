@@ -1,0 +1,19 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Sentinel-1 flood mapping in Lower Ayeyarwaddy region."],
+  "Theme": ["Flood mapping", "Backscatter analysis", "Image histogram generation"],
+  "DataSource": ["COPERNICUS/S1_GRD"],
+  "Function": ["Image collection filtering by polarization and date", "Image smoothing using focal median", "Image division for band ratio calculation", "Histogram generation for backscatter analysis"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Image collection filtering by polarization and date", "Image smoothing using focal median", "Image division for band ratio calculation", "Histogram generation for backscatter analysis"]
+    }
+}
+```

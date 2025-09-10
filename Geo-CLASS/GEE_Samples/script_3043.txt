@@ -1,0 +1,414 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var l8 = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR"),
+    l7 = ee.ImageCollection("LANDSAT/LE07/C01/T1_SR"),
+    table = ee.FeatureCollection("users/1915303017/CNBBW_SL_10kmBuffer"),
+    geometry = /* color: #d63000 */ee.Geometry.Point([109.0338434105141, 21.585845316430763]);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+var table = table.geometry().buffer(-5000)
+
+function renameOli(img) {
+
+  return img.select(
+
+      ['B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'pixel_qa'],
+
+      ['Blue', 'Green', 'Red', 'NIR', 'SWIR1', 'SWIR2', 'pixel_qa']);
+
+}// Function to get and rename bands of interest from ETM+.
+
+function renameEtm(img) {
+
+  return img.select(
+
+      ['B1', 'B2', 'B3', 'B4', 'B5', 'B7', 'pixel_qa'],
+
+      ['Blue', 'Green', 'Red', 'NIR', 'SWIR1', 'SWIR2', 'pixel_qa']);
+
+}
+
+var coefficients = {
+
+  itcps: ee.Image.constant([0.0003, 0.0088, 0.0061, 0.0412, 0.0254, 0.0172])
+
+             .multiply(10000),
+
+  slopes: ee.Image.constant([0.8474, 0.8483, 0.9047, 0.8462, 0.8937, 0.9071])
+
+};
+
+function etmToOli(img) {
+
+  return img.select(['Blue', 'Green', 'Red', 'NIR', 'SWIR1', 'SWIR2'])
+
+  .multiply(coefficients.slopes)
+
+      .add(coefficients.itcps)
+
+      .round()
+
+      .toShort()
+
+      .addBands(img.select('pixel_qa'));
+
+}
+
+function fmask(img) {
+
+  var cloudShadowBitMask = 1 << 3;
+
+  var cloudsBitMask = 1 << 5;
+
+  var qa = img.select('pixel_qa');
+
+  var mask = qa.bitwiseAnd(cloudShadowBitMask)
+
+                 .eq(0)
+
+                 .and(qa.bitwiseAnd(cloudsBitMask).eq(0));
+
+  return img.updateMask(mask);
+
+}
+
+
+
+//bands
+
+function calNDVI(image) {
+
+  var ndvi = image.normalizedDifference(['NIR', 'Red']).rename('NDVI');
+
+  return image.addBands(ndvi);
+
+}
+
+function calmNDWI(image) {
+
+  var mndwi = image.normalizedDifference(['Green', 'SWIR1']).rename('mNDWI');
+
+  return image.addBands(mndwi);
+
+}
+
+function calLSWI(image) {
+
+  var lswi = image.normalizedDifference(['NIR', 'SWIR1']).rename('LSWI');
+
+  return image.addBands(lswi);
+
+}
+
+function calEVI(image) {
+
+  var evi = image.expression('2.5*((NIR-Red)/(NIR+6*Red-7.5*Blue+1))',
+
+{'NIR':image.select('NIR'),
+
+'Red':image.select('Red'),
+
+'Blue':image.select('Blue'),
+
+}).rename('EVI'); 
+
+  return image.addBands(evi);
+
+}
+
+function calAWEInsh(image) {
+
+  var awei = image.expression('4*(B2-B5)-(0.25*B4+2.75*B7)',
+
+{'B2':image.select('Blue'),
+
+'B5':image.select('NIR'),
+
+'B4':image.select('Red'),
+
+'B7':image.select('SWIR2'),
+
+}).rename('AWEInsh');
+
+  return image.addBands(awei);
+
+}
+
+
+
+// Define function to prepare OLI images.
+
+function prepOli(img) {
+
+  var orig = img;
+
+  img = renameOli(img);
+
+  img = fmask(img).divide(10000);
+
+  img = calNDVI(img);
+
+  img = calmNDWI(img);
+
+  img = calLSWI(img);
+
+  img = calEVI(img);
+
+  img = calAWEInsh(img);
+
+  return ee.Image(img.copyProperties(orig, orig.propertyNames()));
+
+}// Define function to prepare ETM+ images.
+
+function prepEtm(img) {
+
+  var orig = img;
+
+  img = renameEtm(img);
+
+  img = fmask(img);
+
+  img = etmToOli(img).divide(10000);
+
+  img = calNDVI(img);
+
+  img = calmNDWI(img);
+
+  img = calLSWI(img);
+
+  img = calEVI(img);
+
+  img = calAWEInsh(img);
+
+  return ee.Image(img.copyProperties(orig, orig.propertyNames()));
+
+}
+
+
+
+var aoi = table;
+
+var oliCol = ee.ImageCollection('LANDSAT/LC08/C01/T1_SR');
+
+var etmCol = ee.ImageCollection('LANDSAT/LE07/C01/T1_SR');
+
+var tmCol = ee.ImageCollection('LANDSAT/LT05/C01/T1_SR');
+
+var colFilter = ee.Filter.and(
+
+    ee.Filter.bounds(aoi),
+
+    ee.Filter.date('2020-01-01','2021-01-01'))
+
+    //ee.Filter.calendarRange(182, 244, 'day_of_year'),
+
+    //ee.Filter.lt('CLOUD_COVER', 50),
+
+    ee.Filter.lt('GEOMETRIC_RMSE_MODEL', 10),//(This Filter has less influence )
+
+    ee.Filter.or(ee.Filter.eq('IMAGE_QUALITY', 9),ee.Filter.eq('IMAGE_QUALITY_OLI', 9))
+
+// Filter collections and prepare them for merging.
+
+var oliCol = oliCol.filter(colFilter).map(prepOli)//.select('AWEInsh','NDVI','mNDWI','EVI','LSWI');
+
+var etmCol = etmCol.filter(colFilter).map(prepEtm)//.select('AWEInsh','NDVI','mNDWI','EVI','LSWI');
+
+var tmCol = tmCol.filter(colFilter).map(prepEtm)//.select('AWEInsh','NDVI','mNDWI','EVI','LSWI');
+
+// Merge the collections.
+
+var col = oliCol//.merge(etmCol).merge(tmCol);
+
+print(col)
+
+var greenestPixelComposite = col.qualityMosaic('AWEInsh');
+
+var visParams2 = {
+
+  bands: ['SWIR1', 'NIR', 'Red'],
+
+  min: 0,
+
+  max: 0.4,
+
+  gamma: 1.4,
+
+};
+
+Map.addLayer(greenestPixelComposite,visParams2,'greenestPixelComposite')
+
+
+
+var MedianComposite = col.filterDate('2020-09-01','2021-01-01').median();
+
+var visParams2 = {
+
+  bands: ['SWIR1', 'NIR', 'Red'],
+
+  min: 0,
+
+  max: 0.4,
+
+  gamma: 1.4,
+
+};
+
+Map.addLayer(MedianComposite,visParams2,'MedianComposite')
+
+
+
+//Frequence
+
+//WF
+
+var colWF = function(image) {
+
+  var mNDWI = image.select('mNDWI');
+
+  var NDVI = image.select('NDVI');
+
+  var EVI= image.select('EVI');
+
+  var AWEInsh = image.select('AWEInsh');
+
+  //var image = AWEInsh.gt(0).and(EVI.lt(0.1)).rename('WF');
+
+  var image = mNDWI.gt(NDVI).or(mNDWI.gt(EVI)).and(EVI.lt(0.1)).rename('WF');
+
+  return image.clip(table)
+
+};
+
+var count = col.select('NDVI').count();
+
+var water_sum = col.map(colWF).select('WF').sum();
+
+var landsat_WF = water_sum.divide(count).float();
+
+//addMap'WF'
+
+var wfvis = { min: 0,max: 1.0,palette: ['#ffffff', '#00ce10', '#efff00', '#ff9b04', '#ff0808'],};
+
+//Map.addLayer(landsat_WF,wfvis,'landsat_WF')
+
+
+
+//VF
+
+var colVF = function(image) {
+
+  var LSWI = image.select('LSWI');
+
+  var NDVI = image.select('NDVI');
+
+  var EVI= image.select('EVI');
+
+  var image = EVI.gte(0.1).and(NDVI.gte(0.2)).and(LSWI.gt(0)).rename('VF');
+
+  //var image = EVI.gte(0.1).and(NDVI.gte(0.2)).rename('VF');
+
+  return image.clip(table)
+
+};
+
+var vegetation_sum = col.map(colVF).select('VF').sum();
+
+var landsat_VF = vegetation_sum.divide(count).float();
+
+//Map.addLayer(landsat_VF,wfvis,'landsat_VF')
+
+
+
+//EVI_max
+
+var EVI_max = col.select('EVI').reduce(ee.Reducer.percentile([90])).float().clip(table);
+
+var EVI_min = col.select('EVI').reduce(ee.Reducer.percentile([10])).float().clip(table);
+
+var EVI_vvk = EVI_max.subtract(EVI_min)
+
+//Map.addLayer(EVI_max,wfvis,'EVI_max')
+
+//Map.addLayer(EVI_vvk,wfvis,'EVI_vvk')
+
+
+
+
+
+//DEM
+
+var elevation = ee.Image('USGS/SRTMGL1_003').clip(table).select('elevation').float();
+
+var slope = ee.Terrain.slope(elevation).float();
+
+
+
+//Final
+
+var Tidal_Flats = landsat_VF.lt(0.15).and(landsat_WF.lt(0.95)).and(landsat_WF.gt(0.05)).and(elevation.lte(5)).and(slope.lte(5)).selfMask()
+
+var Tidal_Flats2 = landsat_VF.lt(0.4).and(landsat_WF.lt(0.95)).and(landsat_WF.gt(0.05)).and(elevation.lte(5)).and(slope.lte(5)).selfMask()
+
+  //Map.addLayer(Tidal_Flats,{palette: 'FF0000'},'Tidal_Flats')//red
+
+//Map.addLayer(Tidal_Flats2,{palette: 'FF0100'},'Tidal_Flats2')//red
+
+
+
+//var Deciduous = landsat_VF.lt(0.9).and(landsat_VF.gte(0.15)).and(landsat_WF.lte(0.2)).and(elevation.lte(5)).and(slope.lte(5)).selfMask()
+
+var Deciduous = landsat_VF.lt(0.9).and(landsat_VF.gte(0.15)).and(elevation.lte(5)).and(slope.lte(5)).selfMask()
+
+//Map.addLayer(Deciduous,{palette: '#1038ff'},'Deciduous')//blue
+
+
+
+var Evergreen = landsat_VF.gte(0.9).and(landsat_WF.lte(0.2)).and(elevation.lte(5)).and(slope.lte(5)).selfMask()
+
+//Map.addLayer(Evergreen,{palette: '#ff89f1'},'Evergreen')//pink
+
+
+
+
+
+//chart
+
+var chart =
+
+    ui.Chart.image.seriesByRegion({
+
+          imageCollection: col,
+
+          band: 'AWEInsh',
+
+          regions: geometry,
+
+          reducer: ee.Reducer.mean(),
+
+          scale: 30,
+
+          seriesProperty: 'coordinates',
+
+          xProperty: 'system:index'
+
+        })
+
+//print(chart)
+
+
+
+//withdata
+
+var withdata = landsat_WF.addBands(landsat_VF).addBands(EVI_max).clip(table)
+
+print(withdata)
+
+Map.addLayer(withdata,'','withdata')
+
+
+
+//Export.image.toDrive({image: withdata, description: 'CNBBW2019_21Withdata',scale: 30,maxPixels: 1e13,region:table,});
+
+
+
+
+

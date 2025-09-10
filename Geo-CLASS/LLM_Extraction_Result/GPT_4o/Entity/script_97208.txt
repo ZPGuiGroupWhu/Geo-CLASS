@@ -1,0 +1,5 @@
+{
+  "Theme": ["Fire area analysis", "Burn severity assessment"],
+  "DataSource": ["users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016", "COPERNICUS/S2"],
+  "Function": ["Create polygon for fire area", "Set timezone", "Define fire date range", "Filter fires by date and location", "Select Sentinel-2 bands", "Filter image collection by date and location", "Mask invalid fire zones", "Calculate mean of image collection", "Normalize image values", "Clip images to fire area", "Calculate indices", "Subtract pre-fire from post-fire indices", "Classify burned and unburned pixels", "Generate confusion matrix", "Visualize results on map"]
+}

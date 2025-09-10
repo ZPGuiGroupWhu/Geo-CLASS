@@ -1,0 +1,6 @@
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2_HARMONIZED"],
+        "Function": ["Calculate NDVI for pre-landslide imagery", "Calculate NDVI for post-landslide imagery"]
+    }
+}

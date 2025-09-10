@@ -1,0 +1,5 @@
+{
+  "Theme": ["Land cover classification and change detection in Brazilian Amazon"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_TOA", "LANDSAT/LE07/C01/T1_TOA", "LANDSAT/LT05/C01/T1_TOA", "LANDSAT/LC08/C01/T1_SR", "LANDSAT/LE07/C01/T1_SR", "LANDSAT/LT05/C01/T1_SR"],
+  "Function": ["Filtering image collection by date and bounds", "Applying cloud score and masking", "Computing median or medoid composites", "Adding common indices", "Exporting composites to asset"]
+}

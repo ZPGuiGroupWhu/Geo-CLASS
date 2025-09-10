@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2"],
+        "Function": ["Filtering image collection by bounds and date", "Clipping image to boundary"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LT05/C01/T1_SR"],
+        "Function": ["Sorting image collection by cloud cover", "Creating mosaic image", "Calculating normalized difference water index", "Subtracting images", "Applying threshold to image", "Detecting edges in image"]
+    }
+}

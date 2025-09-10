@@ -1,0 +1,16 @@
+{
+    "Theme": [
+        "Vegetation Cover Analysis"
+    ],
+    "DataSource": [
+        "MODIS/006/MOD15A2H",
+        "MODIS/006/MOD44B"
+    ],
+    "Function": [
+        "Image Collection Filtering",
+        "Image Selection",
+        "Mean Reduction",
+        "Data Quality Control",
+        "Image Visualization"
+    ]
+}

@@ -1,0 +1,5 @@
+{
+  "Theme": ["Fire severity analysis", "Vegetation index comparison", "Cloud masking"],
+  "DataSource": ["users/diegogmzd/CHACO", "COPERNICUS/S2", "COPERNICUS/S3/OLCI"],
+  "Function": ["Mask clouds and cirrus", "Filter images by date", "Filter images by region", "Compute median composite", "Create image mosaic", "Clip image to region", "Compute normalized difference", "Subtract images", "Add layer to map", "Create linked maps", "Create split panel"]
+}

@@ -1,0 +1,25 @@
+{
+    "Theme": [
+        "Land Surface Temperature Analysis"
+    ],
+    "DataSource": [
+        "projects/ee-kimiachenaary/assets/msh",
+        "LANDSAT/LC08/C01/T1_TOA"
+    ],
+    "Function": [
+        "Filtering image collection by bounds",
+        "Converting Kelvin to Celsius",
+        "Clipping images to geometry",
+        "Calculating seasonal temperatures",
+        "Reducing image collection to mean",
+        "Reducing regions to mean",
+        "Reducing regions to max",
+        "Reducing regions to min",
+        "Filtering by count range",
+        "Calculating max count",
+        "Exporting to CSV",
+        "Calculating mean values for each polygon",
+        "Calculating max values for each polygon",
+        "Calculating min values for each polygon"
+    ]
+}

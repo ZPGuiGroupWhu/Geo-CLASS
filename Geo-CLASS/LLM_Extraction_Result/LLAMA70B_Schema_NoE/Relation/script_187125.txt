@@ -1,0 +1,28 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Process Sentinel-2 image by filtering, resampling, and normalizing bands",
+            "Compute NDWI and MNDWI indices for water detection",
+            "Detect water bodies using Canny edge detection and thresholding"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "JRC/GSW1_0/MonthlyHistory"
+        ],
+        "Function": [
+            "Compute JRC monthly water occurrence for a few months"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "users/christinacorbane/MT_comp_proj"
+        ],
+        "Function": [
+            "None"
+        ]
+    }
+}

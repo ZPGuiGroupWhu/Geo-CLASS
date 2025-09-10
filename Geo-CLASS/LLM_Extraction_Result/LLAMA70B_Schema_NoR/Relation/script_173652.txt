@@ -1,0 +1,25 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/jrmancerafGEE/POL_SUB_AE_1055",
+            "users/jrmancerafGEE/PTS_SUB_AE_1055"
+        ],
+        "Function": [
+            "Masking cloud shadows and clouds in Landsat 8 images",
+            "Filtering image collection by date",
+            "Clipping images to area of interest"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "Calculating median of image collection",
+            "Running LandTrendr algorithm",
+            "Getting change map layers",
+            "Reducing regions to mean values",
+            "Exporting data to Google Drive"
+        ]
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "relation_1": {
+        "DataSource": ["MODIS/006/MOD09A1"],
+        "Function": ["Cloud masking", "NDVI calculation", "Linear interpolation"]
+    },
+    "relation_2": {
+        "DataSource": ["users/kongdd/public:Math/pkg_smooth.js"],
+        "Function": ["Linear interpolation", "Image collection filtering"]
+    },
+    "relation_3": {
+        "DataSource": ["users/kongdd/public:pkg_vis.js"],
+        "Function": ["Region reduction", "Feature collection iteration", "Table export"]
+    }
+}

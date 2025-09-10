@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["users/eggenm/chad_rivers"],
+        "Function": ["Filtering image collection by cloud cover", "Masking cloud pixels"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_TOA"],
+        "Function": ["Calculating MNDWI index", "Applying cloud score algorithm", "Computing quality mosaic", "Calculating median image"]
+    }
+}

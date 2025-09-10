@@ -1,0 +1,18 @@
+{
+    "Theme": [
+        "Cloud and Shadow Detection in Sentinel-2 Imagery"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "Cloud Masking",
+        "Shadow Detection",
+        "Image Collection Filtering",
+        "Image Rescaling",
+        "Cloud Score Calculation",
+        "Dark Pixel Detection",
+        "Shadow Projection",
+        "Image Mosaicking"
+    ]
+}

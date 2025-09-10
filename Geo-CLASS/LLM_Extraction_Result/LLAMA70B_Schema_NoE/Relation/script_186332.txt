@@ -1,0 +1,24 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "MODIS/006/MOD09Q1"
+        ],
+        "Function": [
+            "Image collection creation and filtering",
+            "NDVI calculation and addition to image collection",
+            "Multiband image creation for unsupervised classification",
+            "Unsupervised classification using k-means clustering",
+            "Class merging and refinement",
+            "Layer visualization and mapping"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "User-defined sugar mills locations"
+        ],
+        "Function": [
+            "Buffer creation around sugar mills",
+            "Training dataset creation"
+        ]
+    }
+}

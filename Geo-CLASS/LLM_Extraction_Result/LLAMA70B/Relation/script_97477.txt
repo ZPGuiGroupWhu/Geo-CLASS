@@ -1,0 +1,6 @@
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Filtering cloud cover from Landsat 8 images", "Clipping images to Oneida Lake ROI", "Computing NDVI", "Computing EVI", "Computing SABI"]
+    }
+}

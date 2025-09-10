@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Script processes Landsat data to calculate NDVI and Land Surface Temperature (LST) for a specific region."],
+  "Theme": ["Vegetation health monitoring", "Land surface temperature analysis"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR", "LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Cloud masking for image collection", "NDVI calculation", "LST calculation"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Cloud masking for image collection"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["NDVI calculation", "LST calculation"]
+    }
+}
+```

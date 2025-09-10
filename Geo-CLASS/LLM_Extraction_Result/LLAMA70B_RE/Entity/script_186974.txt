@@ -1,0 +1,19 @@
+{
+    "Theme": [
+        "Land surface reflectance analysis"
+    ],
+    "DataSource": [
+        "LANDSAT/LT05/C01/T1_SR",
+        "LANDSAT/LE07/C01/T1_SR",
+        "LANDSAT/LC08/C01/T1_SR"
+    ],
+    "Function": [
+        "Cloud masking",
+        "Image collection filtering",
+        "Band selection",
+        "Image renaming",
+        "NDWI and MNDWI calculation",
+        "Image collection merging",
+        "Time series analysis"
+    ]
+}

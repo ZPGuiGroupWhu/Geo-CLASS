@@ -1,0 +1,25 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Forest analysis"],
+  "DataSource": ["COPERNICUS/S2"],
+  "Function": ["Cloud score calculation", "Shadow mask creation", "Water mask creation", "Image collection filtering", "Image masking", "Mosaicking", "Mean calculation"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Cloud score calculation", "Shadow mask creation", "Water mask creation", "Image collection filtering", "Image masking", "Mosaicking", "Mean calculation"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4036, 'completion_tokens': 158, 'total_tokens': 4194}

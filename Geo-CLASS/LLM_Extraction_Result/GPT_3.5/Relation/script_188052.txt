@@ -1,0 +1,14 @@
+{
+    "relation_1": {
+        "DataSource": ["projects/ee-kimmmydanny/assets/tingxialiuyu"],
+        "Function": ["Cloud masking for Landsat imagery", "Water detection using Otsu thresholding", "Area computation for water bodies"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_RT_TOA"],
+        "Function": ["Cloud masking for Landsat imagery", "Water detection using Otsu thresholding", "Area computation for water bodies"]
+    },
+    "relation_3": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["Water detection using Otsu thresholding", "Area computation for water bodies"]
+    }
+}

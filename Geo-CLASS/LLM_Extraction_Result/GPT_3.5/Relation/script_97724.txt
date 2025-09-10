@@ -1,0 +1,14 @@
+{
+    "relation_1": {
+        "DataSource": ["TIGER/2018/States"],
+        "Function": ["Cloud and shadow masking", "NDVI band addition", "Image collection filtering", "Chart generation", "Region reduction", "Data formatting and merging"]
+    },
+    "relation_2": {
+        "DataSource": ["users/eisen520/chinesePrivet"],
+        "Function": ["Cloud and shadow masking", "NDVI band addition", "Image collection filtering", "Chart generation", "Region reduction", "Data formatting and merging"]
+    },
+    "relation_3": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["Cloud and shadow masking", "NDVI band addition", "Image collection filtering", "Chart generation", "Region reduction", "Data formatting and merging"]
+    }
+}

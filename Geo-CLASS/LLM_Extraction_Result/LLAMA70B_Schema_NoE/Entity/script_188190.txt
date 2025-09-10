@@ -1,0 +1,29 @@
+{
+    "Theme": [
+        "Land cover classification and change detection in Zimbabwe"
+    ],
+    "DataSource": [
+        "LANDSAT/LT5_L1T",
+        "LANDSAT/LE7_L1T",
+        "LANDSAT/LC08/C01/T1_RT",
+        "COPERNICUS/S2",
+        "ft:1tdSwUL7MVpOauSgRzqVTOwdfy17KDbw-1d9omPw",
+        "users/ValeriaContessa/n_regions",
+        "users/kindgard/Asia/Asia",
+        "users/kindgard/Africa",
+        "users/kindgard/SUD",
+        "users/kindgard/AfricaS",
+        "users/kindgard/AmericaN",
+        "users/kindgard/Asia2",
+        "JRC/GSW1_0/GlobalSurfaceWater",
+        "users/kindgard/ESACCI-LC-L4-LC10-Map-20m-P1Y-2016-v10",
+        "users/ValeriaContessa/Map_1992_rast"
+    ],
+    "Function": [
+        "Filtering and compositing of Landsat and Sentinel-2 images",
+        "Clipping and masking of images using country and climatic zone boundaries",
+        "Calculation of vegetation indices and ratios",
+        "Land cover classification using CART algorithm",
+        "Change detection using Hansen forest change data"
+    ]
+}

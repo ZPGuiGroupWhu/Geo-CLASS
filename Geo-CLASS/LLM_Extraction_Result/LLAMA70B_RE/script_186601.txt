@@ -1,0 +1,28 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Forest monitoring and land cover classification"],
+  "DataSource": ["COPERNICUS/S1_GRD", "ft:12Ca5CZlFISuiE7Nf-3fpuTcvFgYNobv-4EJdCkGh", "ft:1-uk71GdY0SUx0Gf4oX2C0LWSvdns18hkRVz7D8C4", "ft:1NzCJgmYE2fzkwPn9dlO-u1W-CbjOshmaqauD2rza"],
+  "Function": ["Filtering image collection by polarization and date", "Creating composite image from means at different polarizations and look angles", "Exporting images to Drive", "Detecting water bodies"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Filtering image collection by polarization and date", "Creating composite image from means at different polarizations and look angles", "Exporting images to Drive"]
+    },
+    "relation_2": {
+        "DataSource": ["ft:12Ca5CZlFISuiE7Nf-3fpuTcvFgYNobv-4EJdCkGh", "ft:1-uk71GdY0SUx0Gf4oX2C0LWSvdns18hkRVz7D8C4", "ft:1NzCJgmYE2fzkwPn9dlO-u1W-CbjOshmaqauD2rza"],
+        "Function": ["Filtering image collection by geometry", "Detecting water bodies"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4902, 'completion_tokens': 423, 'total_tokens': 5325}

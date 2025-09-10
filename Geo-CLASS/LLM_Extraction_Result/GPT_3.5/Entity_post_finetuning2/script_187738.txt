@@ -1,0 +1,16 @@
+{
+    "Summary": [
+        "Segmentation and classification of cropland using NAIP and CDL data."
+    ],
+    "Theme": [
+        "ATTRITION/WEATHERING"
+    ],
+    "DataSource": [
+        "USDA/NAIP/DOQQ",
+        "USDA/NASS/CDL/2016"
+    ],
+    "Function": [
+        "Train And Apply Random Forest Classifier",
+        "Image Segmentation"
+    ]
+}

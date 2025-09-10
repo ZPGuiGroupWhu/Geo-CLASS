@@ -1,0 +1,24 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Flood Mapping"],
+  "DataSource": ["COPERNICUS/S1_GRD"],
+  "Function": ["Filtering image collection", "Converting to natural scale", "Smoothing image", "Calculating band ratio", "Generating histogram", "Flood mapping"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Filtering image collection", "Converting to natural scale", "Smoothing image", "Calculating band ratio", "Generating histogram", "Flood mapping"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4040, 'completion_tokens': 171, 'total_tokens': 4211}

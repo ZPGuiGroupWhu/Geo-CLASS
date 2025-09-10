@@ -1,0 +1,36 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Vegetation Index Analysis"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Image Collection Filtering", "Cloud Masking", "NDVI Calculation", "Image Differencing", "Standard Anomaly Calculation"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Image Collection Filtering", "Cloud Masking"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["NDVI Calculation"]
+    },
+    "relation_3": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Image Differencing"]
+    },
+    "relation_4": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Standard Anomaly Calculation"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 5988, 'completion_tokens': 289, 'total_tokens': 6277}

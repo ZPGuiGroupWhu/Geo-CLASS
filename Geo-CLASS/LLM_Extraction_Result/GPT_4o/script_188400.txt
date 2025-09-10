@@ -1,0 +1,21 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["NO2 concentration analysis"],
+  "DataSource": ["COPERNICUS/S5P/NRTI/L3_NO2"],
+  "Function": ["Define region of interest", "Filter image collection by date", "Clip images to region", "Set visualization parameters", "Create animation", "Print animation"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["COPERNICUS/S5P/NRTI/L3_NO2"],
+    "Function": ["Filter image collection by date", "Clip images to region", "Set visualization parameters", "Create animation", "Print animation"]
+  }
+}
+```
+
+Total_Token_Usage:
+9719

@@ -1,0 +1,19 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["The script collects satellite images, calculates NDVI and NBR, exports image properties, and creates mosaics for Sentinel-2 data."],
+  "Theme": ["Image processing and analysis using Sentinel-2 data"],
+  "DataSource": ["COPERNICUS/S2", "ft:1ovvyN_dzo01mRw8uSNMIYNg-HKyGTrqLErfg26X0"],
+  "Function": ["Calculates NDVI for image collection", "Calculates NBR for image collection", "Exports image properties to CSV", "Creates and exports mosaic images", "Filters and exports individual scenes"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2", "ft:1ovvyN_dzo01mRw8uSNMIYNg-HKyGTrqLErfg26X0"],
+        "Function": ["Calculates NDVI for image collection", "Calculates NBR for image collection", "Exports image properties to CSV", "Creates and exports mosaic images", "Filters and exports individual scenes"]
+    }
+}
+```

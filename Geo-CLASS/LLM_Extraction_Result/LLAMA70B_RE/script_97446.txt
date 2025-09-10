@@ -1,0 +1,21 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Entity Recognition": {
+    "Theme": ["Land cover analysis in Kalimantan region"],
+    "DataSource": ["COPERNICUS/S2"],
+    "Function": ["Masking clouds and cirrus from Sentinel-2 images", "Filtering image collection by date and cloud percentage", "Calculating median of image collection", "Downloading image as GeoTIFF"]
+  },
+  "Relation Extraction": {
+    "relation_1": {
+      "DataSource": ["COPERNICUS/S2"],
+      "Function": ["Masking clouds and cirrus from Sentinel-2 images", "Filtering image collection by date and cloud percentage", "Calculating median of image collection", "Downloading image as GeoTIFF"]
+    }
+  }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3810, 'completion_tokens': 182, 'total_tokens': 3992}

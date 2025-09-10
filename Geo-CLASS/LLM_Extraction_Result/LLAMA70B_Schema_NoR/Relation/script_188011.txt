@@ -1,0 +1,30 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "projects/ee-kimiachenaary/assets/msh"
+        ],
+        "Function": [
+            "Filtering image collection by bounds",
+            "Clipping images to geometry",
+            "Reducing image collection to mean"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_TOA"
+        ],
+        "Function": [
+            "Converting Kelvin to Celsius",
+            "Calculating seasonal temperatures",
+            "Reducing regions to mean",
+            "Reducing regions to max",
+            "Reducing regions to min",
+            "Filtering by count range",
+            "Calculating max count",
+            "Exporting to CSV",
+            "Calculating mean values for each polygon",
+            "Calculating max values for each polygon",
+            "Calculating min values for each polygon"
+        ]
+    }
+}

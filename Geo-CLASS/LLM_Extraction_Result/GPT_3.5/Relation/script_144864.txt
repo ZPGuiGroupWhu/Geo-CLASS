@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["users/thao226355/share/VietNam_Ranh_gioi_tinh"],
+        "Function": ["Cloud and cirrus mask application", "Satellite image selection and processing", "NDVI calculation and land cover classification", "Area calculation of classified land cover"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["Satellite image selection and processing", "NDVI calculation and land cover classification", "Area calculation of classified land cover"]
+    }
+}

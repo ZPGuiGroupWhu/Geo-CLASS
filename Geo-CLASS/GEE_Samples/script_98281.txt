@@ -1,0 +1,777 @@
+//01 修改 roi
+var roi  =  ee.FeatureCollection("users/LILANJING/CW_buffer");
+
+          
+          
+
+
+
+
+
+
+          
+function maskS2clouds(image) {
+  var qa = image.select('QA60')
+
+  // Bits 10 and 11 are clouds and cirrus, respectively.
+  var cloudBitMask = 1 << 10;
+  var cirrusBitMask = 1 << 11;
+
+  // Both flags should be set to zero, indicating clear conditions.
+  var mask = qa.bitwiseAnd(cloudBitMask).eq(0).and(
+             qa.bitwiseAnd(cirrusBitMask).eq(0))
+
+  // Return the masked and scaled data, without the QA bands.
+  return image.updateMask(mask).divide(10000)
+      .select("B.*")
+      .copyProperties(image, ["system:time_start"])
+}
+Map.addLayer(roi) 
+Map.centerObject(roi, 7);
+
+//NDWI Calculation
+function addNDWI(image) {
+  var ndwi = image.normalizedDifference(['B2', 'B4']).rename('NDWI');
+  return image.addBands(ndwi);
+}
+
+//NDSI Calculation
+function addNDSI(image) {
+  var ndsi = image.normalizedDifference(['B3', 'B6']).rename('NDSI');
+  return image.addBands(ndsi);
+}
+
+
+//Water classification(Temporarily not used)
+function waterclassify(image) {
+  var ndwi = image.select('NDWI');
+  var B4 = image.select('B4');
+  var classify = ndwi
+          .where(ndwi.lte(0.12), 1)
+          .where(ndwi.gt(0.12).and(ndwi.lte(0.14)), 2)
+          .where(ndwi.gt(0.14).and(ndwi.lte(0.25)), 3)
+          .where(ndwi.gt(0.25), 4)
+          .rename('classify');
+  return image.addBands(classify);
+}
+
+//Get the range of water bodies
+function watermaskmax(image) {
+  var ndwi = image.select('NDWI');
+  var ndsi = image.select('NDSI');
+  var b2 = image.select('B2');
+  var mask1 = ndwi
+          .where(ndwi.lt(0.25), 0)
+          .where(ndwi.gte(0.25), 1);
+  var mask2 = ndsi
+          .where(ndsi.lt(0.85), 0)
+          .where(ndsi.gte(0.85), 1);
+  var mask = mask1.multiply(mask2)
+  return image.addBands(mask.rename('watermaskmax'));
+}
+
+//Water mask
+
+
+
+
+    
+//Study area clipping
+function cliproi(image) {
+  var image1 = image.clip(roi);
+  return image1;
+}
+
+//HHsubHV Calculation
+function HHHVsub(image) {
+  var HH = image.select('HH');
+  var HV = image.select('HV');
+  var subtract = HH.subtract(HV).rename('HHsubHV');
+  return image.addBands(subtract);
+}
+
+
+
+
+
+
+
+
+//Select Sentinel2
+
+
+//Select Sentinel2
+var s2 = ee.ImageCollection('COPERNICUS/S2_SR')
+                  .filterBounds(roi)
+                  .filterDate('2020-05-01', '2020-10-31')
+                  // Pre-filter to get less cloudy granules.
+                  .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE',20))
+                  .map(maskS2clouds)  
+                  .map(addNDWI)
+                  .map(addNDSI)
+                  .map(waterclassify)
+                  .map(cliproi)
+                  .map(watermaskmax);
+                  
+print(s2)                  
+//Maximum water synthesis method
+var watermax = s2.select('watermaskmax').max().eq(1).updateMask(s2.select('watermaskmax').max().eq(1))             
+
+var viss2 = ee.ImageCollection('COPERNICUS/S2_SR')
+                  .filterBounds(roi)
+                  .filterDate('2020-08-01', '2020-08-31')
+                  // Pre-filter to get less cloudy granules.
+                  
+                  .map(maskS2clouds)  
+                  .map(cliproi)
+                  .mosaic();
+
+var visParams = {
+  bands: ['B4', 'B3', 'B2'],
+  min: 0,
+  max: 1,
+ 
+};
+
+Export.image.toAsset({
+  image:watermax,
+  description:'cw_2020_summer',
+  region:roi,
+  scale:50,
+  maxPixels:9999999999999
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//select HHsubVH band.
+var imgHHsubHV = ee.ImageCollection('COPERNICUS/S1_GRD')
+        .filter(ee.Filter.listContains('transmitterReceiverPolarisation', 'HH'))
+        .filter(ee.Filter.listContains('transmitterReceiverPolarisation', 'HV'))
+        .filter(ee.Filter.eq('instrumentMode', 'IW'))
+        .filter(ee.Filter.date('2020-10-01', '2020-10-31'))
+        .filterBounds(roi)
+        .map(HHHVsub)
+        .map(cliproi)
+
+print(imgHHsubHV)
+
+//Slope calculation
+var arcticdem = ee.Image("UMN/PGC/ArcticDEM/V3/2m_mosaic").clip(roi);
+var slope = ee.Terrain.slope(arcticdem)
+
+//Function to convert from dB
+function toNatural(img) {
+return ee.Image(10.0).pow(img.select(0).divide(10.0));
+}
+
+//Function to convert to dB
+function toDB(img) {
+return ee.Image(img).log10().multiply(10.0);
+}
+ 
+function RefinedLee(img) {
+// img must be in natural units, i.e. not in dB!
+// Set up 3x3 kernels
+ 
+// convert to natural.. do not apply function on dB!
+var myimg = toNatural(img);
+ 
+var weights3 = ee.List.repeat(ee.List.repeat(1,3),3);
+var kernel3 = ee.Kernel.fixed(3,3, weights3, 1, 1, false);
+ 
+var mean3 = myimg.reduceNeighborhood(ee.Reducer.mean(), kernel3);
+var variance3 = myimg.reduceNeighborhood(ee.Reducer.variance(), kernel3);
+ 
+// Use a sample of the 3x3 windows inside a 7x7 windows to determine gradients and directions
+var sample_weights = ee.List([[0,0,0,0,0,0,0], [0,1,0,1,0,1,0],[0,0,0,0,0,0,0], [0,1,0,1,0,1,0], [0,0,0,0,0,0,0], [0,1,0,1,0,1,0],[0,0,0,0,0,0,0]]);
+ 
+var sample_kernel = ee.Kernel.fixed(7,7, sample_weights, 3,3, false);
+ 
+// Calculate mean and variance for the sampled windows and store as 9 bands
+var sample_mean = mean3.neighborhoodToBands(sample_kernel);
+var sample_var = variance3.neighborhoodToBands(sample_kernel);
+ 
+// Determine the 4 gradients for the sampled windows
+var gradients = sample_mean.select(1).subtract(sample_mean.select(7)).abs();
+gradients = gradients.addBands(sample_mean.select(6).subtract(sample_mean.select(2)).abs());
+gradients = gradients.addBands(sample_mean.select(3).subtract(sample_mean.select(5)).abs());
+gradients = gradients.addBands(sample_mean.select(0).subtract(sample_mean.select(8)).abs());
+ 
+// And find the maximum gradient amongst gradient bands
+var max_gradient = gradients.reduce(ee.Reducer.max());
+ 
+// Create a mask for band pixels that are the maximum gradient
+var gradmask = gradients.eq(max_gradient);
+ 
+// duplicate gradmask bands: each gradient represents 2 directions
+gradmask = gradmask.addBands(gradmask);
+ 
+// Determine the 8 directions
+var directions = sample_mean.select(1).subtract(sample_mean.select(4)).gt(sample_mean.select(4).subtract(sample_mean.select(7))).multiply(1);
+directions = directions.addBands(sample_mean.select(6).subtract(sample_mean.select(4)).gt(sample_mean.select(4).subtract(sample_mean.select(2))).multiply(2));
+directions = directions.addBands(sample_mean.select(3).subtract(sample_mean.select(4)).gt(sample_mean.select(4).subtract(sample_mean.select(5))).multiply(3));
+directions = directions.addBands(sample_mean.select(0).subtract(sample_mean.select(4)).gt(sample_mean.select(4).subtract(sample_mean.select(8))).multiply(4));
+// The next 4 are the not() of the previous 4
+directions = directions.addBands(directions.select(0).not().multiply(5));
+directions = directions.addBands(directions.select(1).not().multiply(6));
+directions = directions.addBands(directions.select(2).not().multiply(7));
+directions = directions.addBands(directions.select(3).not().multiply(8));
+ 
+// Mask all values that are not 1-8
+directions = directions.updateMask(gradmask);
+ 
+// "collapse" the stack into a singe band image (due to masking, each pixel has just one value (1-8) in it's directional band, and is otherwise masked)
+directions = directions.reduce(ee.Reducer.sum());
+ 
+var sample_stats = sample_var.divide(sample_mean.multiply(sample_mean));
+ 
+// Calculate localNoiseVariance
+var sigmaV = sample_stats.toArray().arraySort().arraySlice(0,0,5).arrayReduce(ee.Reducer.mean(), [0]);
+ 
+// Set up the 7*7 kernels for directional statistics
+var rect_weights = ee.List.repeat(ee.List.repeat(0,7),3).cat(ee.List.repeat(ee.List.repeat(1,7),4));
+ 
+var diag_weights = ee.List([[1,0,0,0,0,0,0], [1,1,0,0,0,0,0], [1,1,1,0,0,0,0],
+[1,1,1,1,0,0,0], [1,1,1,1,1,0,0], [1,1,1,1,1,1,0], [1,1,1,1,1,1,1]]);
+ 
+var rect_kernel = ee.Kernel.fixed(7,7, rect_weights, 3, 3, false);
+var diag_kernel = ee.Kernel.fixed(7,7, diag_weights, 3, 3, false);
+ 
+// Create stacks for mean and variance using the original kernels. Mask with relevant direction.
+var dir_mean = myimg.reduceNeighborhood(ee.Reducer.mean(), rect_kernel).updateMask(directions.eq(1));
+var dir_var = myimg.reduceNeighborhood(ee.Reducer.variance(), rect_kernel).updateMask(directions.eq(1));
+ 
+dir_mean = dir_mean.addBands(myimg.reduceNeighborhood(ee.Reducer.mean(), diag_kernel).updateMask(directions.eq(2)));
+dir_var = dir_var.addBands(myimg.reduceNeighborhood(ee.Reducer.variance(), diag_kernel).updateMask(directions.eq(2)));
+ 
+// and add the bands for rotated kernels
+for (var i=1; i<4; i++) {
+dir_mean = dir_mean.addBands(myimg.reduceNeighborhood(ee.Reducer.mean(), rect_kernel.rotate(i)).updateMask(directions.eq(2*i+1)));
+dir_var = dir_var.addBands(myimg.reduceNeighborhood(ee.Reducer.variance(), rect_kernel.rotate(i)).updateMask(directions.eq(2*i+1)));
+dir_mean = dir_mean.addBands(myimg.reduceNeighborhood(ee.Reducer.mean(), diag_kernel.rotate(i)).updateMask(directions.eq(2*i+2)));
+dir_var = dir_var.addBands(myimg.reduceNeighborhood(ee.Reducer.variance(), diag_kernel.rotate(i)).updateMask(directions.eq(2*i+2)));
+}
+ 
+// "collapse" the stack into a single band image (due to masking, each pixel has just one value in it's directional band, and is otherwise masked)
+dir_mean = dir_mean.reduce(ee.Reducer.sum());
+dir_var = dir_var.reduce(ee.Reducer.sum());
+ 
+// A finally generate the filtered value
+var varX = dir_var.subtract(dir_mean.multiply(dir_mean).multiply(sigmaV)).divide(sigmaV.add(1.0));
+ 
+var b = varX.divide(dir_var);
+ 
+var result = dir_mean.add(b.multiply(myimg.subtract(dir_mean)));
+
+return(img.addBands(ee.Image(toDB(result.arrayGet(0))).rename("HV")));
+}
+ 
+var collection = imgHHsubHV.map(RefinedLee);
+var col = ee.ImageCollection(collection.select("HV")).mean();
+print(col,imgHHsubHV)
+
+Map.addLayer({
+  eeObject:col,
+  visParams:{max:-10,min:-30},
+  name:'imgHV'
+}); 
+
+
+
+
+
+//   shown:0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Map.addLayer({
+  eeObject:arcticdem,
+  
+  name:'arcticdem',
+  shown:0
+}); 
+
+
+
+//Select the vector that exists in the raster
+var water_raster= watermax.and(col).gte(1)
+
+
+
+var water = water_raster.updateMask(water_raster).rename("water").clip(roi);
+var newWater = water.addBands(water_raster);
+
+
+
+
+
+
+var vectors = newWater.reduceToVectors({
+    geometry: roi,
+    scale: 100,
+    geometryType: 'polygon',
+    reducer: ee.Reducer.mean(),
+    maxPixels: 1e15,
+    tileScale: 16,
+    bestEffort:true
+  });
+
+  function buffer(fea) {
+return fea.buffer(50);
+}
+  var vectors_buffer = vectors.map(buffer)
+
+
+
+
+Map.addLayer({
+  eeObject:vectors_buffer,
+  name:'vectors_buffer',
+}); 
+
+
+
+
+
+
+var areas = function(feature) {
+// Compute area from the geometry.
+  var area = feature.geometry().area(10);
+  return feature.set('area', area);
+};
+
+
+
+// filter by areas(set max and min)
+var allAreas = ee.FeatureCollection(vectors_buffer.map(areas)).sort('area',false)
+var feature = allAreas.filterMetadata('area','greater_than', 49500).sort('area',false)
+
+var feature2 = feature.filterMetadata('area','less_than', 40000000).sort('area',false)
+
+
+
+
+//Judge single peak and double peak
+var jus =  function(histogram) {
+  var counts = ee.Array(ee.Dictionary(histogram).get('histogram'));
+  var means = ee.Array(ee.Dictionary(histogram).get('bucketMeans'));
+  var size = means.length().get([0]);
+
+  var indices = ee.List.sequence(1, size);
+  var bss = indices.map(function(i) {
+    var a_left_pos = ee.Algorithms.If(ee.Number(i).eq(1), -1, ee.Number(i).subtract(2))
+    var a_right_pos = ee.Algorithms.If(ee.Number(i).eq(size), 0, i)
+    var b_left = ee.Algorithms.If(ee.Number(a_left_pos).eq(-1), 0, counts.get(ee.List([ee.Number(a_left_pos)])))
+    var b_right = ee.Algorithms.If(ee.Number(a_right_pos).eq(0), 0, counts.get(ee.List([ee.Number(i)])))
+    var count = ee.Algorithms.If(counts.get(ee.List([ee.Number(i).subtract(1)])).gt(b_left).and(counts.get(ee.List([ee.Number(i).subtract(1)])).gt(b_right)), 1, 0)
+
+  return count;
+  });
+
+  var jus_num = bss.removeAll([0]);
+  return jus_num;
+}
+
+
+// otsu 
+var otsu = function(histogram) {
+  var counts = ee.Array(ee.Dictionary(histogram).get('histogram'));
+  var means = ee.Array(ee.Dictionary(histogram).get('bucketMeans'));
+  
+  
+  var size = means.length().get([0]);
+  var total = counts.reduce(ee.Reducer.sum(), [0]).get([0]);
+  var sum = means.multiply(counts).reduce(ee.Reducer.sum(), [0]).get([0]);
+  var mean = sum.divide(total);
+  
+  var indices = ee.List.sequence(1, size);
+  
+  // Compute between sum of squares, where each mean partitions the data.
+  var bss = indices.map(function(i) {
+    var aCounts = counts.slice(0, 0, i);
+    var aCount = aCounts.reduce(ee.Reducer.sum(), [0]).get([0]);
+    var aMeans = means.slice(0, 0, i);
+    var aMean = aMeans.multiply(aCounts)
+        .reduce(ee.Reducer.sum(), [0]).get([0])
+        .divide(aCount);
+    var bCount = total.subtract(aCount);
+    var bMean = sum.subtract(aCount.multiply(aMean)).divide(bCount);
+    return aCount.multiply(aMean.subtract(mean).pow(2)).add(
+          bCount.multiply(bMean.subtract(mean).pow(2)));
+  });
+
+
+  
+  // Return the mean value corresponding to the maximum BSS.
+  return means.sort(bss).get([-1]);
+};
+
+
+//rosin
+function rosin (histogram) {
+  var counts = ee.Array(ee.Dictionary(histogram).get('histogram'));
+  var means = ee.Array(ee.Dictionary(histogram).get('bucketMeans'));
+  var size = means.length().get([0]);
+  var size_f = size.multiply(0.05).int();
+  var size_l = size.subtract(size_f);
+  var arr1 = ee.List(ee.Dictionary(histogram).get('histogram'));
+  var arr2 = ee.List(ee.Dictionary(histogram).get('bucketMeans'));
+  var arr1_2 = arr1.slice(size_f, size_l, 1);
+  var arr2_2 = arr2.slice(size_f, size_l, 1);
+  var arrx = ee.Array(arr2_2);
+  var arry = ee.Array(arr1_2);
+  
+  var x_max_pos = arrx.argmax();
+  var x_min_pos = arrx.multiply(-1).argmax();
+  var x_max = arrx.get(x_max_pos);
+  var x_min = arrx.get(x_min_pos);
+
+
+  var size2 = arr1_2.size();
+  var max_p = arry.argmax().getNumber(0);
+  var listy1 = arr1_2.slice(0,max_p, 1);
+  var listy2 = arr1_2.slice(max_p.add(1),size2, 1);
+  var arry1 = ee.Array(listy1);
+  var arry2 = ee.Array(listy2);
+  
+  //（x2,y2） maximum coordinate
+  var x2 = ee.Number(arr2_2.get(max_p));
+  var y2  = ee.Number(arr1_2.get(max_p)); 
+  
+  //justify left/right
+  var x_pos = max_p.divide(size2).abs()
+  //（x1,y1） minimum coordinate
+  
+  var x1 = ee.Number(arr2_2.get(ee.Number(ee.Algorithms.If(x_pos.gt(0.5), arry1.multiply(-1).argmax().getNumber(0),arry2.multiply(-1).argmax().getNumber(0).add(max_p)))));
+  
+  var y1 = 0;
+  
+  var k = ee.Number(ee.Algorithms.If(x_pos.gt(0.5), y2.divide((x2.subtract(x1)).abs()),y2.divide((x2.subtract(x1)).abs()).multiply(-1)));
+  
+  var b = x1.multiply(k).multiply(-1);
+  
+  var start = ee.Algorithms.If(x_pos.gt(0.5), ee.Number(1), max_p);
+  var end = ee.Algorithms.If(x_pos.gt(0.5), max_p, size2.subtract(1));
+  var dist = ee.List.sequence( start, end, 1 , null );
+  var indices = ee.List.sequence(start, end);
+  var ylist = ee.Algorithms.If(x_pos.gt(0.5), arry1, arry2);
+  
+  var dis = indices.map(function(i) {
+    var a = (k.multiply(arrx.toList().get(i)).add(b).subtract(arry.toList().get(i))).abs();
+    var a1 = (k.multiply(k).add(1)).sqrt();
+    var a2 = a.divide(a1);
+    
+    
+    return a2;
+  });
+
+
+//smooth
+function smooth(values, alpha) {
+    var weighted = values.mean().multiply(alpha);
+    var smoothed = ee.Array([]);
+    for (var i in values) {
+        var curr = values[i];
+      
+      
+      
+      
+    }
+    return weighted;
+}
+
+
+
+
+
+
+
+
+
+
+
+  var rosinlist = ee.Array(dis);
+  
+  var rosinvalue = rosinlist.argmax().getNumber(0);
+  var rosinreturn = ee.Algorithms.If(x_pos.gt(0.5),ee.Number(arr2_2.get(rosinvalue)),ee.Number(arr2_2.get(rosinvalue.add(ee.Number(start)))));
+  
+  return rosinreturn;
+  }
+
+
+//Calculate the minimum value of the histogram  
+function arrmin (histogram) {
+  var arr2 = ee.List(ee.Dictionary(histogram).get('bucketMeans'));
+  var x1 = ee.Number(arr2.get(0));
+  return x1;
+  }
+
+//Calculate the maximum value of the histogram  
+function arrmax (histogram) {
+  var arr2 = ee.Array(ee.Dictionary(histogram).get('bucketMeans'));
+  var x1_p = arr2.argmax();
+  var x1 = arr2.get(x1_p)
+  return x1;
+  }
+
+//Calculate the mean value of the histogram
+function arrmean (histogram) {
+  var counts = ee.Array(ee.Dictionary(histogram).get('histogram'));
+  var means = ee.Array(ee.Dictionary(histogram).get('bucketMeans'));
+  var total = counts.reduce(ee.Reducer.sum(), [0]).get([0]);
+  // Sum of all mean values
+  var sum = means.multiply(counts).reduce(ee.Reducer.sum(), [0]).get([0]);
+  // Mean value for the whole image.
+  var mean = sum.divide(total);
+  return mean;
+  }
+
+
+function arrvariance(img){
+  var text = img.reduceNeighborhood({
+    reducer: ee.Reducer.stdDev(),
+    kernel: ee.Kernel.circle(7)})
+  var histogram = text.reduceRegion({
+  maxPixels:999999999999,
+  reducer: ee.Reducer.histogram(255, 1)
+      .combine('mean', null, true)
+      .combine('variance', null, true), 
+  geometry:roi, 
+  scale: 20,
+  bestEffort: true
+});
+  var counts = ee.Array(ee.Dictionary(histogram.get('HV_stdDev_histogram')).get('histogram'));
+  var means = ee.Array(ee.Dictionary(histogram.get('HV_stdDev_histogram')).get('bucketMeans'));
+  var total = counts.reduce(ee.Reducer.sum(), [0]).get([0]);
+  // Sum of all mean values
+  var sum = means.multiply(counts).reduce(ee.Reducer.sum(), [0]).get([0]);
+  // Mean value for the whole image.
+  var mean = sum.divide(total);
+  return mean;
+}
+
+
+function jusdem(img){
+  var histogram = img.reduceRegion({
+  maxPixels:999999999999,
+  reducer: ee.Reducer.histogram(255, 1)
+      .combine('mean', null, true)
+      .combine('variance', null, true), 
+  geometry:roi, 
+  scale: 20,
+  bestEffort: true
+});
+  var counts = ee.Array(ee.Dictionary(histogram.get('HV_histogram')).get('histogram'));
+  var means = ee.Array(ee.Dictionary(histogram.get('HV_histogram')).get('bucketMeans'));
+  var total = counts.reduce(ee.Reducer.sum(), [0]).get([0]);
+  // Sum of all mean values
+  var sum = means.multiply(counts).reduce(ee.Reducer.sum(), [0]).get([0]);
+  // Mean value for the whole image.
+  var mean = sum.divide(total);
+  return mean;
+}
+
+
+
+
+
+
+//Range extraction
+function extract(fea)
+{
+var vec = ee.Feature(fea);
+var raster = col.select('HV').clip(vec);
+var dem = arcticdem.clip(vec);
+var smooth = ee.Image(raster.select('HV').focal_median(100, 'circle', 'meters'));
+var histogram = raster.reduceRegion({
+  maxPixels:999999999999,
+  reducer: ee.Reducer.histogram(255, 1)
+      .combine('mean', null, true)
+      .combine('variance', null, true), 
+  geometry:roi, 
+  scale: 20,
+  bestEffort: true
+});
+
+var justify = jus(histogram.get('HV_histogram')).size();
+
+
+//Judging the threshold extraction method according to the number of peaks
+var th = ee.Algorithms.If(ee.Number(justify).gt(1), ee.Number(otsu(histogram.get('HV_histogram'))),ee.Number(rosin(histogram.get('HV_histogram'))));
+
+var x_min = arrmin(histogram.get('HV_histogram'));
+
+var x_max  = arrmean(histogram.get('HV_histogram'));
+var diff = ee.Number(x_max.subtract(x_min));
+var variance = arrvariance(raster)
+
+//Empirical parameter setting
+var arrtest = ee.Algorithms.If(slope.lt(0.2), th, -100);
+
+var arrtest2 = ee.Algorithms.If(x_min.gt(-16), -100, arrtest);
+var arrtest3 = ee.Algorithms.If(diff.gt(4), arrtest2, -100);
+var arrtest4 = ee.Algorithms.If(variance.gt(1), arrtest3, -100);
+
+
+
+
+
+
+
+
+
+
+//Morphological operations
+var kernel = ee.Kernel.circle({radius: 0.1});
+var classB = raster.lt(ee.Number(arrtest4))
+
+
+
+
+return classB;
+
+}
+ 
+var water_fea = ee.ImageCollection(feature2.map(extract)).mosaic().gte(1).mask(ee.ImageCollection(feature2.map(extract)).mosaic().gte(1))
+
+Map.addLayer({
+  eeObject:water_fea,
+  visParams:{palette: 'red'},
+  name:'water_fea'
+}); 
+
+
+
+
+
+
+
+
+
+
+
+//     bestEffort:true
+
+
+
+
+
+
+
+// function extract2(fea)
+
+
+
+
+
+
+
+
+
+
+
+//   bestEffort: true
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Export to Asset
+Export.image.toAsset({
+  image:water_fea,
+  description:'cw_202010_winter',
+  region:roi,
+  scale:50,
+  maxPixels:9999999999999
+})
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   

@@ -1,0 +1,24 @@
+{
+    "Summary": [
+        "Script for pre- and post-fire monitoring using Earth observations."
+    ],
+    "Theme": [
+        "FIRE MANAGEMENT"
+    ],
+    "DataSource": [
+        "FAO/GAUL/2015/level0",
+        "LANDSAT/LC08/C01/T1_SR",
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "Cloud And Snow Masking",
+        "Image Mosaicking",
+        "Compute Difference Between Pre- And Post-Fire NBR",
+        "Calculate dNBR For Fire Severity",
+        "Layer Addition To Map",
+        "Calculate Burned Area",
+        "Add A Legend",
+        "Calculate dNBR For Fire Severity",
+        "Calculates Forest Structural Complexity Index (FSCI)"
+    ]
+}

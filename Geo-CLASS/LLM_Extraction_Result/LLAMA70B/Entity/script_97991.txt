@@ -1,0 +1,5 @@
+{
+  "Theme": ["Land cover classification and analysis of Trinidad and Tobago"],
+  "DataSource": ["users/EL/TrinidadandTobago", "users/EL/trinidad_forest_type_landcover_28july2011", "users/EL/tobago_forest_type_landcover_06may2011", "LANDSAT/LC8_L1T", "COPERNICUS/S2", "users/christinacorbane/MT_comp_proj", "JRC/GSW1_0/GlobalSurfaceWater"],
+  "Function": ["Upload and visualize shapefile", "Upload and filter Landsat images", "Create a polygon", "Filter satellite images by season and year", "Create a mosaic with Landsat simple composite and ratio bands", "Filter Sentinel images and quality bands", "Classify image using training points", "Post-classification editing", "Use masks for cities and water", "Export image to asset", "Print statistics for forest area"]
+}

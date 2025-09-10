@@ -1,0 +1,15 @@
+{
+  "relation_1": {
+    "DataSource": ["COPERNICUS/S2"],
+    "Function": [
+      "Filter images by cloud coverage",
+      "Filter images by date range",
+      "Filter images by geographic bounds",
+      "Select image bands",
+      "Get image projection",
+      "Reproject image",
+      "Export image to Google Drive",
+      "Visualize image on map"
+    ]
+  }
+}

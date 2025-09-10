@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["MODIS/006/MCD64A1"],
+        "Function": ["Filtering image collection by date", "Selecting specific image band"]
+    },
+    "relation_2": {
+        "DataSource": ["MODIS/006/MCD64A1"],
+        "Function": ["Creating video thumbnail from image collection"]
+    }
+}

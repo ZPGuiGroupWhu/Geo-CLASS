@@ -1,0 +1,5 @@
+{
+  "Theme": ["NDVI calculation", "Cloud masking", "EVI calculation", "Time series analysis"],
+  "DataSource": ["projects/ee-kimiachenaary/assets/Tehran", "LANDSAT/LC08/C01/T1_TOA"],
+  "Function": ["Mask clouds in images", "Filter images by date", "Select specific bands", "Filter images by location", "Clip images to region", "Calculate NDVI", "Visualize NDVI", "Count pixels in region", "Filter images by pixel count", "Generate time series chart", "Calculate mean values", "Calculate max values", "Export data to CSV"]
+}

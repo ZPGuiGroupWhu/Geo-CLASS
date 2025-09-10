@@ -1,0 +1,13 @@
+{
+    "Theme": [
+        "Land cover classification using Sentinel-1 data with speckle filtering"
+    ],
+    "DataSource": [
+        "COPERNICUS/S1_GRD"
+    ],
+    "Function": [
+        "Refined Lee speckle filtering",
+        "Image compositing",
+        "Image classification using CART classifier"
+    ]
+}

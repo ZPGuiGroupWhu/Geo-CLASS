@@ -1,0 +1,5 @@
+{
+  "Theme": ["Land cover classification using Sentinel-1 data"],
+  "DataSource": ["COPERNICUS/S1_GRD"],
+  "Function": ["Filtering image collection", "Converting to natural units", "Applying Refined Lee filter", "Calculating mean and variance", "Classifying land cover"]
+}

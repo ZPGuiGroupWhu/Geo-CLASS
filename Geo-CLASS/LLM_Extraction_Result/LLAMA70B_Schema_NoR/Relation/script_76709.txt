@@ -1,0 +1,22 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/cxliu2015/BYDwater20210325"
+        ],
+        "Function": [
+            "Filtering image collection by date and cloud coverage",
+            "Masking clouds and cirrus from images",
+            "Creating mosaic from image collection",
+            "Exporting results to Google Drive"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Calculating NDVI and other vegetation indices",
+            "Computing percentiles of vegetation indices"
+        ]
+    }
+}

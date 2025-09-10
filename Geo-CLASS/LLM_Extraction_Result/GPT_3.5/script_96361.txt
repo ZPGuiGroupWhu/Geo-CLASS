@@ -1,0 +1,19 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Merging Landsat 5, 7, 8 collections, standardizing band names, adding quality bands, and preparing predictors."],
+  "Theme": ["Landsat image collection merging and standardization", "Quality band addition for cloud, water, snow/ice detection", "Predictor preparation for geospatial analysis"],
+  "DataSource": ["LANDSAT/LT05/C01/T1_TOA", "LANDSAT/LE07/C01/T1_RT_TOA", "LANDSAT/LC08/C01/T1_RT_TOA", "LANDSAT/LT05/C01/T1_SR", "LANDSAT/LE07/C01/T1_SR", "LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Unpacking bit bands for quality information extraction", "Adding Fmask for cloud, water, snow/ice detection", "Calculating MNDWI for water body detection", "Preparing predictors for geospatial analysis"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LT05/C01/T1_TOA", "LANDSAT/LE07/C01/T1_RT_TOA", "LANDSAT/LC08/C01/T1_RT_TOA", "LANDSAT/LT05/C01/T1_SR", "LANDSAT/LE07/C01/T1_SR", "LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Unpacking bit bands for quality information extraction", "Adding Fmask for cloud, water, snow/ice detection", "Calculating MNDWI for water body detection", "Preparing predictors for geospatial analysis"]
+    }
+}
+```

@@ -1,0 +1,19 @@
+{
+    "Theme": [
+        "Climate and Weather Analysis",
+        "Drought Monitoring"
+    ],
+    "DataSource": [
+        "users/eijulio/valles_altos_estados",
+        "FAO/GAUL_SIMPLIFIED_500m/2015/level2",
+        "ECMWF/ERA5/DAILY",
+        "UCSB-CHG/CHIRPS/PENTAD"
+    ],
+    "Function": [
+        "Filtering and clipping of image collections",
+        "Calculation of monthly totals and long-term means",
+        "Computation of seasonal deviation",
+        "Reduction of regions and styling of vectors",
+        "Image and table export to Drive"
+    ]
+}

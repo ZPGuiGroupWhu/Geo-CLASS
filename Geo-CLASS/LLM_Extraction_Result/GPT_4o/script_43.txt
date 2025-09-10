@@ -1,0 +1,33 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Community forest analogue regions"],
+  "DataSource": ["users/ak_glaciers/All_CF_Cambodia_July_2016", "users/ak_glaciers/reem_cf_outputs/reem_canopy_cover_2000_pts_rma_nbr_timeseries_remapped_full", "USDOS/LSIB/2017"],
+  "Function": ["Calculate mean canopy cover", "Filter features by country", "Filter features by non-overlapping regions", "Filter features by canopy cover similarity", "Randomly move polygons", "Export feature collection"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["users/ak_glaciers/All_CF_Cambodia_July_2016"],
+    "Function": ["Filter features by non-overlapping regions", "Filter features by country"]
+  },
+  "relation_2": {
+    "DataSource": ["users/ak_glaciers/reem_cf_outputs/reem_canopy_cover_2000_pts_rma_nbr_timeseries_remapped_full"],
+    "Function": ["Calculate mean canopy cover", "Filter features by canopy cover similarity"]
+  },
+  "relation_3": {
+    "DataSource": ["USDOS/LSIB/2017"],
+    "Function": ["Filter features by country"]
+  },
+  "relation_4": {
+    "DataSource": ["None"],
+    "Function": ["Randomly move polygons", "Export feature collection"]
+  }
+}
+```
+
+Total_Token_Usage:
+6914

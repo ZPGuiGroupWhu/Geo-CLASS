@@ -1,0 +1,27 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/Katemiller125/Illilouette"
+        ],
+        "Function": [
+            "Buffering Points To Create Zones For Analysis",
+            "Calculates And Displays Area For Each Land Cover Category"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LE07/C02/T1_L2"
+        ],
+        "Function": [
+            "Calculates And Displays Area For Each Land Cover Category"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "LANDSAT/LE07/C01/T1_SR"
+        ],
+        "Function": [
+            "Calculates And Displays Area For Each Land Cover Category"
+        ]
+    }
+}

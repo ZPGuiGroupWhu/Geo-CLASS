@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Selecting and analyzing Landsat imagery for water and vegetation frequency in Florida."],
+  "Theme": ["Water frequency detection", "Vegetation frequency detection"],
+  "DataSource": ["TIGER/2016/States", "LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Cloud and cloud shadow masking", "Decision tree classification for water and vegetation detection"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["TIGER/2016/States"],
+        "Function": ["Cloud and cloud shadow masking", "Decision tree classification for water and vegetation detection"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Cloud and cloud shadow masking", "Decision tree classification for water and vegetation detection"]
+    }
+}
+```

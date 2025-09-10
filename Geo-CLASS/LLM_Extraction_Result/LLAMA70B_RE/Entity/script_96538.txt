@@ -1,0 +1,16 @@
+{
+    "Theme": [
+        "Land use and land cover analysis"
+    ],
+    "DataSource": [
+        "users/eeranyartrodrigo/panteones/polygonsData/polsPanteon",
+        "projects/ee-vulnerability-gee4geo/assets/ranyartRodrigo/mexicoContorno",
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "Buffering feature collections",
+        "Masking cloudy pixels",
+        "Calculating vegetation indices",
+        "Extracting median band values"
+    ]
+}

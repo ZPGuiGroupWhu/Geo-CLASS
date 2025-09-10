@@ -1,0 +1,2147 @@
+Relation_ID,Script_ID,Head_Entity,Relation_Type,Tail_Entity
+1,script_102957.txt,LANDSAT/LC09/C02/T1_L2,ActOn,Filter image collection by spatial bounds
+2,script_102957.txt,LANDSAT/LC09/C02/T1_L2,ActOn,Mask clear pixels
+3,script_102957.txt,LANDSAT/LC09/C02/T1_L2,ActOn,Mask cloud and cloud shadow
+4,script_102957.txt,LANDSAT/LC09/C02/T1_L2,ActOn,Convert DN to SR
+5,script_102957.txt,LANDSAT/LC09/C02/T1_L2,ActOn,Filter image collection by time window
+6,script_102957.txt,LANDSAT/LC09/C02/T1_L2,ActOn,Median composite to convert IC to Image
+7,script_102957.txt,FAO/GAUL_SIMPLIFIED_500m/2015/level2,ActOn,Filter image collection by spatial bounds
+8,script_102957.txt,FAO/GAUL_SIMPLIFIED_500m/2015/level2,ActOn,Mask clear pixels
+9,script_102957.txt,FAO/GAUL_SIMPLIFIED_500m/2015/level2,ActOn,Mask cloud and cloud shadow
+10,script_102957.txt,FAO/GAUL_SIMPLIFIED_500m/2015/level2,ActOn,Convert DN to SR
+11,script_102957.txt,FAO/GAUL_SIMPLIFIED_500m/2015/level2,ActOn,Filter image collection by time window
+12,script_102957.txt,FAO/GAUL_SIMPLIFIED_500m/2015/level2,ActOn,Median composite to convert IC to Image
+13,script_10376.txt,LANDSAT/LC08/C02/T1_L2,ActOn,Filtering image collection by date and bounds
+14,script_10376.txt,LANDSAT/LC08/C02/T1_L2,ActOn,Converting image to reflectance
+15,script_10376.txt,LANDSAT/LC08/C02/T1_L2,ActOn,Visualizing image bands
+16,script_10376.txt,LANDSAT/LC08/C02/T1_L2,ActOn,Exporting images to Drive
+17,script_103827.txt,users/hrishippatel/IndiaStates,ActOn,Clipping images to a region
+18,script_103827.txt,users/hrishippatel/IndiaStates,ActOn,Visualizing images
+19,script_103827.txt,COPERNICUS/S1_GRD,ActOn,Filtering Sentinel-1 images by date and polarization
+20,script_103827.txt,COPERNICUS/S1_GRD,ActOn,Compositing images
+21,script_106121.txt,COPERNICUS/S2,ActOn,Filtering image collection by cloud percentage and date
+22,script_106121.txt,COPERNICUS/S2,ActOn,Selecting specific bands from image
+23,script_106121.txt,COPERNICUS/S2,ActOn,Reprojecting image to EPSG:4326
+24,script_106121.txt,COPERNICUS/S2,ActOn,Exporting image to Google Drive
+25,script_106121.txt,COPERNICUS/S2,ActOn,Visualizing image on Google Map API
+26,script_10828.txt,MODIS/006/MOD09A1,ActOn,Cloud masking
+27,script_10828.txt,MODIS/006/MOD09A1,ActOn,NDVI calculation
+28,script_10828.txt,MODIS/006/MOD09A1,ActOn,Linear interpolation
+29,script_10828.txt,users/kongdd/public:Math/pkg_smooth.js,ActOn,Linear interpolation
+30,script_10828.txt,users/kongdd/public:Math/pkg_smooth.js,ActOn,Image collection filtering
+31,script_10828.txt,users/kongdd/public:pkg_vis.js,ActOn,Region reduction
+32,script_10828.txt,users/kongdd/public:pkg_vis.js,ActOn,Feature collection iteration
+33,script_10828.txt,users/kongdd/public:pkg_vis.js,ActOn,Table export
+34,script_118175.txt,LANDSAT/LC09/C02/T1_L2,ActOn,Apply scale factors to image bands
+35,script_118175.txt,LANDSAT/LC08/C02/T1_L2,ActOn,Apply scale factors to image bands
+36,script_118175.txt,LANDSAT/LC09/C02/T1_L2,ActOn,Filter image collection by date and cloud cover
+37,script_118175.txt,LANDSAT/LC08/C02/T1_L2,ActOn,Filter image collection by date and cloud cover
+38,script_118175.txt,LANDSAT/LC09/C02/T1_L2,ActOn,Clip images to a specific region
+39,script_118175.txt,LANDSAT/LC08/C02/T1_L2,ActOn,Clip images to a specific region
+40,script_118175.txt,LANDSAT/LC09/C02/T1_L2,ActOn,Create a mosaic of images
+41,script_118175.txt,LANDSAT/LC08/C02/T1_L2,ActOn,Create a mosaic of images
+42,script_118175.txt,LANDSAT/LC09/C02/T1_L2,ActOn,Compute maximum value of images
+43,script_118175.txt,LANDSAT/LC08/C02/T1_L2,ActOn,Compute maximum value of images
+44,script_118175.txt,COPERNICUS/S2_SR,ActOn,Mask clouds in Sentinel-2 images
+45,script_118175.txt,COPERNICUS/S2_SR,ActOn,Calculate NDVI index
+46,script_118175.txt,COPERNICUS/S2_SR,ActOn,Calculate NDWI index
+47,script_118175.txt,COPERNICUS/S2_SR,ActOn,Calculate MNDWI index
+48,script_118175.txt,COPERNICUS/S2_SR,ActOn,Calculate NDSI index
+49,script_118175.txt,COPERNICUS/S2_SR,ActOn,Calculate EWI index
+50,script_118175.txt,users/gena/packages:utils,ActOn,None
+51,script_118175.txt,users/gena/packages:text,ActOn,None
+52,script_118175.txt,users/gena/packages:palettes,ActOn,None
+53,script_119133.txt,COPERNICUS/S2_SR_HARMONIZED/20200720T110619_20200720T111156_T29SPB,ActOn,Calculate normalized burn ratio
+54,script_119133.txt,COPERNICUS/S2_SR_HARMONIZED/20200720T110619_20200720T111156_T29SPB,ActOn,Perform clustering analysis
+55,script_119133.txt,COPERNICUS/S2_SR_HARMONIZED/20200720T110619_20200720T111156_T29SPB,ActOn,Generate training dataset
+56,script_119133.txt,COPERNICUS/S2_SR_HARMONIZED/20200720T110619_20200720T111156_T29SPB,ActOn,Visualize classification results
+57,script_119133.txt,COPERNICUS/S2_SR_HARMONIZED/20200720T110619_20200720T111156_T29SPB,ActOn,Apply filter to classification results
+58,script_119133.txt,COPERNICUS/S2_SR_HARMONIZED/20200908T110619_20200908T111404_T29SPB,ActOn,Multiply binary classification with severity classification
+59,script_11983.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Filtering image collection by date and bounds
+60,script_11983.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Masking clouds and shadows
+61,script_11983.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Calculating NDVI
+62,script_11983.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Creating image composites
+63,script_11983.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Charting NDVI time series
+64,script_11983.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Creating GIF animation
+65,script_11983.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Calculating image differences
+66,script_11983.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Calculating standard anomalies
+67,script_120271.txt,COPERNICUS/S2_SR,ActOn,Filtering image collection by date and cloud coverage
+68,script_120271.txt,COPERNICUS/S2_SR,ActOn,Calculating NDVI band
+69,script_120271.txt,COPERNICUS/S2_SR,ActOn,Applying median reduction to image collection
+70,script_120271.txt,COPERNICUS/S2_SR,ActOn,Clipping image to testing area
+71,script_120271.txt,users/gena/packages:colorbrewer,ActOn,Generating gradient bar
+72,script_120271.txt,users/gena/packages:palettes,ActOn,Generating gradient bar
+73,script_120271.txt,users/gena/packages:style,ActOn,Generating gradient bar
+74,script_120271.txt,users/gena/packages:utils,ActOn,Generating gradient bar
+75,script_120271.txt,users/gena/packages:colorbrewer,ActOn,Creating frame
+76,script_120271.txt,users/gena/packages:palettes,ActOn,Creating frame
+77,script_120271.txt,users/gena/packages:style,ActOn,Creating frame
+78,script_120271.txt,users/gena/packages:utils,ActOn,Creating frame
+79,script_120271.txt,users/gena/packages:colorbrewer,ActOn,Drawing scale bar
+80,script_120271.txt,users/gena/packages:palettes,ActOn,Drawing scale bar
+81,script_120271.txt,users/gena/packages:style,ActOn,Drawing scale bar
+82,script_120271.txt,users/gena/packages:utils,ActOn,Drawing scale bar
+83,script_120557.txt,TIGER/2016/States,ActOn,Filtering image collection by region
+84,script_120557.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Masking cloudy pixels
+85,script_120557.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Computing QA bits
+86,script_120557.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Classifying land cover using decision tree
+87,script_125294.txt,users/GeoForPy/Tesis/EcorregionAltoParana,ActOn,Cloud masking for Landsat 5 images
+88,script_125294.txt,users/GeoForPy/Tesis/EcorregionAltoParana,ActOn,Image collection filtering by date and cloud cover
+89,script_125294.txt,users/GeoForPy/Tesis/EcorregionAltoParana,ActOn,Percentile calculation for image collection
+90,script_125294.txt,users/GeoForPy/Tesis/EcorregionAltoParana,ActOn,Image clipping to region of interest
+91,script_125294.txt,users/GeoForPy/Tesis/EcorregionAltoParana,ActOn,Image visualization with multiple bands
+92,script_125294.txt,users/GeoForPy/Tesis/EcorregionAltoParana,ActOn,Image export to Drive
+93,script_125294.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Cloud masking for Landsat 5 images
+94,script_125294.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Image collection filtering by date and cloud cover
+95,script_125294.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Percentile calculation for image collection
+96,script_125294.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Image clipping to region of interest
+97,script_125294.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Image visualization with multiple bands
+98,script_125294.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Image export to Drive
+99,script_144864.txt,users/thao226355/share/VietNam_Ranh_gioi_tinh,ActOn,Filtering image collection by cloud cover
+100,script_144864.txt,users/thao226355/share/VietNam_Ranh_gioi_tinh,ActOn,Applying cloud mask to images
+101,script_144864.txt,users/thao226355/share/VietNam_Ranh_gioi_tinh,ActOn,Calculating NDVI
+102,script_144864.txt,users/thao226355/share/VietNam_Ranh_gioi_tinh,ActOn,Classifying land cover based on NDVI
+103,script_144864.txt,users/thao226355/share/VietNam_Ranh_gioi_tinh,ActOn,Calculating area of classified regions
+104,script_144864.txt,COPERNICUS/S2_SR,ActOn,Filtering image collection by cloud cover
+105,script_144864.txt,COPERNICUS/S2_SR,ActOn,Applying cloud mask to images
+106,script_144864.txt,COPERNICUS/S2_SR,ActOn,Calculating NDVI
+107,script_144864.txt,COPERNICUS/S2_SR,ActOn,Classifying land cover based on NDVI
+108,script_144864.txt,COPERNICUS/S2_SR,ActOn,Calculating area of classified regions
+109,script_146128.txt,COPERNICUS/S2,ActOn,Filter image collection by date
+110,script_146128.txt,COPERNICUS/S2,ActOn,Sort images by cloud cover
+111,script_146128.txt,COPERNICUS/S2,ActOn,Filter images by region of interest
+112,script_146128.txt,COPERNICUS/S2,ActOn,Merge feature collections
+113,script_146128.txt,COPERNICUS/S2,ActOn,Create training data
+114,script_146128.txt,COPERNICUS/S2,ActOn,Train classifier
+115,script_146128.txt,COPERNICUS/S2,ActOn,Run classification
+116,script_15043.txt,users/abuhafsgaa/Makarfi,ActOn,Sample regions for training
+117,script_15043.txt,users/abuhafsgaa/ALLsample,ActOn,Sample regions for training
+118,script_15043.txt,users/abuhafsgaa/Makarfi,ActOn,Add random column to training dataset
+119,script_15043.txt,users/abuhafsgaa/ALLsample,ActOn,Add random column to training dataset
+120,script_15043.txt,users/abuhafsgaa/Makarfi,ActOn,Train random forest classifier
+121,script_15043.txt,users/abuhafsgaa/ALLsample,ActOn,Train random forest classifier
+122,script_15043.txt,users/abuhafsgaa/Makarfi,ActOn,Train CART classifier
+123,script_15043.txt,users/abuhafsgaa/ALLsample,ActOn,Train CART classifier
+124,script_15043.txt,users/abuhafsgaa/DATASET_COMPOSITION_2017_21,ActOn,Classify imagery
+125,script_15043.txt,users/abuhafsgaa/DATASET_COMPOSITION_2017_21,ActOn,Compute variable importance
+126,script_15043.txt,users/abuhafsgaa/DATASET_COMPOSITION_2017_21,ActOn,Display variable importance results
+127,script_15043.txt,users/abuhafsgaa/DATASET_COMPOSITION_2017_21,ActOn,Get confusion matrices
+128,script_15043.txt,users/abuhafsgaa/DATASET_COMPOSITION_2017_21,ActOn,Print validation accuracy
+129,script_15043.txt,users/abuhafsgaa/DATASET_COMPOSITION_2017_21,ActOn,Visualize results
+130,script_15043.txt,users/abuhafsgaa/TEST_SAR_2017_DATASET_BOXCAR,ActOn,None
+131,script_155017.txt,MODIS/006/MOD11A1,ActOn,Filtering image collection by bounds
+132,script_155017.txt,MODIS/006/MOD11A1,ActOn,Filtering image collection by date
+133,script_155017.txt,MODIS/006/MOD11A1,ActOn,Clipping images to region
+134,script_155017.txt,MODIS/006/MOD11A1,ActOn,Scaling land surface temperature
+135,script_155017.txt,MODIS/006/MOD11A1,ActOn,Reducing regions to mean
+136,script_155017.txt,MODIS/006/MOD11A1,ActOn,Joining tables by label
+137,script_155017.txt,MODIS/006/MOD11A1,ActOn,Formatting table for export
+138,script_165234.txt,MODIS/006/MOD09GA,ActOn,Filtering image collection by year
+139,script_165234.txt,MODIS/006/MOD09GA,ActOn,Cloud masking
+140,script_165234.txt,MODIS/006/MOD09GA,ActOn,Scaling image values
+141,script_165234.txt,MODIS/006/MOD09GA,ActOn,Calculating NDVI
+142,script_165234.txt,MODIS/006/MOD09GA,ActOn,Adding date to image
+143,script_165234.txt,MODIS/006/MOD09GA,ActOn,Adding month to image
+144,script_165234.txt,MODIS/006/MOD09GA,ActOn,Adding day of year to image
+145,script_165234.txt,MODIS/006/MOD09GA,ActOn,Quality mosaic
+146,script_165234.txt,MODIS/006/MOD09GA,ActOn,Selecting greenest pixel
+147,script_165234.txt,MODIS/006/MOD09GA,ActOn,Visualizing NDVI
+148,script_165234.txt,MODIS/006/MOD09GA,ActOn,Visualizing greenest month
+149,script_165234.txt,MODIS/006/MOD09GA,ActOn,Visualizing greenest day of year
+150,script_173652.txt,users/jrmancerafGEE/POL_SUB_AE_1055,ActOn,Masking cloud shadows and clouds in Landsat 8 images
+151,script_173652.txt,users/jrmancerafGEE/PTS_SUB_AE_1055,ActOn,Masking cloud shadows and clouds in Landsat 8 images
+152,script_173652.txt,users/jrmancerafGEE/POL_SUB_AE_1055,ActOn,Filtering image collection by date
+153,script_173652.txt,users/jrmancerafGEE/PTS_SUB_AE_1055,ActOn,Filtering image collection by date
+154,script_173652.txt,users/jrmancerafGEE/POL_SUB_AE_1055,ActOn,Clipping images to area of interest
+155,script_173652.txt,users/jrmancerafGEE/PTS_SUB_AE_1055,ActOn,Clipping images to area of interest
+156,script_173652.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Running LandTrendr algorithm
+157,script_173652.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Getting change map layers
+158,script_173652.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Reducing regions to mean values
+159,script_173652.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Exporting change data to Google Drive
+160,script_174474.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Filtering image collection by cloud cover
+161,script_174474.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Masking clouds and shadows
+162,script_174474.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Calculating NDVI
+163,script_174474.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Compositing images
+164,script_174474.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Clipping images to geometry
+165,script_174747.txt,users/juanjoseromeroacm21/MORELIA,ActOn,Filter feature collection by country name
+166,script_174747.txt,users/juanjoseromeroacm21/MORELIA,ActOn,Export images to Drive
+167,script_174747.txt,users/juanjoseromeroacm21/michoacan_state,ActOn,Filter feature collection by country name
+168,script_174747.txt,USDOS/LSIB_SIMPLE/2017,ActOn,Import and filter image collection by date range
+169,script_174747.txt,USDOS/LSIB_SIMPLE/2017,ActOn,Scale and convert image data to Celsius
+170,script_174747.txt,USDOS/LSIB_SIMPLE/2017,ActOn,Calculate mean temperature
+171,script_174747.txt,USDOS/LSIB_SIMPLE/2017,ActOn,Chart time series of LST
+172,script_174747.txt,USDOS/LSIB_SIMPLE/2017,ActOn,Calculate Sen's slope for trend analysis
+173,script_174747.txt,MODIS/MOD11A2,ActOn,Import and filter image collection by date range
+174,script_174747.txt,MODIS/MOD11A2,ActOn,Scale and convert image data to Celsius
+175,script_174747.txt,MODIS/MOD11A2,ActOn,Calculate mean temperature
+176,script_174747.txt,MODIS/MOD11A2,ActOn,Chart time series of LST
+177,script_174747.txt,MODIS/MOD11A2,ActOn,Calculate Sen's slope for trend analysis
+178,script_179626.txt,users/KARTIKA_EAA/Semarang,ActOn,Cloud masking
+179,script_179626.txt,users/KARTIKA_EAA/Semarang,ActOn,Image collection filtering
+180,script_179626.txt,users/KARTIKA_EAA/Semarang,ActOn,Median image calculation
+181,script_179626.txt,users/KARTIKA_EAA/Semarang,ActOn,NDVI calculation
+182,script_179626.txt,users/KARTIKA_EAA/Semarang,ActOn,Thermal band selection
+183,script_179626.txt,users/KARTIKA_EAA/Semarang,ActOn,Land Surface Temperature calculation
+184,script_179626.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Cloud masking
+185,script_179626.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Image collection filtering
+186,script_179626.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Median image calculation
+187,script_179626.txt,LANDSAT/LC08/C01/T1_SR,ActOn,NDVI calculation
+188,script_179626.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Thermal band selection
+189,script_179626.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Land Surface Temperature calculation
+190,script_179626.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Image visualization
+191,script_180257.txt,users/Katemiller125/Illilouette,ActOn,Filtering image collection by date
+192,script_180257.txt,users/Katemiller125/Illilouette,ActOn,Image preprocessing
+193,script_180257.txt,users/Katemiller125/Illilouette,ActOn,Image masking
+194,script_180257.txt,LANDSAT/LE07/C02/T1_L2,ActOn,Painting feature collection onto an image
+195,script_180257.txt,LANDSAT/LE07/C02/T1_L2,ActOn,Zonal statistics calculation
+196,script_180257.txt,LANDSAT/LE07/C02/T1_L2,ActOn,Image renaming
+197,script_180257.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Buffering points
+198,script_186294.txt,COPERNICUS/S2,ActOn,Filtering image collection by date and bounds
+199,script_186294.txt,COPERNICUS/S2,ActOn,Applying NDVI function to image collection
+200,script_186294.txt,COPERNICUS/S2,ActOn,Masking image with QA60 band
+201,script_186294.txt,COPERNICUS/S2,ActOn,Clipping image to CaBasin bounds
+202,script_186294.txt,ft:1XPgyHDQHN4d5IF4x8u5ZkJxkVQ_xKWFFuUTi9ofT,ActOn,Exporting image to Drive
+203,script_186319.txt,LANDSAT/LC8_SR,ActOn,Image collection filtering
+204,script_186319.txt,LANDSAT/LC8_L1T_TOA,ActOn,Image collection filtering
+205,script_186319.txt,LANDSAT/LE7_L1T_TOA_FMASK,ActOn,Image collection filtering
+206,script_186319.txt,LANDSAT/LE7_L1T_TOA,ActOn,Image collection filtering
+207,script_186319.txt,LANDSAT/LC8_SR,ActOn,NDVI calculation
+208,script_186319.txt,LANDSAT/LC8_L1T_TOA,ActOn,NDVI calculation
+209,script_186319.txt,LANDSAT/LE7_L1T_TOA_FMASK,ActOn,NDVI calculation
+210,script_186319.txt,LANDSAT/LE7_L1T_TOA,ActOn,NDVI calculation
+211,script_186319.txt,LANDSAT/LC8_SR,ActOn,NBR calculation
+212,script_186319.txt,LANDSAT/LC8_L1T_TOA,ActOn,NBR calculation
+213,script_186319.txt,LANDSAT/LE7_L1T_TOA_FMASK,ActOn,NBR calculation
+214,script_186319.txt,LANDSAT/LE7_L1T_TOA,ActOn,NBR calculation
+215,script_186319.txt,COPERNICUS/S2,ActOn,Image mosaicking
+216,script_186319.txt,COPERNICUS/S2,ActOn,Image exporting
+217,script_186319.txt,ft:1Oaa3b2LdFGrAXL4jqFJzA-3iBeiNq6AQZkyFLVvp,ActOn,Feature collection creation
+218,script_186319.txt,ft:1tAjm5bGsh0TWPSawKIsX-iWXd7vocIoG_98QjhU1,ActOn,Feature collection creation
+219,script_186319.txt,ft:1Oaa3b2LdFGrAXL4jqFJzA-3iBeiNq6AQZkyFLVvp,ActOn,Image visualization
+220,script_186319.txt,ft:1tAjm5bGsh0TWPSawKIsX-iWXd7vocIoG_98QjhU1,ActOn,Image visualization
+221,script_186319.txt,ft:1iovW6_vHSX3JOx5OvcFr-ljJdx5mGmqK6Q_ETiSO,ActOn,Image collection filtering
+222,script_186319.txt,ft:1zmsdCSa-do_XXh6-w6bpfXpz_kN7nGBGmKAcBRFQ,ActOn,Image collection filtering
+223,script_186319.txt,ft:12Ca5CZlFISuiE7Nf-3fpuTcvFgYNobv-4EJdCkGh,ActOn,Image collection filtering
+224,script_186319.txt,ft:1-uk71GdY0SUx0Gf4oX2C0LWSvdns18hkRVz7D8C4,ActOn,Image collection filtering
+225,script_186319.txt,ft:1ovvyN_dzo01mRw8uSNMIYNg-HKyGTrqLErfg26X0,ActOn,Image collection filtering
+226,script_186319.txt,ft:1iovW6_vHSX3JOx5OvcFr-ljJdx5mGmqK6Q_ETiSO,ActOn,NDVI calculation
+227,script_186319.txt,ft:1zmsdCSa-do_XXh6-w6bpfXpz_kN7nGBGmKAcBRFQ,ActOn,NDVI calculation
+228,script_186319.txt,ft:12Ca5CZlFISuiE7Nf-3fpuTcvFgYNobv-4EJdCkGh,ActOn,NDVI calculation
+229,script_186319.txt,ft:1-uk71GdY0SUx0Gf4oX2C0LWSvdns18hkRVz7D8C4,ActOn,NDVI calculation
+230,script_186319.txt,ft:1ovvyN_dzo01mRw8uSNMIYNg-HKyGTrqLErfg26X0,ActOn,NDVI calculation
+231,script_186319.txt,ft:1iovW6_vHSX3JOx5OvcFr-ljJdx5mGmqK6Q_ETiSO,ActOn,NBR calculation
+232,script_186319.txt,ft:1zmsdCSa-do_XXh6-w6bpfXpz_kN7nGBGmKAcBRFQ,ActOn,NBR calculation
+233,script_186319.txt,ft:12Ca5CZlFISuiE7Nf-3fpuTcvFgYNobv-4EJdCkGh,ActOn,NBR calculation
+234,script_186319.txt,ft:1-uk71GdY0SUx0Gf4oX2C0LWSvdns18hkRVz7D8C4,ActOn,NBR calculation
+235,script_186319.txt,ft:1ovvyN_dzo01mRw8uSNMIYNg-HKyGTrqLErfg26X0,ActOn,NBR calculation
+236,script_186319.txt,ft:1iovW6_vHSX3JOx5OvcFr-ljJdx5mGmqK6Q_ETiSO,ActOn,Image mosaicking
+237,script_186319.txt,ft:1zmsdCSa-do_XXh6-w6bpfXpz_kN7nGBGmKAcBRFQ,ActOn,Image mosaicking
+238,script_186319.txt,ft:12Ca5CZlFISuiE7Nf-3fpuTcvFgYNobv-4EJdCkGh,ActOn,Image mosaicking
+239,script_186319.txt,ft:1-uk71GdY0SUx0Gf4oX2C0LWSvdns18hkRVz7D8C4,ActOn,Image mosaicking
+240,script_186319.txt,ft:1ovvyN_dzo01mRw8uSNMIYNg-HKyGTrqLErfg26X0,ActOn,Image mosaicking
+241,script_186319.txt,ft:1iovW6_vHSX3JOx5OvcFr-ljJdx5mGmqK6Q_ETiSO,ActOn,Image exporting
+242,script_186319.txt,ft:1zmsdCSa-do_XXh6-w6bpfXpz_kN7nGBGmKAcBRFQ,ActOn,Image exporting
+243,script_186319.txt,ft:12Ca5CZlFISuiE7Nf-3fpuTcvFgYNobv-4EJdCkGh,ActOn,Image exporting
+244,script_186319.txt,ft:1-uk71GdY0SUx0Gf4oX2C0LWSvdns18hkRVz7D8C4,ActOn,Image exporting
+245,script_186319.txt,ft:1ovvyN_dzo01mRw8uSNMIYNg-HKyGTrqLErfg26X0,ActOn,Image exporting
+246,script_186319.txt,ft:1iovW6_vHSX3JOx5OvcFr-ljJdx5mGmqK6Q_ETiSO,ActOn,Feature collection creation
+247,script_186319.txt,ft:1zmsdCSa-do_XXh6-w6bpfXpz_kN7nGBGmKAcBRFQ,ActOn,Feature collection creation
+248,script_186319.txt,ft:12Ca5CZlFISuiE7Nf-3fpuTcvFgYNobv-4EJdCkGh,ActOn,Feature collection creation
+249,script_186319.txt,ft:1-uk71GdY0SUx0Gf4oX2C0LWSvdns18hkRVz7D8C4,ActOn,Feature collection creation
+250,script_186319.txt,ft:1ovvyN_dzo01mRw8uSNMIYNg-HKyGTrqLErfg26X0,ActOn,Feature collection creation
+251,script_186319.txt,ft:1iovW6_vHSX3JOx5OvcFr-ljJdx5mGmqK6Q_ETiSO,ActOn,Image visualization
+252,script_186319.txt,ft:1zmsdCSa-do_XXh6-w6bpfXpz_kN7nGBGmKAcBRFQ,ActOn,Image visualization
+253,script_186319.txt,ft:12Ca5CZlFISuiE7Nf-3fpuTcvFgYNobv-4EJdCkGh,ActOn,Image visualization
+254,script_186319.txt,ft:1-uk71GdY0SUx0Gf4oX2C0LWSvdns18hkRVz7D8C4,ActOn,Image visualization
+255,script_186319.txt,ft:1ovvyN_dzo01mRw8uSNMIYNg-HKyGTrqLErfg26X0,ActOn,Image visualization
+256,script_186320.txt,COPERNICUS/S2,ActOn,Filtering image collection by date and bounds
+257,script_186320.txt,COPERNICUS/S2,ActOn,Calculating NDVI and NBR indices
+258,script_186320.txt,COPERNICUS/S2,ActOn,Mosaicking images
+259,script_186320.txt,COPERNICUS/S2,ActOn,Exporting image properties to CSV
+260,script_186320.txt,COPERNICUS/S2,ActOn,Exporting mosaic to Drive
+261,script_186320.txt,COPERNICUS/S2,ActOn,Exporting individual scenes to Drive
+262,script_186320.txt,ft:1ovvyN_dzo01mRw8uSNMIYNg-HKyGTrqLErfg26X0,ActOn,Filtering image collection by date and bounds
+263,script_186320.txt,ft:1ovvyN_dzo01mRw8uSNMIYNg-HKyGTrqLErfg26X0,ActOn,Calculating NDVI and NBR indices
+264,script_186320.txt,ft:1ovvyN_dzo01mRw8uSNMIYNg-HKyGTrqLErfg26X0,ActOn,Mosaicking images
+265,script_186320.txt,ft:1ovvyN_dzo01mRw8uSNMIYNg-HKyGTrqLErfg26X0,ActOn,Exporting image properties to CSV
+266,script_186320.txt,ft:1ovvyN_dzo01mRw8uSNMIYNg-HKyGTrqLErfg26X0,ActOn,Exporting mosaic to Drive
+267,script_186320.txt,ft:1ovvyN_dzo01mRw8uSNMIYNg-HKyGTrqLErfg26X0,ActOn,Exporting individual scenes to Drive
+268,script_186321.txt,COPERNICUS/S2,ActOn,Filtering image collection by date and bounds
+269,script_186321.txt,COPERNICUS/S2,ActOn,Calculating NDVI and NBR indices
+270,script_186321.txt,COPERNICUS/S2,ActOn,Mosaicking images
+271,script_186321.txt,COPERNICUS/S2,ActOn,Exporting image properties to CSV
+272,script_186321.txt,COPERNICUS/S2,ActOn,Exporting mosaic to Drive
+273,script_186321.txt,COPERNICUS/S2,ActOn,Exporting individual scenes to Drive
+274,script_186321.txt,ft:1ovvyN_dzo01mRw8uSNMIYNg-HKyGTrqLErfg26X0,ActOn,Filtering image collection by date and bounds
+275,script_186321.txt,ft:1ovvyN_dzo01mRw8uSNMIYNg-HKyGTrqLErfg26X0,ActOn,Calculating NDVI and NBR indices
+276,script_186321.txt,ft:1ovvyN_dzo01mRw8uSNMIYNg-HKyGTrqLErfg26X0,ActOn,Mosaicking images
+277,script_186321.txt,ft:1ovvyN_dzo01mRw8uSNMIYNg-HKyGTrqLErfg26X0,ActOn,Exporting image properties to CSV
+278,script_186321.txt,ft:1ovvyN_dzo01mRw8uSNMIYNg-HKyGTrqLErfg26X0,ActOn,Exporting mosaic to Drive
+279,script_186321.txt,ft:1ovvyN_dzo01mRw8uSNMIYNg-HKyGTrqLErfg26X0,ActOn,Exporting individual scenes to Drive
+280,script_186323.txt,LANDSAT/LC8_SR,ActOn,Filtering image collection by date
+281,script_186323.txt,LANDSAT/LC8_L1T_TOA,ActOn,Filtering image collection by date
+282,script_186323.txt,LANDSAT/LE7_L1T_TOA_FMASK,ActOn,Filtering image collection by date
+283,script_186323.txt,LANDSAT/LE7_L1T_TOA,ActOn,Filtering image collection by date
+284,script_186323.txt,LANDSAT/LC8_SR,ActOn,Calculating NDVI and NBR indices
+285,script_186323.txt,LANDSAT/LC8_L1T_TOA,ActOn,Calculating NDVI and NBR indices
+286,script_186323.txt,LANDSAT/LE7_L1T_TOA_FMASK,ActOn,Calculating NDVI and NBR indices
+287,script_186323.txt,LANDSAT/LE7_L1T_TOA,ActOn,Calculating NDVI and NBR indices
+288,script_186323.txt,LANDSAT/LC8_SR,ActOn,Mosaicking images
+289,script_186323.txt,LANDSAT/LC8_L1T_TOA,ActOn,Mosaicking images
+290,script_186323.txt,LANDSAT/LE7_L1T_TOA_FMASK,ActOn,Mosaicking images
+291,script_186323.txt,LANDSAT/LE7_L1T_TOA,ActOn,Mosaicking images
+292,script_186323.txt,COPERNICUS/S2,ActOn,Exporting image properties to CSV
+293,script_186323.txt,COPERNICUS/S2,ActOn,Exporting mosaic to Drive
+294,script_186323.txt,COPERNICUS/S2,ActOn,Exporting individual scenes to Drive
+295,script_186323.txt,ft:1XKfDbVsTtinnWZ5Ki89j8074Zm9k2XFHiATs1XNR,ActOn,None
+296,script_186325.txt,LANDSAT/LC8_SR,ActOn,Filtering image collection by date
+297,script_186325.txt,LANDSAT/LC8_L1T_TOA,ActOn,Filtering image collection by date
+298,script_186325.txt,LANDSAT/LE7_L1T_TOA_FMASK,ActOn,Filtering image collection by date
+299,script_186325.txt,LANDSAT/LE7_L1T_TOA,ActOn,Filtering image collection by date
+300,script_186325.txt,LANDSAT/LC8_SR,ActOn,Calculating NDVI and NBR indices
+301,script_186325.txt,LANDSAT/LC8_L1T_TOA,ActOn,Calculating NDVI and NBR indices
+302,script_186325.txt,LANDSAT/LE7_L1T_TOA_FMASK,ActOn,Calculating NDVI and NBR indices
+303,script_186325.txt,LANDSAT/LE7_L1T_TOA,ActOn,Calculating NDVI and NBR indices
+304,script_186325.txt,LANDSAT/LC8_SR,ActOn,Mosaicking images
+305,script_186325.txt,LANDSAT/LC8_L1T_TOA,ActOn,Mosaicking images
+306,script_186325.txt,LANDSAT/LE7_L1T_TOA_FMASK,ActOn,Mosaicking images
+307,script_186325.txt,LANDSAT/LE7_L1T_TOA,ActOn,Mosaicking images
+308,script_186325.txt,COPERNICUS/S2,ActOn,Exporting image properties to CSV
+309,script_186325.txt,COPERNICUS/S2,ActOn,Exporting mosaic image to Drive
+310,script_186325.txt,COPERNICUS/S2,ActOn,Exporting individual scenes to Drive
+311,script_186325.txt,ft:1TFcNAU6zr_9svAb610dlsyqNiiXMLYlFrfP23ZuH,ActOn,None
+312,script_186326.txt,COPERNICUS/S2,ActOn,Filtering image collection by date and bounds
+313,script_186326.txt,COPERNICUS/S2,ActOn,Calculating NDVI and NBR indices
+314,script_186326.txt,COPERNICUS/S2,ActOn,Mosaicking images
+315,script_186326.txt,COPERNICUS/S2,ActOn,Exporting image properties to CSV
+316,script_186326.txt,COPERNICUS/S2,ActOn,Exporting mosaic to Drive
+317,script_186326.txt,COPERNICUS/S2,ActOn,Exporting individual scenes to Drive
+318,script_186326.txt,ft:1TFcNAU6zr_9svAb610dlsyqNiiXMLYlFrfP23ZuH,ActOn,Filtering image collection by date and bounds
+319,script_186326.txt,ft:1TFcNAU6zr_9svAb610dlsyqNiiXMLYlFrfP23ZuH,ActOn,Calculating NDVI and NBR indices
+320,script_186326.txt,ft:1TFcNAU6zr_9svAb610dlsyqNiiXMLYlFrfP23ZuH,ActOn,Mosaicking images
+321,script_186326.txt,ft:1TFcNAU6zr_9svAb610dlsyqNiiXMLYlFrfP23ZuH,ActOn,Exporting image properties to CSV
+322,script_186326.txt,ft:1TFcNAU6zr_9svAb610dlsyqNiiXMLYlFrfP23ZuH,ActOn,Exporting mosaic to Drive
+323,script_186326.txt,ft:1TFcNAU6zr_9svAb610dlsyqNiiXMLYlFrfP23ZuH,ActOn,Exporting individual scenes to Drive
+324,script_186329.txt,LANDSAT/LC8_SR,ActOn,Image collection filtering
+325,script_186329.txt,LANDSAT/LC8_L1T_TOA,ActOn,Image collection filtering
+326,script_186329.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Image collection filtering
+327,script_186329.txt,LANDSAT/LC8_SR,ActOn,NDVI calculation
+328,script_186329.txt,LANDSAT/LC8_L1T_TOA,ActOn,NDVI calculation
+329,script_186329.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,NDVI calculation
+330,script_186329.txt,LANDSAT/LC8_SR,ActOn,NBR calculation
+331,script_186329.txt,LANDSAT/LC8_L1T_TOA,ActOn,NBR calculation
+332,script_186329.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,NBR calculation
+333,script_186329.txt,LANDSAT/LE7_L1T_TOA_FMASK,ActOn,Image casting
+334,script_186329.txt,LANDSAT/LE7_L1T_TOA,ActOn,Image casting
+335,script_186329.txt,LANDSAT/LE7_L1T_TOA_FMASK,ActOn,Image mosaicking
+336,script_186329.txt,LANDSAT/LE7_L1T_TOA,ActOn,Image mosaicking
+337,script_186329.txt,LANDSAT/LT5_L1T_TOA_FMASK,ActOn,Image exporting
+338,script_186329.txt,users/khoapv/xatong,ActOn,Feature collection creation
+339,script_186329.txt,users/khoapv/xatong,ActOn,Image visualization
+340,script_186329.txt,ft:1Fp3oWwAiWxh1XyXIc1HYl_eWBP9Uh8froBiiC9CG,ActOn,None
+341,script_186332.txt,MODIS/006/MOD09Q1,ActOn,Clipping image collection to a specific region
+342,script_186332.txt,MODIS/006/MOD09Q1,ActOn,Calculating NDVI from image bands
+343,script_186332.txt,MODIS/006/MOD09Q1,ActOn,Creating a multiband image from time-series data
+344,script_186332.txt,MODIS/006/MOD09Q1,ActOn,Training a clusterer for unsupervised classification
+345,script_186332.txt,MODIS/006/MOD09Q1,ActOn,Clustering input data using a trained clusterer
+346,script_186332.txt,MODIS/006/MOD09Q1,ActOn,Merging classes based on specific criteria
+347,script_186332.txt,MODIS/006/MOD09Q1,ActOn,Creating a refined classification layer
+348,script_186333.txt,MODIS/006/MOD09Q1,ActOn,Clip image collection to region of interest
+349,script_186333.txt,MODIS/006/MOD09Q1,ActOn,Calculate NDVI
+350,script_186333.txt,MODIS/006/MOD09Q1,ActOn,Create multiband image
+351,script_186333.txt,MODIS/006/MOD09Q1,ActOn,Unsupervised classification
+352,script_186333.txt,MODIS/006/MOD09Q1,ActOn,Cluster image
+353,script_186333.txt,MODIS/006/MOD09Q1,ActOn,Merge classes
+354,script_186333.txt,MODIS/006/MOD09Q1,ActOn,Refine crop classes
+355,script_186334.txt,MODIS/006/MOD09Q1,ActOn,Image collection filtering by date
+356,script_186334.txt,MODIS/006/MOD09Q1,ActOn,NDVI calculation
+357,script_186334.txt,MODIS/006/MOD09Q1,ActOn,Image masking and clipping
+358,script_186334.txt,MODIS/006/MOD09Q1,ActOn,Image visualization with random colors
+359,script_186334.txt,users/khoapv/Ranhgioi_DL,ActOn,Buffer creation around sugar mills
+360,script_186334.txt,users/khoapv/Ranhgioi_DL,ActOn,Image classification using k-means clustering
+361,script_186334.txt,users/khoapv/Ranhgioi_DL,ActOn,Class merging and remapping
+362,script_186334.txt,users/khoapv/Ranhgioi_DL,ActOn,Image refinement using sugar mill buffers
+363,script_186356.txt,COPERNICUS/S1_GRD,ActOn,Filtering image collection
+364,script_186356.txt,COPERNICUS/S1_GRD,ActOn,Converting to natural units
+365,script_186356.txt,COPERNICUS/S1_GRD,ActOn,Applying Refined Lee filter
+366,script_186356.txt,COPERNICUS/S1_GRD,ActOn,Calculating mean and variance
+367,script_186356.txt,COPERNICUS/S1_GRD,ActOn,Classifying land cover
+368,script_186365.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Filtering image collection by bounds and date
+369,script_186365.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Calculating NDVI
+370,script_186365.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Calculating EVI
+371,script_186365.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Calculating NDWI
+372,script_186365.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Calculating NDBI
+373,script_186365.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Calculating BAI
+374,script_186365.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Calculating NBRT
+375,script_186365.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Calculating NDSI
+376,script_186365.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Performing linear transformation
+377,script_186365.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Conducting principal component analysis
+378,script_186365.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Performing spectral unmixing
+379,script_186365.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Converting RGB to HSV and back to RGB
+380,script_186365.txt,LANDSAT/LT5_L1T_TOA,ActOn,Filtering image collection by bounds and date
+381,script_186365.txt,LANDSAT/LT5_L1T_TOA,ActOn,Calculating NDVI
+382,script_186365.txt,LANDSAT/LT5_L1T_TOA,ActOn,Calculating EVI
+383,script_186365.txt,LANDSAT/LT5_L1T_TOA,ActOn,Calculating NDWI
+384,script_186365.txt,LANDSAT/LT5_L1T_TOA,ActOn,Calculating NDBI
+385,script_186365.txt,LANDSAT/LT5_L1T_TOA,ActOn,Calculating BAI
+386,script_186365.txt,LANDSAT/LT5_L1T_TOA,ActOn,Calculating NBRT
+387,script_186365.txt,LANDSAT/LT5_L1T_TOA,ActOn,Calculating NDSI
+388,script_186365.txt,LANDSAT/LT5_L1T_TOA,ActOn,Performing linear transformation
+389,script_186365.txt,LANDSAT/LT5_L1T_TOA,ActOn,Conducting principal component analysis
+390,script_186365.txt,LANDSAT/LT5_L1T_TOA,ActOn,Performing spectral unmixing
+391,script_186365.txt,LANDSAT/LT5_L1T_TOA,ActOn,Converting RGB to HSV and back to RGB
+392,script_186378.txt,COPERNICUS/S1_GRD,ActOn,Filtering image collections by date and bounds
+393,script_186378.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Filtering image collections by date and bounds
+394,script_186378.txt,COPERNICUS/S1_GRD,ActOn,Adding NDVI and time bands to images
+395,script_186378.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Adding NDVI and time bands to images
+396,script_186378.txt,COPERNICUS/S1_GRD,ActOn,Clipping images to area of interest
+397,script_186378.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Clipping images to area of interest
+398,script_186378.txt,COPERNICUS/S2,ActOn,Adding NDVI and time bands to images
+399,script_186378.txt,COPERNICUS/S2,ActOn,Clipping images to area of interest
+400,script_186378.txt,users/khoapv/xatong,ActOn,Joining image collections by date
+401,script_186378.txt,users/khoapv/xatong,ActOn,Reducing regions for each station
+402,script_186380.txt,LANDSAT/LC8_L1T_TOA,ActOn,Buffering survey points
+403,script_186380.txt,LANDSAT/LE7_L1T_TOA,ActOn,Buffering survey points
+404,script_186380.txt,LANDSAT/LC8_L1T_TOA,ActOn,Clipping images to buffer
+405,script_186380.txt,LANDSAT/LE7_L1T_TOA,ActOn,Clipping images to buffer
+406,script_186380.txt,LANDSAT/LC8_L1T_TOA,ActOn,Filtering images by date and area
+407,script_186380.txt,LANDSAT/LE7_L1T_TOA,ActOn,Filtering images by date and area
+408,script_186380.txt,LANDSAT/LC8_L1T_TOA,ActOn,Masking cloudy images
+409,script_186380.txt,LANDSAT/LE7_L1T_TOA,ActOn,Masking cloudy images
+410,script_186380.txt,LANDSAT/LC8_L1T_TOA,ActOn,Adding spectral indices to images
+411,script_186380.txt,LANDSAT/LE7_L1T_TOA,ActOn,Adding spectral indices to images
+412,script_186380.txt,LANDSAT/LC8_L1T_TOA,ActOn,Calculating mean values around survey points
+413,script_186380.txt,LANDSAT/LE7_L1T_TOA,ActOn,Calculating mean values around survey points
+414,script_186380.txt,ft:1QKw5K7582CuFBKiqDcYEPADrvjHTLAkz3EIxL_TI,ActOn,Buffering survey points
+415,script_186380.txt,ft:1QKw5K7582CuFBKiqDcYEPADrvjHTLAkz3EIxL_TI,ActOn,Clipping images to buffer
+416,script_186380.txt,ft:1QKw5K7582CuFBKiqDcYEPADrvjHTLAkz3EIxL_TI,ActOn,Filtering images by date and area
+417,script_186380.txt,ft:1QKw5K7582CuFBKiqDcYEPADrvjHTLAkz3EIxL_TI,ActOn,Masking cloudy images
+418,script_186380.txt,ft:1QKw5K7582CuFBKiqDcYEPADrvjHTLAkz3EIxL_TI,ActOn,Adding spectral indices to images
+419,script_186380.txt,ft:1QKw5K7582CuFBKiqDcYEPADrvjHTLAkz3EIxL_TI,ActOn,Calculating mean values around survey points
+420,script_186380.txt,ft:1iQ8RECwcWSVF3AkSPVdxgpnENRJc-su6G6c1CZiF,ActOn,Buffering survey points
+421,script_186380.txt,ft:1iQ8RECwcWSVF3AkSPVdxgpnENRJc-su6G6c1CZiF,ActOn,Clipping images to buffer
+422,script_186380.txt,ft:1iQ8RECwcWSVF3AkSPVdxgpnENRJc-su6G6c1CZiF,ActOn,Filtering images by date and area
+423,script_186380.txt,ft:1iQ8RECwcWSVF3AkSPVdxgpnENRJc-su6G6c1CZiF,ActOn,Masking cloudy images
+424,script_186380.txt,ft:1iQ8RECwcWSVF3AkSPVdxgpnENRJc-su6G6c1CZiF,ActOn,Adding spectral indices to images
+425,script_186380.txt,ft:1iQ8RECwcWSVF3AkSPVdxgpnENRJc-su6G6c1CZiF,ActOn,Calculating mean values around survey points
+426,script_186418.txt,LANDSAT/LC08/C01/T1_32DAY_NDVI,ActOn,Filter image collection by date and polygon
+427,script_186418.txt,LANDSAT/LC08/C01/T1,ActOn,Filter image collection by date and polygon
+428,script_186418.txt,LANDSAT/LC08/C01/T1_32DAY_NDVI,ActOn,Compute calibrated radiance
+429,script_186418.txt,LANDSAT/LC08/C01/T1,ActOn,Compute calibrated radiance
+430,script_186418.txt,LANDSAT/LC08/C01/T1_32DAY_NDVI,ActOn,Compute top of atmosphere brightness temperature
+431,script_186418.txt,LANDSAT/LC08/C01/T1,ActOn,Compute top of atmosphere brightness temperature
+432,script_186418.txt,LANDSAT/LC08/C01/T1_32DAY_NDVI,ActOn,Compute surface reflectance
+433,script_186418.txt,LANDSAT/LC08/C01/T1,ActOn,Compute surface reflectance
+434,script_186418.txt,LANDSAT/LC08/C01/T1_32DAY_NDVI,ActOn,Compute NDVI
+435,script_186418.txt,LANDSAT/LC08/C01/T1,ActOn,Compute NDVI
+436,script_186418.txt,LANDSAT/LC8_SR,ActOn,Compute surface reflectance
+437,script_186418.txt,LANDSAT/LC8_SR,ActOn,Compute emissivity
+438,script_186418.txt,LANDSAT/LC8_SR,ActOn,Compute surface temperature
+439,script_186418.txt,NCEP_RE/surface_temp,ActOn,Get NCEP atmospheric data
+440,script_186418.txt,NCEP_RE/surface_wv,ActOn,Get NCEP atmospheric data
+441,script_186418.txt,NCEP_RE/surface_temp,ActOn,Compute surface temperature
+442,script_186418.txt,NCEP_RE/surface_wv,ActOn,Compute surface temperature
+443,script_186418.txt,LANDSAT/LC08/C01/T1,ActOn,Join Landsat collections
+444,script_186449.txt,LANDSAT/LC08/C01/T1_SR/LC08_118062_20150819,ActOn,Image selection and filtering
+445,script_186449.txt,LANDSAT/LC08/C01/T1_SR/LC08_118062_20150819,ActOn,Feature collection creation
+446,script_186449.txt,LANDSAT/LC08/C01/T1_SR/LC08_118062_20150819,ActOn,Image sampling
+447,script_186449.txt,LANDSAT/LC08/C01/T1_SR/LC08_118062_20150819,ActOn,Scatter plot generation
+448,script_186466.txt,COPERNICUS/S1_GRD,ActOn,Filtering Sentinel-1 images by polarization and date
+449,script_186466.txt,COPERNICUS/S1_GRD,ActOn,Creating composite images from means at different polarizations
+450,script_186466.txt,COPERNICUS/S1_GRD,ActOn,Detecting water bodies using SAR imagery
+451,script_186466.txt,ft:10RV_TKg9w5SMTutAz-XZpGcd2ejYgbQs6IVy2TF7,ActOn,Exporting images to Google Drive
+452,script_186503.txt,COPERNICUS/S1_GRD,ActOn,Filtering Sentinel-1 image collection
+453,script_186503.txt,COPERNICUS/S1_GRD,ActOn,Applying Refined Lee speckle filter
+454,script_186503.txt,COPERNICUS/S1_GRD,ActOn,Classifying land cover using CART algorithm
+455,script_186507.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Filtering image collection by date and bounds
+456,script_186507.txt,LANDSAT/LE07/C01/T1_TOA,ActOn,Filtering image collection by date and bounds
+457,script_186507.txt,LANDSAT/LT05/C01/T1_TOA,ActOn,Filtering image collection by date and bounds
+458,script_186507.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Applying cloud score and masking
+459,script_186507.txt,LANDSAT/LE07/C01/T1_TOA,ActOn,Applying cloud score and masking
+460,script_186507.txt,LANDSAT/LT05/C01/T1_TOA,ActOn,Applying cloud score and masking
+461,script_186507.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Computing median or medoid composites
+462,script_186507.txt,LANDSAT/LE07/C01/T1_TOA,ActOn,Computing median or medoid composites
+463,script_186507.txt,LANDSAT/LT05/C01/T1_TOA,ActOn,Computing median or medoid composites
+464,script_186507.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Filtering image collection by date and bounds
+465,script_186507.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Filtering image collection by date and bounds
+466,script_186507.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Filtering image collection by date and bounds
+467,script_186507.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Applying cloud score and masking
+468,script_186507.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Applying cloud score and masking
+469,script_186507.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Applying cloud score and masking
+470,script_186507.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Computing median or medoid composites
+471,script_186507.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Computing median or medoid composites
+472,script_186507.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Computing median or medoid composites
+473,script_186507.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Adding common indices
+474,script_186507.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Adding common indices
+475,script_186507.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Adding common indices
+476,script_186507.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Exporting composites to asset
+477,script_186507.txt,LANDSAT/LE07/C01/T1_TOA,ActOn,Exporting composites to asset
+478,script_186507.txt,LANDSAT/LT05/C01/T1_TOA,ActOn,Exporting composites to asset
+479,script_186507.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Exporting composites to asset
+480,script_186507.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Exporting composites to asset
+481,script_186507.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Exporting composites to asset
+482,script_186528.txt,COPERNICUS/S1_GRD,ActOn,Filtering image collection by transmitter receiver polarisation
+483,script_186528.txt,COPERNICUS/S1_GRD,ActOn,Converting image to natural units
+484,script_186528.txt,COPERNICUS/S1_GRD,ActOn,Applying Refined Lee speckle filter
+485,script_186528.txt,COPERNICUS/S1_GRD,ActOn,Classifying image using CART algorithm
+486,script_186540.txt,LANDSAT/LC8_L1T_TOA_FMASK,ActOn,Filtering image collection by date and location
+487,script_186540.txt,LANDSAT/LC8_L1T_TOA_FMASK,ActOn,Cloud masking and scoring
+488,script_186540.txt,LANDSAT/LC8_L1T_TOA_FMASK,ActOn,Calculating NDVI
+489,script_186540.txt,ft:1XPgyHDQHN4d5IF4x8u5ZkJxkVQ_xKWFFuUTi9ofT,ActOn,Reducing and exporting results
+490,script_186548.txt,COPERNICUS/S1_GRD,ActOn,Filtering image collection by date and metadata
+491,script_186548.txt,COPERNICUS/S1_GRD,ActOn,Masking out image edges using angle
+492,script_186548.txt,COPERNICUS/S1_GRD,ActOn,Applying Refined Lee filter
+493,script_186548.txt,COPERNICUS/S1_GRD,ActOn,Performing angle correction
+494,script_186548.txt,COPERNICUS/S1_GRD,ActOn,Computing surface water mask using Canny Edge detector and Otsu thresholding
+495,script_186548.txt,NOAA/CFSV2/FOR6H,ActOn,Filtering out windy days using climate forecasts
+496,script_186548.txt,users/gena/GlobalHAND/30m/hand-5000,ActOn,Converting to/from dB
+497,script_186562.txt,LANDSAT/LC8_SR,ActOn,Filtering image collection by date and bounds
+498,script_186562.txt,LANDSAT/LC8_L1T_TOA,ActOn,Filtering image collection by date and bounds
+499,script_186562.txt,LANDSAT/LE7_L1T_TOA_FMASK,ActOn,Filtering image collection by date and bounds
+500,script_186562.txt,LANDSAT/LT5_L1T_TOA_FMASK,ActOn,Filtering image collection by date and bounds
+501,script_186562.txt,LANDSAT/LC8_SR,ActOn,Calculating NDVI and NBR indices
+502,script_186562.txt,LANDSAT/LC8_L1T_TOA,ActOn,Calculating NDVI and NBR indices
+503,script_186562.txt,LANDSAT/LE7_L1T_TOA_FMASK,ActOn,Calculating NDVI and NBR indices
+504,script_186562.txt,LANDSAT/LT5_L1T_TOA_FMASK,ActOn,Calculating NDVI and NBR indices
+505,script_186562.txt,LANDSAT/LC8_SR,ActOn,Detecting deforestation and forest degradation
+506,script_186562.txt,LANDSAT/LC8_L1T_TOA,ActOn,Detecting deforestation and forest degradation
+507,script_186562.txt,LANDSAT/LE7_L1T_TOA_FMASK,ActOn,Detecting deforestation and forest degradation
+508,script_186562.txt,LANDSAT/LT5_L1T_TOA_FMASK,ActOn,Detecting deforestation and forest degradation
+509,script_186562.txt,COPERNICUS/S2,ActOn,Visualizing images with different visualization options
+510,script_186562.txt,COPERNICUS/S2,ActOn,Detecting deforestation and forest degradation
+511,script_186562.txt,ft:1jAZtLqcNzJvkjSwTMe9CGASiWffqNQRuDRynFPAe,ActOn,Exporting images to Google Drive
+512,script_186570.txt,LANDSAT/LC8_SR,ActOn,Filtering image collection by date
+513,script_186570.txt,LANDSAT/LC8_L1T_TOA,ActOn,Filtering image collection by date
+514,script_186570.txt,LANDSAT/LC8_SR,ActOn,Calculating NDVI and NBR indices
+515,script_186570.txt,LANDSAT/LC8_L1T_TOA,ActOn,Calculating NDVI and NBR indices
+516,script_186570.txt,LANDSAT/LC8_SR,ActOn,Mosaicking images
+517,script_186570.txt,LANDSAT/LC8_L1T_TOA,ActOn,Mosaicking images
+518,script_186570.txt,LANDSAT/LE7_L1T_TOA_FMASK,ActOn,Calculating NDVI and NBR indices
+519,script_186570.txt,LANDSAT/LE7_L1T_TOA,ActOn,Calculating NDVI and NBR indices
+520,script_186570.txt,LANDSAT/LE7_L1T_TOA_FMASK,ActOn,Mosaicking images
+521,script_186570.txt,LANDSAT/LE7_L1T_TOA,ActOn,Mosaicking images
+522,script_186570.txt,LANDSAT/LE7_L1T_TOA_FMASK,ActOn,Exporting image properties to CSV
+523,script_186570.txt,LANDSAT/LE7_L1T_TOA,ActOn,Exporting image properties to CSV
+524,script_186570.txt,COPERNICUS/S2,ActOn,Exporting mosaic to Drive
+525,script_186601.txt,COPERNICUS/S1_GRD,ActOn,Filtering Sentinel-1 images by polarization and date
+526,script_186601.txt,COPERNICUS/S1_GRD,ActOn,Creating composite images from means at different polarizations and look angles
+527,script_186601.txt,ft:12Ca5CZlFISuiE7Nf-3fpuTcvFgYNobv-4EJdCkGh,ActOn,Detecting water bodies using SAR data
+528,script_186601.txt,ft:1-uk71GdY0SUx0Gf4oX2C0LWSvdns18hkRVz7D8C4,ActOn,Exporting images to Google Drive
+529,script_186601.txt,ft:1NzCJgmYE2fzkwPn9dlO-u1W-CbjOshmaqauD2rza,ActOn,Exporting images to Google Drive
+530,script_186605.txt,LANDSAT/LC8_SR,ActOn,Filtering image collection by date
+531,script_186605.txt,LANDSAT/LC8_L1T_TOA,ActOn,Filtering image collection by date
+532,script_186605.txt,LANDSAT/LC8_SR,ActOn,Calculating NDVI and NBR indices
+533,script_186605.txt,LANDSAT/LC8_L1T_TOA,ActOn,Calculating NDVI and NBR indices
+534,script_186605.txt,LANDSAT/LE7_L1T_TOA_FMASK,ActOn,Mosaicking images
+535,script_186605.txt,LANDSAT/LE7_L1T_TOA,ActOn,Mosaicking images
+536,script_186605.txt,LANDSAT/LE7_L1T_TOA_FMASK,ActOn,Calculating NDVI and NBR indices
+537,script_186605.txt,LANDSAT/LE7_L1T_TOA,ActOn,Calculating NDVI and NBR indices
+538,script_186605.txt,COPERNICUS/S2,ActOn,Exporting image properties to CSV
+539,script_186605.txt,COPERNICUS/S2,ActOn,Exporting mosaic to Drive
+540,script_186607.txt,LANDSAT/LC8_SR,ActOn,Filtering image collection by date
+541,script_186607.txt,LANDSAT/LC8_L1T_TOA,ActOn,Filtering image collection by date
+542,script_186607.txt,LANDSAT/LE7_L1T_TOA_FMASK,ActOn,Filtering image collection by date
+543,script_186607.txt,LANDSAT/LT5_L1T_TOA_FMASK,ActOn,Filtering image collection by date
+544,script_186607.txt,LANDSAT/LC8_SR,ActOn,Sorting image collection by time
+545,script_186607.txt,LANDSAT/LC8_L1T_TOA,ActOn,Sorting image collection by time
+546,script_186607.txt,LANDSAT/LE7_L1T_TOA_FMASK,ActOn,Sorting image collection by time
+547,script_186607.txt,LANDSAT/LT5_L1T_TOA_FMASK,ActOn,Sorting image collection by time
+548,script_186607.txt,LANDSAT/LC8_SR,ActOn,Filtering image collection by bounds
+549,script_186607.txt,LANDSAT/LC8_L1T_TOA,ActOn,Filtering image collection by bounds
+550,script_186607.txt,LANDSAT/LE7_L1T_TOA_FMASK,ActOn,Filtering image collection by bounds
+551,script_186607.txt,LANDSAT/LT5_L1T_TOA_FMASK,ActOn,Filtering image collection by bounds
+552,script_186607.txt,LANDSAT/LC8_SR,ActOn,Mosaicking images
+553,script_186607.txt,LANDSAT/LC8_L1T_TOA,ActOn,Mosaicking images
+554,script_186607.txt,LANDSAT/LE7_L1T_TOA_FMASK,ActOn,Mosaicking images
+555,script_186607.txt,LANDSAT/LT5_L1T_TOA_FMASK,ActOn,Mosaicking images
+556,script_186607.txt,COPERNICUS/S2,ActOn,Calculating NDVI
+557,script_186607.txt,COPERNICUS/S2,ActOn,Calculating NBR
+558,script_186607.txt,ft:11R-JRBIylckCHZsQf20C-tgHLlWWZ8BoXrL9u2re,ActOn,Painting feature collection
+559,script_186607.txt,ft:11R-JRBIylckCHZsQf20C-tgHLlWWZ8BoXrL9u2re,ActOn,Adding bands to image
+560,script_186815.txt,LANDSAT/LC8_SR,ActOn,Image collection filtering
+561,script_186815.txt,LANDSAT/LC8_L1T_TOA,ActOn,Image collection filtering
+562,script_186815.txt,LANDSAT/LE7_L1T_TOA_FMASK,ActOn,Image collection filtering
+563,script_186815.txt,LANDSAT/LC8_SR,ActOn,NDVI calculation
+564,script_186815.txt,LANDSAT/LC8_L1T_TOA,ActOn,NDVI calculation
+565,script_186815.txt,LANDSAT/LE7_L1T_TOA_FMASK,ActOn,NDVI calculation
+566,script_186815.txt,LANDSAT/LC8_SR,ActOn,NBR calculation
+567,script_186815.txt,LANDSAT/LC8_L1T_TOA,ActOn,NBR calculation
+568,script_186815.txt,LANDSAT/LE7_L1T_TOA_FMASK,ActOn,NBR calculation
+569,script_186815.txt,COPERNICUS/S2,ActOn,Image casting
+570,script_186815.txt,COPERNICUS/S2,ActOn,Image exporting
+571,script_186815.txt,COPERNICUS/S2,ActOn,Mosaic creation
+572,script_186815.txt,ft:1Oaa3b2LdFGrAXL4jqFJzA-3iBeiNq6AQZkyFLVvp,ActOn,Image visualization
+573,script_186815.txt,ft:1tAjm5bGsh0TWPSawKIsX-iWXd7vocIoG_98QjhU1,ActOn,Image visualization
+574,script_186815.txt,ft:1iovW6_vHSX3JOx5OvcFr-ljJdx5mGmqK6Q_ETiSO,ActOn,Image exporting
+575,script_186815.txt,ft:1zmsdCSa-do_XXh6-w6bpfXpz_kN7nGBGmKAcBRFQ,ActOn,Image exporting
+576,script_186815.txt,ft:1gGjM2T5JEgKFoxbWORCn3WPqB98p2adAz42eqycf,ActOn,Image exporting
+577,script_186815.txt,ft:1iovW6_vHSX3JOx5OvcFr-ljJdx5mGmqK6Q_ETiSO,ActOn,Mosaic creation
+578,script_186815.txt,ft:1zmsdCSa-do_XXh6-w6bpfXpz_kN7nGBGmKAcBRFQ,ActOn,Mosaic creation
+579,script_186815.txt,ft:1gGjM2T5JEgKFoxbWORCn3WPqB98p2adAz42eqycf,ActOn,Mosaic creation
+580,script_186822.txt,users/dgilad/SA,ActOn,Buffering features by distance
+581,script_186822.txt,users/dgilad/Fields,ActOn,Buffering features by distance
+582,script_186822.txt,users/dgilad/SA,ActOn,Filtering image collection by date and polarization
+583,script_186822.txt,users/dgilad/Fields,ActOn,Filtering image collection by date and polarization
+584,script_186822.txt,COPERNICUS/S1_GRD,ActOn,Filtering image collection by date and polarization
+585,script_186822.txt,COPERNICUS/S1_GRD,ActOn,Converting dB values to natural values
+586,script_186822.txt,COPERNICUS/S1_GRD,ActOn,Calculating mean and standard deviation of image values
+587,script_186822.txt,COPERNICUS/S1_GRD,ActOn,Reducing regions to obtain mean and standard deviation values
+588,script_186829.txt,LANDSAT/LC08/C01/T2_SR,ActOn,Filtering image collection by region
+589,script_186829.txt,LANDSAT/LC08/C01/T2_SR,ActOn,Calculating mean surface temperature over regions
+590,script_186829.txt,UMD/hansen/global_forest_change_2017_v1_5,ActOn,Creating binary mask for forested areas
+591,script_186829.txt,Oxford/MAP/LST_Day_5km_Monthly,ActOn,Calculating mean surface temperature over regions
+592,script_186829.txt,NCEP_RE/surface_temp,ActOn,Calculating mean surface temperature over regions
+593,script_186856.txt,COPERNICUS/S2,ActOn,Compute cloud score for Sentinel-2 images
+594,script_186856.txt,COPERNICUS/S2,ActOn,Mask clouds using Sentinel-2 QA band
+595,script_186856.txt,COPERNICUS/S2,ActOn,Project cloud shadows
+596,script_186856.txt,COPERNICUS/S2,ActOn,Bust clouds from Sentinel-2 image
+597,script_186856.txt,COPERNICUS/S2,ActOn,Wrap entire cloud masking process
+598,script_186856.txt,COPERNICUS/S2,ActOn,Find dark outliers in time series
+599,script_186856.txt,COPERNICUS/S2,ActOn,Find unique values of a field in a collection
+600,script_186856.txt,COPERNICUS/S2,ActOn,Simplify data into daily mosaics
+601,script_186886.txt,LANDSAT/LC8_SR,ActOn,Filtering image collection by date and bounds
+602,script_186886.txt,LANDSAT/LC8_L1T_TOA,ActOn,Filtering image collection by date and bounds
+603,script_186886.txt,LANDSAT/LE7_L1T_TOA_FMASK,ActOn,Filtering image collection by date and bounds
+604,script_186886.txt,LANDSAT/LT5_L1T_TOA_FMASK,ActOn,Filtering image collection by date and bounds
+605,script_186886.txt,LANDSAT/LC8_SR,ActOn,Calculating NDVI and NBR indices
+606,script_186886.txt,LANDSAT/LC8_L1T_TOA,ActOn,Calculating NDVI and NBR indices
+607,script_186886.txt,LANDSAT/LE7_L1T_TOA_FMASK,ActOn,Calculating NDVI and NBR indices
+608,script_186886.txt,LANDSAT/LT5_L1T_TOA_FMASK,ActOn,Calculating NDVI and NBR indices
+609,script_186886.txt,LANDSAT/LC8_SR,ActOn,Mosaicking images
+610,script_186886.txt,LANDSAT/LC8_L1T_TOA,ActOn,Mosaicking images
+611,script_186886.txt,LANDSAT/LE7_L1T_TOA_FMASK,ActOn,Mosaicking images
+612,script_186886.txt,LANDSAT/LT5_L1T_TOA_FMASK,ActOn,Mosaicking images
+613,script_186886.txt,COPERNICUS/S2,ActOn,Filtering image collection by date and bounds
+614,script_186886.txt,COPERNICUS/S2,ActOn,Calculating NDVI and NBR indices
+615,script_186886.txt,COPERNICUS/S2,ActOn,Mosaicking images
+616,script_186886.txt,ft:1zmsdCSa-do_XXh6-w6bpfXpz_kN7nGBGmKAcBRFQ,ActOn,Exporting image properties to CSV
+617,script_186886.txt,ft:1zmsdCSa-do_XXh6-w6bpfXpz_kN7nGBGmKAcBRFQ,ActOn,Exporting individual scenes to Drive
+618,script_186888.txt,LANDSAT/LE7_L1T/LE71440512001014SGS00,ActOn,Cloud Masking using Fmask
+619,script_186888.txt,LANDSAT/LE7_L1T/LE71440512001014SGS00,ActOn,Radiance Calculation
+620,script_186888.txt,LANDSAT/LE7_L1T/LE71440512001014SGS00,ActOn,NDVI and NDWI Calculation
+621,script_186888.txt,LANDSAT/LE7_L1T/LE71440512001014SGS00,ActOn,Land Surface Temperature Calculation
+622,script_186888.txt,LANDSAT/LE7_L1T_TOA_FMASK/LE71440512001014SGS00,ActOn,Cloud Masking using Fmask
+623,script_186888.txt,LANDSAT/LE7_L1T_TOA_FMASK/LE71440512001014SGS00,ActOn,Incoming Shortwave Radiation Calculation
+624,script_186888.txt,LANDSAT/LE7_L1T_TOA_FMASK/LE71440512001014SGS00,ActOn,Scatter Plot Generation
+625,script_186892.txt,COPERNICUS/S2,ActOn,Filtering image collection by cloud percentage
+626,script_186892.txt,COPERNICUS/S2,ActOn,Calculating NDVI and NBR indices
+627,script_186892.txt,COPERNICUS/S2,ActOn,Mosaicking images
+628,script_186892.txt,ft:1Oaa3b2LdFGrAXL4jqFJzA-3iBeiNq6AQZkyFLVvp,ActOn,Exporting image properties to CSV
+629,script_186892.txt,ft:1Oaa3b2LdFGrAXL4jqFJzA-3iBeiNq6AQZkyFLVvp,ActOn,Exporting individual scenes to Drive
+630,script_186892.txt,ft:1tAjm5bGsh0TWPSawKIsX-iWXd7vocIoG_98QjhU1,ActOn,Exporting mosaic to Drive
+631,script_186892.txt,ft:1iovW6_vHSX3JOx5OvcFr-ljJdx5mGmqK6Q_ETiSO,ActOn,None
+632,script_186892.txt,ft:1zmsdCSa-do_XXh6-w6bpfXpz_kN7nGBGmKAcBRFQ,ActOn,None
+633,script_186892.txt,ft:1gGjM2T5JEgKFoxbWORCn3WPqB98p2adAz42eqycf,ActOn,None
+634,script_186914.txt,COPERNICUS/S1_GRD,ActOn,Filtering image collection by date and polarization
+635,script_186914.txt,COPERNICUS/S1_GRD,ActOn,Mosaicking images
+636,script_186914.txt,COPERNICUS/S1_GRD,ActOn,Thresholding radar intensities
+637,script_186914.txt,COPERNICUS/S1_GRD,ActOn,Focal median smoothing
+638,script_186914.txt,COPERNICUS/S1_GRD,ActOn,Image visualization
+639,script_186914.txt,COPERNICUS/S1_GRD,ActOn,Image subtraction
+640,script_186914.txt,COPERNICUS/S1_GRD,ActOn,Masking and clipping
+641,script_186914.txt,COPERNICUS/S1_GRD,ActOn,Focal mode filtering
+642,script_186914.txt,COPERNICUS/S1_GRD,ActOn,Converting pixels to polygons
+643,script_186914.txt,CIESIN/GPWv4/population-count,ActOn,Population count analysis
+644,script_186914.txt,CIESIN/GPWv4/population-count,ActOn,Sampling regions
+645,script_186914.txt,CIESIN/GPWv4/population-count,ActOn,Exporting table to drive
+646,script_186915.txt,COPERNICUS/S1_GRD,ActOn,Filtering Sentinel-1 images by date and polarization
+647,script_186915.txt,COPERNICUS/S1_GRD,ActOn,Mosaicking images
+648,script_186915.txt,COPERNICUS/S1_GRD,ActOn,Thresholding radar intensities
+649,script_186915.txt,COPERNICUS/S1_GRD,ActOn,Focal median smoothing
+650,script_186915.txt,COPERNICUS/S1_GRD,ActOn,Image visualization
+651,script_186915.txt,COPERNICUS/S1_GRD,ActOn,Image subtraction
+652,script_186915.txt,COPERNICUS/S1_GRD,ActOn,Masking and clipping
+653,script_186915.txt,COPERNICUS/S1_GRD,ActOn,Focal mode filtering
+654,script_186915.txt,COPERNICUS/S1_GRD,ActOn,Converting pixels to polygons
+655,script_186915.txt,CIESIN/GPWv4/population-count,ActOn,Population count analysis
+656,script_186915.txt,CIESIN/GPWv4/population-count,ActOn,Sampling regions
+657,script_186915.txt,CIESIN/GPWv4/population-count,ActOn,Exporting table to Drive
+658,script_186940.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Annual SR Time Series Collection Building
+659,script_186940.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Annual SR Time Series Collection Building
+660,script_186940.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Annual SR Time Series Collection Building
+661,script_186940.txt,LANDSAT/LC08/C01/T1_SR,ActOn,L8 to L7 Harmonization
+662,script_186940.txt,LANDSAT/LE07/C01/T1_SR,ActOn,L8 to L7 Harmonization
+663,script_186940.txt,LANDSAT/LT05/C01/T1_SR,ActOn,L8 to L7 Harmonization
+664,script_186940.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Retrieve Sensor SR Collection
+665,script_186940.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Retrieve Sensor SR Collection
+666,script_186940.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Retrieve Sensor SR Collection
+667,script_186940.txt,users/juandb/bloco_TIs_Kayapo,ActOn,Medoid Mosaic Compositing
+668,script_186940.txt,users/juandb/bloco_TIs_Kayapo,ActOn,Annual Mosaic Collection Building
+669,script_186974.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Filtering image collection by date and bounds
+670,script_186974.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Filtering image collection by date and bounds
+671,script_186974.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Filtering image collection by date and bounds
+672,script_186974.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Applying cloud mask to images
+673,script_186974.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Applying cloud mask to images
+674,script_186974.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Applying cloud mask to images
+675,script_186974.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Selecting and renaming bands
+676,script_186974.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Selecting and renaming bands
+677,script_186974.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Selecting and renaming bands
+678,script_186974.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Merging image collections
+679,script_186974.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Merging image collections
+680,script_186974.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Merging image collections
+681,script_186974.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Calculating normalized difference water indices
+682,script_186974.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Calculating normalized difference water indices
+683,script_186974.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Calculating normalized difference water indices
+684,script_186974.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Generating animation
+685,script_186974.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Generating animation
+686,script_186974.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Generating animation
+687,script_187038.txt,LANDSAT/LC8_SR,ActOn,Filtering image collections by path and row
+688,script_187038.txt,LANDSAT/LE7_SR,ActOn,Filtering image collections by path and row
+689,script_187038.txt,LANDSAT/LT5_SR,ActOn,Filtering image collections by path and row
+690,script_187038.txt,LANDSAT/LC8_SR,ActOn,Applying date property to images
+691,script_187038.txt,LANDSAT/LE7_SR,ActOn,Applying date property to images
+692,script_187038.txt,LANDSAT/LT5_SR,ActOn,Applying date property to images
+693,script_187038.txt,LANDSAT/LC8_SR,ActOn,Merging image collections
+694,script_187038.txt,LANDSAT/LE7_SR,ActOn,Merging image collections
+695,script_187038.txt,LANDSAT/LT5_SR,ActOn,Merging image collections
+696,script_187038.txt,LANDSAT/LC8_SR,ActOn,Computing cloud cover
+697,script_187038.txt,LANDSAT/LE7_SR,ActOn,Computing cloud cover
+698,script_187038.txt,LANDSAT/LT5_SR,ActOn,Computing cloud cover
+699,script_187038.txt,LANDSAT/LC8_SR,ActOn,Classifying land cover
+700,script_187038.txt,LANDSAT/LE7_SR,ActOn,Classifying land cover
+701,script_187038.txt,LANDSAT/LT5_SR,ActOn,Classifying land cover
+702,script_187038.txt,USGS/NED,ActOn,Masking low frequency events
+703,script_187038.txt,USGS/NED,ActOn,Normalizing by total number of images
+704,script_187038.txt,ft:1_RZgjlcqixp-L9hyS6NYGqLaKOlnhSC35AB5M5Ll,ActOn,Exporting image to Drive
+705,script_187038.txt,ft:1_RZgjlcqixp-L9hyS6NYGqLaKOlnhSC35AB5M5Ll,ActOn,Extracting metadata to CSV file
+706,script_187125.txt,COPERNICUS/S2,ActOn,Filtering image collection by geometry
+707,script_187125.txt,COPERNICUS/S2,ActOn,Applying normalized difference water index
+708,script_187125.txt,COPERNICUS/S2,ActOn,Computing threshold using Otsu method
+709,script_187125.txt,COPERNICUS/S2,ActOn,Detecting water bodies using thresholding
+710,script_187125.txt,JRC/GSW1_0/MonthlyHistory,ActOn,Computing histogram for thresholding
+711,script_187125.txt,users/christinacorbane/MT_comp_proj,ActOn,Clipping image edges
+712,script_187125.txt,users/christinacorbane/MT_comp_proj,ActOn,Buffering around NDWI edges
+713,script_187131.txt,ft:1iovW6_vHSX3JOx5OvcFr-ljJdx5mGmqK6Q_ETiSO,ActOn,Filtering image collection by date and region
+714,script_187131.txt,ft:1iovW6_vHSX3JOx5OvcFr-ljJdx5mGmqK6Q_ETiSO,ActOn,Creating cloud-free composite
+715,script_187131.txt,ft:1iovW6_vHSX3JOx5OvcFr-ljJdx5mGmqK6Q_ETiSO,ActOn,Removing clouds from images
+716,script_187131.txt,LANDSAT/LT5_L1T,ActOn,Calculating Normalized Burn Ratio (NBR)
+717,script_187131.txt,LANDSAT/LE7_L1T_TOA,ActOn,Calculating Normalized Burn Ratio (NBR)
+718,script_187131.txt,LANDSAT/LC8_L1T_TOA,ActOn,Calculating Normalized Burn Ratio (NBR)
+719,script_187131.txt,LANDSAT/LT5_L1T,ActOn,Creating burned area mask
+720,script_187131.txt,LANDSAT/LE7_L1T_TOA,ActOn,Creating burned area mask
+721,script_187131.txt,LANDSAT/LC8_L1T_TOA,ActOn,Creating burned area mask
+722,script_187131.txt,FIRMS,ActOn,Buffering vector features
+723,script_187131.txt,FIRMS,ActOn,Exporting results to Drive
+724,script_187137.txt,users/khoapv_vnuf/Thanhhoa_t,ActOn,Filtering images by date
+725,script_187137.txt,users/khoapv_vnuf/Thanhhoa_t,ActOn,Transforming Kelvin to Celsius
+726,script_187137.txt,users/khoapv_vnuf/Thanhhoa_t,ActOn,Aggregating images by year
+727,script_187137.txt,users/khoapv_vnuf/Thanhhoa_t,ActOn,Calculating annual percentiles
+728,script_187137.txt,users/khoapv_vnuf/Thanhhoa_t,ActOn,Generating dates by months
+729,script_187137.txt,users/khoapv_vnuf/Thanhhoa_t,ActOn,Calculating monthly max and min
+730,script_187137.txt,users/khoapv_vnuf/Thanhhoa_t,ActOn,Calculating mean temperature
+731,script_187137.txt,users/khoapv_vnuf/Thanhhoa_t,ActOn,Charting temperature series
+732,script_187137.txt,MODIS/MOD11A2,ActOn,Filtering images by date
+733,script_187137.txt,MODIS/MOD11A2,ActOn,Transforming Kelvin to Celsius
+734,script_187137.txt,MODIS/MOD11A2,ActOn,Aggregating images by year
+735,script_187137.txt,MODIS/MOD11A2,ActOn,Calculating annual percentiles
+736,script_187137.txt,MODIS/MOD11A2,ActOn,Generating dates by months
+737,script_187137.txt,MODIS/MOD11A2,ActOn,Calculating monthly max and min
+738,script_187137.txt,MODIS/MOD11A2,ActOn,Calculating mean temperature
+739,script_187137.txt,MODIS/MOD11A2,ActOn,Charting temperature series
+740,script_187138.txt,LANDSAT/LC08/C01/T2_SR,ActOn,Filtering image collection by region
+741,script_187138.txt,LANDSAT/LC08/C01/T2_SR,ActOn,Calculating mean air surface temperature
+742,script_187138.txt,UMD/hansen/global_forest_change_2017_v1_5,ActOn,Creating binary mask for forested areas
+743,script_187138.txt,UMD/hansen/global_forest_change_2017_v1_5,ActOn,Updating composite mask with water mask
+744,script_187138.txt,Oxford/MAP/LST_Day_5km_Monthly,ActOn,Calculating mean air surface temperature
+745,script_187138.txt,NCEP_RE/surface_temp,ActOn,Calculating mean air surface temperature
+746,script_187138.txt,NCEP_RE/surface_temp,ActOn,Reducing regions to mean values
+747,script_187138.txt,NCEP_RE/surface_temp,ActOn,Exporting feature collection to CSV
+748,script_187226.txt,COPERNICUS/S2,ActOn,Cloud score calculation
+749,script_187226.txt,COPERNICUS/S2,ActOn,Shadow mask creation
+750,script_187226.txt,COPERNICUS/S2,ActOn,Water mask creation
+751,script_187226.txt,COPERNICUS/S2,ActOn,Image collection filtering
+752,script_187226.txt,COPERNICUS/S2,ActOn,Image masking
+753,script_187226.txt,COPERNICUS/S2,ActOn,Mosaicking
+754,script_187226.txt,COPERNICUS/S2,ActOn,Mean calculation
+755,script_187248.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Cloud mask application
+756,script_187248.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Thermal band extraction
+757,script_187248.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Land Surface Temperature calculation
+758,script_187248.txt,users/khoirurrizqi/Jawa,ActOn,Image collection filtering
+759,script_187248.txt,users/khoirurrizqi/Jawa,ActOn,NDVI calculation
+760,script_187248.txt,users/khoirurrizqi/Jawa,ActOn,Fractional vegetation calculation
+761,script_187248.txt,users/khoirurrizqi/Jawa,ActOn,Emissivity calculation
+762,script_187248.txt,users/khoirurrizqi/Jawa,ActOn,Image visualization
+763,script_187481.txt,COPERNICUS/S1_GRD,ActOn,Filtering image collection by bounds and time
+764,script_187481.txt,COPERNICUS/S1_GRD,ActOn,Converting to natural scale
+765,script_187481.txt,COPERNICUS/S1_GRD,ActOn,Smoothing images
+766,script_187481.txt,COPERNICUS/S1_GRD,ActOn,Calculating band ratio
+767,script_187481.txt,COPERNICUS/S1_GRD,ActOn,Creating flood mask
+768,script_187481.txt,COPERNICUS/S1_GRD,ActOn,Generating histograms
+769,script_187481.txt,ft:1nWJr3XY3hcsRSvydLLyK47W-r6N1bB7JHhTYuLle,ActOn,Filtering image collection by bounds and time
+770,script_187481.txt,ft:1nWJr3XY3hcsRSvydLLyK47W-r6N1bB7JHhTYuLle,ActOn,Converting to natural scale
+771,script_187481.txt,ft:1nWJr3XY3hcsRSvydLLyK47W-r6N1bB7JHhTYuLle,ActOn,Smoothing images
+772,script_187481.txt,ft:1nWJr3XY3hcsRSvydLLyK47W-r6N1bB7JHhTYuLle,ActOn,Calculating band ratio
+773,script_187481.txt,ft:1nWJr3XY3hcsRSvydLLyK47W-r6N1bB7JHhTYuLle,ActOn,Creating flood mask
+774,script_187481.txt,ft:1nWJr3XY3hcsRSvydLLyK47W-r6N1bB7JHhTYuLle,ActOn,Generating histograms
+775,script_187523.txt,COPERNICUS/S1_GRD,ActOn,Filtering image collection by geometry and date
+776,script_187523.txt,COPERNICUS/S1_GRD,ActOn,Converting image to natural scale
+777,script_187523.txt,COPERNICUS/S1_GRD,ActOn,Smoothing image using focal median
+778,script_187523.txt,COPERNICUS/S1_GRD,ActOn,Calculating band ratio
+779,script_187523.txt,COPERNICUS/S1_GRD,ActOn,Creating RGB image
+780,script_187523.txt,COPERNICUS/S1_GRD,ActOn,Generating histograms
+781,script_187523.txt,COPERNICUS/S1_GRD,ActOn,Masking and displaying flood and river images
+782,script_187528.txt,COPERNICUS/S1_GRD,ActOn,Filtering image collection by bounds and date
+783,script_187528.txt,COPERNICUS/S1_GRD,ActOn,Converting image to natural scale
+784,script_187528.txt,COPERNICUS/S1_GRD,ActOn,Focal median smoothing
+785,script_187528.txt,COPERNICUS/S1_GRD,ActOn,Calculating band ratio
+786,script_187528.txt,COPERNICUS/S1_GRD,ActOn,Creating RGB image
+787,script_187528.txt,COPERNICUS/S1_GRD,ActOn,Generating histograms
+788,script_187528.txt,COPERNICUS/S1_GRD,ActOn,Applying threshold to identify flood areas
+789,script_187528.txt,ft:1nWJr3XY3hcsRSvydLLyK47W-r6N1bB7JHhTYuLle,ActOn,None
+790,script_187530.txt,COPERNICUS/S1_GRD,ActOn,Filtering image collection by date and polarisation
+791,script_187530.txt,COPERNICUS/S1_GRD,ActOn,Converting image to natural scale
+792,script_187530.txt,COPERNICUS/S1_GRD,ActOn,Applying focal median smoothing
+793,script_187530.txt,COPERNICUS/S1_GRD,ActOn,Calculating band ratio
+794,script_187530.txt,ft:1nWJr3XY3hcsRSvydLLyK47W-r6N1bB7JHhTYuLle,ActOn,Generating histogram
+795,script_187530.txt,ft:1nWJr3XY3hcsRSvydLLyK47W-r6N1bB7JHhTYuLle,ActOn,Creating composite image
+796,script_187532.txt,COPERNICUS/S1_GRD,ActOn,Filtering image collection by bounds and date
+797,script_187532.txt,COPERNICUS/S1_GRD,ActOn,Converting image to natural scale
+798,script_187532.txt,COPERNICUS/S1_GRD,ActOn,Smoothing image using focal median
+799,script_187532.txt,COPERNICUS/S1_GRD,ActOn,Calculating band ratio
+800,script_187532.txt,COPERNICUS/S1_GRD,ActOn,Generating histogram
+801,script_187532.txt,COPERNICUS/S1_GRD,ActOn,Classifying flood areas
+802,script_187532.txt,COPERNICUS/S1_GRD,ActOn,Exporting image to drive
+803,script_187533.txt,COPERNICUS/S1_GRD,ActOn,Filtering image collection by date and bounds
+804,script_187533.txt,COPERNICUS/S1_GRD,ActOn,Converting image to natural scale
+805,script_187533.txt,COPERNICUS/S1_GRD,ActOn,Applying focal median smoothing
+806,script_187533.txt,COPERNICUS/S1_GRD,ActOn,Calculating band ratio
+807,script_187533.txt,ft:1nWJr3XY3hcsRSvydLLyK47W-r6N1bB7JHhTYuLle,ActOn,Generating histogram
+808,script_187533.txt,ft:1nWJr3XY3hcsRSvydLLyK47W-r6N1bB7JHhTYuLle,ActOn,Creating composite image
+809,script_187534.txt,COPERNICUS/S1_GRD,ActOn,Filtering image collection by date and polarisation
+810,script_187534.txt,COPERNICUS/S1_GRD,ActOn,Converting image to natural scale
+811,script_187534.txt,COPERNICUS/S1_GRD,ActOn,Smoothing image using focal median
+812,script_187534.txt,COPERNICUS/S1_GRD,ActOn,Calculating band ratio
+813,script_187534.txt,COPERNICUS/S1_GRD,ActOn,Generating histogram
+814,script_187534.txt,COPERNICUS/S1_GRD,ActOn,Applying threshold to identify flood areas
+815,script_187534.txt,ft:1nWJr3XY3hcsRSvydLLyK47W-r6N1bB7JHhTYuLle,ActOn,None
+816,script_187535.txt,COPERNICUS/S1_GRD,ActOn,Filtering image collection by date and polarisation
+817,script_187535.txt,COPERNICUS/S1_GRD,ActOn,Applying focal median smoothing to images
+818,script_187535.txt,COPERNICUS/S1_GRD,ActOn,Calculating band ratio images
+819,script_187535.txt,COPERNICUS/S1_GRD,ActOn,Generating histograms of image values
+820,script_187535.txt,COPERNICUS/S1_GRD,ActOn,Creating composite RGB images
+821,script_187535.txt,COPERNICUS/S1_GRD,ActOn,Masking and visualizing flood and river images
+822,script_187535.txt,ft:1nWJr3XY3hcsRSvydLLyK47W-r6N1bB7JHhTYuLle,ActOn,Filtering image collection by date and polarisation
+823,script_187535.txt,ft:1nWJr3XY3hcsRSvydLLyK47W-r6N1bB7JHhTYuLle,ActOn,Applying focal median smoothing to images
+824,script_187535.txt,ft:1nWJr3XY3hcsRSvydLLyK47W-r6N1bB7JHhTYuLle,ActOn,Calculating band ratio images
+825,script_187535.txt,ft:1nWJr3XY3hcsRSvydLLyK47W-r6N1bB7JHhTYuLle,ActOn,Generating histograms of image values
+826,script_187535.txt,ft:1nWJr3XY3hcsRSvydLLyK47W-r6N1bB7JHhTYuLle,ActOn,Creating composite RGB images
+827,script_187535.txt,ft:1nWJr3XY3hcsRSvydLLyK47W-r6N1bB7JHhTYuLle,ActOn,Masking and visualizing flood and river images
+828,script_187582.txt,users/zolokiala/parthenium1,ActOn,Image classification using SVM
+829,script_187582.txt,users/zolokiala/training,ActOn,Image classification using SVM
+830,script_187582.txt,users/zolokiala/test,ActOn,Image classification using SVM
+831,script_187582.txt,users/zolokiala/parthenium1,ActOn,Accuracy assessment and charting
+832,script_187582.txt,users/zolokiala/training,ActOn,Accuracy assessment and charting
+833,script_187582.txt,users/zolokiala/test,ActOn,Accuracy assessment and charting
+834,script_187582.txt,users/zolokiala/buffer,ActOn,Image collection filtering
+835,script_187582.txt,COPERNICUS/S2,ActOn,Cloud masking using Sentinel-2 QA band
+836,script_187582.txt,COPERNICUS/S2,ActOn,Vegetation index computation
+837,script_187585.txt,MODIS/006/MOD13Q1,ActOn,Filtering image collection by date
+838,script_187585.txt,MODIS/006/MOD13Q1,ActOn,Calculating average of MODIS EVI
+839,script_187585.txt,MODIS/006/MOD13Q1,ActOn,Clipping images to a specific region
+840,script_187585.txt,MODIS/006/MOD13Q1,ActOn,Performing principal component analysis
+841,script_187586.txt,MODIS/006/MOD13Q1,ActOn,Filtering image collection by date and month
+842,script_187586.txt,MODIS/006/MOD13Q1,ActOn,Calculating average of MODIS EVI
+843,script_187586.txt,MODIS/006/MOD13Q1,ActOn,Clipping images to a specific region
+844,script_187586.txt,MODIS/006/MOD13Q1,ActOn,Performing Principal Component Analysis (PCA)
+845,script_187587.txt,MODIS/006/MOD13Q1,ActOn,Filtering and averaging MODIS EVI images
+846,script_187587.txt,MODIS/006/MOD13Q1,ActOn,Calculating principal components
+847,script_187587.txt,MODIS/006/MOD13Q1,ActOn,Exporting images to Drive
+848,script_187738.txt,USDA/NAIP/DOQQ,ActOn,Image collection filtering
+849,script_187738.txt,USDA/NAIP/DOQQ,ActOn,Image clipping
+850,script_187738.txt,USDA/NAIP/DOQQ,ActOn,Image normalization
+851,script_187738.txt,USDA/NASS/CDL/2016,ActOn,Image segmentation
+852,script_187738.txt,USDA/NASS/CDL/2016,ActOn,Object-based classification
+853,script_187738.txt,USDA/NASS/CDL/2016,ActOn,Random forest classification
+854,script_187738.txt,users/saicheems/classification,ActOn,Image convolution
+855,script_187738.txt,users/saicheems/classification_snic,ActOn,Image convolution
+856,script_187738.txt,users/saicheems/classification,ActOn,Cluster analysis
+857,script_187738.txt,users/saicheems/classification_snic,ActOn,Cluster analysis
+858,script_187738.txt,users/saicheems/classification,ActOn,Standard deviation calculation
+859,script_187738.txt,users/saicheems/classification_snic,ActOn,Standard deviation calculation
+860,script_187738.txt,users/saicheems/classification,ActOn,Area calculation
+861,script_187738.txt,users/saicheems/classification_snic,ActOn,Area calculation
+862,script_187738.txt,users/saicheems/classification,ActOn,Perimeter calculation
+863,script_187738.txt,users/saicheems/classification_snic,ActOn,Perimeter calculation
+864,script_187738.txt,users/saicheems/classification,ActOn,Width and height calculation
+865,script_187738.txt,users/saicheems/classification_snic,ActOn,Width and height calculation
+866,script_187738.txt,users/saicheems/classification,ActOn,Confusion matrix calculation
+867,script_187738.txt,users/saicheems/classification_snic,ActOn,Confusion matrix calculation
+868,script_187749.txt,users/kidsherry/Beijing,ActOn,Extracting maximum NDVI values
+869,script_187749.txt,users/kidsherry/Beijing,ActOn,Clipping images to a region of interest
+870,script_187749.txt,MODIS/006/MOD13A1,ActOn,Performing linear trend analysis
+871,script_187749.txt,MODIS/006/MOD13A1,ActOn,Calculating mean NDVI time series
+872,script_187888.txt,users/kimambo/00_INPUT_TRAINING_VALIDATION/Tanzania_SouthernHighlands_reference_point_36LYR_13DEC2019_230_upto799_75PCTTRAINING,ActOn,Sampling regions of interest
+873,script_187888.txt,users/kimambo/00_INPUT_TRAINING_VALIDATION/Tanzania_SouthernHighlands_reference_point_36LYR_13DEC2019_230_upto799_75PCTTRAINING,ActOn,Iterating over image collection for sampling
+874,script_187888.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Filtering image collection by date and location
+875,script_187888.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Filtering image collection by date and location
+876,script_187888.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Filtering image collection by date and location
+877,script_187888.txt,LANDSAT/LT04/C01/T1_SR,ActOn,Filtering image collection by date and location
+878,script_187888.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Masking clouds and shadows in Landsat images
+879,script_187888.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Masking clouds and shadows in Landsat images
+880,script_187888.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Masking clouds and shadows in Landsat images
+881,script_187888.txt,LANDSAT/LT04/C01/T1_SR,ActOn,Masking clouds and shadows in Landsat images
+882,script_187888.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Calculating NDVI from Landsat images
+883,script_187888.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Calculating NDVI from Landsat images
+884,script_187888.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Calculating NDVI from Landsat images
+885,script_187888.txt,LANDSAT/LT04/C01/T1_SR,ActOn,Calculating NDVI from Landsat images
+886,script_187888.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Merging image collections
+887,script_187888.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Merging image collections
+888,script_187888.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Merging image collections
+889,script_187888.txt,LANDSAT/LT04/C01/T1_SR,ActOn,Merging image collections
+890,script_187888.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Renaming bands with timestamps
+891,script_187888.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Renaming bands with timestamps
+892,script_187888.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Renaming bands with timestamps
+893,script_187888.txt,LANDSAT/LT04/C01/T1_SR,ActOn,Renaming bands with timestamps
+894,script_187888.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Merging images into a single image
+895,script_187888.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Merging images into a single image
+896,script_187888.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Merging images into a single image
+897,script_187888.txt,LANDSAT/LT04/C01/T1_SR,ActOn,Merging images into a single image
+898,script_187895.txt,users/kimambo/00_INPUT_TRAINING_VALIDATION/Tanzania_SouthernHighlands_reference_point_36LYR_13DEC2019_230_upto799_75PCTTRAINING,ActOn,Sampling BSI values at training points
+899,script_187895.txt,users/kimambo/00_INPUT_TRAINING_VALIDATION/Tanzania_SouthernHighlands_reference_point_36LYR_13DEC2019_230_upto799_75PCTTRAINING,ActOn,Exporting results to CSV file
+900,script_187895.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Filtering image collection by date and location
+901,script_187895.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Filtering image collection by date and location
+902,script_187895.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Filtering image collection by date and location
+903,script_187895.txt,LANDSAT/LT04/C01/T1_SR,ActOn,Filtering image collection by date and location
+904,script_187895.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Applying cloud mask to Landsat images
+905,script_187895.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Applying cloud mask to Landsat images
+906,script_187895.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Applying cloud mask to Landsat images
+907,script_187895.txt,LANDSAT/LT04/C01/T1_SR,ActOn,Applying cloud mask to Landsat images
+908,script_187895.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Calculating BSI index from Landsat images
+909,script_187895.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Calculating BSI index from Landsat images
+910,script_187895.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Calculating BSI index from Landsat images
+911,script_187895.txt,LANDSAT/LT04/C01/T1_SR,ActOn,Calculating BSI index from Landsat images
+912,script_187895.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Renaming BSI bands with acquisition date
+913,script_187895.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Renaming BSI bands with acquisition date
+914,script_187895.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Renaming BSI bands with acquisition date
+915,script_187895.txt,LANDSAT/LT04/C01/T1_SR,ActOn,Renaming BSI bands with acquisition date
+916,script_188011.txt,projects/ee-kimiachenaary/assets/msh,ActOn,Filtering image collection by bounds
+917,script_188011.txt,projects/ee-kimiachenaary/assets/msh,ActOn,Clipping images to geometry
+918,script_188011.txt,projects/ee-kimiachenaary/assets/msh,ActOn,Calculating mean values for each polygon
+919,script_188011.txt,projects/ee-kimiachenaary/assets/msh,ActOn,Calculating max values for each polygon
+920,script_188011.txt,projects/ee-kimiachenaary/assets/msh,ActOn,Calculating min values for each polygon
+921,script_188011.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Converting Kelvin to Celsius
+922,script_188011.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Calculating seasonal temperatures
+923,script_188011.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Reducing image collection to mean
+924,script_188011.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Exporting data to CSV
+925,script_188011.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Calculating NDVI with count
+926,script_188011.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Filtering by count range
+927,script_188011.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Reducing columns to max
+928,script_188030.txt,projects/ee-kimiachenaary/assets/Tehran,ActOn,Cloud masking of Landsat 8 images
+929,script_188030.txt,projects/ee-kimiachenaary/assets/Tehran,ActOn,Filtering images by date and geometry
+930,script_188030.txt,projects/ee-kimiachenaary/assets/Tehran,ActOn,Clipping images to geometry
+931,script_188030.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Cloud masking of Landsat 8 images
+932,script_188030.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Calculating NDVI from Landsat 8 bands
+933,script_188030.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Calculating mean and max NDVI values
+934,script_188030.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Exporting results to CSV
+935,script_188052.txt,projects/ee-kimmmydanny/assets/tingxialiuyu,ActOn,Cloud masking for Landsat 8 images
+936,script_188052.txt,LANDSAT/LC08/C01/T1_RT_TOA,ActOn,Cloud masking for Landsat 8 images
+937,script_188052.txt,projects/ee-kimmmydanny/assets/tingxialiuyu,ActOn,Calculating MNDWI index for Landsat 8 images
+938,script_188052.txt,LANDSAT/LC08/C01/T1_RT_TOA,ActOn,Calculating MNDWI index for Landsat 8 images
+939,script_188052.txt,projects/ee-kimmmydanny/assets/tingxialiuyu,ActOn,Water body extraction using MNDWI index
+940,script_188052.txt,LANDSAT/LC08/C01/T1_RT_TOA,ActOn,Water body extraction using MNDWI index
+941,script_188052.txt,projects/ee-kimmmydanny/assets/tingxialiuyu,ActOn,Area calculation for water bodies
+942,script_188052.txt,LANDSAT/LC08/C01/T1_RT_TOA,ActOn,Area calculation for water bodies
+943,script_188052.txt,COPERNICUS/S2_SR,ActOn,Cloud masking for Sentinel-2 images
+944,script_188052.txt,COPERNICUS/S2_SR,ActOn,Calculating MNDWI index for Sentinel-2 images
+945,script_188052.txt,COPERNICUS/S2_SR,ActOn,Otsu thresholding for water extraction
+946,script_188052.txt,COPERNICUS/S2_SR,ActOn,Water body extraction using MNDWI index
+947,script_188052.txt,COPERNICUS/S2_SR,ActOn,Area calculation for water bodies
+948,script_188163.txt,users/kindgard/Asia/Asia,ActOn,Filtering image collections by date and cloud cover
+949,script_188163.txt,users/kindgard/Asia2,ActOn,Filtering image collections by date and cloud cover
+950,script_188163.txt,users/kindgard/Asia/Asia,ActOn,Mosaicking images
+951,script_188163.txt,users/kindgard/Asia2,ActOn,Mosaicking images
+952,script_188163.txt,users/kindgard/Africa,ActOn,Filtering image collections by date and cloud cover
+953,script_188163.txt,users/kindgard/AfricaS,ActOn,Filtering image collections by date and cloud cover
+954,script_188163.txt,users/kindgard/Africa,ActOn,Classifying land cover using Cart algorithm
+955,script_188163.txt,users/kindgard/AfricaS,ActOn,Classifying land cover using Cart algorithm
+956,script_188163.txt,users/kindgard/SUD,ActOn,Filtering image collections by date and cloud cover
+957,script_188163.txt,users/kindgard/AmericaN,ActOn,Filtering image collections by date and cloud cover
+958,script_188163.txt,LANDSAT/LT5_L1T,ActOn,Calculating spectral indices
+959,script_188163.txt,LANDSAT/LE7_L1T,ActOn,Calculating spectral indices
+960,script_188163.txt,LANDSAT/LC08/C01/T1_RT,ActOn,Calculating spectral indices
+961,script_188163.txt,LANDSAT/LT5_L1T,ActOn,Classifying land cover using Cart algorithm
+962,script_188163.txt,LANDSAT/LE7_L1T,ActOn,Classifying land cover using Cart algorithm
+963,script_188163.txt,LANDSAT/LC08/C01/T1_RT,ActOn,Classifying land cover using Cart algorithm
+964,script_188163.txt,COPERNICUS/S2,ActOn,Calculating spectral indices
+965,script_188163.txt,COPERNICUS/S2,ActOn,Classifying land cover using Cart algorithm
+966,script_188163.txt,JRC/GSW1_0/GlobalSurfaceWater,ActOn,Applying masks to classified image
+967,script_188163.txt,ft:1tdSwUL7MVpOauSgRzqVTOwdfy17KDbw-1d9omPw,ActOn,None
+968,script_188163.txt,users/ValeriaContessa/Map_1992_rast,ActOn,None
+969,script_188163.txt,users/kindgard/ESACCI-LC-L4-LC10-Map-20m-P1Y-2016-v10,ActOn,Classifying land cover using Cart algorithm
+970,script_188190.txt,users/ValeriaContessa/n_regions,ActOn,Filtering image collections by date and cloud cover
+971,script_188190.txt,users/ValeriaContessa/Map_1992_rast,ActOn,Filtering image collections by date and cloud cover
+972,script_188190.txt,users/ValeriaContessa/n_regions,ActOn,Clipping images to a specific country boundary
+973,script_188190.txt,users/ValeriaContessa/Map_1992_rast,ActOn,Clipping images to a specific country boundary
+974,script_188190.txt,users/ValeriaContessa/n_regions,ActOn,Classifying land cover using CART algorithm
+975,script_188190.txt,users/ValeriaContessa/Map_1992_rast,ActOn,Classifying land cover using CART algorithm
+976,script_188190.txt,ft:1tdSwUL7MVpOauSgRzqVTOwdfy17KDbw-1d9omPw,ActOn,Filtering image collections by date and cloud cover
+977,script_188190.txt,ft:1tdSwUL7MVpOauSgRzqVTOwdfy17KDbw-1d9omPw,ActOn,Merging image collections
+978,script_188190.txt,LANDSAT/LT5_L1T,ActOn,Applying quality bands to images
+979,script_188190.txt,LANDSAT/LE7_L1T,ActOn,Applying quality bands to images
+980,script_188190.txt,LANDSAT/LC08/C01/T1_RT,ActOn,Applying quality bands to images
+981,script_188190.txt,LANDSAT/LT5_L1T,ActOn,Calculating ratios of image bands
+982,script_188190.txt,LANDSAT/LE7_L1T,ActOn,Calculating ratios of image bands
+983,script_188190.txt,LANDSAT/LC08/C01/T1_RT,ActOn,Calculating ratios of image bands
+984,script_188190.txt,LANDSAT/LT5_L1T,ActOn,Merging image collections
+985,script_188190.txt,LANDSAT/LE7_L1T,ActOn,Merging image collections
+986,script_188190.txt,LANDSAT/LC08/C01/T1_RT,ActOn,Merging image collections
+987,script_188190.txt,users/kindgard/Asia/Asia,ActOn,Clipping images to a specific country boundary
+988,script_188190.txt,users/kindgard/Africa,ActOn,Clipping images to a specific country boundary
+989,script_188190.txt,users/kindgard/SUD,ActOn,Clipping images to a specific country boundary
+990,script_188190.txt,users/kindgard/AfricaS,ActOn,Clipping images to a specific country boundary
+991,script_188190.txt,users/kindgard/AmericaN,ActOn,Clipping images to a specific country boundary
+992,script_188190.txt,users/kindgard/Asia2,ActOn,Clipping images to a specific country boundary
+993,script_188190.txt,users/kindgard/Asia/Asia,ActOn,Masking water and urban areas
+994,script_188190.txt,users/kindgard/Africa,ActOn,Masking water and urban areas
+995,script_188190.txt,users/kindgard/SUD,ActOn,Masking water and urban areas
+996,script_188190.txt,users/kindgard/AfricaS,ActOn,Masking water and urban areas
+997,script_188190.txt,users/kindgard/AmericaN,ActOn,Masking water and urban areas
+998,script_188190.txt,users/kindgard/Asia2,ActOn,Masking water and urban areas
+999,script_188190.txt,JRC/GSW1_0/GlobalSurfaceWater,ActOn,Masking water and urban areas
+1000,script_188190.txt,users/kindgard/ESACCI-LC-L4-LC10-Map-20m-P1Y-2016-v10,ActOn,Classifying land cover using CART algorithm
+1001,script_188190.txt,COPERNICUS/S2,ActOn,None
+1002,script_188217.txt,LANDSAT/LC08/C02/T1_L2,ActOn,Masking Landsat 8 images
+1003,script_188217.txt,LANDSAT/LT05/C02/T1_L2,ActOn,Masking Landsat 8 images
+1004,script_188217.txt,LANDSAT/LE07/C02/T1_L2,ActOn,Masking Landsat 8 images
+1005,script_188217.txt,LANDSAT/LC08/C02/T1_L2,ActOn,Masking Landsat 7 images
+1006,script_188217.txt,LANDSAT/LT05/C02/T1_L2,ActOn,Masking Landsat 7 images
+1007,script_188217.txt,LANDSAT/LE07/C02/T1_L2,ActOn,Masking Landsat 7 images
+1008,script_188217.txt,LANDSAT/LC08/C02/T1_L2,ActOn,Renaming Landsat 8 bands
+1009,script_188217.txt,LANDSAT/LT05/C02/T1_L2,ActOn,Renaming Landsat 8 bands
+1010,script_188217.txt,LANDSAT/LE07/C02/T1_L2,ActOn,Renaming Landsat 8 bands
+1011,script_188217.txt,LANDSAT/LC08/C02/T1_L2,ActOn,Calculating indices
+1012,script_188217.txt,LANDSAT/LT05/C02/T1_L2,ActOn,Calculating indices
+1013,script_188217.txt,LANDSAT/LE07/C02/T1_L2,ActOn,Calculating indices
+1014,script_188217.txt,LANDSAT/LC08/C02/T1_L2,ActOn,Normalizing image values
+1015,script_188217.txt,LANDSAT/LT05/C02/T1_L2,ActOn,Normalizing image values
+1016,script_188217.txt,LANDSAT/LE07/C02/T1_L2,ActOn,Normalizing image values
+1017,script_188217.txt,LANDSAT/LC08/C02/T1_L2,ActOn,Printing histograms
+1018,script_188217.txt,LANDSAT/LT05/C02/T1_L2,ActOn,Printing histograms
+1019,script_188217.txt,LANDSAT/LE07/C02/T1_L2,ActOn,Printing histograms
+1020,script_188217.txt,LANDSAT/LC08/C02/T1_L2,ActOn,Filling gaps in images
+1021,script_188217.txt,LANDSAT/LT05/C02/T1_L2,ActOn,Filling gaps in images
+1022,script_188217.txt,LANDSAT/LE07/C02/T1_L2,ActOn,Filling gaps in images
+1023,script_188217.txt,LANDSAT/LC08/C02/T1_L2,ActOn,Reclassifying images
+1024,script_188217.txt,LANDSAT/LT05/C02/T1_L2,ActOn,Reclassifying images
+1025,script_188217.txt,LANDSAT/LE07/C02/T1_L2,ActOn,Reclassifying images
+1026,script_188217.txt,users/kiniklihakan/milanshp,ActOn,Calculating class areas
+1027,script_188217.txt,users/kiniklihakan/milanshp,ActOn,Creating land cover charts
+1028,script_188217.txt,users/kiniklihakan/milanshp,ActOn,Buffering polygons
+1029,script_188221.txt,ECMWF/ERA5_LAND/MONTHLY,ActOn,Filtering image collection by date range
+1030,script_188221.txt,ECMWF/ERA5_LAND/MONTHLY,ActOn,Selecting variables of interest
+1031,script_188221.txt,ECMWF/ERA5_LAND/MONTHLY,ActOn,Reducing region to mean values
+1032,script_188221.txt,ECMWF/ERA5_LAND/MONTHLY,ActOn,Exporting feature collection to CSV
+1033,script_188221.txt,ECMWF/ERA5_LAND/MONTHLY,ActOn,Visualizing image layer on map
+1034,script_188386.txt,USDA/NASS/CDL,ActOn,Image collection creation
+1035,script_188386.txt,USDA/NASS/CDL,ActOn,Geometry definition
+1036,script_188397.txt,MODIS/006/MCD64A1,ActOn,Filtering image collection by date
+1037,script_188397.txt,MODIS/006/MCD64A1,ActOn,Selecting specific image band
+1038,script_188397.txt,MODIS/006/MCD64A1,ActOn,Creating video thumbnail from image collection
+1039,script_188400.txt,COPERNICUS/S5P/NRTI/L3_NO2,ActOn,Filtering image collection by date
+1040,script_188400.txt,COPERNICUS/S5P/NRTI/L3_NO2,ActOn,Clipping images to a specific border
+1041,script_188400.txt,COPERNICUS/S5P/NRTI/L3_NO2,ActOn,Visualizing NO2 column number density
+1042,script_188401.txt,NOAA/GFS0P25,ActOn,Filtering image collection by date
+1043,script_188401.txt,NOAA/GFS0P25,ActOn,Selecting temperature component
+1044,script_188401.txt,NOAA/GFS0P25,ActOn,Clipping images to a boundary
+1045,script_188412.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Cloud masking
+1046,script_188412.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Image collection filtering
+1047,script_188412.txt,LANDSAT/LC08/C01/T1_SR,ActOn,NDVI calculation
+1048,script_188412.txt,LANDSAT/LC08/C01/T1_SR,ActOn,LST calculation
+1049,script_188412.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Image visualization
+1050,script_188412.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Fractional vegetation calculation
+1051,script_188412.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Emissivity calculation
+1052,script_188412.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Image reduction
+1053,script_188412.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Chart creation
+1054,script_188412.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Image export
+1055,script_188413.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Cloud masking
+1056,script_188413.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Image collection filtering
+1057,script_188413.txt,LANDSAT/LC08/C01/T1_SR,ActOn,NDVI calculation
+1058,script_188413.txt,LANDSAT/LC08/C01/T1_SR,ActOn,LST calculation
+1059,script_188413.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Image visualization
+1060,script_188413.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Data export
+1061,script_188414.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Cloud masking
+1062,script_188414.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Image filtering
+1063,script_188414.txt,LANDSAT/LC08/C01/T1_SR,ActOn,NDVI calculation
+1064,script_188414.txt,LANDSAT/LC08/C01/T1_SR,ActOn,LST calculation
+1065,script_188414.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Emissivity calculation
+1066,script_188414.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Fractional vegetation calculation
+1067,script_188414.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Image reduction
+1068,script_188414.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Image clipping
+1069,script_188414.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Image visualization
+1070,script_188419.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Cloud masking
+1071,script_188419.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Image collection filtering
+1072,script_188419.txt,LANDSAT/LC08/C01/T1_SR,ActOn,NDVI calculation
+1073,script_188419.txt,LANDSAT/LC08/C01/T1_SR,ActOn,LST calculation
+1074,script_188419.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Image visualization
+1075,script_188419.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Data export
+1076,script_188454.txt,users/kitmyfaceplease2/eastsouth_asia,ActOn,Filter image collection by cloud probability
+1077,script_188454.txt,users/kitmyfaceplease2/eastsouth_asia,ActOn,Create mosaic of images
+1078,script_188454.txt,users/kitmyfaceplease2/eastsouth_asia,ActOn,Count images in collection
+1079,script_188454.txt,COPERNICUS/S2_CLOUD_PROBABILITY,ActOn,Mask clouds in images
+1080,script_188454.txt,COPERNICUS/S2_CLOUD_PROBABILITY,ActOn,Calculate sum of images
+1081,script_188454.txt,COPERNICUS/S2_CLOUD_PROBABILITY,ActOn,Calculate percentage of cloud probability
+1082,script_188455.txt,users/kitmyfaceplease2/eastsouth_asia,ActOn,Filtering image collection by date and bounds
+1083,script_188455.txt,users/kitmyfaceplease2/eastsouth_asia,ActOn,Creating mosaic of images
+1084,script_188455.txt,users/kitmyfaceplease2/eastsouth_asia,ActOn,Counting images in collection
+1085,script_188455.txt,projects/ee-kitmyfaceplease2/assets/EAST_SOUTH_SPLIT2,ActOn,Masking clouds in images
+1086,script_188455.txt,projects/ee-kitmyfaceplease2/assets/EAST_SOUTH_SPLIT2,ActOn,Calculating sum of images
+1087,script_188455.txt,projects/ee-kitmyfaceplease2/assets/EAST_SOUTH_SPLIT2,ActOn,Calculating percentage of cloud probability
+1088,script_188455.txt,COPERNICUS/S2_CLOUD_PROBABILITY,ActOn,Filtering image collection by date and bounds
+1089,script_188455.txt,COPERNICUS/S2_CLOUD_PROBABILITY,ActOn,Masking clouds in images
+1090,script_188455.txt,COPERNICUS/S2_CLOUD_PROBABILITY,ActOn,Calculating percentage of cloud probability
+1091,script_188458.txt,users/kitmyfaceplease2/eastsouth_asia,ActOn,Filtering image collection by cloud probability
+1092,script_188458.txt,users/kitmyfaceplease2/eastsouth_asia,ActOn,Creating mosaic of images
+1093,script_188458.txt,users/kitmyfaceplease2/eastsouth_asia,ActOn,Counting images in collection
+1094,script_188458.txt,projects/ee-kitmyfaceplease2/assets/EAST_SOUTH_SPLIT2,ActOn,Masking clouds in images
+1095,script_188458.txt,projects/ee-kitmyfaceplease2/assets/EAST_SOUTH_SPLIT2,ActOn,Calculating sum of images
+1096,script_188458.txt,projects/ee-kitmyfaceplease2/assets/EAST_SOUTH_SPLIT2,ActOn,Calculating percentage of cloud probability
+1097,script_188458.txt,COPERNICUS/S2_CLOUD_PROBABILITY,ActOn,Filtering image collection by cloud probability
+1098,script_188458.txt,COPERNICUS/S2_CLOUD_PROBABILITY,ActOn,Masking clouds in images
+1099,script_188458.txt,COPERNICUS/S2_CLOUD_PROBABILITY,ActOn,Calculating percentage of cloud probability
+1100,script_188465.txt,COPERNICUS/S2_SR_HARMONIZED,ActOn,Filtering image collection by date and cloud probability
+1101,script_188465.txt,COPERNICUS/S2_CLOUD_PROBABILITY,ActOn,Filtering image collection by date and cloud probability
+1102,script_188465.txt,COPERNICUS/S2_SR_HARMONIZED,ActOn,Creating mosaic of images
+1103,script_188465.txt,COPERNICUS/S2_CLOUD_PROBABILITY,ActOn,Creating mosaic of images
+1104,script_188465.txt,COPERNICUS/S2_SR_HARMONIZED,ActOn,Masking clouds in images
+1105,script_188465.txt,COPERNICUS/S2_CLOUD_PROBABILITY,ActOn,Masking clouds in images
+1106,script_188465.txt,COPERNICUS/S2_SR_HARMONIZED,ActOn,Calculating sum of images
+1107,script_188465.txt,COPERNICUS/S2_CLOUD_PROBABILITY,ActOn,Calculating sum of images
+1108,script_188465.txt,COPERNICUS/S2_SR_HARMONIZED,ActOn,Reducing image to ROI
+1109,script_188502.txt,COPERNICUS/S1_GRD,ActOn,Filtering image collection by bounds and date
+1110,script_188502.txt,COPERNICUS/S1_GRD,ActOn,Applying OTSU thresholding for water detection
+1111,script_188502.txt,COPERNICUS/S1_GRD,ActOn,Calculating water body area
+1112,script_188502.txt,COPERNICUS/S1_GRD,ActOn,Generating time series chart of water body area change
+1113,script_188506.txt,COPERNICUS/S2_CLOUD_PROBABILITY,ActOn,Filtering image collection by date and bounds
+1114,script_188506.txt,COPERNICUS/S2_CLOUD_PROBABILITY,ActOn,Masking clouds from images
+1115,script_188506.txt,COPERNICUS/S2_CLOUD_PROBABILITY,ActOn,Calculating sum of image collection
+1116,script_188506.txt,COPERNICUS/S2_CLOUD_PROBABILITY,ActOn,Dividing images to calculate percentage
+1117,script_188506.txt,users/kitmyfaceplease2/eastsouth_asia,ActOn,Creating mosaic from image collection
+1118,script_188506.txt,projects/ee-kitmyfaceplease2/assets/EAST_SOUTH_SPLIT2,ActOn,Creating mosaic from image collection
+1119,script_188509.txt,UCSB-CHG/CHIRPS/PENTAD,ActOn,Filtering image collection by date and geometry
+1120,script_188509.txt,UCSB-CHG/CHIRPS/PENTAD,ActOn,Calculating total precipitation
+1121,script_188509.txt,UCSB-CHG/CHIRPS/PENTAD,ActOn,Generating image mosaics
+1122,script_188509.txt,COPERNICUS/S2_CLOUD_PROBABILITY,ActOn,Masking clouds from images
+1123,script_188509.txt,users/kitmyfaceplease2/eastsouth_asia,ActOn,Counting images in a collection
+1124,script_188509.txt,users/kitmyfaceplease2/eastsouth_asia,ActOn,Reducing images to a single value
+1125,script_188509.txt,projects/ee-kitmyfaceplease2/assets/EAST_SOUTH_SPLIT2,ActOn,Calculating correlation coefficient
+1126,script_188511.txt,UCSB-CHG/CHIRPS/PENTAD,ActOn,Filter image collection by date and bounds
+1127,script_188511.txt,UCSB-CHG/CHIRPS/PENTAD,ActOn,Reduce image collection to sum
+1128,script_188511.txt,UCSB-CHG/CHIRPS/PENTAD,ActOn,Calculate percentage image
+1129,script_188511.txt,COPERNICUS/S2_CLOUD_PROBABILITY,ActOn,Mask clouds in image
+1130,script_188511.txt,users/kitmyfaceplease2/eastsouth_asia,ActOn,Clip image to ROI geometry
+1131,script_188511.txt,projects/ee-kitmyfaceplease2/assets/EAST_SOUTH_SPLIT2,ActOn,Perform cross-correlation analysis
+1132,script_188511.txt,projects/ee-kitmyfaceplease2/assets/EAST_SOUTH_SPLIT2,ActOn,Export image to Drive
+1133,script_23533.txt,USGS/NLCD/NLCD1992,ActOn,Image selection and remapping
+1134,script_23533.txt,USGS/NLCD/NLCD2001,ActOn,Image selection and remapping
+1135,script_23533.txt,USGS/NLCD/NLCD2006,ActOn,Image selection and remapping
+1136,script_23533.txt,USGS/NLCD/NLCD1992,ActOn,Image collection creation and merging
+1137,script_23533.txt,USGS/NLCD/NLCD2001,ActOn,Image collection creation and merging
+1138,script_23533.txt,USGS/NLCD/NLCD2006,ActOn,Image collection creation and merging
+1139,script_23533.txt,users/alemlakes/r-2900-BULC-Dev:BULC/2020/3-BULC-Minimal/BULC-Minimal-ModInDev-44-assembleTables,ActOn,Land cover classification using BULC function
+1140,script_23533.txt,users/alemlakes/r-2900-BULC-Dev:BULC/2020/3-BULC-Minimal/BULC-Minimal-ModInDev-44-assembleTables,ActOn,Image layer addition to map
+1141,script_28.txt,MODIS/006/MOD10A1,ActOn,Harmonize Landsat 8 to Landsat 7 reflectance
+1142,script_28.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Harmonize Landsat 8 to Landsat 7 reflectance
+1143,script_28.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Harmonize Landsat 8 to Landsat 7 reflectance
+1144,script_28.txt,LANDSAT/LT04/C01/T1_SR,ActOn,Harmonize Landsat 8 to Landsat 7 reflectance
+1145,script_28.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Harmonize Landsat 8 to Landsat 7 reflectance
+1146,script_28.txt,MODIS/006/MOD10A1,ActOn,Retrieve surface reflectance image collection
+1147,script_28.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Retrieve surface reflectance image collection
+1148,script_28.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Retrieve surface reflectance image collection
+1149,script_28.txt,LANDSAT/LT04/C01/T1_SR,ActOn,Retrieve surface reflectance image collection
+1150,script_28.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Retrieve surface reflectance image collection
+1151,script_28.txt,MODIS/006/MOD10A1,ActOn,Filter image collection by date and bounds
+1152,script_28.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Filter image collection by date and bounds
+1153,script_28.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Filter image collection by date and bounds
+1154,script_28.txt,LANDSAT/LT04/C01/T1_SR,ActOn,Filter image collection by date and bounds
+1155,script_28.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Filter image collection by date and bounds
+1156,script_28.txt,MODIS/006/MOD10A1,ActOn,Mask out shadows and clouds
+1157,script_28.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Mask out shadows and clouds
+1158,script_28.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Mask out shadows and clouds
+1159,script_28.txt,LANDSAT/LT04/C01/T1_SR,ActOn,Mask out shadows and clouds
+1160,script_28.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Mask out shadows and clouds
+1161,script_28.txt,MODIS/006/MOD10A1,ActOn,Calculate snow cover index
+1162,script_28.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Calculate snow cover index
+1163,script_28.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Calculate snow cover index
+1164,script_28.txt,LANDSAT/LT04/C01/T1_SR,ActOn,Calculate snow cover index
+1165,script_28.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Calculate snow cover index
+1166,script_28.txt,users/ak_glaciers/points_w_ids_OR,ActOn,Filter image collection by date and bounds
+1167,script_28.txt,users/ak_glaciers/or_snotel_sites,ActOn,Filter image collection by date and bounds
+1168,script_28.txt,users/ak_glaciers/NWCC_high_resolution_coordinates_2019_edited_updated_fields_final,ActOn,Filter image collection by date and bounds
+1169,script_28.txt,users/ak_glaciers/gee_tiles_2_15_clipped,ActOn,Filter image collection by date and bounds
+1170,script_28.txt,users/ak_glaciers/points_w_ids_OR,ActOn,Mask out shadows and clouds
+1171,script_28.txt,users/ak_glaciers/or_snotel_sites,ActOn,Mask out shadows and clouds
+1172,script_28.txt,users/ak_glaciers/NWCC_high_resolution_coordinates_2019_edited_updated_fields_final,ActOn,Mask out shadows and clouds
+1173,script_28.txt,users/ak_glaciers/gee_tiles_2_15_clipped,ActOn,Mask out shadows and clouds
+1174,script_28.txt,users/ak_glaciers/points_w_ids_OR,ActOn,Calculate snow cover index
+1175,script_28.txt,users/ak_glaciers/or_snotel_sites,ActOn,Calculate snow cover index
+1176,script_28.txt,users/ak_glaciers/NWCC_high_resolution_coordinates_2019_edited_updated_fields_final,ActOn,Calculate snow cover index
+1177,script_28.txt,users/ak_glaciers/gee_tiles_2_15_clipped,ActOn,Calculate snow cover index
+1178,script_28.txt,USGS/WBD/2017/HUC08,ActOn,None
+1179,script_3043.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Image collection filtering
+1180,script_3043.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Image collection filtering
+1181,script_3043.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Image collection filtering
+1182,script_3043.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Image renaming and band selection
+1183,script_3043.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Image renaming and band selection
+1184,script_3043.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Image renaming and band selection
+1185,script_3043.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Cloud and shadow masking
+1186,script_3043.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Cloud and shadow masking
+1187,script_3043.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Cloud and shadow masking
+1188,script_3043.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Image compositing
+1189,script_3043.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Image compositing
+1190,script_3043.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Image compositing
+1191,script_3043.txt,users/1915303017/CNBBW_SL_10kmBuffer,ActOn,Land cover classification
+1192,script_3043.txt,users/1915303017/CNBBW_SL_10kmBuffer,ActOn,Vegetation classification
+1193,script_3043.txt,USGS/SRTMGL1_003,ActOn,Elevation and slope calculation
+1194,script_3043.txt,LANDSAT/LC08/C01/T1_SR,ActOn,NDVI calculation
+1195,script_3043.txt,LANDSAT/LE07/C01/T1_SR,ActOn,NDVI calculation
+1196,script_3043.txt,LANDSAT/LT05/C01/T1_SR,ActOn,NDVI calculation
+1197,script_3043.txt,LANDSAT/LC08/C01/T1_SR,ActOn,mNDWI calculation
+1198,script_3043.txt,LANDSAT/LE07/C01/T1_SR,ActOn,mNDWI calculation
+1199,script_3043.txt,LANDSAT/LT05/C01/T1_SR,ActOn,mNDWI calculation
+1200,script_3043.txt,LANDSAT/LC08/C01/T1_SR,ActOn,LSWI calculation
+1201,script_3043.txt,LANDSAT/LE07/C01/T1_SR,ActOn,LSWI calculation
+1202,script_3043.txt,LANDSAT/LT05/C01/T1_SR,ActOn,LSWI calculation
+1203,script_3043.txt,LANDSAT/LC08/C01/T1_SR,ActOn,EVI calculation
+1204,script_3043.txt,LANDSAT/LE07/C01/T1_SR,ActOn,EVI calculation
+1205,script_3043.txt,LANDSAT/LT05/C01/T1_SR,ActOn,EVI calculation
+1206,script_3043.txt,LANDSAT/LC08/C01/T1_SR,ActOn,AWEInsh calculation
+1207,script_3043.txt,LANDSAT/LE07/C01/T1_SR,ActOn,AWEInsh calculation
+1208,script_3043.txt,LANDSAT/LT05/C01/T1_SR,ActOn,AWEInsh calculation
+1209,script_3043.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Water body detection
+1210,script_3043.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Water body detection
+1211,script_3043.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Water body detection
+1212,script_32.txt,users/ak_glaciers/NWCC_high_resolution_coordinates_2019_hucs,ActOn,Generate daily composites of optical data
+1213,script_32.txt,USGS/WBD/2017/HUC8,ActOn,Generate daily composites of optical data
+1214,script_32.txt,users/ak_glaciers/NWCC_high_resolution_coordinates_2019_hucs,ActOn,Create image collection of Sentinel-1 data
+1215,script_32.txt,USGS/WBD/2017/HUC8,ActOn,Create image collection of Sentinel-1 data
+1216,script_32.txt,CGIAR/SRTM90_V4,ActOn,Apply wet snow mask to Sentinel-1 data
+1217,script_32.txt,CGIAR/SRTM90_V4,ActOn,Update mask with optical data
+1218,script_32.txt,CGIAR/SRTM90_V4,ActOn,Export data to asset
+1219,script_35538.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Filtering image collection by date and bounds
+1220,script_35538.txt,COPERNICUS/S2,ActOn,Filtering image collection by date and bounds
+1221,script_35538.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Calculating median image
+1222,script_35538.txt,COPERNICUS/S2,ActOn,Calculating median image
+1223,script_35538.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Calculating NDVI
+1224,script_35538.txt,COPERNICUS/S2,ActOn,Calculating NDVI
+1225,script_35538.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Masking image based on threshold value
+1226,script_35538.txt,COPERNICUS/S2,ActOn,Masking image based on threshold value
+1227,script_35538.txt,users/chaitanyaks/Maharashtra/Pune_District,ActOn,Clipping image to ROI
+1228,script_35538.txt,users/chaitanyaks/Maharashtra/Pune_District,ActOn,Generating histogram for NDVI image
+1229,script_41838.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Filtering image collection by date and cloud cover
+1230,script_41838.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Clipping image to region of interest
+1231,script_41838.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Selecting bands for classification
+1232,script_41838.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Classifying land cover
+1233,script_41838.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Visualizing classification result
+1234,script_42.txt,USDOS/LSIB/2017,ActOn,Get AOI and forest cover data
+1235,script_42.txt,UMD/hansen/global_forest_change_2020_v1_8,ActOn,Get AOI and forest cover data
+1236,script_42.txt,USDOS/LSIB/2017,ActOn,Get user inputs and imports
+1237,script_42.txt,UMD/hansen/global_forest_change_2020_v1_8,ActOn,Get user inputs and imports
+1238,script_42.txt,users/ak_glaciers/NDVI_fitted_image_stack_from_LTOP_1990_start,ActOn,Create training data and train a model
+1239,script_42.txt,users/ak_glaciers/NBR_fitted_image_stack_from_LTOP_1990_start,ActOn,Create training data and train a model
+1240,script_42.txt,users/ak_glaciers/NDVI_fitted_image_stack_from_LTOP_1990_start,ActOn,Run classification and produce output map
+1241,script_42.txt,users/ak_glaciers/NBR_fitted_image_stack_from_LTOP_1990_start,ActOn,Run classification and produce output map
+1242,script_43803.txt,users/b20203080616/HB-data/Zhangjiakou,ActOn,Filtering image collection by bounds and date
+1243,script_43803.txt,users/b20203080616/HB-data/Zhangjiakou,ActOn,Clipping image to region of interest
+1244,script_43803.txt,users/b20203080616/HB-data/Zhangjiakou,ActOn,Selecting specific bands from image
+1245,script_43803.txt,COPERNICUS/S2_SR,ActOn,Sorting images by cloud cover
+1246,script_43803.txt,COPERNICUS/S2_SR,ActOn,Mosaicking images
+1247,script_43803.txt,COPERNICUS/S2_SR,ActOn,Exporting image to drive
+1248,script_43.txt,users/ak_glaciers/All_CF_Cambodia_July_2016,ActOn,Filter features by country boundary
+1249,script_43.txt,users/ak_glaciers/All_CF_Cambodia_July_2016,ActOn,Filter features by non-overlap with existing CFs
+1250,script_43.txt,users/ak_glaciers/All_CF_Cambodia_July_2016,ActOn,Filter features by similar canopy cover
+1251,script_43.txt,users/ak_glaciers/reem_cf_outputs/reem_canopy_cover_2000_pts_rma_nbr_timeseries_remapped_full,ActOn,Calculate mean canopy cover
+1252,script_43.txt,USDOS/LSIB/2017,ActOn,Move feature polygons randomly
+1253,script_45435.txt,MODIS/006/MOD15A2H,ActOn,Filtering image collection by date
+1254,script_45435.txt,MODIS/006/MOD15A2H,ActOn,Selecting specific bands from image collection
+1255,script_45435.txt,MODIS/006/MOD15A2H,ActOn,Reducing image collection to mean value
+1256,script_45435.txt,MODIS/006/MOD15A2H,ActOn,Calculating vegetation cover
+1257,script_45435.txt,MODIS/006/MOD15A2H,ActOn,Calculating leaf area index
+1258,script_45435.txt,MODIS/006/MOD44B,ActOn,Performing data quality control
+1259,script_45435.txt,MODIS/006/MOD44B,ActOn,Visualizing results as a map layer
+1260,script_45435.txt,MODIS/006/MOD44B,ActOn,Exporting image to drive
+1261,script_48.txt,USDOS/LSIB/2017,ActOn,Clipping image to area of interest
+1262,script_48.txt,USDOS/LSIB/2017,ActOn,Calculating indices from image bands
+1263,script_48.txt,users/ak_glaciers/ltop_snic_seed_points75k_kmeans_cambodia_c2_1990,ActOn,Applying LandTrendr fit algorithm
+1264,script_48.txt,users/ak_glaciers/LTOP_Cambodia_config_selected_220_kmeans_pts_new_weights,ActOn,Applying LandTrendr fit algorithm
+1265,script_48.txt,users/ak_glaciers/Optimized_LT_1990_start_Cambodia_remapped_cluster_ids,ActOn,Applying LandTrendr fit algorithm
+1266,script_48.txt,users/ak_glaciers/ltop_snic_seed_points75k_kmeans_cambodia_c2_1990,ActOn,Preparing breakpoints for LandTrendr
+1267,script_48.txt,users/ak_glaciers/LTOP_Cambodia_config_selected_220_kmeans_pts_new_weights,ActOn,Preparing breakpoints for LandTrendr
+1268,script_48.txt,users/ak_glaciers/Optimized_LT_1990_start_Cambodia_remapped_cluster_ids,ActOn,Preparing breakpoints for LandTrendr
+1269,script_48.txt,users/ak_glaciers/ltop_snic_seed_points75k_kmeans_cambodia_c2_1990,ActOn,Running LandTrendr fit
+1270,script_48.txt,users/ak_glaciers/LTOP_Cambodia_config_selected_220_kmeans_pts_new_weights,ActOn,Running LandTrendr fit
+1271,script_48.txt,users/ak_glaciers/Optimized_LT_1990_start_Cambodia_remapped_cluster_ids,ActOn,Running LandTrendr fit
+1272,script_48.txt,users/ak_glaciers/ltop_snic_seed_points75k_kmeans_cambodia_c2_1990,ActOn,Converting LandTrendr output to desired format
+1273,script_48.txt,users/ak_glaciers/LTOP_Cambodia_config_selected_220_kmeans_pts_new_weights,ActOn,Converting LandTrendr output to desired format
+1274,script_48.txt,users/ak_glaciers/Optimized_LT_1990_start_Cambodia_remapped_cluster_ids,ActOn,Converting LandTrendr output to desired format
+1275,script_48.txt,users/ak_glaciers/ltop_snic_seed_points75k_kmeans_cambodia_c2_1990,ActOn,Calculating time since last vertex
+1276,script_48.txt,users/ak_glaciers/LTOP_Cambodia_config_selected_220_kmeans_pts_new_weights,ActOn,Calculating time since last vertex
+1277,script_48.txt,users/ak_glaciers/Optimized_LT_1990_start_Cambodia_remapped_cluster_ids,ActOn,Calculating time since last vertex
+1278,script_48.txt,users/ak_glaciers/ltop_snic_seed_points75k_kmeans_cambodia_c2_1990,ActOn,Calculating segment length
+1279,script_48.txt,users/ak_glaciers/LTOP_Cambodia_config_selected_220_kmeans_pts_new_weights,ActOn,Calculating segment length
+1280,script_48.txt,users/ak_glaciers/Optimized_LT_1990_start_Cambodia_remapped_cluster_ids,ActOn,Calculating segment length
+1281,script_48.txt,projects/servir-mekong/composites/,ActOn,None
+1282,script_49902.txt,COPERNICUS/S2_SR,ActOn,Filtering image collection by date and geometry
+1283,script_49902.txt,COPERNICUS/S2_SR,ActOn,Calculating NDVI index
+1284,script_49902.txt,COPERNICUS/S2_SR,ActOn,Calculating NDMI index
+1285,script_49902.txt,COPERNICUS/S2_SR,ActOn,Creating legend for NDMI index
+1286,script_50.txt,USDOS/LSIB/2017,ActOn,Create random points within an area of interest
+1287,script_50.txt,USDOS/LSIB/2017,ActOn,Extract spectral information from images
+1288,script_50.txt,UMD/hansen/global_forest_change_2020_v1_8,ActOn,Extract spectral information from images
+1289,script_50.txt,UMD/hansen/global_forest_change_2020_v1_8,ActOn,Train a random forest classifier
+1290,script_50.txt,users/ak_glaciers/NDVI_fitted_image_stack_from_LTOP_1990_start,ActOn,Classify images using a trained model
+1291,script_50.txt,users/ak_glaciers/NBR_fitted_image_stack_from_LTOP_1990_start,ActOn,Classify images using a trained model
+1292,script_50.txt,users/ak_glaciers/NDVI_fitted_image_stack_from_LTOP_1990_start,ActOn,Create an image collection from classified images
+1293,script_50.txt,users/ak_glaciers/NBR_fitted_image_stack_from_LTOP_1990_start,ActOn,Create an image collection from classified images
+1294,script_51624.txt,COPERNICUS/S1_GRD,ActOn,Composite Sentinel-1 images
+1295,script_51624.txt,COPERNICUS/S1_GRD,ActOn,Filter image collection by date and polarization
+1296,script_51624.txt,COPERNICUS/S1_GRD,ActOn,Visualize image with custom palette
+1297,script_51624.txt,COPERNICUS/S1_GRD,ActOn,Create layer selection widget
+1298,script_51624.txt,COPERNICUS/S1_GRD,ActOn,Update map with selected image
+1299,script_52026.txt,users/bkkumarbittu371/Andhra_Pradesht,ActOn,Filtering image collection by bounds and date
+1300,script_52026.txt,users/bkkumarbittu371/Andhra_Pradesht,ActOn,Clipping dataset to region of interest
+1301,script_52026.txt,users/bkkumarbittu371/Andhra_Pradesht,ActOn,Reducing region to mean value
+1302,script_52026.txt,COPERNICUS/S5P/OFFL/L3_O3,ActOn,Calculating mean of image collection
+1303,script_54980.txt,users/edimilsonrodriguessantos/MAPBIOMAS/INFRAURBANA6-FT-v6/,ActOn,Image collection creation
+1304,script_54980.txt,users/edimilsonrodriguessantos/MAPBIOMAS/INFRAURBANA6-FT-v6/,ActOn,Image masking and renaming
+1305,script_54980.txt,users/edimilsonrodriguessantos/MAPBIOMAS/INFRAURBANA6-FT-v6/,ActOn,Image band addition
+1306,script_54980.txt,users/edimilsonrodriguessantos/MAPBIOMAS/INFRAURBANA6-FT-v6/,ActOn,Image remapping
+1307,script_54980.txt,users/edimilsonrodriguessantos/MAPBIOMAS/INFRAURBANA6-FT-v6/,ActOn,Video generation
+1308,script_59099.txt,COPERNICUS/S2_HARMONIZED,ActOn,Filtering image collection by date and cloud percentage
+1309,script_59099.txt,COPERNICUS/S2_HARMONIZED,ActOn,Calculating NDVI index
+1310,script_59099.txt,COPERNICUS/S2_HARMONIZED,ActOn,Mapping NDVI values to visualization
+1311,script_59099.txt,COPERNICUS/S2_HARMONIZED,ActOn,Charting NDVI series by region
+1312,script_62526.txt,users/ce15btech11022/Final_Cities/Ahmedabad,ActOn,Filtering image collection by date and bounds
+1313,script_62526.txt,users/ce15btech11022/Final_Cities/Ahmedabad,ActOn,Creating daily mosaics from image collection
+1314,script_62526.txt,users/ce15btech11022/Final_Cities/Ahmedabad,ActOn,Calculating water area using NDWI index
+1315,script_62526.txt,COPERNICUS/S2,ActOn,Filtering image collection by date and bounds
+1316,script_62526.txt,COPERNICUS/S2,ActOn,Creating daily mosaics from image collection
+1317,script_62526.txt,COPERNICUS/S2,ActOn,Calculating water area using NDWI index
+1318,script_62526.txt,COPERNICUS/S2,ActOn,Creating time series chart of water area
+1319,script_62526.txt,COPERNICUS/S2,ActOn,Exporting feature collection to Drive
+1320,script_65671.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Cloud masking
+1321,script_65671.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Cloud masking
+1322,script_65671.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Image collection filtering
+1323,script_65671.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Image collection filtering
+1324,script_65671.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Median computation
+1325,script_65671.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Median computation
+1326,script_65671.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Image exporting
+1327,script_65671.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Image exporting
+1328,script_65671.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Table exporting
+1329,script_65671.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Table exporting
+1330,script_67562.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Remove cloud cover from images
+1331,script_67562.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Scale image values
+1332,script_67562.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Calculate NDVI
+1333,script_67562.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Calculate NDWI
+1334,script_67562.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Calculate NDBI
+1335,script_67562.txt,USGS/SRTMGL1_003,ActOn,Generate DEM
+1336,script_67562.txt,users/wangweihappy0/training01/l8ClassifySample,ActOn,Clip image to ROI
+1337,script_71184.txt,LANDSAT/LE7_L1T_32DAY_TOA,ActOn,Cloud scoring
+1338,script_71184.txt,LANDSAT/LE7_L1T_32DAY_TOA,ActOn,Image filtering
+1339,script_71184.txt,LANDSAT/LE7_L1T_32DAY_TOA,ActOn,MNDWI calculation
+1340,script_71184.txt,LANDSAT/LE7_L1T_32DAY_TOA,ActOn,Gap filling using flooding frequency
+1341,script_72.txt,USDOS/LSIB/2017,ActOn,Buffering a feature collection
+1342,script_72.txt,USDOS/LSIB/2017,ActOn,Filtering a feature collection by country name
+1343,script_72.txt,users/emaprlab/public:Modules/LandTrendr.js,ActOn,Running LandTrendr temporal segmentation
+1344,script_72.txt,users/emaprlab/public:Modules/LandTrendr.js,ActOn,Fitting LandTrendr model
+1345,script_72.txt,users/emaprlab/public:Modules/LandTrendr.js,ActOn,Converting LandTrendr fit output
+1346,script_72.txt,users/emaprlab/public:Modules/LandTrendr.js,ActOn,Detecting changes using LandTrendr modules
+1347,script_72.txt,users/emaprlab/broberts:LTOP_mekong/06lt_Transfer_FTV_modules.js,ActOn,Building a spectral response collection
+1348,script_72.txt,users/emaprlab/broberts:LTOP_mekong/06lt_Transfer_FTV_modules.js,ActOn,Calculating a spectral index
+1349,script_72.txt,users/emaprlab/broberts:LTOP_mekong/06lt_Transfer_FTV_modules.js,ActOn,Exporting image outputs
+1350,script_75448.txt,LANDSAT/LT05/C01/T1,ActOn,Filter image collection by boundary
+1351,script_75448.txt,LANDSAT/LT05/C01/T1,ActOn,Generate annual composite images
+1352,script_75448.txt,LANDSAT/LT05/C01/T1,ActOn,Compute NDWI
+1353,script_75448.txt,LANDSAT/LT05/C01/T1,ActOn,Segment with Otsu method
+1354,script_75448.txt,LANDSAT/LT05/C01/T1,ActOn,Calculate area of segmented waterbody
+1355,script_76696.txt,LANDSAT/LT04/C01/T1_TOA,ActOn,Cloud removal for Landsat images
+1356,script_76696.txt,LANDSAT/LT05/C01/T1_TOA,ActOn,Cloud removal for Landsat images
+1357,script_76696.txt,LANDSAT/LE07/C01/T1_TOA,ActOn,Cloud removal for Landsat images
+1358,script_76696.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Cloud removal for Landsat images
+1359,script_76696.txt,LANDSAT/LT04/C01/T1_TOA,ActOn,NDVI calculation for Landsat images
+1360,script_76696.txt,LANDSAT/LT05/C01/T1_TOA,ActOn,NDVI calculation for Landsat images
+1361,script_76696.txt,LANDSAT/LE07/C01/T1_TOA,ActOn,NDVI calculation for Landsat images
+1362,script_76696.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,NDVI calculation for Landsat images
+1363,script_76696.txt,LANDSAT/LT04/C01/T1_TOA,ActOn,Harmonization of Landsat 8 and Landsat 7 images
+1364,script_76696.txt,LANDSAT/LT05/C01/T1_TOA,ActOn,Harmonization of Landsat 8 and Landsat 7 images
+1365,script_76696.txt,LANDSAT/LE07/C01/T1_TOA,ActOn,Harmonization of Landsat 8 and Landsat 7 images
+1366,script_76696.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Harmonization of Landsat 8 and Landsat 7 images
+1367,script_76696.txt,ft:1XXheLy1fnGiQKRtkcP9iD9s3gqdcx2PqtkKJP7Ig,ActOn,Image collection filtering by date and bounds
+1368,script_76696.txt,ft:1XXheLy1fnGiQKRtkcP9iD9s3gqdcx2PqtkKJP7Ig,ActOn,Image masking using quality band
+1369,script_76696.txt,users/cxliu2015/Arctic_treeline_Project_Russia,ActOn,Image count calculation for summer images
+1370,script_76709.txt,users/cxliu2015/BYDwater20210325,ActOn,Filtering image collection by date and cloud coverage
+1371,script_76709.txt,users/cxliu2015/BYDwater20210325,ActOn,Masking clouds and cirrus
+1372,script_76709.txt,users/cxliu2015/BYDwater20210325,ActOn,Computing percentiles of vegetation indices
+1373,script_76709.txt,users/cxliu2015/BYDwater20210325,ActOn,Creating a mosaic of median bands
+1374,script_76709.txt,COPERNICUS/S2,ActOn,Filtering image collection by date and cloud coverage
+1375,script_76709.txt,COPERNICUS/S2,ActOn,Calculating NDVI and other vegetation indices
+1376,script_76709.txt,COPERNICUS/S2,ActOn,Masking clouds and cirrus
+1377,script_76709.txt,COPERNICUS/S2,ActOn,Computing percentiles of vegetation indices
+1378,script_76709.txt,COPERNICUS/S2,ActOn,Creating a mosaic of median bands
+1379,script_76709.txt,COPERNICUS/S2,ActOn,Exporting images to Google Drive
+1380,script_76805.txt,users/liuchongwhu/Arctic/Arctic_greeness/treeline_country,ActOn,Mask pixels with high SummaryQA
+1381,script_76805.txt,users/liuchongwhu/Arctic/Arctic_greeness/treeline_country,ActOn,Calculate annual NDVI/EVI
+1382,script_76805.txt,users/liuchongwhu/Arctic/Arctic_greeness/treeline_country,ActOn,Calculate average NDVI/EVI in region
+1383,script_76805.txt,MODIS/006/MOD13Q1,ActOn,Mask out water
+1384,script_76805.txt,MODIS/006/MOD13Q1,ActOn,Calculate annual NDVI/EVI
+1385,script_76805.txt,MODIS/006/MOD13Q1,ActOn,Calculate regression trends
+1386,script_76805.txt,MODIS/006/MOD13Q1,ActOn,Map coefficients
+1387,script_76805.txt,MODIS/006/MOD44W,ActOn,Mask out water
+1388,script_76805.txt,MODIS/006/MOD44W,ActOn,Calculate regression trends
+1389,script_76805.txt,MODIS/006/MOD44W,ActOn,Map coefficients
+1390,script_76839.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Filtering image collection by date and quality
+1391,script_76839.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Filtering image collection by date and quality
+1392,script_76839.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Masking bad QA pixels
+1393,script_76839.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Masking bad QA pixels
+1394,script_76839.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Computing normalized difference vegetation index
+1395,script_76839.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Computing normalized difference vegetation index
+1396,script_76839.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Computing land surface water index
+1397,script_76839.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Computing land surface water index
+1398,script_76839.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Clipping images to region of interest
+1399,script_76839.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Clipping images to region of interest
+1400,script_76839.txt,users/cxliu2015/PA_Qinghai_EnglishNames,ActOn,Exporting images to drive
+1401,script_76839.txt,users/cxliu2015/PA_Qinghai_cdm_studiedRectangle,ActOn,Clipping images to region of interest
+1402,script_76840.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Filtering image collection by date and quality
+1403,script_76840.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Filtering image collection by date and quality
+1404,script_76840.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Masking bad QA pixels
+1405,script_76840.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Masking bad QA pixels
+1406,script_76840.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Computing normalized difference vegetation index
+1407,script_76840.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Computing normalized difference vegetation index
+1408,script_76840.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Computing land surface water index
+1409,script_76840.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Computing land surface water index
+1410,script_76840.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Clipping images to region of interest
+1411,script_76840.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Clipping images to region of interest
+1412,script_76840.txt,users/cxliu2015/QHPA_Yege,ActOn,Exporting images to drive
+1413,script_76841.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Filtering image collection by date and quality
+1414,script_76841.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Filtering image collection by date and quality
+1415,script_76841.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Masking bad QA pixels
+1416,script_76841.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Masking bad QA pixels
+1417,script_76841.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Computing normalized difference vegetation index
+1418,script_76841.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Computing normalized difference vegetation index
+1419,script_76841.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Computing land surface water index
+1420,script_76841.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Computing land surface water index
+1421,script_76841.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Clipping images to region of interest
+1422,script_76841.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Clipping images to region of interest
+1423,script_76841.txt,users/cxliu2015/PA_Qinghai_EnglishNames,ActOn,Exporting images to drive
+1424,script_76841.txt,users/cxliu2015/PA_Qinghai_cdm_studiedRectangle,ActOn,Clipping images to region of interest
+1425,script_78663.txt,users/danielp/LC-SLIAC:LC-SLIAC_global,ActOn,Apply Land Cover Classification Correction
+1426,script_78663.txt,users/danielp/LC-SLIAC:LC-SLIAC_global,ActOn,Create Time Series Chart
+1427,script_78663.txt,users/danielp/LC-SLIAC:LC-SLIAC_global,ActOn,Filter Image Collection
+1428,script_78663.txt,users/danielp/LC-SLIAC:LC-SLIAC_global,ActOn,Calculate Mean Value
+1429,script_78805.txt,users/philipegeo/pol_jeremoabo,ActOn,Filtering image collection by cloud cover and date
+1430,script_78805.txt,users/philipegeo/pol_jeremoabo,ActOn,Clipping images to a specific geometry
+1431,script_78805.txt,LANDSAT/LT05/C01/T1_TOA,ActOn,Calculating median and mean of image collection
+1432,script_78805.txt,LANDSAT/LT05/C01/T1_TOA,ActOn,Computing NDVI and SAVI indices
+1433,script_78805.txt,LANDSAT/LT05/C01/T1_TOA,ActOn,Visualizing results on a map
+1434,script_85061.txt,LANDSAT/LT05/C02/T1_L2,ActOn,Apply scale factors to image bands
+1435,script_85061.txt,LANDSAT/LE07/C02/T1_L2,ActOn,Apply scale factors to image bands
+1436,script_85061.txt,LANDSAT/LC08/C02/T1_L2,ActOn,Apply scale factors to image bands
+1437,script_85061.txt,LANDSAT/LT05/C02/T1_L2,ActOn,Unmix image bands to endmembers
+1438,script_85061.txt,LANDSAT/LE07/C02/T1_L2,ActOn,Unmix image bands to endmembers
+1439,script_85061.txt,LANDSAT/LC08/C02/T1_L2,ActOn,Unmix image bands to endmembers
+1440,script_85061.txt,LANDSAT/LT05/C02/T1_L2,ActOn,Compute cloud score
+1441,script_85061.txt,LANDSAT/LE07/C02/T1_L2,ActOn,Compute cloud score
+1442,script_85061.txt,LANDSAT/LC08/C02/T1_L2,ActOn,Compute cloud score
+1443,script_85061.txt,LANDSAT/LT05/C02/T1_L2,ActOn,Filter images by cloud cover
+1444,script_85061.txt,LANDSAT/LE07/C02/T1_L2,ActOn,Filter images by cloud cover
+1445,script_85061.txt,LANDSAT/LC08/C02/T1_L2,ActOn,Filter images by cloud cover
+1446,script_85061.txt,LANDSAT/LT05/C02/T1_L2,ActOn,Merge image collections
+1447,script_85061.txt,LANDSAT/LE07/C02/T1_L2,ActOn,Merge image collections
+1448,script_85061.txt,LANDSAT/LC08/C02/T1_L2,ActOn,Merge image collections
+1449,script_85061.txt,projects/mapbiomas-raisg/PRODUCTOS/AGUA/DATOS_AUXILIARES/TEMP/bigGrids_Suriname,ActOn,Apply SMA to images
+1450,script_85061.txt,projects/mapbiomas-raisg/PRODUCTOS/AGUA/DATOS_AUXILIARES/TEMP/bigGrids_Suriname,ActOn,Compute probabilities for land cover classes
+1451,script_85217.txt,LANDSAT/LC08/C01/T1,ActOn,Load Landsat 8 image collection
+1452,script_85217.txt,LANDSAT/LC08/C01/T1,ActOn,Create cloud-free composite
+1453,script_85217.txt,LANDSAT/LC08/C01/T1,ActOn,Sample composite for training data
+1454,script_85217.txt,LANDSAT/LC08/C01/T1,ActOn,Train CART classifier
+1455,script_85217.txt,LANDSAT/LC08/C01/T1,ActOn,Classify composite
+1456,script_85217.txt,LANDSAT/LC08/C01/T1,ActOn,Perform accuracy assessment
+1457,script_85219.txt,users/diegogmzd/CHACO,ActOn,Filtering image collections by date and bounds
+1458,script_85219.txt,users/diegogmzd/CHACO,ActOn,Clipping images to a specific region
+1459,script_85219.txt,users/diegogmzd/CHACO,ActOn,Visualizing images with custom palettes
+1460,script_85219.txt,COPERNICUS/S2,ActOn,Applying cloud mask to images
+1461,script_85219.txt,COPERNICUS/S3/OLCI,ActOn,Applying cloud mask to images
+1462,script_85219.txt,COPERNICUS/S2,ActOn,Calculating median of image collection
+1463,script_85219.txt,COPERNICUS/S3/OLCI,ActOn,Calculating median of image collection
+1464,script_85219.txt,COPERNICUS/S2,ActOn,Computing normalized difference indices
+1465,script_85219.txt,COPERNICUS/S3/OLCI,ActOn,Computing normalized difference indices
+1466,script_85219.txt,COPERNICUS/S2,ActOn,Mosaicking images
+1467,script_85219.txt,COPERNICUS/S3/OLCI,ActOn,Mosaicking images
+1468,script_89887.txt,MODIS/006/MOD09GA,ActOn,Cloud masking
+1469,script_89887.txt,MODIS/006/MOD09GA,ActOn,Image collection filtering
+1470,script_89887.txt,MODIS/006/MOD09GA,ActOn,Percentile calculation
+1471,script_89887.txt,USGS/GMTED2010,ActOn,Hillshade generation
+1472,script_89887.txt,TIGER/2018/States,ActOn,Water masking
+1473,script_89887.txt,TIGER/2018/States,ActOn,Image visualization
+1474,script_95721.txt,users/eduardosperanza-Embrapa/Projeto-Coplacana/Piracicaba-H2Copla-UTM,ActOn,Cloud and snow pixel removal
+1475,script_95721.txt,users/eduardosperanza-Embrapa/Projeto-Coplacana/Piracicaba-H2Copla-UTM,ActOn,NDVI calculation
+1476,script_95721.txt,users/eduardosperanza-Embrapa/Projeto-Coplacana/Piracicaba-H2Copla-UTM,ActOn,VARI calculation
+1477,script_95721.txt,users/eduardosperanza-Embrapa/Projeto-Coplacana/Piracicaba-H2Copla-UTM,ActOn,EVI calculation
+1478,script_95721.txt,users/eduardosperanza-Embrapa/Projeto-Coplacana/Piracicaba-H2Copla-UTM,ActOn,Buffer creation
+1479,script_95721.txt,users/eduardosperanza-Embrapa/Projeto-Coplacana/Piracicaba-H2Copla-UTM,ActOn,Image collection filtering
+1480,script_95721.txt,users/eduardosperanza-Embrapa/Projeto-Coplacana/Piracicaba-H2Copla-UTM,ActOn,Image masking
+1481,script_95721.txt,users/eduardosperanza-Embrapa/Projeto-Coplacana/Piracicaba-H2Copla-UTM,ActOn,NDVI median composite image creation
+1482,script_95721.txt,users/eduardosperanza-Embrapa/Projeto-Coplacana/Piracicaba-H2Copla-UTM,ActOn,VARI median composite image creation
+1483,script_95721.txt,users/eduardosperanza-Embrapa/Projeto-Coplacana/Piracicaba-H2Copla-UTM,ActOn,EVI median composite image creation
+1484,script_95721.txt,COPERNICUS/S2_SR,ActOn,Cloud and snow pixel removal
+1485,script_95721.txt,COPERNICUS/S2_SR,ActOn,NDVI calculation
+1486,script_95721.txt,COPERNICUS/S2_SR,ActOn,VARI calculation
+1487,script_95721.txt,COPERNICUS/S2_SR,ActOn,EVI calculation
+1488,script_95721.txt,COPERNICUS/S2_SR,ActOn,Buffer creation
+1489,script_95721.txt,COPERNICUS/S2_SR,ActOn,Image collection filtering
+1490,script_95721.txt,COPERNICUS/S2_SR,ActOn,Image masking
+1491,script_95721.txt,COPERNICUS/S2_SR,ActOn,NDVI median composite image creation
+1492,script_95721.txt,COPERNICUS/S2_SR,ActOn,VARI median composite image creation
+1493,script_95721.txt,COPERNICUS/S2_SR,ActOn,EVI median composite image creation
+1494,script_95721.txt,COPERNICUS/S2_SR,ActOn,Spatial join
+1495,script_95721.txt,COPERNICUS/S2_SR,ActOn,Property removal
+1496,script_95950.txt,COPERNICUS/S2,ActOn,Masking clouds and cirrus from Sentinel-2 images
+1497,script_95950.txt,COPERNICUS/S2,ActOn,Calculating NDVI from Sentinel-2 images
+1498,script_95950.txt,COPERNICUS/S2,ActOn,Filtering images by date and cloud coverage
+1499,script_95950.txt,COPERNICUS/S2,ActOn,Clipping images to a specific region of interest
+1500,script_95950.txt,COPERNICUS/S2,ActOn,Adding date information to images
+1501,script_95950.txt,COPERNICUS/S2,ActOn,Sorting images by NDVI value
+1502,script_95950.txt,COPERNICUS/S2,ActOn,Extracting maximum NDVI value and corresponding date
+1503,script_96316.txt,users/cesarnon/datos_cba_2017/Cordoba_limite,ActOn,Filtering image collections by date and cloud cover
+1504,script_96316.txt,users/cesarnon/datos_cba_2017/Cordoba_limite,ActOn,Renaming image bands
+1505,script_96316.txt,users/cesarnon/datos_cba_2017/Cordoba_limite,ActOn,Clipping images to a specific geometry
+1506,script_96316.txt,COPERNICUS/S2_SR,ActOn,Calculating vegetation indices
+1507,script_96316.txt,COPERNICUS/S2_SR,ActOn,Creating quality mosaics
+1508,script_96317.txt,users/cesarnon/datos_cba_2017/Cordoba_limite,ActOn,Filtering image collections by date and cloud cover
+1509,script_96317.txt,users/cesarnon/datos_cba_2017/Cordoba_limite,ActOn,Renaming image bands
+1510,script_96317.txt,users/cesarnon/datos_cba_2017/Cordoba_limite,ActOn,Clipping images to a specific geometry
+1511,script_96317.txt,COPERNICUS/S2_SR,ActOn,Calculating vegetation indices
+1512,script_96317.txt,COPERNICUS/S2_SR,ActOn,Creating quality mosaics
+1513,script_96322.txt,users/eemapascordoba/LCLU_2021/recetas_ago20_abr21_pstxcultivo_masLCollect_buffer2306,ActOn,Filtering image collection by date and cloud cover
+1514,script_96322.txt,users/eemapascordoba/LCLU_2021/recetas_ago20_abr21_pstxcultivo_masLCollect_buffer2306,ActOn,Renaming image bands
+1515,script_96322.txt,users/eemapascordoba/LCLU_2021/recetas_ago20_abr21_pstxcultivo_masLCollect_buffer2306,ActOn,Calculating vegetation indices
+1516,script_96322.txt,users/eemapascordoba/var_ambientales_rindes/rindes_alf_rol_training_zona,ActOn,Sampling regions for training data
+1517,script_96322.txt,COPERNICUS/S2,ActOn,Creating quality mosaic
+1518,script_96322.txt,COPERNICUS/S2,ActOn,Clipping images to a specific area
+1519,script_96322.txt,users/capas/provincia_wgs,ActOn,None
+1520,script_96332.txt,users/cesarnon/datos_cba_2017/Cordoba_limite,ActOn,Filtering image collections by date and cloud cover
+1521,script_96332.txt,users/cesarnon/datos_cba_2017/Cordoba_limite,ActOn,Renaming image bands
+1522,script_96332.txt,users/cesarnon/datos_cba_2017/Cordoba_limite,ActOn,Creating mosaic images
+1523,script_96332.txt,users/cesarnon/datos_cba_2017/Cordoba_limite,ActOn,Adding layers to the map
+1524,script_96332.txt,COPERNICUS/S2,ActOn,Calculating normalized difference water index
+1525,script_96361.txt,LANDSAT/LT05/C01/T1_TOA,ActOn,Merging Landsat image collections
+1526,script_96361.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Merging Landsat image collections
+1527,script_96361.txt,LANDSAT/LT05/C01/T1_TOA,ActOn,Standardizing band names
+1528,script_96361.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Standardizing band names
+1529,script_96361.txt,LANDSAT/LT05/C01/T1_TOA,ActOn,Unpacking bit bands
+1530,script_96361.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Unpacking bit bands
+1531,script_96361.txt,LANDSAT/LT05/C01/T1_TOA,ActOn,Adding Fmask
+1532,script_96361.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Adding Fmask
+1533,script_96361.txt,LANDSAT/LT05/C01/T1_TOA,ActOn,Calculating MNDWI
+1534,script_96361.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Calculating MNDWI
+1535,script_96361.txt,LANDSAT/LT05/C01/T1_TOA,ActOn,Adding texture
+1536,script_96361.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Adding texture
+1537,script_96361.txt,LANDSAT/LT05/C01/T1_TOA,ActOn,Adding Landsat number
+1538,script_96361.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Adding Landsat number
+1539,script_96361.txt,LANDSAT/LT05/C01/T1_TOA,ActOn,Masking land area
+1540,script_96361.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Masking land area
+1541,script_96361.txt,LANDSAT/LE07/C01/T1_RT_TOA,ActOn,Merging Landsat image collections
+1542,script_96361.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Merging Landsat image collections
+1543,script_96361.txt,LANDSAT/LE07/C01/T1_RT_TOA,ActOn,Standardizing band names
+1544,script_96361.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Standardizing band names
+1545,script_96361.txt,LANDSAT/LE07/C01/T1_RT_TOA,ActOn,Unpacking bit bands
+1546,script_96361.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Unpacking bit bands
+1547,script_96361.txt,LANDSAT/LE07/C01/T1_RT_TOA,ActOn,Adding Fmask
+1548,script_96361.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Adding Fmask
+1549,script_96361.txt,LANDSAT/LE07/C01/T1_RT_TOA,ActOn,Calculating MNDWI
+1550,script_96361.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Calculating MNDWI
+1551,script_96361.txt,LANDSAT/LE07/C01/T1_RT_TOA,ActOn,Adding texture
+1552,script_96361.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Adding texture
+1553,script_96361.txt,LANDSAT/LE07/C01/T1_RT_TOA,ActOn,Adding Landsat number
+1554,script_96361.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Adding Landsat number
+1555,script_96361.txt,LANDSAT/LE07/C01/T1_RT_TOA,ActOn,Masking land area
+1556,script_96361.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Masking land area
+1557,script_96361.txt,LANDSAT/LC08/C01/T1_RT_TOA,ActOn,Merging Landsat image collections
+1558,script_96361.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Merging Landsat image collections
+1559,script_96361.txt,LANDSAT/LC08/C01/T1_RT_TOA,ActOn,Standardizing band names
+1560,script_96361.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Standardizing band names
+1561,script_96361.txt,LANDSAT/LC08/C01/T1_RT_TOA,ActOn,Unpacking bit bands
+1562,script_96361.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Unpacking bit bands
+1563,script_96361.txt,LANDSAT/LC08/C01/T1_RT_TOA,ActOn,Adding Fmask
+1564,script_96361.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Adding Fmask
+1565,script_96361.txt,LANDSAT/LC08/C01/T1_RT_TOA,ActOn,Calculating MNDWI
+1566,script_96361.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Calculating MNDWI
+1567,script_96361.txt,LANDSAT/LC08/C01/T1_RT_TOA,ActOn,Adding texture
+1568,script_96361.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Adding texture
+1569,script_96361.txt,LANDSAT/LC08/C01/T1_RT_TOA,ActOn,Adding Landsat number
+1570,script_96361.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Adding Landsat number
+1571,script_96361.txt,LANDSAT/LC08/C01/T1_RT_TOA,ActOn,Masking land area
+1572,script_96361.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Masking land area
+1573,script_96424.txt,JRC/GSW1_0/GlobalSurfaceWater,ActOn,Clip image to area of interest
+1574,script_96424.txt,JRC/GSW1_0/GlobalSurfaceWater,ActOn,Select image band
+1575,script_96424.txt,JRC/GSW1_0/GlobalSurfaceWater,ActOn,Create water mask
+1576,script_96424.txt,JRC/GSW1_0/GlobalSurfaceWater,ActOn,Calculate occurrence stats
+1577,script_96424.txt,JRC/GSW1_0/GlobalSurfaceWater,ActOn,Reconstruct lake extent
+1578,script_96426.txt,JRC/GSW1_0/GlobalSurfaceWater,ActOn,Load lake polygons
+1579,script_96426.txt,JRC/GSW1_0/GlobalSurfaceWater,ActOn,Filter Landsat images
+1580,script_96426.txt,JRC/GSW1_0/GlobalSurfaceWater,ActOn,Calculate water mask
+1581,script_96426.txt,JRC/GSW1_0/GlobalSurfaceWater,ActOn,Reconstruct water surface
+1582,script_96426.txt,JRC/GSW1_0/GlobalSurfaceWater,ActOn,Calculate lake area
+1583,script_96426.txt,users/sarinarinab/CitSci_Washington_Lakes,ActOn,Load lake polygons
+1584,script_96426.txt,users/sntopp/Lakes_ply_20171106,ActOn,Load lake polygons
+1585,script_96426.txt,users/sntopp/NCSC_Horsepen_Lake,ActOn,Load lake polygons
+1586,script_96426.txt,users/sarinarinab/CitSci_Washington_Lakes,ActOn,Calculate lake area
+1587,script_96426.txt,users/sntopp/Lakes_ply_20171106,ActOn,Calculate lake area
+1588,script_96426.txt,users/sntopp/NCSC_Horsepen_Lake,ActOn,Calculate lake area
+1589,script_96426.txt,users/sarinarinab/CitSci_Washington_Lakes,ActOn,Generate chart
+1590,script_96426.txt,users/sntopp/Lakes_ply_20171106,ActOn,Generate chart
+1591,script_96426.txt,users/sntopp/NCSC_Horsepen_Lake,ActOn,Generate chart
+1592,script_96426.txt,users/sarinarinab/CitSci_Washington_Lakes,ActOn,Export table to Drive
+1593,script_96426.txt,users/sntopp/Lakes_ply_20171106,ActOn,Export table to Drive
+1594,script_96426.txt,users/sntopp/NCSC_Horsepen_Lake,ActOn,Export table to Drive
+1595,script_96427.txt,JRC/GSW1_0/GlobalSurfaceWater,ActOn,Load and merge lake polygons
+1596,script_96427.txt,users/sntopp/Lakes_ply_20171106,ActOn,Load and merge lake polygons
+1597,script_96427.txt,JRC/GSW1_0/GlobalSurfaceWater,ActOn,Extract lake mask
+1598,script_96427.txt,users/sntopp/Lakes_ply_20171106,ActOn,Extract lake mask
+1599,script_96427.txt,JRC/GSW1_0/GlobalSurfaceWater,ActOn,Calculate lake area
+1600,script_96427.txt,users/sntopp/Lakes_ply_20171106,ActOn,Calculate lake area
+1601,script_96427.txt,users/sntopp/NCSC_Horsepen_Lake,ActOn,Calculate water surface area
+1602,script_96427.txt,users/sntopp/NCSC_Horsepen_Lake,ActOn,Reconstruct water surface
+1603,script_96427.txt,users/sarinarinab/CitSci_Washington_Lakes,ActOn,Generate chart for lake area changes
+1604,script_96427.txt,users/sarinarinab/CitSci_Washington_Lakes,ActOn,Filter Landsat images by date and cloud cover
+1605,script_96458.txt,COPERNICUS/S2,ActOn,Filtering image collection by date and geometry
+1606,script_96458.txt,COPERNICUS/S2,ActOn,Removing clouds from images
+1607,script_96458.txt,COPERNICUS/S2,ActOn,Calculating median of image collection
+1608,script_96458.txt,COPERNICUS/S2,ActOn,Computing normalized difference indices
+1609,script_96458.txt,COPERNICUS/S2,ActOn,Applying thresholds to indices
+1610,script_96458.txt,COPERNICUS/S2,ActOn,Clipping images to geometry
+1611,script_96458.txt,COPERNICUS/S1_GRD,ActOn,Filtering image collection by date and geometry
+1612,script_96458.txt,COPERNICUS/S1_GRD,ActOn,Removing clouds from images
+1613,script_96458.txt,COPERNICUS/S1_GRD,ActOn,Calculating median of image collection
+1614,script_96458.txt,COPERNICUS/S1_GRD,ActOn,Computing normalized difference indices
+1615,script_96458.txt,COPERNICUS/S1_GRD,ActOn,Applying thresholds to indices
+1616,script_96458.txt,COPERNICUS/S1_GRD,ActOn,Clipping images to geometry
+1617,script_96458.txt,users/eeranyartrodrigo/ferrocarriles/estaciones_prospectadas_area,ActOn,Reducing image collection to percentiles
+1618,script_96458.txt,users/eeranyartrodrigo/ferrocarriles/estaciones_prospectadas_area,ActOn,Calculating difference between wet and dry conditions
+1619,script_96458.txt,users/eeranyartrodrigo/ferrocarriles/estaciones_prospectadas_area,ActOn,Removing mountains from data
+1620,script_96458.txt,users/eeranyartrodrigo/ferrocarriles/estaciones_prospectadas_area,ActOn,Updating mask with slope values
+1621,script_96458.txt,WWF/HydroSHEDS/03VFDEM,ActOn,None
+1622,script_96459.txt,LANDSAT/LE07/C01/T1_TOA,ActOn,Filtering image collections by date and cloud cover
+1623,script_96459.txt,COPERNICUS/S2,ActOn,Filtering image collections by date and cloud cover
+1624,script_96459.txt,LANDSAT/LE07/C01/T1_TOA,ActOn,Calculating spectral indices
+1625,script_96459.txt,COPERNICUS/S2,ActOn,Calculating spectral indices
+1626,script_96459.txt,LANDSAT/LE07/C01/T1_TOA,ActOn,Unmixing images for land cover classification
+1627,script_96459.txt,COPERNICUS/S2,ActOn,Unmixing images for land cover classification
+1628,script_96459.txt,users/eeranyartrodrigo/ferrocarriles/coahuilaPols,ActOn,Generating histograms for thresholding
+1629,script_96459.txt,users/eeranyartrodrigo/ferrocarriles/coahuilaPols,ActOn,Applying Otsu thresholding for binary classification
+1630,script_96519.txt,users/eeranyartrodrigo/A_Hist,ActOn,Elevation data visualization
+1631,script_96519.txt,users/eeranyartrodrigo/A_Conc,ActOn,Elevation data visualization
+1632,script_96519.txt,users/eeranyartrodrigo/A_Hist,ActOn,Flood event identification
+1633,script_96519.txt,users/eeranyartrodrigo/A_Conc,ActOn,Flood event identification
+1634,script_96519.txt,USGS/GMTED2010,ActOn,Elevation data visualization
+1635,script_96519.txt,USGS/GMTED2010,ActOn,Flood plain mapping
+1636,script_96519.txt,USGS/GMTED2010,ActOn,Permanent water identification
+1637,script_96519.txt,GLOBAL_FLOOD_DB/MODIS_EVENTS/V1,ActOn,Flood event identification
+1638,script_96519.txt,GLOBAL_FLOOD_DB/MODIS_EVENTS/V1,ActOn,Flood plain mapping
+1639,script_96519.txt,JRC/GHSL/P2016/BUILT_LDSMT_GLOBE_V1,ActOn,Built-up area analysis
+1640,script_96519.txt,JRC/GWIS/GlobFire/v2/DailyPerimeters,ActOn,Fire perimeter analysis
+1641,script_96519.txt,users/eeranyartrodrigo/SSNMX_catalogo_20220801_20220810,ActOn,Buffering earthquake locations
+1642,script_96537.txt,users/eeranyartrodrigo/geoMediana/gm_2018_MX_014009,ActOn,Cloud masking and image filtering
+1643,script_96537.txt,users/eeranyartrodrigo/geoMediana/gm_2019_MX_014009,ActOn,Cloud masking and image filtering
+1644,script_96537.txt,users/eeranyartrodrigo/geoMediana/gm_2018_MX_014009,ActOn,Image collection median calculation
+1645,script_96537.txt,users/eeranyartrodrigo/geoMediana/gm_2019_MX_014009,ActOn,Image collection median calculation
+1646,script_96537.txt,users/eeranyartrodrigo/geoMediana/gm_2018_MX_014009,ActOn,Geomedian calculation
+1647,script_96537.txt,users/eeranyartrodrigo/geoMediana/gm_2019_MX_014009,ActOn,Geomedian calculation
+1648,script_96537.txt,users/eeranyartrodrigo/Pabellon,ActOn,Land cover classification
+1649,script_96537.txt,users/eeranyartrodrigo/Pabellon,ActOn,Random forest classification
+1650,script_96537.txt,users/eeranyartrodrigo/Pabellon,ActOn,Accuracy assessment
+1651,script_96537.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Image reprojection and resampling
+1652,script_96537.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Image histogram calculation
+1653,script_96537.txt,MODIS/006/MCD12Q1,ActOn,Land cover classification
+1654,script_96537.txt,MODIS/006/MCD12Q1,ActOn,Random forest classification
+1655,script_96537.txt,MODIS/NTSG/MOD16A2/105,ActOn,Evapotranspiration data visualization
+1656,script_96538.txt,users/eeranyartrodrigo/panteones/polygonsData/polsPanteon,ActOn,Buffering features
+1657,script_96538.txt,users/eeranyartrodrigo/panteones/polygonsData/polsPanteon,ActOn,Clipping images to feature geometry
+1658,script_96538.txt,projects/ee-vulnerability-gee4geo/assets/ranyartRodrigo/mexicoContorno,ActOn,Masking clouds and cirrus
+1659,script_96538.txt,COPERNICUS/S2,ActOn,Calculating vegetation indices
+1660,script_96538.txt,COPERNICUS/S2,ActOn,Reducing image regions to median values
+1661,script_96558.txt,MODIS/006/MOD13Q1,ActOn,Filtering image collections by date
+1662,script_96558.txt,MODIS/006/MOD13Q1,ActOn,Calculating monthly sums and means
+1663,script_96558.txt,MODIS/006/MOD13Q1,ActOn,Resampling images to 250m resolution
+1664,script_96558.txt,UCSB-CHG/CHIRPS/DAILY,ActOn,Calculating spatial correlation
+1665,script_96558.txt,UCSB-CHG/CHIRPS/DAILY,ActOn,Zonal statistics calculation
+1666,script_96558.txt,FAO/GAUL/2015/level1,ActOn,Joining image collections
+1667,script_96558.txt,FAO/GAUL/2015/level1,ActOn,Scatter plot creation
+1668,script_96578.txt,COPERNICUS/S2_SR,ActOn,Filtering image collection by date
+1669,script_96578.txt,COPERNICUS/S2_SR,ActOn,Filtering image collection by cloud percentage
+1670,script_96578.txt,COPERNICUS/S2_SR,ActOn,Calculating NDVI
+1671,script_96578.txt,COPERNICUS/S2_SR,ActOn,Subtracting NDVI values
+1672,script_96578.txt,MODIS/006/MOD14A1,ActOn,Converting Kelvin to Celsius
+1673,script_96578.txt,MODIS/006/MOD14A1,ActOn,Calculating max temperature
+1674,script_96578.txt,MODIS/006/MOD14A1,ActOn,Unmasking fire probability
+1675,script_96578.txt,MODIS/006/MOD11A1,ActOn,Creating fire mask
+1676,script_96593.txt,MODIS/MOD09GA_006_NDVI,ActOn,Filter image collection by date range and area of interest
+1677,script_96593.txt,MODIS/MOD09GA_006_NDVI,ActOn,Compute NDVI values for an image
+1678,script_96593.txt,MODIS/MOD09GA_006_NDVI,ActOn,Compute mean NDVI values for each step
+1679,script_96593.txt,USGS/SRTMGL1_003,ActOn,Create a buffer around sample points
+1680,script_96593.txt,MODIS/006/MCD12Q1,ActOn,Compute mean NDVI values for each step
+1681,script_96593.txt,COPERNICUS/S2_SR,ActOn,Extract RGB image with the greenest pixels
+1682,script_96611.txt,LANDSAT/LC08/C01/T1,ActOn,Filtering image collection by date
+1683,script_96611.txt,LANDSAT/LC08/C01/T1,ActOn,Calculating median of image collection
+1684,script_96611.txt,LANDSAT/LC08/C01/T1,ActOn,Compositing images
+1685,script_96611.txt,LANDSAT/LC08/C01/T1,ActOn,Calculating NDVI
+1686,script_96611.txt,LANDSAT/LC08/C01/T1,ActOn,Creating NDVI collection
+1687,script_96611.txt,LANDSAT/LC08/C01/T1,ActOn,Calculating max NDVI
+1688,script_96611.txt,LANDSAT/LC08/C01/T1,ActOn,Reducing region to mean
+1689,script_96611.txt,LANDSAT/LC08/C01/T1,ActOn,Exporting image to drive
+1690,script_96611.txt,LANDSAT/LC08/C01/T1,ActOn,Calculating pixel area
+1691,script_96611.txt,LANDSAT/LC08/C01/T1,ActOn,Creating histogram
+1692,script_97207.txt,users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016,ActOn,Filtering image collection by date and bounds
+1693,script_97207.txt,users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016,ActOn,Calculating NDVI index
+1694,script_97207.txt,users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016,ActOn,Classifying burned and unburned areas
+1695,script_97207.txt,users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016,ActOn,Evaluating classification accuracy
+1696,script_97207.txt,COPERNICUS/S2,ActOn,Filtering image collection by date and bounds
+1697,script_97207.txt,COPERNICUS/S2,ActOn,Calculating NDVI index
+1698,script_97207.txt,COPERNICUS/S2,ActOn,Classifying burned and unburned areas
+1699,script_97207.txt,COPERNICUS/S2,ActOn,Evaluating classification accuracy
+1700,script_97208.txt,users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016,ActOn,Filtering image collection by date and bounds
+1701,script_97208.txt,users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016,ActOn,Calculating vegetation indices
+1702,script_97208.txt,users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016,ActOn,Classifying burned and unburned areas
+1703,script_97208.txt,users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016,ActOn,Evaluating classification accuracy
+1704,script_97208.txt,COPERNICUS/S2,ActOn,Filtering image collection by date and bounds
+1705,script_97208.txt,COPERNICUS/S2,ActOn,Calculating vegetation indices
+1706,script_97208.txt,COPERNICUS/S2,ActOn,Classifying burned and unburned areas
+1707,script_97208.txt,COPERNICUS/S2,ActOn,Evaluating classification accuracy
+1708,script_97209.txt,users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016,ActOn,Filtering image collection by date and bounds
+1709,script_97209.txt,users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016,ActOn,Calculating vegetation indices
+1710,script_97209.txt,users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016,ActOn,Classifying images using machine learning algorithms
+1711,script_97209.txt,COPERNICUS/S2,ActOn,Filtering image collection by date and bounds
+1712,script_97209.txt,COPERNICUS/S2,ActOn,Calculating vegetation indices
+1713,script_97209.txt,COPERNICUS/S2,ActOn,Classifying images using machine learning algorithms
+1714,script_97210.txt,users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016,ActOn,Filtering image collection by date and bounds
+1715,script_97210.txt,users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016,ActOn,Calculating vegetation indices
+1716,script_97210.txt,users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016,ActOn,Classifying images using machine learning algorithms
+1717,script_97210.txt,COPERNICUS/S2,ActOn,Filtering image collection by date and bounds
+1718,script_97210.txt,COPERNICUS/S2,ActOn,Calculating vegetation indices
+1719,script_97210.txt,COPERNICUS/S2,ActOn,Classifying images using machine learning algorithms
+1720,script_97211.txt,users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016,ActOn,Filtering image collection by date and bounds
+1721,script_97211.txt,users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016,ActOn,Calculating vegetation indices
+1722,script_97211.txt,users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016,ActOn,Classifying images using machine learning algorithms
+1723,script_97211.txt,COPERNICUS/S2,ActOn,Filtering image collection by date and bounds
+1724,script_97211.txt,COPERNICUS/S2,ActOn,Calculating vegetation indices
+1725,script_97211.txt,COPERNICUS/S2,ActOn,Classifying images using machine learning algorithms
+1726,script_97212.txt,users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016,ActOn,Filtering image collection by date and geometry
+1727,script_97212.txt,users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016,ActOn,Calculating vegetation indices
+1728,script_97212.txt,users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016,ActOn,Classifying images using machine learning algorithms
+1729,script_97212.txt,users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016,ActOn,Stratified sampling for training and validation
+1730,script_97212.txt,COPERNICUS/S2,ActOn,Filtering image collection by date and geometry
+1731,script_97212.txt,COPERNICUS/S2,ActOn,Calculating vegetation indices
+1732,script_97212.txt,COPERNICUS/S2,ActOn,Classifying images using machine learning algorithms
+1733,script_97212.txt,COPERNICUS/S2,ActOn,Stratified sampling for training and validation
+1734,script_97250.txt,users/ujavalgandhi/public/soi_india_boundary,ActOn,Clip image to geometry
+1735,script_97250.txt,users/ujavalgandhi/public/soi_india_boundary,ActOn,Extract landcover classification
+1736,script_97250.txt,users/ujavalgandhi/public/soi_india_boundary,ActOn,Create image with agriculture and urban zones
+1737,script_97250.txt,NOAA/DMSP-OLS/NIGHTTIME_LIGHTS,ActOn,Filter image collection by date
+1738,script_97250.txt,NOAA/DMSP-OLS/NIGHTTIME_LIGHTS,ActOn,Classify nightlights image into categorical values
+1739,script_97250.txt,NOAA/DMSP-OLS/NIGHTTIME_LIGHTS,ActOn,Compute statistics on classified image using grouped reducer
+1740,script_97250.txt,MODIS/006/MCD12Q1,ActOn,Select specific band from image collection
+1741,script_97250.txt,MODIS/006/MCD12Q1,ActOn,Extract landcover classification
+1742,script_97250.txt,MODIS/006/MCD12Q1,ActOn,Create image with agriculture and urban zones
+1743,script_97292.txt,USDA/NAIP/DOQQ,ActOn,Filter image collection by date and bounds
+1744,script_97292.txt,USDA/NAIP/DOQQ,ActOn,Clip image to area of interest
+1745,script_97292.txt,USDA/NAIP/DOQQ,ActOn,Perform image segmentation
+1746,script_97292.txt,USDA/NAIP/DOQQ,ActOn,Compute per-cluster standard deviation
+1747,script_97292.txt,USDA/NAIP/DOQQ,ActOn,Compute cluster area and perimeter
+1748,script_97292.txt,USDA/NAIP/DOQQ,ActOn,Compute cluster width and height
+1749,script_97292.txt,USDA/NASS/CDL/2016,ActOn,Train classifier for land cover classification
+1750,script_97292.txt,USDA/NASS/CDL/2016,ActOn,Classify objects using trained classifier
+1751,script_97292.txt,USDA/NASS/CDL/2016,ActOn,Compute spectral angle between pixels and cluster means
+1752,script_97292.txt,USDA/NASS/CDL/2016,ActOn,Find pixels with maximum spectral angle
+1753,script_97295.txt,GOOGLE/DYNAMICWORLD/V1,ActOn,Filter image collection by date
+1754,script_97295.txt,GOOGLE/DYNAMICWORLD/V1,ActOn,Filter image collection by region
+1755,script_97295.txt,GOOGLE/DYNAMICWORLD/V1,ActOn,Join image collections by system:index
+1756,script_97295.txt,COPERNICUS/S2,ActOn,Extract most likely class label
+1757,script_97295.txt,COPERNICUS/S2,ActOn,Create visualization with hillshade
+1758,script_97367.txt,LANDSAT/LT4_L1T_TOA,ActOn,Acquiring Landsat TOA image collection
+1759,script_97367.txt,LANDSAT/LT5_L1T_TOA,ActOn,Acquiring Landsat TOA image collection
+1760,script_97367.txt,LANDSAT/LC8_L1T_TOA,ActOn,Acquiring Landsat TOA image collection
+1761,script_97367.txt,LANDSAT/LE7_L1T_TOA,ActOn,Acquiring Landsat TOA image collection
+1762,script_97367.txt,LANDSAT/LT4_L1T_TOA,ActOn,Computing cloud score and masking clouds
+1763,script_97367.txt,LANDSAT/LT5_L1T_TOA,ActOn,Computing cloud score and masking clouds
+1764,script_97367.txt,LANDSAT/LC8_L1T_TOA,ActOn,Computing cloud score and masking clouds
+1765,script_97367.txt,LANDSAT/LE7_L1T_TOA,ActOn,Computing cloud score and masking clouds
+1766,script_97367.txt,LANDSAT/LT4_L1T_TOA,ActOn,Finding and masking dark outliers
+1767,script_97367.txt,LANDSAT/LT5_L1T_TOA,ActOn,Finding and masking dark outliers
+1768,script_97367.txt,LANDSAT/LC8_L1T_TOA,ActOn,Finding and masking dark outliers
+1769,script_97367.txt,LANDSAT/LE7_L1T_TOA,ActOn,Finding and masking dark outliers
+1770,script_97367.txt,LANDSAT/LT4_L1T_TOA,ActOn,Projecting cloud and shadow masking
+1771,script_97367.txt,LANDSAT/LT5_L1T_TOA,ActOn,Projecting cloud and shadow masking
+1772,script_97367.txt,LANDSAT/LC8_L1T_TOA,ActOn,Projecting cloud and shadow masking
+1773,script_97367.txt,LANDSAT/LE7_L1T_TOA,ActOn,Projecting cloud and shadow masking
+1774,script_97367.txt,LANDSAT/LT4_L1T_TOA,ActOn,Calculating NDVI
+1775,script_97367.txt,LANDSAT/LT5_L1T_TOA,ActOn,Calculating NDVI
+1776,script_97367.txt,LANDSAT/LC8_L1T_TOA,ActOn,Calculating NDVI
+1777,script_97367.txt,LANDSAT/LE7_L1T_TOA,ActOn,Calculating NDVI
+1778,script_97367.txt,FAO/GAUL/2015/level0,ActOn,None
+1779,script_97371.txt,FAO/GAUL/2015/level1,ActOn,Selecting landcover band
+1780,script_97371.txt,FAO/GAUL/2015/level1,ActOn,Stratified sampling
+1781,script_97371.txt,FAO/GAUL/2015/level1,ActOn,Generating points
+1782,script_97371.txt,USGS/GFSAD1000_V0,ActOn,Filtering image collection by date
+1783,script_97371.txt,USGS/GFSAD1000_V0,ActOn,Masking cloud and snow pixels
+1784,script_97371.txt,USGS/GFSAD1000_V0,ActOn,Removing cloud and snow pixels
+1785,script_97371.txt,COPERNICUS/S2_SR,ActOn,Adding NDVI band
+1786,script_97371.txt,COPERNICUS/S2_SR,ActOn,Calculating NDVI time series
+1787,script_97371.txt,COPERNICUS/S2_SR,ActOn,Exporting time series to CSV
+1788,script_97430.txt,COPERNICUS/S2_CLOUD_PROBABILITY,ActOn,Filtering image collection by cloud probability
+1789,script_97430.txt,COPERNICUS/S2_CLOUD_PROBABILITY,ActOn,Adding cloud probability bands to images
+1790,script_97430.txt,COPERNICUS/S2_CLOUD_PROBABILITY,ActOn,Identifying cloud shadows
+1791,script_97430.txt,COPERNICUS/S2_CLOUD_PROBABILITY,ActOn,Applying cloud shadow mask
+1792,script_97430.txt,COPERNICUS/S2,ActOn,Adding cloud probability bands to images
+1793,script_97430.txt,COPERNICUS/S2,ActOn,Calculating vegetation indices
+1794,script_97431.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Filtering image collection by cloud cover
+1795,script_97431.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Calculating MNDWI index
+1796,script_97431.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Applying cloud score algorithm
+1797,script_97431.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Masking cloud pixels
+1798,script_97431.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Computing quality mosaic
+1799,script_97431.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Computing median image
+1800,script_97431.txt,users/eggenm/chad_rivers,ActOn,Calculating MNDWI index
+1801,script_97431.txt,users/eggenm/chad_rivers,ActOn,Computing median image
+1802,script_97446.txt,COPERNICUS/S2,ActOn,Filtering image collection by date and cloud percentage
+1803,script_97446.txt,COPERNICUS/S2,ActOn,Masking clouds and cirrus from images
+1804,script_97446.txt,COPERNICUS/S2,ActOn,Calculating median of image collection
+1805,script_97446.txt,COPERNICUS/S2,ActOn,Downloading image as GeoTIFF
+1806,script_97475.txt,COPERNICUS/S2,ActOn,Masking clouds from Sentinel-2 images
+1807,script_97475.txt,COPERNICUS/S2,ActOn,Filtering image collection by date and bounds
+1808,script_97475.txt,COPERNICUS/S2,ActOn,Calculating median of image collection
+1809,script_97475.txt,COPERNICUS/S2,ActOn,"Stacking DEM, slope, and aspect with imagery"
+1810,script_97475.txt,COPERNICUS/S2,ActOn,Applying classification model to image
+1811,script_97475.txt,USGS/NED,ActOn,Generating slope and aspect from DEM
+1812,script_97475.txt,USGS/NED,ActOn,"Stacking DEM, slope, and aspect with imagery"
+1813,script_97477.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Filtering cloud cover from Landsat 8 images
+1814,script_97477.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Clipping images to Oneida Lake ROI
+1815,script_97477.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Computing NDVI
+1816,script_97477.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Computing EVI
+1817,script_97477.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Computing SABI
+1818,script_97479.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Filter image collection by date range
+1819,script_97479.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Filter image collection by geography
+1820,script_97479.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Apply cloud filter mask
+1821,script_97479.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Calculate image statistics
+1822,script_97479.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Clip image to ROI
+1823,script_97479.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Create natural color image
+1824,script_97479.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Create false color image
+1825,script_97507.txt,TIGER/2018/Counties,ActOn,Filtering county boundaries
+1826,script_97507.txt,LANDSAT/LC08/C02/T1_L2,ActOn,Loading Landsat 8 image collection
+1827,script_97507.txt,LANDSAT/LC08/C02/T1_L2,ActOn,Filtering images by cloud cover and location
+1828,script_97507.txt,LANDSAT/LC08/C02/T1_L2,ActOn,Extracting dates from image collection
+1829,script_97507.txt,LANDSAT/LC08/C02/T1_L2,ActOn,Creating visualization parameters
+1830,script_97507.txt,LANDSAT/LC08/C02/T1_L2,ActOn,Displaying images with dates
+1831,script_97508.txt,LANDSAT/LC08/C02/T1_L2,ActOn,Load landsat image for reference
+1832,script_97508.txt,LANDSAT/LC08/C02/T1_L2,ActOn,Create NDVI time series
+1833,script_97508.txt,LANDSAT/LC08/C02/T1_L2,ActOn,Filter image collection
+1834,script_97508.txt,LANDSAT/LC08/C02/T1_L2,ActOn,Apply NDVI function
+1835,script_97508.txt,LANDSAT/LC08/C02/T1_L2,ActOn,Add map layer
+1836,script_97508.txt,LANDSAT/LC08/C02/T1_L2,ActOn,Center map
+1837,script_97509.txt,LANDSAT/LC08/C01/T1_SR/LC08_045033_20170925,ActOn,Load pre-fire image
+1838,script_97509.txt,LANDSAT/LC08/C01/T1_SR/LC08_045033_20170925,ActOn,Visualize true color image
+1839,script_97509.txt,LANDSAT/LC08/C01/T1_SR/LC08_045033_20170925,ActOn,Visualize false color infrared image
+1840,script_97509.txt,LANDSAT/LC08/C01/T1_SR/LC08_045033_20170925,ActOn,Visualize false color SWIR image
+1841,script_97509.txt,LANDSAT/LC08/C01/T1_SR/LC08_045033_20180928,ActOn,Load post-fire image
+1842,script_97509.txt,LANDSAT/LC08/C01/T1_SR/LC08_045033_20180928,ActOn,Visualize true color image
+1843,script_97509.txt,LANDSAT/LC08/C01/T1_SR/LC08_045033_20180928,ActOn,Visualize false color infrared image
+1844,script_97509.txt,LANDSAT/LC08/C01/T1_SR/LC08_045033_20180928,ActOn,Visualize false color SWIR image
+1845,script_97510.txt,LANDSAT/LC08/C01/T1_SR/LC08_045033_20170925,ActOn,Compute True Color Image
+1846,script_97510.txt,LANDSAT/LC08/C01/T1_SR/LC08_045033_20180928,ActOn,Compute True Color Image
+1847,script_97510.txt,LANDSAT/LC08/C01/T1_SR/LC08_045033_20170925,ActOn,Compute Normalized Burn Ratio
+1848,script_97510.txt,LANDSAT/LC08/C01/T1_SR/LC08_045033_20180928,ActOn,Compute Normalized Burn Ratio
+1849,script_97510.txt,LANDSAT/LC08/C01/T1_SR/LC08_045033_20170925,ActOn,Display Image Layers
+1850,script_97510.txt,LANDSAT/LC08/C01/T1_SR/LC08_045033_20180928,ActOn,Display Image Layers
+1851,script_97510.txt,LANDSAT/LC08/C01/T1_SR/LC08_045033_20170925,ActOn,Clip to Fire Burn Area
+1852,script_97510.txt,LANDSAT/LC08/C01/T1_SR/LC08_045033_20180928,ActOn,Clip to Fire Burn Area
+1853,script_97512.txt,LANDSAT/LC08/C01/T1_SR/LC08_045033_20170925,ActOn,Compute normalized difference burn ratio
+1854,script_97512.txt,LANDSAT/LC08/C01/T1_SR/LC08_045033_20180928,ActOn,Compute normalized difference burn ratio
+1855,script_97512.txt,LANDSAT/LC08/C01/T1_SR/LC08_045033_20170925,ActOn,Clip image to fire perimeter
+1856,script_97512.txt,LANDSAT/LC08/C01/T1_SR/LC08_045033_20180928,ActOn,Clip image to fire perimeter
+1857,script_97512.txt,LANDSAT/LC08/C01/T1_SR/LC08_045033_20170925,ActOn,Reclassify image to burn severity map
+1858,script_97512.txt,LANDSAT/LC08/C01/T1_SR/LC08_045033_20180928,ActOn,Reclassify image to burn severity map
+1859,script_97512.txt,users/cade/ca_MendocinoComplex,ActOn,Create histogram of burn severity zones
+1860,script_97512.txt,users/cade/ca_MendocinoComplex,ActOn,Generate thumbnail of burn severity map
+1861,script_97538.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Filtering image collection by geometry and date
+1862,script_97538.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Calculating median of image collection
+1863,script_97538.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Clipping image to geometry
+1864,script_97538.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Calculating NDVI and SAVI indices
+1865,script_97538.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Exporting images to Drive
+1866,script_97539.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Filtering image collection by geometry and date
+1867,script_97539.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Calculating median of image collection
+1868,script_97539.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Clipping image to geometry
+1869,script_97539.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Calculating NDVI and SAVI indices
+1870,script_97539.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Exporting images to Drive
+1871,script_97582.txt,LANDSAT/LC08/C02/T1_TOA,ActOn,Filtering image collection by date and cloud cover
+1872,script_97582.txt,LANDSAT/LC08/C02/T1_TOA,ActOn,Masking clouds from images
+1873,script_97582.txt,LANDSAT/LC08/C02/T1_TOA,ActOn,Mosaicking images
+1874,script_97582.txt,LANDSAT/LC08/C02/T1_TOA,ActOn,Visualizing images
+1875,script_97582.txt,users/avaise99/KP_Boundary,ActOn,Clipping images to boundary
+1876,script_97609.txt,users/eijulio/valles_altos_estados,ActOn,Filtering image collections by date
+1877,script_97609.txt,users/eijulio/valles_altos_estados,ActOn,Clipping images to area of interest
+1878,script_97609.txt,users/eijulio/valles_altos_estados,ActOn,Reducing regions to calculate mean values
+1879,script_97609.txt,FAO/GAUL_SIMPLIFIED_500m/2015/level2,ActOn,Styling vectors for visualization
+1880,script_97609.txt,ECMWF/ERA5/DAILY,ActOn,Calculating monthly totals from image collections
+1881,script_97609.txt,UCSB-CHG/CHIRPS/PENTAD,ActOn,Calculating monthly totals from image collections
+1882,script_97609.txt,ECMWF/ERA5/DAILY,ActOn,Computing average for each month across all years
+1883,script_97609.txt,UCSB-CHG/CHIRPS/PENTAD,ActOn,Computing average for each month across all years
+1884,script_97609.txt,ECMWF/ERA5/DAILY,ActOn,Calculating seasonal deviation from normal rainfall
+1885,script_97609.txt,UCSB-CHG/CHIRPS/PENTAD,ActOn,Calculating seasonal deviation from normal rainfall
+1886,script_97609.txt,ECMWF/ERA5/DAILY,ActOn,Exporting images and tables to Drive
+1887,script_97609.txt,UCSB-CHG/CHIRPS/PENTAD,ActOn,Exporting images and tables to Drive
+1888,script_97610.txt,ECMWF/ERA5/DAILY,ActOn,Filtering image collection by date
+1889,script_97610.txt,ECMWF/ERA5/DAILY,ActOn,Converting temperature units
+1890,script_97610.txt,ECMWF/ERA5/DAILY,ActOn,Calculating minimum temperature
+1891,script_97610.txt,ECMWF/ERA5/DAILY,ActOn,Calculating maximum temperature
+1892,script_97610.txt,ECMWF/ERA5/DAILY,ActOn,Calculating average temperature
+1893,script_97610.txt,FAO/GAUL_SIMPLIFIED_500m/2015/level2,ActOn,Clipping images to AOI
+1894,script_97610.txt,FAO/GAUL_SIMPLIFIED_500m/2015/level2,ActOn,Visualizing data on a map
+1895,script_97610.txt,FAO/GAUL_SIMPLIFIED_500m/2015/level2,ActOn,Exporting images to Google Drive
+1896,script_97651.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Filter image collection by date and path/row
+1897,script_97651.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Mask occluded pixels using cloud confidence and other flags
+1898,script_97651.txt,LANDSAT/LE07/C01/T1_SR,ActOn,Export image collection to Google Drive
+1899,script_97683.txt,NOAA/VIIRS/DNB/MONTHLY_V1/VCMCFG,ActOn,Filtering Image Collection by Date
+1900,script_97683.txt,NOAA/VIIRS/001/VNP09GA,ActOn,Filtering Image Collection by Date
+1901,script_97683.txt,NOAA/VIIRS/DNB/MONTHLY_V1/VCMCFG,ActOn,Filtering Image Collection by Metadata
+1902,script_97683.txt,NOAA/VIIRS/001/VNP09GA,ActOn,Filtering Image Collection by Metadata
+1903,script_97683.txt,NOAA/VIIRS/DNB/MONTHLY_V1/VCMCFG,ActOn,Calculating Median Image
+1904,script_97683.txt,NOAA/VIIRS/001/VNP09GA,ActOn,Calculating Median Image
+1905,script_97683.txt,VITO/PROBAV/C1/S1_TOC_100M,ActOn,Filtering Image Collection by Bounds
+1906,script_97683.txt,VITO/PROBAV/C1/S1_TOC_100M,ActOn,Clipping Image to Geometry
+1907,script_97683.txt,MODIS/006/MCD43A1,ActOn,Filtering Image Collection by Metadata
+1908,script_97683.txt,MODIS/006/MCD43A1,ActOn,Calculating Median Image
+1909,script_97683.txt,ASTER/AST_L1T_003,ActOn,Filtering Image Collection by Bounds
+1910,script_97683.txt,ASTER/AST_L1T_003,ActOn,Clipping Image to Geometry
+1911,script_97683.txt,LANDSAT/LT04/C01/T1_TOA,ActOn,Filtering Image Collection by Date
+1912,script_97683.txt,LANDSAT/LT05/C01/T1_TOA,ActOn,Filtering Image Collection by Date
+1913,script_97683.txt,LANDSAT/LE07/C01/T1_TOA,ActOn,Filtering Image Collection by Date
+1914,script_97683.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Filtering Image Collection by Date
+1915,script_97683.txt,LANDSAT/LT04/C01/T1_TOA,ActOn,Filtering Image Collection by Bounds
+1916,script_97683.txt,LANDSAT/LT05/C01/T1_TOA,ActOn,Filtering Image Collection by Bounds
+1917,script_97683.txt,LANDSAT/LE07/C01/T1_TOA,ActOn,Filtering Image Collection by Bounds
+1918,script_97683.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Filtering Image Collection by Bounds
+1919,script_97683.txt,LANDSAT/LT04/C01/T1_TOA,ActOn,Clipping Image to Geometry
+1920,script_97683.txt,LANDSAT/LT05/C01/T1_TOA,ActOn,Clipping Image to Geometry
+1921,script_97683.txt,LANDSAT/LE07/C01/T1_TOA,ActOn,Clipping Image to Geometry
+1922,script_97683.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Clipping Image to Geometry
+1923,script_97683.txt,LANDSAT/LT04/C01/T1_TOA,ActOn,Exporting Image to Drive
+1924,script_97683.txt,LANDSAT/LT05/C01/T1_TOA,ActOn,Exporting Image to Drive
+1925,script_97683.txt,LANDSAT/LE07/C01/T1_TOA,ActOn,Exporting Image to Drive
+1926,script_97683.txt,LANDSAT/LC08/C01/T1_TOA,ActOn,Exporting Image to Drive
+1927,script_97683.txt,COPERNICUS/S3/OLCI,ActOn,Visualizing Image in Map
+1928,script_97683.txt,COPERNICUS/S2,ActOn,Visualizing Image in Map
+1929,script_97700.txt,COPERNICUS/S2,ActOn,Filter image collection by date and cloud coverage
+1930,script_97700.txt,COPERNICUS/S2,ActOn,Compute Normalized Difference Vegetation Index
+1931,script_97700.txt,COPERNICUS/S2,ActOn,Cluster image using k-means algorithm
+1932,script_97700.txt,COPERNICUS/S1_GRD,ActOn,Filter SAR image by date and polarization
+1933,script_97700.txt,COPERNICUS/S1_GRD,ActOn,Apply speckle filter to SAR image
+1934,script_97700.txt,COPERNICUS/S1_GRD,ActOn,Cluster SAR image using k-means algorithm
+1935,script_97704.txt,NOAA/NGDC/ETOPO1,ActOn,Extracting global DEMs
+1936,script_97704.txt,NASA/ASTER_GED/AG100_003,ActOn,Extracting global DEMs
+1937,script_97704.txt,OSU/GIMP/DEM,ActOn,Extracting global DEMs
+1938,script_97704.txt,CPOM/CryoSat2/ANTARCTICA_DEM,ActOn,Extracting global DEMs
+1939,script_97704.txt,JAXA/ALOS/AW3D30_V1_1,ActOn,Extracting global DEMs
+1940,script_97704.txt,NOAA/NGDC/ETOPO1,ActOn,Visualizing DEMs
+1941,script_97704.txt,NASA/ASTER_GED/AG100_003,ActOn,Visualizing DEMs
+1942,script_97704.txt,OSU/GIMP/DEM,ActOn,Visualizing DEMs
+1943,script_97704.txt,CPOM/CryoSat2/ANTARCTICA_DEM,ActOn,Visualizing DEMs
+1944,script_97704.txt,JAXA/ALOS/AW3D30_V1_1,ActOn,Visualizing DEMs
+1945,script_97704.txt,USGS/GMTED2010,ActOn,Clipping DEMs to a specific geometry
+1946,script_97704.txt,USGS/SRTMGL1_003,ActOn,Clipping DEMs to a specific geometry
+1947,script_97704.txt,USGS/GTOPO30,ActOn,Clipping DEMs to a specific geometry
+1948,script_97704.txt,USGS/GMTED2010,ActOn,Exporting DEMs to Drive
+1949,script_97704.txt,USGS/SRTMGL1_003,ActOn,Exporting DEMs to Drive
+1950,script_97704.txt,USGS/GTOPO30,ActOn,Exporting DEMs to Drive
+1951,script_97704.txt,WWF/HydroSHEDS/03CONDEM,ActOn,Generating histogram of DEM values
+1952,script_97704.txt,WWF/HydroSHEDS/30CONDEM,ActOn,Generating histogram of DEM values
+1953,script_97704.txt,WWF/HydroSHEDS/15CONDEM,ActOn,Generating histogram of DEM values
+1954,script_97718.txt,COPERNICUS/S2,ActOn,Filtering image collection by date and geometry
+1955,script_97718.txt,COPERNICUS/S2,ActOn,Masking cloud from image
+1956,script_97718.txt,COPERNICUS/S2,ActOn,Calculating NDVI index
+1957,script_97718.txt,COPERNICUS/S2,ActOn,Calculating MSI index
+1958,script_97718.txt,COPERNICUS/S2,ActOn,Creating median composite image
+1959,script_97718.txt,COPERNICUS/S2,ActOn,Exporting image to Drive
+1960,script_97718.txt,COPERNICUS/S2,ActOn,Creating time series chart
+1961,script_97724.txt,TIGER/2018/States,ActOn,Filtering image collection by date
+1962,script_97724.txt,TIGER/2018/States,ActOn,Merging observations for each day
+1963,script_97724.txt,TIGER/2018/States,ActOn,Joining tables based on ID
+1964,script_97724.txt,users/eisen520/chinesePrivet,ActOn,Masking cloud and snow pixels
+1965,script_97724.txt,users/eisen520/chinesePrivet,ActOn,Adding NDVI band
+1966,script_97724.txt,users/eisen520/chinesePrivet,ActOn,Reducing regions to extract NDVI values
+1967,script_97724.txt,COPERNICUS/S2_SR,ActOn,Masking cloud and snow pixels
+1968,script_97724.txt,COPERNICUS/S2_SR,ActOn,Adding NDVI band
+1969,script_97724.txt,COPERNICUS/S2_SR,ActOn,Reducing regions to extract NDVI values
+1970,script_97954.txt,users/EL/Bahamas,ActOn,Filtering image collections by date and cloud cover
+1971,script_97954.txt,users/EL/Bahamas_class,ActOn,Filtering image collections by date and cloud cover
+1972,script_97954.txt,users/EL/Bahamas,ActOn,Classifying land cover using CART algorithm
+1973,script_97954.txt,users/EL/Bahamas_class,ActOn,Classifying land cover using CART algorithm
+1974,script_97954.txt,LANDSAT/LT5_L1T,ActOn,Filtering image collections by date and cloud cover
+1975,script_97954.txt,LANDSAT/LE7_L1T,ActOn,Filtering image collections by date and cloud cover
+1976,script_97954.txt,LANDSAT/LC08/C01/T1_RT,ActOn,Filtering image collections by date and cloud cover
+1977,script_97954.txt,LANDSAT/LT5_L1T,ActOn,Compositing images
+1978,script_97954.txt,LANDSAT/LE7_L1T,ActOn,Compositing images
+1979,script_97954.txt,LANDSAT/LC08/C01/T1_RT,ActOn,Compositing images
+1980,script_97954.txt,LANDSAT/LT5_L1T,ActOn,Calculating spectral ratios
+1981,script_97954.txt,LANDSAT/LE7_L1T,ActOn,Calculating spectral ratios
+1982,script_97954.txt,LANDSAT/LC08/C01/T1_RT,ActOn,Calculating spectral ratios
+1983,script_97954.txt,LANDSAT/LT5_L1T,ActOn,Masking non-forest areas
+1984,script_97954.txt,LANDSAT/LE7_L1T,ActOn,Masking non-forest areas
+1985,script_97954.txt,LANDSAT/LC08/C01/T1_RT,ActOn,Masking non-forest areas
+1986,script_97974.txt,users/EL/Grenada,ActOn,Buffering country borders
+1987,script_97974.txt,users/EL/G_forest,ActOn,Buffering country borders
+1988,script_97974.txt,users/EL/Grenada,ActOn,Masking non-forest areas
+1989,script_97974.txt,users/EL/G_forest,ActOn,Masking non-forest areas
+1990,script_97974.txt,users/EL/Grenada,ActOn,Training a classifier for land cover classification
+1991,script_97974.txt,users/EL/G_forest,ActOn,Training a classifier for land cover classification
+1992,script_97974.txt,users/EL/Grenada,ActOn,Classifying land cover
+1993,script_97974.txt,users/EL/G_forest,ActOn,Classifying land cover
+1994,script_97974.txt,LANDSAT/LE7_L1T,ActOn,Filtering Landsat imagery by date and cloud cover
+1995,script_97974.txt,LANDSAT/LE7_L1T,ActOn,Compositing Landsat imagery
+1996,script_97974.txt,LANDSAT/LE7_L1T,ActOn,Calculating spectral indices
+1997,script_97974.txt,LANDSAT/LE7_L1T,ActOn,Merging image bands
+1998,script_97974.txt,LANDSAT/LC08/C01/T1_RT,ActOn,Filtering Landsat imagery by date and cloud cover
+1999,script_97974.txt,LANDSAT/LC08/C01/T1_RT,ActOn,Compositing Landsat imagery
+2000,script_97974.txt,LANDSAT/LC08/C01/T1_RT,ActOn,Calculating spectral indices
+2001,script_97974.txt,LANDSAT/LC08/C01/T1_RT,ActOn,Merging image bands
+2002,script_97988.txt,LANDSAT/LT5_L1T,ActOn,Filtering image collections by date and cloud cover
+2003,script_97988.txt,LANDSAT/LE7_L1T,ActOn,Filtering image collections by date and cloud cover
+2004,script_97988.txt,LANDSAT/LC08/C01/T1_RT,ActOn,Filtering image collections by date and cloud cover
+2005,script_97988.txt,LANDSAT/LT5_L1T,ActOn,Creating mosaics from Landsat and Sentinel imagery
+2006,script_97988.txt,LANDSAT/LE7_L1T,ActOn,Creating mosaics from Landsat and Sentinel imagery
+2007,script_97988.txt,LANDSAT/LC08/C01/T1_RT,ActOn,Creating mosaics from Landsat and Sentinel imagery
+2008,script_97988.txt,LANDSAT/LT5_L1T,ActOn,Calculating spectral indices
+2009,script_97988.txt,LANDSAT/LE7_L1T,ActOn,Calculating spectral indices
+2010,script_97988.txt,LANDSAT/LC08/C01/T1_RT,ActOn,Calculating spectral indices
+2011,script_97988.txt,COPERNICUS/S2,ActOn,Creating mosaics from Landsat and Sentinel imagery
+2012,script_97988.txt,COPERNICUS/S2,ActOn,Calculating spectral indices
+2013,script_97988.txt,JRC/GSW1_0/GlobalSurfaceWater,ActOn,Masking water areas
+2014,script_97988.txt,users/EL/mapa_forest_hybrid_Belize,ActOn,Classifying land cover using machine learning
+2015,script_97988.txt,users/EL/mapa_forest_hybrid_Belize,ActOn,Calculating forest area statistics
+2016,script_97991.txt,users/EL/TrinidadandTobago,ActOn,Upload and visualize shapefile
+2017,script_97991.txt,users/EL/trinidad_forest_type_landcover_28july2011,ActOn,Upload and visualize shapefile
+2018,script_97991.txt,users/EL/tobago_forest_type_landcover_06may2011,ActOn,Upload and visualize shapefile
+2019,script_97991.txt,users/EL/TrinidadandTobago,ActOn,Create a polygon
+2020,script_97991.txt,users/EL/trinidad_forest_type_landcover_28july2011,ActOn,Create a polygon
+2021,script_97991.txt,users/EL/tobago_forest_type_landcover_06may2011,ActOn,Create a polygon
+2022,script_97991.txt,users/EL/TrinidadandTobago,ActOn,Classify image using training points
+2023,script_97991.txt,users/EL/trinidad_forest_type_landcover_28july2011,ActOn,Classify image using training points
+2024,script_97991.txt,users/EL/tobago_forest_type_landcover_06may2011,ActOn,Classify image using training points
+2025,script_97991.txt,users/EL/TrinidadandTobago,ActOn,Post-classification editing
+2026,script_97991.txt,users/EL/trinidad_forest_type_landcover_28july2011,ActOn,Post-classification editing
+2027,script_97991.txt,users/EL/tobago_forest_type_landcover_06may2011,ActOn,Post-classification editing
+2028,script_97991.txt,users/EL/TrinidadandTobago,ActOn,Use masks for cities and water
+2029,script_97991.txt,users/EL/trinidad_forest_type_landcover_28july2011,ActOn,Use masks for cities and water
+2030,script_97991.txt,users/EL/tobago_forest_type_landcover_06may2011,ActOn,Use masks for cities and water
+2031,script_97991.txt,LANDSAT/LC8_L1T,ActOn,Upload and filter Landsat images
+2032,script_97991.txt,LANDSAT/LC8_L1T,ActOn,Create a mosaic with Landsat simple composite and ratio bands
+2033,script_97991.txt,LANDSAT/LC8_L1T,ActOn,Filter satellite images by season and year
+2034,script_97991.txt,COPERNICUS/S2,ActOn,Filter Sentinel images and quality bands
+2035,script_97991.txt,users/christinacorbane/MT_comp_proj,ActOn,None
+2036,script_97991.txt,JRC/GSW1_0/GlobalSurfaceWater,ActOn,None
+2037,script_97991.txt,users/EL/trinidad_forest_type_landcover_28july2011,ActOn,Export image to asset
+2038,script_97991.txt,users/EL/tobago_forest_type_landcover_06may2011,ActOn,Export image to asset
+2039,script_97991.txt,users/EL/trinidad_forest_type_landcover_28july2011,ActOn,Print statistics for forest area
+2040,script_97991.txt,users/EL/tobago_forest_type_landcover_06may2011,ActOn,Print statistics for forest area
+2041,script_98169.txt,users/elaurenyoung/usa_states,ActOn,Buffer creation around state and transect points
+2042,script_98169.txt,users/elaurenyoung/Site_summary_12_Apr_2022-point,ActOn,Buffer creation around state and transect points
+2043,script_98169.txt,users/elaurenyoung/usa_states,ActOn,"Reducing regions to calculate mean, standard deviation, and variance of NDVI"
+2044,script_98169.txt,users/elaurenyoung/Site_summary_12_Apr_2022-point,ActOn,"Reducing regions to calculate mean, standard deviation, and variance of NDVI"
+2045,script_98169.txt,LANDSAT/LC08/C02/T1_L2,ActOn,Image collection filtering by date and cloud cover
+2046,script_98169.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Image collection filtering by date and cloud cover
+2047,script_98169.txt,LANDSAT/LC08/C02/T1_L2,ActOn,Masking clouds and water in Landsat images
+2048,script_98169.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Masking clouds and water in Landsat images
+2049,script_98169.txt,LANDSAT/LC08/C02/T1_L2,ActOn,Calculating NDVI from Landsat images
+2050,script_98169.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Calculating NDVI from Landsat images
+2051,script_98257.txt,FAO/GAUL_SIMPLIFIED_500m/2015/level2,ActOn,Filtering image collections by date and metadata
+2052,script_98257.txt,FAO/GAUL_SIMPLIFIED_500m/2015/level2,ActOn,Creating mosaics from image collections
+2053,script_98257.txt,FAO/GAUL_SIMPLIFIED_500m/2015/level2,ActOn,Clipping images to area of interest
+2054,script_98257.txt,FAO/GAUL_SIMPLIFIED_500m/2015/level2,ActOn,Calculating mean and standard deviation of image collections
+2055,script_98257.txt,COPERNICUS/S1_GRD,ActOn,Applying threshold to identify flooded areas
+2056,script_98257.txt,COPERNICUS/S1_GRD,ActOn,Filtering image collections by date and metadata
+2057,script_98257.txt,COPERNICUS/S1_GRD,ActOn,Creating mosaics from image collections
+2058,script_98257.txt,COPERNICUS/S1_GRD,ActOn,Clipping images to area of interest
+2059,script_98257.txt,COPERNICUS/S1_GRD,ActOn,Calculating mean and standard deviation of image collections
+2060,script_98258.txt,COPERNICUS/S1_GRD,ActOn,Filtering image collection by date and metadata
+2061,script_98258.txt,COPERNICUS/S1_GRD,ActOn,Creating mosaic from image collection
+2062,script_98258.txt,COPERNICUS/S1_GRD,ActOn,Clipping image to area of interest
+2063,script_98258.txt,COPERNICUS/S1_GRD,ActOn,Calculating mean and standard deviation of image collection
+2064,script_98258.txt,COPERNICUS/S1_GRD,ActOn,Applying threshold to image collection
+2065,script_98258.txt,COPERNICUS/S1_GRD,ActOn,Masking flooded areas
+2066,script_98259.txt,FAO/GAUL_SIMPLIFIED_500m/2015/level2,ActOn,Filtering image collection by bounds and date
+2067,script_98259.txt,FAO/GAUL_SIMPLIFIED_500m/2015/level2,ActOn,Clipping image to boundary
+2068,script_98259.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Sorting image collection by cloud cover
+2069,script_98259.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Creating mosaic image
+2070,script_98259.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Calculating normalized difference water index
+2071,script_98259.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Subtracting images
+2072,script_98259.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Applying threshold to image
+2073,script_98259.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Detecting edges in image
+2074,script_98260.txt,FAO/GAUL_SIMPLIFIED_500m/2015/level2,ActOn,Filtering image collection by bounds and date
+2075,script_98260.txt,FAO/GAUL_SIMPLIFIED_500m/2015/level2,ActOn,Creating mosaic images and clipping to boundary
+2076,script_98260.txt,FAO/GAUL_SIMPLIFIED_500m/2015/level2,ActOn,Calculating normalized difference water index
+2077,script_98260.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Sorting image collection by cloud cover
+2078,script_98260.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Computing histogram of NIR band
+2079,script_98260.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Charting histogram
+2080,script_98260.txt,LANDSAT/LT05/C01/T1_SR,ActOn,Otsu thresholding for water detection
+2081,script_98261.txt,FAO/GAUL_SIMPLIFIED_500m/2015/level2,ActOn,Filter image collection by bounds and date
+2082,script_98261.txt,FAO/GAUL_SIMPLIFIED_500m/2015/level2,ActOn,Sort image collection by cloud cover
+2083,script_98261.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Create mosaic image and clip to boundary
+2084,script_98261.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Calculate normalized difference water index
+2085,script_98261.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Compute difference image of NDWI
+2086,script_98261.txt,JRC/GSW1_0/GlobalSurfaceWater,ActOn,Refine flood result using additional datasets
+2087,script_98261.txt,WWF/HydroSHEDS/03VFDEM,ActOn,Mask out clouds classified as flooded
+2088,script_98261.txt,WWF/HydroSHEDS/03VFDEM,ActOn,Compute connectivity of pixels to eliminate noise
+2089,script_98262.txt,FAO/GAUL_SIMPLIFIED_500m/2015/level2,ActOn,Filtering image collection by bounds and date
+2090,script_98262.txt,FAO/GAUL_SIMPLIFIED_500m/2015/level2,ActOn,Creating mosaic image and clipping to boundary
+2091,script_98262.txt,MODIS/006/MOD09GA,ActOn,Calculating normalized difference water index
+2092,script_98262.txt,MODIS/006/MOD09GA,ActOn,Applying threshold to select pixels
+2093,script_98262.txt,JRC/GSW1_0/GlobalSurfaceWater,ActOn,Masking out areas with high slope
+2094,script_98262.txt,WWF/HydroSHEDS/03VFDEM,ActOn,Refining flood result using additional datasets
+2095,script_98262.txt,WWF/HydroSHEDS/03VFDEM,ActOn,Calculating flood extent area
+2096,script_98263.txt,FAO/GAUL_SIMPLIFIED_500m/2015/level2,ActOn,Filtering image collections by bounds and date
+2097,script_98263.txt,FAO/GAUL_SIMPLIFIED_500m/2015/level2,ActOn,Calculating normalized difference water index
+2098,script_98263.txt,FAO/GAUL_SIMPLIFIED_500m/2015/level2,ActOn,Reducing images to mean
+2099,script_98263.txt,FAO/GAUL_SIMPLIFIED_500m/2015/level2,ActOn,Displaying true color images
+2100,script_98263.txt,FAO/GAUL_SIMPLIFIED_500m/2015/level2,ActOn,Displaying NDWI images
+2101,script_98263.txt,COPERNICUS/S2,ActOn,Sorting images by cloud percentage
+2102,script_98263.txt,COPERNICUS/S2,ActOn,Filtering images by cloud percentage
+2103,script_98266.txt,COPERNICUS/S1_GRD,ActOn,Filtering image collection by date and metadata
+2104,script_98266.txt,COPERNICUS/S1_GRD,ActOn,Mosaicking image collections
+2105,script_98266.txt,COPERNICUS/S1_GRD,ActOn,Applying speckle filter
+2106,script_98266.txt,COPERNICUS/S1_GRD,ActOn,Creating difference image
+2107,script_98266.txt,FAO/GAUL_SIMPLIFIED_500m/2015/level2,ActOn,Refining flood result using additional datasets
+2108,script_98266.txt,JRC/GSW1_0/GlobalSurfaceWater,ActOn,Refining flood result using additional datasets
+2109,script_98266.txt,WWF/HydroSHEDS/03VFDEM,ActOn,Refining flood result using additional datasets
+2110,script_98266.txt,WWF/HydroSHEDS/03VFDEM,ActOn,Finding optimal threshold using Otsu method
+2111,script_98267.txt,COPERNICUS/S1_GRD,ActOn,Filtering image collections by date and polarization
+2112,script_98267.txt,COPERNICUS/S1_GRD,ActOn,Mosaicking image collections
+2113,script_98267.txt,COPERNICUS/S1_GRD,ActOn,Applying speckle filter
+2114,script_98267.txt,COPERNICUS/S1_GRD,ActOn,Calculating difference between images
+2115,script_98267.txt,COPERNICUS/S1_GRD,ActOn,Applying threshold
+2116,script_98267.txt,FAO/GAUL_SIMPLIFIED_500m/2015/level2,ActOn,Masking flood pixels from permanent water areas
+2117,script_98267.txt,JRC/GSW1_0/GlobalSurfaceWater,ActOn,Masking flood pixels from permanent water areas
+2118,script_98267.txt,WWF/HydroSHEDS/03VFDEM,ActOn,Computing connectivity of pixels
+2119,script_98267.txt,WWF/HydroSHEDS/03VFDEM,ActOn,Masking areas with high slope
+2120,script_98275.txt,FAO/GAUL_SIMPLIFIED_500m/2015/level2,ActOn,Filtering image collection by bounds and date
+2121,script_98275.txt,FAO/GAUL_SIMPLIFIED_500m/2015/level2,ActOn,Filtering image collection by metadata
+2122,script_98275.txt,COPERNICUS/S1_GRD,ActOn,Filtering image collection by metadata
+2123,script_98275.txt,COPERNICUS/S1_GRD,ActOn,Visualizing flood images on the map
+2124,script_98287.txt,COPERNICUS/S2_SR,ActOn,Filtering image collection by cloud coverage
+2125,script_98287.txt,COPERNICUS/S2_SR,ActOn,Computing NDVI and adding as new band
+2126,script_98287.txt,COPERNICUS/S2_SR,ActOn,Masking cloudy pixels
+2127,script_98287.txt,COPERNICUS/S2_SR,ActOn,Computing NDWI and adding as new band
+2128,script_98287.txt,COPERNICUS/S2_SR,ActOn,Plotting NDVI and NDWI time series
+2129,script_98289.txt,LANDSAT/LC08/C02/T1_L2,ActOn,Filter image collection by date range
+2130,script_98289.txt,LANDSAT/LC08/C02/T1_L2,ActOn,Filter image collection by geography
+2131,script_98289.txt,LANDSAT/LC08/C02/T1_L2,ActOn,Calculate median image
+2132,script_98289.txt,LANDSAT/LC08/C02/T1_L2,ActOn,Mask clouds from image
+2133,script_98289.txt,LANDSAT/LC08/C02/T1_L2,ActOn,Filter image collection by cloud cover
+2134,script_98289.txt,LANDSAT/LC08/C02/T1_L2,ActOn,Assign spectral bands for visualization
+2135,script_98290.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Cloud masking from Landsat 8 SR data
+2136,script_98290.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Image collection filtering by date
+2137,script_98290.txt,LANDSAT/LC08/C01/T1_SR,ActOn,Median image computation
+2138,script_98290.txt,LANDSAT/LC08/C01/T1,ActOn,Image collection filtering by date
+2139,script_98290.txt,LANDSAT/LC08/C01/T1,ActOn,Median image computation
+2140,script_98290.txt,users/nclinton/demo_landcover_labels,ActOn,Image classification using CART
+2141,script_98290.txt,users/nclinton/demo_landcover_labels,ActOn,Image classification using Random Forest
+2142,script_98290.txt,users/nclinton/demo_landcover_labels,ActOn,Image classification using Naive Bayes
+2143,script_98290.txt,users/nclinton/demo_landcover_labels,ActOn,Image classification using SVM
+2144,script_98290.txt,users/nclinton/demo_landcover_labels,ActOn,Mode computation from multiple classifications
+2145,script_98290.txt,users/nclinton/demo_landcover_labels,ActOn,Accuracy assessment using confusion matrix
+2146,script_98290.txt,users/nclinton/demo_landcover_labels,ActOn,Area calculation by class

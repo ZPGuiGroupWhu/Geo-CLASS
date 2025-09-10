@@ -1,0 +1,15 @@
+{
+    "Theme": [
+        "Land use classification and land cover analysis"
+    ],
+    "DataSource": [
+        "users/thao226355/share/VietNam_Ranh_gioi_tinh",
+        "COPERNICUS/S2_SR"
+    ],
+    "Function": [
+        "Filtering image collection by bounds and date",
+        "Cloud masking and image quality assessment",
+        "NDVI calculation and land cover classification",
+        "Image clipping and spatial analysis"
+    ]
+}

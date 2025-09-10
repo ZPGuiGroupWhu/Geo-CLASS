@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover classification and vegetation analysis"],
+  "DataSource": ["COPERNICUS/S2_CLOUD_PROBABILITY", "COPERNICUS/S2"],
+  "Function": ["Filtering image collection by cloud probability", "Adding cloud probability and cloud mask bands", "Identifying dark pixels and cloud shadows", "Applying cloud-shadow mask to image", "Calculating vegetation indices (SWI, MNDWI, NDVI, SAVI)"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2_CLOUD_PROBABILITY"],
+        "Function": ["Filtering image collection by cloud probability", "Adding cloud probability and cloud mask bands"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Identifying dark pixels and cloud shadows", "Applying cloud-shadow mask to image", "Calculating vegetation indices (SWI, MNDWI, NDVI, SAVI)"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4044, 'completion_tokens': 250, 'total_tokens': 4294}

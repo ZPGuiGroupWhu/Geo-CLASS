@@ -1,0 +1,38 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2_SR",
+            "MODIS/006/MOD14A1",
+            "MODIS/006/MOD11A1"
+        ],
+        "Function": [
+            "Cloud Masking And Quality Filtering",
+            "NDWI (Normalized Difference Water Index calculation)"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "MODIS/006/MOD14A1"
+        ],
+        "Function": [
+            "Data Fusion And Mosaicking"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "MODIS/006/MOD11A1"
+        ],
+        "Function": [
+            "Calculating terrain slope and aspect from DEMs"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "COPERNICUS/S2_SR"
+        ],
+        "Function": [
+            "Cloud Masking And Quality Filtering",
+            "NDWI (Normalized Difference Water Index calculation)"
+        ]
+    }
+}

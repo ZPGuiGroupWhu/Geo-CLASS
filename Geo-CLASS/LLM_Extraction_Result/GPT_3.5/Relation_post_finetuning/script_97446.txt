@@ -1,0 +1,11 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Cloud Masking And Quality Filtering",
+            "Cloud Masking And Quality Filtering"
+        ]
+    }
+}

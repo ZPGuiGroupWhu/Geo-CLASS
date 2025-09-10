@@ -1,0 +1,17 @@
+{
+    "Summary": [
+        "The script processes Sentinel-2 images to mask clouds, shadows, and water, focusing on a specific study area."
+    ],
+    "Theme": [
+        "CLOUD WATER PATH",
+        "WATER ODOR"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2",
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "Calculates And Displays Area For Each Land Cover Category",
+        "Generate ColumnChart For Precipitation"
+    ]
+}

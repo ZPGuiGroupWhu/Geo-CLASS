@@ -1,0 +1,22 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/juandb/bloco_TIs_Kayapo"
+        ],
+        "Function": [
+            "Annual SR time series collection building"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_SR",
+            "LANDSAT/LE07/C01/T1_SR",
+            "LANDSAT/LT05/C01/T1_SR"
+        ],
+        "Function": [
+            "L8 to L7 harmonization",
+            "Retrieve a sensor SR collection",
+            "Reduce collection to single image per year by medoid"
+        ]
+    }
+}

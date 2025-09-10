@@ -1,0 +1,33 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Script processes Landsat imagery to derive NDVI, LST, and export data."],
+  "Theme": ["Land surface temperature estimation", "Vegetation health assessment"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR", "LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Cloud masking for image quality enhancement", "NDVI calculation for vegetation health assessment", "LST estimation for land surface temperature mapping", "Exporting processed data for further analysis"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": [
+            "Cloud masking for image quality enhancement",
+            "NDVI calculation for vegetation health assessment",
+            "LST estimation for land surface temperature mapping",
+            "Exporting processed data for further analysis"
+        ]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": [
+            "Cloud masking for image quality enhancement",
+            "NDVI calculation for vegetation health assessment",
+            "LST estimation for land surface temperature mapping",
+            "Exporting processed data for further analysis"
+        ]
+    }
+}
+```

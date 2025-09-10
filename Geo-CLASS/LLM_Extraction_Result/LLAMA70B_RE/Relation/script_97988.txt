@@ -1,0 +1,41 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/EL/mapa_forest_hybrid_Belize"
+        ],
+        "Function": [
+            "Image collection filtering",
+            "Image compositing"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LT5_L1T",
+            "LANDSAT/LE7_L1T",
+            "LANDSAT/LC08/C01/T1_RT"
+        ],
+        "Function": [
+            "Image collection filtering",
+            "Image compositing",
+            "Image classification"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Image collection filtering",
+            "Image classification",
+            "Image masking"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "JRC/GSW1_0/GlobalSurfaceWater"
+        ],
+        "Function": [
+            "Image masking"
+        ]
+    }
+}

@@ -1,0 +1,5 @@
+{
+  "Theme": ["NDVI calculation", "Unsupervised classification", "Crop type analysis"],
+  "DataSource": ["MODIS/006/MOD09Q1"],
+  "Function": ["Define study area", "Define sugar mills locations", "Create buffer around sugar mills", "Convert feature to image", "Filter image collection by date", "Clip images to study area", "Calculate NDVI", "Create multiband image", "Sample training data", "Train KMeans clusterer", "Cluster images", "Merge classes", "Refine single crop class", "Refine double crop class", "Refine perennial crop class", "Create mosaic of refined classes"]
+}

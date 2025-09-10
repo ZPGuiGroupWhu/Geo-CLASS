@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Ozone concentration analysis"],
+  "DataSource": ["users/bkkumarbittu371/Andhra_Pradesht", "COPERNICUS/S5P/OFFL/L3_O3"],
+  "Function": ["Filtering image collection by date and bounds", "Calculating mean ozone column number density", "Clipping dataset to region of interest", "Reducing region to mean value"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/bkkumarbittu371/Andhra_Pradesht"],
+        "Function": ["Filtering image collection by date and bounds", "Clipping dataset to region of interest"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S5P/OFFL/L3_O3"],
+        "Function": ["Calculating mean ozone column number density", "Reducing region to mean value"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4442, 'completion_tokens': 234, 'total_tokens': 4676}

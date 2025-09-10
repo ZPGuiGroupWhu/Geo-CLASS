@@ -1,0 +1,14 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "JRC/GSW1_0/GlobalSurfaceWater"
+        ],
+        "Function": [
+            "Clipping the global surface water image to the area of interest",
+            "Selecting the occurrence band from the global surface water image",
+            "Creating a cloud mask layer from the feature collection",
+            "Calculating the lake shore extent using focal operations",
+            "Reconstructing the lake extent using the shoreline occurrence statistics"
+        ]
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "Summary": [
+        "The script processes Landsat imagery for the Bahamas, focusing on land change classification."
+    ],
+    "Theme": [
+        "LAND USE CLASSES"
+    ],
+    "DataSource": [
+        "users/EL/Bahamas",
+        "LANDSAT/LT5_L1T",
+        "LANDSAT/LE7_L1T",
+        "LANDSAT/LC08/C01/T1_RT",
+        "users/EL/Bahamas_class"
+    ],
+    "Function": [
+        "Vegetation And Water Indices Calculation",
+        "Calculating terrain slope and aspect from DEMs",
+        "Vegetation And Water Indices Calculation",
+        "Vegetation And Water Indices Calculation",
+        "Classification And Machine Learning"
+    ]
+}

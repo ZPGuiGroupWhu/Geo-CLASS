@@ -1,0 +1,27 @@
+Entity Recognition:
+```
+{
+  "Theme": ["Median temperature analysis of Landsat 5 and 8 images"],
+  "DataSource": ["LANDSAT/LT05/C01/T1_SR", "LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Cloud masking and median computation for Landsat 5 images", "Cloud masking and median computation for Landsat 8 images", "Image export to Drive", "Table export to Drive", "Count and date range computation"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LT05/C01/T1_SR"],
+        "Function": ["Cloud masking and median computation for Landsat 5 images", "Image export to Drive", "Count and date range computation"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Cloud masking and median computation for Landsat 8 images", "Image export to Drive", "Count and date range computation", "Table export to Drive"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2615, 'completion_tokens': 270, 'total_tokens': 2885}

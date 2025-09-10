@@ -1,0 +1,5 @@
+{
+  "Theme": ["Wildfire analysis and monitoring in Tasmania"],
+  "DataSource": ["COPERNICUS/S2_SR", "MODIS/006/MOD14A1", "MODIS/006/MOD11A1"],
+  "Function": ["Filtering image collections by date", "Converting Kelvin to Celsius", "Calculating maximum temperature", "Unmasking image collection", "Generating charts for temperature and radiative power", "Calculating NDVI", "Identifying fire masks using NDVI"]
+}

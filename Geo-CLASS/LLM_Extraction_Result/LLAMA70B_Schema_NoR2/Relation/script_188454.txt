@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["users/kitmyfaceplease2/eastsouth_asia"],
+        "Function": ["Filtering image collection by cloud probability", "Creating mosaic of images", "Counting images in collection"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2_CLOUD_PROBABILITY"],
+        "Function": ["Masking clouds in images", "Calculating sum of images", "Dividing images to get percentage"]
+    }
+}

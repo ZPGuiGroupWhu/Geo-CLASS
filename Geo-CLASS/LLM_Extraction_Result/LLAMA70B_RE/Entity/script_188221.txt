@@ -1,0 +1,14 @@
+{
+    "Theme": [
+        "Climate data analysis"
+    ],
+    "DataSource": [
+        "ECMWF/ERA5_LAND/MONTHLY"
+    ],
+    "Function": [
+        "Filter image collection by date",
+        "Select variables from image collection",
+        "Reduce region to mean value",
+        "Export feature collection to CSV"
+    ]
+}

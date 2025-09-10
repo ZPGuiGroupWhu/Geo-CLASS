@@ -1,0 +1,28 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover analysis and vegetation monitoring"],
+  "DataSource": ["projects/ee-kimiachenaary/assets/Tehran", "LANDSAT/LC08/C01/T1_TOA"],
+  "Function": ["Cloud masking", "Image collection filtering", "NDVI calculation", "Image clipping", "Mean value calculation", "Max value calculation", "Min value calculation", "Standard deviation calculation", "Region-based statistics calculation", "Data export"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["projects/ee-kimiachenaary/assets/Tehran"],
+        "Function": ["Image clipping", "Region-based statistics calculation"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_TOA"],
+        "Function": ["Cloud masking", "Image collection filtering", "NDVI calculation", "Mean value calculation", "Max value calculation", "Min value calculation", "Standard deviation calculation", "Data export"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4927, 'completion_tokens': 271, 'total_tokens': 5198}

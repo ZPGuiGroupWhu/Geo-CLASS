@@ -1,0 +1,5 @@
+{
+  "Theme": ["Cloud probability analysis in East Asia"],
+  "DataSource": ["users/kitmyfaceplease2/eastsouth_asia", "COPERNICUS/S2_CLOUD_PROBABILITY"],
+  "Function": ["Filter image collection by cloud probability", "Create mosaic of images", "Count images in collection", "Mask clouds in images", "Calculate sum of images", "Calculate percentage of cloud probability"]
+}

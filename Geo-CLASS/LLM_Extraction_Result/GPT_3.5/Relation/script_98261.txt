@@ -1,0 +1,14 @@
+{
+    "relation_1": {
+        "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2", "LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Filtering Landsat imagery by region, date, and cloud cover"]
+    },
+    "relation_2": {
+        "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+        "Function": ["Creating NDWI, refining flood areas, and masking out clouds"]
+    },
+    "relation_3": {
+        "DataSource": ["WWF/HydroSHEDS/03VFDEM"],
+        "Function": ["Creating NDWI, refining flood areas, and masking out clouds"]
+    }
+}

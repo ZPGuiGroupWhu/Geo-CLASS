@@ -1,0 +1,20 @@
+{
+    "Theme": [
+        "Land cover classification and forest monitoring"
+    ],
+    "DataSource": [
+        "LANDSAT/LC8_SR",
+        "LANDSAT/LC8_L1T_TOA",
+        "LANDSAT/LT5_L1T_TOA_FMASK",
+        "LANDSAT/LE7_L1T_TOA_FMASK",
+        "COPERNICUS/S2",
+        "ft:11R-JRBIylckCHZsQf20C-tgHLlWWZ8BoXrL9u2re"
+    ],
+    "Function": [
+        "Filtering image collections by date and bounds",
+        "Calculating NDVI and NBR indices",
+        "Mosaicking images",
+        "Visualizing images with different visualization options",
+        "Creating a map with multiple layers and controls"
+    ]
+}

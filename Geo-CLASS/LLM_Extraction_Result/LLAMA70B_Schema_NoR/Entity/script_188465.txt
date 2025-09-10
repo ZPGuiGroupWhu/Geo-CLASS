@@ -1,0 +1,16 @@
+{
+    "Theme": [
+        "Land cover classification and cloud probability analysis"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2_SR_HARMONIZED",
+        "COPERNICUS/S2_CLOUD_PROBABILITY"
+    ],
+    "Function": [
+        "Filtering image collection by date and bounds",
+        "Creating mosaic of images",
+        "Reducing image to a single value",
+        "Masking clouds in images",
+        "Calculating sum of images"
+    ]
+}

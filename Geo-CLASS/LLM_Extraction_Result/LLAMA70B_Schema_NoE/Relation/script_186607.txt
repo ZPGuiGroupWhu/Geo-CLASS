@@ -1,0 +1,32 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LC8_SR",
+            "LANDSAT/LC8_L1T_TOA",
+            "LANDSAT/LT5_L1T_TOA_FMASK",
+            "LANDSAT/LE7_L1T_TOA_FMASK"
+        ],
+        "Function": [
+            "Filtering image collections by date and bounds",
+            "Calculating NDVI and NBR indices",
+            "Mosaicking images"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Visualizing images with different visualization options",
+            "Creating a map with multiple layers and controls"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "ft:11R-JRBIylckCHZsQf20C-tgHLlWWZ8BoXrL9u2re"
+        ],
+        "Function": [
+            "None"
+        ]
+    }
+}

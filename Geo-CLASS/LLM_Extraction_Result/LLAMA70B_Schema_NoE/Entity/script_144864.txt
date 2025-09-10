@@ -1,0 +1,16 @@
+{
+    "Theme": [
+        "Land cover classification and area calculation"
+    ],
+    "DataSource": [
+        "users/thao226355/share/VietNam_Ranh_gioi_tinh",
+        "COPERNICUS/S2_SR"
+    ],
+    "Function": [
+        "Filtering and selecting administrative boundaries",
+        "Cloud masking and image filtering",
+        "Image collection and mosaicking",
+        "NDVI calculation and land cover classification",
+        "Area calculation and statistics"
+    ]
+}

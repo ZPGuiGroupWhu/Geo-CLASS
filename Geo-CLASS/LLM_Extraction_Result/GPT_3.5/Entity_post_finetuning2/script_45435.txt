@@ -1,0 +1,19 @@
+{
+    "Summary": [
+        "Script extracts MODIS LAI and vegetation cover data for 2002, calculates LAI/vegetation cover ratio, and exports results."
+    ],
+    "Theme": [
+        "TROPOSPHERIC/LOW LEVEL CLOUDS (OBSERVED/ANALYZED)"
+    ],
+    "DataSource": [
+        "MODIS/006/MOD15A2H",
+        "MODIS/006/MOD44B"
+    ],
+    "Function": [
+        "Filter Images By Date",
+        "Filter Image Collection By Date",
+        "Mean Reduction",
+        "Quality Control",
+        "Data Visualization"
+    ]
+}

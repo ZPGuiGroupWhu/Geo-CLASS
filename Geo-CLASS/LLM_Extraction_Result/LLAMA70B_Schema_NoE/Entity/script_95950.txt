@@ -1,0 +1,15 @@
+{
+    "Theme": [
+        "Land cover classification and vegetation monitoring using NDVI"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "Masking clouds and cirrus from Sentinel-2 images",
+        "Calculating NDVI from Sentinel-2 images",
+        "Extracting date information from images",
+        "Sorting images by NDVI values",
+        "Selecting images with maximum NDVI values"
+    ]
+}

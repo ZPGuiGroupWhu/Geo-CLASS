@@ -1,0 +1,192 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var training = ee.FeatureCollection("users/kimambo/00_INPUT_TRAINING_VALIDATION/Tanzania_SouthernHighlands_reference_point_36LYR_13DEC2019_230_upto799_75PCTTRAINING"),
+    location = 
+    /* color: #d63000 */
+    /* locked: true */
+    ee.Geometry.Point([35.23446173565528, -8.565343867414164]);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+//  Helpful link to discussion of Sample Regions
+/*
+https://stackoverflow.com/questions/62948540/image-sampleregions-is-not-a-function-supervised-classification-at-google-earth 
+*/
+
+print('Training Points',training);
+Map.centerObject(location,10);
+Map.setOptions('SATELLITE');
+
+var start0='2005-01-1';
+var end0='2019-06-30';
+var startmonth= ee.Number(1);
+var endmonth=  ee.Number(12);
+var kernalsize =ee.Number(30);
+  
+    var cloudMaskL8 = function(image) {
+  var qa = image.select('pixel_qa');
+  var cloud = qa.bitwiseAnd(1 << 5)              
+                .and(qa.bitwiseAnd(1 << 6).or(qa.bitwiseAnd(1 << 7))) 
+                .or(qa.bitwiseAnd(1 << 4))
+                .or(qa.bitwiseAnd(1 << 3))  
+                .or(qa.bitwiseAnd(1 << 8).and(qa.bitwiseAnd(1 << 9)));   
+  var mask2 = image.mask().reduce(ee.Reducer.min());
+  return image.select(['B2','B3','B4','B5','B6','B7'],['blue', 'green', 'red', 'nir', 'swir1', 'swir2']) 
+      .updateMask(cloud.not()).updateMask(mask2);
+};
+
+  var addNDVI= function(image){
+  var ndvi =image.normalizedDifference(['nir','red']).rename('NDVI');
+  return image.addBands(ndvi);
+};
+
+var collectionL8_ndvi = ee.ImageCollection('LANDSAT/LC08/C01/T1_SR')
+    .filterDate(start0, end0)
+    .filterBounds(location)
+    .filter(ee.Filter.calendarRange(startmonth,endmonth,'month'))
+    .map(cloudMaskL8)
+    .map(addNDVI)
+    .select('NDVI');
+
+  var cloudMaskL457 = function(image) {
+  var qa = image.select('pixel_qa');
+  var cloud = qa.bitwiseAnd(1 << 5)
+          .and(qa.bitwiseAnd(1 << 7))
+          .or(qa.bitwiseAnd(1 << 3))
+          .or(qa.bitwiseAnd(1 << 4));
+
+  var mask2 = image.mask().reduce(ee.Reducer.min());
+  return image.select(['B1', 'B2', 'B3', 'B4', 'B5', 'B7'],
+    ['blue', 'green', 'red', 'nir', 'swir1', 'swir2'])
+    .updateMask(cloud.not()).updateMask(mask2);
+};
+
+ var collectionL7_ndvi = ee.ImageCollection('LANDSAT/LE07/C01/T1_SR')
+    .filterDate(start0, end0)
+    .filterBounds(location)
+    .filter(ee.Filter.calendarRange(startmonth,endmonth,'month'))
+    .map(cloudMaskL457)
+    .map(addNDVI)
+    .select('NDVI');
+    
+  var collectionL5_ndvi = ee.ImageCollection('LANDSAT/LT05/C01/T1_SR')
+    .filterDate(start0, end0)
+    .filterBounds(location)
+   .filter(ee.Filter.calendarRange(startmonth,endmonth,'month'))
+    .map(cloudMaskL457)
+    .map(addNDVI)
+    .select('NDVI');
+    
+  var collectionL4_ndvi = ee.ImageCollection('LANDSAT/LT04/C01/T1_SR')
+    .filterDate(start0, end0)
+    .filterBounds(location)
+   .filter(ee.Filter.calendarRange(startmonth,endmonth,'month'))
+    .map(cloudMaskL457)
+    .map(addNDVI)
+    .select('NDVI');
+
+var createTimeBand = function(image) {
+  return image.addBands(image.metadata('system:time_start').divide(1e18).rename('timestamp'));
+};
+
+  var collection_ndvi = collectionL8_ndvi.merge(collectionL5_ndvi).merge(collectionL4_ndvi)
+                       .merge(collectionL7_ndvi).map(createTimeBand);
+print('Merged NDVI Collection',collection_ndvi);
+
+var intermediatePoints = training.filter(ee.Filter.eq('Class_Text','Woodlot_Intermediate'));
+print('Woodlot_Intermediate', intermediatePoints);
+
+
+
+
+var RenameAsTime = function(image){
+  var raw_metadata = image.get('system:time_start');
+  var number = ee.Number(raw_metadata).divide(1000).int();
+  var string = ee.Algorithms.String(number);
+  return image.select('NDVI').rename(string);
+};
+
+var ndvi_renamed = collection_ndvi.map(RenameAsTime);
+print('NDVI Bands Renamed As Time',ndvi_renamed);
+
+
+
+
+
+var sampler = function(image){
+  return image.sampleRegions({
+    collection: intermediatePoints, 
+    
+    scale: 30,
+  });
+};
+
+// Error message: "Collection query aborted after accumulating over 5000 elements."
+// In fact, with 359 images sampled at 70 points, we should have 25,130 elements.
+// We start with 359 feature collections of 70 features each, and each feature collection has a bunch of columns.
+// Shouldn't flattening solve the problem?
+
+var ndvi_sampled = ndvi_renamed.map(sampler).flatten();
+
+
+// The CSV file that came out of this isn't much good, it seems to be lacking data and may have flattened the wrong way.
+
+
+
+
+
+
+
+
+
+
+
+
+
+var sorted = ndvi_renamed.sort('system:time_start');
+
+
+
+
+
+// Accomplishes the same thing as .toBands(), but retains the original band names.
+// Code from Nicholas Clinton – an answer on a discussion board:
+// https://gis.stackexchange.com/questions/295705/image-collection-to-single-image-in-google-earth-engine
+var mergeFunction = function(image, previous){
+  return ee.Image(previous).addBands(image);
+};
+var mergedImage = sorted.iterate(mergeFunction,ee.Image([]));
+print('Merged Single Image',mergedImage);
+
+var sampleFunction = function(image, previous){
+  return image.sampleRegions({
+    collection: previous,
+    scale: 30,
+  });
+};
+var samplingOutput = sorted.iterate(sampleFunction, intermediatePoints);
+
+
+
+
+
+
+
+
+
+var imgList = sorted.toList(sorted.size());
+var img = ee.Image(imgList.get(333));
+var imgColl = ee.ImageCollection.fromImages([ndvi_renamed.first(),img]);
+var test = imgColl.iterate(sampleFunction,intermediatePoints);
+print(test);
+
+
+
+
+//   tileScale: 2
+
+
+
+
+
+
+
+//   fileFormat: "SHP" 
+

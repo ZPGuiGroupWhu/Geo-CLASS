@@ -1,0 +1,22 @@
+{
+    "relation_1": {
+        "DataSource": ["USGS/SRTMGL1_003"],
+        "Function": [
+            "Filtering steep terrain for image selection",
+            "Removing seasonal signal from images",
+            "Fitting trend lines to time series data",
+            "Fitting step functions to time series data",
+            "Identifying spikes in time series data"
+        ]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": [
+            "Filtering steep terrain for image selection",
+            "Removing seasonal signal from images",
+            "Fitting trend lines to time series data",
+            "Fitting step functions to time series data",
+            "Identifying spikes in time series data"
+        ]
+    }
+}

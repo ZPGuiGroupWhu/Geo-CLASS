@@ -1,0 +1,18 @@
+{
+    "Summary": [
+        "Exploring Landsat 8 Surface Reflectance collection and spectral signatures"
+    ],
+    "Theme": [
+        "ACOUSTIC SCATTERING",
+        "WEATHERING",
+        "SPECTRAL/ENGINEERING"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C02/T1_L2",
+        "ROI"
+    ],
+    "Function": [
+        "Cloud Masking And Quality Filtering",
+        "Cloud Masking And Quality Filtering"
+    ]
+}

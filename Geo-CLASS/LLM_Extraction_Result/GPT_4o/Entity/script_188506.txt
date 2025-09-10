@@ -1,0 +1,5 @@
+{
+  "Theme": ["Cloud probability analysis", "Region-specific cloud masking"],
+  "DataSource": ["users/kitmyfaceplease2/eastsouth_asia", "projects/ee-kitmyfaceplease2/assets/EAST_SOUTH_SPLIT2", "COPERNICUS/S2_CLOUD_PROBABILITY"],
+  "Function": ["Define visualization parameters", "Define region of interest", "Filter image collection by date", "Create daily mosaics", "Count images in collection", "Convert feature collection to image", "Mask clouds in images", "Sum image bands", "Calculate percentage image"]
+}

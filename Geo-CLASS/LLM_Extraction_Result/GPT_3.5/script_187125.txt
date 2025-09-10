@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Process Sentinel-2 images for water detection and analyze JRC monthly water occurrence."],
+  "Theme": ["Water detection using Sentinel-2 imagery", "Monthly water occurrence analysis"],
+  "DataSource": ["JRC/GSW1_0/MonthlyHistory", "COPERNICUS/S2", "users/christinacorbane/MT_comp_proj"],
+  "Function": ["Image preprocessing for water detection", "Threshold computation using Otsu method"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["JRC/GSW1_0/MonthlyHistory"],
+        "Function": ["Image preprocessing for water detection", "Threshold computation using Otsu method"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Image preprocessing for water detection", "Threshold computation using Otsu method"]
+    },
+    "relation_3": {
+        "DataSource": ["users/christinacorbane/MT_comp_proj"],
+        "Function": ["Image preprocessing for water detection"]
+    }
+}
+```

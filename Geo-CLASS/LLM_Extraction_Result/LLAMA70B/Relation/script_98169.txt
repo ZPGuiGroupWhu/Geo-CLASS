@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["users/elaurenyoung/usa_states", "users/elaurenyoung/Site_summary_12_Apr_2022-point"],
+        "Function": ["Buffer creation around state and transect points", "Reducing regions to calculate mean, standard deviation, and variance of NDVI"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C02/T1_L2", "LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Image collection filtering by date and cloud cover", "Masking clouds and water in Landsat images", "Calculating NDVI from Landsat images"]
+    }
+}

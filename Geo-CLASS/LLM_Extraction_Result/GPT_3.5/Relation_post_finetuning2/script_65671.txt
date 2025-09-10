@@ -1,0 +1,18 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LT05/C01/T1_SR"
+        ],
+        "Function": [
+            "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover"
+        ]
+    }
+}

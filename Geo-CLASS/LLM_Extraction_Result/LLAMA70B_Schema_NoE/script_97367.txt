@@ -1,0 +1,29 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Landsat Composite with cloud masking"],
+  "DataSource": ["LANDSAT/LT4_L1T_TOA", "LANDSAT/LT5_L1T_TOA", "LANDSAT/LC8_L1T_TOA", "LANDSAT/LE7_L1T_TOA", "FAO/GAUL/2015/level0"],
+  "Function": ["getImageCollection", "landsatCloudScore", "simpleTDOM2", "cloudProject", "ndvi_function"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LT4_L1T_TOA", "LANDSAT/LT5_L1T_TOA", "LANDSAT/LC8_L1T_TOA", "LANDSAT/LE7_L1T_TOA"],
+        "Function": ["getImageCollection", "landsatCloudScore", "simpleTDOM2", "cloudProject", "ndvi_function"]
+    },
+    "relation_2": {
+        "DataSource": ["FAO/GAUL/2015/level0"],
+        "Function": ["getImageCollection"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 6190, 'completion_tokens': 297, 'total_tokens': 6487}

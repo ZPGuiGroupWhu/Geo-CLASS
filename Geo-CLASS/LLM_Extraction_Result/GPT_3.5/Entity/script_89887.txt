@@ -1,0 +1,6 @@
+{
+  "Summary": ["Masking water and clouds in MODIS dataset, generating true color images."],
+  "Theme": ["Water masking", "Cloud masking", "True color image generation"],
+  "DataSource": ["MODIS/006/MOD09GA", "TIGER/2018/States", "USGS/GMTED2010"],
+  "Function": ["Cloud masking operation", "Water masking operation", "Hillshade generation", "True color image visualization"]
+}

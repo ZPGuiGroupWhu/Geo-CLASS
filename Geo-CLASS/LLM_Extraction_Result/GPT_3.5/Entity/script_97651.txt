@@ -1,0 +1,6 @@
+{
+  "Summary": ["Script extracts Landsat images for specific AOIs and masks clouds for autumn season export."],
+  "Theme": ["Landsat image collection filtering and cloud masking for autumn season export."],
+  "DataSource": ["LANDSAT/LE07/C01/T1_SR"],
+  "Function": ["Cloud masking operation for Landsat image collections"]
+}

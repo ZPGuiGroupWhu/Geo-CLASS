@@ -1,0 +1,26 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Filtering image collection by date and bounds",
+            "Calculating NDVI and NBR",
+            "Exporting image properties to CSV",
+            "Creating and exporting mosaic",
+            "Exporting individual scenes"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "ft:1TFcNAU6zr_9svAb610dlsyqNiiXMLYlFrfP23ZuH"
+        ],
+        "Function": [
+            "Filtering image collection by date and bounds",
+            "Calculating NDVI and NBR",
+            "Exporting image properties to CSV",
+            "Creating and exporting mosaic",
+            "Exporting individual scenes"
+        ]
+    }
+}

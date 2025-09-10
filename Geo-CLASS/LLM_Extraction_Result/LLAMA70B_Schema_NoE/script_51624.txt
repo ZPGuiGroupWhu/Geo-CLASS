@@ -1,0 +1,27 @@
+Entity Recognition:
+```
+{
+  "Theme": ["Imagery comparison with a variety of dates"],
+  "DataSource": ["COPERNICUS/S1_GRD"],
+  "Function": ["getWeeklySentinelComposite function composites Sentinel-1 ImageCollection for 7 days after a given date", "addLayerSelector function adds a layer selection widget to a map", "updateMap function updates a map to show a selected image"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["getWeeklySentinelComposite function composites Sentinel-1 ImageCollection for 7 days after a given date", "updateMap function updates a map to show a selected image"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["addLayerSelector function adds a layer selection widget to a map"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2152, 'completion_tokens': 231, 'total_tokens': 2383}

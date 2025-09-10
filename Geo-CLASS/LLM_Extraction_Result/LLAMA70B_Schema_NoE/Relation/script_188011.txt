@@ -1,0 +1,26 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "projects/ee-kimiachenaary/assets/msh"
+        ],
+        "Function": [
+            "Filtering Landsat 8 TOA images by geometry and selecting B10 band",
+            "Clipping images to geometry",
+            "Calculating seasonal temperatures and elevations",
+            "Reducing images to mean, max, and min values",
+            "Exporting results to CSV files"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_TOA"
+        ],
+        "Function": [
+            "Filtering Landsat 8 TOA images by geometry and selecting B10 band",
+            "Converting Kelvin to Celsius",
+            "Calculating NDVI values and filtering by count",
+            "Reducing regions to mean, max, and min values",
+            "Exporting results to CSV files"
+        ]
+    }
+}

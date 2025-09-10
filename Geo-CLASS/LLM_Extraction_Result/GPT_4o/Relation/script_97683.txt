@@ -1,0 +1,140 @@
+{
+  "relation_1": {
+    "DataSource": ["NOAA/VIIRS/DNB/MONTHLY_V1/VCMCFG"],
+    "Function": [
+      "Filter image collection by date",
+      "Filter image collection by bounds",
+      "Calculate median of image collection",
+      "Clip image to geometry",
+      "Add layer to map",
+      "Print image information",
+      "Export image to Drive"
+    ]
+  },
+  "relation_2": {
+    "DataSource": ["VITO/PROBAV/C1/S1_TOC_100M"],
+    "Function": [
+      "Filter image collection by date",
+      "Filter image collection by bounds",
+      "Filter image collection by metadata",
+      "Calculate median of image collection",
+      "Clip image to geometry",
+      "Add layer to map",
+      "Print image information",
+      "Export image to Drive"
+    ]
+  },
+  "relation_3": {
+    "DataSource": ["NOAA/VIIRS/001/VNP09GA"],
+    "Function": [
+      "Filter image collection by date",
+      "Filter image collection by bounds",
+      "Calculate median of image collection",
+      "Clip image to geometry",
+      "Add layer to map",
+      "Print image information",
+      "Export image to Drive"
+    ]
+  },
+  "relation_4": {
+    "DataSource": ["MODIS/006/MCD43A1"],
+    "Function": [
+      "Filter image collection by date",
+      "Filter image collection by bounds",
+      "Calculate median of image collection",
+      "Clip image to geometry",
+      "Add layer to map",
+      "Print image information",
+      "Export image to Drive"
+    ]
+  },
+  "relation_5": {
+    "DataSource": ["ASTER/AST_L1T_003"],
+    "Function": [
+      "Filter image collection by date",
+      "Filter image collection by bounds",
+      "Filter image collection by metadata",
+      "Calculate median of image collection",
+      "Clip image to geometry",
+      "Add layer to map",
+      "Print image information",
+      "Export image to Drive"
+    ]
+  },
+  "relation_6": {
+    "DataSource": ["LANDSAT/LT04/C01/T1_TOA"],
+    "Function": [
+      "Filter image collection by date",
+      "Filter image collection by bounds",
+      "Filter image collection by metadata",
+      "Calculate median of image collection",
+      "Clip image to geometry",
+      "Add layer to map",
+      "Print image information",
+      "Export image to Drive"
+    ]
+  },
+  "relation_7": {
+    "DataSource": ["LANDSAT/LT05/C01/T1_TOA"],
+    "Function": [
+      "Filter image collection by date",
+      "Filter image collection by bounds",
+      "Filter image collection by metadata",
+      "Calculate median of image collection",
+      "Clip image to geometry",
+      "Add layer to map",
+      "Print image information",
+      "Export image to Drive"
+    ]
+  },
+  "relation_8": {
+    "DataSource": ["LANDSAT/LE07/C01/T1_TOA"],
+    "Function": [
+      "Filter image collection by date",
+      "Filter image collection by bounds",
+      "Filter image collection by metadata",
+      "Calculate median of image collection",
+      "Clip image to geometry",
+      "Add layer to map",
+      "Print image information",
+      "Export image to Drive"
+    ]
+  },
+  "relation_9": {
+    "DataSource": ["LANDSAT/LC08/C01/T1_TOA"],
+    "Function": [
+      "Filter image collection by date",
+      "Filter image collection by bounds",
+      "Filter image collection by metadata",
+      "Calculate median of image collection",
+      "Clip image to geometry",
+      "Add layer to map",
+      "Print image information",
+      "Export image to Drive"
+    ]
+  },
+  "relation_10": {
+    "DataSource": ["COPERNICUS/S3/OLCI"],
+    "Function": [
+      "Filter image collection by date",
+      "Calculate median of image collection",
+      "Clip image to geometry",
+      "Add layer to map",
+      "Print image information",
+      "Export image to Drive"
+    ]
+  },
+  "relation_11": {
+    "DataSource": ["COPERNICUS/S2"],
+    "Function": [
+      "Filter image collection by date",
+      "Filter image collection by bounds",
+      "Filter image collection by metadata",
+      "Calculate median of image collection",
+      "Clip image to geometry",
+      "Add layer to map",
+      "Print image information",
+      "Export image to Drive"
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Vegetation Index Analysis"],
+  "DataSource": ["users/eduardosperanza-Embrapa/Projeto-Coplacana/Piracicaba-H2Copla-UTM", "COPERNICUS/S2_SR"],
+  "Function": ["Cloud and shadow pixel removal", "NDVI calculation", "VARI calculation", "EVI calculation", "Buffer creation", "Image collection filtering", "Image masking", "Region reduction", "Feature joining", "Property removal"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/eduardosperanza-Embrapa/Projeto-Coplacana/Piracicaba-H2Copla-UTM"],
+        "Function": ["Buffer creation", "Region reduction", "Feature joining", "Property removal"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["Cloud and shadow pixel removal", "NDVI calculation", "VARI calculation", "EVI calculation", "Image collection filtering", "Image masking"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3447, 'completion_tokens': 282, 'total_tokens': 3729}

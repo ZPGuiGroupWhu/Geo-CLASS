@@ -1,0 +1,18 @@
+{
+    "Theme": [
+        "Land cover classification using Sentinel-2 data and vegetation indices"
+    ],
+    "DataSource": [
+        "users/zolokiala/parthenium1",
+        "users/zolokiala/buffer",
+        "users/zolokiala/training",
+        "users/zolokiala/test",
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "Masking clouds using Sentinel-2 QA band",
+        "Computing vegetation indices (NDVI, SAVI, DVI, GNDVI, EVI, chl, SRI, GDVI, IPVI, NDWI, GI, GRVI)",
+        "Classifying land cover using SVM classifier",
+        "Accuracy assessment using confusion matrix and kappa coefficient"
+    ]
+}

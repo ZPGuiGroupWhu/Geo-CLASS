@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Filtering Image Collection by Date", "Converting to Natural Scale", "Smoothing Image"]
+    },
+    "relation_2": {
+        "DataSource": ["ft:1nWJr3XY3hcsRSvydLLyK47W-r6N1bB7JHhTYuLle"],
+        "Function": ["Calculating Band Ratio", "Creating Histogram", "Applying Mask to Image"]
+    }
+}

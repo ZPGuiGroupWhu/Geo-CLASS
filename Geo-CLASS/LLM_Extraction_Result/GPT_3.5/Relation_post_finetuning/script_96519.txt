@@ -1,0 +1,51 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/eeranyartrodrigo/A_Hist",
+            "users/eeranyartrodrigo/A_Conc"
+        ],
+        "Function": [
+            "Data Visualization And Mapping"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "GLOBAL_FLOOD_DB/MODIS_EVENTS/V1"
+        ],
+        "Function": [
+            "Data Visualization And Mapping"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "JRC/GHSL/P2016/BUILT_LDSMT_GLOBE_V1"
+        ],
+        "Function": [
+            "Visualization And Output Generation"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "GLOBAL_FLOOD_DB/MODIS_EVENTS/V1"
+        ],
+        "Function": [
+            "Vegetation And Water Indices Calculation"
+        ]
+    },
+    "relation_5": {
+        "DataSource": [
+            "JRC/GWIS/GlobFire/v2/DailyPerimeters/2020"
+        ],
+        "Function": [
+            "Data Visualization And Mapping"
+        ]
+    },
+    "relation_6": {
+        "DataSource": [
+            "users/eeranyartrodrigo/SSNMX_catalogo_20220801_20220810"
+        ],
+        "Function": [
+            "Buffer Analysis"
+        ]
+    }
+}

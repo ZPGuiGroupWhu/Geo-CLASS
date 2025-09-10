@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land Surface Temperature Analysis"],
+  "DataSource": ["users/khoapv_vnuf/Thanhhoa_t", "MODIS/MOD11A2"],
+  "Function": ["Filtering and aggregating images by year", "Transforming Kelvin to Celsius", "Calculating annual temperature range", "Generating dates by months for all years", "Calculating monthly max and min temperatures", "Creating image collections", "Charting temperature series by month"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/khoapv_vnuf/Thanhhoa_t"],
+        "Function": ["Filtering and aggregating images by year", "Creating image collections"]
+    },
+    "relation_2": {
+        "DataSource": ["MODIS/MOD11A2"],
+        "Function": ["Transforming Kelvin to Celsius", "Calculating annual temperature range", "Generating dates by months for all years", "Calculating monthly max and min temperatures", "Charting temperature series by month"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3443, 'completion_tokens': 255, 'total_tokens': 3698}

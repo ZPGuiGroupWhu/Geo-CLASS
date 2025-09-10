@@ -1,0 +1,17 @@
+{
+    "Theme": [
+        "Water body analysis using Landsat 8 imagery"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C01/T1_TOA",
+        "users/eggenm/chad_rivers"
+    ],
+    "Function": [
+        "Add MNDWI band to Landsat 8 image",
+        "Simple cloud score calculation",
+        "Masking of cloudy pixels",
+        "Quality mosaic calculation",
+        "Median calculation",
+        "Filtering by month and cloud cover"
+    ]
+}

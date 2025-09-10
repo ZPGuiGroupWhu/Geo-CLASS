@@ -1,0 +1,14 @@
+{
+    "relation_1": {
+        "DataSource": ["users/ujavalgandhi/public/soi_india_boundary"],
+        "Function": ["Clip image to geometry"]
+    },
+    "relation_2": {
+        "DataSource": ["NOAA/DMSP-OLS/NIGHTTIME_LIGHTS"],
+        "Function": ["Filter image collection by date", "Select specific band from image", "Clip image to geometry", "Classify nighttime lights", "Compute zonal statistics"]
+    },
+    "relation_3": {
+        "DataSource": ["MODIS/006/MCD12Q1"],
+        "Function": ["Filter image collection by date", "Select specific band from image", "Classify landcover types", "Create zones for landcover classes", "Compute zonal statistics"]
+    }
+}

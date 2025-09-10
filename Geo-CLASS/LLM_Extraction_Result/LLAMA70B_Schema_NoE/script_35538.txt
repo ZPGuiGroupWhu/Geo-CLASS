@@ -1,0 +1,31 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover classification and waterbody extraction"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_TOA", "COPERNICUS/S2", "users/chaitanyaks/Maharashtra/Pune_District"],
+  "Function": ["Filtering images by date and bounds", "Calculating median image", "Clipping image to ROI", "Visualizing image", "Calculating NDVI", "Masking image based on NDVI threshold", "Generating histogram for NDVI image"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_TOA"],
+        "Function": ["Filtering images by date and bounds", "Calculating median image", "Visualizing image", "Calculating NDVI", "Masking image based on NDVI threshold", "Generating histogram for NDVI image"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Filtering images by date and bounds", "Calculating median image", "Visualizing image", "Calculating NDVI", "Masking image based on NDVI threshold", "Generating histogram for NDVI image"]
+    },
+    "relation_3": {
+        "DataSource": ["users/chaitanyaks/Maharashtra/Pune_District"],
+        "Function": ["Clipping image to ROI"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 1972, 'completion_tokens': 348, 'total_tokens': 2320}

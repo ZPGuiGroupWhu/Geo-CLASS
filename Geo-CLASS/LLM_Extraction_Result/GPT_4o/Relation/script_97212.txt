@@ -1,0 +1,14 @@
+{
+    "relation_1": {
+        "DataSource": ["users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016"],
+        "Function": ["Filter features by date", "Filter features by location", "Classify images", "Sample training data", "Sample validation data"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Compute image collections", "Calculate indices", "Classify images"]
+    },
+    "relation_3": {
+        "DataSource": ["ESA/GLOBCOVER_L4_200901_200912_V2_3"],
+        "Function": ["Sample training data", "Sample validation data"]
+    }
+}

@@ -1,0 +1,32 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover classification using Sentinel-1 data"],
+  "DataSource": ["COPERNICUS/S1_GRD"],
+  "Function": ["Define region of interest", "Create feature collections", "Apply speckle filter", "Convert image to natural units", "Convert image to dB", "Filter image collection", "Create composite image", "Visualize results", "Merge feature collections", "Sample training data", "Train classifier", "Classify image"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["COPERNICUS/S1_GRD"],
+    "Function": [
+      "Define region of interest",
+      "Filter image collection",
+      "Create composite image",
+      "Apply speckle filter",
+      "Convert image to natural units",
+      "Convert image to dB",
+      "Visualize results",
+      "Sample training data",
+      "Train classifier",
+      "Classify image"
+    ]
+  }
+}
+```
+
+Total_Token_Usage:
+9094

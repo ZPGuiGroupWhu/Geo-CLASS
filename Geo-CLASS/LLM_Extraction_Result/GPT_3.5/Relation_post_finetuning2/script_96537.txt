@@ -1,0 +1,44 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/eeranyartrodrigo/geoMediana/gm_2018_MX_014009",
+            "users/eeranyartrodrigo/geoMediana/gm_2019_MX_014009",
+            "users/eeranyartrodrigo/Pabellon"
+        ],
+        "Function": [
+            "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover",
+            "Image Reprojection",
+            "Add NDVI Band To Images",
+            "Training And Sampling For Land Cover Classification",
+            "Random Forest Classification",
+            "Evaluate Classifier Performance Using Confusion Matrix",
+            "Generate And Display a Histogram",
+            "Map Visualization Of Feature Collection"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LE07/C01/T1_SR"
+        ],
+        "Function": [
+            "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover",
+            "Image Reprojection"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "MODIS/006/MCD12Q1"
+        ],
+        "Function": [
+            "Vegetation Cover Classification"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "MODIS/NTSG/MOD16A2/105"
+        ],
+        "Function": [
+            "Map Visualization Of Feature Collection"
+        ]
+    }
+}

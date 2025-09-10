@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Script processes Sentinel-2 data for land cover classification."],
+  "Theme": ["Land cover classification using Sentinel-2 data"],
+  "DataSource": ["users/zolokiala/parthenium1", "users/zolokiala/buffer", "users/zolokiala/training", "users/zolokiala/test", "COPERNICUS/S2"],
+  "Function": ["Cloud masking using Sentinel-2 QA band", "Vegetation index computation", "Classification training and mapping"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/zolokiala/parthenium1", "users/zolokiala/buffer"],
+        "Function": ["Cloud masking using Sentinel-2 QA band"]
+    },
+    "relation_2": {
+        "DataSource": ["users/zolokiala/training", "users/zolokiala/test", "COPERNICUS/S2"],
+        "Function": ["Vegetation index computation", "Classification training and mapping"]
+    }
+}
+```

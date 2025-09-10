@@ -1,0 +1,16 @@
+{
+    "Theme": [
+        "Land cover analysis using Landsat 5 imagery"
+    ],
+    "DataSource": [
+        "users/philipegeo/pol_jeremoabo",
+        "LANDSAT/LT05/C01/T1_TOA"
+    ],
+    "Function": [
+        "Clip the image collection to the specified feature collection",
+        "Filter the image collection by cloud cover, date, and bounds",
+        "Calculate the median and mean of the image collection",
+        "Compute the NDVI and SAVI indices from the median and mean images",
+        "Visualize the results using different visualization parameters"
+    ]
+}

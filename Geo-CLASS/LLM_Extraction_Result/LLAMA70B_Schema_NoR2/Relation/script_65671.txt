@@ -1,0 +1,14 @@
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LT05/C01/T1_SR", "LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Cloud masking", "Image collection filtering", "Median computation"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LT05/C01/T1_SR"],
+        "Function": ["Image exporting"]
+    },
+    "relation_3": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Table exporting", "Counting image collections", "Date range calculation"]
+    }
+}

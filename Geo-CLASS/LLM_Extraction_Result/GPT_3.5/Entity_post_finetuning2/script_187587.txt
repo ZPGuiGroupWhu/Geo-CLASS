@@ -1,0 +1,16 @@
+{
+    "Summary": [
+        "Calculate MODIS EVI average and perform PCA on the data."
+    ],
+    "Theme": [
+        "STRATOSPHERIC CLOUDS (OBSERVED/ANALYZED)",
+        "TOP OF ATMOSPHERE (TOA) REFLECTANCE"
+    ],
+    "DataSource": [
+        "MODIS/006/MOD13Q1"
+    ],
+    "Function": [
+        "Calculate Normalized Infrared Vegetation Index (NIRV)",
+        "Visualize The Processed Data"
+    ]
+}

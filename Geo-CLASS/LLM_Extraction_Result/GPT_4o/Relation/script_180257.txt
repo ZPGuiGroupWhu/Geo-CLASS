@@ -1,0 +1,14 @@
+{
+    "relation_1": {
+        "DataSource": ["users/Katemiller125/Illilouette"],
+        "Function": ["Load shapefile", "Paint feature collection"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LE07/C02/T1_L2"],
+        "Function": ["Filter image collection by date", "Add layer to map"]
+    },
+    "relation_3": {
+        "DataSource": ["LANDSAT/LE07/C01/T1_SR"],
+        "Function": ["Filter image collection by date", "Apply cloud mask", "Rename image bands", "Prepare image", "Calculate zonal statistics"]
+    }
+}

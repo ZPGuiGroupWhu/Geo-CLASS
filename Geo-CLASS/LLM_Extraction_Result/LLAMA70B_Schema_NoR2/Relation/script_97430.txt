@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2_CLOUD_PROBABILITY"],
+        "Function": ["Filtering image collection by cloud probability", "Adding cloud probability and cloud mask bands"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Identifying dark pixels and cloud shadows", "Applying cloud-shadow mask to image", "Calculating vegetation indices (SWI, MNDWI, NDVI, SAVI)"]
+    }
+}

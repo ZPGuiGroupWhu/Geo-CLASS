@@ -1,0 +1,314 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var regions = ee.FeatureCollection("FAO/GAUL_SIMPLIFIED_500m/2015/level2"),
+    l8 = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+var aoi = regions.filter(
+
+            ee.Filter.eq
+
+            ('ADM1_NAME', 'Quang Nam'));
+
+            
+
+Map.addLayer(aoi, {color: 'yellow'}, 'Administrative boundaries', 0);
+
+
+
+
+
+// Filter the image collection using filterBounds() and filterDate() method.
+
+// Sort the collection by cloud cover metadata
+
+// Create the mosaic image and clip it to boundary
+
+
+
+var Ref = l8
+
+                  .filterBounds(aoi)
+
+                  .filterDate('2019-01-01', '2020-10-01')
+
+                  .filterMetadata ('CLOUD_COVER_LAND', 'less_than', 10) //is 10 reasonable?
+
+                  .sort('CLOUDY_PIXEL_PERCENTAGE', false)
+
+                  ;
+
+                  
+
+    print (Ref.size(),'size of Reference Collection');
+
+    
+
+    print(Ref,'Reference Image Collection');
+
+                  
+
+var RGB =  {bands: ['B4', 'B3', 'B2'], min: 356.1, max: 7320.9, gamma:3.00};  
+
+
+
+var Ref = Ref.mosaic().clip(aoi);
+
+
+
+Map.addLayer(Ref, RGB, 'Reference RGB', 0);
+
+
+
+var Flood = l8
+
+                  .filterBounds(aoi)
+
+                  .filterDate('2020-10-08', '2020-10-30')
+
+                  .filterMetadata ('CLOUD_COVER_LAND', 'less_than', 100) 
+
+                  .sort('CLOUDY_PIXEL_PERCENTAGE', false)
+
+                  ;
+
+
+
+  print (Flood.size(), 'size of flood collection');
+
+  print (Flood, 'Flood Image Collection');
+
+  
+
+var Flood = Flood.mosaic().clip(aoi);
+
+
+
+  Map.addLayer(Flood, RGB, 'Flood RGB', 0);
+
+  
+
+
+
+//Calculate NDWI                
+
+
+
+var ndwi_Ref = Ref.normalizedDifference(['B3', 'B5'])
+
+              .rename ('ndwi');
+
+var ndwi_Flood = Flood.normalizedDifference(['B3', 'B5'])
+
+.rename('ndwi');
+
+
+
+print (ndwi_Ref,'ndwi Ref');
+
+print (ndwi_Flood,'ndwi Flood');
+
+
+
+
+
+
+
+
+
+var waterPalette = ['red', 'yellow', 'green', 'blue'];
+
+Map.addLayer(ndwi_Ref, {min: -1, max: 0.5, palette: waterPalette}, 'Ref NDWI', 0);
+
+Map.addLayer(ndwi_Flood, {min: -1, max: 0.5, palette: waterPalette}, 'Flood NDWI', 0);
+
+Map.centerObject(aoi, 10);
+
+
+
+// Get difference image of ndwi                                             
+
+var diffNDWI = ndwi_Flood.subtract(ndwi_Ref);
+
+Map.addLayer(diffNDWI, {min:-1, max:0.5, gamma:0.8}, 'Difference NDWI', 0);
+
+
+
+// set the threshold manually
+
+var THRES = 0.3;
+
+
+
+// select pixels greater than threshold
+
+var mask = diffNDWI.gt(THRES);
+
+
+
+Map.addLayer (mask.updateMask(mask),{palette:"0000FF"}, 'Flooded areas before refinement - Difference Image', 0);
+
+
+
+
+
+// Refine flood result using additional datasets
+
+      
+
+      // Include JRC layer on surface water seasonality to mask flood pixels from areas
+
+      // of "permanent" water (where there is water > 10 months of the year)
+
+      var swater = ee.Image('JRC/GSW1_0/GlobalSurfaceWater').select('seasonality');
+
+      var swater_mask = swater.gte(10).updateMask(swater.gte(10));
+
+      
+
+      //Flooded layer where perennial water bodies (water > 10 mo/yr) is assigned a 0 value
+
+      var flooded_mask = mask.where(swater_mask,0);
+
+      // final flooded area without pixels in perennial waterbodies
+
+      var flooded = flooded_mask.updateMask(flooded_mask);
+
+      
+
+      // Compute connectivity of pixels to eliminate those connected to 5 or fewer neighbours
+
+      // This operation reduces noise of the flood extent product 
+
+      var connections = flooded.connectedPixelCount();    
+
+      var flooded = flooded.updateMask(connections.gte(2));
+
+      
+
+      // Mask out areas with more than 5 percent slope using a Digital Elevation Model 
+
+      var DEM = ee.Image('WWF/HydroSHEDS/03VFDEM');
+
+      var terrain = ee.Algorithms.Terrain(DEM);
+
+      var slope = terrain.select('slope');
+
+      var flooded = flooded.updateMask(slope.lt(5));
+
+      
+
+
+
+ //Mask out clouds classified as flooded
+
+            
+
+      var qa = Flood.select('pixel_qa');
+
+      var cloud = qa.bitwiseAnd(1 << 5).or(qa.bitwiseAnd(1 << 3))
+
+      .updateMask(qa.bitwiseAnd(1 << 5).or(qa.bitwiseAnd(1 << 3)));
+
+      var cloudmask = flooded.where(cloud, 0);
+
+      var flooded = flooded.updateMask(cloudmask);
+
+
+
+    //Flooded areas derived from difference image
+
+Map.addLayer(flooded,{palette:"0000FF"},'Flooded areas after refinement - Difference Image', 0);
+
+    
+
+
+
+//Try same method with Flood image see if it has better results 
+
+
+
+// set the threshold
+
+var THRES = 0.03;
+
+
+
+// select pixels greater than threshold
+
+var mask = ndwi_Flood.gt(THRES);
+
+
+
+Map.addLayer (mask.updateMask(mask),{palette:"0000FF"}, 'Flooded areas before refinement - Flood Image', 0);
+
+
+
+
+
+// Refine flood result using additional datasets
+
+      
+
+      // Include JRC layer on surface water seasonality to mask flood pixels from areas
+
+      // of "permanent" water (where there is water > 10 months of the year)
+
+      var swater = ee.Image('JRC/GSW1_0/GlobalSurfaceWater').select('seasonality');
+
+      var swater_mask = swater.gte(10).updateMask(swater.gte(10));
+
+      
+
+      //Flooded layer where perennial water bodies (water > 10 mo/yr) is assigned a 0 value
+
+      var flooded_mask = mask.where(swater_mask,0);
+
+      // final flooded area without pixels in perennial waterbodies
+
+      var flooded = flooded_mask.updateMask(flooded_mask);
+
+      
+
+      // Compute connectivity of pixels to eliminate those connected to 8 or fewer neighbours
+
+      // This operation reduces noise of the flood extent product 
+
+      var connections = flooded.connectedPixelCount();    
+
+      var flooded = flooded.updateMask(connections.gte(2));
+
+      
+
+      // Mask out areas with more than 5 percent slope using a Digital Elevation Model 
+
+      var DEM = ee.Image('WWF/HydroSHEDS/03VFDEM');
+
+      var terrain = ee.Algorithms.Terrain(DEM);
+
+      var slope = terrain.select('slope');
+
+      var flooded = flooded.updateMask(slope.lt(5));
+
+      
+
+       //Mask out clouds classified as flooded
+
+            
+
+      var qa = Flood.select('pixel_qa');
+
+      var cloud = qa.bitwiseAnd(1 << 5).or(qa.bitwiseAnd(1 << 3))
+
+      .updateMask(qa.bitwiseAnd(1 << 5).or(qa.bitwiseAnd(1 << 3)));
+
+      var cloudmask = flooded.where(cloud, 0);
+
+      var flooded = flooded.updateMask(cloudmask);
+
+    
+
+    Map.addLayer (mask.updateMask(mask),{palette:"0000FF"}, 'flooded areas after refinement -  Flood Image', 0);  
+
+                                                                                 
+
+
+

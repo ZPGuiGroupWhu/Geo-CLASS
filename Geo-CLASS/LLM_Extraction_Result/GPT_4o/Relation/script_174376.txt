@@ -1,0 +1,6 @@
+{
+  "relation_1": {
+    "DataSource": ["LANDSAT/LC08/C01/T1"],
+    "Function": ["Load Landsat image collection", "Filter image collection by date", "Create cloud-free composite", "Visualize composite", "Sample training data", "Train random forest classifier", "Classify imagery", "Display classification results", "Calculate confusion matrix", "Calculate classification accuracy"]
+  }
+}

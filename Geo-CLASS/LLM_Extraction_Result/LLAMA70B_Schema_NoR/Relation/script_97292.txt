@@ -1,0 +1,23 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "USDA/NAIP/DOQQ"
+        ],
+        "Function": [
+            "Filtering image collection by date and bounds",
+            "Clipping image to area of interest",
+            "Segmenting image using SNIC algorithm"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "USDA/NASS/CDL/2016"
+        ],
+        "Function": [
+            "Computing per-cluster standard deviation",
+            "Calculating cluster area and perimeter",
+            "Classifying objects using random forest classifier",
+            "Computing spectral angle between pixels and cluster means"
+        ]
+    }
+}

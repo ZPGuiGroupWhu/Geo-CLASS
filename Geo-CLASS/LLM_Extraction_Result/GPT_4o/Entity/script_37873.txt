@@ -1,0 +1,5 @@
+{
+  "Theme": ["Landcover classification using satellite imagery"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Define region of interest", "Create feature collections", "Merge feature collections", "Filter image collection by date", "Sort image collection by cloud cover", "Select first image", "Add image layer to map", "Sample image regions", "Train classifier", "Classify image", "Add classified layer to map"]
+}

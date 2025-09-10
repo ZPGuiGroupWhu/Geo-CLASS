@@ -1,0 +1,21 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S1_GRD"
+        ],
+        "Function": [
+            "Filtering Sentinel-1 image collection",
+            "Applying Refined Lee speckle filter",
+            "Converting image to natural units",
+            "Converting image to dB"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S1_GRD"
+        ],
+        "Function": [
+            "Classifying land cover using CART algorithm"
+        ]
+    }
+}

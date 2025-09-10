@@ -1,0 +1,6 @@
+{
+  "Summary": ["Calculate MODIS EVI average and perform PCA on the data."],
+  "Theme": ["Vegetation monitoring through MODIS EVI analysis", "Principal Component Analysis (PCA) for feature extraction"],
+  "DataSource": ["MODIS/006/MOD13Q1"],
+  "Function": ["Filter and calculate average EVI for each year", "Perform PCA on the processed data"]
+}

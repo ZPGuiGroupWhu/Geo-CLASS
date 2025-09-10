@@ -1,0 +1,25 @@
+{
+    "Summary": [
+        "Geoprocessing workflow analyzing forest cover change in Zimbabwe using Landsat and Sentinel imagery."
+    ],
+    "Theme": [
+        "SNOW COVER"
+    ],
+    "DataSource": [
+        "users/ValeriaContessa/n_regions",
+        "ft:1tdSwUL7MVpOauSgRzqVTOwdfy17KDbw-1d9omPw",
+        "JRC/GSW1_0/GlobalSurfaceWater",
+        "UMD/hansen/global_forest_change_2016_v1_4",
+        "COPERNICUS/S2",
+        "LANDSAT/LT5_L1T",
+        "LANDSAT/LE7_L1T",
+        "LANDSAT/LC08/C01/T1_RT"
+    ],
+    "Function": [
+        "Binary Image Creation",
+        "Standard Deviation Calculation",
+        "Cloud And Water Masking",
+        "Vegetation Cover Classification",
+        "Image Index Calculation"
+    ]
+}

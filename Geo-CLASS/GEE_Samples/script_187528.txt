@@ -1,0 +1,371 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var roiBox = /* color: #ffc82d */ee.Geometry.Polygon(
+        [[[94.75960548767216, 21.106016263272355],
+          [94.88516612937588, 21.109895644565693],
+          [95.06782936865761, 21.24217843264364],
+          [94.92185835328019, 21.297305170821463],
+          [94.78713350726866, 21.197348380012116]]]);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+/*---------------------------------------------
+
+Script :  Sentilen-1 Flood Mapping.js
+
+
+
+Source : Khun San Aung,
+
+      
+
+        GEE Guide, 
+
+        https://developers.google.com/earth-engine/sentinel1
+
+----------------------------------------------*/
+
+ 
+
+// ေရ၏ အျမင့္ဆုံး Back scatter တန္ဖိုး
+
+
+
+var flood_value = -16.5   // backscatter range from -30 to 0 
+
+var water_value = -17
+
+
+
+
+
+var flood_Start = '2016-07-20';
+
+var flood_End = '2016-07-30';
+
+
+
+// you can use today instead of fixed flood_End
+
+var today = new Date();
+
+print(today);
+
+
+
+var dry_Start = '2016-01-01';
+
+var dry_End = '2016-01-15';
+
+
+
+// Smoothing ျပဳလုပ္ရန္ အက်ယ္အဝန္း 
+
+
+
+var SMOOTHING_RADIUS = 50; // meter
+
+var DIFF_UPPER_THRESHOLD = -3;  // back scatter value ()
+
+
+
+// histogram ပုံဆြဲရန္ ျပင္ဆင္ျခင္း
+
+
+
+var options = {
+
+  title: 'Sentinel-1 C band - Flood Image histogram',
+
+  fontSize: 20,
+
+  hAxis: {title: 'Back scatter'},
+
+  vAxis: {title: 'count of DN'},
+
+  series: {
+
+    0: {color: 'blue'},
+
+    1: {color: 'green'}}
+
+};
+
+var options2 = {
+
+  title: 'Sentinel-1 C band - River Image histogram',
+
+  fontSize: 20,
+
+  hAxis: {title: 'Back scatter'},
+
+  vAxis: {title: 'count of DN'},
+
+  series: {
+
+    0: {color: 'blue'},
+
+    1: {color: 'green'}}
+
+};
+
+var options3 = {
+
+  title: ' Wet/Dry Band Ratio Image histogram',
+
+  fontSize: 20,
+
+  hAxis: {title: 'Band Ratio Values'},
+
+  vAxis: {title: 'Count of Pixels'},
+
+  series: {
+
+    0: {color: 'blue'},
+
+    1: {color: 'green'}}
+
+};
+
+
+
+// Functions to convert from/to dB
+
+function toNatural(img) {
+
+  return ee.Image(10.0).pow(img.select(0).divide(10.0));
+
+}
+
+
+
+function toDB(img) {
+
+  return ee.Image(img).log10().multiply(10.0);
+
+}
+
+  
+
+// Fusion table မွ တိုင္းႏွင့္ ျပည္နယ္ ေျမပုံ
+
+
+
+var st = ee.FeatureCollection('ft:1nWJr3XY3hcsRSvydLLyK47W-r6N1bB7JHhTYuLle');
+
+var mySt = st.filter(ee.Filter.eq('St', 'Sagaing'));
+
+
+
+
+
+// ေလ့လာခ်င္သည့္ တည္ေနရာ
+
+
+
+
+
+
+
+//-----------------------------------------------------------------
+
+
+
+
+
+var sentinel1 = ee.ImageCollection('COPERNICUS/S1_GRD').filterBounds(roiBox);
+
+
+
+
+
+var latestImage = ee.Image(sentinel1.sort('system:time_start', false).first());
+
+print('Most Recent images in ROI: ', latestImage);
+
+
+
+var array = sentinel1.toList(sentinel1.size()).map(function(image){
+
+  image = ee.Image(image);
+
+  var id = image.id();
+
+  var date = ee.Date(image.get('system:time_start'));
+
+  return [date,id];
+
+});
+
+
+
+// Get the timestamp and convert it to a date.
+
+var date = ee.Date(latestImage.get('system:time_start'));
+
+print('Acquistion Date: ', date); 
+
+// Get a specific metadata property.
+
+var id = latestImage.get('system:id');
+
+print('ImageID : ', id); 
+
+
+
+var properties = latestImage.propertyNames();
+
+print('Metadata properties: ', properties); 
+
+
+
+// ေရဒါ ပုံအစုအေဝးႀကီးထဲမွ ၊ စီစစ္ ေရြးခ်ယ္ယူ
+
+
+
+var vh = sentinel1
+
+  // Filter to get images with VV and VH dual polarization.
+
+  .filter(ee.Filter.listContains('transmitterReceiverPolarisation', 'VV'))
+
+  
+
+  // Filter to get images collected in interferometric wide swath mode.
+
+  .filter(ee.Filter.eq('instrumentMode', 'IW'))
+
+  .select('VV')
+
+  //ေရႀကီးစဥ္ေန႔ရက္၏ Radar ပုံ
+
+  
+
+  .filterDate(flood_Start, flood_End)
+
+  
+
+  .min()   ;
+
+
+
+// ျမစ္ေခ်ာင္းပုံ
+
+
+
+var w = sentinel1
+
+  .filter(ee.Filter.listContains('transmitterReceiverPolarisation', 'VV'))
+
+  .filter(ee.Filter.eq('instrumentMode', 'IW'))
+
+  .select('VV')
+
+  // ေရမႀကီးမွီ ပုံမွန္ကာလ Radar ပုံ
+
+  
+
+  .filterDate(dry_Start, dry_End)
+
+  .min()   ;
+
+  
+
+//  ေသးငယ္ေသာ အစက္အေပ်ာက္မ်ား ဖယ္ရွားၿပီး ၊ မ်က္ႏွာျပင္ ေခ်ာေမြ႕သြားေအာင္ Smoothing filter ျဖင့္ ျခယ္သ ျခယ္သ
+
+
+
+var vh_smoothed = vh.focal_median(SMOOTHING_RADIUS, 'circle', 'meters');
+
+var w_s = w.focal_median(SMOOTHING_RADIUS, 'circle', 'meters');
+
+var bratio = vh_smoothed.divide(w_s);
+
+var rgb = ee.Image.cat(vh_smoothed, w_s, bratio);
+
+
+
+var bratio2 = vh_smoothed.divide(w_s).multiply(10);
+
+var RGB = ee.Image.cat(vh_smoothed, w_s, bratio2);
+
+
+
+var latestRatio = latestImage.select('VV').rename('latestRatio');
+
+
+
+
+
+
+//  Back scatter နဲေသာ တန္ဖိုးမ်ားကိုသာ ေရျပင္အျဖစ္ သတ္မွတ္
+
+
+
+var flood_img = vh_smoothed.lt(flood_value);
+
+var River = w_s.lt(flood_value);
+
+
+
+
+
+// Histogram ေရးဆြဲေစျခင္း
+
+
+
+var histogram = ui.Chart.image.histogram(vh_smoothed, roiBox, 30)
+
+    .setSeriesNames(['VH'])
+
+    .setOptions(options);
+
+var histogram2 = ui.Chart.image.histogram(w_s, roiBox, 30)
+
+    .setSeriesNames(['VH'])
+
+    .setOptions(options2);
+
+var histogram3 = ui.Chart.image.histogram(bratio, roiBox, 30)
+
+    .setSeriesNames(['VH'])
+
+    .setOptions(options3);
+
+
+
+// Display the histogram.
+
+print(histogram);
+
+print(histogram2);
+
+print(histogram3);
+
+
+
+var imageVisParam = {"opacity":1,"bands":["VV","VH","VV"],"min":-30,"max":0,"gamma":1};
+
+
+
+Map.centerObject(roiBox, 11); 
+
+
+
+
+
+
+
+
+
+Map.addLayer(RGB, {min:-30,max:0},'စုေပါင္း RGB');
+
+
+
+
+
+Map.addLayer(flood_img.updateMask(flood_img), {palette:"FF9999"},'ေရႀကီးပုံ',1);
+
+Map.addLayer(River.updateMask(River), {palette:"1111FF"},'ျမစ္ေခ်ာင္း',1);
+
+
+
+
+

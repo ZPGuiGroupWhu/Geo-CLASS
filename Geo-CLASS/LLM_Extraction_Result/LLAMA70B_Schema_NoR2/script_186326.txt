@@ -1,0 +1,29 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Forest monitoring and early detection of forest loss and fire using Sentinel-2 images"],
+  "DataSource": ["COPERNICUS/S2", "ft:1TFcNAU6zr_9svAb610dlsyqNiiXMLYlFrfP23ZuH"],
+  "Function": ["Filtering image collection by date and bounds", "Calculating NDVI and NBR indices", "Mosaicking images", "Exporting image properties to CSV", "Exporting mosaic to Drive", "Exporting individual scenes to Drive"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Filtering image collection by date and bounds", "Calculating NDVI and NBR indices", "Mosaicking images"]
+    },
+    "relation_2": {
+        "DataSource": ["ft:1TFcNAU6zr_9svAb610dlsyqNiiXMLYlFrfP23ZuH"],
+        "Function": ["Exporting image properties to CSV", "Exporting mosaic to Drive", "Exporting individual scenes to Drive"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 5125, 'completion_tokens': 293, 'total_tokens': 5418}

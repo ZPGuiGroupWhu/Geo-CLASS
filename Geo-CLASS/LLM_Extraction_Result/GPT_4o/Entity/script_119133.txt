@@ -1,0 +1,5 @@
+{
+  "Theme": ["Burn severity analysis", "Post-fire classification"],
+  "DataSource": ["COPERNICUS/S2_SR_HARMONIZED/20200720T110619_20200720T111156_T29SPB", "COPERNICUS/S2_SR_HARMONIZED/20200908T110619_20200908T111404_T29SPB"],
+  "Function": ["Center map on study area", "Display pre-fire image", "Display post-fire image", "Calculate pre-fire NBR", "Calculate post-fire NBR", "Calculate dNBR", "Stack image bands", "Sample pixels for training", "Train cluster model", "Apply cluster model", "Calculate statistics", "Generate histogram", "Clip clusters to study area", "Apply mode filter", "Reclassify binary mask", "Multiply binary and severity classifications"]
+}

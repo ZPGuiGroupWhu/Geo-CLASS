@@ -1,0 +1,18 @@
+{
+    "relation_1": {
+        "DataSource": ["users/EL/mapa_forest_hybrid_Belize"],
+        "Function": ["Filtering image collections by date and cloud cover", "Exporting classified image to asset"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LT5_L1T", "LANDSAT/LE7_L1T", "LANDSAT/LC08/C01/T1_RT"],
+        "Function": ["Creating mosaics from Landsat and Sentinel imagery", "Calculating spectral indices", "Classifying land cover using machine learning"]
+    },
+    "relation_3": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Creating mosaics from Landsat and Sentinel imagery", "Calculating spectral indices", "Classifying land cover using machine learning"]
+    },
+    "relation_4": {
+        "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+        "Function": ["Masking water areas"]
+    }
+}

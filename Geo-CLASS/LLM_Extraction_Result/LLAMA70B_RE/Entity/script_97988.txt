@@ -1,0 +1,20 @@
+{
+    "Theme": [
+        "Land cover classification and forest area analysis"
+    ],
+    "DataSource": [
+        "users/EL/mapa_forest_hybrid_Belize",
+        "LANDSAT/LT5_L1T",
+        "LANDSAT/LE7_L1T",
+        "LANDSAT/LC08/C01/T1_RT",
+        "COPERNICUS/S2",
+        "JRC/GSW1_0/GlobalSurfaceWater"
+    ],
+    "Function": [
+        "Image collection filtering",
+        "Image compositing",
+        "Image classification",
+        "Image masking",
+        "Area calculation"
+    ]
+}

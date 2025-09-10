@@ -1,0 +1,6 @@
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Filtering cloud cover from Landsat 8 images", "Clipping images to a region of interest", "Computing median of image collection", "Generating natural color Landsat 8 image", "Computing normalized difference vegetation index (NDVI)", "Computing enhanced vegetation index (EVI)", "Computing soil adjusted vegetation index (SABI)", "Creating a legend for SABI visualization"]
+    }
+}

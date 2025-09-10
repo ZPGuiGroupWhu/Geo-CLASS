@@ -1,0 +1,30 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/kitmyfaceplease2/eastsouth_asia"
+        ],
+        "Function": [
+            "Filter image collection by date",
+            "Create mosaic from image collection"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "projects/ee-kitmyfaceplease2/assets/EAST_SOUTH_SPLIT2"
+        ],
+        "Function": [
+            "Filter image collection by date",
+            "Create mosaic from image collection"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "COPERNICUS/S2_CLOUD_PROBABILITY"
+        ],
+        "Function": [
+            "Mask clouds in image",
+            "Calculate sum of image collection",
+            "Calculate percentage of cloud probability"
+        ]
+    }
+}

@@ -1,0 +1,29 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Forest change", "Surface temperature", "Deforestation analysis"],
+  "DataSource": ["LANDSAT/LC08/C01/T2_SR", "UMD/hansen/global_forest_change_2017_v1_5", "Oxford/MAP/LST_Day_5km_Monthly", "NCEP_RE/surface_temp"],
+  "Function": ["Create binary mask for forested areas", "Create binary mask for deforested areas", "Filter image collection by date and region", "Map function to mask forested areas", "Reduce regions to mean temperature", "Export data to CSV"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["LANDSAT/LC08/C01/T2_SR"],
+    "Function": ["Map function to mask forested areas"]
+  },
+  "relation_2": {
+    "DataSource": ["UMD/hansen/global_forest_change_2017_v1_5"],
+    "Function": ["Create binary mask for forested areas", "Create binary mask for deforested areas"]
+  },
+  "relation_3": {
+    "DataSource": ["Oxford/MAP/LST_Day_5km_Monthly", "NCEP_RE/surface_temp"],
+    "Function": ["Filter image collection by date and region", "Reduce regions to mean temperature", "Export data to CSV"]
+  }
+}
+```
+
+Total_Token_Usage:
+8080

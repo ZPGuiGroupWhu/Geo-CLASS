@@ -1,0 +1,372 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var point = /* color: #00ffff */ee.Geometry.Point([-76.28710300174964, 37.06898220782437]),
+    studyarea = /* color: #d69a40 */ee.Geometry.Polygon(
+        [[[-76.73926476293178, 36.78925743198705],
+          [-75.83563927465053, 36.79145698324696],
+          [-75.8375922726238, 37.4136174553371],
+          [-76.7384711788738, 37.4136174553371]]]),
+    hampton = /* color: #98ff00 */ee.Geometry.Polygon(
+        [[[-76.48552351157832, 36.95123776731202],
+          [-76.19987898032832, 36.94904281179154],
+          [-76.19987898032832, 37.13976717599197],
+          [-76.48277692954707, 37.13976717599197]]]),
+    geometry = /* color: #0b4a8b */ee.Geometry.MultiPoint();
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+//Landsat 5
+
+//Load in data collection from specific satellite, i.e. Landsat 5 surface reflectance in this example
+
+var cloudMaskL457 = function(image) {
+
+  var qa = image.select('pixel_qa');
+
+  // If the cloud bit (5) is set and the cloud confidence (7) is high
+
+  // or the cloud shadow bit is set (3), then it's a bad pixel.
+
+  var cloud = qa.bitwiseAnd(1 << 5)
+
+                  .and(qa.bitwiseAnd(1 << 7))
+
+                  .or(qa.bitwiseAnd(1 << 3));
+
+  // Remove edge pixels that don't occur in all bands
+
+  var mask2 = image.mask().reduce(ee.Reducer.min());
+
+  return image.updateMask(cloud.not()).updateMask(mask2);
+
+};
+
+
+
+var l5 = ee.ImageCollection('LANDSAT/LT05/C01/T1_SR')
+
+                  .map(cloudMaskL457);
+
+
+
+//Convert geometry from the standard file (study area, point, hampton)
+
+
+
+
+
+
+
+//Filter out the data to create a composite collection
+
+
+
+var l5DatePlace= l5.filterBounds(studyarea).filterDate('1988-01-01', '2013-01-01');
+
+
+
+
+
+//Down-select Bands
+
+l5.select('old bands', 'new band names');
+
+var l5_B2_B5 = l5DatePlace.select(['B2','B3','B4','B5']);
+
+
+
+
+
+//Rename bands
+
+var l5Renamed = l5_B2_B5.select(
+
+    ['B2', 'B3', 'B4', 'B5'], // old names
+
+    ['green', 'red', 'NIR', 'MIR']); // new names
+
+
+
+//------------------------------------------------------------------------------------------------------
+
+
+
+//Landsat 7
+
+
+
+//Load in data collection from specific satellite, i.e. Landsat 7 surface reflectance in this example
+
+var cloudMaskL457 = function(image) {
+
+  var qa = image.select('pixel_qa');
+
+  // If the cloud bit (5) is set and the cloud confidence (7) is high
+
+  // or the cloud shadow bit is set (3), then it's a bad pixel.
+
+  var cloud = qa.bitwiseAnd(1 << 5)
+
+                  .and(qa.bitwiseAnd(1 << 7))
+
+                  .or(qa.bitwiseAnd(1 << 3));
+
+  // Remove edge pixels that don't occur in all bands
+
+  var mask2 = image.mask().reduce(ee.Reducer.min());
+
+  return image.updateMask(cloud.not()).updateMask(mask2);
+
+};
+
+
+
+var l7 = ee.ImageCollection('LANDSAT/LE07/C01/T1_SR')
+
+                  .map(cloudMaskL457);
+
+
+
+//Filter out the data to create a composite collection
+
+
+
+var l7DatePlace= l7.filterBounds(studyarea).filterDate('1988-01-01', '2018-10-1');
+
+
+
+
+
+//Down-select Bands
+
+l7.select('old bands', 'new band names');
+
+var l7_B2_B5 = l7DatePlace.select(['B2','B3','B4','B5']);
+
+print ('l7_B2_B5', l7_B2_B5);
+
+
+
+//Rename bands
+
+var l7Renamed = l7_B2_B5.select(
+
+    ['B2', 'B3', 'B4', 'B5'], // old names
+
+    ['green', 'red', 'NIR', 'MIR']); // new names
+
+print ('l7Renamed', l7Renamed);
+
+
+
+//--------------------------------------------------------------------------------------------------------
+
+
+
+//Landsat 8
+
+
+
+//Load in data collection from specific satellite, i.e. Landsat 8 surface reflectance in this example
+
+function maskL8sr(image) {
+
+  // Bits 3 and 5 are cloud shadow and cloud, respectively.
+
+  var cloudShadowBitMask = (1 << 3);
+
+  var cloudsBitMask = (1 << 5);
+
+  // Get the pixel QA band.
+
+  var qa = image.select('pixel_qa');
+
+  // Both flags should be set to zero, indicating clear conditions.
+
+  var mask = qa.bitwiseAnd(cloudShadowBitMask).eq(0)
+
+                 .and(qa.bitwiseAnd(cloudsBitMask).eq(0));
+
+  return image.updateMask(mask);
+
+}
+
+
+
+var dataset = ee.ImageCollection('LANDSAT/LC08/C01/T1_SR')
+
+                  .map(maskL8sr);
+
+
+
+var l8 = dataset;
+
+
+
+
+
+//Filter out the data to create a composite collection
+
+
+
+var l8DatePlace= l8.filterBounds(studyarea).filterDate('2013-01-01', '2018-10-1');
+
+
+
+
+
+//Down-select Bands
+
+l8.select('old bands', 'new band names');
+
+var l8_B3_B6 = l8DatePlace.select(['B3','B4','B5','B6']);
+
+
+
+
+
+//Rename bands
+
+var l8Renamed = l8_B3_B6.select(
+
+    ['B3', 'B4', 'B5', 'B6'], // old names
+
+    ['green', 'red', 'NIR', 'MIR']); // new names
+
+
+
+
+
+//----------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+//Merging all final satellite collections
+
+
+
+// merge collections
+
+var mergedCollection = l8Renamed.merge(l7Renamed).merge(l5Renamed);
+
+print ('mergedCollection', mergedCollection);
+
+
+
+//-------------------------------------------------------------------------------------------------------------------------
+
+
+
+// generate collection with NDWI and MNDWI
+
+var images = mergedCollection
+
+    .filterDate('1988-01-01', '2018-10-01')
+
+    .filterBounds(studyarea)  
+
+    .map(function(i) {
+
+      var ndwi = i.normalizedDifference(['green', 'NIR']).rename('NDWI');
+
+      var mndwi = i.normalizedDifference(['green', 'MIR']).rename('MNDWI');
+
+      
+
+      ndwi = ndwi.where(ndwi.lt(0.073), 0).where(ndwi.gt(0.93), 1)
+
+      mndwi = mndwi.where(mndwi.lt(0.073), 0).where(mndwi.gt(0.93), 1)
+
+      
+
+      return i
+
+        .addBands(ndwi)
+
+        .addBands(mndwi)
+
+    });
+
+
+
+//Parse the total collection into years
+
+var collectionsMeans = ee.List.sequence(1988, 2018).map(function(year) {
+
+  var start = ee.Date.fromYMD(year, 1, 1)
+
+  var stop = start.advance(1, 'year')
+
+  
+
+  return images
+
+    .filterDate(start, stop)
+
+    .select(['NDWI', 'MNDWI'])
+
+    .reduce(ee.Reducer.mean())
+
+    .rename(['NDWI', 'MNDWI'])
+
+})
+
+
+
+collectionsMeans = ee.ImageCollection(collectionsMeans)
+
+
+
+print(collectionsMeans)
+
+
+
+// show
+
+var animation = require('users/gena/packages:animation')
+
+var palettes = require('users/gena/packages:palettes')
+
+
+
+animation.animate(collectionsMeans.select('MNDWI'), { 
+
+  vis: { band: 'MNDWI', min: 0, max: 1, palette: palettes.cb.Blues[7] }
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//       cloudOptimized: true
+
+
+
+
+
+
+
+
+

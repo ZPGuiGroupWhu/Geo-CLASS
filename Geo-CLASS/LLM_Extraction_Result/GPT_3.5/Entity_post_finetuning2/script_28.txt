@@ -1,0 +1,22 @@
+{
+    "Summary": [
+        "The script generates annual surface reflectance time series stacks for Landsat sensors and calculates statistics for specific HUC regions in the Pacific Northwest."
+    ],
+    "Theme": [
+        "BIDIRECTIONAL REFLECTANCE DISTRIBUTION FUNCTION",
+        "PYROCLASTICS COMPOSITION/TEXTURE"
+    ],
+    "DataSource": [
+        "MODIS/006/MOD10A1",
+        "users/ak_glaciers/points_w_ids_OR",
+        "users/ak_glaciers/or_snotel_sites",
+        "users/ak_glaciers/NWCC_high_resolution_coordinates_2019_edited_updated_fields_final",
+        "USGS/WBD/2017/HUC08"
+    ],
+    "Function": [
+        "Harmonization Of Reflectance",
+        "Reduction Of Image Collection",
+        "Computes Normalized Difference Vegetation Index (NDVI)",
+        "Calculate Statistical Indicators Of Image Collection"
+    ]
+}

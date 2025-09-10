@@ -1,0 +1,21 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/hrishippatel/IndiaStates"
+        ],
+        "Function": [
+            "updateMap function for updating maps based on user selection",
+            "addLayerSelector function for adding layer selection widgets to maps"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S1_GRD"
+        ],
+        "Function": [
+            "getWeeklySentinelComposite function for compositing Sentinel-1 images",
+            "updateMap function for updating maps based on user selection",
+            "addLayerSelector function for adding layer selection widgets to maps"
+        ]
+    }
+}

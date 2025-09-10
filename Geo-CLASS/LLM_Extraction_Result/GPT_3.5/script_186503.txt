@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["The script processes Sentinel-1 SAR data for land cover classification."],
+  "Theme": ["Land cover classification using SAR data"],
+  "DataSource": ["COPERNICUS/S1_GRD", "urban", "forest", "water"],
+  "Function": ["Image preprocessing for Sentinel-1 data", "Refined Lee speckle filtering", "Training CART classifier for classification"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Image preprocessing for Sentinel-1 data", "Refined Lee speckle filtering", "Training CART classifier for classification"]
+    },
+    "relation_2": {
+        "DataSource": ["urban", "forest", "water"],
+        "Function": ["Training CART classifier for classification"]
+    }
+}
+```

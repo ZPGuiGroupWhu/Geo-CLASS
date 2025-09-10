@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Filtering image collection by date and bounds", "Masking clouds and shadows", "Calculating NDVI", "Creating yearly composites", "Filtering by date and clipping to study area"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Creating image series chart", "Creating timeseries GIF", "Calculating image differences", "Calculating standard anomalies"]
+    }
+}

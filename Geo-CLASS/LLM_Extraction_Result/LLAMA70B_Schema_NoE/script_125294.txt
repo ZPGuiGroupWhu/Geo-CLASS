@@ -1,0 +1,29 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land cover analysis and image processing"],
+  "DataSource": ["users/GeoForPy/Tesis/EcorregionAltoParana", "LANDSAT/LT05/C01/T1_SR"],
+  "Function": ["Cloud masking for Landsat 5 images", "Image collection filtering and reduction", "Percentile calculation and image clipping", "Map visualization and layering", "Image export to Google Drive"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/GeoForPy/Tesis/EcorregionAltoParana"],
+        "Function": ["Cloud masking for Landsat 5 images", "Image collection filtering and reduction", "Percentile calculation and image clipping", "Map visualization and layering", "Image export to Google Drive"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LT05/C01/T1_SR"],
+        "Function": ["Cloud masking for Landsat 5 images", "Image collection filtering and reduction", "Percentile calculation and image clipping", "Map visualization and layering", "Image export to Google Drive"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4285, 'completion_tokens': 290, 'total_tokens': 4575}

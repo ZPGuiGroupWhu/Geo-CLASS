@@ -1,0 +1,28 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Flood monitoring and analysis"],
+  "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2", "COPERNICUS/S1_GRD"],
+  "Function": ["Filtering image collections", "Mosaicking images", "Clipping images", "Calculating NDFI", "Thresholding flood areas"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2"],
+        "Function": ["Filtering image collections"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Filtering image collections", "Mosaicking images", "Clipping images", "Calculating NDFI", "Thresholding flood areas"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 5359, 'completion_tokens': 236, 'total_tokens': 5595}

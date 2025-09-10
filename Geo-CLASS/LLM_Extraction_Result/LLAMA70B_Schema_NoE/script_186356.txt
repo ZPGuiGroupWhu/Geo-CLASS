@@ -1,0 +1,25 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land cover classification using Sentinel-1 data with speckle filtering"],
+  "DataSource": ["COPERNICUS/S1_GRD"],
+  "Function": ["Refined Lee speckle filtering", "Image compositing", "Image classification using CART classifier"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Refined Lee speckle filtering", "Image compositing", "Image classification using CART classifier"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 5517, 'completion_tokens': 152, 'total_tokens': 5669}

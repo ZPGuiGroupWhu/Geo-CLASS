@@ -1,0 +1,172 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var ROI = ee.FeatureCollection("users/ce15btech11022/Final_Cities/Ahmedabad");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+// Get Precipitation data.
+
+var start1 = ee.Date('2014-01-01');
+
+var finish1 = ee.Date('2019-12-31');
+
+var sentinel1 = ee.ImageCollection("COPERNICUS/S2").filterBounds(ROI)
+
+  .filterDate(start1, finish1)
+
+print("Collection 1",sentinel1)
+
+// Difference in days between start and finish
+
+var diff1 = finish1.difference(start1, 'day')
+
+// Make a list of all dates
+
+var range1 = ee.List.sequence(0, diff1.subtract(1)).map(function(day){return start1.advance(day,'day')})
+
+
+
+// Funtion for iteraton over the range of dates
+
+var day_mosaics1 = function(date, newlist) {
+
+  // Cast
+
+  date = ee.Date(date)
+
+  newlist = ee.List(newlist)
+
+  
+
+  // Filter collection between date and the next day
+
+  var filtered = sentinel1.filterDate(date, date.advance(1,'day'))
+
+  
+
+  // Make the mosaic
+
+  var image = ee.Image(filtered.mosaic())
+
+  image = image.reproject(ee.Projection('EPSG:32643'),null,10)
+
+  image = image.set("system:time_end",filtered.first().get("system:time_end"))
+
+  image = image.set("system:time_start",filtered.first().get("system:time_start"))
+
+  image = image.set("system:index",filtered.first().get("system:index"))
+
+  // Add the mosaic to a list only if the collection has images
+
+  return ee.List(ee.Algorithms.If(filtered.size(), newlist.add(image), newlist))
+
+}
+
+// Iterate over the range to make a new list, and then cast the list to an imagecollection
+
+var newcol1 = ee.ImageCollection(ee.List(range1.iterate(day_mosaics1, ee.List([]))))
+
+//
+
+var cirrus = function(image){
+
+//Adding the NDWI Band to the image this is an index similar to NDVI
+
+  var QA60 = image.select('QA60').rename('CirArea'); //Renaming is done to create a Band called NDWI
+
+  
+
+//Getting Pixels Above The Threshold i.e greater than 0
+
+  var CirInd = QA60.eq(2048); 
+
+    
+
+//Calculation of water Area using Image Pixel Area Method
+
+  var area = ee.Image.pixelArea();
+
+
+
+  var CirArea = CirInd.multiply(area);
+
+
+
+  image = image.addBands(CirArea);
+
+  
+
+  return image;
+
+  
+
+};
+
+
+
+//// Creating a Chart which gives Graph of Area of Water in Time Series
+
+var collection1 = newcol1.map(cirrus);
+
+
+
+var TRMMPrecip = collection1.filterBounds(ROI)
+
+                    .filterDate(start1,finish1)
+
+                    .select('CirArea');
+
+TRMMPrecip = TRMMPrecip.map(function(img){
+
+  var date = img.get('system:time_start');
+
+  return img.set('system_time_start', date);
+
+});
+
+
+
+// Create a function that takes an image, calculates the mean over a
+
+// geometry and returns the value and the corresponding date as a 
+
+// feature.
+
+var createTS = function(img){
+
+  var date = img.get('system_time_start');
+
+  var value = img.reduceRegion({reducer : ee.Reducer.sum(), geometry : ROI, maxPixels : 1e8} ).get('CirArea');
+
+  var ft = ee.Feature(null, {'system:time_start': date, 
+
+                             'date': ee.Date(date).format('Y/M/d'), 
+
+                             'value': value});
+
+  return ft;
+
+};
+
+
+
+// Apply the function to each image in modisLST.
+
+var TS = TRMMPrecip.map(createTS);
+
+
+
+
+
+// Export the FeatureCollection.
+
+Export.table.toDrive({
+
+  collection: TS,
+
+  selectors: 'date, value',
+
+  description: 'Cirrus_SENTINEL_Ahmedabad_32643',
+
+  folder : 'GEE Output',
+
+  fileNamePrefix: 'Cirrus_SENTINEL_Ahmedabad_32643'
+
+  });

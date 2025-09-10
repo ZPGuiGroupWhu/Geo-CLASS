@@ -1,0 +1,19 @@
+{
+  "Theme": ["Flood detection using SAR imagery"],
+  "DataSource": [
+    "COPERNICUS/S1_GRD",
+    "FAO/GAUL_SIMPLIFIED_500m/2015/level2",
+    "JRC/GSW1_0/GlobalSurfaceWater",
+    "WWF/HydroSHEDS/03VFDEM"
+  ],
+  "Function": [
+    "Filter image collection by date and polarization",
+    "Mosaic images to create composite",
+    "Apply speckle filter to images",
+    "Calculate difference between images",
+    "Apply threshold to detect flooded areas",
+    "Mask permanent water bodies",
+    "Compute pixel connectivity",
+    "Mask areas with high slope"
+  ]
+}

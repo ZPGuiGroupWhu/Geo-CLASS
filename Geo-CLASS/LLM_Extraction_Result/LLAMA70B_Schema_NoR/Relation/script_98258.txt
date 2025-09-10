@@ -1,0 +1,24 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S1_GRD"
+        ],
+        "Function": [
+            "Filtering image collection by date and metadata",
+            "Creating mosaic of images",
+            "Clipping images to area of interest",
+            "Calculating mean and standard deviation of image collection",
+            "Applying threshold to identify flooded areas",
+            "Merging image collections",
+            "Calculating NDFI index"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "regions"
+        ],
+        "Function": [
+            "Clipping images to area of interest"
+        ]
+    }
+}

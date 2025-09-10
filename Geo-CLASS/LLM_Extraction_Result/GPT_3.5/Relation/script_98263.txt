@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2"],
+        "Function": ["Image collection filtering based on date and cloud cover", "Calculating NDWI for flood detection"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Image collection filtering based on date and cloud cover", "Calculating NDWI for flood detection"]
+    }
+}

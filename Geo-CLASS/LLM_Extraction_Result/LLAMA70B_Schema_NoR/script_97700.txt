@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Vegetation Index Analysis", "SAR Image Analysis"],
+  "DataSource": ["COPERNICUS/S2", "COPERNICUS/S1_GRD"],
+  "Function": ["Filtering Image Collection by Date", "Clipping Image to Geometry", "Computing Normalized Difference Vegetation Index", "Applying K-Means Clustering", "Filtering SAR Image by Date", "Applying Speckle Reduction Filter", "Mosaicking SAR Images"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response that organizes the extracted information into a structured format:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Filtering Image Collection by Date", "Clipping Image to Geometry", "Computing Normalized Difference Vegetation Index"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Filtering SAR Image by Date", "Applying Speckle Reduction Filter", "Mosaicking SAR Images", "Applying K-Means Clustering"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4029, 'completion_tokens': 266, 'total_tokens': 4295}

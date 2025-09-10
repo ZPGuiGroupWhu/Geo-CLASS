@@ -1,0 +1,18 @@
+{
+    "Summary": [
+        "The script processes Sentinel-2, Sentinel-1 SAR, and creates clusters for NDVI, GCI, and SAR data."
+    ],
+    "Theme": [
+        "VEGETATION INDEX",
+        "WATER TREATMENT DISRUPTION"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2",
+        "COPERNICUS/S1_GRD"
+    ],
+    "Function": [
+        "NDVI (Normalized Difference Vegetation Index calculation)",
+        "NDWI (Normalized Difference Water Index calculation)",
+        "Spatial Statistics And Cluster Analysis"
+    ]
+}

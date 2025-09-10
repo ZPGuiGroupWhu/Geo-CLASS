@@ -1,0 +1,5 @@
+{
+  "Theme": ["Satellite Imagery Analysis", "Remote Sensing", "Earth Observation"],
+  "DataSource": ["NOAA/VIIRS/DNB/MONTHLY_V1/VCMCFG", "VITO/PROBAV/C1/S1_TOC_100M", "NOAA/VIIRS/001/VNP09GA", "MODIS/006/MCD43A1", "ASTER/AST_L1T_003", "LANDSAT/LT04/C01/T1_TOA", "LANDSAT/LT05/C01/T1_TOA", "LANDSAT/LE07/C01/T1_TOA", "LANDSAT/LC08/C01/T1_TOA", "COPERNICUS/S3/OLCI", "COPERNICUS/S2"],
+  "Function": ["Filtering Image Collection by Date", "Filtering Image Collection by Bounds", "Filtering Image Collection by Metadata", "Calculating Median Image", "Clipping Image to Geometry", "Exporting Image to Drive", "Visualizing Image in Map"]
+}

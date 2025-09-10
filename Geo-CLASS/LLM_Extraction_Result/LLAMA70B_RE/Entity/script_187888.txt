@@ -1,0 +1,21 @@
+{
+    "Theme": [
+        "Land cover classification and NDVI analysis"
+    ],
+    "DataSource": [
+        "users/kimambo/00_INPUT_TRAINING_VALIDATION/Tanzania_SouthernHighlands_reference_point_36LYR_13DEC2019_230_upto799_75PCTTRAINING",
+        "LANDSAT/LC08/C01/T1_SR",
+        "LANDSAT/LE07/C01/T1_SR",
+        "LANDSAT/LT05/C01/T1_SR",
+        "LANDSAT/LT04/C01/T1_SR"
+    ],
+    "Function": [
+        "Cloud masking",
+        "NDVI calculation",
+        "Image collection filtering",
+        "Time band creation",
+        "Image renaming",
+        "Sampling regions",
+        "Merging images"
+    ]
+}

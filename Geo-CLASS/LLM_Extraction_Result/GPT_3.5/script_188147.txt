@@ -1,0 +1,39 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Geoprocessing workflow combining Landsat and Sentinel data for forest/non-forest classification in Zimbabwe."],
+  "Theme": ["Forest classification", "Water classification"],
+  "DataSource": ["users/kindgard/Asia/Asia", "users/kindgard/Africa", "users/kindgard/SUD", "users/kindgard/AfricaS", "users/kindgard/AmericaN", "users/kindgard/Asia2", "JRC/GSW1_0/GlobalSurfaceWater", "users/kindgard/ESACCI-LC-L4-LC10-Map-20m-P1Y-2016-v10", "users/ValeriaContessa/Map_1992_rast", "LANDSAT/LT5_L1T", "LANDSAT/LE7_L1T", "LANDSAT/LC08/C01/T1_RT", "COPERNICUS/S2"],
+  "Function": ["Image mosaic creation", "Water body masking", "Landsat image filtering", "Landsat image composite creation", "Landsat image ratio calculation", "Sentinel image quality band creation", "Sentinel image classification"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/kindgard/Asia/Asia", "users/kindgard/Africa", "users/kindgard/SUD", "users/kindgard/AfricaS", "users/kindgard/AmericaN", "users/kindgard/Asia2"],
+        "Function": ["Image mosaic creation", "Landsat image filtering", "Landsat image composite creation", "Landsat image ratio calculation"]
+    },
+    "relation_2": {
+        "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+        "Function": ["Water body masking"]
+    },
+    "relation_3": {
+        "DataSource": ["users/kindgard/ESACCI-LC-L4-LC10-Map-20m-P1Y-2016-v10"],
+        "Function": ["Landsat image filtering", "Landsat image ratio calculation"]
+    },
+    "relation_4": {
+        "DataSource": ["users/ValeriaContessa/Map_1992_rast"],
+        "Function": ["Landsat image filtering", "Landsat image composite creation"]
+    },
+    "relation_5": {
+        "DataSource": ["LANDSAT/LT5_L1T", "LANDSAT/LE7_L1T", "LANDSAT/LC08/C01/T1_RT"],
+        "Function": ["Landsat image filtering", "Landsat image composite creation", "Landsat image ratio calculation"]
+    },
+    "relation_6": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Sentinel image quality band creation", "Sentinel image classification"]
+    }
+}
+```

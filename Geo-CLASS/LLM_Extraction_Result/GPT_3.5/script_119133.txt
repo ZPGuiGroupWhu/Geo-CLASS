@@ -1,0 +1,19 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["The script processes pre and post wildfire satellite images to assess severity and binary classification of fire incidents."],
+  "Theme": ["Wildfire severity assessment", "Binary fire incident classification"],
+  "DataSource": ["COPERNICUS/S2_SR_HARMONIZED/20200720T110619_20200720T111156_T29SPB", "COPERNICUS/S2_SR_HARMONIZED/20200908T110619_20200908T111404_T29SPB"],
+  "Function": ["Calculation of NBR before and after the fire", "Generation of training dataset", "Training the dataset using wekaCascadeKMeans algorithm", "Statistical analysis and visualization of results", "Application of filters for result visualization", "Reclassification and multiplication of binary and severity classification images"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2_SR_HARMONIZED/20200720T110619_20200720T111156_T29SPB", "COPERNICUS/S2_SR_HARMONIZED/20200908T110619_20200908T111404_T29SPB"],
+        "Function": ["Calculation of NBR before and after the fire", "Generation of training dataset", "Training the dataset using wekaCascadeKMeans algorithm", "Statistical analysis and visualization of results", "Application of filters for result visualization", "Reclassification and multiplication of binary and severity classification images"]
+    }
+}
+```

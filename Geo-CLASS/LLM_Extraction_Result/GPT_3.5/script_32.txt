@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Determining bias in MODIS/VIIRS snow product"],
+  "Theme": ["Snow product bias analysis"],
+  "DataSource": ["users/ak_glaciers/NWCC_high_resolution_coordinates_2019_hucs", "USGS/WBD/2017/HUC8", "CGIAR/SRTM90_V4"],
+  "Function": ["Generate daily composites", "Make snow covered area composite", "Create Sentinel-1 image collection", "Update mask with snow cover data"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/ak_glaciers/NWCC_high_resolution_coordinates_2019_hucs", "USGS/WBD/2017/HUC8"],
+        "Function": ["Generate daily composites", "Make snow covered area composite"]
+    },
+    "relation_2": {
+        "DataSource": ["CGIAR/SRTM90_V4"],
+        "Function": ["Create Sentinel-1 image collection", "Update mask with snow cover data"]
+    }
+}
+```

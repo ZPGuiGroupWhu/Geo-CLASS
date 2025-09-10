@@ -1,0 +1,19 @@
+{
+    "Theme": [
+        "Tracking Crop Greenness in Merced County"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C02/T1_L2"
+    ],
+    "Function": [
+        "Create feature collection",
+        "Load image collection",
+        "Filter image collection",
+        "Calculate NDVI",
+        "Create chart series by region",
+        "Set chart options",
+        "Load reference image",
+        "Add map layer",
+        "Center map"
+    ]
+}

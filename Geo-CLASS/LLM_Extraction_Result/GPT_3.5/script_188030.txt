@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["The script processes Landsat 8 TOA data for NDVI analysis and exports time-series data."],
+  "Theme": ["NDVI analysis on Landsat 8 TOA data"],
+  "DataSource": ["projects/ee-kimiachenaary/assets/Tehran", "LANDSAT/LC08/C01/T1_TOA"],
+  "Function": ["Cloud masking to remove clouds from images", "NDVI calculation for vegetation health assessment", "Exporting time-series data for further analysis"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["projects/ee-kimiachenaary/assets/Tehran"],
+        "Function": ["Cloud masking to remove clouds from images", "NDVI calculation for vegetation health assessment", "Exporting time-series data for further analysis"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_TOA"],
+        "Function": ["Cloud masking to remove clouds from images", "NDVI calculation for vegetation health assessment", "Exporting time-series data for further analysis"]
+    }
+}
+```

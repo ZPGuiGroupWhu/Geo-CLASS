@@ -1,0 +1,33 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Forest classification", "Land change detection", "Landsat imagery analysis"],
+  "DataSource": ["users/EL/Grenada", "LANDSAT/LE7_L1T", "LANDSAT/LC08/C01/T1_RT", "users/EL/G_forest"],
+  "Function": ["Center map on country", "Buffer country borders", "Filter Landsat images by date and cloud cover", "Create image mosaic", "Calculate band ratios", "Add bands to image", "Visualize image mosaic", "Merge image bands", "Mask non-forest areas", "Sample regions for training", "Train classifier", "Classify image"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["users/EL/Grenada"],
+    "Function": ["Center map on country", "Buffer country borders"]
+  },
+  "relation_2": {
+    "DataSource": ["LANDSAT/LE7_L1T"],
+    "Function": ["Filter Landsat images by date and cloud cover", "Create image mosaic", "Calculate band ratios", "Add bands to image", "Visualize image mosaic"]
+  },
+  "relation_3": {
+    "DataSource": ["LANDSAT/LC08/C01/T1_RT"],
+    "Function": ["Filter Landsat images by date and cloud cover", "Create image mosaic", "Calculate band ratios", "Add bands to image", "Visualize image mosaic"]
+  },
+  "relation_4": {
+    "DataSource": ["users/EL/G_forest"],
+    "Function": ["Mask non-forest areas"]
+  }
+}
+```
+
+Total_Token_Usage:
+5856

@@ -1,0 +1,29 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land cover classification and analysis using Sentinel-2 imagery"],
+  "DataSource": ["COPERNICUS/S2", "USGS/NED"],
+  "Function": ["Masking clouds from Sentinel-2 images", "Filtering image collection by date and bounds", "Calculating median of image collection", "Generating slope and aspect from DEM", "Stacking DEM, slope, and aspect with imagery", "Training unsupervised classification model", "Applying classification model to image", "Generating cluster means and frequency histogram", "Plotting scatter plots of training points and cluster means", "Plotting signature plots for each spectral cluster"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Masking clouds from Sentinel-2 images", "Filtering image collection by date and bounds", "Calculating median of image collection", "Stacking DEM, slope, and aspect with imagery", "Applying classification model to image"]
+    },
+    "relation_2": {
+        "DataSource": ["USGS/NED"],
+        "Function": ["Generating slope and aspect from DEM", "Stacking DEM, slope, and aspect with imagery"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 5197, 'completion_tokens': 310, 'total_tokens': 5507}

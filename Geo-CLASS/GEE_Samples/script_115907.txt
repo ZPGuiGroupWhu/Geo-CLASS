@@ -1,0 +1,2432 @@
+var sitios = ee.FeatureCollection("users/nicolasalejandromari/Sitios_NDVI_Tessi"),
+
+    roi = 
+
+    /* color: #a56ad6 */
+
+    /* shown: false */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Geometry.Polygon(
+
+        [[[-65.36067221954013, -31.562826429469155],
+
+          [-65.36067221954013, -31.779195898893608],
+
+          [-65.2048036892667, -31.779195898893608],
+
+          [-65.2048036892667, -31.562826429469155]]], null, false),
+
+    C1 = 
+
+    /* color: #000080 */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      },
+
+      {
+
+        "type": "rectangle"
+
+      },
+
+      {
+
+        "type": "rectangle"
+
+      },
+
+      {
+
+        "type": "marker"
+
+      },
+
+      {
+
+        "type": "marker"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry({
+
+          "type": "GeometryCollection",
+
+          "geometries": [
+
+            {
+
+              "type": "Polygon",
+
+              "coordinates": [
+
+                [
+
+                  [
+
+                    -64.4336196694673,
+
+                    -30.99606462172113
+
+                  ],
+
+                  [
+
+                    -64.4336196694673,
+
+                    -30.996089912881928
+
+                  ],
+
+                  [
+
+                    -64.43358748295913,
+
+                    -30.996089912881928
+
+                  ],
+
+                  [
+
+                    -64.43358748295913,
+
+                    -30.99606462172113
+
+                  ]
+
+                ]
+
+              ],
+
+              "geodesic": false,
+
+              "evenOdd": true
+
+            },
+
+            {
+
+              "type": "Polygon",
+
+              "coordinates": [
+
+                [
+
+                  [
+
+                    -64.43352176883826,
+
+                    -30.995969205008677
+
+                  ],
+
+                  [
+
+                    -64.43352176883826,
+
+                    -30.995996795393165
+
+                  ],
+
+                  [
+
+                    -64.43349897006163,
+
+                    -30.995996795393165
+
+                  ],
+
+                  [
+
+                    -64.43349897006163,
+
+                    -30.995969205008677
+
+                  ]
+
+                ]
+
+              ],
+
+              "geodesic": false,
+
+              "evenOdd": true
+
+            },
+
+            {
+
+              "type": "Polygon",
+
+              "coordinates": [
+
+                [
+
+                  [
+
+                    -65.41696009248915,
+
+                    -31.749915818520623
+
+                  ],
+
+                  [
+
+                    -65.41696009248915,
+
+                    -31.751065346921216
+
+                  ],
+
+                  [
+
+                    -65.41523543209257,
+
+                    -31.751065346921216
+
+                  ],
+
+                  [
+
+                    -65.41523543209257,
+
+                    -31.749915818520623
+
+                  ]
+
+                ]
+
+              ],
+
+              "geodesic": false,
+
+              "evenOdd": true
+
+            },
+
+            {
+
+              "type": "Point",
+
+              "coordinates": [
+
+                -65.41616000738232,
+
+                -31.751261498045892
+
+              ]
+
+            },
+
+            {
+
+              "type": "Point",
+
+              "coordinates": [
+
+                -65.41616000738232,
+
+                -31.751261498045892
+
+              ]
+
+            }
+
+          ],
+
+          "coordinates": []
+
+        }),
+
+        {
+
+          "system:index": "0",
+
+          "label": "San Miguel bosque Maduro"
+
+        }),
+
+    C2 = 
+
+    /* color: #98ff00 */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      },
+
+      {
+
+        "type": "rectangle"
+
+      },
+
+      {
+
+        "type": "rectangle"
+
+      },
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.MultiPolygon(
+
+            [[[[-64.43001634271903, -30.99390441858772],
+
+               [-64.43001634271903, -30.99392856069724],
+
+               [-64.42999622615142, -30.99392856069724],
+
+               [-64.42999622615142, -30.99390441858772]]],
+
+             [[[-64.42993319423957, -30.99381589746719],
+
+               [-64.42993319423957, -30.993844638099752],
+
+               [-64.42989698441787, -30.993844638099752],
+
+               [-64.42989698441787, -30.99381589746719]]],
+
+             [[[-65.60899821132841, -31.328019179238822],
+
+               [-65.60899821132841, -31.328349105047472],
+
+               [-65.60840812534514, -31.328349105047472],
+
+               [-65.60840812534514, -31.328019179238822]]],
+
+             [[[-65.60822573513212, -31.328339940457294],
+
+               [-65.60822573513212, -31.32868819425689],
+
+               [-65.6076463779849, -31.32868819425689],
+
+               [-65.6076463779849, -31.328339940457294]]]], null, false),
+
+        {
+
+          "system:index": "0",
+
+          "label": "Farias arbustal norte"
+
+        }),
+
+    C3 = 
+
+    /* color: #ffff00 */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      },
+
+      {
+
+        "type": "rectangle"
+
+      },
+
+      {
+
+        "type": "rectangle"
+
+      },
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.MultiPolygon(
+
+            [[[[-64.43523692126699, -30.99757922064276],
+
+               [-64.43523692126699, -30.9976148576196],
+
+               [-64.43519937034078, -30.9976148576196],
+
+               [-64.43519937034078, -30.99757922064276]]],
+
+             [[[-64.43532409305998, -30.99766658869131],
+
+               [-64.43532409305998, -30.99770222563551],
+
+               [-64.4352932476563, -30.99770222563551],
+
+               [-64.4352932476563, -30.99766658869131]]],
+
+             [[[-65.47511306614103, -31.39323492410217],
+
+               [-65.47511306614103, -31.393468459607842],
+
+               [-65.4749092182559, -31.393468459607842],
+
+               [-65.4749092182559, -31.39323492410217]]],
+
+             [[[-65.47508087963286, -31.39371573186309],
+
+               [-65.47508087963286, -31.393926370677985],
+
+               [-65.4748555740756, -31.393926370677985],
+
+               [-65.4748555740756, -31.39371573186309]]]], null, false),
+
+        {
+
+          "system:index": "0",
+
+          "label": "Alvarez arbustal"
+
+        }),
+
+    C4 = 
+
+    /* color: #ff32f4 */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.Polygon(
+
+            [[[-65.30768283718471, -31.663053161892346],
+
+              [-65.30768283718471, -31.663710652510083],
+
+              [-65.3064382922018, -31.663710652510083],
+
+              [-65.3064382922018, -31.663053161892346]]], null, false),
+
+        {
+
+          "system:index": "0",
+
+          "label": "bosque cesar 3"
+
+        }),
+
+    C5 = 
+
+    /* color: #0b4a8b */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      },
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.MultiPolygon(
+
+            [[[[-65.6154862620811, -31.436456033975205],
+
+               [-65.6154862620811, -31.43843328749533],
+
+               [-65.61291134142681, -31.43843328749533],
+
+               [-65.61291134142681, -31.436456033975205]]],
+
+             [[[-65.61531460070415, -31.43484490767459],
+
+               [-65.61531460070415, -31.435430774987974],
+
+               [-65.61299717211529, -31.435430774987974],
+
+               [-65.61299717211529, -31.43484490767459]]]], null, false),
+
+        {
+
+          "label": "Balde_viejo_vertice_sur",
+
+          "system:index": "0"
+
+        }),
+
+    C6 = 
+
+    /* color: #98ff00 */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.Polygon(
+
+            [[[-65.61695321601063, -31.401002199086516],
+
+              [-65.61695321601063, -31.40261390679682],
+
+              [-65.61515077155262, -31.40261390679682],
+
+              [-65.61515077155262, -31.401002199086516]]], null, false),
+
+        {
+
+          "label": "Balde viejo Bosque",
+
+          "system:index": "0"
+
+        }),
+
+    C7 = 
+
+    /* color: #0b4a8b */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.Polygon(
+
+            [[[-65.61291917365223, -31.378068996504044],
+
+              [-65.61291917365223, -31.379900927744334],
+
+              [-65.61111672919422, -31.379900927744334],
+
+              [-65.61111672919422, -31.378068996504044]]], null, false),
+
+        {
+
+          "label": "Balde viejo arbustal",
+
+          "system:index": "0"
+
+        }),
+
+    C8 = 
+
+    /* color: #ffc82d */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.Polygon(
+
+            [[[-65.40441053903291, -31.72218510215555],
+
+              [-65.40441053903291, -31.72532440306674],
+
+              [-65.40340202844331, -31.72532440306674],
+
+              [-65.40340202844331, -31.72218510215555]]], null, false),
+
+        {
+
+          "label": "El alamo monte hermoso",
+
+          "system:index": "0"
+
+        }),
+
+    C9 = 
+
+    /* color: #00ffff */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.Polygon(
+
+            [[[-65.41061180627534, -31.724338820045865],
+
+              [-65.41061180627534, -31.725397408799495],
+
+              [-65.40947454965303, -31.725397408799495],
+
+              [-65.40947454965303, -31.724338820045865]]], null, false),
+
+        {
+
+          "label": "El alamo monte tala churqui",
+
+          "system:index": "0"
+
+        }),
+
+    C10 = 
+
+    /* color: #bf04c2 */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.Polygon(
+
+            [[[-65.6077922025923, -31.370280318138118],
+
+              [-65.6077922025923, -31.3706787992529],
+
+              [-65.60688561594526, -31.3706787992529],
+
+              [-65.60688561594526, -31.370280318138118]]], null, false),
+
+        {
+
+          "label": "Balde viejo represa",
+
+          "system:index": "0"
+
+        }),
+
+    C11 = 
+
+    /* color: #bf04c2 */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.Polygon(
+
+            [[[-65.4175514174341, -31.75964460838322],
+
+              [-65.4175514174341, -31.760757527068264],
+
+              [-65.4164356184839, -31.760757527068264],
+
+              [-65.4164356184839, -31.75964460838322]]], null, false),
+
+        {
+
+          "label": "San Miguel Agronomia",
+
+          "system:index": "0"
+
+        }),
+
+    C12 = 
+
+    /* color: #ff0000 */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.Polygon(
+
+            [[[-65.42463610721089, -31.778622695181042],
+
+              [-65.42463610721089, -31.77986307052856],
+
+              [-65.42379925799824, -31.77986307052856],
+
+              [-65.42379925799824, -31.778622695181042]]], null, false),
+
+        {
+
+          "label": "Pasman Bosque",
+
+          "system:index": "0"
+
+        }),
+
+    C13 = 
+
+    /* color: #00ff00 */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.Polygon(
+
+            [[[-65.480362104823, -31.359684514288702],
+
+              [-65.480362104823, -31.362909320185203],
+
+              [-65.47680013125122, -31.362909320185203],
+
+              [-65.47680013125122, -31.359684514288702]]], null, false),
+
+        {
+
+          "label": "Limite quemado",
+
+          "system:index": "0"
+
+        }),
+
+    C14 = 
+
+    /* color: #0000ff */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.Polygon(
+
+            [[[-65.38091410333338, -31.802734558634278],
+
+              [-65.38091410333338, -31.80541523806839],
+
+              [-65.37866104776087, -31.80541523806839],
+
+              [-65.37866104776087, -31.802734558634278]]], null, false),
+
+        {
+
+          "label": "Aceitera matorral",
+
+          "system:index": "0"
+
+        }),
+
+    C15 = 
+
+    /* color: #999900 */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.Polygon(
+
+            [[[-65.38076389962855, -31.79725442432915],
+
+              [-65.38076389962855, -31.798731630628257],
+
+              [-65.37898291284266, -31.798731630628257],
+
+              [-65.37898291284266, -31.79725442432915]]], null, false),
+
+        {
+
+          "label": "Aceitera quebrachal transformador",
+
+          "system:index": "0"
+
+        }),
+
+    C16 = 
+
+    /* color: #009999 */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.Polygon(
+
+            [[[-65.50100403026593, -31.320276411117945],
+
+              [-65.50100403026593, -31.32151372869541],
+
+              [-65.49899773792279, -31.32151372869541],
+
+              [-65.49899773792279, -31.320276411117945]]], null, false),
+
+        {
+
+          "label": "Aguas Blancas 1",
+
+          "system:index": "0"
+
+        }),
+
+    C17 = 
+
+    /* color: #ff00ff */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.Polygon(
+
+            [[[-65.49238771600601, -31.315037937456932],
+
+              [-65.49238771600601, -31.321013905170997],
+
+              [-65.48749536676284, -31.321013905170997],
+
+              [-65.48749536676284, -31.315037937456932]]], null, false),
+
+        {
+
+          "system:index": "0",
+
+          "label": "Aguas blancas 1"
+
+        }),
+
+    C18 = 
+
+    /* color: #ff9999 */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.Polygon(
+
+            [[[-65.48376173181411, -31.318374260671536],
+
+              [-65.48376173181411, -31.321600482788458],
+
+              [-65.47981352014419, -31.321600482788458],
+
+              [-65.47981352014419, -31.318374260671536]]], null, false),
+
+        {
+
+          "label": "Aguas blancas 3",
+
+          "system:index": "0"
+
+        }),
+
+    C19 = 
+
+    /* color: #99ff99 */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.Polygon(
+
+            [[[-65.48654603756164, -31.365742762453525],
+
+              [-65.48654603756164, -31.366951999692176],
+
+              [-65.4854946116278, -31.366951999692176],
+
+              [-65.4854946116278, -31.365742762453525]]], null, false),
+
+        {
+
+          "label": "Quemado chancani",
+
+          "system:index": "0"
+
+        }),
+
+    C20 = 
+
+    /* color: #99ffff */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      },
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.MultiPolygon(
+
+            [[[[-65.47722173822339, -31.379482616364328],
+
+               [-65.47722173822339, -31.379949755194513],
+
+               [-65.47633124483045, -31.379949755194513],
+
+               [-65.47633124483045, -31.379482616364328]]],
+
+             [[[-65.47535492074903, -31.379180348824622],
+
+               [-65.47535492074903, -31.379656648749044],
+
+               [-65.4744322408479, -31.379656648749044],
+
+               [-65.4744322408479, -31.379180348824622]]]], null, false),
+
+        {
+
+          "label": "chacra sur",
+
+          "system:index": "0"
+
+        }),
+
+    C21 = 
+
+    /* color: #ff99ff */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      },
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.MultiPolygon(
+
+            [[[[-65.47765183246825, -31.371486595688342],
+
+               [-65.47765183246825, -31.372274385688034],
+
+               [-65.47714757717345, -31.372274385688034],
+
+               [-65.47714757717345, -31.371486595688342]]],
+
+             [[[-65.47857451236938, -31.37204537764809],
+
+               [-65.47857451236938, -31.372549194599262],
+
+               [-65.47795223987792, -31.372549194599262],
+
+               [-65.47795223987792, -31.37204537764809]]]], null, false),
+
+        {
+
+          "label": "chacra norte",
+
+          "system:index": "0"
+
+        }),
+
+    C22 = 
+
+    /* color: #d63000 */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      },
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.MultiPolygon(
+
+            [[[[-65.47525157360019, -31.395625137791118],
+
+               [-65.47525157360019, -31.395835772322133],
+
+               [-65.47496189502658, -31.395835772322133],
+
+               [-65.47496189502658, -31.395625137791118]]],
+
+             [[[-65.47499408153476, -31.39589987838994],
+
+               [-65.47499408153476, -31.396101354318073],
+
+               [-65.47460784343662, -31.396101354318073],
+
+               [-65.47460784343662, -31.39589987838994]]]], null, false),
+
+        {
+
+          "label": "alvarez chacra",
+
+          "system:index": "0"
+
+        }),
+
+    C23 = 
+
+    /* color: #98ff00 */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.Polygon(
+
+            [[[-65.29671454296906, -31.74360042167566],
+
+              [-65.29671454296906, -31.74445806619788],
+
+              [-65.29486918316681, -31.74445806619788],
+
+              [-65.29486918316681, -31.74360042167566]]], null, false),
+
+        {
+
+          "label": "apellaniz",
+
+          "system:index": "0"
+
+        }),
+
+    C24 = 
+
+    /* color: #0b4a8b */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.Polygon(
+
+            [[[-65.40095138347839, -31.725715811831087],
+
+              [-65.40095138347839, -31.726774384856494],
+
+              [-65.39940643108581, -31.726774384856494],
+
+              [-65.39940643108581, -31.725715811831087]]], null, false),
+
+        {
+
+          "label": "sabana este monte hermoso",
+
+          "system:index": "0"
+
+        }),
+
+    C25 = 
+
+    /* color: #ffc82d */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.Polygon(
+
+            [[[-65.42152358104822, -31.7798093679505],
+
+              [-65.42152358104822, -31.78044779032402],
+
+              [-65.42047215511438, -31.78044779032402],
+
+              [-65.42047215511438, -31.7798093679505]]], null, false),
+
+        {
+
+          "label": "pasman pastizal",
+
+          "system:index": "0"
+
+        }),
+
+    C26 = 
+
+    /* color: #00ffff */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.Polygon(
+
+            [[[-65.60926354238693, -31.332994908911594],
+
+              [-65.60926354238693, -31.334827718541387],
+
+              [-65.60883438894454, -31.334827718541387],
+
+              [-65.60883438894454, -31.332994908911594]]], null, false),
+
+        {
+
+          "label": "Farias pastizal 2",
+
+          "system:index": "0"
+
+        }),
+
+    table = ee.FeatureCollection("users/franciscoalaggia/Transectas"),
+
+    c26 = 
+
+    /* color: #d63000 */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.Polygon(
+
+            [[[-65.60834717740651, -31.33506094329842],
+
+              [-65.60834717740651, -31.3374527002515],
+
+              [-65.60783219327566, -31.3374527002515],
+
+              [-65.60783219327566, -31.33506094329842]]], null, false),
+
+        {
+
+          "label": "Farias silvopastoril",
+
+          "system:index": "0"
+
+        }),
+
+    c27 = 
+
+    /* color: #98ff00 */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.Polygon(
+
+            [[[-65.60666275014516, -31.335665761144067],
+
+              [-65.60666275014516, -31.337049496443118],
+
+              [-65.60543966283437, -31.337049496443118],
+
+              [-65.60543966283437, -31.335665761144067]]], null, false),
+
+        {
+
+          "label": "Farias oeste pastizal",
+
+          "system:index": "0"
+
+        }),
+
+    c28 = 
+
+    /* color: #0b4a8b */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      },
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.MultiPolygon(
+
+            [[[[-65.60624432553884, -31.337672628873307],
+
+               [-65.60624432553884, -31.338204120920498],
+
+               [-65.60622286786672, -31.338204120920498],
+
+               [-65.60622286786672, -31.337672628873307]]],
+
+             [[[-65.6061477660143, -31.337690956235267],
+
+               [-65.6061477660143, -31.338149139123804],
+
+               [-65.60433459272024, -31.338149139123804],
+
+               [-65.60433459272024, -31.337690956235267]]]], null, false),
+
+        {
+
+          "label": "Farias pastizal 1",
+
+          "system:index": "0"
+
+        }),
+
+    c29 = 
+
+    /* color: #ffc82d */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.Polygon(
+
+            [[[-65.6153479012993, -31.33398807085905],
+
+              [-65.6153479012993, -31.33576587795738],
+
+              [-65.61146406264574, -31.33576587795738],
+
+              [-65.61146406264574, -31.33398807085905]]], null, false),
+
+        {
+
+          "label": "bosque pereyra",
+
+          "system:index": "0"
+
+        }),
+
+    c30 = 
+
+    /* color: #00ffff */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.Polygon(
+
+            [[[-65.52669842707995, -31.340507635599305],
+
+              [-65.52669842707995, -31.34153393144712],
+
+              [-65.52358706462267, -31.34153393144712],
+
+              [-65.52358706462267, -31.340507635599305]]], null, false),
+
+        {
+
+          "label": "cadillo arbustal",
+
+          "system:index": "0"
+
+        }),
+
+    c31 = 
+
+    /* color: #bf04c2 */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.Polygon(
+
+            [[[-65.49775048385686, -31.439840392451767],
+
+              [-65.49775048385686, -31.441378204373812],
+
+              [-65.4939739335639, -31.441378204373812],
+
+              [-65.4939739335639, -31.439840392451767]]], null, false),
+
+        {
+
+          "label": "Balde viejo camino sur",
+
+          "system:index": "0"
+
+        }),
+
+    c32 = 
+
+    /* color: #ff0000 */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.Polygon(
+
+            [[[-65.67537821593021, -31.47601857524539],
+
+              [-65.67537821593021, -31.4779949937032],
+
+              [-65.67348994078372, -31.4779949937032],
+
+              [-65.67348994078372, -31.47601857524539]]], null, false),
+
+        {
+
+          "label": "farias san antonio 1",
+
+          "system:index": "0"
+
+        }),
+
+    c33 = 
+
+    /* color: #00ff00 */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.Polygon(
+
+            [[[-65.67007817091678, -31.47270615071682],
+
+              [-65.67007817091678, -31.47468263912744],
+
+              [-65.66726721586917, -31.47468263912744],
+
+              [-65.66726721586917, -31.47270615071682]]], null, false),
+
+        {
+
+          "label": "farias san antonio 2",
+
+          "system:index": "0"
+
+        }),
+
+    c34 = 
+
+    /* color: #0000ff */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.Polygon(
+
+            [[[-65.44570512990792, -31.38520469349098],
+
+              [-65.44570512990792, -31.38659685872878],
+
+              [-65.4406411192878, -31.38659685872878],
+
+              [-65.4406411192878, -31.38520469349098]]], null, false),
+
+        {
+
+          "label": "reserva chancani picada diagonal",
+
+          "system:index": "0"
+
+        }),
+
+    c35 = 
+
+    /* color: #999900 */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.Polygon(
+
+            [[[-65.45037245048121, -31.367712703319462],
+
+              [-65.45037245048121, -31.36983797447142],
+
+              [-65.44522260917262, -31.36983797447142],
+
+              [-65.44522260917262, -31.367712703319462]]], null, false),
+
+        {
+
+          "label": "",
+
+          "system:index": "0"
+
+        }),
+
+    c36 = 
+
+    /* color: #009999 */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.Polygon(
+
+            [[[-65.46895479453639, -31.365733959389363],
+
+              [-65.46895479453639, -31.367895918242784],
+
+              [-65.46539282096461, -31.367895918242784],
+
+              [-65.46539282096461, -31.365733959389363]]], null, false),
+
+        {
+
+          "label": "reserva chancani picada de la luz",
+
+          "system:index": "0"
+
+        }),
+
+    c37 = 
+
+    /* color: #ff00ff */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.Polygon(
+
+            [[[-65.41650894793935, -31.714264950297984],
+
+              [-65.41650894793935, -31.715396667707942],
+
+              [-65.41539314898915, -31.715396667707942],
+
+              [-65.41539314898915, -31.714264950297984]]], null, false),
+
+        {
+
+          "label": "alamo cauce",
+
+          "system:index": "0"
+
+        }),
+
+    c38 = 
+
+    /* color: #ff9999 */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.Polygon(
+
+            [[[-65.40968778858547, -31.717335003259837],
+
+              [-65.40968778858547, -31.718010362302373],
+
+              [-65.40797117481594, -31.718010362302373],
+
+              [-65.40797117481594, -31.717335003259837]]], null, false),
+
+        {
+
+          "label": "el alamo pastizal dardo",
+
+          "system:index": "0"
+
+        }),
+
+    c39 = 
+
+    /* color: #99ff99 */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.Polygon(
+
+            [[[-65.41357162723904, -31.71684217058319],
+
+              [-65.41357162723904, -31.717389762284412],
+
+              [-65.41224125156765, -31.717389762284412],
+
+              [-65.41224125156765, -31.71684217058319]]], null, false),
+
+        {
+
+          "label": "el alamo pastizal lujan",
+
+          "system:index": "0"
+
+        }),
+
+    c40 = 
+
+    /* color: #9999ff */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.Polygon(
+
+            [[[-65.39562240665211, -31.73100483054819],
+
+              [-65.39562240665211, -31.731579713895822],
+
+              [-65.39313331668629, -31.731579713895822],
+
+              [-65.39313331668629, -31.73100483054819]]], null, false),
+
+        {
+
+          "label": "el alamo rolado",
+
+          "system:index": "0"
+
+        }),
+
+    c41 = 
+
+    /* color: #ffff99 */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.Polygon(
+
+            [[[-65.3127248232067, -31.663170747096093],
+
+              [-65.3127248232067, -31.66373691913414],
+
+              [-65.31098675176504, -31.66373691913414],
+
+              [-65.31098675176504, -31.663170747096093]]], null, false),
+
+        {
+
+          "label": "cesar 1",
+
+          "system:index": "0"
+
+        }),
+
+    c42 = 
+
+    /* color: #99ffff */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.Polygon(
+
+            [[[-65.30836891576651, -31.66729824477254],
+
+              [-65.30836891576651, -31.667846128906273],
+
+              [-65.30682396337393, -31.667846128906273],
+
+              [-65.30682396337393, -31.66729824477254]]], null, false),
+
+        {
+
+          "label": "cesar 2",
+
+          "system:index": "0"
+
+        }),
+
+    c43 = 
+
+    /* color: #ff99ff */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.Polygon(
+
+            [[[-65.3130681459606, -31.669288874998553],
+
+              [-65.3130681459606, -31.66987327210174],
+
+              [-65.31143736287956, -31.66987327210174],
+
+              [-65.31143736287956, -31.669288874998553]]], null, false),
+
+        {
+
+          "label": "cesar 5",
+
+          "system:index": "0"
+
+        }),
+
+    c45 = 
+
+    /* color: #d63000 */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.Polygon(
+
+            [[[-65.30735214545113, -31.670401318884597],
+
+              [-65.30735214545113, -31.67098570898825],
+
+              [-65.30499180151803, -31.67098570898825],
+
+              [-65.30499180151803, -31.670401318884597]]], null, false),
+
+        {
+
+          "label": "cesar 4",
+
+          "system:index": "0"
+
+        }),
+
+    c46 = 
+
+    /* color: #98ff00 */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.Polygon(
+
+            [[[-65.16699343587518, -31.974798155272453],
+
+              [-65.16699343587518, -31.977674047978056],
+
+              [-65.16574889089227, -31.977674047978056],
+
+              [-65.16574889089227, -31.974798155272453]]], null, false),
+
+        {
+
+          "label": "vega reserva",
+
+          "system:index": "0"
+
+        }),
+
+    c47 = 
+
+    /* color: #0b4a8b */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.Polygon(
+
+            [[[-65.1293551607216, -32.02397263931522],
+
+              [-65.1293551607216, -32.02450021678185],
+
+              [-65.1275527162636, -32.02450021678185],
+
+              [-65.1275527162636, -32.02397263931522]]], null, false),
+
+        {
+
+          "label": "vega rolado",
+
+          "system:index": "0"
+
+        }),
+
+    c48 = 
+
+    /* color: #ffc82d */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.Polygon(
+
+            [[[-65.10092751899825, -32.02396421797319],
+
+              [-65.10092751899825, -32.02471919865259],
+
+              [-65.09776251236067, -32.02471919865259],
+
+              [-65.09776251236067, -32.02396421797319]]], null, false),
+
+        {
+
+          "label": "vega chacra",
+
+          "system:index": "0"
+
+        }),
+
+    c49 = 
+
+    /* color: #00ffff */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      },
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Feature(
+
+        ee.Geometry.MultiPolygon(
+
+            [[[[-65.11356855959501, -32.01696607677048],
+
+               [-65.11356855959501, -32.01696607677048],
+
+               [-65.11356855959501, -32.01696607677048],
+
+               [-65.11356855959501, -32.01696607677048]]],
+
+             [[[-65.1136758479556, -32.01702065806462],
+
+               [-65.1136758479556, -32.01858530800484],
+
+               [-65.111766115137, -32.01858530800484],
+
+               [-65.111766115137, -32.01702065806462]]]], null, false),
+
+        {
+
+          "label": "vega quemado",
+
+          "system:index": "0"
+
+        });
+
+        
+
+        
+
+        Map.addLayer(sitios, {}, 'Sitios - Muestras');
+
+Map.addLayer(roi, {}, 'ROI - Muestras');
+
+Map.addLayer(C2, {}, 'C1 - Muestras');
+
+Map.addLayer(C1, {}, 'C2 - Muestras');
+
+Map.addLayer(C3, {}, 'C3 - Muestras');
+
+Map.addLayer(table)
+
+Map.centerObject(roi,10);  
+
+//
+
+// sitios: Se cargan via Asset como un shape de puntos. Cada Punto representa el centro de un pixel
+
+//(Landsat o Sentinel). El punto debe corresponderse con una zona de vegetación homogénea-
+
+// Aclaracion: Los sitios cargados via shape son de guia para establecer manualmente las muestras en GEE.
+
+//En este ejemplo, C1, C2 y C3, son comunidades de pastizales. Cada una representa una muestra creada como 
+
+//un poligono cuadrado centrado en el punto de referencia. 
+
+
+
+
+
+
+
+//defino el inicio y final del periodo de tiempo analizado (Ojo que Sentinel solo tiene datos desde el 2013)
+
+
+
+
+
+var inicio = '2017-01-20';
+
+var fin = '2022-0-20'
+
+
+
+// Este campo contiene el tiempo de UNIX en milisegundos. Esto es para compatibilizar con Sentinel
+
+var timeField = 'system:time_start';
+
+
+
+// Curvas de NDVI con Landsat 8 // 
+
+
+
+
+
+var l8toa = ee.ImageCollection('LANDSAT/LC08/C01/T1_SR');
+
+
+
+
+
+// Utilice esta función para agregar variables para NDVI, tiempo y una constante
+
+// a las imágenes del Landsat 8.
+
+
+
+var addVariables8 = function(image) {
+
+  // Calcular el tiempo en años fraccionarios desde la época.
+
+  var date = ee.Date(image.get(timeField));
+
+  var years = date.difference(ee.Date('1970-01-01'), 'year');//separa los años
+
+  // Devuelve la imagen con las bandas añadidas.
+
+  return image
+
+    // Añadir una banda NDVI.
+
+    .addBands(image.normalizedDifference(['B5', 'B4']).rename('NDVI')).float()//mantiene los decimales
+
+    // Añadir una banda de tiempo.
+
+    .addBands(ee.Image(years).rename('t').float())//mantiene los decimales
+
+    // Añade una banda constante.
+
+    .addBands(ee.Image.constant(1));//imagen con valor 1 para poder contar las imagenes por año
+
+};
+
+
+
+
+
+// Utilice esta función para enmascarar nubes en imágenes Landsat 8.
+
+
+
+
+
+function maskL8sr(image) {
+
+  // Bits 3 and 5 are cloud shadow and cloud, respectively.
+
+  var cloudShadowBitMask = (1 << 3);
+
+  var cloudsBitMask = (1 << 5);
+
+  // Get the pixel QA band.
+
+  var qa = image.select('pixel_qa');
+
+  // Both flags should be set to zero, indicating clear conditions.
+
+  var mask = qa.bitwiseAnd(cloudShadowBitMask).eq(0)
+
+                 .and(qa.bitwiseAnd(cloudsBitMask).eq(0));
+
+  return image.updateMask(mask);
+
+}
+
+
+
+// Eliminar nubes, agregar variables y filtrar al área de interés.
+
+
+
+var filteredLandsat8 = l8toa.filterDate(inicio, fin)
+
+  .filterBounds(roi)
+
+  .map(maskL8sr)
+
+  .map(addVariables8);
+
+  
+
+  var seriel8 = filteredLandsat8.sort('system:time_start', true);
+
+//print(seriel8)
+
+  
+
+  var l8Chart = ui.Chart.image.series(seriel8.select('NDVI'), roi)
+
+    .setChartType('ScatterChart')
+
+    .setOptions({
+
+      title: 'Serie Histórica de NDVI l8',
+
+      //trendlines: {0: {
+
+        //color: 'CC0000'
+
+      //}},
+
+      lineWidth: 1,
+
+      pointSize: 3,
+
+    });
+
+//print(l8Chart);
+
+
+
+/////////////////////////////////////////////////////////////////////////
+
+
+
+// Curvas de NDVI con Sentinel 2 MSI // 
+
+
+
+
+
+var S2 = ee.ImageCollection("COPERNICUS/S2_SR")
+
+
+
+var addVariablesS2 = function(image) {
+
+  // Calcular el tiempo en años fraccionarios desde la época.
+
+  var date = ee.Date(image.get(timeField));
+
+  var years = date.difference(ee.Date('1970-01-01'), 'year');//separa los años
+
+  // Devuelve la imagen con las bandas añadidas.
+
+  return image
+
+    // Añadir una banda NDVI.
+
+    .addBands(image.normalizedDifference(['B8', 'B4']).rename('NDVI')).float()//mantiene los decimales
+
+    // Añadir una banda de tiempo.
+
+    .addBands(ee.Image(years).rename('t').float())//mantiene los decimales
+
+    // Añade una banda constante.
+
+    .addBands(ee.Image.constant(1));//imagen con valor 1 para poder contar las imagenes por año
+
+};
+
+
+
+// Function to mask clouds using the Sentinel-2 QA band.
+
+function maskS2clouds(image) {
+
+  var qa = image.select('QA60')
+
+
+
+  // Bits 10 and 11 are clouds and cirrus, respectively.
+
+  var cloudBitMask = 1 << 10;
+
+  var cirrusBitMask = 1 << 11;
+
+
+
+
+
+  // Both flags should be set to zero, indicating clear conditions.
+
+  var mask = qa.bitwiseAnd(cloudBitMask).eq(0).and(
+
+             qa.bitwiseAnd(cirrusBitMask).eq(0))
+
+
+
+  // Return the masked and scaled data, without the QA bands.
+
+  return image.updateMask(mask).divide(10000)
+
+      .select("B.*")
+
+      .copyProperties(image, ["system:time_start"])
+
+}
+
+
+
+var filteredS2 = S2.filterDate(inicio, fin)
+
+  .filterBounds(roi)
+
+  .map(maskS2clouds)
+
+  .map(addVariablesS2);
+
+  
+
+  var serieS2 = filteredS2.sort('system:time_start', true);
+
+//
+
+  
+
+  var S2Chart = ui.Chart.image.series(serieS2.select('NDVI'), roi)
+
+    .setChartType('ScatterChart')
+
+    .setOptions({
+
+      title: 'Serie Temporal de NDVI S2',
+
+      //trendlines: {0: {
+
+        //color: 'CC0000'
+
+      //}},
+
+      lineWidth: 1,
+
+      pointSize: 3,
+
+    });
+
+//print(S2Chart);
+
+
+
+
+
+// Define and display a FeatureCollection of three known locations.
+
+
+
+// Aqui se genera la variable points que reune a las tres muestras.
+
+
+
+var points = ee.FeatureCollection([
+
+C21,C22,C23,C24,C25,C26,c27,c28,c29,c30]);
+
+
+
+// Selecciona el area de estudio como centro del mapa.
+
+Map.centerObject(points)
+
+
+
+// Define customization options.
+
+var options = {
+
+title: 'Firma temporal – Bosques (Campo 2) ',
+
+hAxis: {title: 'Tiempo'},
+
+vAxis: {title: 'NDVI'},
+
+lineWidth: 1,
+
+pointSize: 5,
+
+series: {
+
+0: {color: 'FF0000'},//red C1
+
+1: {color: '000080'},//NavyBlue C2
+
+2:{color: 'FFFF00'},//Amarillo C3
+
+}};
+
+ 
+
+// Create the chart and set options.
+
+
+
+// en este ejemplo se emplea la variable seriesS2 que coorresponde a los datos Sentinel. 
+
+
+
+var TempChart = ui.Chart.image.seriesByRegion(
+
+serieS2, points, ee.Reducer.mean(),'NDVI', 20, timeField, 'label')
+
+.setChartType('LineChart')
+
+.setOptions(options);
+
+ 
+
+print(TempChart)
+

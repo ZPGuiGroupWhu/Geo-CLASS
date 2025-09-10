@@ -1,0 +1,26 @@
+{
+    "Summary": [
+        "Script focuses on flood analysis using Sentinel-1 data before and after the event."
+    ],
+    "Theme": [
+        "FLOOD FREQUENCY"
+    ],
+    "DataSource": [
+        "users/kimyrae1/Tanggamus",
+        "COPERNICUS/S1_GRD",
+        "JRC/GSW1_0/GlobalSurfaceWater",
+        "MODIS/006/MCD12Q1",
+        "JRC/GHSL/P2016/POP_GPW_GLOBE_V1/2015",
+        "WWF/HydroSHEDS/03VFDEM"
+    ],
+    "Function": [
+        "Cloud Masking And Quality Filtering",
+        "Data Fusion And Mosaicking",
+        "Cloud Masking And Quality Filtering",
+        "Vegetation And Water Indices Calculation",
+        "NDVI (Normalized Difference Vegetation Index calculation)",
+        "Image Band Manipulation",
+        "Vegetation And Water Indices Calculation",
+        "Vegetation And Water Indices Calculation"
+    ]
+}

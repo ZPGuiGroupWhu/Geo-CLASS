@@ -1,0 +1,18 @@
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC8_L1T_TOA_FMASK"],
+        "Function": ["Cloud removal from images", "NDVI calculation", "Mean calculation for rich forest and no forest areas"]
+    },
+    "relation_2": {
+        "DataSource": ["ft:1XPgyHDQHN4d5IF4x8u5ZkJxkVQ_xKWFFuUTi9ofT"],
+        "Function": ["Time series visualization"]
+    },
+    "relation_3": {
+        "DataSource": ["rich_forest"],
+        "Function": ["Mean calculation for rich forest and no forest areas"]
+    },
+    "relation_4": {
+        "DataSource": ["no_forest"],
+        "Function": ["Mean calculation for rich forest and no forest areas"]
+    }
+}

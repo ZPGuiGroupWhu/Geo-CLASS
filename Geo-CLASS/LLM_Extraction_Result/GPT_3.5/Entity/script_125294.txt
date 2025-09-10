@@ -1,0 +1,6 @@
+{
+  "Summary": ["Script processes Landsat imagery for Ecorregion Alto Parana analysis."],
+  "Theme": ["Landsat image processing for environmental monitoring"],
+  "DataSource": ["users/GeoForPy/Tesis/EcorregionAltoParana"],
+  "Function": ["Cloud masking for Landsat 5 imagery", "Image collection filtering by date and cloud cover", "Image compositing and visualization", "Exporting processed images to Google Drive"]
+}

@@ -1,0 +1,16 @@
+{
+    "Summary": [
+        "Script processes Sentinel-2 images pre/post-fire for classification."
+    ],
+    "Theme": [
+        "FRACTION OF ABSORBED PHOTOSYNTHETICALLY ACTIVE RADIATION (FAPAR)"
+    ],
+    "DataSource": [
+        "users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016",
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "Load and Display Pre- And Post-Fire Satellite Image",
+        "Calculate Other Vegetation Indices/index (SAVI, EVI)"
+    ]
+}

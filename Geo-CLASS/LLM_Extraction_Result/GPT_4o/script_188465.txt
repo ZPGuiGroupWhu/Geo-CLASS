@@ -1,0 +1,25 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Cloud masking", "Daily mosaics", "Image summation"],
+  "DataSource": ["COPERNICUS/S2_SR_HARMONIZED", "COPERNICUS/S2_CLOUD_PROBABILITY"],
+  "Function": ["Filter image collection by date and region", "Calculate date difference", "Generate date sequence", "Iterate over date range", "Create daily mosaics", "Convert feature collection to image", "Mask clouds", "Sum images in collection"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["COPERNICUS/S2_SR_HARMONIZED"],
+    "Function": ["Filter image collection by date and region", "Calculate date difference", "Generate date sequence", "Iterate over date range", "Create daily mosaics", "Convert feature collection to image", "Mask clouds", "Sum images in collection"]
+  },
+  "relation_2": {
+    "DataSource": ["COPERNICUS/S2_CLOUD_PROBABILITY"],
+    "Function": ["Filter image collection by date and region", "Create daily mosaics", "Mask clouds"]
+  }
+}
+```
+
+Total_Token_Usage:
+6120

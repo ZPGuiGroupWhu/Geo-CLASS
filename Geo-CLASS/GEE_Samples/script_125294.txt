@@ -1,0 +1,303 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var geometry = /* color: #98ff00 */ee.Geometry.Polygon(
+        [[[-54.83609794508041, -23.75282135052249],
+          [-55.26456474195541, -23.833242031414045],
+          [-55.64908622633041, -24.044108895714857],
+          [-56.06656669508041, -24.49479955487763],
+          [-56.40714286695541, -25.55002697635627],
+          [-56.67081474195541, -26.18270399831324],
+          [-56.85758232008041, -26.72368340770934],
+          [-57.07730888258041, -27.17417491689522],
+          [-57.11026786695541, -27.661784856931888],
+          [-56.46207450758041, -27.836795654103994],
+          [-56.00064872633041, -27.613120888859815],
+          [-55.46231864820541, -27.369477113585035],
+          [-54.90201591383041, -26.939360522676125],
+          [-54.57242607008041, -26.497764956254496],
+          [-54.53946708570541, -26.10380501579901],
+          [-54.39664482008041, -25.311904273709008],
+          [-54.28678153883041, -25.053408887646565],
+          [-54.22086357008041, -24.674626400051643],
+          [-54.17691825758041, -24.33473723873921],
+          [-54.20987724195541, -24.074204568611027],
+          [-54.51749442945541, -23.75282135052249]]]),
+    table = ee.FeatureCollection("users/GeoForPy/Tesis/EcorregionAltoParana");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+//***********************************************************************************
+
+//************************************************************************************
+
+// ================LANDSAT  5 ============================== 
+
+ 
+
+ //Seleccionar region
+
+
+
+var region = ee.FeatureCollection (table)  
+
+print(region)
+
+
+
+Map.addLayer(region)
+
+
+
+//------------------------------- Mascara de nubes para landsat 5---------------------
+
+//----------------------------------------------------------------------------------
+
+
+
+var cloudMaskL457 = function(image) {
+
+  var qa = image.select('pixel_qa');
+
+  // If the cloud bit (5) is set and the cloud confidence (7) is high
+
+  // or the cloud shadow bit is set (3), then it's a bad pixel.
+
+  var cloud = qa.bitwiseAnd(1 << 5)
+
+                  .and(qa.bitwiseAnd(1 << 7))
+
+                  .or(qa.bitwiseAnd(1 << 3));
+
+  // Remove edge pixels that don't occur in all bands
+
+  var mask2 = image.mask().reduce(ee.Reducer.min());
+
+  return image.updateMask(cloud.not()).updateMask(mask2);
+
+};
+
+
+
+
+
+//--------------------- Seleccionar la imagen y aplicar la mascara de nubes-------------
+
+//--------------------------------------------------------------------------------------
+
+
+
+var collectionLandsat = ee.ImageCollection('LANDSAT/LT05/C01/T1_SR')
+
+    .filterDate('1999-01-01', '2000-12-31')
+
+    .filterMetadata('CLOUD_COVER', 'less_than', 30)
+
+    .filterBounds(region)
+
+    .map(cloudMaskL457);
+
+    
+
+
+
+print(collectionLandsat)
+
+
+
+
+
+
+
+//---------------------Reducir por percentil o media u otro--------------------
+
+//-----------------------------------------------------------------------------
+
+
+
+var percentiles = collectionLandsat.reduce(ee.Reducer.percentile([10,25,50,75,90]));
+
+
+
+var clip_composite = percentiles.clip(region)
+
+ print ('clip_composite :', percentiles)
+
+ 
+
+ var media  = collectionLandsat.reduce(ee.Reducer.mean()).clip(region)
+
+print('media :', media);
+
+
+
+Map.addLayer(media,{bands:['B7_mean','B4_mean','B2_mean'],min:200, max:1500},'mean',false)
+
+Map.addLayer(clip_composite,{bands:['B7_p10','B4_p10','B2_p10'],min:200, max:1500},'Percentile10',false)
+
+Map.addLayer(clip_composite,{bands:['B7_p25','B4_p25','B2_p25'],min:200, max:1500},'Percentile25',false)
+
+Map.addLayer(clip_composite,{bands:['B7_p50','B4_p50','B2_p50'],min:200, max:1500},'Percentile50',false)
+
+Map.addLayer(clip_composite,{bands:['B7_p75','B4_p75','B2_p75'],min:200, max:1500},'Percentile75',false)
+
+//Map.addLayer(clip_composite,{bands:['B3_p75','B2_p75','B1_p75'],min:200, max:1500},'Percentile90',false)
+
+
+
+//-------VENTANAS MULTIPLES--------------------------------
+
+//-------------------------------------------------------------
+
+// Composición y contraste RGB de 4 imágenes para un mismo momento
+
+
+
+var ComposicionesRGB = {
+
+  'Percentile10': ['B7_p10','B4_p10','B2_p10'],
+
+  'Percentil25': ['B7_p25','B4_p25','B2_p25'],
+
+  'Percentil50': ['B7_p50','B4_p50','B2_p50'],
+
+  'Percentil75': ['B7_p75','B4_p75','B2_p75'],
+
+  //'Percentil90': ['B3_p90','B2_p90','B1_p90']
+
+  
+
+};
+
+  
+
+function getVisualization(bands) {
+
+  return {gamma: 1, min: 200, max: 1500, bands: bands};}
+
+
+
+
+
+  //Creación y linkeo entre mapas
+
+var PanelMapas = [];
+
+Object.keys(ComposicionesRGB).forEach(function(name) {
+
+  var Mapa = ui.Map();
+
+  Mapa.add(ui.Label(name));
+
+  Mapa.addLayer(clip_composite, getVisualization(ComposicionesRGB[name]), name);
+
+  Mapa.setControlVisibility(false);
+
+  PanelMapas.push(Mapa);});
+
+var linker = ui.Map.Linker(PanelMapas);
+
+
+
+  //Configuración de la posición de los 4 mapas sobre la vista
+
+var mapGrid = ui.Panel([
+
+      ui.Panel([PanelMapas[0]], null, {stretch: 'both'}),
+
+      ui.Panel([PanelMapas[1]], null, {stretch: 'both'}),
+
+      ui.Panel([PanelMapas[2]], null, {stretch: 'both'}),
+
+      ui.Panel([PanelMapas[3]], null, {stretch: 'both'}),
+
+      //ui.Panel([PanelMapas[4]], null, {stretch: 'both'}),
+
+      ],
+
+      ui.Panel.Layout.Flow('horizontal'), {stretch: 'both'});
+
+
+
+
+
+// Controladores de título y escala-zoom para el primer mapa
+
+PanelMapas[0].setControlVisibility({zoomControl: true});
+
+PanelMapas[0].setControlVisibility({scaleControl: true});
+
+var Titulo = ui.Label('Analítica de imágenes', {
+
+  stretch: 'horizontal',
+
+  textAlign: 'center',
+
+  fontWeight: 'bold',
+
+  fontSize: '11 px'});
+
+
+
+
+
+// Centrado del mapa en localización y carga de títulos y mapas en mosaico
+
+PanelMapas[0].centerObject(region, 9);
+
+ui.root.widgets().reset([Titulo, mapGrid]);
+
+ui.root.setLayout(ui.Panel.Layout.Flow('vertical'));
+
+
+
+//CREO UNA VARIABLE DE LA COMBINACION DE BANDAS A DESCARGAR---------
+
+var Selected_tiles_Landsat = clip_composite.select('B7_p50','B4_p50','B2_p50');
+
+var Selected_tiles_Landsat2 = clip_composite.select('B7_p75','B4_p75','B2_p75');
+
+
+
+
+
+
+
+
+
+// ------------------------ Export_Selected_images_output---------------------------------//
+
+
+
+Export.image.toDrive({
+
+  image:   Selected_tiles_Landsat,
+
+  description: 'EcorregionAltoParana_2000_p50_Comb742',
+
+  scale: 30, //escala de las imagenes landsat
+
+  region: geometry,
+
+  maxPixels: 10e9
+
+});
+
+
+
+
+
+Export.image.toDrive({
+
+  image:   Selected_tiles_Landsat2,
+
+  description: 'EcorregionAltoParana_2000_p75_Comb742',
+
+  scale: 30, //escala de las imagenes landsat
+
+  region: geometry,
+
+  maxPixels: 10e9
+
+});
+
+
+
+
+

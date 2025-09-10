@@ -1,0 +1,36 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land cover classification and vegetation index analysis"],
+  "DataSource": ["users/eduardosperanza-Embrapa/Projeto-Coplacana/Piracicaba-H2Copla-UTM", "COPERNICUS/S2_SR"],
+  "Function": [
+    "maskCloudAndShadows: Function to remove cloud and snow pixels",
+    "addNDVI: Function to calculate and add an NDVI band",
+    "addVARI: Function to calculate and add a VARI band",
+    "addEVI: Function to calculate and add an EVI band",
+    "bufferBy: Function to create a buffer",
+    "reduceRegions: Function to reduce regions and calculate mean NDVI, VARI, and EVI"
+  ]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/eduardosperanza-Embrapa/Projeto-Coplacana/Piracicaba-H2Copla-UTM"],
+        "Function": ["maskCloudAndShadows: Function to remove cloud and snow pixels", "addNDVI: Function to calculate and add an NDVI band", "addVARI: Function to calculate and add a VARI band", "addEVI: Function to calculate and add an EVI band", "bufferBy: Function to create a buffer", "reduceRegions: Function to reduce regions and calculate mean NDVI, VARI, and EVI"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["maskCloudAndShadows: Function to remove cloud and snow pixels", "addNDVI: Function to calculate and add an NDVI band", "addVARI: Function to calculate and add a VARI band", "addEVI: Function to calculate and add an EVI band", "bufferBy: Function to create a buffer", "reduceRegions: Function to reduce regions and calculate mean NDVI, VARI, and EVI"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3298, 'completion_tokens': 466, 'total_tokens': 3764}

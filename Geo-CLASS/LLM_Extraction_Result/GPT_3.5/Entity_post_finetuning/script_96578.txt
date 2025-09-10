@@ -1,0 +1,23 @@
+{
+    "Summary": [
+        "Geoprocessing workflow analyzing thermal data and fire probability in Tasmania."
+    ],
+    "Theme": [
+        "FLIGHT DATA LOGS",
+        "FIRE HISTORY",
+        "NORMALIZED DIFFERENCE VEGETATION INDEX (NDVI)"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2_SR",
+        "MODIS/006/MOD14A1",
+        "MODIS/006/MOD11A1"
+    ],
+    "Function": [
+        "Calculating terrain slope and aspect from DEMs",
+        "Cloud Masking And Quality Filtering",
+        "MNDWI (Modified Normalized Difference Water Index calculation)",
+        "Data Fusion And Mosaicking",
+        "NDWI (Normalized Difference Water Index calculation)",
+        "NDWI (Normalized Difference Water Index calculation)"
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "Summary": [
+        "Reprojection of Sentinel-2 images to EPSG:4326 for export."
+    ],
+    "Theme": [
+        "BIDIRECTIONAL REFLECTANCE FACTOR"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover",
+        "Image Reprojection",
+        "Photosynthetically active radiation (PAR) calculation"
+    ]
+}

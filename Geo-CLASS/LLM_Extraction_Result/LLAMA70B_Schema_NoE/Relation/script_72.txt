@@ -1,0 +1,17 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "USDOS/LSIB/2017"
+        ],
+        "Function": [
+            "Buffering the area of interest (AOI) by 5000 meters",
+            "Running LandTrendr temporal segmentation",
+            "Building a spectral response collection",
+            "Calculating the Normalized Burn Ratio (NBR) index",
+            "Running LandTrendr fit",
+            "Converting LandTrendr fit output to LandTrendr prem",
+            "Performing change detection",
+            "Exporting the change detection image to an asset"
+        ]
+    }
+}

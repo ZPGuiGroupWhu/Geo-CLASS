@@ -1,0 +1,6 @@
+{
+  "Summary": ["Script processes Landsat imagery for reflectance conversion and visualization."],
+  "Theme": ["Landsat imagery processing"],
+  "DataSource": ["LANDSAT/LC08/C02/T1_L2"],
+  "Function": ["Reflectance conversion operation", "Visualization generation"]
+}

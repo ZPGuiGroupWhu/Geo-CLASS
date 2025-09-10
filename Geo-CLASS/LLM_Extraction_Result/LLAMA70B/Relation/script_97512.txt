@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR/LC08_045033_20170925", "LANDSAT/LC08/C01/T1_SR/LC08_045033_20180928"],
+        "Function": ["Compute normalized difference burn ratio", "Clip image to fire perimeter", "Reclassify image to burn severity map"]
+    },
+    "relation_2": {
+        "DataSource": ["users/cade/ca_MendocinoComplex"],
+        "Function": ["Create histogram of burn severity zones", "Generate thumbnail of burn severity map"]
+    }
+}

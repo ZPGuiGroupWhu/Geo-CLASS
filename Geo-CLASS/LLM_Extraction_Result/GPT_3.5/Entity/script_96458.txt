@@ -1,0 +1,6 @@
+{
+  "Summary": ["Geoprocessing script analyzing Sentinel-2 and Sentinel-1 data for land cover classification."],
+  "Theme": ["Land cover classification"],
+  "DataSource": ["COPERNICUS/S2", "COPERNICUS/S1_GRD", "users/eeranyartrodrigo/ferrocarriles/estaciones_prospectadas_area"],
+  "Function": ["Cloud removal from Sentinel-2 images", "Calculating NDVI, NDBI, and NDWI", "Identifying urban, water, and vegetation areas", "Detecting rice paddies using Sentinel-1 data"]
+}

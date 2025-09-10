@@ -1,0 +1,16 @@
+{
+    "Theme": [
+        "Landsat 5 image processing and analysis for different years"
+    ],
+    "DataSource": [
+        "LANDSAT/LT05/C01/T1_SR"
+    ],
+    "Function": [
+        "Filtering image collection by cloud cover and date",
+        "Masking clouds and shadows in images",
+        "Calculating NDVI",
+        "Clipping images to a specific geometry",
+        "Compositing images",
+        "Adding layers to the map"
+    ]
+}

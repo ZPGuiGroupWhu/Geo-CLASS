@@ -1,0 +1,5 @@
+{
+  "Theme": ["Land cover classification and analysis in Zimbabwe"],
+  "DataSource": ["users/kindgard/Asia/Asia", "users/kindgard/Africa", "users/kindgard/SUD", "users/kindgard/AfricaS", "users/kindgard/AmericaN", "users/kindgard/Asia2", "LANDSAT/LT5_L1T", "LANDSAT/LE7_L1T", "LANDSAT/LC08/C01/T1_RT", "COPERNICUS/S2", "JRC/GSW1_0/GlobalSurfaceWater", "ft:1tdSwUL7MVpOauSgRzqVTOwdfy17KDbw-1d9omPw", "users/ValeriaContessa/Map_1992_rast", "users/kindgard/ESACCI-LC-L4-LC10-Map-20m-P1Y-2016-v10"],
+  "Function": ["Filtering image collections by date and cloud cover", "Mosaicking images", "Calculating spectral indices", "Classifying land cover using Cart algorithm", "Applying masks to classified image", "Clipping images to country boundary"]
+}

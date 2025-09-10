@@ -1,0 +1,31 @@
+{
+  "Theme": ["Forest classification", "Land cover analysis", "Water detection", "Urban area masking"],
+  "DataSource": [
+    "users/kindgard/Asia/Asia",
+    "users/kindgard/Africa",
+    "users/kindgard/SUD",
+    "users/kindgard/AfricaS",
+    "users/kindgard/AmericaN",
+    "users/kindgard/Asia2",
+    "users/kindgard/ESACCI-LC-L4-LC10-Map-20m-P1Y-2016-v10",
+    "users/ValeriaContessa/Map_1992_rast",
+    "COPERNICUS/S2",
+    "LANDSAT/LT5_L1T",
+    "LANDSAT/LE7_L1T",
+    "LANDSAT/LC08/C01/T1_RT",
+    "JRC/GSW1_0/GlobalSurfaceWater"
+  ],
+  "Function": [
+    "Merge image collections",
+    "Clip image to country boundary",
+    "Create mosaic from image collection",
+    "Filter image collection by date",
+    "Filter image collection by cloud cover",
+    "Calculate band ratios",
+    "Sample regions for training",
+    "Train classifier",
+    "Classify image",
+    "Mask water areas",
+    "Mask urban areas"
+  ]
+}

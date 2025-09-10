@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover classification using Sentinel-1 data"],
+  "DataSource": ["COPERNICUS/S1_GRD"],
+  "Function": ["Filtering image collection by transmitter receiver polarisation", "Applying Refined Lee speckle filter", "Converting image to natural units", "Converting image to dB", "Compositing images", "Classifying images using CART classifier"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response that organizes the extracted information into a structured format:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Filtering image collection by transmitter receiver polarisation", "Applying Refined Lee speckle filter", "Converting image to natural units", "Converting image to dB"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Compositing images", "Classifying images using CART classifier"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 5763, 'completion_tokens': 237, 'total_tokens': 6000}

@@ -1,0 +1,29 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Flood Mapping and Monitoring using Sentinel-1 data"],
+  "DataSource": ["COPERNICUS/S1_GRD", "ft:1nWJr3XY3hcsRSvydLLyK47W-r6N1bB7JHhTYuLle"],
+  "Function": ["Filtering Sentinel-1 images by date and polarization", "Applying smoothing filter to reduce noise", "Calculating band ratios for flood detection", "Generating histograms for backscatter values", "Visualizing flood extent using RGB composites"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Filtering Sentinel-1 images by date and polarization", "Applying smoothing filter to reduce noise", "Calculating band ratios for flood detection", "Generating histograms for backscatter values", "Visualizing flood extent using RGB composites"]
+    },
+    "relation_2": {
+        "DataSource": ["ft:1nWJr3XY3hcsRSvydLLyK47W-r6N1bB7JHhTYuLle"],
+        "Function": ["None"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4171, 'completion_tokens': 309, 'total_tokens': 4480}

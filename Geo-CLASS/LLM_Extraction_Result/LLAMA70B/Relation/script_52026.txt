@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["users/bkkumarbittu371/Andhra_Pradesht"],
+        "Function": ["Filtering image collection by bounds and date", "Clipping dataset to region of interest", "Reducing region to mean value"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S5P/OFFL/L3_O3"],
+        "Function": ["Calculating mean of image collection"]
+    }
+}

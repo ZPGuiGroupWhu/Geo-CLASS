@@ -1,0 +1,111 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var l70 = ee.ImageCollection("LANDSAT/LE7_L1T_32DAY_TOA"),
+    poi = /* color: #98ff00 */ee.Geometry.Polygon(
+        [[[35.77014200471376, 32.84078190948938],
+          [35.809683748146426, 32.841647652379905],
+          [35.80435586521469, 32.86595716306989],
+          [35.77344495868522, 32.86617353814263]]]),
+    vis = {"opacity":1,"bands":["red","green","blue"],"min":0.03362457370589647,"max":0.24079514082356715,"gamma":0.721},
+    lkvis = {"opacity":0.25,"bands":["cloudscore_1"],"palette":["ffffff","ff48f9"]};
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+
+
+
+//Cloud scoring function
+function cloudScore(img) {
+  // Compute a cloud score.  This expects the input image to have the common
+  // band names: ["red", "blue", etc], so it can work across sensors.
+   var LC7_BANDS = ['B1',   'B2',    'B3',  'B4',  'B5',    'B7',    'B6_VCID_1'];
+  var STD_NAMES = ['blue', 'green', 'red', 'nir', 'swir1', 'swir2', 'temp'];
+  img=img.select(LC7_BANDS, STD_NAMES)
+  
+  // A helper to apply an expression and linearly rescale the output.
+  var rescale = function(img, exp, thresholds) {
+    return img.expression(exp, {img: img})
+        .subtract(thresholds[0]).divide(thresholds[1] - thresholds[0]);
+  };
+
+  // Compute several indicators of cloudyness and take the minimum of them.
+  var score = ee.Image(1.0);
+  // Clouds are reasonably bright in the blue band.
+  score = score.min(rescale(img, 'img.blue', [0.1, 0.3]));
+
+  // Clouds are reasonably bright in all visible bands.
+  score = score.min(rescale(img, 'img.red + img.green + img.blue', [0.2, 0.8]));
+
+  // Clouds are reasonably bright in all infrared bands.
+  score = score.min(
+      rescale(img, 'img.nir + img.swir1 + img.swir2', [0.3, 0.8]));
+
+  // Clouds are reasonably cool in temperature.
+  score = score.min(rescale(img, 'img.temp', [300, 290]));
+
+  // However, clouds are not snow.
+  var ndsi = img.normalizedDifference(['green', 'swir1']);
+  score=score.min(rescale(ndsi, 'img', [0.8, 0.6]));
+  
+  //Clouds have a small "quality" score  
+  score = ee.Image(1).subtract(score).select([0], ['cloudscore']);
+
+  return(img.addBands(score))
+
+};
+
+function addMNDWI(img){ return img.addBands(img.normalizedDifference(['green','swir1']))}
+
+function filtr(img){ return(img.addBands(img.select('cloudscore').gt(cloudThresh).and(img.select('nd').gt(ndThresh))))}
+
+
+
+////////////////////////////////////////////////SESSION 1
+//Go Over Cloud Scoring in Class
+//Brainstorm pseudo code; what are the free parameters
+//Assign individuals to look for functions
+
+var ndThresh=0.3
+var cloudThresh=0.1
+
+//Filter
+var l7=l70.filterBounds(poi).filterDate('2005-01-01','2015-01-01')
+
+
+//Get cloudscore
+l7=l7.map(cloudScore)
+
+//get MNDWI
+l7=l7.map(addMNDWI)
+
+
+//Filter
+var l7fil=l7.map(filtr)
+
+
+
+//Play around with thresholds
+//Map.addLayer(ee.Image(l7fil.filterDate('2007-01-01','2015-01-01').first()).select('cloudscore_1'))
+
+//Print chart
+print(ui.Chart.image.series(l7fil.select('cloudscore_1'),poi,ee.Reducer.sum(),30,'system:index'))
+
+
+
+Map.centerObject(poi,14)
+//Lake is partially cloud covered...
+Map.addLayer(ee.Image(l7fil.filterDate('2010-12-19','2015-01-01').first()),vis,'landsat')
+Map.addLayer(ee.Image(l7fil.filterDate('2010-12-19','2015-01-01').first()),lkvis,'lake')
+
+
+
+
+
+////////////////////////////////////////////////////////
+////SESSION 2: Gap filling using flooding frequency!
+
+//Cloud Filling Algorithm
+function FillClouds(img){
+  var fld0=img.mask(mxlk)
+  var minfld=ffreq.mask(fld0).reduceRegion(ee.Reducer.percentile([minPercentile]),mxlkv.geometry(),30)
+  minfld=ee.Number(minfld.get('cloudscore_1'))
+  var corct=ee.Algorithms.If(minfld,ffreq.mask(mxlk).gt(minfld),null)//Only returns an image when the lake was not completely covered
+  return corct
+}

@@ -1,0 +1,33 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Precipitation and cloud probability analysis"],
+  "DataSource": ["UCSB-CHG/CHIRPS/PENTAD", "COPERNICUS/S2_CLOUD_PROBABILITY", "users/kitmyfaceplease2/eastsouth_asia", "projects/ee-kitmyfaceplease2/assets/EAST_SOUTH_SPLIT2"],
+  "Function": ["Filtering and reducing image collections", "Clipping and masking images", "Calculating cloud probability and precipitation", "Performing cross-correlation analysis", "Exporting images to Drive"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["UCSB-CHG/CHIRPS/PENTAD"],
+        "Function": ["Filtering and reducing image collections", "Calculating cloud probability and precipitation"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2_CLOUD_PROBABILITY"],
+        "Function": ["Clipping and masking images", "Calculating cloud probability and precipitation"]
+    },
+    "relation_3": {
+        "DataSource": ["users/kitmyfaceplease2/eastsouth_asia", "projects/ee-kitmyfaceplease2/assets/EAST_SOUTH_SPLIT2"],
+        "Function": ["Performing cross-correlation analysis", "Exporting images to Drive"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 5426, 'completion_tokens': 337, 'total_tokens': 5763}

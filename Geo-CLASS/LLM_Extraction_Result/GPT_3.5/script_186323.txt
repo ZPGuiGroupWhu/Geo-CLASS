@@ -1,0 +1,19 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["The script collects satellite images, calculates NDVI and NBR, and exports image properties and mosaics."],
+  "Theme": ["NDVI and NBR calculation", "Image export"],
+  "DataSource": ["LANDSAT/LC8_SR", "LANDSAT/LC8_L1T_TOA", "LANDSAT/LT5_L1T_TOA_FMASK", "LANDSAT/LE7_L1T_TOA_FMASK", "COPERNICUS/S2", "ft:1XKfDbVsTtinnWZ5Ki89j8074Zm9k2XFHiATs1XNR"],
+  "Function": ["NDVI calculation on image collection", "NBR calculation on image collection", "Exporting image properties to Drive", "Creating and exporting mosaic image", "Exporting individual scenes"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC8_SR", "LANDSAT/LC8_L1T_TOA", "LANDSAT/LT5_L1T_TOA_FMASK", "LANDSAT/LE7_L1T_TOA_FMASK", "COPERNICUS/S2", "ft:1XKfDbVsTtinnWZ5Ki89j8074Zm9k2XFHiATs1XNR"],
+        "Function": ["NDVI calculation on image collection", "NBR calculation on image collection", "Exporting image properties to Drive", "Creating and exporting mosaic image", "Exporting individual scenes"]
+    }
+}
+```

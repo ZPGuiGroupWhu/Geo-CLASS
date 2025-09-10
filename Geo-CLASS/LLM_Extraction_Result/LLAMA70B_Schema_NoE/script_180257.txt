@@ -1,0 +1,33 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land cover analysis using Landsat 7 imagery"],
+  "DataSource": ["users/Katemiller125/Illilouette", "LANDSAT/LE07/C02/T1_L2", "LANDSAT/LE07/C01/T1_SR"],
+  "Function": ["Filtering Landsat 7 imagery by date", "Painting a feature collection onto an image", "Buffering points", "Calculating zonal statistics", "Masking clouds and shadows in Landsat 7 imagery", "Renaming bands in Landsat 7 imagery", "Preparing Landsat 7 imagery for analysis"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/Katemiller125/Illilouette"],
+        "Function": ["Filtering Landsat 7 imagery by date", "Preparing Landsat 7 imagery for analysis"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LE07/C02/T1_L2"],
+        "Function": ["Painting a feature collection onto an image", "Masking clouds and shadows in Landsat 7 imagery", "Renaming bands in Landsat 7 imagery"]
+    },
+    "relation_3": {
+        "DataSource": ["LANDSAT/LE07/C01/T1_SR"],
+        "Function": ["Buffering points", "Calculating zonal statistics"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3178, 'completion_tokens': 368, 'total_tokens': 3546}

@@ -1,0 +1,20 @@
+{
+    "Theme": [
+        "Land cover classification and land use analysis"
+    ],
+    "DataSource": [
+        "LANDSAT/LT05/C02/T1_L2",
+        "LANDSAT/LE07/C02/T1_L2",
+        "LANDSAT/LC08/C02/T1_L2",
+        "projects/mapbiomas-raisg/PRODUCTOS/AGUA/DATOS_AUXILIARES/TEMP/bigGrids_Suriname"
+    ],
+    "Function": [
+        "Apply scale factors to image bands",
+        "Unmix image bands to endmembers",
+        "Compute cloud score",
+        "Filter images by cloud cover",
+        "Merge image collections",
+        "Apply SMA to images",
+        "Compute probabilities for land cover classes"
+    ]
+}

@@ -1,0 +1,63 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LT5_L1T",
+            "LANDSAT/LE7_L1T",
+            "LANDSAT/LC08/C01/T1_RT"
+        ],
+        "Function": [
+            "Filtering and compositing Landsat images",
+            "Calculating spectral ratios"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "users/kindgard/Africa",
+            "users/kindgard/Asia",
+            "users/kindgard/SUD",
+            "users/kindgard/AfricaS",
+            "users/kindgard/AmericaN",
+            "users/kindgard/Asia2"
+        ],
+        "Function": [
+            "Applying masks for settlements, water bodies, and forest areas"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "ft:1uRKhdFB2QPg6_om0fGjUs_wI8UZAi7ZIqdSKtbxI"
+        ],
+        "Function": [
+            "None"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "users/ValeriaContessa/ZWEsettlements",
+            "users/ValeriaContessa/zim_waterbody",
+            "users/ValeriaContessa/Zimbabwe_Anderson"
+        ],
+        "Function": [
+            "Applying masks for settlements, water bodies, and forest areas"
+        ]
+    },
+    "relation_5": {
+        "DataSource": [
+            "JRC/GSW1_0/GlobalSurfaceWater"
+        ],
+        "Function": [
+            "Applying masks for settlements, water bodies, and forest areas"
+        ]
+    },
+    "relation_6": {
+        "DataSource": [
+            "LANDSAT/LT5_L1T",
+            "LANDSAT/LE7_L1T",
+            "LANDSAT/LC08/C01/T1_RT"
+        ],
+        "Function": [
+            "Classifying land cover using CART algorithm",
+            "Correcting classification errors using feature collections"
+        ]
+    }
+}

@@ -1,0 +1,5 @@
+{
+  "Theme": ["Landsat 8 Surface Reflectance Analysis", "Cloud and Cloud Shadow Masking", "Image Collection Filtering", "Statistical Analysis of Images", "Visualization of Natural and False Color Images"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Count total images in collection", "Filter images by date", "Filter images by location", "Calculate mean image", "Calculate max image", "Calculate min image", "Calculate median image", "Mask clouds and cloud shadows", "Clip images to region", "Create list of image IDs", "Visualize images in natural color", "Visualize images in false color"]
+}

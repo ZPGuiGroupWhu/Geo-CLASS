@@ -1,0 +1,62 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Surface water detection using Sentinel-1 SAR data"],
+  "DataSource": [
+    "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20161018T170405_20161018T170430_002563_004542_CA91",
+    "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20161123T170404_20161123T170429_003088_005401_FFB1",
+    "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20170323T170401_20170323T170426_004838_00873B_7565",
+    "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20170428T170403_20170428T170428_005363_00966B_E967",
+    "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20170919T170410_20170919T170435_007463_00D2CE_623C",
+    "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20171118T170410_20171118T170435_008338_00EC25_A3EB",
+    "NOAA/CFSV2/FOR6H",
+    "users/gena/GlobalHAND/30m/hand-5000"
+  ],
+  "Function": [
+    "Filter image collection by date and location",
+    "Mask image edges using angle",
+    "Filter out windy days using climate data",
+    "Convert image from dB to natural units",
+    "Apply Refined Lee filter for noise reduction",
+    "Convert sigma to gamma",
+    "Compute surface water mask using Canny Edge detector",
+    "Compute threshold using Otsu method"
+  ]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": [
+      "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20161018T170405_20161018T170430_002563_004542_CA91",
+      "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20161123T170404_20161123T170429_003088_005401_FFB1",
+      "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20170323T170401_20170323T170426_004838_00873B_7565",
+      "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20170428T170403_20170428T170428_005363_00966B_E967",
+      "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20170919T170410_20170919T170435_007463_00D2CE_623C",
+      "COPERNICUS/S1_GRD/S1B_IW_GRDH_1SDV_20171118T170410_20171118T170435_008338_00EC25_A3EB"
+    ],
+    "Function": [
+      "Filter image collection by date and location",
+      "Mask image edges using angle",
+      "Convert image from dB to natural units",
+      "Apply Refined Lee filter for noise reduction",
+      "Convert sigma to gamma",
+      "Compute surface water mask using Canny Edge detector",
+      "Compute threshold using Otsu method"
+    ]
+  },
+  "relation_2": {
+    "DataSource": ["NOAA/CFSV2/FOR6H"],
+    "Function": ["Filter out windy days using climate data"]
+  },
+  "relation_3": {
+    "DataSource": ["users/gena/GlobalHAND/30m/hand-5000"],
+    "Function": ["Compute threshold using Otsu method"]
+  }
+}
+```
+
+Total_Token_Usage:
+12392

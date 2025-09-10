@@ -1,0 +1,18 @@
+{
+    "Theme": [
+        "Flood Mapping"
+    ],
+    "DataSource": [
+        "COPERNICUS/S1_GRD"
+    ],
+    "Function": [
+        "Filtering Sentinel-1 images by ROI and date",
+        "Converting images from dB to natural scale",
+        "Smoothing images using focal median filter",
+        "Calculating band ratios",
+        "Generating histograms",
+        "Classifying flood, wet, and dry areas",
+        "Visualizing results on the map",
+        "Exporting flood image to Drive"
+    ]
+}

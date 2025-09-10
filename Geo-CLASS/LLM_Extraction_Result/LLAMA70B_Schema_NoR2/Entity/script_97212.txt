@@ -1,0 +1,5 @@
+{
+"Theme": ["Wildfire analysis and classification"],
+"DataSource": ["users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016", "COPERNICUS/S2"],
+"Function": ["Filtering image collections by date and area", "Calculating vegetation indices", "Classifying images using machine learning algorithms", "Stratified sampling for training and validation"]
+}

@@ -1,0 +1,35 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover classification"],
+  "DataSource": ["users/wangweihappy0/training01/l8ClassifySample", "LANDSAT/LC08/C01/T1_SR", "USGS/SRTMGL1_003"],
+  "Function": ["Remove cloud cover from Landsat 8 images", "Scale Landsat 8 images", "Calculate NDVI", "Calculate NDWI", "Calculate NDBI", "Generate DEM from SRTM data", "Filter image collection by ROI and date", "Compute median of image collection", "Clip image to ROI"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/wangweihappy0/training01/l8ClassifySample"],
+        "Function": ["Remove cloud cover from Landsat 8 images", "Scale Landsat 8 images", "Calculate NDVI", "Calculate NDWI", "Calculate NDBI"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Remove cloud cover from Landsat 8 images", "Scale Landsat 8 images", "Calculate NDVI", "Calculate NDWI", "Calculate NDBI"]
+    },
+    "relation_3": {
+        "DataSource": ["USGS/SRTMGL1_003"],
+        "Function": ["Generate DEM from SRTM data"]
+    },
+    "relation_4": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR", "USGS/SRTMGL1_003"],
+        "Function": ["Filter image collection by ROI and date", "Compute median of image collection", "Clip image to ROI"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2544, 'completion_tokens': 427, 'total_tokens': 2971}

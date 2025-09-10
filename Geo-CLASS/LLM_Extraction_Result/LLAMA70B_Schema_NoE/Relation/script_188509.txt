@@ -1,0 +1,30 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "UCSB-CHG/CHIRPS/PENTAD"
+        ],
+        "Function": [
+            "Filtering and reducing CHIRPS image collection to calculate total precipitation",
+            "Calculating correlation between precipitation and cloud probability using CrossCorrelation algorithm"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2_CLOUD_PROBABILITY"
+        ],
+        "Function": [
+            "Filtering and reducing S2 cloud probability image collection to calculate cloud probability",
+            "Calculating correlation between precipitation and cloud probability using CrossCorrelation algorithm",
+            "Calculating sum of cloud probability images using GPP_pre function",
+            "Calculating percentage of cloud probability using sum and count images",
+            "Masking clouds using qualityMosaic and probability threshold"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "users/kitmyfaceplease2/eastsouth_asia",
+            "projects/ee-kitmyfaceplease2/assets/EAST_SOUTH_SPLIT2"
+        ],
+        "Function": []
+    }
+}

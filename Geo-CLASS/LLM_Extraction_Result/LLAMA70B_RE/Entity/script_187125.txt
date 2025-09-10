@@ -1,0 +1,18 @@
+{
+    "Theme": [
+        "Water body detection and analysis"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2",
+        "JRC/GSW1_0/MonthlyHistory",
+        "users/christinacorbane/MT_comp_proj"
+    ],
+    "Function": [
+        "Image filtering and resampling",
+        "Image normalization and difference calculation",
+        "Thresholding and water body detection",
+        "Otsu thresholding",
+        "Canny edge detection",
+        "Image masking and clipping"
+    ]
+}

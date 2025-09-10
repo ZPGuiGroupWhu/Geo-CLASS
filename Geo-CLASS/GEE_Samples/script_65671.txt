@@ -1,0 +1,219 @@
+//Code A1. The code used to generate median temperature of Landsat 5 TM images for 1996 and 2006.
+
+//Export Landsat 5 SR data
+
+/**
+
+* Function to mask clouds based on the pixel_qa band of Landsat SR data.
+
+* @param {ee.Image} image Input Landsat SR image
+
+* @return {ee.Image} Cloudmasked Landsat image
+
+*/
+
+var cloudMaskL457 = function(image) {
+
+var qa = image.select(‘pixel_qa’);
+
+//If the cloud bit (5) is set and the cloud confidence (7) is high
+
+//or the cloud shadow bit is set (3), then it’s a bad pixel.
+
+var cloud = qa.bitwiseAnd(1 << 5)
+
+.and(qa.bitwiseAnd(1 << 7))
+
+.or(qa.bitwiseAnd(1 << 3));
+
+//Remove edge pixels that don’t occur in all bands
+
+var mask2 = image.mask().reduce(ee.Reducer.min());
+
+return image.updateMask(cloud.not()).updateMask(mask2);
+
+};
+
+//Load the Landsat 5 data collection - example for B6
+
+{
+
+var col = ee.ImageCollection(‘LANDSAT/LT05/C01/T1_SR’)
+
+.map(cloudMaskL457)
+
+.filterDate(‘1996-01-01’,‘1996-12-30’)
+
+.select([‘B6’])
+
+.filterBounds(geometry);
+
+}
+
+//Compute the median of the collection -example for B6
+
+{
+
+var image = col.median().clip(geometry);
+
+print(image, ‘Selected band’);
+
+Map.addLayer(image);
+
+}
+
+//Export the B6, specifying scale and region.
+
+Export.image.toDrive({
+
+image: image,
+
+description: ‘B6’,
+
+scale: 30,
+
+region: geometry,
+
+maxPixels:1e13,
+
+folder: ‘Landsat 5 data collection’,
+
+skipEmptyTiles: true
+
+});
+
+//Export the B6 information as table.
+
+Export.table.toDrive({
+
+collection: col,
+
+description: ‘B6_information’,
+
+fileFormat: ‘CSV’,
+
+folder:’Landsat 5 data collection’
+
+});
+
+//Get the number of collections.
+
+var count = col.size();
+
+print(‘Count: ‘, count);
+
+//Get the date range of images in the collection.
+
+var range = col.reduceColumns(ee.Reducer.minMax(), [“system:time_start”])
+
+print(‘Date range: ‘, ee.Date(range.get(‘min’)), ee.Date(range.get(‘max’)))
+
+Code A2. The code used to generate median temperature of Landsat 8 images for 2017.
+
+//Export Landsat 8 SR data
+
+/**
+
+* Function to mask clouds based on the pixel_qa band of Landsat 8 SR data.
+
+* @param {ee.Image} image input Landsat 8 SR image
+
+* @return {ee.Image} cloudmasked Landsat 8 image
+
+*/
+
+function maskL8sr(image) {
+
+//Bits 3 and 5 are cloud shadow and cloud, respectively.
+
+var cloudShadowBitMask = (1 << 3);
+
+var cloudsBitMask = (1 << 5);
+
+//Get the pixel QA band.
+
+var qa = image.select(‘pixel_qa’);
+
+//Both flags should be set to zero, indicating clear conditions.
+
+var mask = qa.bitwiseAnd(cloudShadowBitMask).eq(0)
+
+.and(qa.bitwiseAnd(cloudsBitMask).eq(0));
+
+return image.updateMask(mask);
+
+}
+
+//Load the Landsat 8 data collection - example for B10
+
+{
+
+var col = ee.ImageCollection(‘LANDSAT/LC08/C01/T1_SR’)
+
+.map(maskL8sr)
+
+.filterDate(‘2018-01-01’,‘2018-12-30’)
+
+.select([‘B10’])
+
+.filterBounds(geometry);
+
+}
+
+//Compute the median of the collection - example for B10
+
+{
+
+var image = col.median().clip(geometry);
+
+print(image, ‘Selected band’);
+
+Map.addLayer(image);
+
+}
+
+//Export the B10, specifying scale and region.
+
+Export.image.toDrive({
+
+image: image,
+
+description: ‘B10’,
+
+scale: 30,
+
+region: geometry,
+
+maxPixels:1e13,
+
+folder: ‘Landsat 8 data collection’,
+
+skipEmptyTiles: true
+
+});
+
+//Export the B10 information as table.
+
+Export.table.toDrive({
+
+collection: col,
+
+description: ‘B10_information’,
+
+fileFormat: ‘CSV’,
+
+folder:’Landsat 8 data collection’
+
+});
+
+//Get the number of collections.
+
+var count = col.size();
+
+print(‘Count: ‘, count);
+
+//Get the date range of images in the collection.
+
+var range = col.reduceColumns(ee.Reducer.minMax(), [“system:time_start”])
+
+print(‘Date range: ‘, ee.Date(range.get(‘min’)), ee.Date(range.get(‘max’)))

@@ -1,0 +1,15 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/kimambo/00_INPUT_TRAINING_VALIDATION/Tanzania_SouthernHighlands_reference_point_36LYR_13DEC2019_230_upto799_75PCTTRAINING"
+        ],
+        "Function": [
+            "Cloud And Snow Masking",
+            "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover",
+            "Calculate Other Vegetation Indices/index (SAVI, EVI)",
+            "Filter Image Collection By Date And Region",
+            "Feature Sampling For Training",
+            "Export Processed Data To Drive"
+        ]
+    }
+}

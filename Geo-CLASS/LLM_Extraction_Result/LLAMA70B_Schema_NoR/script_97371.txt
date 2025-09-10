@@ -1,0 +1,31 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Crop monitoring and analysis in Piura, Peru"],
+  "DataSource": ["FAO/GAUL/2015/level1", "USGS/GFSAD1000_V0", "COPERNICUS/S2_SR"],
+  "Function": ["Selecting landcover band", "Filtering by crop type", "Generating points from image", "Masking cloud and snow pixels", "Adding NDVI band", "Filtering by date", "Filtering by bounds", "Calculating median composite", "Generating time series", "Exporting to CSV", "Charting NDVI values", "Reducing regions", "Joining tables", "Merging observations"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["FAO/GAUL/2015/level1"],
+        "Function": ["Selecting landcover band", "Filtering by crop type", "Filtering by bounds", "Reducing regions", "Joining tables"]
+    },
+    "relation_2": {
+        "DataSource": ["USGS/GFSAD1000_V0"],
+        "Function": ["Generating points from image", "Masking cloud and snow pixels", "Adding NDVI band", "Calculating median composite"]
+    },
+    "relation_3": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["Generating time series", "Exporting to CSV", "Charting NDVI values", "Merging observations"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4575, 'completion_tokens': 358, 'total_tokens': 4933}

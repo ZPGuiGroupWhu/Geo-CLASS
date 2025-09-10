@@ -1,0 +1,5 @@
+{
+  "Theme": ["Temperature analysis in Sinaloa"],
+  "DataSource": ["ECMWF/ERA5/DAILY", "FAO/GAUL_SIMPLIFIED_500m/2015/level2"],
+  "Function": ["Filter image collection by date", "Filter image collection by region", "Convert temperature from Kelvin to Celsius", "Get minimum temperature", "Get maximum temperature", "Get average temperature", "Clip image to region", "Visualize data on map", "Export image to Google Drive"]
+}

@@ -1,0 +1,5 @@
+{
+  "Theme": ["Night Light Statistics by Landcover in India"],
+  "DataSource": ["users/ujavalgandhi/public/soi_india_boundary", "NOAA/DMSP-OLS/NIGHTTIME_LIGHTS", "MODIS/006/MCD12Q1"],
+  "Function": ["Filtering image collection by date", "Selecting specific bands from image collection", "Clipping image to geometry", "Extracting landcover classification", "Creating image of agriculture and urban zones", "Classifying nightlights image into categorical values", "Computing statistics on classified image using grouped reducer"]
+}

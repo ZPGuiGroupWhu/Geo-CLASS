@@ -1,0 +1,108 @@
+/* AUTHOR: Christiana Ade 
+
+DATE UPDATED: 3/19/2021
+
+TITLE: Burn Severity of Mendocino Complex Fire 
+
+////////////////////////////////////////////////////////////////////
+
+*/ 
+
+
+
+// Load in pre-fire image 
+
+var preImg = ee.Image('LANDSAT/LC08/C01/T1_SR/LC08_045033_20170925')
+
+// Load in post fire image
+
+var postImg = ee.Image('LANDSAT/LC08/C01/T1_SR/LC08_045033_20180928')
+
+
+
+
+
+// A true color image display. This is how you would expect to see everything in the real world. The trees are green, water is blue/green, buildings are white and grey. 
+
+var vizTC = {bands: ['B4', 'B3', 'B2'], min: 0, max: 6000, gamma: 2};
+
+/* We need to center the map display on our area otherwise we won't be able to see the image when we add it */ 
+
+Map.centerObject(preImg,9)
+
+// display map layers 
+
+Map.addLayer(preImg, vizTC, 'pre image true color');
+
+Map.addLayer(postImg, vizTC, 'post image true color');
+
+
+
+///// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+////////////////////////* Step 2: Compute  NDBR */////////////////////
+
+///// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+// The equation for the normalized burned ratio is:
+
+
+
+
+
+//Normalized difference indices are very common in remote sensing, so google earth engine
+
+// has also created a function for this
+
+// Go to the left-hand panel and click on Docs, search for normalizedDifference
+
+// to read the documentation. 
+
+
+
+// Calculate NBR for pre image
+
+var nbrPre = preImg.normalizedDifference(['B5', 'B7']);
+
+// Calculate NBR for post image
+
+var nbrPost = postImg.normalizedDifference(['B5', 'B7']);
+
+
+
+
+
+/// Low numbers are vegetated areas, we will color them green
+
+/// High numbers are burned areas, we will color them red 
+
+// New vis parameters 
+
+var burnParams = {min:-0.5, max:1, palette: ['red','brown','green']};
+
+// *Comment*
+
+ Map.addLayer(nbrPre, burnParams, 'pre image nbr' );
+
+ Map.addLayer(nbrPost, burnParams, 'post image nbr');
+
+
+
+// Without clipping to the fire burn area, some of the differences
+
+// that show up might be due to other changes, or to clouds vs. no clouds
+
+
+
+//*CQ* when you are done with the lab, how do you think you would apply a normalized difference
+
+// function to a whole image collection?
+
+
+
+
+
+
+
+
+

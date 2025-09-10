@@ -1,0 +1,15 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2",
+            "ft:1ovvyN_dzo01mRw8uSNMIYNg-HKyGTrqLErfg26X0"
+        ],
+        "Function": [
+            "NDVI (Normalized Difference Vegetation Index calculation)",
+            "Calculating terrain slope and aspect from DEMs",
+            "Exporting And Data Conversion",
+            "Data Fusion And Mosaicking",
+            "Exporting And Data Conversion"
+        ]
+    }
+}

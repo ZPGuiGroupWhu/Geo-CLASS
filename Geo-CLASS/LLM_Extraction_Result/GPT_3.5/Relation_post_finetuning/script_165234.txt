@@ -1,0 +1,22 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "MODIS/006/MOD09GA"
+        ],
+        "Function": [
+            "Cloud Masking And Quality Filtering",
+            "NDWI (Normalized Difference Water Index calculation)",
+            "Metadata Filtering"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "users/giswqs/public/countries"
+        ],
+        "Function": [
+            "Buffer Analysis",
+            "Buffer Analysis",
+            "Time Series Analysis"
+        ]
+    }
+}

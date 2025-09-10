@@ -1,0 +1,29 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/eeranyartrodrigo/panteones/polygonsData/polsPanteon"
+        ],
+        "Function": [
+            "Buffering feature collections",
+            "Extracting median band values"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "projects/ee-vulnerability-gee4geo/assets/ranyartRodrigo/mexicoContorno"
+        ],
+        "Function": [
+            "Buffering feature collections"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Masking cloudy pixels",
+            "Calculating vegetation indices",
+            "Extracting median band values"
+        ]
+    }
+}

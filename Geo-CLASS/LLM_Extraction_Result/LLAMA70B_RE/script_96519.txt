@@ -1,0 +1,48 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Flood analysis and natural disaster monitoring"],
+  "DataSource": ["users/eeranyartrodrigo/A_Hist", "users/eeranyartrodrigo/A_Conc", "users/eeranyartrodrigo/SSNMX_catalogo_20220801_20220810", "USGS/GMTED2010", "GLOBAL_FLOOD_DB/MODIS_EVENTS/V1", "JRC/GHSL/P2016/BUILT_LDSMT_GLOBE_V1", "JRC/GWIS/GlobFire/v2/DailyPerimeters"],
+  "Function": ["Elevation data processing", "Flood event analysis", "Built-up area analysis", "Flood plain mapping", "Fire perimeter analysis", "Buffering seismic data"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/eeranyartrodrigo/A_Hist"],
+        "Function": ["Elevation data processing"]
+    },
+    "relation_2": {
+        "DataSource": ["users/eeranyartrodrigo/A_Conc"],
+        "Function": ["Elevation data processing"]
+    },
+    "relation_3": {
+        "DataSource": ["users/eeranyartrodrigo/SSNMX_catalogo_20220801_20220810"],
+        "Function": ["Buffering seismic data"]
+    },
+    "relation_4": {
+        "DataSource": ["USGS/GMTED2010"],
+        "Function": ["Elevation data processing"]
+    },
+    "relation_5": {
+        "DataSource": ["GLOBAL_FLOOD_DB/MODIS_EVENTS/V1"],
+        "Function": ["Flood event analysis", "Flood plain mapping"]
+    },
+    "relation_6": {
+        "DataSource": ["JRC/GHSL/P2016/BUILT_LDSMT_GLOBE_V1"],
+        "Function": ["Built-up area analysis"]
+    },
+    "relation_7": {
+        "DataSource": ["JRC/GWIS/GlobFire/v2/DailyPerimeters"],
+        "Function": ["Fire perimeter analysis"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3123, 'completion_tokens': 567, 'total_tokens': 3690}

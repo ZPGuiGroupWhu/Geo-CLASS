@@ -1,0 +1,22 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S1_GRD"
+        ],
+        "Function": [
+            "Filtering image collection by bounds",
+            "Converting to natural scale",
+            "Focal median smoothing",
+            "Calculating band ratio",
+            "Creating RGB image"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "ft:1nWJr3XY3hcsRSvydLLyK47W-r6N1bB7JHhTYuLle"
+        ],
+        "Function": [
+            "Filtering feature collection by attribute"
+        ]
+    }
+}

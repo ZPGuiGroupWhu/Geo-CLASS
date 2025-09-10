@@ -1,0 +1,35 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Script calculates correlation between precipitation and cloud cover for East Asia in 2021."],
+  "Theme": ["Correlation analysis between precipitation and cloud cover"],
+  "DataSource": ["UCSB-CHG/CHIRPS/PENTAD", "COPERNICUS/S2_CLOUD_PROBABILITY"],
+  "Function": ["Image collection filtering based on date and region", "Mosaicking daily cloud probability images", "Summing cloud probability images", "Calculating percentage of cloud cover", "Cross-correlation analysis between precipitation and cloud cover"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["UCSB-CHG/CHIRPS/PENTAD"],
+        "Function": [
+            "Image collection filtering based on date and region",
+            "Mosaicking daily cloud probability images",
+            "Summing cloud probability images",
+            "Calculating percentage of cloud cover",
+            "Cross-correlation analysis between precipitation and cloud cover"
+        ]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2_CLOUD_PROBABILITY"],
+        "Function": [
+            "Image collection filtering based on date and region",
+            "Mosaicking daily cloud probability images",
+            "Summing cloud probability images",
+            "Calculating percentage of cloud cover",
+            "Cross-correlation analysis between precipitation and cloud cover"
+        ]
+    }
+}
+```

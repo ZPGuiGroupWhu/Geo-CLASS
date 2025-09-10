@@ -1,0 +1,12 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover",
+            "Image Reprojection",
+            "Photosynthetically active radiation (PAR) calculation"
+        ]
+    }
+}

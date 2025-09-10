@@ -1,0 +1,14 @@
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S1_GRD", "FAO/GAUL_SIMPLIFIED_500m/2015/level2"],
+        "Function": ["Image collection filtering for pre and post-flood periods", "Mosaicking images for comparison", "Applying speckle filter for noise reduction", "Calculating difference between images", "Threshold determination using Otsu method", "Refining flood results using additional datasets"]
+    },
+    "relation_2": {
+        "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+        "Function": ["Refining flood results using additional datasets"]
+    },
+    "relation_3": {
+        "DataSource": ["WWF/HydroSHEDS/03VFDEM"],
+        "Function": ["Refining flood results using additional datasets"]
+    }
+}

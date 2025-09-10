@@ -1,0 +1,28 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover classification and analysis"],
+  "DataSource": ["COPERNICUS/S2", "USGS/NED"],
+  "Function": ["Mask clouds from Sentinel-2 images", "Perform unsupervised classification", "Generate cluster means", "Create scatter plots", "Create signature plots"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Mask clouds from Sentinel-2 images", "Perform unsupervised classification", "Generate cluster means", "Create scatter plots", "Create signature plots"]
+    },
+    "relation_2": {
+        "DataSource": ["USGS/NED"],
+        "Function": ["Generate terrain data", "Add terrain data to input image"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4739, 'completion_tokens': 209, 'total_tokens': 4948}

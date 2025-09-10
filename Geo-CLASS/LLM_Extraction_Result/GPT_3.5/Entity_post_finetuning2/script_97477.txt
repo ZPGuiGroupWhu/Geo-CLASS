@@ -1,0 +1,20 @@
+{
+    "Summary": [
+        "Script filters Landsat 8 images, computes NDVI, EVI, and SABI, and adds layers to the map."
+    ],
+    "Theme": [
+        "VEGETATION COVER"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C01/T1_SR"
+    ],
+    "Function": [
+        "Cloud Filtering",
+        "Filter Image Collection",
+        "Spatial Clipping",
+        "Compute Median Of NDVI",
+        "Entropy Computation",
+        "Remapping",
+        "Calculate dNBR For Fire Severity"
+    ]
+}

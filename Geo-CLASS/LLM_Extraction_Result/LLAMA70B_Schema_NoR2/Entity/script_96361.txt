@@ -1,0 +1,5 @@
+{
+  "Theme": ["Landsat 5, 7, 8 image processing and analysis"],
+  "DataSource": ["LANDSAT/LT05/C01/T1_TOA", "LANDSAT/LE07/C01/T1_RT_TOA", "LANDSAT/LC08/C01/T1_RT_TOA", "LANDSAT/LT05/C01/T1_SR", "LANDSAT/LE07/C01/T1_SR", "LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Merging Landsat image collections", "Standardizing band names", "Unpacking bit bands", "Adding Fmask", "Calculating MNDWI", "Adding texture", "Adding Landsat number", "Adding HSV", "Masking land area"]
+}

@@ -1,0 +1,27 @@
+{
+    "Theme": [
+        "Land cover classification and probability analysis"
+    ],
+    "DataSource": [
+        "LANDSAT/LT05/C02/T1_L2",
+        "LANDSAT/LE07/C02/T1_L2",
+        "LANDSAT/LC08/C02/T1_L2",
+        "projects/mapbiomas-raisg/PRODUCTOS/AGUA/DATOS_AUXILIARES/TEMP/bigGrids_Suriname"
+    ],
+    "Function": [
+        "applyScaleFactors",
+        "rename_bands",
+        "sma",
+        "cloudScore",
+        "process_image",
+        "class_1_probs2",
+        "qualityMosaic",
+        "clip",
+        "set",
+        "select",
+        "multiply",
+        "toInt16",
+        "addBands",
+        "Export.image.toAsset"
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Image selection based on date and cloud cover", "Feature collection merging for training data creation", "Image classification based on trained classifier"]
+    },
+    "relation_2": {
+        "DataSource": ["Burnedscar", "vegetation", "Bare_Soil", "Water"],
+        "Function": ["Feature collection merging for training data creation"]
+    }
+}

@@ -1,0 +1,297 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var aoi = ee.FeatureCollection("users/liuchongwhu/Arctic/Arctic_greeness/treeline_country");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+///////////** Arctic greening patterns - MODIS max NDVI/EVI robust regerssion trends **////////////////
+
+
+
+// Center and map Arctic domain
+
+Map.centerObject(aoi, 4);
+
+Map.addLayer(aoi);
+
+
+
+// Load MODIS data
+
+var modis = ee.ImageCollection("MODIS/006/MOD13Q1"); 
+
+
+
+// Set duration of interest
+
+var start = ee.Date('2002-01-01');
+
+var end = ee.Date('2021-12-31');
+
+
+
+// Create sequence of years for mapping
+
+var years = ee.List.sequence(start.get('year'), end.get('year'));
+
+
+
+// Define function to mask pixels with high SummaryQA
+
+var maskSummaryQA = function(image) {
+
+  return image.updateMask(image.select("SummaryQA").lt(1));
+
+};
+
+
+
+// Apply to image collection
+
+var modisMaskedQA = modis.map(maskSummaryQA);
+
+
+
+
+
+var waterMask = ee.ImageCollection('MODIS/006/MOD44W')
+
+              .filter(ee.Filter.date('2015-01-01', '2015-01-02'))
+
+              .select('water_mask')
+
+              .first();//first band
+
+
+
+// Definte function to mask out water
+
+var maskWater = function(image){
+
+  return image.updateMask(waterMask.select('water_mask').lt(3));
+
+};
+
+
+
+// Apply to image collection
+
+var modisMasked = modisMaskedQA.map(maskWater);
+
+
+
+
+
+var ndviAnnual = ee.ImageCollection.fromImages(
+
+      years.map(function (y) {
+
+        return modisMasked
+
+        .filter(ee.Filter.calendarRange(y, y, 'year'))
+
+        .filter(ee.Filter.calendarRange(7, 8, 'month'))
+
+                    .select('NDVI')
+
+                    .max()
+
+                    .set('year', y)
+
+                    .set('system:time_start', 
+
+                      ee.Date(ee.Number(y).format('%d').cat('-01-01')
+
+                      ));
+
+}));
+
+var eviAnnual = ee.ImageCollection.fromImages(
+
+      years.map(function (y) {
+
+        return modisMasked
+
+        .filter(ee.Filter.calendarRange(y, y, 'year'))
+
+        .filter(ee.Filter.calendarRange(7, 8, 'month'))
+
+                    .select('EVI')
+
+                    .max()
+
+                    .set('year', y)
+
+                    .set('system:time_start', 
+
+                      ee.Date(ee.Number(y).format('%d').cat('-01-01')
+
+                      ));
+
+}));
+
+
+
+// Prepare images for regressions analysis
+
+// Adding extra bands for coefficients (intercept, timestep)
+
+var ndviYear = ndviAnnual
+
+  .map(function(image) {
+
+    var date = ee.Date(image.get('system:time_start'));
+
+    var yearOffset = date.difference(start, 'year');
+
+    return ee.Image(yearOffset)
+
+    .float()
+
+    .addBands(image)
+
+    .set('system:time_start', 
+
+      ee.Date(ee.Number(image.get('year')).format('%d').cat('-07-01')));
+
+  });
+
+var eviYear = eviAnnual
+
+  .map(function(image) {
+
+    var date = ee.Date(image.get('system:time_start'));
+
+    var yearOffset = date.difference(start, 'year');
+
+    return ee.Image(yearOffset)
+
+    .float()
+
+    .addBands(image)
+
+    .set('system:time_start', 
+
+      ee.Date(ee.Number(image.get('year')).format('%d').cat('-07-01')));
+
+  });
+
+
+
+// Calculate slopes using the sensSlope function - This is calculates Theil-Sen
+
+var ndviregression = ndviYear.reduce(ee.Reducer.sensSlope());
+
+var eviregression = eviYear.reduce(ee.Reducer.sensSlope());
+
+
+
+// Map the coefficients
+
+Map.addLayer(
+
+  ndviregression.clip(aoi), 
+
+  {bands: 'slope', 
+
+   min: -100, 
+
+   max: 100, 
+
+   palette: ['513500', 'FFFFFF', '4a8900']}, 
+
+  'NDVI slope');
+
+Map.addLayer(
+
+  eviregression.clip(aoi), 
+
+  {bands: 'slope', 
+
+   min: -100, 
+
+   max: 100, 
+
+   palette: ['513500', 'FFFFFF', '4a8900']}, 
+
+  'EVI slope');
+
+
+
+// Define function to calculate average NDVI in region from image
+
+var arcticAverage = function(image){
+
+  return(
+
+        image.reduceRegions({              
+
+        collection: aoi,  
+
+        reducer: ee.Reducer.mean(),     
+
+        scale: 250,})
+
+        
+
+        .map(function(feature) {
+
+          return(
+
+            feature.set(
+
+              'year', 
+
+              image.get('year')));
+
+        }) // add year property to feature.
+
+  );
+
+};
+
+
+
+
+
+var ndviTimeSeries = ndviAnnual.map(arcticAverage);
+
+var eviTimeSeries = eviAnnual.map(arcticAverage);
+
+
+
+
+
+
+// Data export
+
+Export.image.toDrive({
+
+  image: ndviregression.unmask(-9999).select(0),
+
+  description: 'arctic_regression_ndvi',
+
+  scale: 250,
+
+  region: aoi,
+
+  maxPixels: 1e13,
+
+  crs: 'EPSG:3995'
+
+});
+
+
+
+Export.image.toDrive({
+
+  image: eviregression.unmask(-9999).select(0),
+
+  description: 'arctic_regression_evi',
+
+  scale: 250,
+
+  region: aoi,
+
+  maxPixels: 1e13,
+
+  crs: 'EPSG:3995'
+
+});

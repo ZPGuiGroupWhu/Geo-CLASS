@@ -1,0 +1,24 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "FAO/GAUL_SIMPLIFIED_500m/2015/level2"
+        ],
+        "Function": [
+            "Filter image collection by bounds and date",
+            "Create mosaic image and clip to boundary"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LT05/C01/T1_SR"
+        ],
+        "Function": [
+            "Filter image collection by bounds and date",
+            "Create mosaic image and clip to boundary",
+            "Calculate NDWI",
+            "Get difference image of NDWI",
+            "Select pixels greater than threshold",
+            "Use Canny Edge detector"
+        ]
+    }
+}

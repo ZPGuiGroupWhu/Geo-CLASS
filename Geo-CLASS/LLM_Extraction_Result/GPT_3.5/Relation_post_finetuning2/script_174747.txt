@@ -1,0 +1,28 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/juanjoseromeroacm21/MORELIA",
+            "users/juanjoseromeroacm21/michoacan_state"
+        ],
+        "Function": [
+            "Filtering Administrative Boundaries"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "USDOS/LSIB_SIMPLE/2017"
+        ],
+        "Function": [
+            "Filtering Administrative Boundaries"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "MODIS/MOD11A2"
+        ],
+        "Function": [
+            "Temperature Calculation",
+            "Significance Testing"
+        ]
+    }
+}

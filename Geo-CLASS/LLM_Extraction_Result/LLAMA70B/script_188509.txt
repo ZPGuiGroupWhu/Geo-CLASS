@@ -1,0 +1,37 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Climate and precipitation analysis in East South Asia"],
+  "DataSource": ["UCSB-CHG/CHIRPS/PENTAD", "COPERNICUS/S2_CLOUD_PROBABILITY", "users/kitmyfaceplease2/eastsouth_asia", "projects/ee-kitmyfaceplease2/assets/EAST_SOUTH_SPLIT2"],
+  "Function": ["Filtering image collection by date and geometry", "Calculating total precipitation", "Masking clouds from images", "Calculating correlation coefficient", "Generating image mosaics", "Counting images in a collection", "Reducing images to a single value"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["UCSB-CHG/CHIRPS/PENTAD"],
+        "Function": ["Filtering image collection by date and geometry", "Calculating total precipitation", "Generating image mosaics"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2_CLOUD_PROBABILITY"],
+        "Function": ["Masking clouds from images"]
+    },
+    "relation_3": {
+        "DataSource": ["users/kitmyfaceplease2/eastsouth_asia"],
+        "Function": ["Counting images in a collection", "Reducing images to a single value"]
+    },
+    "relation_4": {
+        "DataSource": ["projects/ee-kitmyfaceplease2/assets/EAST_SOUTH_SPLIT2"],
+        "Function": ["Calculating correlation coefficient"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 6052, 'completion_tokens': 383, 'total_tokens': 6435}

@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Flood monitoring and analysis"],
+  "DataSource": ["users/hrishippatel/IndiaStates", "COPERNICUS/S1_GRD"],
+  "Function": ["Filtering Sentinel-1 images by date and polarization", "Clipping images to a region", "Compositing images", "Visualizing images"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/hrishippatel/IndiaStates"],
+        "Function": ["Clipping images to a region", "Visualizing images"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Filtering Sentinel-1 images by date and polarization", "Compositing images"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2195, 'completion_tokens': 195, 'total_tokens': 2390}

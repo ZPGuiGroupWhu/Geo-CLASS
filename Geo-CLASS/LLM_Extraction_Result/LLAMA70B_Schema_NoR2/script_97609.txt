@@ -1,0 +1,39 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Drought monitoring and seasonal rainfall analysis"],
+  "DataSource": ["users/eijulio/valles_altos_estados", "FAO/GAUL_SIMPLIFIED_500m/2015/level2", "ECMWF/ERA5/DAILY", "UCSB-CHG/CHIRPS/PENTAD"],
+  "Function": ["Filtering image collections by date", "Calculating monthly totals from image collections", "Computing long-term means for each month", "Calculating seasonal deviation from normal rainfall", "Clipping images to area of interest", "Reducing regions to calculate mean values", "Styling vectors for visualization", "Exporting images and tables to drive"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/eijulio/valles_altos_estados"],
+        "Function": ["Clipping images to area of interest", "Filtering image collections by date"]
+    },
+    "relation_2": {
+        "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2"],
+        "Function": ["Styling vectors for visualization"]
+    },
+    "relation_3": {
+        "DataSource": ["ECMWF/ERA5/DAILY"],
+        "Function": ["Calculating monthly totals from image collections", "Computing long-term means for each month", "Calculating seasonal deviation from normal rainfall"]
+    },
+    "relation_4": {
+        "DataSource": ["UCSB-CHG/CHIRPS/PENTAD"],
+        "Function": ["Calculating monthly totals from image collections", "Computing long-term means for each month", "Calculating seasonal deviation from normal rainfall"]
+    },
+    "relation_5": {
+        "DataSource": ["users/eijulio/valles_altos_estados", "FAO/GAUL_SIMPLIFIED_500m/2015/level2", "ECMWF/ERA5/DAILY", "UCSB-CHG/CHIRPS/PENTAD"],
+        "Function": ["Reducing regions to calculate mean values", "Exporting images and tables to drive"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2935, 'completion_tokens': 523, 'total_tokens': 3458}

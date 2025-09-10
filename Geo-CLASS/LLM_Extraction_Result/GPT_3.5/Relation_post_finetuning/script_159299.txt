@@ -1,0 +1,22 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/jannat/gujratCityExt"
+        ],
+        "Function": [
+            "Metadata Filtering",
+            "Image Band Manipulation",
+            "Change Detection"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Data Standardization",
+            "Classification And Machine Learning",
+            "Classification"
+        ]
+    }
+}

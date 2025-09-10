@@ -1,0 +1,11 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S1_GRD"
+        ],
+        "Function": [
+            "Convert Radar Backscatter",
+            "Enhancing Image Visualization"
+        ]
+    }
+}

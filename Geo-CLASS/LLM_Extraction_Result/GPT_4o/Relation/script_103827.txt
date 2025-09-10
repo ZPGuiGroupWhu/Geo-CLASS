@@ -1,0 +1,17 @@
+{
+  "relation_1": {
+    "DataSource": ["users/hrishippatel/IndiaStates"],
+    "Function": ["Clip image to region"]
+  },
+  "relation_2": {
+    "DataSource": ["COPERNICUS/S1_GRD"],
+    "Function": [
+      "Filter image collection by date range",
+      "Filter image collection by polarization",
+      "Filter image collection by instrument mode",
+      "Select specific polarization band",
+      "Calculate mean of image collection",
+      "Visualize image with specific parameters"
+    ]
+  }
+}

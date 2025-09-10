@@ -1,0 +1,22 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/ak_glaciers/NWCC_high_resolution_coordinates_2019_hucs",
+            "USGS/WBD/2017/HUC8"
+        ],
+        "Function": [
+            "Generate daily composites of optical data",
+            "Generate stats for snow covered area/persistence"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "CGIAR/SRTM90_V4"
+        ],
+        "Function": [
+            "Generate Sentinel-1 image collection for wet snow detection",
+            "Create test mask by updating Sentinel-1 image with optical composite",
+            "Generate stats for snow covered area/persistence"
+        ]
+    }
+}

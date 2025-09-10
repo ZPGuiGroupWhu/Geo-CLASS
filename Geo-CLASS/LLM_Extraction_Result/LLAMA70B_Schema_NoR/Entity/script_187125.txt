@@ -1,0 +1,21 @@
+{
+    "Theme": [
+        "Water body detection and analysis"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2",
+        "JRC/GSW1_0/MonthlyHistory",
+        "users/christinacorbane/MT_comp_proj"
+    ],
+    "Function": [
+        "Filtering image collection by geometry",
+        "Applying normalized difference water index",
+        "Computing threshold using Otsu method",
+        "Detecting water bodies using thresholding",
+        "Clipping image edges",
+        "Detecting sharp changes using Canny edge detector",
+        "Buffering around NDWI edges",
+        "Computing histogram for thresholding",
+        "Masking image using threshold"
+    ]
+}

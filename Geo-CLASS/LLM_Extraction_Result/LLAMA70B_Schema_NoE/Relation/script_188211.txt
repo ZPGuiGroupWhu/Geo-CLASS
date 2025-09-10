@@ -1,0 +1,56 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/hifengxu/TibetanPlateau"
+        ],
+        "Function": [
+            "createLandsatCollection",
+            "maskL457sr",
+            "maskL8sr",
+            "excludeBand",
+            "formatDate",
+            "mergeObjects",
+            "Norm_ID",
+            "Two_Divide",
+            "cal_index",
+            "get_water",
+            "get_water_2",
+            "get_area",
+            "processSSC"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "users/KingDr/TPPoints"
+        ],
+        "Function": [
+            "get_water",
+            "get_water_2",
+            "get_area",
+            "processSSC"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "LANDSAT/LT05/C02/T1_L2",
+            "LANDSAT/LE07/C02/T1_L2",
+            "LANDSAT/LC08/C02/T1_L2"
+        ],
+        "Function": [
+            "createLandsatCollection",
+            "maskL457sr",
+            "maskL8sr",
+            "excludeBand",
+            "formatDate",
+            "mergeObjects"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "CGIAR/SRTM90_V4"
+        ],
+        "Function": [
+            "None"
+        ]
+    }
+}

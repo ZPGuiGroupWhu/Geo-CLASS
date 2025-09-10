@@ -1,0 +1,49 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LT05/C02/T1_L2"
+        ],
+        "Function": [
+            "Image collection filtering",
+            "Image scaling and band renaming"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LE07/C02/T1_L2"
+        ],
+        "Function": [
+            "Image collection filtering",
+            "Image scaling and band renaming"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "LANDSAT/LC08/C02/T1_L2"
+        ],
+        "Function": [
+            "Image collection filtering",
+            "Image scaling and band renaming"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "projects/mapbiomas-raisg/PRODUCTOS/AGUA/DATOS_AUXILIARES/TEMP/bigGrids_Suriname"
+        ],
+        "Function": [
+            "Image masking"
+        ]
+    },
+    "relation_5": {
+        "DataSource": [
+            "LANDSAT/LT05/C02/T1_L2",
+            "LANDSAT/LE07/C02/T1_L2",
+            "LANDSAT/LC08/C02/T1_L2"
+        ],
+        "Function": [
+            "Unmixing and fraction calculation",
+            "Cloud score calculation",
+            "Image masking and quality mosaic generation"
+        ]
+    }
+}

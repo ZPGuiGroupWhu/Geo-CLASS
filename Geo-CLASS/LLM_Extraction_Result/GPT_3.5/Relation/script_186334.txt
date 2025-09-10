@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["MODIS/006/MOD09Q1"],
+        "Function": ["Filtering MODIS images by date and region", "Calculating NDVI for each image", "Creating a multiband image for classification"]
+    },
+    "relation_2": {
+        "DataSource": ["users/khoapv/Ranhgioi_DL"],
+        "Function": ["Training a clusterer for unsupervised classification", "Merging classes based on crop types"]
+    }
+}

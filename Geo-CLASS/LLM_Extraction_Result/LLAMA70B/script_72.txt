@@ -1,0 +1,33 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land cover change detection and analysis in Cambodia"],
+  "DataSource": ["USDOS/LSIB/2017", "users/emaprlab/public:Modules/LandTrendr.js", "users/emaprlab/broberts:LTOP_mekong/06lt_Transfer_FTV_modules.js"],
+  "Function": ["Buffering a feature collection", "Filtering a feature collection by country name", "Running LandTrendr temporal segmentation", "Building a spectral response collection", "Calculating a spectral index", "Fitting LandTrendr model", "Converting LandTrendr fit output", "Detecting changes using LandTrendr modules", "Exporting image outputs"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["USDOS/LSIB/2017"],
+        "Function": ["Buffering a feature collection", "Filtering a feature collection by country name"]
+    },
+    "relation_2": {
+        "DataSource": ["users/emaprlab/public:Modules/LandTrendr.js"],
+        "Function": ["Running LandTrendr temporal segmentation", "Fitting LandTrendr model", "Converting LandTrendr fit output", "Detecting changes using LandTrendr modules"]
+    },
+    "relation_3": {
+        "DataSource": ["users/emaprlab/broberts:LTOP_mekong/06lt_Transfer_FTV_modules.js"],
+        "Function": ["Building a spectral response collection", "Calculating a spectral index", "Exporting image outputs"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4003, 'completion_tokens': 395, 'total_tokens': 4398}

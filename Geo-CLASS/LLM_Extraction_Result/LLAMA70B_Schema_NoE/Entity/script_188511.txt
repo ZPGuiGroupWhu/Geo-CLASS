@@ -1,0 +1,18 @@
+{
+    "Theme": [
+        "Precipitation and cloud probability analysis"
+    ],
+    "DataSource": [
+        "UCSB-CHG/CHIRPS/PENTAD",
+        "COPERNICUS/S2_CLOUD_PROBABILITY",
+        "users/kitmyfaceplease2/eastsouth_asia",
+        "projects/ee-kitmyfaceplease2/assets/EAST_SOUTH_SPLIT2"
+    ],
+    "Function": [
+        "Filtering and reducing image collections",
+        "Clipping and masking images",
+        "Calculating cloud probability and precipitation",
+        "Performing cross-correlation analysis",
+        "Exporting images to Drive"
+    ]
+}

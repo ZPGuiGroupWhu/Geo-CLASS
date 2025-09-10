@@ -1,0 +1,10 @@
+{
+  "relation_1": {
+    "DataSource": ["LANDSAT/LC08/C01/T1_TOA"],
+    "Function": ["Filter image collection by location and date", "Sort images by cloud cover", "Select first image from collection", "Display true color image", "Calculate NDVI", "Display NDVI image", "Calculate EVI", "Display EVI image", "Calculate NDWI", "Display NDWI image", "Calculate NDBI", "Display NDBI image", "Calculate BAI", "Display BAI image", "Calculate NBRT", "Display NBRT image", "Calculate NDSI", "Display NDSI image", "Perform PCA", "Display principal component image", "Perform spectral unmixing", "Display unmixed image", "Convert RGB to HSV", "Convert HSV back to RGB", "Display pan-sharpened image"]
+  },
+  "relation_2": {
+    "DataSource": ["LANDSAT/LT5_L1T_TOA"],
+    "Function": ["Filter image collection by location and date", "Sort images by cloud cover", "Select first image from collection", "Perform linear transformation", "Display transformed components"]
+  }
+}

@@ -1,0 +1,19 @@
+{
+    "Summary": [
+        "Visualizing burn severity of Medocino Complex Fire using Landsat imagery."
+    ],
+    "Theme": [
+        "PALMER DROUGHT SEVERITY INDEX"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C01/T1_SR/LC08_045033_20170925",
+        "LANDSAT/LC08/C01/T1_SR/LC08_045033_20180928",
+        "users/cade/ca_MendocinoComplex"
+    ],
+    "Function": [
+        "Data Acquisition And Preprocessing",
+        "Calculating terrain slope and aspect from DEMs",
+        "Vegetation And Water Indices Calculation",
+        "Visualization And Output Generation"
+    ]
+}

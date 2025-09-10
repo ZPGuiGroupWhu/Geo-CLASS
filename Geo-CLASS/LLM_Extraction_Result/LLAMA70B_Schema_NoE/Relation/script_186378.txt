@@ -1,0 +1,26 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/khoapv/xatong"
+        ],
+        "Function": [
+            "Add NDVI and time to images",
+            "Filter images by date and bounds",
+            "Map functions to image collections"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S1_GRD",
+            "LANDSAT/LC08/C01/T1_SR",
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Add NDVI and time to images",
+            "Filter images by date and bounds",
+            "Map functions to image collections",
+            "Join image collections by date",
+            "Reduce regions for each station"
+        ]
+    }
+}

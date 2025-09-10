@@ -1,0 +1,51 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Script for pre- and post-fire monitoring using Earth observations."],
+  "Theme": ["Fire monitoring"],
+  "DataSource": ["FAO/GAUL/2015/level0", "COPERNICUS/S2", "LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Cloud and snow masking", "Mosaicking and clipping images", "Calculating NBR for pre- and post-fire images", "Calculating dNBR", "Adding layers to map", "Calculating burned area", "Exporting dNBR file", "Exporting burned area stats as CSV"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["FAO/GAUL/2015/level0"],
+        "Function": ["Cloud and snow masking", "Mosaicking and clipping images"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Cloud and snow masking", "Mosaicking and clipping images"]
+    },
+    "relation_3": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Cloud and snow masking", "Mosaicking and clipping images"]
+    },
+    "relation_4": {
+        "DataSource": ["FAO/GAUL/2015/level0", "COPERNICUS/S2", "LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Calculating NBR for pre- and post-fire images"]
+    },
+    "relation_5": {
+        "DataSource": ["FAO/GAUL/2015/level0", "COPERNICUS/S2", "LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Calculating dNBR"]
+    },
+    "relation_6": {
+        "DataSource": ["FAO/GAUL/2015/level0", "COPERNICUS/S2", "LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Adding layers to map"]
+    },
+    "relation_7": {
+        "DataSource": ["FAO/GAUL/2015/level0", "COPERNICUS/S2", "LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Calculating burned area"]
+    },
+    "relation_8": {
+        "DataSource": ["FAO/GAUL/2015/level0", "COPERNICUS/S2", "LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Exporting dNBR file"]
+    },
+    "relation_9": {
+        "DataSource": ["FAO/GAUL/2015/level0", "COPERNICUS/S2", "LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Exporting burned area stats as CSV"]
+    }
+}
+```

@@ -1,0 +1,28 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover analysis in the Alto Paraná ecoregion"],
+  "DataSource": ["users/GeoForPy/Tesis/EcorregionAltoParana", "LANDSAT/LT05/C01/T1_SR"],
+  "Function": ["Cloud masking for Landsat 5 images", "Image collection filtering", "Percentile calculation", "Image compositing", "Map visualization"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/GeoForPy/Tesis/EcorregionAltoParana"],
+        "Function": ["Image collection filtering", "Map visualization"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LT05/C01/T1_SR"],
+        "Function": ["Cloud masking for Landsat 5 images", "Percentile calculation", "Image compositing"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4507, 'completion_tokens': 237, 'total_tokens': 4744}

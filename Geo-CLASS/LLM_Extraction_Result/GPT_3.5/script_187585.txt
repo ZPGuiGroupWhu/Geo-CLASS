@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Calculate MODIS EVI averages and perform PCA on the results."],
+  "Theme": ["Vegetation monitoring through MODIS EVI", "Principal Component Analysis (PCA)"],
+  "DataSource": ["MODIS/006/MOD13Q1"],
+  "Function": ["Filter and calculate average EVI for each year", "Perform Principal Component Analysis (PCA)"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["MODIS/006/MOD13Q1"],
+        "Function": ["Filter and calculate average EVI for each year"]
+    },
+    "relation_2": {
+        "DataSource": ["MODIS/006/MOD13Q1"],
+        "Function": ["Perform Principal Component Analysis (PCA)"]
+    }
+}
+```

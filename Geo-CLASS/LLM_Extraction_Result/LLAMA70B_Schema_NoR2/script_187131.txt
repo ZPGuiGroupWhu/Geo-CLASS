@@ -1,0 +1,31 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Wildfire analysis and burned area detection"],
+  "DataSource": ["ft:1iovW6_vHSX3JOx5OvcFr-ljJdx5mGmqK6Q_ETiSO", "LANDSAT/LT5_L1T", "LANDSAT/LE7_L1T_TOA", "LANDSAT/LC8_L1T_TOA", "FIRMS"],
+  "Function": ["Filtering image collection by date and region", "Creating cloud-free composite", "Removing clouds from images", "Calculating Normalized Burn Ratio (NBR)", "Creating burned area mask", "Exporting results to Drive"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["ft:1iovW6_vHSX3JOx5OvcFr-ljJdx5mGmqK6Q_ETiSO"],
+        "Function": ["Filtering image collection by date and region", "Creating cloud-free composite", "Removing clouds from images"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LT5_L1T", "LANDSAT/LE7_L1T_TOA", "LANDSAT/LC8_L1T_TOA"],
+        "Function": ["Calculating Normalized Burn Ratio (NBR)", "Creating burned area mask"]
+    },
+    "relation_3": {
+        "DataSource": ["FIRMS"],
+        "Function": ["Exporting results to Drive"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4704, 'completion_tokens': 358, 'total_tokens': 5062}

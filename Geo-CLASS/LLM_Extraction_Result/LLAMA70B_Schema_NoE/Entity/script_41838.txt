@@ -1,0 +1,18 @@
+{
+    "Theme": [
+        "Land cover classification using Landsat 8 imagery"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C01/T1_SR"
+    ],
+    "Function": [
+        "Filtering Landsat 8 images by date and cloud cover",
+        "Clipping images to a region of interest",
+        "Merging feature collections",
+        "Selecting bands for classification",
+        "Sampling regions for training",
+        "Training a random forest classifier",
+        "Classifying land cover",
+        "Visualizing classification results"
+    ]
+}

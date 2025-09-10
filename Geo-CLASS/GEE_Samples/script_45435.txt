@@ -1,0 +1,74 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var imageCollection = ee.ImageCollection("MODIS/006/MOD15A2H"),
+    imageCollection2 = ee.ImageCollection("MODIS/006/MOD44B");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+
+var dataset_LAI = ee.ImageCollection("MODIS/006/MOD15A2H")
+                  .filter(ee.Filter.date('2002-01-01', '2003-01-01'));
+                
+var dataset_VC = ee.ImageCollection("MODIS/006/MOD44B").filter(ee.Filter.date('2002-01-01', '2003-01-01'));
+
+print(dataset_LAI)
+print(dataset_VC)
+var Lai_modis = dataset_LAI.select('Lai_500m');//读取字段
+var Veg_Tree_Cover_modis = dataset_VC.select('Percent_Tree_Cover');//读取字段
+print(Veg_Tree_Cover_modis)
+var Veg_Tree_Cover = Veg_Tree_Cover_modis.reduce(ee.Reducer.mean())// to image;
+
+/*var visParam = {
+    min: 0,
+    max: 100,
+    palette: 'FFFFFF, CE7E45, DF923D, F1B555, FCD163, 99B718, 74A901, 66A000, 529400,'+
+      '3E8601, 207401, 056201, 004C00, 023B01, 012E01, 011D01, 011301'
+  };
+Map.addLayer(Veg_Tree_Cover, visParam, "Lai_500m");
+*/
+
+var Veg_NonTree_Cover_modis = dataset_VC.select('Percent_NonTree_Vegetation');//读取字段
+print(Veg_NonTree_Cover_modis)
+var Veg_NonTree_Cover = Veg_NonTree_Cover_modis.reduce(ee.Reducer.mean())// to image;
+
+var Veg_Cover=Veg_NonTree_Cover.add(Veg_Tree_Cover)
+var Veg_Cover=Veg_Cover.where(Veg_Cover.gt(100.0),100.0).divide(100).toFloat()
+
+var region = ee.Geometry.Polygon({
+  coords: [[-180.0, -90.0], [180.0, -90.0], [180.0, 90.0], [-180.0, 90.0]],
+  geodesic: false
+});
+
+//先对MODIS数据做一个数据质量控制，主要是对填充值的处理,将填充值（249-255）赋值为0；
+var date_start=ee.Date('2002-07-04T00:00');
+var date_end=ee.Date('2002-12-31T00:00');
+print(date_start);
+print(date_end);
+var date_8day = date_start.advance(8,'day');
+print(date_8day);
+
+var Lai_modis_start = Lai_modis.filterDate(date_start)
+print(Lai_modis_start);
+//var Lai_modis_nodata = dataset.where(Lai_modis.lt(101),0)
+//check data; 检查数据
+var mean = Lai_modis_start.reduce(ee.Reducer.mean())// to image;
+var Lai_modis_sd=mean.where(mean.gt(101),0.00).divide(10.0).toFloat()
+print(Lai_modis_sd)
+
+var LAI_FC=Lai_modis_sd.divide(Veg_Cover)
+var LAI_FC_sd=LAI_FC.where(LAI_FC.gt(6),6)
+
+var visParam = {
+    min: 0,
+    max: 6.5,
+    palette: 'FFFFFF, CE7E45, DF923D, F1B555, FCD163, 99B718, 74A901, 66A000, 529400,'+
+      '3E8601, 207401, 056201, 004C00, 023B01, 012E01, 011D01, 011301'
+  };
+Map.addLayer(Lai_modis_sd, visParam, "Lai_500m");
+
+Export.image.toDrive({
+   image:Lai_modis_sd,
+   description: "Lai_modis_sd",
+   region: region,
+   scale: 20000,
+   maxPixels: 999999999999,});
+
+
+

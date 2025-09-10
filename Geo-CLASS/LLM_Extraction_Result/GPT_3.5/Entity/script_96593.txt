@@ -1,0 +1,6 @@
+{
+  "Summary": ["Script calculates NDVI, filters imagery, and visualizes land cover."],
+  "Theme": ["NDVI computation", "Imagery filtering", "Land cover visualization"],
+  "DataSource": ["MODIS/MOD09GA_006_NDVI", "USGS/SRTMGL1_003", "MODIS/006/MCD12Q1", "COPERNICUS/S2_SR"],
+  "Function": ["NDVI calculation", "Image filtering by date and location", "Land cover selection and visualization"]
+}

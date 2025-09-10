@@ -1,0 +1,5 @@
+{
+  "Theme": ["Sentinel-2 Image Reprojection and Export"],
+  "DataSource": ["COPERNICUS/S2"],
+  "Function": ["Filtering image collection by cloud percentage and date", "Selecting specific bands from image", "Reprojecting image to EPSG:4326", "Exporting image to Google Drive", "Visualizing image with Google Map API"]
+}

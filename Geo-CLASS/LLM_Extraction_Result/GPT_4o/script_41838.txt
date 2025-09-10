@@ -1,0 +1,25 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover classification", "Mangrove mapping", "Water body identification", "Open land detection", "Built-up area analysis"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Filter image collection by location", "Filter image collection by date", "Sort images by cloud cover", "Select first image", "Clip image to region", "Merge geometries", "Print feature collection", "Select image bands", "Sample regions for training", "Print training samples", "Train classifier", "Classify image", "Center map on features", "Display classified image"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Filter image collection by location", "Filter image collection by date", "Sort images by cloud cover", "Select first image", "Clip image to region", "Select image bands", "Sample regions for training", "Train classifier", "Classify image", "Display classified image"]
+    },
+    "relation_2": {
+        "DataSource": ["None"],
+        "Function": ["Merge geometries", "Print feature collection", "Print training samples", "Center map on features"]
+    }
+}
+```
+
+Total_Token_Usage:
+8366

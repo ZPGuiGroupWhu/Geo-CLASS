@@ -1,0 +1,22 @@
+{
+    "Theme": [
+        "Land cover classification and cloud cover analysis"
+    ],
+    "DataSource": [
+        "LANDSAT/LC8_SR",
+        "LANDSAT/LE7_SR",
+        "LANDSAT/LT5_SR",
+        "USGS/NED",
+        "ft:1_RZgjlcqixp-L9hyS6NYGqLaKOlnhSC35AB5M5Ll"
+    ],
+    "Function": [
+        "Image collection filtering and renaming",
+        "Feature collection filtering and geometry extraction",
+        "Image masking and cloud cover calculation",
+        "Image classification and water class extraction",
+        "Image collection merging and reduction",
+        "Vector region creation and raster exporting",
+        "Image exporting to Drive",
+        "Metadata extraction and exporting to CSV"
+    ]
+}

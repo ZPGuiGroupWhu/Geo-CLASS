@@ -1,0 +1,5 @@
+{
+  "Theme": ["Flood monitoring and analysis"],
+  "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2", "COPERNICUS/S1_GRD"],
+  "Function": ["Filtering image collections by date and metadata", "Creating mosaics from image collections", "Clipping images to area of interest", "Calculating mean and standard deviation of image collections", "Applying threshold to identify flooded areas"]
+}

@@ -1,0 +1,5 @@
+{
+  "Theme": ["Landsat imagery cloud masking", "Autumn season analysis"],
+  "DataSource": ["LANDSAT/LE07/C01/T1_SR"],
+  "Function": ["Create rectangular areas of interest", "Filter image collection by date", "Filter image collection by path and row", "Mask clouds and occluded pixels", "Apply cloud mask to image collections", "Export image collections to Google Drive"]
+}

@@ -1,0 +1,17 @@
+{
+    "Summary": [
+        "The script focuses on extracting temperature data for forested areas in the Amazon Basin."
+    ],
+    "Theme": [
+        "AIR TEMPERATURE RECONSTRUCTION"
+    ],
+    "DataSource": [
+        "UMD/hansen/global_forest_change_2017_v1_5",
+        "Oxford/MAP/LST_Day_5km_Monthly",
+        "NCEP_RE/surface_temp"
+    ],
+    "Function": [
+        "Vegetation And Water Indices Calculation",
+        "Vegetation And Water Indices Calculation"
+    ]
+}

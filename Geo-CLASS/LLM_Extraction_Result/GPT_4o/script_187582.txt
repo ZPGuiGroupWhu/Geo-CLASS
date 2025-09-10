@@ -1,0 +1,29 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Parthenium classification", "Vegetation indices", "Cloud masking", "Accuracy assessment"],
+  "DataSource": ["users/zolokiala/parthenium1", "users/zolokiala/buffer", "users/zolokiala/training", "users/zolokiala/test", "COPERNICUS/S2"],
+  "Function": ["Display shapefiles", "Mask clouds", "Filter image collection", "Compute median composite", "Compute vegetation indices", "Mask NDVI range", "Sample regions", "Train classifier", "Classify image", "Compute confusion matrix", "Generate area chart", "Export image to Drive"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/zolokiala/parthenium1", "users/zolokiala/buffer"],
+        "Function": ["Display shapefiles"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Mask clouds", "Filter image collection", "Compute median composite", "Compute vegetation indices", "Mask NDVI range", "Classify image", "Generate area chart", "Export image to Drive"]
+    },
+    "relation_3": {
+        "DataSource": ["users/zolokiala/training", "users/zolokiala/test"],
+        "Function": ["Sample regions", "Train classifier", "Compute confusion matrix"]
+    }
+}
+```
+
+Total_Token_Usage:
+9142

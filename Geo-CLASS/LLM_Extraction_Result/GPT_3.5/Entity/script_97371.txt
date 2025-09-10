@@ -1,0 +1,6 @@
+{
+  "Summary": ["The script focuses on extracting NDVI values over time for agricultural areas in Piura using Sentinel-2 data."],
+  "Theme": ["Agricultural monitoring in Piura"],
+  "DataSource": ["FAO/GAUL/2015/level1", "USGS/GFSAD1000_V0", "COPERNICUS/S2_SR"],
+  "Function": ["Cloud and shadow masking", "NDVI calculation", "Time series generation", "Exporting time series data", "Merging NDVI observations"]
+}

@@ -1,0 +1,22 @@
+{
+    "Theme": [
+        "Land cover classification and object-based image analysis"
+    ],
+    "DataSource": [
+        "USDA/NAIP/DOQQ",
+        "USDA/NASS/CDL/2016"
+    ],
+    "Function": [
+        "Load NAIP image collection and filter by date and bounds",
+        "Load CDL 2016 image and select cropland layer",
+        "Clip images to ROI and normalize",
+        "Create mosaic from NAIP scenes",
+        "Perform random forest classification",
+        "Perform object-based image analysis using SNIC",
+        "Compute cluster means and standard deviation",
+        "Compute cluster area and perimeter",
+        "Compute cluster width and height",
+        "Build new classifier with additional properties",
+        "Compute confusion matrix"
+    ]
+}

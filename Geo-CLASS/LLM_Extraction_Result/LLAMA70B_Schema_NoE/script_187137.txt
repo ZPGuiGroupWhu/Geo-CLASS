@@ -1,0 +1,48 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land Surface Temperature Analysis"],
+  "DataSource": ["users/khoapv_vnuf/Thanhhoa_t", "MODIS/MOD11A2"],
+  "Function": [
+    "Extracting Land Surface Temperature (LST) from MODIS images",
+    "Transforming Kelvin to Celsius",
+    "Aggregating images by year",
+    "Calculating annual percentiles",
+    "Generating dates by months for all years",
+    "Calculating monthly max, min, and mean temperatures",
+    "Visualizing monthly min, max, and mean temperatures",
+    "Calculating temperature max, min, and mean by month of the year"
+  ]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["MODIS/MOD11A2"],
+        "Function": [
+            "Extracting Land Surface Temperature (LST) from MODIS images",
+            "Transforming Kelvin to Celsius",
+            "Calculating monthly max, min, and mean temperatures",
+            "Calculating temperature max, min, and mean by month of the year"
+        ]
+    },
+    "relation_2": {
+        "DataSource": ["users/khoapv_vnuf/Thanhhoa_t"],
+        "Function": [
+            "Aggregating images by year",
+            "Calculating annual percentiles",
+            "Generating dates by months for all years",
+            "Visualizing monthly min, max, and mean temperatures"
+        ]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3331, 'completion_tokens': 376, 'total_tokens': 3707}

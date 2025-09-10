@@ -1,0 +1,21 @@
+{
+    "Theme": [
+        "Land and water classification",
+        "Hillshade generation",
+        "True color image creation"
+    ],
+    "DataSource": [
+        "MODIS/006/MOD09GA",
+        "USGS/GMTED2010",
+        "TIGER/2018/States"
+    ],
+    "Function": [
+        "Cloud masking",
+        "Water masking",
+        "Image collection filtering",
+        "Hillshade generation",
+        "Image visualization",
+        "Percentile calculation",
+        "Image clipping"
+    ]
+}

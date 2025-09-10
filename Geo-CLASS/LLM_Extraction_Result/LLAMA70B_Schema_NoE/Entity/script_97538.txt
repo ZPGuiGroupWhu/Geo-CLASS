@@ -1,0 +1,15 @@
+{
+    "Theme": [
+        "Land cover analysis using Landsat 8 imagery"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C01/T1_SR"
+    ],
+    "Function": [
+        "Filtering Landsat 8 images by geometry, date, WRS_PATH, WRS_ROW, and cloud cover",
+        "Calculating median of filtered images",
+        "Clipping median image to geometry",
+        "Calculating NDVI and SAVI indices",
+        "Exporting NDVI, SAVI, and Landsat 8 bands to Google Drive"
+    ]
+}

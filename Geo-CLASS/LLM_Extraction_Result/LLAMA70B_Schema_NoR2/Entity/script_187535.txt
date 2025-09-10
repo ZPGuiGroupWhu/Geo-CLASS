@@ -1,0 +1,5 @@
+{
+  "Theme": ["Flood Mapping and Monitoring"],
+  "DataSource": ["COPERNICUS/S1_GRD", "ft:1nWJr3XY3hcsRSvydLLyK47W-r6N1bB7JHhTYuLle"],
+  "Function": ["Filtering Sentinel-1 images by date and polarisation", "Converting images to natural scale", "Applying smoothing filter to images", "Calculating band ratio images", "Generating histograms of image values", "Creating flood and river masks", "Visualizing results on a map"]
+}

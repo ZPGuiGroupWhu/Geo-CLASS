@@ -1,0 +1,14 @@
+{
+    "relation_1": {
+        "DataSource": ["users/khoapv/xatong"],
+        "Function": ["Calculating NDVI for vegetation health assessment"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S1_GRD", "LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Joining and combining Sentinel-1 and Landsat 8 data"]
+    },
+    "relation_3": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Calculating NDVI for vegetation health assessment"]
+    }
+}

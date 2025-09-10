@@ -1,0 +1,28 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S1_GRD"
+        ],
+        "Function": [
+            "Refined Lee filter for speckle noise reduction",
+            "Angle correction using toGamma0 function",
+            "Surface water mask computation using Canny Edge detector with Otsu thresholding"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "NOAA/CFSV2/FOR6H"
+        ],
+        "Function": [
+            "None"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "users/gena/GlobalHAND/30m/hand-5000"
+        ],
+        "Function": [
+            "Perona Malik filter for image denoising"
+        ]
+    }
+}

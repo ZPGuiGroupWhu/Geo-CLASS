@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["MODIS/006/MOD13Q1"],
+        "Function": ["Temporal aggregation of NDVI data", "Joining NDVI and CHIRPS data collections", "Calculating spatial correlation between NDVI and precipitation", "Zonal statistics calculation for scatter plot", "Creating scatter plot of NDVI vs. precipitation"]
+    },
+    "relation_2": {
+        "DataSource": ["UCSB-CHG/CHIRPS/DAILY"],
+        "Function": ["Temporal aggregation of CHIRPS data", "Resampling CHIRPS data to match NDVI scale", "Joining NDVI and CHIRPS data collections", "Calculating spatial correlation between NDVI and precipitation", "Zonal statistics calculation for scatter plot", "Creating scatter plot of NDVI vs. precipitation"]
+    }
+}

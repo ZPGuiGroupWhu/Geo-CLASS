@@ -1,0 +1,34 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/wangweihappy0/training01/l8ClassifySample"
+        ],
+        "Function": [
+            "rmCloud: remove cloud and cloud shadow from Landsat 8 SR image",
+            "scaleImage: scale Landsat 8 SR image",
+            "NDVI: calculate normalized difference vegetation index",
+            "NDWI: calculate normalized difference water index",
+            "NDBI: calculate normalized difference built-up index"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "rmCloud: remove cloud and cloud shadow from Landsat 8 SR image",
+            "scaleImage: scale Landsat 8 SR image",
+            "NDVI: calculate normalized difference vegetation index",
+            "NDWI: calculate normalized difference water index",
+            "NDBI: calculate normalized difference built-up index"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "USGS/SRTMGL1_003"
+        ],
+        "Function": [
+            "Terrain: calculate elevation and slope from SRTM DEM"
+        ]
+    }
+}

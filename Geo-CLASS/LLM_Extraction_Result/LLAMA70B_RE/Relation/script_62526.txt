@@ -1,0 +1,21 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/ce15btech11022/Final_Cities/Ahmedabad"
+        ],
+        "Function": [
+            "Filtering image collection by bounds"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Filtering image collection by date and bounds",
+            "Creating mosaic images",
+            "Calculating water area using NDWI index",
+            "Creating time series chart of water area"
+        ]
+    }
+}

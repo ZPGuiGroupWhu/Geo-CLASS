@@ -1,0 +1,5 @@
+{
+  "Theme": ["Land cover classification using Sentinel-2 imagery"],
+  "DataSource": ["COPERNICUS/S2"],
+  "Function": ["Filtering image collection by date and cloud cover", "Merging feature collections", "Creating training data for classification", "Training a classifier", "Running classification on an image"]
+}

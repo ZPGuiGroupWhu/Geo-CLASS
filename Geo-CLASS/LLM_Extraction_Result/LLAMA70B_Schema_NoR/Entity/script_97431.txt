@@ -1,0 +1,19 @@
+{
+    "Theme": [
+        "Water body analysis in Chad"
+    ],
+    "DataSource": [
+        "users/eggenm/chad_rivers",
+        "LANDSAT/LC08/C01/T1_TOA"
+    ],
+    "Function": [
+        "Filtering image collection by cloud cover",
+        "Calculating MNDWI index",
+        "Applying cloud mask",
+        "Selecting specific bands",
+        "Filtering by date range",
+        "Filtering by geometry",
+        "Calculating quality mosaic",
+        "Calculating median"
+    ]
+}

@@ -1,0 +1,160 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var panteones = ee.FeatureCollection("users/eeranyartrodrigo/panteones/polygonsData/polsPanteon"),
+    mexico = ee.FeatureCollection("projects/ee-vulnerability-gee4geo/assets/ranyartRodrigo/mexicoContorno"),
+    centro = /* color: #d63000 */ee.Geometry.Point([-101.20467633206823, 19.69115144769216]);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+var bounding_box_func = function(feature) {
+    var intermediate_buffer = feature.buffer(100);  // buffer radius, half your box width in m
+    var intermediate_box = intermediate_buffer.bounds(); // Draw a bounding box around the circle
+       return(intermediate_box); // Return the bounding box
+      };
+
+
+
+function maskS2clouds(image) {
+  var qa = image.select('QA60');
+
+  // Bits 10 and 11 are clouds and cirrus, respectively.
+  var cloudBitMask = 1 << 10;
+  var cirrusBitMask = 1 << 11;
+
+  // Both flags should be set to zero, indicating clear conditions.
+  var mask = qa.bitwiseAnd(cloudBitMask).eq(0)
+      .and(qa.bitwiseAnd(cirrusBitMask).eq(0));
+
+  return image.updateMask(mask).divide(10000);
+}
+
+function addBands(image){
+  return image.addBands(image.normalizedDifference(['B8','B4']).rename('NDVI'))
+              .addBands(image.normalizedDifference(['B3','B8']).rename('NDWI'))
+              .addBands(image.normalizedDifference(['B8','B12']).rename('NDWI2'))
+              .addBands(image.normalizedDifference(['B11','B8']).rename('NDBI'))
+              .addBands(image.expression('((B4+B11)-(B8+B2))/((B4+B11)+(B8+B2))',
+                        {'B2':image.select('B2'),
+                         'B8':image.select('B8'),
+                         'B4':image.select('B4'),
+                         'B11':image.select('B11')}).rename('NDBSI'))
+              .addBands(image.expression('(B4 + 0.3)/(B3 + B11)',
+                        {'B3':image.select('B3'),
+                         'B4':image.select('B4'),
+                         'B11':image.select('B11')}).rename('BAEI'))
+              .addBands(image.expression('(2.5*(B8-B4))/(1+B8+(6*B4)-(7.5*B2))',
+                        {'B8':image.select('B8'),
+                         'B4':image.select('B4'),
+                         'B2':image.select('B2')}).rename('EVI'))
+
+}
+
+function addBands2(image){
+  return image.addBands(image.expression('NDBI-NDVI',
+                        {'NDBI':image.select('NDBI'),
+                         'NDVI':image.select('NDVI')}).rename('BUI'))
+}
+// Map the function over one year of data and take the median.
+// Load Sentinel-2 TOA reflectance data.
+
+
+
+var contorno = panteones.map(function(feature){
+  var box = feature.buffer(150)
+  return ee.Feature(box.difference(feature).geometry(),{ambito: feature.get('ambito')})
+});
+
+
+
+
+function getCharacteristics(feature){
+  var coords = feature.geometry();
+  
+  var image2 = ee.Image(ee.ImageCollection('COPERNICUS/S2')
+                  .filterDate('2019-01-01', '2019-12-31')
+                  .select(['B4','B3','B2','B8','B11','B12','QA60'])
+                  // Pre-filter to get less cloudy granules.
+                  .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE', 10))
+                  .map(maskS2clouds)
+                  .median()).clip(coords)
+  image2 = addBands(image2)
+  image2 = addBands2(image2)
+  
+  
+  
+  
+  
+  var clipped = image2
+  var b4 = clipped.select(['B4']).reduceRegion({reducer: ee.Reducer.median(),
+    scale: 10,maxPixels: 1e9, bestEffort: true});
+  var b3 = clipped.select(['B3']).reduceRegion({reducer: ee.Reducer.median(),
+    scale: 10,maxPixels: 1e9, bestEffort: true});
+  var b2 = clipped.select(['B2']).reduceRegion({reducer: ee.Reducer.median(),
+    scale: 10,maxPixels: 1e9, bestEffort: true});
+  var b8 = clipped.select(['B8']).reduceRegion({reducer: ee.Reducer.median(),
+    scale: 10,maxPixels: 1e9, bestEffort: true});
+  var b11 = clipped.select(['B11']).reduceRegion({reducer: ee.Reducer.median(),
+    scale: 20,maxPixels: 1e9, bestEffort: true});
+  var b12 = clipped.select(['B12']).reduceRegion({reducer: ee.Reducer.median(),
+    scale: 20,maxPixels: 1e9, bestEffort: true});  
+  var ndvi = clipped.select(['NDVI']).reduceRegion({reducer: ee.Reducer.median(),
+    scale: 10,maxPixels: 1e9, bestEffort: true});
+  var ndwi = clipped.select(['NDWI']).reduceRegion({reducer: ee.Reducer.median(),
+    scale: 10,maxPixels: 1e9, bestEffort: true});
+  var ndwi2 = clipped.select(['NDWI2']).reduceRegion({reducer: ee.Reducer.median(),
+    scale: 10,maxPixels: 1e9, bestEffort: true});
+  var ndbi = clipped.select(['NDBI']).reduceRegion({reducer: ee.Reducer.median(),
+    scale: 10,maxPixels: 1e9, bestEffort: true});
+  var ndbsi = clipped.select(['NDBSI']).reduceRegion({reducer: ee.Reducer.median(),
+    scale: 10,maxPixels: 1e9, bestEffort: true});
+  var baei = clipped.select(['BAEI']).reduceRegion({reducer: ee.Reducer.median(),
+    scale: 10,maxPixels: 1e9, bestEffort: true});
+  var evi = clipped.select(['EVI']).reduceRegion({reducer: ee.Reducer.median(),
+    scale: 10,maxPixels: 1e9, bestEffort: true});
+  var bui = clipped.select(['BUI']).reduceRegion({reducer: ee.Reducer.median(),
+    scale: 10,maxPixels: 1e9, bestEffort: true});
+ 
+ 
+ 
+  
+  return ee.Feature(coords, 
+    ee.Dictionary({
+      B4: b4.get('B4'),
+      B3: b3.get('B3'),
+      B2: b2.get('B2'),
+      B8: b8.get('B8'),
+      B11: b11.get('B11'),
+      B12: b12.get('B12'),
+      NDVI: ndvi.get('NDVI'),
+      NDWI: ndwi.get('NDWI'),
+      NDWI2: ndwi2.get('NDWI2'),
+      NDBI: ndbi.get('NDBI'),
+      NDBSI: ndbsi.get('NDBSI'),
+      BAEI: baei.get('BAEI'),
+      EVI: evi.get('EVI'),
+      BUI: bui.get('BUI'),
+      type: 0,
+      ambito: feature.get('ambito')
+    }));
+}
+
+
+
+
+
+var result = contorno.map(getCharacteristics)
+
+Export.table.toAsset({
+  collection: result,
+  description:'PanteonCharacterization',
+  assetId: 'users/eeranyartrodrigo/panteones/featuresSentinel/panteonesNewIndexesBuffer150'
+});
+
+
+
+////// Crear zona de muestreo
+
+
+
+
+
+
+
+

@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Script analyzes fire impact using Sentinel-2 images before and after the event."],
+  "Theme": ["Fire impact assessment using spectral indices"],
+  "DataSource": ["users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016", "COPERNICUS/S2"],
+  "Function": ["Image processing for pre and post-fire assessment", "Classification based on spectral indices"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016"],
+        "Function": ["Image processing for pre and post-fire assessment", "Classification based on spectral indices"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Image processing for pre and post-fire assessment", "Classification based on spectral indices"]
+    }
+}
+```

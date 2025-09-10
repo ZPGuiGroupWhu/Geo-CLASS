@@ -1,0 +1,31 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Vegetation Cover and Leaf Area Index Analysis"],
+  "DataSource": ["MODIS/006/MOD15A2H", "MODIS/006/MOD44B"],
+  "Function": ["Filtering image collections by date", "Selecting specific bands from images", "Reducing images to mean values", "Performing data quality control", "Calculating vegetation cover", "Calculating leaf area index", "Visualizing results as a map layer", "Exporting image to drive"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["MODIS/006/MOD15A2H", "MODIS/006/MOD44B"],
+        "Function": ["Filtering image collections by date", "Selecting specific bands from images", "Calculating vegetation cover", "Calculating leaf area index"]
+    },
+    "relation_2": {
+        "DataSource": ["MODIS/006/MOD15A2H"],
+        "Function": ["Reducing images to mean values", "Performing data quality control"]
+    },
+    "relation_3": {
+        "DataSource": ["MODIS/006/MOD44B"],
+        "Function": ["Visualizing results as a map layer", "Exporting image to drive"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2566, 'completion_tokens': 312, 'total_tokens': 2878}

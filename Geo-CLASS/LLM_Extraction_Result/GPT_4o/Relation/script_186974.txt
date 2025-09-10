@@ -1,0 +1,14 @@
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LT05/C01/T1_SR"],
+        "Function": ["Load Landsat 5 data", "Apply cloud mask to Landsat 5", "Filter Landsat 5 by date and location", "Select and rename Landsat 5 bands", "Merge Landsat collections", "Calculate NDWI and MNDWI", "Filter merged collection by date and location", "Parse collection into yearly means", "Animate MNDWI over time"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LE07/C01/T1_SR"],
+        "Function": ["Load Landsat 7 data", "Apply cloud mask to Landsat 7", "Filter Landsat 7 by date and location", "Select and rename Landsat 7 bands", "Merge Landsat collections", "Calculate NDWI and MNDWI", "Filter merged collection by date and location", "Parse collection into yearly means", "Animate MNDWI over time"]
+    },
+    "relation_3": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Load Landsat 8 data", "Apply cloud mask to Landsat 8", "Filter Landsat 8 by date and location", "Select and rename Landsat 8 bands", "Merge Landsat collections", "Calculate NDWI and MNDWI", "Filter merged collection by date and location", "Parse collection into yearly means", "Animate MNDWI over time"]
+    }
+}

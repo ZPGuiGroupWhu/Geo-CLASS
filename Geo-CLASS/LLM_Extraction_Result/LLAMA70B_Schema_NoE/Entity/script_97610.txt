@@ -1,0 +1,16 @@
+{
+    "Theme": [
+        "Climate Analysis"
+    ],
+    "DataSource": [
+        "ECMWF/ERA5/DAILY",
+        "FAO/GAUL_SIMPLIFIED_500m/2015/level2"
+    ],
+    "Function": [
+        "Extract Tmin, Tmax, and Tavg from ERA5Re dataset",
+        "Filter data by date and administrative boundary",
+        "Clip data to administrative boundary",
+        "Visualize data on the map",
+        "Export images to Google Drive"
+    ]
+}

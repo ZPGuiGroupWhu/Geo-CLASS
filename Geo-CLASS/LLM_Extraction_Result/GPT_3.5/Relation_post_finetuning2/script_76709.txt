@@ -1,0 +1,34 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/cxliu2015/BYDwater20210325"
+        ],
+        "Function": [
+            "Image Cloud Masking",
+            "Compute Median Of NDVI",
+            "Compute Median Of NDVI",
+            "Addition Of NDWI",
+            "Entropy Computation",
+            "Addition Of NDWI",
+            "Addition Of NDWI",
+            "Entropy Computation",
+            "Export Composite Image"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Image Cloud Masking",
+            "Compute Median Of NDVI",
+            "Compute Median Of NDVI",
+            "Addition Of NDWI",
+            "Entropy Computation",
+            "Addition Of NDWI",
+            "Addition Of NDWI",
+            "Entropy Computation",
+            "Export Composite Image"
+        ]
+    }
+}

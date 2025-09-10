@@ -1,0 +1,15 @@
+{
+    "Theme": [
+        "Phát hiện sớm mất rừng, suy thoái rừng và lửa rừng bằng ảnh Sentinel 2"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2",
+        "ft:1ovvyN_dzo01mRw8uSNMIYNg-HKyGTrqLErfg26X0"
+    ],
+    "Function": [
+        "Filtering and sorting image collection",
+        "Calculating NDVI and NBR",
+        "Exporting image properties and mosaic",
+        "Visualizing images with different visualization options"
+    ]
+}

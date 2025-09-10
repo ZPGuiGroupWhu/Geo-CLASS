@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Flood Mapping and Monitoring"],
+  "DataSource": ["COPERNICUS/S1_GRD", "ft:1nWJr3XY3hcsRSvydLLyK47W-r6N1bB7JHhTYuLle"],
+  "Function": ["Filtering Sentinel-1 images by date and polarisation", "Converting images to natural scale", "Smoothing images using focal median", "Calculating band ratios", "Generating histograms", "Creating flood and river masks", "Visualizing results on a map"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response that organizes the extracted information into a structured format:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Filtering Sentinel-1 images by date and polarisation", "Converting images to natural scale", "Smoothing images using focal median", "Calculating band ratios"]
+    },
+    "relation_2": {
+        "DataSource": ["ft:1nWJr3XY3hcsRSvydLLyK47W-r6N1bB7JHhTYuLle"],
+        "Function": ["Generating histograms", "Creating flood and river masks", "Visualizing results on a map"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4390, 'completion_tokens': 309, 'total_tokens': 4699}

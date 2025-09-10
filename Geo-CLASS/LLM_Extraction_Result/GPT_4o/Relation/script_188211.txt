@@ -1,0 +1,18 @@
+{
+  "relation_1": {
+    "DataSource": ["users/hifengxu/TibetanPlateau"],
+    "Function": ["Create Landsat image collection", "Filter images by date and cloud cover", "Calculate normalized indices", "Calculate water indices", "Calculate SSC", "Export images to Drive", "Reduce regions for zonal statistics", "Export tables to Drive"]
+  },
+  "relation_2": {
+    "DataSource": ["users/KingDr/TPPoints"],
+    "Function": ["Reduce regions for zonal statistics", "Export tables to Drive"]
+  },
+  "relation_3": {
+    "DataSource": ["LANDSAT/LT05/C02/T1_L2", "LANDSAT/LE07/C02/T1_L2", "LANDSAT/LC08/C02/T1_L2"],
+    "Function": ["Create Landsat image collection", "Filter images by date and cloud cover", "Mask unwanted pixels", "Apply scaling factors", "Calculate normalized indices", "Calculate water indices", "Calculate SSC"]
+  },
+  "relation_4": {
+    "DataSource": ["CGIAR/SRTM90_V4"],
+    "Function": ["Calculate water indices"]
+  }
+}

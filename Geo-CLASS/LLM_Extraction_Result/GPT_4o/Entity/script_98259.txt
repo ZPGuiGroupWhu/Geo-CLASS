@@ -1,0 +1,5 @@
+{
+  "Theme": ["Flood detection using NDWI"],
+  "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2", "LANDSAT/LT05/C01/T1_SR"],
+  "Function": ["Filter regions by attribute", "Add layer to map", "Filter image collection by location", "Filter image collection by date", "Filter image collection by cloud cover", "Sort image collection by cloud cover", "Create mosaic image", "Clip image to region", "Center map on region", "Calculate NDWI", "Subtract images", "Threshold image", "Mask image", "Add layer to map with palette"]
+}

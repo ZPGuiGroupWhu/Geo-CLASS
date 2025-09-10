@@ -1,0 +1,10 @@
+{
+  "relation_1": {
+    "DataSource": ["users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016"],
+    "Function": ["Filter image collection by date and location", "Mask invalid zones", "Sample training and validation data", "Train classifiers", "Classify images", "Evaluate classification accuracy"]
+  },
+  "relation_2": {
+    "DataSource": ["COPERNICUS/S2"],
+    "Function": ["Filter image collection by date and location", "Calculate vegetation indices", "Create pre and post-fire images", "Sample training and validation data", "Train classifiers", "Classify images", "Evaluate classification accuracy"]
+  }
+}

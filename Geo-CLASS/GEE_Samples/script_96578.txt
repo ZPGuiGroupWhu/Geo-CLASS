@@ -1,0 +1,207 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var ic_s2 = ee.ImageCollection("COPERNICUS/S2_SR"),
+    geometry = 
+    /* color: #d63000 */
+    /* shown: false */
+    ee.Geometry.Polygon(
+        [[[144.3567365466815, -40.64927931941131],
+          [144.3567365466815, -43.836405171130956],
+          [148.8391584216815, -43.836405171130956],
+          [148.8391584216815, -40.64927931941131]]], null, false),
+    central = 
+    /* color: #98ff00 */
+    /* shown: false */
+    ee.Geometry.Polygon(
+        [[[146.15358163177962, -42.38298258592655],
+          [146.15358163177962, -42.722891852539256],
+          [146.54908944427962, -42.722891852539256],
+          [146.54908944427962, -42.38298258592655]]], null, false),
+    north = 
+    /* color: #0b4a8b */
+    /* shown: false */
+    ee.Geometry.Polygon(
+        [[[146.39528085052962, -41.81235652054647],
+          [146.39528085052962, -42.30177901903016],
+          [147.01051522552962, -42.30177901903016],
+          [147.01051522552962, -41.81235652054647]]], null, false),
+    south = 
+    /* color: #ffc82d */
+    /* shown: false */
+    ee.Geometry.Polygon(
+        [[[146.30739022552962, -43.01276856889667],
+          [146.30739022552962, -43.30128350203067],
+          [146.65895272552962, -43.30128350203067],
+          [146.65895272552962, -43.01276856889667]]], null, false);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+//ThermalData
+
+
+
+//////////// Area of Interest
+
+
+
+var geomTasmania = geometry
+
+Map.centerObject( geomTasmania);
+
+
+
+//////////// Fire Mask (MODIS)
+
+
+
+var ic_fire = ee.ImageCollection("MODIS/006/MOD14A1");
+
+
+
+////////// Collection thermal Data (MODIS)
+
+
+
+var ic_lst = ee.ImageCollection("MODIS/006/MOD11A1");
+
+
+
+
+
+print(ic_fire.first());
+
+
+
+
+
+ic_fire = ic_fire.filterDate( '2018-06-01','2019-06-01');
+
+var ic_fire_mask = ic_fire.select('FireMask');
+
+Map.addLayer( ic_fire_mask.max().clip(geometry), {min:0, max:10}, 'Fire Mask' );
+
+
+
+print(ic_lst.first());
+
+ic_lst = ic_lst.filterDate('2016-06-01','2020-06-01').select('LST_Night_1km');
+
+
+
+function ConvertKelvinToCelsius(thisImage){
+
+  var lst_factor = 0.02;
+
+  var offset = -273.15;
+
+thisImage = thisImage.multiply(lst_factor)
+
+                      .add(offset)
+
+                      .copyProperties(thisImage,['system:time_start']);
+
+ return thisImage;
+
+}
+
+
+
+ ic_lst = ic_lst.map(ConvertKelvinToCelsius);
+
+
+
+var fc_samples = ee.FeatureCollection( [ee.Feature(north,{'location':'north'}),
+
+                                        ee.Feature(central,{'location':'central'}),
+
+                                        ee.Feature(south,{'location':'south'})]);
+
+
+
+var chart_LST = ui.Chart.image.seriesByRegion({
+
+imageCollection: ic_lst,
+
+regions: fc_samples,
+
+reducer: ee.Reducer.max(), 
+
+scale: 1000, 
+
+seriesProperty:'location'}).setOptions({
+
+title: 'Max Temperature',
+
+vAxis : {title:'Temperature'},
+
+hAxis : {title:'Date'}});
+
+
+
+print(chart_LST);
+
+
+
+///////// Unmask the IC of fire probability
+
+
+
+ic_fire_mask = ic_fire_mask.map( function(thisImage){ return thisImage.unmask() } );
+
+
+
+
+
+var chart_ic_mask = ui.Chart.image.seriesByRegion( {
+
+  imageCollection: ic_fire_mask,
+
+  regions: fc_samples,
+
+  reducer: ee.Reducer.max(), 
+
+  scale: 1000, 
+
+  seriesProperty: 'location'}).setOptions({
+
+  title: 'Max Radiative Power',
+
+  vAxis : {title: 'Power'},
+
+  hAxis : {title: 'Date'}});
+
+  
+
+print(chart_ic_mask);
+
+
+
+ic_s2 = ic_s2.filterBounds( central ).filterMetadata('CLOUDY_PIXEL_PERCENTAGE', 'less_than', 0.3);
+
+
+
+var s2_early = ic_s2.filterDate("2018-12-01", "2018-12-31").median();
+
+var s2_late = ic_s2.filterDate("2019-02-01", "2019-02-28").median();
+
+
+
+Map.addLayer( s2_early, {bands:['B4','B3','B2'],  min:0, max:1500}, 'S2 Early' );
+
+Map.addLayer( s2_late, {bands:['B4','B3','B2'],  min:0, max:1500}, 'S2 Late' );
+
+
+
+var s2_early_ndvi = s2_early.normalizedDifference( ['B8','B4'] );
+
+var s2_late_ndvi = s2_late.normalizedDifference( ['B8','B4'] );
+
+
+
+Map.addLayer( s2_early_ndvi.clip(geometry), { min:0, max:1}, 'S2 Early NDVI' );
+
+Map.addLayer( s2_late_ndvi.clip(geometry), { min:0, max:1}, 'S2 Late NDVI' );
+
+
+
+var fireMask = s2_late_ndvi.subtract( s2_early_ndvi ).lt(-0.2).selfMask();
+
+Map.addLayer( fireMask.clip(geometry), { min:0, max:1, palette:['red']}, 'fireMask NDVI' );
+

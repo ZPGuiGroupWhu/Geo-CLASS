@@ -1,0 +1,29 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Cloud probability analysis in East and South Asia"],
+  "DataSource": ["users/kitmyfaceplease2/eastsouth_asia", "projects/ee-kitmyfaceplease2/assets/EAST_SOUTH_SPLIT2", "COPERNICUS/S2_CLOUD_PROBABILITY"],
+  "Function": ["Filter image collection by date and region", "Create daily mosaics from image collection", "Count images in collection", "Clip image to region of interest", "Mask clouds in images", "Sum images in collection", "Convert image collection to bands", "Calculate percentage image", "Export image to Google Drive"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["users/kitmyfaceplease2/eastsouth_asia"],
+    "Function": ["Clip image to region of interest", "Export image to Google Drive"]
+  },
+  "relation_2": {
+    "DataSource": ["projects/ee-kitmyfaceplease2/assets/EAST_SOUTH_SPLIT2"],
+    "Function": ["Filter image collection by date and region"]
+  },
+  "relation_3": {
+    "DataSource": ["COPERNICUS/S2_CLOUD_PROBABILITY"],
+    "Function": ["Filter image collection by date and region", "Create daily mosaics from image collection", "Count images in collection", "Mask clouds in images", "Sum images in collection", "Convert image collection to bands", "Calculate percentage image", "Export image to Google Drive"]
+  }
+}
+```
+
+Total_Token_Usage:
+7339

@@ -1,0 +1,15 @@
+{
+    "Theme": [
+        "Water surface analysis"
+    ],
+    "DataSource": [
+        "JRC/GSW1_0/GlobalSurfaceWater"
+    ],
+    "Function": [
+        "Clip image to area of interest",
+        "Select image band",
+        "Create water mask",
+        "Calculate occurrence stats",
+        "Reconstruct lake extent"
+    ]
+}

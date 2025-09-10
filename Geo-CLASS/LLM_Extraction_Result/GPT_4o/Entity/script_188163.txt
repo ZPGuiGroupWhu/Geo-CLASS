@@ -1,0 +1,5 @@
+{
+  "Theme": ["Land cover classification", "Seasonal mosaics", "Water detection", "Urban area masking"],
+  "DataSource": ["users/kindgard/Asia/Asia", "users/kindgard/Africa", "users/kindgard/SUD", "users/kindgard/AfricaS", "users/kindgard/AmericaN", "users/kindgard/Asia2", "JRC/GSW1_0/GlobalSurfaceWater", "LANDSAT/LT5_L1T", "LANDSAT/LE7_L1T", "LANDSAT/LC08/C01/T1_RT", "COPERNICUS/S2", "users/kindgard/ESACCI-LC-L4-LC10-Map-20m-P1Y-2016-v10", "users/ValeriaContessa/Map_1992_rast"],
+  "Function": ["Filter image collection by date", "Filter image collection by cloud cover", "Create mosaic of images", "Clip image to country boundary", "Calculate band ratios", "Add bands to image", "Train classifier", "Classify image", "Apply water mask", "Apply urban area mask"]
+}

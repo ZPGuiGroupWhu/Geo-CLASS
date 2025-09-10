@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["The script focuses on extracting temperature data for forested areas in the Amazon Basin."],
+  "Theme": ["Temperature analysis of forested regions"],
+  "DataSource": ["UMD/hansen/global_forest_change_2017_v1_5", "Oxford/MAP/LST_Day_5km_Monthly", "NCEP_RE/surface_temp"],
+  "Function": ["Masking forested areas in Landsat imagery", "Calculating mean temperature over time for forested regions"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["UMD/hansen/global_forest_change_2017_v1_5"],
+        "Function": ["Masking forested areas in Landsat imagery"]
+    },
+    "relation_2": {
+        "DataSource": ["Oxford/MAP/LST_Day_5km_Monthly", "NCEP_RE/surface_temp"],
+        "Function": ["Calculating mean temperature over time for forested regions"]
+    }
+}
+```

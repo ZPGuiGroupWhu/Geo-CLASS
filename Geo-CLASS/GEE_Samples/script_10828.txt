@@ -1,0 +1,179 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var modis_coll = ee.ImageCollection("MODIS/006/MOD09A1");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+var geometry=ee.Geometry.MultiPoint(170.631466229872,67.407674485044,
+
+178.69791143416182,67.533219785917,
+
+-63.25972860423332,56.87967221932138,
+
+-89.22312182660505,37.25932645291522,
+
+-89.39336227313379,44.21172483462607,
+
+32.01052126586046,51.50237432781374,
+
+93.05044655330005,30.213005833772286,
+
+109.3512959173803,59.05774404409711,
+
+25.931192719423734,12.053856659719996,
+
+22.596073683446548,-0.37616917916757225,
+
+22.96719071874395,-1.4215137311007118,
+
+116.8838364540793,26.704605215346106);
+
+
+
+function getGlobalRoi() {
+
+var roi = /* color: #b//f/0//4c2// */ee.Geometry.Polygon(
+
+        [[[-180, 88],
+
+          [0, 88],
+
+          [180, 88],
+
+          [180, -88],
+
+          [0, -88],
+
+          [-180, -88]]], null, false);
+
+  return roi;
+
+}
+
+var world = getGlobalRoi();
+
+Map.addLayer(world, {color: 'FF0000'}, 'world', false);
+
+var maskClouds = function(image) {
+
+  var qa = image.select("StateQA");
+
+  var cloud = qa.bitwiseAnd(3).expression("b(0)==1||b(0)==2");
+
+  var cloudShadow = qa.bitwiseAnd(4).eq(0);
+
+  var snow=qa.bitwiseAnd(4096).eq(0);
+
+  var mask = cloud.not().and(cloudShadow).and(snow);
+
+  return image.updateMask(mask);
+
+};
+
+var cal_nirv=function(image){
+
+  var time_start = image.get("system:time_start");
+
+  image=image.multiply(0.0001);
+
+  var red=image.select("sur_refl_b01");
+
+  var nir=image.select("sur_refl_b02");
+
+  var ndvi=image.normalizedDifference(['sur_refl_b02','sur_refl_b01']);
+
+  var nirv=nir.multiply(ndvi);
+
+  //return image.addBands(nirv.rename("nirv"));
+
+  nirv = nirv.set("system:time_start", time_start);
+
+  return nirv.rename("nirv");
+
+};
+
+//--------------------------------线性插值----------------------------------------------------
+
+//导入中山大学一位博士写的线性插值代码
+
+var pkg_smooth = require('users/kongdd/public:Math/pkg_smooth.js');
+
+var pkg_vis    = require('users/kongdd/public:pkg_vis.js');
+
+print(modis_coll.limit(1));
+
+var imgcol = modis_coll.map(maskClouds)
+
+                      .map(cal_nirv)
+
+                      .select(['nirv']);
+
+// var imgcol = ee.ImageCollection(modis_coll.map(maskClouds).map(cal_evi2).select(['evi2']).copyProperties(modis_coll,["system:time_start"]));
+
+print("imgcol", imgcol.limit(1))
+
+
+
+// frame-day window before and after 、、the current point is used to 
+
+// seach the nearenearest valid good values. Then used the, 
+
+// nearest valid good values to linear linterpolation.
+
+var frame  = 16*3; 
+
+var nodata = -9999; // missing values. It's crucial. Has to been given.
+
+
+
+// two bands return: [band, qc];
+
+// qc: 1 means linear interpolation; 0 means not;
+
+//获得线性插值后的图像collection
+
+var imgcol_sm = pkg_smooth.linearInterp(imgcol, frame, nodata);
+
+
+
+// visualization
+
+var vis_vi = {min: 0, max: 3000, bands:"nirv", palette:pkg_vis.colors.RdYlGn[11]};
+
+var lg_vi  = pkg_vis.grad_legend(vis_vi  , 'nirv', true); 
+
+
+
+print('imgcol_sm',imgcol_sm);
+
+Map.addLayer(imgcol, vis_vi, 'original imgcol');
+
+Map.addLayer(imgcol_sm, vis_vi,  'smoothed imgcol');
+
+var index_col=imgcol_sm.filterDate("2001-01-01","2018-01-01")
+
+                  .select("nirv");
+
+print(index_col)
+
+var ft = ee.FeatureCollection(ee.List([]));
+
+//获得点信息函数
+
+var fill = function(img, ini) {
+
+  var inift = ee.FeatureCollection(ini);
+
+  var ft2 = img.reduceRegions(geometry, ee.Reducer.first(),500);
+
+  var date = img.get("system:index");
+
+  var ft3 = ft2.map(function(f){return f.set("date", date)});
+
+  return inift.merge(ft3);
+
+};
+
+var p_content = ee.FeatureCollection(index_col.iterate(fill, ft));
+
+Export.table.toDrive(p_content,"nirv");
+
+
+

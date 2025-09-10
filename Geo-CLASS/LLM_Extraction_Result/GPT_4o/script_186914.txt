@@ -1,0 +1,25 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Flood detection using Sentinel-1 SAR data"],
+  "DataSource": ["COPERNICUS/S1_GRD", "CIESIN/GPWv4/population-count"],
+  "Function": ["Define region of interest", "Center map on region", "Set working scale", "Load Sentinel-1 image collection", "Filter image collection by date and polarization", "Mosaic images before and after event", "Smooth radar intensities", "Threshold radar intensities", "Display images on map", "Generate thumbnail URLs", "Update flooded area mask", "Clean false positive pixels", "Convert pixels to polygons", "Clip population data to polygons", "Calculate area of polygons", "Sample population data", "Export polygons to Drive"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Load Sentinel-1 image collection", "Filter image collection by date and polarization", "Mosaic images before and after event", "Smooth radar intensities", "Threshold radar intensities", "Display images on map", "Generate thumbnail URLs", "Update flooded area mask", "Clean false positive pixels", "Convert pixels to polygons", "Export polygons to Drive"]
+    },
+    "relation_2": {
+        "DataSource": ["CIESIN/GPWv4/population-count"],
+        "Function": ["Clip population data to polygons", "Sample population data", "Display images on map"]
+    }
+}
+```
+
+Total_Token_Usage:
+5978

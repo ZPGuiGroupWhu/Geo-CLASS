@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016"],
+        "Function": ["Image collection filtering based on date and location", "NDVI calculation for pre and post-fire images"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Image collection filtering based on date and location", "NDVI calculation for pre and post-fire images"]
+    }
+}

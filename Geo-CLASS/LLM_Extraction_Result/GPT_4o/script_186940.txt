@@ -1,0 +1,21 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Landsat image harmonization", "Annual mosaic creation", "Medoid compositing"],
+  "DataSource": ["users/juandb/bloco_TIs_Kayapo"],
+  "Function": ["Define area of interest", "Set visualization parameters", "Create dummy image collection", "Harmonize Landsat 8 to Landsat 7", "Retrieve surface reflectance collection", "Merge sensor collections", "Reduce collection to single image per year", "Build annual mosaic collection"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["users/juandb/bloco_TIs_Kayapo"],
+    "Function": ["Define area of interest", "Set visualization parameters", "Create dummy image collection", "Harmonize Landsat 8 to Landsat 7", "Retrieve surface reflectance collection", "Merge sensor collections", "Reduce collection to single image per year", "Build annual mosaic collection"]
+  }
+}
+```
+
+Total_Token_Usage:
+7756

@@ -1,0 +1,39 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/kindgard/Africa",
+            "users/kindgard/SUD",
+            "users/kindgard/AfricaS",
+            "users/kindgard/AmericaN",
+            "users/kindgard/Asia2"
+        ],
+        "Function": [
+            "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover",
+            "Mosaic Landsat Images"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LT5_L1T",
+            "LANDSAT/LE7_L1T",
+            "LANDSAT/LC08/C01/T1_RT"
+        ],
+        "Function": [
+            "Calculate Ratio Between Recent And Historical Images",
+            "Run Algorithm For Change Detection",
+            "Land Cover Change Analysis"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "JRC/GSW1_0/GlobalSurfaceWater",
+            "users/ValeriaContessa/zim_waterbody",
+            "users/ValeriaContessa/Zimbabwe_Anderson"
+        ],
+        "Function": [
+            "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover",
+            "Classify Images Based On Pre And Post Fire Data",
+            "Apply Mask To Classification Results"
+        ]
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "Theme": [
+        "Land cover analysis and image processing"
+    ],
+    "DataSource": [
+        "users/GeoForPy/Tesis/EcorregionAltoParana",
+        "LANDSAT/LT05/C01/T1_SR"
+    ],
+    "Function": [
+        "Cloud masking for Landsat 5 images",
+        "Image collection filtering and reduction",
+        "Percentile calculation and image clipping",
+        "Map visualization and layering",
+        "Image export to Google Drive"
+    ]
+}

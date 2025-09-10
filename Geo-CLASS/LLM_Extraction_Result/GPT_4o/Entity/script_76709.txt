@@ -1,0 +1,5 @@
+{
+  "Theme": ["NDVI analysis", "MNDWI analysis", "NDMI analysis", "NBR analysis", "CI analysis"],
+  "DataSource": ["users/cxliu2015/BYDwater20210325", "COPERNICUS/S2"],
+  "Function": ["Create empty image", "Paint feature collection", "Add layer to map", "Define NDVI palette", "Define RGB visualization", "Define date range", "Filter image collection by date", "Filter image collection by bounds", "Sort image collection", "Mask clouds", "Add NDVI band", "Compute NDVI", "Compute MNDWI", "Compute NDMI", "Compute NBR", "Compute NDVIreln", "Compute NDVIrel", "Compute CI", "Reduce to percentile", "Clip image", "Multiply image", "Rename band", "Add bands", "Select bands", "Compute median", "Create mosaic", "Export image to Drive"]
+}

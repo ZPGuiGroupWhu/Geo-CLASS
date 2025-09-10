@@ -1,0 +1,30 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Cloud masking", "Shadow projection", "Sentinel-2 imagery analysis"],
+  "DataSource": ["COPERNICUS/S2"],
+  "Function": ["Rescale image bands", "Compute cloud score", "Mask clouds using QA band", "Mask dark outliers in time series", "Project cloud shadows", "Create daily mosaics", "Filter image collection by date and location", "Add layers to map"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["COPERNICUS/S2"],
+    "Function": [
+      "Rescale image bands",
+      "Compute cloud score",
+      "Mask clouds using QA band",
+      "Mask dark outliers in time series",
+      "Project cloud shadows",
+      "Create daily mosaics",
+      "Filter image collection by date and location",
+      "Add layers to map"
+    ]
+  }
+}
+```
+
+Total_Token_Usage:
+8650

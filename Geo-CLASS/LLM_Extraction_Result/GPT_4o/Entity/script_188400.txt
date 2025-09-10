@@ -1,0 +1,5 @@
+{
+  "Theme": ["NO2 concentration analysis"],
+  "DataSource": ["COPERNICUS/S5P/NRTI/L3_NO2"],
+  "Function": ["Define region of interest", "Filter image collection by date", "Clip images to region", "Set visualization parameters", "Create animation", "Print animation"]
+}

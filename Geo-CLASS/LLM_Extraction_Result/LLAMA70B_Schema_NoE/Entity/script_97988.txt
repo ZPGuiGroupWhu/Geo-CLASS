@@ -1,0 +1,20 @@
+{
+    "Theme": [
+        "Land cover classification and change detection using Landsat and Sentinel imagery"
+    ],
+    "DataSource": [
+        "users/EL/mapa_forest_hybrid_Belize",
+        "LANDSAT/LT5_L1T",
+        "LANDSAT/LE7_L1T",
+        "LANDSAT/LC08/C01/T1_RT",
+        "COPERNICUS/S2",
+        "JRC/GSW1_0/GlobalSurfaceWater"
+    ],
+    "Function": [
+        "Upload and clip raster and vector data",
+        "Filter and composite Landsat and Sentinel imagery",
+        "Calculate spectral indices and perform land cover classification",
+        "Apply water mask and visualize results",
+        "Export classified image to asset"
+    ]
+}

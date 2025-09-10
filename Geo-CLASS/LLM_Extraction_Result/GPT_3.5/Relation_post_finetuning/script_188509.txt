@@ -1,0 +1,20 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "UCSB-CHG/CHIRPS/PENTAD"
+        ],
+        "Function": [
+            "Cloud Masking And Quality Filtering",
+            "Merging (Combining multiple bands into one dataset)"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2_CLOUD_PROBABILITY"
+        ],
+        "Function": [
+            "Cloud Masking And Quality Filtering",
+            "Visualization And Output Generation"
+        ]
+    }
+}

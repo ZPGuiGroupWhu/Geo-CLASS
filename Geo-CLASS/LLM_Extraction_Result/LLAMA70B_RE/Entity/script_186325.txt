@@ -1,0 +1,21 @@
+{
+    "Theme": [
+        "Forest monitoring and land cover analysis"
+    ],
+    "DataSource": [
+        "LANDSAT/LC8_SR",
+        "LANDSAT/LC8_L1T_TOA",
+        "LANDSAT/LE7_L1T_TOA_FMASK",
+        "LANDSAT/LE7_L1T_TOA",
+        "COPERNICUS/S2",
+        "ft:1TFcNAU6zr_9svAb610dlsyqNiiXMLYlFrfP23ZuH"
+    ],
+    "Function": [
+        "Image collection filtering",
+        "NDVI calculation",
+        "NBR calculation",
+        "Image casting",
+        "Image mosaicking",
+        "Image exporting"
+    ]
+}

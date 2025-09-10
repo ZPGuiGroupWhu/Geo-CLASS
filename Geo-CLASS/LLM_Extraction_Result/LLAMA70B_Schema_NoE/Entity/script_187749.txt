@@ -1,0 +1,16 @@
+{
+    "Theme": [
+        "NDVI trend analysis and time series visualization"
+    ],
+    "DataSource": [
+        "users/kidsherry/Beijing",
+        "MODIS/006/MOD13A1"
+    ],
+    "Function": [
+        "Extracting maximum NDVI values for each year from 2000 to 2019",
+        "Performing linear trend analysis on the NDVI time series",
+        "Visualizing the trend analysis results",
+        "Defining regions of interest (northwest, center, southeast) for time series analysis",
+        "Generating NDVI time series charts for each region of interest"
+    ]
+}

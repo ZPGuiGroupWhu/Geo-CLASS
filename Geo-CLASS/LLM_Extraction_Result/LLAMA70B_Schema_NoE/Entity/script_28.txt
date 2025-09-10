@@ -1,0 +1,27 @@
+{
+    "Theme": [
+        "Land surface reflectance analysis",
+        "Time series stack building",
+        "Sensor harmonization",
+        "HUC-based statistics calculation"
+    ],
+    "DataSource": [
+        "MODIS/006/MOD10A1",
+        "users/ak_glaciers/points_w_ids_OR",
+        "users/ak_glaciers/or_snotel_sites",
+        "users/ak_glaciers/NWCC_high_resolution_coordinates_2019_edited_updated_fields_final",
+        "LANDSAT/LC08/C01/T1_SR",
+        "LANDSAT/LE07/C01/T1_SR",
+        "LANDSAT/LT04/C01/T1_SR",
+        "LANDSAT/LT05/C01/T1_SR",
+        "USGS/WBD/2017/HUC08"
+    ],
+    "Function": [
+        "Harmonization of Landsat 8 to Landsat 7",
+        "Harmonization of TM and ETM+ to OLI",
+        "Retrieval of surface reflectance collections",
+        "Calculation of snow persistence",
+        "Generation of HUC-based statistics",
+        "Export of results to CSV file"
+    ]
+}

@@ -1,0 +1,5 @@
+{
+  "Theme": ["NDVI analysis of Sentinel-2 imagery"],
+  "DataSource": ["COPERNICUS/S2_SR", "users/gena/packages:colorbrewer", "users/gena/packages:palettes", "users/gena/packages:style", "users/gena/packages:utils"],
+  "Function": ["Filtering image collection by date and cloud coverage", "Calculating NDVI band", "Applying median reduction to image collection", "Clipping image to testing area", "Generating gradient bar", "Creating frame", "Drawing scale bar"]
+}

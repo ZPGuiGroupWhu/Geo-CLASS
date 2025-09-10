@@ -1,0 +1,21 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/khoapv_vnuf/Thanhhoa_t"
+        ],
+        "Function": [
+            "Image Collection Filtering"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "MODIS/MOD11A2"
+        ],
+        "Function": [
+            "Temperature Unit Conversion",
+            "Annual Image Aggregation",
+            "Monthly Max/Min/Mean Temperature Calculation",
+            "Image Series Chart Generation"
+        ]
+    }
+}

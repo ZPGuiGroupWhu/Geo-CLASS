@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["projects/ee-kimiachenaary/assets/Tehran"],
+        "Function": ["Cloud masking of Landsat 8 images", "Filtering images by date and geometry", "Clipping images to geometry"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_TOA"],
+        "Function": ["Cloud masking of Landsat 8 images", "Calculating NDVI from Landsat 8 bands", "Calculating mean and max NDVI values", "Exporting results to CSV"]
+    }
+}

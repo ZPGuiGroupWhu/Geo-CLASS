@@ -1,0 +1,22 @@
+{
+    "Theme": [
+        "Land cover classification"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C01/T1_SR",
+        "LANDSAT/LC08/C01/T1",
+        "users/nclinton/demo_landcover_labels"
+    ],
+    "Function": [
+        "Cloud masking from Landsat 8 SR data",
+        "Image collection filtering by date",
+        "Median image calculation",
+        "Image classification using Smile Cart",
+        "Accuracy assessment using confusion matrix",
+        "Area calculation by class",
+        "Image classification using Smile Random Forest",
+        "Image classification using Smile Naive Bayes",
+        "Image classification using LibSVM",
+        "Mode calculation from multiple classifications"
+    ]
+}

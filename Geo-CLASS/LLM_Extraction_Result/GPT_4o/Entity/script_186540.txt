@@ -1,0 +1,5 @@
+{
+  "Theme": ["Forest NDVI analysis"],
+  "DataSource": ["LANDSAT/LC8_L1T_TOA_FMASK"],
+  "Function": ["Filter image collection by date", "Filter image collection by location", "Apply cloud mask", "Calculate NDVI", "Select specific bands", "Clip image to region", "Calculate median NDVI", "Reduce region to mean NDVI", "Sort images by time", "Create feature collection", "Merge feature collections", "Generate time series chart"]
+}

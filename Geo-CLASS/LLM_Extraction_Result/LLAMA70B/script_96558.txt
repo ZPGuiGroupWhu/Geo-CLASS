@@ -1,0 +1,33 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Climate and vegetation analysis in Hungary"],
+  "DataSource": ["MODIS/006/MOD13Q1", "UCSB-CHG/CHIRPS/DAILY", "FAO/GAUL/2015/level1"],
+  "Function": ["Filtering image collections by date", "Calculating monthly sums and means", "Resampling images to 250m resolution", "Joining image collections", "Calculating spatial correlation", "Zonal statistics calculation", "Scatter plot creation"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["MODIS/006/MOD13Q1"],
+        "Function": ["Filtering image collections by date", "Calculating monthly sums and means", "Resampling images to 250m resolution"]
+    },
+    "relation_2": {
+        "DataSource": ["UCSB-CHG/CHIRPS/DAILY"],
+        "Function": ["Calculating spatial correlation", "Zonal statistics calculation"]
+    },
+    "relation_3": {
+        "DataSource": ["FAO/GAUL/2015/level1"],
+        "Function": ["Joining image collections", "Scatter plot creation"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3407, 'completion_tokens': 310, 'total_tokens': 3717}

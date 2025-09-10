@@ -1,0 +1,28 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover analysis in Zhangjiakou region"],
+  "DataSource": ["users/b20203080616/HB-data/Zhangjiakou", "COPERNICUS/S2_SR"],
+  "Function": ["Filtering image collection by bounds and date", "Sorting image collection by cloud cover", "Mosaicking images", "Clipping image by region", "Selecting image bands", "Exporting image to drive"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/b20203080616/HB-data/Zhangjiakou"],
+        "Function": ["Filtering image collection by bounds and date", "Sorting image collection by cloud cover"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["Filtering image collection by bounds and date", "Sorting image collection by cloud cover", "Mosaicking images", "Clipping image by region", "Selecting image bands", "Exporting image to drive"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4115, 'completion_tokens': 287, 'total_tokens': 4402}

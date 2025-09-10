@@ -1,0 +1,17 @@
+{
+    "Theme": [
+        "Land Surface Temperature Analysis"
+    ],
+    "DataSource": [
+        "users/KARTIKA_EAA/Semarang",
+        "LANDSAT/LC08/C01/T1_SR"
+    ],
+    "Function": [
+        "Cloud masking",
+        "Image collection filtering",
+        "NDVI calculation",
+        "Thermal band selection",
+        "Land surface temperature calculation",
+        "Image visualization"
+    ]
+}

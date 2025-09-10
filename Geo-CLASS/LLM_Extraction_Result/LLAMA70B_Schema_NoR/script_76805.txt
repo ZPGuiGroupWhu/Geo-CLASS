@@ -1,0 +1,35 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Arctic greening patterns"],
+  "DataSource": ["users/liuchongwhu/Arctic/Arctic_greeness/treeline_country", "MODIS/006/MOD13Q1", "MODIS/006/MOD44W"],
+  "Function": ["Mask pixels with high SummaryQA", "Mask out water", "Calculate annual NDVI/EVI", "Calculate Theil-Sen slope", "Map coefficients", "Calculate average NDVI/EVI in region", "Export images to Drive"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/liuchongwhu/Arctic/Arctic_greeness/treeline_country"],
+        "Function": ["Mask pixels with high SummaryQA", "Calculate average NDVI/EVI in region"]
+    },
+    "relation_2": {
+        "DataSource": ["MODIS/006/MOD13Q1"],
+        "Function": ["Calculate annual NDVI/EVI", "Calculate Theil-Sen slope"]
+    },
+    "relation_3": {
+        "DataSource": ["MODIS/006/MOD44W"],
+        "Function": ["Mask out water", "Map coefficients"]
+    },
+    "relation_4": {
+        "DataSource": ["users/liuchongwhu/Arctic/Arctic_greeness/treeline_country", "MODIS/006/MOD13Q1", "MODIS/006/MOD44W"],
+        "Function": ["Export images to Drive"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3434, 'completion_tokens': 377, 'total_tokens': 3811}

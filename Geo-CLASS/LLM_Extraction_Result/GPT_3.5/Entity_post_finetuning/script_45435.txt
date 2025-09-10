@@ -1,0 +1,19 @@
+{
+    "Summary": [
+        "Script extracts MODIS LAI and vegetation cover data for 2002, calculates LAI/vegetation cover ratio, and exports results."
+    ],
+    "Theme": [
+        "LEAF AREA INDEX (LAI)"
+    ],
+    "DataSource": [
+        "MODIS/006/MOD15A2H",
+        "MODIS/006/MOD44B"
+    ],
+    "Function": [
+        "Time Series Clustering And Prediction",
+        "Exporting And Data Conversion",
+        "NDVI (Normalized Difference Vegetation Index calculation)",
+        "Data Standardization",
+        "Data Visualization And Mapping"
+    ]
+}

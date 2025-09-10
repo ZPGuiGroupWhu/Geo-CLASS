@@ -1,0 +1,5 @@
+{
+  "Theme": ["Land cover analysis of Tehran using Landsat 8 imagery"],
+  "DataSource": ["projects/ee-kimiachenaary/assets/Tehran", "LANDSAT/LC08/C01/T1_TOA"],
+  "Function": ["Cloud masking of Landsat 8 images", "Calculating NDVI from Landsat 8 bands", "Filtering images by date and geometry", "Clipping images to geometry", "Calculating mean and max NDVI values", "Exporting results to CSV"]
+}

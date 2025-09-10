@@ -1,0 +1,104 @@
+
+/* **************** MASK WATER **************************
+The bit mapped 'State' band of the MOD09Q1 dataset specifies that bits 3-5 identify 7 different categories of 
+water and one as land.  The 3-bit equivalent of 1 (001) is land. */
+
+var maskCloud = function(image) {
+    var qa = image.select('state_1km');
+    var pattern = 0;
+    for (var i = 0; i <= 2; i++) {
+       pattern += Math.pow(2, i);
+    }
+    var cloud =  qa.select([0])
+                  .bitwiseAnd(pattern);
+             //     .rightShift(3);
+    var mask = cloud.eq(0);
+    return image.updateMask(mask);
+};
+//*******************************************************
+
+/* **************** MASK WATER **************************
+The bit mapped 'State' band of the MOD09Q1 dataset specifies that bits 3-5 identify 7 different categories of 
+water and one as land.  The 3-bit equivalent of 1 (001) is land. */
+
+var maskWater = function(image) {
+    var qa = image.select('state_1km');
+    var pattern = 0;
+    for (var i = 3; i <= 5; i++) {
+       pattern += Math.pow(2, i);
+    }
+    var landWater =  qa.select([0])
+                  .bitwiseAnd(pattern)
+                  .rightShift(3);
+    var mask = landWater.neq(0).and(landWater.lt(6));
+    return image.updateMask(mask);
+};
+//*******************************************************
+// Load a Fusion Table of state boundaries and filter to exclude everything but CONUS.
+var fc = ee.FeatureCollection('TIGER/2018/States')
+    .filter(ee.Filter.and(ee.Filter.neq('NAME', 'Hawaii'),
+                          ee.Filter.neq('NAME', 'Alaska'),
+                          ee.Filter.neq('NAME', 'Puerto Rico'),
+                          ee.Filter.neq('NAME', 'Commonwealth of the Northern Mariana Islands'),
+                          ee.Filter.neq('NAME', 'Guam'),
+                          ee.Filter.neq('NAME', 'American Samoa'),
+                          ee.Filter.neq('NAME', 'United States Virgin Islands')));
+
+var boundary = ee.Image().toByte()
+    .paint(fc, 1, 1).visualize({palette: '000000'}); 
+
+//  Generate the hillshade.  
+//  The default output is scaled between 0-255. I rescale 0-1.
+var HillShade = ee.Terrain.hillshade(ee.Image('USGS/GMTED2010')  //'USGS/NED'  'USGS/SRTMGL1_003'
+    .clip(fc).multiply(4),135, 45)
+    .divide(255);
+
+var dataset = ee.ImageCollection('MODIS/006/MOD09GA')
+                  .filter(ee.Filter.date('2019-05-01', '2019-08-31'))
+                  .map(maskCloud)
+                  .map(maskWater);
+print(dataset);
+var trueColor143 =
+    dataset.select(['sur_refl_b01', 'sur_refl_b04', 'sur_refl_b03']).median().clip(fc);
+
+var pctTile = [0,99.75];
+var visPct_B1 = trueColor143.select('sur_refl_b01').reduceRegion({
+  reducer: ee.Reducer.percentile(pctTile,['min','max'],100,2.0),  //.setOutputs(['min','max']),
+  geometry: fc,
+  scale: 1000, 
+  bestEffort: true
+});
+var visPct_B3 = trueColor143.select('sur_refl_b03').reduceRegion({
+  reducer: ee.Reducer.percentile(pctTile).setOutputs(['min','max']),
+  geometry: fc,
+  scale: 1000, 
+  bestEffort: true
+});
+var visPct_B4 = trueColor143.select('sur_refl_b04').reduceRegion({
+  reducer: ee.Reducer.percentile(pctTile).setOutputs(['min','max']),
+  geometry: fc,
+  scale: 1000, 
+  bestEffort: true
+});
+
+var minMax = ee.Dictionary({
+  minVal_B1: visPct_B1.getNumber('sur_refl_b01_min'),
+  maxVal_B1: visPct_B1.getNumber('sur_refl_b01_max'),
+  minVal_B3: visPct_B3.getNumber('sur_refl_b03_min'),
+  maxVal_B3: visPct_B3.getNumber('sur_refl_b03_max'),
+  minVal_B4: visPct_B4.getNumber('sur_refl_b04_min'),
+  maxVal_B4: visPct_B4.getNumber('sur_refl_b04_max')
+});
+
+print(minMax);
+
+minMax.evaluate(function(dict) {
+  var vizParams = {
+    min: [dict.minVal_B1,dict.minVal_B4,dict.minVal_B3], 
+    max: [dict.maxVal_B1, dict.maxVal_B4,dict.maxVal_B3],
+  };
+  var shaded = trueColor143.visualize(vizParams).multiply(HillShade);
+//  Map.centerObject(fc);
+  Map.addLayer(shaded, {gain:1.5}, 'True Color (143)');
+
+});

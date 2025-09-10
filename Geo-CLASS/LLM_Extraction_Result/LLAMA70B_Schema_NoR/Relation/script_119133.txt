@@ -1,0 +1,24 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2_SR_HARMONIZED/20200720T110619_20200720T111156_T29SPB"
+        ],
+        "Function": [
+            "Calculating normalized burn ratio",
+            "Generating training dataset",
+            "Clustering with wekaCascadeKMeans algorithm",
+            "Clustering with wekaKMeans algorithm"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2_SR_HARMONIZED/20200908T110619_20200908T111404_T29SPB"
+        ],
+        "Function": [
+            "Calculating statistics and visualization",
+            "Applying filter to visualization results",
+            "Masking binary classification",
+            "Multiplying binary and non-binary classifications"
+        ]
+    }
+}

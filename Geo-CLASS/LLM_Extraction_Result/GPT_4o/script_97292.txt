@@ -1,0 +1,25 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Image segmentation and classification", "Agricultural land analysis", "Outlier detection"],
+  "DataSource": ["USDA/NAIP/DOQQ", "USDA/NASS/CDL/2016"],
+  "Function": ["Define area of interest", "Filter image collection by date", "Filter image collection by bounds", "Mosaic images", "Clip image to geometry", "Normalize image bands", "Center map on geometry", "Add image layer to map", "Generate seed grid", "Run SNIC segmentation", "Visualize clusters", "Compute per-cluster standard deviation", "Compute cluster area", "Compute cluster perimeter", "Compute cluster width and height", "Train classifier", "Classify image", "Display outliers", "Compute spectral distance", "Compute maximum spectral distance", "Identify max distance pixels", "Augment seeds with max distance pixels"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["USDA/NAIP/DOQQ"],
+    "Function": ["Filter image collection by date", "Filter image collection by bounds", "Mosaic images", "Clip image to geometry", "Normalize image bands", "Run SNIC segmentation", "Visualize clusters", "Compute per-cluster standard deviation", "Compute cluster area", "Compute cluster perimeter", "Compute cluster width and height", "Compute spectral distance", "Compute maximum spectral distance", "Identify max distance pixels", "Augment seeds with max distance pixels"]
+  },
+  "relation_2": {
+    "DataSource": ["USDA/NASS/CDL/2016"],
+    "Function": ["Train classifier", "Classify image"]
+  }
+}
+```
+
+Total_Token_Usage:
+5805

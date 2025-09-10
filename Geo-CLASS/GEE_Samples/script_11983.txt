@@ -1,0 +1,510 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var studyArea1 = 
+    /* color: #d63000 */
+    /* displayProperties: [
+      {
+        "type": "rectangle"
+      }
+    ] */
+    ee.Geometry.Polygon(
+        [[[80.12607959415752, 7.328166193621739],
+          [80.12607959415752, 7.326367826954103],
+          [80.12789276745158, 7.326367826954103],
+          [80.12789276745158, 7.328166193621739]]], null, false),
+    roi1 = 
+    /* color: #98ff00 */
+    /* displayProperties: [
+      {
+        "type": "rectangle"
+      },
+      {
+        "type": "rectangle"
+      }
+    ] */
+    ee.Geometry.MultiPolygon(
+        [[[[80.12502816822368, 7.327729904150305],
+           [80.12502816822368, 7.327549003512457],
+           [80.12517837192851, 7.327549003512457],
+           [80.12517837192851, 7.327729904150305]]],
+         [[[80.12525347378093, 7.328740818127358],
+           [80.12525347378093, 7.328581200283474],
+           [80.12536076214153, 7.328581200283474],
+           [80.12536076214153, 7.328740818127358]]]], null, false),
+    roi2 = /* color: #0b4a8b */ee.Geometry.MultiPoint(
+        [[80.12855795528728, 7.32778302674708],
+         [80.12924460079509, 7.327389301782321]]),
+    roi3 = /* color: #ffc82d */ee.Geometry.MultiPoint(
+        [[80.1285794129594, 7.32615491855662],
+         [80.12977031376201, 7.326569927091638]]),
+    roi4 = /* color: #00ffff */ee.Geometry.MultiPoint(
+        [[80.13075736667949, 7.327112629977321],
+         [80.13097194340068, 7.326527362131477],
+         [80.13171223308879, 7.326484797167258]]),
+    roi5 = /* color: #bf04c2 */ee.Geometry.MultiPoint(
+        [[80.12743142750102, 7.328474704896715],
+         [80.12679842617351, 7.328538552056392]]),
+    ROI1 = 
+    /* color: #98ff00 */
+    /* displayProperties: [
+      {
+        "type": "rectangle"
+      },
+      {
+        "type": "rectangle"
+      }
+    ] */
+    ee.Geometry.MultiPolygon(
+        [[[[80.12979605250024, 7.325631802729081],
+           [80.12979605250024, 7.325269999676501],
+           [80.13021447710656, 7.325269999676501],
+           [80.13021447710656, 7.325631802729081]]],
+         [[[80.13018229059838, 7.3266959276519525],
+           [80.13018229059838, 7.326334125463275],
+           [80.13050415568017, 7.326334125463275],
+           [80.13050415568017, 7.3266959276519525]]]], null, false);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+var imageCollection = ee.ImageCollection('LANDSAT/LC08/C01/T1_SR')
+
+  .filterBounds(studyArea1);
+
+
+
+function maskL8sr(imageCollection) {
+
+  var cloudShadowBitMask = 1 << 3;
+
+  var cloudsBitMask = 1 << 5;
+
+
+
+  var qa = imageCollection.select('pixel_qa');
+
+
+
+  var mask = qa.bitwiseAnd(cloudShadowBitMask).eq(0)
+
+      .and(qa.bitwiseAnd(cloudsBitMask).eq(0));
+
+
+
+  return imageCollection.updateMask(mask).divide(10000)
+
+      .select("B[0-9]*")
+
+      .copyProperties(imageCollection, ["system:time_start"]);
+
+}
+
+
+
+//Make a list of years, then for each year filter the collection, 
+
+//mask clouds, and reduce by median. Important to add system:time_start 
+
+//after reducing as this allows you to filter by date later.
+
+var stepList = ee.List.sequence(2014,2020);
+
+
+
+var filterCollection = stepList.map(function(year){
+
+  var startDate = ee.Date.fromYMD(year,5,1);
+
+  var endDate = ee.Date.fromYMD(year,9,15);
+
+  var composite_i = imageCollection.filterDate(startDate, endDate)
+
+                        .map(maskL8sr)
+
+                        .median()
+
+                        .set('system:time_start',startDate);
+
+  return composite_i;
+
+});
+
+
+
+var yearlyComposites = ee.ImageCollection(filterCollection);
+
+print(yearlyComposites, 'Masked and Filtered Composites');
+
+
+
+
+
+  
+
+  function ndvi(img){
+
+  var ndviImg = img.select(['B5','B4'],['nir','red']);
+
+  ndviImg = ndviImg.expression(
+
+    '((NIR - RED)) / ((NIR + RED))', {
+
+      'NIR': ndviImg.select('nir'),
+
+      'RED': ndviImg.select('red'),
+
+    
+
+    }).rename('NDVI');
+
+    
+
+  return img.addBands(ndviImg);
+
+  }
+
+
+
+yearlyComposites = yearlyComposites.map(function(image){
+
+  return ndvi(image);
+
+});
+
+
+
+print(yearlyComposites, 'With NDVI as Band');
+
+
+
+// Create image collection of yearly composites, selecting the EVI band.
+
+var ndviCollection = yearlyComposites.select('NDVI');
+
+
+
+// Create variables for each yearly composite.
+
+// Add the 7 EVI maps for each year 2014-2020.
+
+var y2014 = ndviCollection.filterDate('2014-01-01','2014-12-31')
+
+  .first()
+
+  .clip(studyArea1);
+
+  
+
+var y2015 = ndviCollection.filterDate('2015-01-01','2015-12-31')
+
+  .first()
+
+  .clip(studyArea1);
+
+  
+
+var y2016 = ndviCollection.filterDate('2016-01-01','2016-12-31')
+
+  .first()
+
+  .clip(studyArea1);
+
+  
+
+var y2017 = ndviCollection.filterDate('2017-01-01','2017-12-31')
+
+  .first()
+
+  .clip(studyArea1);
+
+  
+
+var y2018 = ndviCollection.filterDate('2018-01-01','2018-12-31')
+
+  .first()
+
+  .clip(studyArea1);
+
+
+
+var y2019 = ndviCollection.filterDate('2019-01-01','2019-12-31')
+
+  .first()
+
+  .clip(studyArea1);
+
+
+
+var y2020 = ndviCollection.filterDate('2020-01-01','2020-12-31')
+
+  .first()
+
+  .clip(studyArea1);
+
+  
+
+ print(y2020, '2020 Composite Image');
+
+ 
+
+ var ndviParams = {min: 0, max: 1, palette: ['yellow', 'red']};
+
+
+
+Map.addLayer(y2014, ndviParams, '2014 NDVI');
+
+Map.addLayer(y2015, ndviParams, '2015 NDVI');
+
+Map.addLayer(y2016, ndviParams, '2016 NDVI');
+
+Map.addLayer(y2017, ndviParams, '2017 NDVI');
+
+Map.addLayer(y2018, ndviParams, '2018 NDVI');
+
+Map.addLayer(y2019, ndviParams, '2019 NDVI');
+
+Map.addLayer(y2020, ndviParams, '2020 NDVI');
+
+
+
+// Export map to Drive.
+
+var y2014section = ndviCollection.filterDate('2014-01-01','2014-12-31')
+
+  .first()
+
+  .clip(studyArea1);
+
+
+
+// // Export.image.toDrive({
+
+//   image: y2014section,
+
+//   description: '2014_ndvi_Export',
+
+//   scale: 30,
+
+//   maxPixels: 1000000000,
+
+// });
+
+
+
+// Create a line chart to display EVI time series for a selected point.
+
+// Display chart in the console.
+
+var chart1 = ui.Chart.image.series({
+
+  imageCollection: ndviCollection.select('NDVI'),
+
+  region: roi1,
+
+  scale: 30
+
+}).setOptions({title: 'Point 1: NDVI Over Time'});
+
+
+
+print(chart1);
+
+
+
+var chart2 = ui.Chart.image.series({
+
+  imageCollection: ndviCollection.select('NDVI'),
+
+  region: roi2,
+
+  scale: 30
+
+}).setOptions({title: 'Point 2: NDVI Over Time'});
+
+
+
+print(chart2);
+
+
+
+var chart3 = ui.Chart.image.series({
+
+  imageCollection: ndviCollection.select('NDVI'),
+
+  region: roi3,
+
+  scale: 30
+
+}).setOptions({title: 'Point 3: NDVI Over Time'});
+
+
+
+print(chart3);
+
+
+
+var chart4 = ui.Chart.image.series({
+
+  imageCollection: ndviCollection.select('NDVI'),
+
+  region: roi4,
+
+  scale: 30
+
+}).setOptions({title: 'Point 4: NDVI Over Time'});
+
+
+
+print(chart4);
+
+
+
+var chart5 = ui.Chart.image.series({
+
+  imageCollection: ndviCollection.select('NDVI'),
+
+  region: roi5,
+
+  scale: 30
+
+}).setOptions({title: 'Point 5: NDVI Over Time'});
+
+
+
+print(chart5);
+
+
+
+// Creating a Timeseries GIF of EVI maps.
+
+
+
+// Load package from Gena for adding text annotations. 
+
+var text = require('users/gena/packages:text');
+
+
+
+// Create year property.
+
+var yearNames = ee.List([ '2014', '2015', '2016','2017',
+
+                          '2018','2019','2020']);
+
+var ndviWithYear = ndviCollection.map(function(feat){
+
+  return feat.set('year', yearNames.getString(
+
+                      ee.Number.parse(feat.getString('system:index'))));
+
+});
+
+
+
+print(ndviWithYear, 'year');
+
+
+
+// Define GIF visualization arguments.
+
+var gifParams = {
+
+  'region': studyArea1,
+
+  'dimensions': 800,
+
+  'framesPerSecond': 2,
+
+  'format': 'gif'
+
+};
+
+
+
+//Labeling your images.
+
+var annotations = [{
+
+  position: 'bottom',
+
+  offset: '10%',
+
+  margin: '20%',
+
+  property: 'year',
+
+  scale: 6000
+
+  }];
+
+  
+
+// Mapping over the collection to annotate each image.
+
+// Note that the "annotateImage" is a function written by Gena
+
+var timeSeriesgif = ndviWithYear.map(function(image) {
+
+  return text.annotateImage(image, ndviParams, studyArea1, annotations);
+
+});
+
+
+
+// Print the GIF URL to the console
+
+print(timeSeriesgif.getVideoThumbURL(gifParams));
+
+
+
+// Render the GIF animation in the console.
+
+print(ui.Thumbnail(timeSeriesgif, gifParams));
+
+
+
+// Simple image differencing between 2014 and 2020.
+
+var SimpleImageDiff = y2014.subtract(y2020);
+
+
+
+var diffParams = {min: -1, max: 1, palette: ['green', 'yellow', 'red']};
+
+Map.addLayer(SimpleImageDiff, diffParams, '2014/2020 Image Difference');
+
+
+
+// 2020 difference from mean EVI values.
+
+var yMean = ndviCollection.mean();
+
+var AvgImageDiff = yMean.subtract(y2020);
+
+
+
+Map.addLayer(AvgImageDiff, diffParams, '2020 Difference from Average');
+
+
+
+// Standard Anomalies (Z-Score). Calculate Standard Deviation across the EVI collection.
+
+// Z-Score = (Year-Mean)/Standard Deviation
+
+var stdImg = ndviCollection.reduce(ee.Reducer.stdDev());
+
+var Anomaly2020 = y2020.subtract(yMean).divide(stdImg);
+
+var Anomaly2018 = y2018.subtract(yMean).divide(stdImg);
+
+var Anomaly2016 = y2016.subtract(yMean).divide(stdImg);
+
+var Anomaly2014 = y2014.subtract(yMean).divide(stdImg);
+
+
+
+var anomParams = {min: -3, max:3, palette: ['red', 'yellow', 'green']};
+
+Map.addLayer(Anomaly2020, anomParams, '2020 Anomaly');
+
+Map.addLayer(Anomaly2018, anomParams, '2018 Anomaly');
+
+Map.addLayer(Anomaly2016, anomParams, '2016 Anomaly');
+
+Map.addLayer(Anomaly2014, anomParams, '2014 Anomaly');

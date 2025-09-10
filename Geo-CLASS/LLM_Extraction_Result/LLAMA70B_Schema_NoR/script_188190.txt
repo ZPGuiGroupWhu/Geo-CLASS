@@ -1,0 +1,47 @@
+Entity Recognition:
+```json
+{
+"Theme": ["Land cover classification and forest monitoring in Zimbabwe"],
+"DataSource": ["users/ValeriaContessa/n_regions", "ft:1tdSwUL7MVpOauSgRzqVTOwdfy17KDbw-1d9omPw", "LANDSAT/LT5_L1T", "LANDSAT/LE7_L1T", "LANDSAT/LC08/C01/T1_RT", "users/kindgard/Asia/Asia", "users/kindgard/Africa", "users/kindgard/SUD", "users/kindgard/AfricaS", "users/kindgard/AmericaN", "users/kindgard/Asia2", "JRC/GSW1_0/GlobalSurfaceWater", "users/kindgard/ESACCI-LC-L4-LC10-Map-20m-P1Y-2016-v10", "users/ValeriaContessa/Map_1992_rast", "COPERNICUS/S2"],
+"Function": ["Filtering image collections by date and cloud cover", "Clipping images to a specific country boundary", "Merging image collections", "Applying quality bands to images", "Calculating ratios of image bands", "Classifying land cover using CART algorithm", "Masking water and urban areas", "Creating a mosaic of images"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response that organizes the extracted information into a structured format:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/ValeriaContessa/n_regions", "users/kindgard/Africa"],
+        "Function": ["Clipping images to a specific country boundary"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LT5_L1T", "LANDSAT/LE7_L1T", "LANDSAT/LC08/C01/T1_RT"],
+        "Function": ["Filtering image collections by date and cloud cover", "Applying quality bands to images", "Calculating ratios of image bands"]
+    },
+    "relation_3": {
+        "DataSource": ["users/kindgard/Asia/Asia", "users/kindgard/AfricaS", "users/kindgard/AmericaN", "users/kindgard/Asia2"],
+        "Function": ["Merging image collections"]
+    },
+    "relation_4": {
+        "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+        "Function": ["Masking water and urban areas"]
+    },
+    "relation_5": {
+        "DataSource": ["users/ValeriaContessa/Map_1992_rast"],
+        "Function": ["Classifying land cover using CART algorithm"]
+    },
+    "relation_6": {
+        "DataSource": ["users/kindgard/ESACCI-LC-L4-LC10-Map-20m-P1Y-2016-v10"],
+        "Function": ["Classifying land cover using CART algorithm"]
+    },
+    "relation_7": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Creating a mosaic of images"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 7443, 'completion_tokens': 738, 'total_tokens': 8181}

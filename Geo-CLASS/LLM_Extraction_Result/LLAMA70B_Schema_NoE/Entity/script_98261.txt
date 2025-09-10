@@ -1,0 +1,22 @@
+{
+    "Theme": [
+        "Flood extent analysis and mapping"
+    ],
+    "DataSource": [
+        "FAO/GAUL_SIMPLIFIED_500m/2015/level2",
+        "LANDSAT/LC08/C01/T1_SR",
+        "JRC/GSW1_0/GlobalSurfaceWater",
+        "WWF/HydroSHEDS/03VFDEM"
+    ],
+    "Function": [
+        "Filtering and sorting of Landsat 8 image collection",
+        "Mosaicking and clipping of images",
+        "Calculation of NDWI",
+        "Difference image calculation",
+        "Thresholding and masking",
+        "Refining flood results using additional datasets",
+        "Computing connectivity of pixels",
+        "Masking out areas with high slope",
+        "Masking out clouds"
+    ]
+}

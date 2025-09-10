@@ -1,0 +1,29 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land cover classification", "Vegetation analysis", "Burn area detection", "Snow cover detection"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_TOA", "LANDSAT/LT5_L1T_TOA"],
+  "Function": ["Filtering image collection by bounds and date", "Calculating NDVI", "Calculating EVI", "Calculating NDWI", "Calculating NDBI", "Calculating BAI", "Calculating NBRT", "Calculating NDSI", "Performing linear transformation", "Conducting principal component analysis", "Performing spectral unmixing", "Converting RGB to HSV and back to RGB"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_TOA"],
+        "Function": ["Filtering image collection by bounds and date", "Calculating NDVI", "Calculating EVI", "Calculating NDWI", "Calculating NDBI", "Calculating BAI", "Calculating NBRT", "Calculating NDSI", "Performing linear transformation", "Conducting principal component analysis", "Performing spectral unmixing", "Converting RGB to HSV and back to RGB"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LT5_L1T_TOA"],
+        "Function": ["Filtering image collection by bounds and date", "Calculating NDVI", "Calculating EVI", "Calculating NDWI", "Calculating NDBI", "Calculating BAI", "Calculating NBRT", "Calculating NDSI", "Performing linear transformation", "Conducting principal component analysis", "Performing spectral unmixing", "Converting RGB to HSV and back to RGB"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 6238, 'completion_tokens': 435, 'total_tokens': 6673}

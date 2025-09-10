@@ -1,0 +1,18 @@
+{
+    "relation_1": {
+        "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2"],
+        "Function": ["Filtering image collection by bounds and date", "Creating mosaic image and clipping to boundary"]
+    },
+    "relation_2": {
+        "DataSource": ["MODIS/006/MOD09GA"],
+        "Function": ["Calculating normalized difference water index", "Applying threshold to select pixels"]
+    },
+    "relation_3": {
+        "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+        "Function": ["Masking out areas with high slope"]
+    },
+    "relation_4": {
+        "DataSource": ["WWF/HydroSHEDS/03VFDEM"],
+        "Function": ["Refining flood result using additional datasets", "Calculating flood extent area"]
+    }
+}

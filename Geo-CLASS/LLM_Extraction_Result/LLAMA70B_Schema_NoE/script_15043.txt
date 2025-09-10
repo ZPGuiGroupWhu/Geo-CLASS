@@ -1,0 +1,33 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land Use Land Cover (LULC) classification using optical and SAR data"],
+  "DataSource": ["users/abuhafsgaa/Makarfi", "users/abuhafsgaa/ALLsample", "users/abuhafsgaa/DATASET_COMPOSITION_2017_21", "users/abuhafsgaa/TEST_SAR_2017_DATASET_BOXCAR"],
+  "Function": ["Sample regions for training data", "Classify images using Random Forest and CART classifiers", "Compute variable importance", "Classify test data", "Accuracy assessment", "Visualize results"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/abuhafsgaa/Makarfi", "users/abuhafsgaa/ALLsample"],
+        "Function": ["Sample regions for training data", "Classify images using Random Forest and CART classifiers", "Compute variable importance", "Classify test data"]
+    },
+    "relation_2": {
+        "DataSource": ["users/abuhafsgaa/DATASET_COMPOSITION_2017_21"],
+        "Function": ["Classify images using Random Forest and CART classifiers", "Compute variable importance", "Classify test data", "Accuracy assessment"]
+    },
+    "relation_3": {
+        "DataSource": ["users/abuhafsgaa/TEST_SAR_2017_DATASET_BOXCAR"],
+        "Function": ["Classify test data", "Accuracy assessment", "Visualize results"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 6454, 'completion_tokens': 395, 'total_tokens': 6849}

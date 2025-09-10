@@ -1,0 +1,35 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land surface water index and vegetation index analysis"],
+  "DataSource": ["LANDSAT/LT05/C01/T1_SR", "LANDSAT/LC08/C01/T1_SR", "users/cxliu2015/PA_Qinghai_EnglishNames", "users/cxliu2015/PA_Qinghai_cdm_studiedRectangle"],
+  "Function": ["Filtering image collections by date and quality", "Masking bad QA pixels", "Computing normalized difference vegetation index", "Computing land surface water index", "Clipping images to a region of interest", "Exporting images to Google Drive"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LT05/C01/T1_SR", "LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Filtering image collections by date and quality", "Masking bad QA pixels", "Computing normalized difference vegetation index", "Computing land surface water index"]
+    },
+    "relation_2": {
+        "DataSource": ["users/cxliu2015/PA_Qinghai_EnglishNames"],
+        "Function": ["Clipping images to a region of interest"]
+    },
+    "relation_3": {
+        "DataSource": ["users/cxliu2015/PA_Qinghai_cdm_studiedRectangle"],
+        "Function": ["Clipping images to a region of interest"]
+    },
+    "relation_4": {
+        "DataSource": ["LANDSAT/LT05/C01/T1_SR", "LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Exporting images to Google Drive"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3215, 'completion_tokens': 426, 'total_tokens': 3641}

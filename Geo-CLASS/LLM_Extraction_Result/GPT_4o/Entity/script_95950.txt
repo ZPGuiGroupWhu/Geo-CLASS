@@ -1,0 +1,5 @@
+{
+  "Theme": ["NDVI analysis", "Cloud masking", "Time series analysis"],
+  "DataSource": ["COPERNICUS/S2"],
+  "Function": ["Define region of interest", "Mask clouds and cirrus", "Filter image collection by date", "Filter image collection by cloud percentage", "Filter image collection by region", "Clip images to region", "Calculate NDVI", "Add date bands to images", "Convert image collection to array", "Sort array by NDVI", "Extract max NDVI image", "Extract min NDVI image", "Add layers to map", "Reduce region to list"]
+}

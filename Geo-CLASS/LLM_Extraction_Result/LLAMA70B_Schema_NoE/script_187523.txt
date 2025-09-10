@@ -1,0 +1,39 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Flood Mapping using Sentinel-1 data"],
+  "DataSource": ["COPERNICUS/S1_GRD"],
+  "Function": [
+    "Filtering Sentinel-1 images by geometry and date",
+    "Converting images from dB to natural scale",
+    "Smoothing images using focal median filter",
+    "Calculating band ratio and flood extent",
+    "Generating histograms of backscatter values",
+    "Visualizing flood and river extent using RGB composites"
+  ]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": [
+            "Filtering Sentinel-1 images by geometry and date",
+            "Converting images from dB to natural scale",
+            "Smoothing images using focal median filter",
+            "Calculating band ratio and flood extent",
+            "Generating histograms of backscatter values",
+            "Visualizing flood and river extent using RGB composites"
+        ]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3645, 'completion_tokens': 263, 'total_tokens': 3908}

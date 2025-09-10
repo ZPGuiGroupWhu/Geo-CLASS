@@ -1,0 +1,31 @@
+Entity Recognition:
+```
+{
+  "Theme": ["Land surface reflectance analysis and vegetation index calculation"],
+  "DataSource": ["LANDSAT/LT05/C01/T1_SR", "LANDSAT/LC08/C01/T1_SR", "users/cxliu2015/PA_Qinghai_EnglishNames", "users/cxliu2015/PA_Qinghai_cdm_studiedRectangle"],
+  "Function": ["Load surface reflectance images", "Mask bad QA pixels", "Calculate NDVI and LSWI indices", "Compute median of Landsat images", "Clip images to region of interest", "Export images to Drive"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LT05/C01/T1_SR", "LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Load surface reflectance images", "Mask bad QA pixels", "Compute median of Landsat images", "Clip images to region of interest", "Export images to Drive"]
+    },
+    "relation_2": {
+        "DataSource": ["users/cxliu2015/PA_Qinghai_EnglishNames"],
+        "Function": ["None"]
+    },
+    "relation_3": {
+        "DataSource": ["users/cxliu2015/PA_Qinghai_cdm_studiedRectangle"],
+        "Function": ["Clip images to region of interest"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2983, 'completion_tokens': 355, 'total_tokens': 3338}

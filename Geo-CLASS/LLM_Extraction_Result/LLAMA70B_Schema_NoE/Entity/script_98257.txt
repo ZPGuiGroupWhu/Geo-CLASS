@@ -1,0 +1,16 @@
+{
+    "Theme": [
+        "Flood monitoring and analysis"
+    ],
+    "DataSource": [
+        "FAO/GAUL_SIMPLIFIED_500m/2015/level2",
+        "COPERNICUS/S1_GRD"
+    ],
+    "Function": [
+        "Filtering feature collection by ADM1_NAME",
+        "Filtering image collection by bounds, date, and metadata",
+        "Mosaicking and clipping image collections",
+        "Calculating mean and standard deviation of image collections",
+        "Calculating NDFI and thresholding for flood detection"
+    ]
+}

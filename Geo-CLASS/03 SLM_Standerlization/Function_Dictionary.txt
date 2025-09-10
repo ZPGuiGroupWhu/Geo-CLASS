@@ -1,0 +1,927 @@
+{
+  "Spatial Analysis": {
+    "Data Acquisition And Preprocessing": {
+      "Data Preparation": {
+        "Import/Load Data": {
+          "Covering Grid Generation": {},
+          "Binary Image Creation": {},
+          "Ancillary Layer Computation": {}
+        }
+      },
+      "Select Data": {
+        "Select Image":{
+          "Select Specific Bands From Images": {},
+          "Limit The Number Of Images": {},
+          "Selects Temperature Data": {
+            "Selects Air Temperature Data": {},
+            "Selects Surface Temperature Data": {}
+          },
+          "Select And Clip Image": {}
+        },
+        "Select Specific Polarization From Images": {},
+        "Select Land Cover Types": {},
+        "Select DEM": {},
+        "Select Index": {},
+        "Area Of Interest Selection": {}
+      },
+      "Data Filtering":  {
+        "Filter Image Collection": {
+          "Filter Image Collection By Time": {
+            "Filter Image Collection By Date": {},
+            "Filter Image Collection By Month": {},
+            "Filter Image Collection By Year": {}
+          },
+          "Filter Image Collection By Region": {},
+          "Filter Image Collection By Bounds": {},
+          "Filter Image Collection By Date And Region": {},
+          "Filter Image Collection By Date And Boundaries": {},
+          "Filter Image Collection By Cloud Coverage": {}
+        },
+        "Filter Images": {
+          "Filter Images by wind conditions": {},
+          "Filter And Process Images For Water Detection": {},
+          "Filter Images By Time": {
+            "Filter Images By Date": {},
+            "Filter Images By Month": {},
+            "Filter Images By Year": {}
+          },
+          "Filter Images By Region": {},
+          "Filter Images By Date And Region": {},
+          "Filter Images By Cloud Cover": {},
+          "Applying Mean Filter To Image": {}
+        },
+        "Temporal Filtering": {
+          "Temporal Image Collection Filtering": {},
+          "Temporal Data Filtering": {},
+          "Seasonal Filtering": {}
+        },
+        "Spatial Filtering": {
+          "Filtering Polygons": {},
+          "Filtering Pixels": {},
+          "Filtering Administrative Boundaries": {},
+          "Angle Filtering": {}
+        },
+        "Speckle Filtering": {
+          "Sigma Lee Speckle Filtering": {},
+          "Refined Lee Speckle Filtering": {},
+          "Apply Perona-Malik Anisotropic Diffusion Filter": {},
+          "Apply Gamma MAP Filter": {}
+        },
+        "Quality Filtering": {
+          "Quality Control": {}
+        },
+        "Filtering Training Data": {},
+        "Filtering Features": {
+          "Filtering Precipitation Data": {},
+          "Filtering Soil Moisture Data": {},
+          "Cloud Filtering": {}
+        },
+        "Filter Feature": {
+          "Filter Feature Collection": {},
+          "Filter And Buffer A Feature Collection": {},
+          "Feature Filtering And Mapping": {}
+        },
+        "Filter And Visualize": {},
+        "Filter And Sort": {},
+        "Filter And Select": {},
+        "Filter And Process": {},
+        "Filter And Mask": {},
+        "Filter And Map": {},
+        "Filter And Display": {},
+        "Filter And Composite": {},
+        "Filter And Clip": {},
+        "Filter And Classify": {},
+        "Filter And Mosaic": {},
+        "Filter And Merge": {},
+        "Filter And Mask": {}
+      },
+      "Sort Images":{
+        "Sort Image Collection By Time": {
+          "Sort Images By Start Time": {},
+          "Sort Images By Acquisition Time": {}
+        },
+        "Sort Image Collection By Feature": {
+          "Sort Image Collections By Cloud Cover": {},
+          "Sort Images By Quality": {}
+        },
+        "Sort Image Collection By Region": {
+          "Sort Pixels": {},
+          "Sort By Area Size": {}
+        }
+      },
+      "Data Fusion":  {
+        "Image Addition": {
+          "Add Variables To Imagery": {},
+          "Add A Legend": {},
+          "Add Date Information To Images": {},
+          "Add Vegetation Indices": {
+            "Addition Of NDVI": {},
+            "Addition Of NDWI": {}
+          }
+        },
+        "Image Aggregation": {
+          "Aggregate Multiple Images": {
+            "Temporal Aggregation": {},
+            "Image Stacking": {
+              "Stacking Multiple Images": {}
+            },
+            "Generate Image Composites": {
+              "Generate Image Composites For Indices/Index": {},
+              "Create Image Composites To Minimize Cloud Cover": {},
+              "Create Median Composite Of Images": {},
+              "Create RGB Composite Image": {},
+              "Temporal Compositing": {
+                "Creating Seasonal Composite": {},
+                "Creating Annual Composite": {},
+                "Creating Monthly Composite": {},
+                "Creating Median Composites For Specific Time Periods": {},
+                "Creates Time Series Composites Of Satellite Images": {}
+              }
+            },
+            "Merge Feature Collections": {},
+            "Merge And Sort Image Collections": {}
+          },
+          "Combine Multiple Image Properties": {
+            "Union Of Administrative Units": {},
+            "Union Of Geometries": {},
+            "Aggregate Fire Data": {},
+            "Aggregate Land Cover": {
+              "Merge Different Land Cover Feature Collections": {}
+            },
+            "Aggregate Temperature Data": {}
+          }
+        }
+      },
+      "Image Mosaicking": {
+        "Mosaic Landsat Images": {
+          "Filter And Mosaic Landsat Images": {
+            "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover": {}
+          }
+        },
+        "Creates And Exports Image Mosaics": {},
+        "Quality Mosaic Generation": {},
+        "Annual Mosaick": {
+          "Building Annual Mosaic Collection": {}
+        }
+      },
+      "Image Masking":{
+        "Mask Application": {
+          "Quality Masking": {},
+          "Vegetation Masking": {},
+          "Spatial Masking": {},
+          "Shadow Removal": {},
+          "Shadow Masking": {},
+          "Elevation Masking": {},
+          "Remove Elevation Effects": {},
+          "Remove Double Counts": {},
+          "Remove Invalid Value": {},
+          "Apply Masks To Classified Images": {},
+          "Flood Mask Generation": {},
+          "Temperature Masking": {},
+          "Edge Masking": {},
+          "Clear Pixel Masking": {},
+          "Burn Masking": {},
+          "Image Cloud Masking": {
+            "Analyze Frequency Of Clouds And Vegetation": {},
+            "Cloud And Shade Masking": {
+              "Cloud And Cloud Shadow Masking": {}
+            },
+            "Cloud And Snow Masking": {},
+            "Cloud And Water Masking": {},
+            "Cloud Probability Masking": {},
+            "Image Cloud Removal": {
+              "Reduce Cloud Effects": {},
+              "Cloud And Shadow Removal": {},
+              "Cloud Cover Removal": {}
+            }
+          }
+        },
+        "Update Masks": {}
+      },
+      "Image Preprocessing": {
+        "Image Enhancement": {},
+        "Image Scaling": {},
+        "Image Segmentation": {
+          "Data Partitioning": {}
+        },
+        "Image Stretching": {},
+        "Image Resampling": {},
+        "Projection": {
+          "Image Reprojection": {},
+          "Shadow Projection": {}
+        },
+        "Image Reduction": {
+          "Reduction Of Image Regions": {},
+          "Reduction To Single Image": {},
+          "Reduction Of Image Collection": {},
+          "Reduction Of Feature Data": {},
+          "Reduction By Statistics": {},
+          "Reduce Image Collection To Minimum Value": {}
+        },
+        "Noise Reduction": {
+          "Radar Image Noise Reduction": {},
+          "Speckle Reduction": {
+            "Speckle Noise Removal": {},
+            "Speckle Noise Reduction": {}
+          },
+          "Mean Reduction": {}
+        },
+        "Smoothing": {
+          "Smooth Radar Speckle In Images": {},
+          "Harmonic Smoothing": {},
+          "Spatial Smoothing": {},
+          "Temporal Smoothing": {},
+          "Focal Median Smoothing": {},
+          "Focal Mean Smoothing": {}
+        },
+        "Data Standardization": {
+          "Unit Conversion": {
+            "Unit Conversion For Daily Averages": {},
+            "Unit Conversion For Energy Balance Components": {},
+            "Unit Conversion For Hourly Dataset": {},
+            "Unit Conversion For Temperature Data": {}
+          },
+          "Merge, Harmonize, And Standardize Landsat Image Collections": {},
+          "Image Normalization": {
+            "Image Band Normalization": {}
+          }
+        }
+      }
+    },
+    "Spectral And Temporal Analysis": {
+      "Image Index Calculation": {
+        "Spectral Index Computation": {
+          "Calculate Temporal Spectral Indices": {
+            "Calculate Seasonal And Temporal Spectral Indices": {}
+          },
+          "Calculate Spectral Indices And Ratios From Satellite Bands": {},
+          "Spectral Distance Calculation": {},
+          "Addition Of Spectral Indices": {}
+        },
+        "Vegetation Indices/Index Calculation": {
+          "Calculate Environmental And Vegetation Indices": {
+            "Calculate Construction Land Index (CLI)": {},
+            "Computes Normalized Difference Vegetation Index (NDVI)": {},
+            "Compute Median Of NDVI": {},
+            "Fractional Vegetation Cover (FVC) Calculation": {},
+            "Calculates Forest Structural Complexity Index (FSCI)": {},
+            "Fractional Vegetation Calculation": {},
+            "Calculate Other Vegetation Indices/index (SAVI, EVI)": {},
+            "Calculate Normalized Infrared Vegetation Index (NIRV)": {},
+            "Chlorophyll-a Calculation": {},
+            "Calculates Green Leaf Index (GLI)": {},
+            "Seasonal NDVI Analysis": {}
+          }
+        },
+        "Emissivity Calculation": {
+            "Compute Emissivity From Vegetation Fraction": {}
+        },
+        "Water Indices/Index Calculation": {
+          "Calculates Normalized Difference Water Index (NDWI)": {},
+          "Calculate Normalized Difference Flood Index (NDFI)": {},
+          "Calculates Modified Normalized Difference Water Index (MNDWI)": {},
+          "Calculate Normalized Difference Water Body Index (NDWBI)": {}
+        },
+        "Calculate Normalized Difference And Other Indices": {}
+      },
+      "Image Band Manipulation": {
+        "Rename Image Bands": {
+          "Rename Spectral Bands": {}
+        },
+        "Merging (Combining Multiple Bands)": {
+          "Stack VV And VH Bands": {},
+          "Stack Multiple Image Bands": {}
+        },
+        "Image Band Addition": {
+          "Add Normalized Difference Band": {},
+          "Add NDVI Band To Images": {},
+          "Add NDWI Band To Images": {},
+          "Add Cloud Cover Percentage Band": {
+            "Add Cloud Probability And Mask As Image Bands": {}
+          },
+          "Add Tasseled Cap Transformation Bands": {},
+          "Addition Of Time Band": {
+            "Add Date Bands To Images": {}
+          }
+        },
+        "Spectral Values Extraction": {}
+      },
+      "Multi-Temporal Synthesis": {
+        "Temporal Collection Creation": {},
+        "Temporal Analysis": {
+          "Time Series Analysis": {
+            "Generate Time Series Data For NDVI Changes": {},
+            "Trend Analysis": {
+              "Detect Trends In Time Series Data": {},
+              "Harmonic Trend Analysis": {}
+            }
+          },
+          "Temporal Averaging": {}
+        }
+      }
+    },
+    "Spatial Analysis And Modeling": {
+      "Buffer Analysis": {
+        "Buffer Creation": {
+          "Buffering Features": {},
+          "Buffering Edges": {},
+          "Buffering Geometries": {
+            "Buffering Points": {
+              "Buffering Points To Create Zones For Analysis": {},
+              "Buffering Points For Sample Expansion": {}
+            }
+          }
+        }
+      },
+      "Clip Images": {
+        "Spatial Clipping": {
+          "Clip Images To A Specific Region": {
+            "Clip Temperature Data To Area Of Interest": {},
+            "Clip Population Data To Flood-Affected Regions": {}
+          },
+          "Clip Images To Specific Geographic Boundaries": {},
+          "Define And Utilize Multiple Polygon Geometries For Analysis": {}
+        },
+        "Generate Ratio Images": {},
+        "Clip Precipitation Data": {},
+        "Clip And Visualize": {},
+        "Clip And Export": {}
+      },
+      "Area Calculation": {
+        "Pixel Area Calculation": {},
+        "Water body Area Calculation": {},
+        "Flood Area Calculation": {},
+        "Urban Area Calculation": {
+          "Affected Urban Area Calculation": {}
+        },
+        "Boundary Extraction": {
+          "Boundary Statistics Calculation": {}
+        }
+      },
+      "Interpolation": {
+        "Intersection Of Geometries": {},
+        "Interpolation Of Values": {},
+        "Cubic Interpolation": {},
+        "Interpolate Time Series": {},
+        "Interpolate Missing Values": {}
+      },
+      "Threshold Application":{
+        "Thresholding For Classification": {},
+        "Thresholding For Identification": {
+          "Apply Threshold To Identify Water Surface": {
+            "Apply Threshold To Identify Flood Extent": {}
+          }
+        },
+        "Threshold Index Values": {},
+        "Threshold Determination For Suitability": {},
+        "Threshold Condition Application": {},
+        "Threshold Computation": {
+          "Elevation Thresholding": {},
+          "Otsu Thresholding": {}
+        }
+      },
+      "Feature Calculation":{
+        "Cloud Score Computation": {},
+        "Analyzing Soil Properties": {},
+        "Calculate Minimum Backscatter": {},
+        "Computes Percentage Of Cloud Cover": {
+          "Count Cloud Probability Occurrences": {}
+        },
+        "Calculate Data For Specific Spectral Bands": {},
+        "Calculates Area": {
+          "Calculates And Displays Area For Each Land Cover Category": {}
+        },
+        "Calculate Features To Refine Flood Analysis": {},
+        "Calculates Total Flooded Area In Hectares": {},
+        "Map Function To Calculate And Analysis Features": {},
+        "Calculate Precipitation": {
+          "Calculate Annual Precipitation": {},
+          "Calculate Total Precipitation": {}
+        },
+        "Apply Scale Factors To Image": {
+          "Apply Scale Factors To Features": {},
+          "Scaling Image Values": {
+            "Scaling index/indices values": {}
+          },
+          "Reflectance Value Scaling": {}
+        },
+        "Principal Component Analysis (PCA)": {},
+        "Calculate Irrecoverable Carbon Loss": {},
+        "Vegetation Growth Analysis": {
+          "Secondary Scaling Factors Calculation": {},
+          "Secondary Vegetation Age Determination": {},
+          "Forest Area Calculation": {
+            "Calculate Urban Green Density": {},
+            "Forest Canopy Density Calculation": {}
+          }
+        },
+        "Unmixing Analysis": {
+          "Spectral Unmixing": {},
+          "Fractional Unmixing": {}
+        },
+        "Vectorization": {
+          "Endmember extraction": {},
+          "Endmember generation": {}
+        },
+        "Total Suspended Solids (TSS) Calculation": {},
+        "Topographic Variable Extraction": {
+          "Elevation Data Extraction": {},
+          "Topographic Wetness Index (TWI) Computation": {}
+        },
+        "Texture Analysis": {
+          "Texture Calculation": {},
+          "Texture Feature Extraction": {}
+        },
+        "Temperature Analysis": {
+          "Temperature Calculation": {
+            "Surface Temperature Calculation": {}
+          }
+        },
+        "Tasseled Cap index computation": {},
+        "Surface water area computation": {},
+        "Species richness analysis": {},
+        "Species count analysis": {},
+        "Solar position calculation": {},
+        "Solar angle calculation": {},
+        "Slope calculation": {
+          "Elevation slope calculation": {},
+          "Elevation statistics calculation": {}
+        },
+        "amplitude calculation": {},
+        "Radiance calculation": {},
+        "Photosynthetically active radiation (PAR) calculation": {},
+        "Phenological characteristics computation": {},
+        "Nighttime light data analysis": {},
+        "Brightness Calculation": {
+          "Brightness Temperature Calculation": {},
+          "Brightness Temperature Difference Calculation": {}
+        },
+        "Feature Importance Analysis": {
+          "Feature Importance Extraction": {},
+          "Feature Importance Calculation": {}
+        },
+        "Entropy Computation": {},
+        "Elevation Calculation": {}
+      },
+      "Identify Objection": {
+        "Indentify Vegetation": {
+          "Identify Data Related To Agricultural": {},
+          "identify Forested And Deforested Areas": {},
+          "Identify Tree Cover": {
+            "Calculate Tree Cover Area": {}
+          },
+          "Identify Forest Loss": {
+            "Calculate Forest Loss": {}
+          }
+        },
+        "Identifying Water Body": {
+          "Identify Water And Flood Surfaces Using Indices": {}
+        },
+        "Identify Outlier Areas": {
+          "Identify And Display Outlier Areas": {}
+        },
+        "Secondary Growth Identification": {},
+        "Identifying Homogeneous Areas": {},
+        "Identifying Burned Areas": {
+          "Calculate Burned Area": {}
+        }
+      },
+      "Detection": {
+        "Hotspot Detection": {},
+        "Detects Forest Loss": {},
+        "Edge Detection": {},
+        "Shadow Detection": {},
+        "Calculate Detection Accuracy": {},
+        "Burn Region Detection": {},
+        "Detect Water": {
+          "Open Water Detection": {}
+        },
+        "Mask Areas To Refine Flood Detection": {},
+        "Urban Area Detection": {
+          "Detect Land Development Areas": {
+            "Calculate Land Development Areas": {
+              "Calculate Built-up Area": {}
+            }
+          },
+          "Detect Urban Renewal Areas": {}
+        },
+        "Anomaly Detection": {
+          "Anomaly Calculation": {
+            "Accumulating Anomalies": {
+              "Accumulating EVI Anomalies": {}
+            }
+          },
+          "Time Series Anomaly Detection": {},
+          "Thermal Anomaly Detection": {}
+        },
+        "Change Detection": {
+          "Calculate Ratio Between Recent And Historical Images": {},
+          "Burn Area Index Calculation": {
+            "Burn Date Extraction": {},
+            "Calculate Area Of Fire Scar": {},
+            "Calculate Difference Normalized Burn Ratio (dNBR)": {},
+            "Detect Changes By Comparing Pre- And Post-Fire Images": {},
+            "Compute Difference Between Pre- And Post-Fire NBR": {},
+            "Calculate dNBR For Fire Severity": {},
+            "Calculate Normalized Burn Ratio (NBR) For Images": {},
+            "Calculate NBR For Pre-Fire Image": {},
+            "Calculate NBR for Post-Fire Image": {}
+          },
+          "Generates Visual Comparisons Of Pre- And Post-Event Images": {},
+          "Land Cover Change Analysis": {},
+          "Image Differencing": {
+            "Difference Calculation": {},
+            "Performs Image Differencing To Compare Changes": {}
+          },
+          "Run Algorithm For Change Detection": {
+            "Land Cover Change Detection": {}
+          }
+        }
+      },
+      "Harmonization": {
+        "Harmonization Transformation": {},
+        "Harmonization Of Reflectance": {},
+        "Harmonization Of Images": {},
+        "Harmonic Modeling": {
+          "Harmonic Regression Modeling": {}
+        }
+      },
+      "Statistics Calculation":{
+        "Maximum, Minimum And Mean Statistical Analysis": {
+          "Compute Mean Values": {
+            "Compute Averages": {
+              "Calculating Annual Average": {},
+              "Calculate Long-Term Averages": {}
+            }
+          },
+          "Calculates Median Values": {
+            "Calculate Median Filtering And Smoothing": {},
+            "Calculates Median Of Image Collection": {},
+            "Calculates Mean Of Image Collection": {},
+            "Compute Median Of NDVI": {}
+          },
+          "Compute Maximum Values": {},
+          "Compute Minimum Values": {},
+          "Focal Max And Min Calculations": {},
+          "Maximum, Minimum And Mean Statistical Analysis (Temperature)": {},
+          "Maximum, Minimum And Mean Statistical Analysis (NDVI and Vegetation Indices)": {}
+        },
+        "Count Pixels": {},
+        "Calculate And Export Statistics": {},
+        "Calculate Statistical Indicators Of Image Collection": {},
+        "Calculate Area Statistics": {
+          "Area Degradation Assessment": {},
+          "Area Degradation Calculation": {},
+          "Area Statistics Calculation": {}
+        },
+        "Significance Testing": {},
+        "Sensitivity Calculation": {},
+        "Shortest Path Analysis": {},
+        "Image Fraction Calculation": {},
+        "Regression Analysis": {
+          "Performs Linear Regression": {},
+          "Performs Linear Fits": {},
+          "Performs Linear Interpolation": {}
+        },
+        "Radiometric Terrain Normalization": {},
+        "Quantifying Pixels": {},
+        "Pixel Count Calculation": {},
+        "Gradient Calculation": {},
+        "Distance Calculation": {
+          "Euclidean Distance Calculation": {}
+        },
+        "Geometric Index Calculation": {},
+        "Standard Deviation Calculation": {},
+        "Error Matrix Computation": {},
+        "Error Propagation Calculation": {},
+        "Generating Confusion Matrix": {},
+        "Cross-Polarization Calculation": {},
+        "Correlation Analysis": {
+          "Auto-correlation Computation": {},
+          "Cross-correlation Calculation": {},
+          "Spatial Correlation": {
+            "Calculates Spatial Correlation": {}
+          }
+        },
+        "Covariance Computation": {
+          "Auto-covariance Computation": {}
+        }
+      },
+      "Terrain Analysis": {
+        "Terrain Data Generation and Analysis": {
+          "Terrain Occlusion Masking": {},
+          "Terrain Flattening": {},
+          "Terrain Slope Calculation": {},
+          "Hillshade Generation": {}
+        }
+      },
+      "Hydrological Analysis": {
+        "Watershed Delineation": {},
+        "Hydrological Variables Calculation": {}
+      },
+      "Image Correction": {
+        "Image Gap Filling": {
+          "Apply Techniques To  Correct And Fill Data Gaps": {}
+        },
+        "Band Correction": {},
+        "Angle Correction": {},
+        "Topographic Corrections": {
+          "Terrain Correction": {
+            "Terrain Slope Correction": {}
+          }
+        },
+        "Atmospheric Correction": {},
+        "BRDF Correction": {},
+        "Surface Correction": {
+          "Surface Reflectance Correction": {}
+        },
+        "Radar Data Correction": {},
+        "Correction For Polarization": {},
+        "Pixel Correction": {},
+        "Cloud Correction Function": {},
+        "Border Noise Correction": {}
+      },
+      "Cluster Analysis": {
+        "Train A Clusterer": {},
+        "Compute Metric Within Clusters": {},
+        "Image Clustering": {
+          "Segment Image Into Clusters": {},
+          "Cluster Image Data": {}
+        },
+        "Unsupervised Clustering": {},
+        "Remap Cluster Results To Simplified Classes": {},
+        "Time Series Clustering And Prediction": {}
+      },
+      "Classification And Machine Learning": {
+        "Classification": {
+          "Prepares Images For Classification": {},
+          "Burned Area Classification": {
+            "Classify And Evaluate Burned Areas": {},
+            "Severity Classification": {
+              "Classify And Visualize Burn Severity": {}
+            },
+            "Classify Images Based On Pre And Post Fire Data": {}
+          },
+          "Built-up Area Classification": {},
+          "Elevation Classification": {},
+          "Slope Classification": {},
+          "Support Vector Machine (SVM) Classification": {},
+          "Classify Images Based On Training Data": {},
+          "Classify Images Based On Trained Model": {},
+          "Vegetation Cover Classification": {
+            "Fractional Vegetation Cover (FVC) Classification": {}
+          },
+          "Land Cover Classification And Mapping": {},
+          "Training And Sampling For Land Cover Classification":{},
+          "Correct Classification Results Using Specified Conditions": {},
+          "Apply Mask To Classification Results": {},
+          "Evaluate Classifier Performance Using Confusion Matrix": {},
+          "Reclassify": {},
+          "Machine Learning Classification": {
+            "Random Forest Classification": {},
+            "Decision Tree Classification": {},
+            "SVM Classification": {}
+          }
+        },
+        "Data Preparation For Training": {
+          "Sampling Image": {
+            "Sampling Regions": {
+              "Sampling Regions For Classifier Training":{},
+              "Sampling Regions For Training Data": {},
+              "Sampling Regions For Test Data": {},
+              "Sampling Regions For Validation": {}
+            },
+            "Sampling Data": {
+              "Sample Collection": {},
+              "Sample Data Preparation": {},
+              "Training Data Sampling": {},
+              "Stratified Sampling": {},
+              "Random Sampling": {
+                "Random Point Generation": {}
+              },
+              "Feature Sampling For Training": {},
+              "Feature Collection Sampling For Training": {}
+            }
+          },
+          "Split Data Into Training And Testing Sets": {},
+          "Merge Feature Collections For Training Data": {},
+          "Training Data Creation": {},
+          "Feature Selection For Training": {}
+         },
+         "Training Model":{
+           "Trains And Applies Classifier": {
+             "Training CART Classifier": {},
+             "Decision Tree Modeling ": {},
+             "Train And Apply SVM Classifier": {},
+             "Train And Apply Random Forest Classifier": {},
+             "Random Forest Regression Training": {},
+             "Neural Network Application": {
+               "Image Convolution": {}
+             }
+           },
+           "Fit Model To Image Collection": {},
+           "Unsupervised Learning": {},
+           "Supervised Classification": {},
+           "Machine Learning Model Training": {}
+         },
+         "Validation Data": {
+           "Validating The Model": {},
+           "Validating Classification": {}
+         }
+      },
+      "Estimation": {
+        "Estimate Population Affected By Flood": {},
+        "Affected Urban Area Estimation": {},
+        "Estimation Of Sensible Heat Flux": {},
+        "Estimating Watersheds Area": {},
+        "Estimating Soil Properties": {},
+        "Estimating Phenology Metrics": {},
+        "Estimating Fire Accumulation": {},
+        "Estimating Soil Loss": {},
+        "Estimate Forest loss": {},
+        "Estimate Emissions": {},
+        "Estimate Carbon": {},
+        "Quality Assessment": {
+          "Accuracy Assessment": {
+            "Validation And Accuracy Assessment": {}
+          }
+        }
+      },
+      "Refinement Of Results": {
+        "Refinement Of Datasets": {},
+        "Refine Detection Results": {}
+      }
+    },
+    "Visualization And Output Generation": {
+      "Data Visualization": {
+        "Visualization Selection": {},
+        "Visualization Setup": {},
+        "Visualize Satellite Images": {
+          "Visualize Images In Different Band Combinations": {},
+          "Displays Composite Image": {},
+          "Display Specific Spectral Bands And Colors": {},
+          "Display Selected Images": {},
+          "Display Selected Band": {}
+        },
+        "Animal Density Visualization": {},
+        "Visualize The Processed Data": {},
+        "Visualize NDVI Results": {
+          "Visualize NDVI And Date Information": {},
+          "Creates Animation Of NDVI Over Time": {}
+        },
+        "Visualize Data Layers": {
+          "Visualize Data Using Specific Band Combinations": {},
+          "Visualize Multi-Temporal Satellite Data": {}
+        },
+        "Visualize Temporal changes": {
+          "Visualize Satellite Imagery Changes Over Time": {},
+          "Visualize Changes In Forest Cover Over Time": {}
+        },
+        "Visualize Data With Specific Color Palettes": {},
+        "Visualize True Color Images": {},
+        "Visualize Radar Images": {
+          "Visualize Radar Images With Specific Visualization Parameters": {}
+        },
+        "Visualize Boundary": {},
+        "Visualize Fire Data": {
+          "Load and Display Pre- And Post-Fire Satellite Image": {},
+          "Visualize Burned Areas": {},
+          "Visualize Disaster Impacts": {}
+        },
+        "Visualize Classified Data And Indices": {},
+        "Visualize Tree Loss": {},
+        "Visualizing Land Cover": {
+          "Visualize Vegetation Data": {
+            "Visualize Forest Cover": {},
+            "Visualize Tree Cover": {}
+          }
+        },
+        "Visualize Terrain Features": {
+          "Visualize Elevation Data (DEM)": {},
+          "Display Canopy Height": {}
+        },
+        "Visualize Precipitation Data": {},
+        "Visualize Clustered Data": {},
+        "Enhancing Image Visualization": {},
+        "Map Visualization Of Feature Collection": {
+          "Visualize Temperature Data": {},
+          "Generate Spectral Signature Chart": {},
+          "Display Classified Image and Indices": {},
+          "Display Land Cover": {},
+          "Display Carbon Data": {
+            "Display Manageable Carbon": {},
+            "Display Irrecoverable Carbons": {},
+            "Display Total Carbon": {},
+            "Display Vulnerable Carbon": {}
+          },
+          "Display Distance": {}
+        },
+        "Display Interactive Map": {},
+        "Generate Visualizations and Charts For Analysis": {
+          "Generate Visualizations And Statistical Charts For Classification Results": {},
+          "Generating Histograms": {
+            "Generate And Display a Histogram": {},
+            "Generate Histograms For Image Data Analysis": {}
+          },
+          "Generate And Display A Scatter Plot": {},
+          "Generate Reflectance Charts": {},
+          "Generate ColumnChart For Precipitation": {}         ,
+          "Create A Thematic Map": {}
+        },
+        "Link Maps For Synchronized Viewing": {},
+        "Render": {},
+        "Remapping": {
+          "Remapping Land Cover Classes": {},
+          "Remapping Values": {}
+        },
+        "Image Mapping": {
+          "Mapping Land Cover": {},
+          "Mapping Cloud Cover": {},
+          "Mapping Index/Indices": {},
+          "Mapping Features": {}
+        },
+        "Legend Creation": {},
+        "Layer Addition To Map": {
+          "Add A Feature Collection": {},
+          "Add Land Use Layer": {}
+        },
+        "Annotate Images": {}
+      },
+      "Data Conversion": {
+        "Converts Joined Data To Image Collection": {},
+        "Convert And Format Spatial Data For Export": {},
+        "Convert Radar Backscatter": {},
+        "Distance Transformation": {},
+        "Tasseled Cap Transformation": {
+          "Add Tasseled Cap Transformation": {}
+        },
+        "Conversion Feature Collection": {},
+        "Convert Image": {
+          "Convert Vector To Raster": {},
+          "Convert Raster To Vector": {
+            "Convert Flood Detection Results To Vector Polygons": {}
+          }
+        }
+      },
+      "Export Processed Data": {
+        "Export Processed Data To Drive": {},
+        "Export Processed Data To Google Drive": {},
+        "Export Results": {
+          "Export Features": {
+            "Exporting Prediction Results": {},
+            "Export Burned Area": {
+              "Export Burn Severity And Area Data": {}
+            },
+            "Export Flood Extent": {},
+            "Export The Change Detection": {},
+            "Export Species List": {},
+            "Export Species Richness": {},
+            "Export Land Cover Data": {},
+            "Export Fitted Parameters And Phases": {},
+            "Export Classification Results": {},
+            "Export Surface Temperature": {
+              "Derive Land Surface Temperature Using Thermal Properties": {}
+            }
+          }
+        },
+        "Export Time Series Data": {},
+        "Export Clipped Data": {},
+        "Export Training Data": {},
+        "Export Validation Result": {
+          "Export Validation Information": {}
+        },
+        "Export Statistics": {},
+        "Export Sampled Data": {
+          "Export Training Samples": {}
+        },
+        "Export Raster Data": {},
+        "Export Geospatial Data": {},
+        "Export Anomaly Data": {}
+      },
+      "Export Processed Images": {
+        "Export Processed Images To Drive": {},
+        "Export Processed Images To Google Drive": {},
+        "Export Tiled Images": {},
+        "Export Composite Image": {},
+        "Export Clustered Image": {},
+        "Export Clipped Image": {},
+        "Export Selected Image": {},
+        "Export Mosaic": {},
+        "Export Terrain Layers": {},
+        "Export Masked Image": {},
+        "Exporting Classified Images": {
+          "Exporting Classified Raster": {}
+        }
+      },
+      "Time Series Graphs And Statistics": {
+        "Generate Time Series Charts": {
+          "Generate Time Series Charts For NDVI": {},
+          "Generate Time Series Charts Of Temperature Data": {},
+          "Generate Time Series Charts Of Corrected Data": {},
+          "Generate Time Series Charts Of Water Area": {},
+          "Generate Time Series Charts Of Cloud Scores": {}
+        }
+      }
+    }
+  }
+}

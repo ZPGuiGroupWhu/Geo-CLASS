@@ -1,0 +1,17 @@
+{
+  "relation_1": {
+    "DataSource": ["COPERNICUS/S1_GRD"],
+    "Function": [
+      "Filter Sentinel-1 image collection",
+      "Add bands to images",
+      "Apply Refined Lee speckle filter",
+      "Convert image to natural units",
+      "Convert image to decibels",
+      "Visualize results",
+      "Sample regions for training",
+      "Train CART classifier",
+      "Classify image",
+      "Display classification results"
+    ]
+  }
+}

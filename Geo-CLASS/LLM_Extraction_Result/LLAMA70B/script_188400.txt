@@ -1,0 +1,25 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Air quality analysis using NO2 column number density"],
+  "DataSource": ["COPERNICUS/S5P/NRTI/L3_NO2"],
+  "Function": ["Filtering image collection by date", "Clipping images to a specific border", "Visualizing NO2 column number density"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S5P/NRTI/L3_NO2"],
+        "Function": ["Filtering image collection by date", "Clipping images to a specific border", "Visualizing NO2 column number density"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 9167, 'completion_tokens': 169, 'total_tokens': 9336}

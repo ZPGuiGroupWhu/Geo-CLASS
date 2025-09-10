@@ -1,0 +1,22 @@
+{
+    "Theme": [
+        "Burned area detection and severity analysis"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2_SR_HARMONIZED/20200720T110619_20200720T111156_T29SPB",
+        "COPERNICUS/S2_SR_HARMONIZED/20200908T110619_20200908T111404_T29SPB"
+    ],
+    "Function": [
+        "Normalized Burn Ratio (NBR) calculation",
+        "Difference NBR (dNBR) calculation",
+        "Layer stacking",
+        "Training dataset generation",
+        "Weka Cascade K-Means clustering",
+        "Image classification",
+        "Statistics calculation",
+        "Visualization",
+        "Filtering",
+        "Masking",
+        "Image multiplication"
+    ]
+}

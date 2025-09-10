@@ -1,0 +1,20 @@
+{
+    "Summary": [
+        "Script processes Sentinel-2 images for land cover classification in Gujrat City."
+    ],
+    "Theme": [
+        "LAND USE/LAND COVER CLASSIFICATION"
+    ],
+    "DataSource": [
+        "users/jannat/gujratCityExt",
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "Filter Image Collection",
+        "Image Index Calculation",
+        "Merge Feature Collections",
+        "Training Data Creation",
+        "Training CART Classifier",
+        "Elevation Classification"
+    ]
+}

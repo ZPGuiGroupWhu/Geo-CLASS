@@ -1,0 +1,25 @@
+{
+    "Summary": [
+        "Geoprocessing modeling for pest risk assessment using various Earth observation data sources."
+    ],
+    "Theme": [
+        "FOREST FIRE DANGER INDEX"
+    ],
+    "DataSource": [
+        "MODIS/006/MOD11A2",
+        "MODIS/006/MOD13A1",
+        "USGS/SRTMGL1_003",
+        "MODIS/006/MOD09A1",
+        "MODIS/MOD09GA_006_BAI",
+        "LC8_L1T",
+        "MODIS/006/MOD09A1/2015_06_26"
+    ],
+    "Function": [
+        "NDVI (Normalized Difference Vegetation Index calculation)",
+        "Cloud Masking And Quality Filtering",
+        "NDWI (Normalized Difference Water Index calculation)",
+        "Image Band Manipulation",
+        "Vegetation And Water Indices Calculation",
+        "Classification And Machine Learning"
+    ]
+}

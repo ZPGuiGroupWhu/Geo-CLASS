@@ -1,0 +1,334 @@
+Map.setOptions("SATELLITE");
+
+
+
+// 去云
+
+var maskL8 = function(image) {
+
+  var qa = image.select('BQA');
+
+  var mask = qa.bitwiseAnd(1 << 4)
+
+            .or(qa.bitwiseAnd(1 << 8));
+
+  return image.updateMask(mask.not());
+
+};
+
+
+
+// 研究区域
+
+var roi = ee.FeatureCollection("projects/ee-kimmmydanny/assets/tingxialiuyu");
+
+
+
+Map.addLayer(roi,{"color":'red',},"roi")
+
+Map.centerObject(roi, 12)    
+
+    
+
+var roi1= ee.ImageCollection('LANDSAT/LC08/C01/T1_RT_TOA')
+
+                    .filterBounds(roi)
+
+                    .filterDate('2016-07-01','2016-09-30')
+
+                    .map(maskL8)
+
+                    .mosaic()
+
+                    .clip(roi)
+
+var landimg = ee.Image(roi1); 
+
+
+
+//计算MNDWI指数
+
+function ND_WI(Image,b1,b2,bName)
+
+{
+
+  var WI = Image.normalizedDifference([b1,b2]).rename(bName);
+
+  return WI.updateMask(WI.gt(-1).and(WI.lt(1)));
+
+}
+
+var MNDWI_Landsat=ND_WI(landimg,'B3','B6','mNDWI');
+
+
+
+
+
+//function MNDWI_Landsat(img)
+
+
+
+  
+
+  
+
+
+
+
+
+print(MNDWI_Landsat,'MNDWI_Landsat')
+
+
+
+Map.addLayer(MNDWI_Landsat,{min:-1,max:1,palette:['red','orange','yellow','blue']},'MNDWI_Landsat');
+
+
+
+
+
+/******************************************************************************/
+
+//Sentimel based water Detection
+
+function maskS2clouds(image) {
+
+  var qa = image.select('QA60')
+
+  // Bits 10 and 11 are clouds and cirrus, respectively.
+
+  var cloudBitMask = 1 << 10;
+
+  var cirrusBitMask = 1 << 11;
+
+
+
+  // Both flags should be set to zero, indicating clear conditions.
+
+  var mask = qa.bitwiseAnd(cloudBitMask).eq(0).and(
+
+             qa.bitwiseAnd(cirrusBitMask).eq(0))
+
+
+
+  // Return the masked and scaled data, without the QA bands.
+
+  return image.updateMask(mask).divide(10000)
+
+      .select("B.*")
+
+      .copyProperties(image, ["system:time_start"])
+
+}
+
+
+
+function addS2VIs(img)
+
+{
+
+  var MNDWI=ND_WI(img,'B3','B11','mNDWI')
+
+  return img.addBands(MNDWI);
+
+}
+
+// Map the function over one year of data and take the median.
+
+// Load Sentinel-2 TOA reflectance data.
+
+var collection = ee.ImageCollection("COPERNICUS/S2_SR")
+
+    .filterDate('2016-09-01','2016-09-30')
+
+    // Pre-filter to get less cloudy granules.
+
+    .filterBounds(roi)
+
+    
+
+    
+
+    .map(addS2VIs);
+
+var MNDWI_S2=collection.select('mNDWI').median();
+
+print(MNDWI_S2, 'MNDWI_S2')
+
+Map.addLayer(MNDWI_S2.clip(roi),{min:-1,max:1,palette:['red','orange','yellow','blue']},'MNDWI_S2');
+
+
+
+function otsu(histogram) {
+
+  var counts = ee.Array(ee.Dictionary(histogram).get('histogram'));
+
+  var means = ee.Array(ee.Dictionary(histogram).get('bucketMeans'));
+
+  var size = means.length().get([0]);
+
+  var total = counts.reduce(ee.Reducer.sum(), [0]).get([0]);
+
+  var sum = means.multiply(counts).reduce(ee.Reducer.sum(), [0]).get([0]);
+
+  var mean = sum.divide(total);
+
+  var indices = ee.List.sequence(1, size);
+
+  var bss = indices.map(function(i) {
+
+    var aCounts = counts.slice(0, 0, i);
+
+    var aCount = aCounts.reduce(ee.Reducer.sum(), [0]).get([0]);
+
+    var aMeans = means.slice(0, 0, i);
+
+    var aMean = aMeans.multiply(aCounts)
+
+        .reduce(ee.Reducer.sum(), [0]).get([0])
+
+        .divide(aCount);
+
+    var bCount = total.subtract(aCount);
+
+    var bMean = sum.subtract(aCount.multiply(aMean)).divide(bCount);
+
+    return aCount.multiply(aMean.subtract(mean).pow(2)).add(
+
+           bCount.multiply(bMean.subtract(mean).pow(2)));
+
+  });
+
+  return means.sort(bss).get([-1]);
+
+}
+
+
+
+//Landsat water extraction based on otsu
+
+
+
+var histogram = MNDWI_Landsat.reduceRegion({
+
+    reducer: ee.Reducer.histogram(), 
+
+    geometry: roi, 
+
+    scale: 30,
+
+    maxPixels: 1e13,
+
+    tileScale: 8
+
+  });
+
+  var threshold_Lat = otsu(histogram.get("mNDWI"));
+
+  print(threshold_Lat,'threshold_Landsat')
+
+  var mask = MNDWI_Landsat.gte(threshold_Lat);
+
+  var water_Lands = mask.rename("water");
+
+Map.addLayer(water_Lands.clip(roi),{min:0,max:1,palette:['#DDDDDD','#0099FF']},'water_Landsat_otsu_based');
+
+  var water1 = water_Lands.clip(roi,{min:0,max:1,palette:['#DDDDDD','#0099FF']},'water_Landsat_otsu_based');
+
+//Export image Landsat
+
+Export.image.toDrive({
+
+  image:water1,
+
+  description: 'water1',
+
+  scale:30,
+
+  region:roi,
+
+  fileFormat: 'GeoTIFF',
+
+  maxPixels:1e13,
+
+});
+
+//Sentinel water extraction based on otsu
+
+var histogram = MNDWI_S2.reduceRegion({
+
+    reducer: ee.Reducer.histogram(), 
+
+    geometry: roi, 
+
+    scale: 30,
+
+    maxPixels: 1e13,
+
+    tileScale: 8
+
+  });
+
+
+
+  var threshold_S2 = otsu(histogram.get("mNDWI"));
+
+  var mask = MNDWI_S2.gte(threshold_S2);
+
+  print(threshold_S2,'threshold_S2')
+
+  var water_S2 = mask.rename("water");
+
+Map.addLayer(water_S2.clip(roi),{min:0,max:1,palette:['#DDDDDD','#0099FF']},'water_S2_otsu_based');
+
+//Export image Sentinel
+
+Export.image.toDrive({
+
+  image:water_S2,
+
+  description: 'water_S2',
+
+  scale:30,
+
+  region:roi,
+
+  fileFormat: 'GeoTIFF',
+
+  maxPixels:1e13,
+
+});
+
+//Area computer  Landsat
+
+  var waterarea_Landsat_based=ee.Number((((water_Lands.eq(1)).multiply(ee.Image.pixelArea()))
+
+                        .reduceRegion({
+
+                        reducer: ee.Reducer.sum(),
+
+                        geometry: roi,
+
+                        scale: 30,
+
+                        maxPixels: 1e13,})).get('water'))
+
+print('waterarea_Landsat_based',waterarea_Landsat_based)                       
+
+//Area computer  Sentinel
+
+var waterarea_S2_based=ee.Number((((water_S2.eq(1)).multiply(ee.Image.pixelArea()))
+
+                        .reduceRegion({
+
+                        reducer: ee.Reducer.sum(),
+
+                        geometry: roi,
+
+                        scale: 30,
+
+                        maxPixels: 1e13,})).get('water'))
+
+print('waterarea_S2_based',waterarea_S2_based)    
+
+   
+

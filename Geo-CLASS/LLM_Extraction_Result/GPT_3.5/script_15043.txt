@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["The script performs geoprocessing modeling using Random Forest and CART classifiers on optical and SAR imagery data."],
+  "Theme": ["Land cover classification using RF and CART algorithms"],
+  "DataSource": ["users/abuhafsgaa/Makarfi", "users/abuhafsgaa/ALLsample", "users/abuhafsgaa/DATASET_COMPOSITION_2017_21", "users/abuhafsgaa/TEST_SAR_2017_DATASET_BOXCAR"],
+  "Function": ["Training data preparation for RF and CART classifiers", "Feature importance computation", "RF and CART classification of imagery", "Accuracy assessment of classification results", "Visualizing classification results"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/abuhafsgaa/Makarfi", "users/abuhafsgaa/ALLsample", "users/abuhafsgaa/DATASET_COMPOSITION_2017_21", "users/abuhafsgaa/TEST_SAR_2017_DATASET_BOXCAR"],
+        "Function": ["Training data preparation for RF and CART classifiers", "Feature importance computation", "RF and CART classification of imagery", "Accuracy assessment of classification results", "Visualizing classification results"]
+    },
+    "relation_2": {
+        "DataSource": ["users/abuhafsgaa/Makarfi", "users/abuhafsgaa/ALLsample", "users/abuhafsgaa/DATASET_COMPOSITION_2017_21", "users/abuhafsgaa/TEST_SAR_2017_DATASET_BOXCAR"],
+        "Function": ["Training data preparation for RF and CART classifiers", "Feature importance computation", "RF and CART classification of imagery", "Accuracy assessment of classification results", "Visualizing classification results"]
+    },
+    "relation_3": {
+        "DataSource": ["users/abuhafsgaa/Makarfi", "users/abuhafsgaa/ALLsample", "users/abuhafsgaa/DATASET_COMPOSITION_2017_21", "users/abuhafsgaa/TEST_SAR_2017_DATASET_BOXCAR"],
+        "Function": ["Training data preparation for RF and CART classifiers", "Feature importance computation", "RF and CART classification of imagery", "Accuracy assessment of classification results", "Visualizing classification results"]
+    }
+}
+```

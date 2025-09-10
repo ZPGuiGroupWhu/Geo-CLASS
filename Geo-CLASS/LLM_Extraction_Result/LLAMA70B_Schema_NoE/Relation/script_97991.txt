@@ -1,0 +1,60 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/EL/TrinidadandTobago",
+            "users/EL/trinidad_forest_type_landcover_28july2011",
+            "users/EL/tobago_forest_type_landcover_06may2011"
+        ],
+        "Function": [
+            "Feature collection creation",
+            "Image collection creation",
+            "Image filtering by bounds and date",
+            "Image filtering by cloud cover and day of year",
+            "Image mosaicking"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LC8_L1T"
+        ],
+        "Function": [
+            "Image filtering by bounds and date",
+            "Image filtering by cloud cover and day of year",
+            "Image mosaicking",
+            "Ratio band creation"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Image filtering by bounds and date",
+            "Image filtering by cloud cover and day of year",
+            "Image mosaicking",
+            "Ratio band creation",
+            "Image classification",
+            "Post-classification editing"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "users/christinacorbane/MT_comp_proj"
+        ],
+        "Function": [
+            "Image classification",
+            "Post-classification editing",
+            "Masking",
+            "Image export to asset"
+        ]
+    },
+    "relation_5": {
+        "DataSource": [
+            "JRC/GSW1_0/GlobalSurfaceWater"
+        ],
+        "Function": [
+            "Masking",
+            "Image export to asset"
+        ]
+    }
+}

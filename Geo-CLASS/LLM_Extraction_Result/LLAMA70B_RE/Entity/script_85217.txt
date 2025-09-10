@@ -1,0 +1,16 @@
+{
+    "Theme": [
+        "Land cover classification"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C01/T1"
+    ],
+    "Function": [
+        "Load Landsat 8 image collection",
+        "Create cloud-free composite",
+        "Sample composite to generate training data",
+        "Train CART classifier",
+        "Classify composite",
+        "Perform accuracy assessment"
+    ]
+}

@@ -1,0 +1,60 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Annual change detection", "LandTrendr analysis", "Time series analysis", "Segment length calculation", "Time since last vertex"],
+  "DataSource": [
+    "USDOS/LSIB/2017",
+    "users/ak_glaciers/ltop_snic_seed_points75k_kmeans_cambodia_c2_1990",
+    "users/ak_glaciers/LTOP_Cambodia_config_selected_220_kmeans_pts_new_weights",
+    "users/ak_glaciers/Optimized_LT_1990_start_Cambodia_remapped_cluster_ids",
+    "projects/servir-mekong/composites/"
+  ],
+  "Function": [
+    "Define area of interest",
+    "Load Kmeans cluster image",
+    "Load LandTrendr parameters",
+    "Clip image to area of interest",
+    "Load LandTrendr modules",
+    "Prepare image collection",
+    "Adjust timestamps",
+    "Rename bands",
+    "Calculate indices",
+    "Prepare breakpoints",
+    "Run LandTrendr fit algorithm",
+    "Convert LandTrendr fit to output",
+    "Calculate segment lengths",
+    "Calculate time since last vertex",
+    "Export segment length image",
+    "Export time since vertex image"
+  ]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["USDOS/LSIB/2017"],
+    "Function": ["Define area of interest"]
+  },
+  "relation_2": {
+    "DataSource": ["users/ak_glaciers/ltop_snic_seed_points75k_kmeans_cambodia_c2_1990"],
+    "Function": ["Load Kmeans cluster image"]
+  },
+  "relation_3": {
+    "DataSource": ["users/ak_glaciers/LTOP_Cambodia_config_selected_220_kmeans_pts_new_weights"],
+    "Function": ["Load LandTrendr parameters"]
+  },
+  "relation_4": {
+    "DataSource": ["users/ak_glaciers/Optimized_LT_1990_start_Cambodia_remapped_cluster_ids"],
+    "Function": ["Clip image to area of interest", "Prepare breakpoints"]
+  },
+  "relation_5": {
+    "DataSource": ["projects/servir-mekong/composites/"],
+    "Function": ["Prepare image collection", "Adjust timestamps", "Rename bands", "Calculate indices", "Run LandTrendr fit algorithm", "Convert LandTrendr fit to output", "Calculate segment lengths", "Calculate time since last vertex", "Export segment length image", "Export time since vertex image"]
+  }
+}
+```
+
+Total_Token_Usage:
+8531

@@ -1,0 +1,36 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "FAO/GAUL/2015/level1"
+        ],
+        "Function": [
+            "Selecting landcover band",
+            "Filtering by crop type",
+            "Filtering by bounds",
+            "Reducing regions",
+            "Joining tables"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "USGS/GFSAD1000_V0"
+        ],
+        "Function": [
+            "Generating points from image",
+            "Masking cloud and snow pixels",
+            "Adding NDVI band",
+            "Calculating median composite"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "COPERNICUS/S2_SR"
+        ],
+        "Function": [
+            "Generating time series",
+            "Exporting to CSV",
+            "Charting NDVI values",
+            "Merging observations"
+        ]
+    }
+}

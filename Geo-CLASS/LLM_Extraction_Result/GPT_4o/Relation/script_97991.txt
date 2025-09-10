@@ -1,0 +1,26 @@
+{
+    "relation_1": {
+        "DataSource": ["users/EL/TrinidadandTobago"],
+        "Function": ["Upload and visualize shapefile", "Filter Landsat images by date and cloud cover", "Create and name a polygon", "Create a mosaic from filtered images", "Filter Sentinel images by date and cloud cover", "Add quality bands to images", "Train classifier with training points", "Classify images", "Edit classification results", "Mask cities and water", "Export classified image to asset", "Calculate forest area statistics"]
+    },
+    "relation_2": {
+        "DataSource": ["users/EL/trinidad_forest_type_landcover_28july2011", "users/EL/tobago_forest_type_landcover_06may2011"],
+        "Function": ["Upload and visualize raster data"]
+    },
+    "relation_3": {
+        "DataSource": ["LANDSAT/LC8_L1T"],
+        "Function": ["Filter Landsat images by date and cloud cover", "Create a mosaic from filtered images", "Calculate band ratios", "Train classifier with training points", "Classify images", "Edit classification results"]
+    },
+    "relation_4": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Filter Sentinel images by date and cloud cover", "Rename Sentinel bands", "Add quality bands to images"]
+    },
+    "relation_5": {
+        "DataSource": ["users/christinacorbane/MT_comp_proj"],
+        "Function": ["Mask cities and water"]
+    },
+    "relation_6": {
+        "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+        "Function": ["Mask cities and water"]
+    }
+}

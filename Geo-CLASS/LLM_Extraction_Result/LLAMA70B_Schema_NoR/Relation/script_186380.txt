@@ -1,0 +1,31 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LC8_L1T_TOA",
+            "LANDSAT/LE7_L1T_TOA"
+        ],
+        "Function": [
+            "Buffering survey points",
+            "Clipping images to survey points",
+            "Filtering images by date and area of interest",
+            "Masking cloudy images",
+            "Adding spectral indices to images"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "ft:1QKw5K7582CuFBKiqDcYEPADrvjHTLAkz3EIxL_TI"
+        ],
+        "Function": [
+            "Calculating mean values around survey points"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "ft:1iQ8RECwcWSVF3AkSPVdxgpnENRJc-su6G6c1CZiF"
+        ],
+        "Function": [
+            "Generating monthly averages"
+        ]
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "maskS2clouds function to mask clouds and cirrus from Sentinel-2 images",
+            "Filtering and mapping of image collection to remove cloudy pixels and apply cloud masking",
+            "Median calculation of filtered image collection",
+            "Exporting of median image to Google Drive"
+        ]
+    }
+}

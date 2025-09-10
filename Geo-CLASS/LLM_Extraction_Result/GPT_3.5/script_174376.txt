@@ -1,0 +1,19 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Script performs Landsat image classification using Random Forest algorithm."],
+  "Theme": ["Landcover classification"],
+  "DataSource": ["LANDSAT/LC08/C01/T1"],
+  "Function": ["Composite creation from Landsat images", "Training data sampling", "Random Forest classification", "Classification visualization"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1"],
+        "Function": ["Composite creation from Landsat images", "Training data sampling", "Random Forest classification", "Classification visualization"]
+    }
+}
+```

@@ -1,0 +1,25 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Burned patches confirmation", "Monthly Landsat imagery analysis"],
+  "DataSource": ["users/avaise99/KP_Boundary", "LANDSAT/LC08/C02/T1_TOA"],
+  "Function": ["Center map on boundary", "Filter image collection by boundary", "Filter image collection by date", "Sort images by cloud cover", "Mask clouds in images", "Mosaic images", "Clip images to boundary", "Add image layer to map"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["users/avaise99/KP_Boundary"],
+    "Function": ["Center map on boundary", "Filter image collection by boundary", "Clip images to boundary"]
+  },
+  "relation_2": {
+    "DataSource": ["LANDSAT/LC08/C02/T1_TOA"],
+    "Function": ["Filter image collection by boundary", "Filter image collection by date", "Sort images by cloud cover", "Mask clouds in images", "Mosaic images", "Clip images to boundary", "Add image layer to map"]
+  }
+}
+```
+
+Total_Token_Usage:
+5847

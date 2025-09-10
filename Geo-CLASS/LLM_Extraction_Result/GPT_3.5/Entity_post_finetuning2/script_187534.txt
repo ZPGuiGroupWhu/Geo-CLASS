@@ -1,0 +1,18 @@
+{
+    "Summary": [
+        "Sentinel-1 flood mapping on Rakhine Coast using backscatter values."
+    ],
+    "Theme": [
+        "SHORELINE MAPPING",
+        "RADAR BACKSCATTER"
+    ],
+    "DataSource": [
+        "COPERNICUS/S1_GRD",
+        "ft:1nWJr3XY3hcsRSvydLLyK47W-r6N1bB7JHhTYuLle"
+    ],
+    "Function": [
+        "Filter Image Collection By Date And Region",
+        "Focal Median Smoothing",
+        "Generate Histograms For Image Data Analysis"
+    ]
+}

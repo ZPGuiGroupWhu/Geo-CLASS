@@ -1,0 +1,27 @@
+{
+  "Theme": ["Flooding analysis", "Elevation mapping", "Built-up area analysis", "Earthquake analysis"],
+  "DataSource": [
+    "users/eeranyartrodrigo/A_Hist",
+    "users/eeranyartrodrigo/A_Conc",
+    "users/eeranyartrodrigo/SSNMX_catalogo_20220801_20220810",
+    "USGS/GMTED2010",
+    "GLOBAL_FLOOD_DB/MODIS_EVENTS/V1",
+    "JRC/GHSL/P2016/BUILT_LDSMT_GLOBE_V1",
+    "JRC/GWIS/GlobFire/v2/DailyPerimeters"
+  ],
+  "Function": [
+    "Select elevation band",
+    "Visualize elevation data",
+    "Visualize built-up areas",
+    "Filter flood event by metadata",
+    "Sum flooded areas",
+    "Visualize flood plain",
+    "Sum permanent water areas",
+    "Visualize permanent water",
+    "Compute area for features",
+    "Paint fire perimeters",
+    "Visualize fire perimeters",
+    "Buffer earthquake points",
+    "Aggregate earthquake magnitudes"
+  ]
+}

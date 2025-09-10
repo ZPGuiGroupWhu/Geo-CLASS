@@ -1,0 +1,18 @@
+{
+  "relation_1": {
+    "DataSource": ["users/khoapv/xatong"],
+    "Function": ["Reduce regions to compute mean values"]
+  },
+  "relation_2": {
+    "DataSource": ["COPERNICUS/S1_GRD"],
+    "Function": ["Add time band to images", "Filter image collections by date and bounds", "Select specific bands from image collections", "Join image collections by time", "Reduce regions to compute mean values"]
+  },
+  "relation_3": {
+    "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+    "Function": ["Add NDVI band to images", "Add time band to images", "Filter image collections by date and bounds", "Join image collections by time", "Reduce regions to compute mean values"]
+  },
+  "relation_4": {
+    "DataSource": ["COPERNICUS/S2"],
+    "Function": ["Add NDVI band to images", "Add time band to images", "Filter image collections by date and bounds"]
+  }
+}

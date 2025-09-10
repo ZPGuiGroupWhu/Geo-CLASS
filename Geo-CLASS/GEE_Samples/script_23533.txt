@@ -1,0 +1,173 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var TestPoints = /* color: #ffc82d */ee.Geometry.MultiPoint(
+        [[-119.194140625, 46.022691536571195],
+         [-113.217578125, 42.23967791837772],
+         [-105.834765625, 37.52168201584839],
+         [-96.869921875, 35.401337607125704],
+         [-85.09257812500002, 34.10154385632469],
+         [-122.41602084059724, 46.96173537592463]]),
+    aoi0 = 
+    /* color: #98ff00 */
+    /* displayProperties: [
+      {
+        "type": "rectangle"
+      }
+    ] */
+    ee.Geometry.Polygon(
+        [[[-122.66579315510951, 47.273468102144946],
+          [-122.66579315510951, 46.862077796109354],
+          [-122.07940146970536, 46.862077796109354],
+          [-122.07940146970536, 47.273468102144946]]], null, false),
+    aoi1 = 
+    /* color: #d63000 */
+    /* shown: false */
+    ee.Geometry.Polygon(
+        [[[-124.5115234375, 49.141973233624505],
+          [-124.5115234375, 41.75877252719287],
+          [-116.6013671875, 41.75877252719287],
+          [-116.6013671875, 49.141973233624505]]], null, false),
+    aoi2 = 
+    /* color: #98ff00 */
+    /* shown: false */
+    ee.Geometry.Polygon(
+        [[[-125.0388671875, 48.94032536898935],
+          [-125.0388671875, 32.04970776358625],
+          [-103.0662109375, 32.04970776358625],
+          [-103.0662109375, 48.94032536898935]]], null, false),
+    aoi3 = 
+    /* color: #0b4a8b */
+    /* shown: false */
+    ee.Geometry.Polygon(
+        [[[-125.0388671875, 48.94032536898935],
+          [-125.0388671875, 25.030560889967514],
+          [-65.80058593750002, 25.030560889967514],
+          [-65.80058593750002, 48.94032536898935]]], null, false);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+var BULCModule = require('users/alemlakes/r-2900-BULC-Dev:BULC/2020/3-BULC-Minimal/BULC-Minimal-ModInDev-44-assembleTables');
+
+//var afn_runBULC = BULCModule.afn_runBULC;
+
+var userCallableBULCFunction = BULCModule.userCallableBULCFunction;
+
+
+
+//////********************************************************************************************************************
+
+
+
+var initializingLeveler = 0.7
+
+var transitionLeveler = 0.8
+
+var posteriorLeveler = 0.9
+
+var transitionType = "V" // H = hard-coded. V = oVerlay. The letter 'o' is not used to avoid confusion with zero
+
+var defaultStudyArea = aoi0
+
+// might be good at this point to echo back the run's parameters.
+
+var theBaseImagev = ee.Image('USGS/NLCD/NLCD1992').select('landcover')
+
+Map.addLayer(theBaseImagev, {}, "Unremapped base image")
+
+theBaseImagev = theBaseImagev.remap([42, 52, 71], [1, 2, 3])
+
+Map.addLayer(theBaseImagev, {}, "Remapped base image")
+
+var numberOfClassesToTrack = 3 
+
+ 
+
+var imageArray = [
+
+    ee.Image('USGS/NLCD/NLCD2001').select('landcover')
+
+    .remap([42, 52, 71], [1, 2, 3])
+
+    .rename(['landcover'])
+
+  , ee.Image('USGS/NLCD/NLCD2006').select('landcover')
+
+    .remap([42, 52, 71], [1, 2, 3])
+
+    .rename(['landcover']),
+
+];
+
+var numberOfClassesInEvents = 3
+
+// ee.Image(1).rename(['landcover']),
+
+// ee.Image(2).rename(['landcover']),
+
+// ee.Image(3).rename(['landcover'])
+
+print('Image Array', imageArray)
+
+
+
+var eventsAsImageCollection = ee.ImageCollection(imageArray)
+
+
+
+var eventsAsImageCollection = eventsAsImageCollection.merge(eventsAsImageCollection)
+
+// var eventsAsImageCollection = eventsAsImageCollection.merge(eventsAsImageCollection)
+
+// var eventsAsImageCollection = eventsAsImageCollection.merge(eventsAsImageCollection)
+
+// var eventsAsImageCollection = eventsAsImageCollection.merge(eventsAsImageCollection)
+
+// var eventsAsImageCollection = eventsAsImageCollection.merge(eventsAsImageCollection) //64
+
+// var eventsAsImageCollection = eventsAsImageCollection.merge(eventsAsImageCollection)
+
+// var eventsAsImageCollection = eventsAsImageCollection.merge(eventsAsImageCollection) // 256
+
+//var eventsAsImageCollection = eventsAsImageCollection.merge(eventsAsImageCollection)
+
+Map.addLayer(eventsAsImageCollection, {}, "Events as Assembled")
+
+
+
+print("number of images", eventsAsImageCollection.size() )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var thenfactor = 13
+
+var elsefactor = 5
+
+var theBigRet = ee.Image(userCallableBULCFunction(transitionType, initializingLeveler, transitionLeveler,
+
+    posteriorLeveler, eventsAsImageCollection, theBaseImagev, defaultStudyArea, numberOfClassesInEvents, numberOfClassesToTrack, true, false,
+
+    thenfactor, elsefactor))
+
+Map.addLayer(theBigRet, {}, "The return from the encapsulated BULC")
+
+print(theBigRet, "The return from the encapsulated BULC")
+

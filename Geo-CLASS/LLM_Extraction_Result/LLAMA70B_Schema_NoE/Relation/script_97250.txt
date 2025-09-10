@@ -1,0 +1,30 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/ujavalgandhi/public/soi_india_boundary"
+        ],
+        "Function": [
+            "Filtering and selecting night lights data",
+            "Creating zones for agriculture and urban areas"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "NOAA/DMSP-OLS/NIGHTTIME_LIGHTS"
+        ],
+        "Function": [
+            "Filtering and selecting night lights data",
+            "Classifying nightlights image into categorical values",
+            "Computing statistics on classified image using grouped reducer"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "MODIS/006/MCD12Q1"
+        ],
+        "Function": [
+            "Extracting landcover classification",
+            "Creating zones for agriculture and urban areas"
+        ]
+    }
+}

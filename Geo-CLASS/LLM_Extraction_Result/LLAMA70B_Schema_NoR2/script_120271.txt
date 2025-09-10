@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["NDVI analysis of Sentinel-2 imagery"],
+  "DataSource": ["COPERNICUS/S2_SR", "users/gena/packages:colorbrewer", "users/gena/packages:palettes", "users/gena/packages:style", "users/gena/packages:utils"],
+  "Function": ["Filtering image collection by date and cloud coverage", "Calculating NDVI band", "Applying median reduction to image collection", "Clipping image to testing area", "Reducing region to percentile values", "Drawing gradient bar", "Drawing frame", "Drawing scale bar"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["Filtering image collection by date and cloud coverage", "Calculating NDVI band", "Applying median reduction to image collection", "Clipping image to testing area"]
+    },
+    "relation_2": {
+        "DataSource": ["users/gena/packages:colorbrewer", "users/gena/packages:palettes", "users/gena/packages:style", "users/gena/packages:utils"],
+        "Function": ["Drawing gradient bar", "Drawing frame", "Drawing scale bar"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3004, 'completion_tokens': 303, 'total_tokens': 3307}

@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Script extracts NDVI from Sentinel-2 images in the CA Basin."],
+  "Theme": ["NDVI calculation for vegetation monitoring."],
+  "DataSource": ["COPERNICUS/S2", "ft:1XPgyHDQHN4d5IF4x8u5ZkJxkVQ_xKWFFuUTi9ofT"],
+  "Function": ["Masking clouds in Sentinel-2 images", "Calculating NDVI from NIR and RED bands"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Masking clouds in Sentinel-2 images", "Calculating NDVI from NIR and RED bands"]
+    },
+    "relation_2": {
+        "DataSource": ["ft:1XPgyHDQHN4d5IF4x8u5ZkJxkVQ_xKWFFuUTi9ofT"],
+        "Function": ["Masking clouds in Sentinel-2 images", "Calculating NDVI from NIR and RED bands"]
+    }
+}
+```

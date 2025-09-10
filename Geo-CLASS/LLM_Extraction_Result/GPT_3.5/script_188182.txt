@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Script processes Landsat and other image collections for change detection in Zimbabwe."],
+  "Theme": ["Land cover change detection"],
+  "DataSource": ["users/kindgard/Africa", "users/kindgard/SUD", "users/kindgard/AfricaS", "users/kindgard/AmericaN", "users/kindgard/Asia2", "LANDSAT/LT5_L1T", "LANDSAT/LE7_L1T", "LANDSAT/LC08/C01/T1_RT", "JRC/GSW1_0/GlobalSurfaceWater", "users/ValeriaContessa/zim_waterbody", "users/ValeriaContessa/Zimbabwe_Anderson"],
+  "Function": ["Image collection filtering based on date, cloud cover, and location", "Simple composite creation for Landsat images", "Calculation of spectral ratios for image enhancement", "Training a classifier for change detection", "Classification of land cover change", "Masks creation for water bodies and settlements", "Correction of misclassified areas based on training data", "Application of forest mask for final classification"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/kindgard/Africa", "users/kindgard/SUD", "users/kindgard/AfricaS", "users/kindgard/AmericaN", "users/kindgard/Asia2"],
+        "Function": ["Image collection filtering based on date, cloud cover, and location", "Simple composite creation for Landsat images"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LT5_L1T", "LANDSAT/LE7_L1T", "LANDSAT/LC08/C01/T1_RT"],
+        "Function": ["Calculation of spectral ratios for image enhancement", "Training a classifier for change detection", "Classification of land cover change"]
+    },
+    "relation_3": {
+        "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater", "users/ValeriaContessa/zim_waterbody", "users/ValeriaContessa/Zimbabwe_Anderson"],
+        "Function": ["Masks creation for water bodies and settlements", "Correction of misclassified areas based on training data", "Application of forest mask for final classification"]
+    }
+}
+```

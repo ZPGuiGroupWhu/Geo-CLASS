@@ -1,0 +1,42 @@
+Entity Recognition:
+```
+{
+  "Theme": ["Land Surface Temperature Analysis"],
+  "DataSource": ["MODIS/006/MOD11A1", "Settlement points"],
+  "Function": [
+    "Filtering MODIS images by bounds and date",
+    "Clipping images to Himachal Pradesh region",
+    "Scaling LST values",
+    "Reducing regions to mean LST values",
+    "Joining tables by label and imageId",
+    "Exporting results to CSV"
+  ]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["MODIS/006/MOD11A1"],
+        "Function": [
+            "Filtering MODIS images by bounds and date",
+            "Clipping images to Himachal Pradesh region",
+            "Scaling LST values",
+            "Reducing regions to mean LST values"
+        ]
+    },
+    "relation_2": {
+        "DataSource": ["Settlement points"],
+        "Function": [
+            "Joining tables by label and imageId",
+            "Exporting results to CSV"
+        ]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2251, 'completion_tokens': 271, 'total_tokens': 2522}

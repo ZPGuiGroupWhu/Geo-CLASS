@@ -1,0 +1,5 @@
+{
+  "Theme": ["Water body detection", "Cloud masking", "NDWI calculation", "NDSI calculation", "Water classification", "Water mask", "Study area clipping", "HH-HV subtraction", "Slope calculation", "Histogram analysis"],
+  "DataSource": ["users/LILANJING/CW_buffer", "COPERNICUS/S2_SR", "COPERNICUS/S1_GRD", "UMN/PGC/ArcticDEM/V3/2m_mosaic"],
+  "Function": ["Mask clouds and cirrus", "Calculate NDWI", "Calculate NDSI", "Classify water bodies", "Generate water mask", "Clip image to study area", "Subtract HH from HV", "Calculate slope", "Convert to natural units", "Convert to dB", "Apply Refined Lee filter", "Extract water features", "Buffer features", "Calculate feature area", "Filter features by area", "Determine histogram peaks", "Calculate Otsu threshold", "Calculate Rosin threshold", "Calculate histogram minimum", "Calculate histogram maximum", "Calculate histogram mean", "Calculate histogram variance", "Extract water features using thresholds", "Apply morphological operations"]
+}

@@ -1,0 +1,24 @@
+{
+  "Theme": ["NDVI analysis", "Sentinel-2 imagery", "Agricultural yield"],
+  "DataSource": [
+    "users/eemapascordoba/LCLU_2021/recetas_ago20_abr21_pstxcultivo_masLCollect_buffer2306",
+    "users/eemapascordoba/var_ambientales_rindes/rindes_alf_rol_training_zona",
+    "users/capas/provincia_wgs",
+    "COPERNICUS/S2"
+  ],
+  "Function": [
+    "Filter images by date",
+    "Filter images by location",
+    "Filter images by cloud cover",
+    "Rename image bands",
+    "Calculate NDVI",
+    "Calculate NDWI",
+    "Calculate NDWI1",
+    "Add bands to image",
+    "Create quality mosaics",
+    "Clip images to region",
+    "Display images on map",
+    "Sample regions for training data",
+    "Export data to Drive"
+  ]
+}

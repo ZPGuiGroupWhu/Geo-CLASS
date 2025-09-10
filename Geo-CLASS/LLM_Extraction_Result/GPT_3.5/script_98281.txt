@@ -1,0 +1,31 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["The script processes Sentinel-2 and Sentinel-1 data to classify water bodies and extract water features."],
+  "Theme": ["Water body classification", "Water feature extraction"],
+  "DataSource": ["users/LILANJING/CW_buffer", "COPERNICUS/S2_SR", "COPERNICUS/S1_GRD", "UMN/PGC/ArcticDEM/V3/2m_mosaic"],
+  "Function": ["Cloud masking", "NDWI and NDSI calculation", "Water classification (not used)", "Water body range determination", "Study area clipping", "HH-HV subtraction", "Slope calculation", "dB conversion functions", "Refined Lee filtering", "Water raster creation", "Vectorization", "Area filtering", "Peak detection algorithms", "Threshold extraction", "Morphological operations"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/LILANJING/CW_buffer"],
+        "Function": ["Cloud masking", "NDWI and NDSI calculation", "Water classification (not used)", "Water body range determination", "Study area clipping", "HH-HV subtraction", "Slope calculation", "dB conversion functions", "Refined Lee filtering", "Water raster creation", "Vectorization", "Area filtering", "Peak detection algorithms", "Threshold extraction", "Morphological operations"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["Cloud masking", "NDWI and NDSI calculation", "Water classification (not used)", "Study area clipping", "Water raster creation"]
+    },
+    "relation_3": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["HH-HV subtraction", "Refined Lee filtering", "Morphological operations"]
+    },
+    "relation_4": {
+        "DataSource": ["UMN/PGC/ArcticDEM/V3/2m_mosaic"],
+        "Function": ["Slope calculation"]
+    }
+}
+```

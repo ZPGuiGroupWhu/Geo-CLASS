@@ -1,0 +1,19 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Script extracts NDVI values and dates from Sentinel-2 imagery."],
+  "Theme": ["NDVI extraction and analysis"],
+  "DataSource": ["COPERNICUS/S2"],
+  "Function": ["Cloud masking for image preprocessing", "NDVI calculation and band selection", "Date extraction and band addition", "Array sorting for NDVI values", "Region reduction for year data"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Cloud masking for image preprocessing", "NDVI calculation and band selection", "Date extraction and band addition", "Array sorting for NDVI values", "Region reduction for year data"]
+    }
+}
+```

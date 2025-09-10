@@ -1,0 +1,25 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Entity Recognition": {
+    "Theme": ["Burn Severity Analysis of Medocino Complex Fire"],
+    "DataSource": ["LANDSAT/LC08/C01/T1_SR/LC08_045033_20170925", "LANDSAT/LC08/C01/T1_SR/LC08_045033_20180928", "users/cade/ca_MendocinoComplex"],
+    "Function": ["Compute NDBR", "Compute Delta NDR", "Reclassify and export a thumbnail"]
+  },
+  "Relation Extraction": {
+    "relation_1": {
+      "DataSource": ["LANDSAT/LC08/C01/T1_SR/LC08_045033_20170925", "LANDSAT/LC08/C01/T1_SR/LC08_045033_20180928"],
+      "Function": ["Compute NDBR", "Compute Delta NDR"]
+    },
+    "relation_2": {
+      "DataSource": ["users/cade/ca_MendocinoComplex"],
+      "Function": ["Compute Delta NDR", "Reclassify and export a thumbnail"]
+    }
+  }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2797, 'completion_tokens': 329, 'total_tokens': 3126}

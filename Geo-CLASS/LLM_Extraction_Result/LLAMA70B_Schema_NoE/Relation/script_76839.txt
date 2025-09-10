@@ -1,0 +1,29 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LT05/C01/T1_SR",
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "Load and filter Landsat surface reflectance images",
+            "Mask bad QA pixels",
+            "Calculate NDVI and LSWI indices"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "users/cxliu2015/PA_Qinghai_EnglishNames"
+        ],
+        "Function": [
+            "Clip and export results to Drive"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "users/cxliu2015/PA_Qinghai_cdm_studiedRectangle"
+        ],
+        "Function": [
+            "Clip and export results to Drive"
+        ]
+    }
+}

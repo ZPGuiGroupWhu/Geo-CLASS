@@ -1,0 +1,32 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Lake water surface analysis"],
+  "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater", "users/sarinarinab/CitSci_Washington_Lakes", "users/sntopp/Lakes_ply_20171106", "users/sntopp/NCSC_Horsepen_Lake"],
+  "Function": ["Load lake polygons", "Load Landsat images", "Calculate lake area", "Reconstruct water surface", "Extract lake mask", "Calculate lake area statistics"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+        "Function": ["Load lake polygons", "Calculate lake area statistics"]
+    },
+    "relation_2": {
+        "DataSource": ["users/sarinarinab/CitSci_Washington_Lakes", "users/sntopp/Lakes_ply_20171106", "users/sntopp/NCSC_Horsepen_Lake"],
+        "Function": ["Load lake polygons", "Calculate lake area", "Extract lake mask"]
+    },
+    "relation_3": {
+        "DataSource": ["users/eeProject/water_surface_interpolation:functions_landsat.js"],
+        "Function": ["Load Landsat images", "Reconstruct water surface", "Extract lake mask", "Calculate lake area statistics"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4091, 'completion_tokens': 359, 'total_tokens': 4450}

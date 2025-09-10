@@ -1,0 +1,19 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Segmentation and classification of cropland using NAIP and CDL data."],
+  "Theme": ["Cropland segmentation and classification"],
+  "DataSource": ["USDA/NAIP/DOQQ", "USDA/NASS/CDL/2016"],
+  "Function": ["Training random forest classifier", "Image segmentation using SNIC algorithm"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["USDA/NAIP/DOQQ", "USDA/NASS/CDL/2016"],
+        "Function": ["Training random forest classifier", "Image segmentation using SNIC algorithm"]
+    }
+}
+```

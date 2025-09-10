@@ -1,0 +1,5 @@
+{
+  "Theme": ["Fire damage assessment in Russian regions"],
+  "DataSource": ["FIRMS", "LANDSAT/LT5_L1T"],
+  "Function": ["Filter regions by metadata", "Filter hotspots by year and region", "Create cloud-free composite", "Create pre-fire composite", "Create post-fire composite", "Remove clouds from images", "Calculate NBR index", "Create burned area mask", "Convert mask to vector", "Export vector to Drive", "Export NBR images to Drive"]
+}

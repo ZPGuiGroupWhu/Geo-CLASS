@@ -1,0 +1,19 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Script performs unsupervised classification on MODIS NDVI data for land cover mapping."],
+  "Theme": ["Land cover classification"],
+  "DataSource": ["MODIS/006/MOD09Q1"],
+  "Function": ["NDVI calculation", "Unsupervised clustering", "Class merging", "Land cover refinement"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["MODIS/006/MOD09Q1"],
+        "Function": ["NDVI calculation", "Unsupervised clustering", "Class merging", "Land cover refinement"]
+    }
+}
+```

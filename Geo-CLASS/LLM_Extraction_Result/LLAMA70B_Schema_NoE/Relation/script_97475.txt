@@ -1,0 +1,47 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "maskS2clouds",
+            "filterDate",
+            "filterBounds",
+            "map",
+            "select",
+            "median",
+            "clip",
+            "rename",
+            "sample",
+            "train",
+            "cluster",
+            "addBands",
+            "reduceRegion",
+            "toArray",
+            "toList",
+            "image.histogram",
+            "feature.groups",
+            "image.byClass"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "USGS/NED"
+        ],
+        "Function": [
+            "median",
+            "clip",
+            "rename",
+            "sample",
+            "train",
+            "cluster",
+            "addBands",
+            "reduceRegion",
+            "toArray",
+            "toList",
+            "image.histogram",
+            "feature.groups",
+            "image.byClass"
+        ]
+    }
+}

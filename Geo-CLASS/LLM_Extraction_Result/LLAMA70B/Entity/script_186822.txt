@@ -1,0 +1,5 @@
+{
+  "Theme": ["Agricultural field analysis using Sentinel-1 data"],
+  "DataSource": ["users/dgilad/SA", "users/dgilad/Fields", "COPERNICUS/S1_GRD"],
+  "Function": ["Buffering features by distance", "Filtering image collection by date and polarization", "Converting dB values to natural values", "Calculating mean and standard deviation of image values", "Reducing regions to obtain mean and standard deviation values"]
+}

@@ -1,0 +1,24 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "projects/ee-kimiachenaary/assets/msh"
+        ],
+        "Function": [
+            "Calculating terrain slope and aspect from DEMs",
+            "Cloud Masking And Quality Filtering",
+            "NDWI (Normalized Difference Water Index calculation)",
+            "Exporting And Data Conversion"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_TOA"
+        ],
+        "Function": [
+            "Calculating terrain slope and aspect from DEMs",
+            "Cloud Masking And Quality Filtering",
+            "NDWI (Normalized Difference Water Index calculation)",
+            "Exporting And Data Conversion"
+        ]
+    }
+}

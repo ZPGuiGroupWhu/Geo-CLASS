@@ -1,0 +1,19 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Evaluate landslide risk in Las Minas, Santa Rosa using remote sensing data."],
+  "Theme": ["NDVI analysis for pre and post-landslide assessment"],
+  "DataSource": ["COPERNICUS/S2_HARMONIZED"],
+  "Function": ["Calculate NDVI for pre-landslide imagery", "Calculate NDVI for post-landslide imagery"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2_HARMONIZED"],
+        "Function": ["Calculate NDVI for pre-landslide imagery", "Calculate NDVI for post-landslide imagery"]
+    }
+}
+```

@@ -1,0 +1,357 @@
+//script for determining the bias in the MODIS/VIIRS snow product 
+
+
+
+
+
+
+
+//---------User defined params-----------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ###### USER DEFINED PARAMS ############################################################
+
+
+
+var obs_date_start = '2018-03-01';
+
+var obs_date_end = '2018-03-15';
+
+var ref_date_start = '2018-07-01';
+
+var ref_date_end = '2018-09-30';
+
+var huc_level_str = '8'; //for labeling and filtering. Note that you no longer need to put a zero in front of one digit hucs
+
+var orbit_type = 'DESCENDING';
+
+var polarization_type = 'VH';
+
+var comp_time_step = 12; //the number of days to advance when making image composites
+
+var sar_export_res = 500; 
+
+var optical_type = 'SCA' //this can be snow covered area (SCA) or snow persistence (SP)
+
+var reducer_type = ee.Reducer.mean() //make this sum for SCA and mean for SP 
+
+var forest_thresh = 70
+
+
+
+
+
+
+
+//import modules and fc
+
+var optical_funcs = require('users/emaprlab/broberts:snow_persistence/image_processing_funcs');
+
+var pnw_snotel = ee.FeatureCollection("users/ak_glaciers/NWCC_high_resolution_coordinates_2019_hucs");
+
+
+
+
+
+
+
+//--------Get some data-----------
+
+
+
+var week_difference = function(startDate){
+
+  return ee.Date(startDate).advance(comp_time_step, 'days').millis().subtract(ee.Date(startDate).millis())}; 
+
+  
+
+var list_map = function(startDate,endDate){
+
+  return ee.List.sequence(ee.Date(startDate).millis(), ee.Date(endDate).millis(), week_difference(startDate))};
+
+  
+
+//create list of start dates for composites
+
+var date_list = list_map(obs_date_start,obs_date_end); 
+
+print(date_list)
+
+
+
+
+
+
+
+
+
+
+
+
+
+//---------Get basin feature collection-----------
+
+
+
+var huc_level = ee.Algorithms.If(ee.String(huc_level_str).length().lt(2),'0'+huc_level_str,huc_level_str)
+
+var hucs = ee.FeatureCollection("USGS/WBD/2017/HUC"+huc_level.getInfo()).filterBounds(pnw_snotel)
+
+print(hucs)
+
+Map.addLayer(hucs,{},'hucs')
+
+Map.addLayer(pnw_snotel,{},'snotel')
+
+var second_feature = hucs.toList(50).get(40)
+
+print(second_feature)
+
+Map.addLayer(ee.Feature(second_feature).geometry(),{},'hucs selected')
+
+
+
+
+
+
+
+
+
+//---------Generate stats-----------
+
+
+
+//make a test of the combined imageCollection 
+
+var combined_ic = optical_funcs.make_daily_composites(obs_date_start,obs_date_end)
+
+print(combined_ic)
+
+
+
+
+
+
+
+var comp_test = ee.ImageCollection.fromImages(date_list.map(function(dateMillis){
+
+var date = ee.Date(dateMillis);
+
+return optical_funcs.make_sca_composite(date,comp_time_step,ee.Feature(second_feature).geometry(),combined_ic); //change the function here to generate SP or SCA
+
+}));
+
+
+
+print(comp_test,{},'comp')
+
+Map.addLayer(comp_test.first(),{min:0,max:1},'optical')
+
+
+
+//test the sentinel 1 ic 
+
+
+
+
+
+var sar = optical_funcs.wet_snow_ic(obs_date_start,obs_date_end,ref_date_start,ref_date_end,orbit_type,comp_time_step,polarization_type,ee.Feature(second_feature),70) 
+
+print(sar)
+
+Map.addLayer(sar.first(),{min: 0, max: 1, palette: ['000000', '0000FF']},'sar')
+
+
+
+var test = sar.first().updateMask(comp_test.first())
+
+
+
+Map.addLayer(test,{min:0,max:1,palette: ['000000','FF0000']},'test mask')
+
+
+
+var dem = ee.Image("CGIAR/SRTM90_V4")
+
+Map.addLayer(dem,{},'dem')
+
+
+
+
+
+//test the WSCA
+
+
+
+
+
+
+
+//---------Generate stats-----------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//               maxPixels: 1e13
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+//               maxPixels: 1e13
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//---------Export some data-----------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

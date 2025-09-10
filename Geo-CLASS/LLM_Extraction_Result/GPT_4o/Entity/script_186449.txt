@@ -1,0 +1,5 @@
+{
+  "Theme": ["Land cover classification using Landsat imagery"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR/LC08_118062_20150819"],
+  "Function": ["Visualize satellite image", "Merge feature collections", "Sample image regions", "Generate scatter plot", "Print chart"]
+}

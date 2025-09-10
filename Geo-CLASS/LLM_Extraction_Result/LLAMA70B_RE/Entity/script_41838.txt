@@ -1,0 +1,16 @@
+{
+    "Theme": [
+        "Land cover classification"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C01/T1_SR"
+    ],
+    "Function": [
+        "Image collection filtering",
+        "Image clipping",
+        "Feature collection creation",
+        "Training sample creation",
+        "Random forest classification",
+        "Image classification"
+    ]
+}

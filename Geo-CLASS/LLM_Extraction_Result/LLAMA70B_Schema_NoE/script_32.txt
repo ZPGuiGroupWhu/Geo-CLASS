@@ -1,0 +1,29 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Snow product bias determination using MODIS/VIIRS and Sentinel-1 data"],
+  "DataSource": ["users/ak_glaciers/NWCC_high_resolution_coordinates_2019_hucs", "USGS/WBD/2017/HUC8", "CGIAR/SRTM90_V4"],
+  "Function": ["Generate daily composites of optical data", "Generate Sentinel-1 image collection for wet snow detection", "Create test mask by updating Sentinel-1 image with optical composite", "Generate stats for snow covered area/persistence"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/ak_glaciers/NWCC_high_resolution_coordinates_2019_hucs", "USGS/WBD/2017/HUC8"],
+        "Function": ["Generate daily composites of optical data", "Generate stats for snow covered area/persistence"]
+    },
+    "relation_2": {
+        "DataSource": ["CGIAR/SRTM90_V4"],
+        "Function": ["Generate Sentinel-1 image collection for wet snow detection", "Create test mask by updating Sentinel-1 image with optical composite", "Generate stats for snow covered area/persistence"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3003, 'completion_tokens': 326, 'total_tokens': 3329}

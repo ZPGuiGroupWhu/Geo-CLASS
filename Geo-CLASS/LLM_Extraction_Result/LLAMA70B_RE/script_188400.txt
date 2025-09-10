@@ -1,0 +1,24 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Air quality analysis"],
+  "DataSource": ["COPERNICUS/S5P/NRTI/L3_NO2"],
+  "Function": ["Image collection filtering", "Image clipping", "Visualization with custom palette"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S5P/NRTI/L3_NO2"],
+        "Function": ["Image collection filtering", "Image clipping", "Visualization with custom palette"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 8783, 'completion_tokens': 149, 'total_tokens': 8932}

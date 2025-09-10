@@ -1,0 +1,400 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var landcover = ee.FeatureCollection("users/zolokiala/parthenium1"),
+    boundary = ee.FeatureCollection("users/zolokiala/buffer"),
+    training = ee.FeatureCollection("users/zolokiala/training"),
+    test = ee.FeatureCollection("users/zolokiala/test"),
+    geometry = 
+    /* color: #98ff00 */
+    /* shown: false */
+    ee.Geometry.Polygon(
+        [[[32.015772637274985, -27.876966895842532],
+          [32.015772637274985, -28.198178288359976],
+          [32.30828362360311, -28.198178288359976],
+          [32.30828362360311, -27.876966895842532]]], null, false);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+
+//Let display the shapefiles
+
+Map.addLayer(boundary, {}, "Study_area")
+Map.addLayer(landcover, {}, "points")
+Map.centerObject(boundary, 10)
+
+// This example uses the Sentinel-2 QA band to cloud mask
+// the collection.  The Sentinel-2 cloud flags are less
+// selective, so the collection is also pre-filtered by the
+// CLOUDY_PIXEL_PERCENTAGE flag, to use only relatively
+// cloud-free granule.
+
+// Function to mask clouds using the Sentinel-2 QA band.
+function maskS2clouds(image) {
+  var qa = image.select('QA60')
+
+  // Bits 10 and 11 are clouds and cirrus, respectively.
+  var cloudBitMask = 1 << 10;
+  var cirrusBitMask = 1 << 11;
+
+  // Both flags should be set to zero, indicating clear conditions.
+  var mask = qa.bitwiseAnd(cloudBitMask).eq(0).and(
+             qa.bitwiseAnd(cirrusBitMask).eq(0))
+
+  // Return the masked and scaled data, without the QA bands.
+  return image.updateMask(mask).divide(10000)
+      .select("B.*")
+      .copyProperties(image, ["system:time_start"])
+}
+
+// Map the function over one year of data and take the median.
+// Load Sentinel-2 TOA reflectance data.
+var collection = ee.ImageCollection('COPERNICUS/S2')
+    .filterDate('2020-01-1' ,'2020-02-18')
+    .filterBounds(boundary)
+    // Pre-filter to get less cloudy granules.
+    .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE', 10))
+    .map(maskS2clouds)
+
+var composite = collection.median().clip(boundary)
+
+
+//Vegetation indices computation
+var getVI = function(image){
+  //NDVI
+    var NDVI = image.normalizedDifference(['B8', 'B4']).rename('NDVI')
+  //Soil Adjusted Vegetation Index (SAVI)
+    var SAVI = image.expression(
+      '((NIR - RED) * (1 + 0.5)) / (NIR + RED + 0.5)', { //value of L is .5 in this case
+        'NIR': image.select('B8'),
+        'RED': image.select('B4')
+      }).toFloat().rename('SAVI');
+    // Difference Vegetation Index (DVI)
+    var DVI = image.expression(
+      'NIR - RED', {
+        'NIR': image.select('B8'),
+        'RED': image.select('B4') 
+      }).rename('DVI');
+  // Green Normalized Difference Vegetation Index (GNDVI)
+    var GNDVI = image.expression(
+    '(NIR - GREEN)/(NIR + GREEN)', {
+     'NIR': image.select('B8'),
+     'GREEN': image.select('B3') 
+    }).rename('GNDVI');
+   
+   // Enhanced Vegetation Index (EVI) 
+   var EVI = image.expression(
+    '2.5 * ((NIR - RED) / (NIR + 6 * RED - 7.5 * BLUE + 1))', {
+      'NIR': image.select('B8'),
+      'RED': image.select('B4'),
+      'BLUE': image.select('B2')
+}).toFloat().rename('EVI');
+  // Green Chlorophyll Index (G Chl Index)
+   var chl = image.expression(
+    '(NIR/GREEN) - 1', {
+     'NIR': image.select('B8'),
+     'GREEN': image.select('B3')   
+    }).rename('chl');
+  
+  //Simple Ratio Index (SRI)
+  var SRI = image.expression(
+    '(NIR/RED)', {
+     'NIR': image.select('B8'),
+     'RED': image.select('B4')   
+    }).rename('SRI');
+    
+  //Green Difference Vegetation Index (GDVI)
+  var GDVI = image.expression(
+    'NIR - GREEN', {
+     'NIR': image.select('B8'),
+     'GREEN': image.select('B3')   
+    }).rename('GDVI');
+    
+  //Green Ratio Vegetation Index (GRVI)
+   var GRVI = image.expression(
+    'NIR/GREEN', {
+     'NIR': image.select('B8'),
+     'GREEN': image.select('B3')   
+    }).rename('GRVI'); 
+    
+  // Infrared Percentage Vegetation Index (IPVI)
+     var IPVI = image.expression(
+    'NIR/(NIR + RED)', {
+     'NIR': image.select('B8'),
+     'RED': image.select('B4')   
+    }).rename('IPVI') 
+
+  //Normalized Difference Water Index (NDWI)
+      var NDWI = image.expression(
+    '(GREEN - NIR)/(GREEN + NIR)', {
+     'NIR': image.select('B8'),
+     'GREEN': image.select('B3')   
+    }).rename('NDWI');
+    
+  //Greenness Index (GI)
+      var GI = image.expression(
+    'GREEN/RED', {
+     'RED': image.select('B4'),
+     'GREEN': image.select('B3')   
+    }).rename('GI');
+    
+    return image
+      .addBands([NDVI, SAVI, DVI, GNDVI, EVI, chl, SRI, GDVI, IPVI, NDWI, GI, GRVI])};
+
+var composite = getVI(composite)
+
+//mask out portions of the image with NDVI gte 0.1 and NDVI < 0.7
+var mask = composite.select('NDVI').gte(0.1).and(composite.select('NDVI').lt(0.7))
+var composite = composite.updateMask(mask)
+
+
+// Display the results.
+Map.addLayer(composite, {bands: ['B4', 'B3', 'B2'], min: 0, max: 0.3}, 'RGB')
+
+Map.addLayer(landcover, {}, 'id');
+
+
+// bands only
+var bands = ["B2", "B3", "B4", "B5", "B6", "B7","B8", "B8A","B11","B12"];
+
+// VI only
+var VI = ["NDVI", "SAVI", "DVI", "GNDVI", "EVI", "chl", "SRI", "GDVI", "IPVI", "NDWI", "GI", "GRVI"];
+
+// VI + bands
+var VIbands = ["B2", "B3", "B4", "B5", "B6", "B7","B8", "B8A","B11","B12", "NDVI",
+"SAVI", "DVI", "GNDVI", "EVI", "chl", "SRI", "GDVI", "IPVI", "NDWI", "GI", "GRVI"];
+
+//bands
+var trainingB = composite.select(bands).sampleRegions({
+  collection: training, 
+  properties: ['id'], 
+  scale: 10
+});
+
+//test
+var testB = composite.select(bands).sampleRegions({
+  collection: test, 
+  properties: ['id'], 
+  scale: 10
+});
+
+//VI
+var trainingVI = composite.select(VI).sampleRegions({
+  collection: training,
+  properties: ['id'], 
+  scale: 10
+});
+
+//test
+var testVI = composite.select(VI).sampleRegions({
+  collection: test,
+  properties: ['id'], 
+  scale: 10
+});
+
+
+//VI + bands
+var trainingVIbands = composite.select(VIbands).sampleRegions({
+  collection: training, 
+  properties: ['id'], 
+  scale: 10
+});
+
+//test
+var testVIbands = composite.select(VIbands).sampleRegions({
+  collection: test,
+  properties: ['id'], 
+  scale: 10
+});
+
+
+
+var svm = ee.Classifier.libsvm({
+  kernelType: 'RBF',
+  gamma: 0.5, //intial value: 0.5
+  cost: 10  //intial value 10
+});
+
+
+
+// ACCURACY ASSESSMENT:
+
+//bands
+
+
+//VI
+
+
+//VI+bands
+
+ 
+
+// Approximately 70% of our training data
+
+
+
+// Approximately 30% of our training data
+
+
+
+
+// Trained with 70% of our data.
+
+//bands
+var trainedClassifier = svm.train({
+  features: trainingB, 
+  classProperty: 'id', 
+  inputProperties: bands
+});
+
+//VI
+var trainedClassifierVI = svm.train({
+  features: trainingVI, 
+  classProperty: 'id', 
+  inputProperties: VI
+});
+
+//VI + bands
+var trainedClassifierVIbands = svm.train({
+  features: trainingVIbands, 
+  classProperty: 'id', 
+  inputProperties: VIbands
+});
+
+
+//Mapping with bands only
+var classified = composite.select(bands).classify(trainedClassifier);
+Map.addLayer(classified, {min: 0, max: 1, palette: ['red', 'green']}, 'Bands');
+
+//Mapping with VI
+var classifiedVI = composite.select(VI).classify(trainedClassifierVI);
+Map.addLayer(classifiedVI, {min: 0, max: 1, palette: ['red', 'green']}, 'VI');
+print(classifiedVI)
+
+
+//Mapping with VI + bands
+var classifiedVIbands = composite.select(VIbands).classify(trainedClassifierVIbands);
+Map.addLayer(classifiedVIbands, {min: 0, max: 1, palette: ['red', 'green']}, 'VI+bands');
+
+
+//bands
+var test = testB.classify(trainedClassifier);
+
+
+//VI
+var testVI = testVI.classify(trainedClassifierVI);
+
+
+//VI + bands
+var testVIbands = testVIbands.classify(trainedClassifierVIbands);
+
+
+//bands
+print('This is for bands only:')
+var confusionMatrix = test.errorMatrix('id', 'classification');
+print(confusionMatrix);
+print('Overall accuracy: ', confusionMatrix.accuracy());
+print('User and producer accuracy ', confusionMatrix.producersAccuracy())
+print('Kappa coefficeint ', confusionMatrix.kappa())
+//VI
+
+print('This is for VI:')
+var confusionMatrixVI = testVI.errorMatrix('id', 'classification');
+print(confusionMatrixVI);
+print('Overall accuracy: ', confusionMatrixVI.accuracy());
+print('User and producer accuracy ', confusionMatrixVI.producersAccuracy())
+print('Kappa coefficeint ', confusionMatrixVI.kappa())
+
+//VI+bands
+print('This is for VI+bands:')
+var confusionMatrixVIbands = testVIbands.errorMatrix('id', 'classification');
+print(confusionMatrixVIbands);
+print('Overall accuracy: ', confusionMatrixVIbands.accuracy());
+print('User and producer accuracy ', confusionMatrixVIbands.producersAccuracy())
+print('Kappa coefficeint ', confusionMatrixVIbands.kappa())
+
+
+
+
+
+// CHART RESULTS:
+var options = {
+  lineWidth: 1,
+  pointSize: 2,
+  hAxis: {title: 'Classes'},
+  vAxis: {title: 'Area m^2'},
+  title: 'Area by class',
+  series: {
+    0: { color: 'green'},
+    1: { color: 'red'},
+  }
+}
+
+//bands
+print ('With regard to bands: ')
+var areaChart = ui.Chart.image.byClass({
+  image: ee.Image.pixelArea().addBands(classified),
+  classBand: 'classification', 
+  region: boundary,
+  scale: 10,
+  reducer: ee.Reducer.sum()
+}).setOptions(options)
+  .setSeriesNames(['grass', 'parthenium']);
+print(areaChart);
+
+//VI
+print ('With regard to VI: ')
+var areaChartVI = ui.Chart.image.byClass({
+  image: ee.Image.pixelArea().addBands(classifiedVI),
+  classBand: 'classification', 
+  region: boundary,
+  scale: 10,
+  reducer: ee.Reducer.sum()
+}).setOptions(options)
+  .setSeriesNames(['grass', 'parthenium']);
+print(areaChartVI);
+
+//VI+bands
+print ('With regard to VI + band: ')
+var areaChartVIbands = ui.Chart.image.byClass({
+  image: ee.Image.pixelArea().addBands(classifiedVIbands),
+  classBand: 'classification', 
+  region: boundary,
+  scale: 10,
+  reducer: ee.Reducer.sum()
+}).setOptions(options)
+  .setSeriesNames(['other land-covers', 'parthenium']);
+print(areaChartVIbands);
+
+
+
+
+//classified image with bands only
+Export.image.toDrive({
+  image: classified,
+  description: 'mapBands',
+  scale: 10,
+  region: geometry
+});
+
+//classified image with bands only
+Export.image.toDrive({
+  image: classifiedVI,
+  description: 'mapVI',
+  scale: 10,
+  region: geometry
+});
+
+//classified image with bands only
+Export.image.toDrive({
+  image: classifiedVIbands,
+  description: 'mapVIbands',
+  scale: 10,
+  region: geometry
+});
+
+
+
+
+
+
+
+
+
+

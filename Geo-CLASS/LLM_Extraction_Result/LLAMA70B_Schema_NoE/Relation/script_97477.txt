@@ -1,0 +1,15 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "Filtering cloud cover for Landsat 8 images",
+            "Clipping images to a region of interest (Oneida Lake)",
+            "Calculating the median of a collection of images",
+            "Computing the Normalized Difference Vegetation Index (NDVI)",
+            "Computing the Enhanced Vegetation Index (EVI)",
+            "Computing the Soil Adjusted Vegetation Index (SABI)"
+        ]
+    }
+}

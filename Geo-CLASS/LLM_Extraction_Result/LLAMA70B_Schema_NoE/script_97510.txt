@@ -1,0 +1,27 @@
+Entity Recognition:
+```
+{
+  "Theme": ["Burn Severity of Mendocino Complex Fire"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR/LC08_045033_20170925", "LANDSAT/LC08/C01/T1_SR/LC08_045033_20180928"],
+  "Function": ["Load pre-fire image", "Load post-fire image", "Compute NDBR for pre image", "Compute NDBR for post image", "Display true color images", "Display NBR images"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR/LC08_045033_20170925"],
+        "Function": ["Load pre-fire image", "Compute NDBR for pre image", "Display true color images", "Display NBR images"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR/LC08_045033_20180928"],
+        "Function": ["Load post-fire image", "Compute NDBR for post image", "Display true color images", "Display NBR images"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2040, 'completion_tokens': 340, 'total_tokens': 2380}

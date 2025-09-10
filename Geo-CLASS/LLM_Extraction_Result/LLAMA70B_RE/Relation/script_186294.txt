@@ -1,0 +1,21 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Filtering image collection by date and bounds",
+            "Applying NDVI function to images",
+            "Updating image mask"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "ft:1XPgyHDQHN4d5IF4x8u5ZkJxkVQ_xKWFFuUTi9ofT"
+        ],
+        "Function": [
+            "Filtering image collection by bounds",
+            "Exporting image to drive"
+        ]
+    }
+}

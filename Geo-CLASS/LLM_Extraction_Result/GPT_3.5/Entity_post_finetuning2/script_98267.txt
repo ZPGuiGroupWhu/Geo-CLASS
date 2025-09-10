@@ -1,0 +1,21 @@
+{
+    "Summary": [
+        "Script creates image collections before and after a flood, applies filters, and masks flooded areas."
+    ],
+    "Theme": [
+        "FEED CONTAMINATION AND TOXICOLOGY"
+    ],
+    "DataSource": [
+        "COPERNICUS/S1_GRD",
+        "FAO/GAUL_SIMPLIFIED_500m/2015/level2",
+        "JRC/GSW1_0/GlobalSurfaceWater",
+        "WWF/HydroSHEDS/03VFDEM"
+    ],
+    "Function": [
+        "Filter Image Collection By Date And Region",
+        "Generates Visual Comparisons Of Pre- And Post-Event Images",
+        "Speckle Noise Reduction",
+        "Convert Flood Detection Results To Vector Polygons",
+        "Buffering Points To Create Zones For Analysis"
+    ]
+}

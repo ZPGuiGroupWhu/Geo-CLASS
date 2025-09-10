@@ -1,0 +1,6 @@
+{
+  "Summary": ["Extracts and processes Landsat imagery for NDVI and SAVI analysis."],
+  "Theme": ["Vegetation health monitoring"],
+  "DataSource": ["users/philipegeo/pol_jeremoabo", "LANDSAT/LT05/C01/T1_TOA"],
+  "Function": ["Filter images by cloud cover and date", "Calculate NDVI and SAVI indices"]
+}

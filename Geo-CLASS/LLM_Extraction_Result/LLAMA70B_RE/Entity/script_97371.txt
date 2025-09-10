@@ -1,0 +1,18 @@
+{
+    "Theme": [
+        "Agricultural crop monitoring and analysis"
+    ],
+    "DataSource": [
+        "FAO/GAUL/2015/level1",
+        "USGS/GFSAD1000_V0",
+        "COPERNICUS/S2_SR"
+    ],
+    "Function": [
+        "Selecting landcover band",
+        "Masking cloud and snow pixels",
+        "Adding NDVI band",
+        "Filtering image collection",
+        "Generating points",
+        "Calculating NDVI time series"
+    ]
+}

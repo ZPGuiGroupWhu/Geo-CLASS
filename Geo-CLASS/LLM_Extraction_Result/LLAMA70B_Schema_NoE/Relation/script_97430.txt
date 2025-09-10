@@ -1,0 +1,29 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2_CLOUD_PROBABILITY"
+        ],
+        "Function": [
+            "get_s2_sr_cld_col",
+            "add_cloud_bands",
+            "add_cld_shdw_mask",
+            "apply_cld_shdw_mask"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "get_s2_sr_cld_col",
+            "add_cloud_bands",
+            "add_shadow_bands",
+            "add_cld_shdw_mask",
+            "apply_cld_shdw_mask",
+            "addSWI",
+            "addMNDWI_S2",
+            "addNDVI_S2",
+            "addSAVI_S2"
+        ]
+    }
+}

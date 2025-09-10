@@ -1,0 +1,12 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "MODIS/006/MCD64A1"
+        ],
+        "Function": [
+            "Filtering MODIS images by date",
+            "Selecting BurnDate band",
+            "Creating a video thumbnail from the image collection"
+        ]
+    }
+}

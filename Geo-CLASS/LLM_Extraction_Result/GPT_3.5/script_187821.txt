@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Script for pre- and post-fire monitoring using Earth observations."],
+  "Theme": ["Fire monitoring"],
+  "DataSource": ["FAO/GAUL/2015/level0", "COPERNICUS/S2", "LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Cloud and snow masking", "Image mosaic and clipping", "Calculating NBR for pre- and post-fire images", "Calculating dNBR", "Adding layers to map", "Calculating burned area", "Adding a legend", "Exporting dNBR file", "Exporting burned area stats as a CSV"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["FAO/GAUL/2015/level0"],
+        "Function": ["Image mosaic and clipping", "Adding layers to map", "Exporting burned area stats as a CSV"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Cloud and snow masking", "Calculating NBR for pre- and post-fire images", "Calculating burned area", "Adding a legend"]
+    },
+    "relation_3": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Calculating NBR for pre- and post-fire images", "Calculating dNBR", "Exporting dNBR file"]
+    }
+}
+```

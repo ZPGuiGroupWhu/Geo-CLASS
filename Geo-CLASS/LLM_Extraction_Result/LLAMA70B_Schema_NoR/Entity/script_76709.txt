@@ -1,0 +1,18 @@
+{
+    "Theme": [
+        "Water quality analysis",
+        "Vegetation health monitoring"
+    ],
+    "DataSource": [
+        "users/cxliu2015/BYDwater20210325",
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "Filtering image collection by date and cloud coverage",
+        "Calculating NDVI and other vegetation indices",
+        "Masking clouds and cirrus from images",
+        "Computing percentiles of vegetation indices",
+        "Creating mosaic from image collection",
+        "Exporting results to Google Drive"
+    ]
+}

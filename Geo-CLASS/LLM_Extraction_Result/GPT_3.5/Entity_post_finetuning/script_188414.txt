@@ -1,0 +1,20 @@
+{
+    "Summary": [
+        "The script processes Landsat imagery to calculate NDVI, LST, and export data."
+    ],
+    "Theme": [
+        "LAND SURFACE TEMPERATURE",
+        "VEGETATION INDEX"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C01/T1_SR",
+        "users/ak_glaciers/points_w_ids_OR",
+        "COPERNICUS/S1_GRD"
+    ],
+    "Function": [
+        "Cloud Masking And Quality Filtering",
+        "NDVI (Normalized Difference Vegetation Index calculation)",
+        "Terrain And Hydrological Analysis",
+        "Exporting And Data Conversion"
+    ]
+}

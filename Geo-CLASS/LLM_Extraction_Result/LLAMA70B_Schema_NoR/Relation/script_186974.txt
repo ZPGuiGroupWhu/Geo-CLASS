@@ -1,0 +1,26 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LT05/C01/T1_SR",
+            "LANDSAT/LE07/C01/T1_SR",
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "Filtering image collection by date and bounds",
+            "Cloud masking and edge pixel removal",
+            "Renaming bands",
+            "Merging image collections"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LT05/C01/T1_SR",
+            "LANDSAT/LE07/C01/T1_SR",
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "Calculating normalized difference water indices",
+            "Generating annual means of water indices"
+        ]
+    }
+}

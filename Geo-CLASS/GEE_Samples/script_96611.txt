@@ -1,0 +1,171 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var site = 
+    /* color: #d63000 */
+    ee.Geometry.Polygon(
+        [[[-78.52724283835413, 38.05917090134157],
+          [-78.52724283835413, 37.99751117262612],
+          [-78.43523234030725, 37.99751117262612],
+          [-78.43523234030725, 38.05917090134157]]], null, false);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+//Let's make a landsat composite!, First create a new collection and filter to a date range
+
+var l8 = ee.ImageCollection("LANDSAT/LC08/C01/T1").filterDate('2017-1-1', '2018-01-01')
+
+//How many images are in this collection? Use .size to find out.
+
+print('Number of Images',l8.size()) //to get size
+
+
+//See https://developers.google.com/earth-engine/image_overview for more detail
+
+var median = l8.median()
+print("median",median)
+
+Map.centerObject(site, 12); 
+Map.addLayer(median, {}, "median")
+
+
+// Composite one year of Landsat 8. Note that the input to a simpleComposite is the raw data
+// The asFloat parameter gives floating-point TOA output instead of
+// the UINT8 outputs of the default simpleComposite().
+
+// see https://developers.google.com/earth-engine/ic_composite_mosaic
+
+var composite = ee.Algorithms.Landsat.simpleComposite({
+  collection: l8,
+  asFloat: true
+});
+
+// Pick a spot with the 'Inspector'. You will see the differences of the approaches if 
+// you look at a spot with alot of clouds.
+
+Map.addLayer(composite, {bands: ['B4', 'B3', 'B2'], max: [0.3, 0.4, 0.3]}, "simple composite", false);
+
+
+//writing an integer will define the same min or max for all bands
+
+print("composite stack",composite)
+
+
+
+// cloud score threshold and percentile. (see the link above for more)
+
+var customComposite = ee.Algorithms.Landsat.simpleComposite({
+  collection: l8,
+  percentile: 75,
+  cloudScoreRange: 5
+ });
+
+
+// Display the composites.
+Map.addLayer(customComposite, {bands: ['B4', 'B3', 'B2'], max: 128},'Custom TOA composite', false);
+
+
+// Directly calculate NDVI for a specific image. you do that 
+
+var ndvi = composite.expression("(nir - red) / (nir + red)", {
+  nir: composite.select("B5"),
+  red: composite.select("B4")
+})
+
+Map.addLayer(ndvi,{min:0, max:1, palette:['purple','orange']}, "NDVI one way", false)
+print('ndvi', ndvi)
+
+// putting 'false' at the end will load the layer but uncheck the box in the layers list
+
+
+//so in this case you need to use x, not the composite 
+function addNDVI(x) {
+  var ndvi2 = x.expression("(nir - red) / (nir + red)", {
+    nir: x.select("B5"),
+    red: x.select("B4")
+  })
+  
+  var day = x.date().getRelative('day', 'year')
+  var doy = ee.Image.constant(day).rename("date").int()
+  
+
+  return x.addBands(ndvi2.rename("ndvi")).addBands(doy)
+  
+}
+
+// if you look over to the console at the right, you can see each of the parts of this
+// function as separate 1-band images. In the first way of calculating NDVI, the
+// input of the function is only the bands of the composite image.
+
+
+// Now, try to make an NDVI collection
+var ndviCollection = l8.map(addNDVI)
+print("ndviCollection",ndviCollection)
+
+
+Map.addLayer(ndviCollection, {min:0, max:1}, "NDVI Collection", false)
+
+// this will look white on the map, you can see the data if you apply a stretch
+
+
+// you can play around with the date range to mitigate this
+
+// take the max value to get better image
+
+var maxNDVI = ndviCollection.max()
+Map.addLayer(maxNDVI, {}, "max NDVI")
+
+
+//this would be white like above, except here we set the values for 
+
+// quality Mosaic takes the best pixel value from the collection to make an even better image
+
+var maxNDVI = ndviCollection.qualityMosaic('ndvi')
+
+// You need to add bands to get correct bands into map, otherwise it will use 
+// the first three only
+
+Map.addLayer(maxNDVI, {min:0, max:1, bands:["ndvi"]}, "best pixel NDVI")
+print('maxNDVI',maxNDVI)
+
+
+// The value will be given as julian date. Every band has 
+// it's own data mask. we are making a new mask and updating the existing mask 
+// with that new mask. Add maxPixels to get around "Dictionary (Error): too many pixels"
+// Then add .select("date") to only capture the date of NDVI, otherwise it will
+
+
+var threshold = maxNDVI.select('date').updateMask(maxNDVI.select('ndvi').gt(0.6))
+
+var meanDoy = threshold.reduceRegion({
+    reducer:ee.Reducer.mean(),
+    geometry: site,
+    crs: "EPSG:4326",
+    scale: 30, //always means meters//
+    maxPixels: 1e9 //1e9 is safe, 1e12 is iffy//
+})
+
+print("Day of year",meanDoy )
+
+//make a task to export image to drive
+//this shows up under the 'Tasks' tab to your right
+
+//to a Google Drive folder, or to cloud storage
+Export.image.toDrive({
+  image:ndvi,
+  description: "NDVI",
+  region: site, //this clips the image to your study site
+  scale: 30,
+  crs:"EPSG:4326"
+})
+
+//pixel area image gives pixel area for that geometry 
+var area = ee.Image.pixelArea().updateMask(maxNDVI.select('ndvi').gt(0.6))
+  .reduceRegion({
+    reducer: ee.Reducer.sum(),
+    geometry: site,
+    crs: "EPSG:4326",
+    scale: 30, //when you change the scale you get different pixel numbers
+    maxPixels:1e9 
+})
+
+print(area, "pixel area")
+
+var histo_ndvi = ui.Chart.image.histogram(threshold, site, 30, 1000, 1)
+print("histoMean", histo_ndvi)

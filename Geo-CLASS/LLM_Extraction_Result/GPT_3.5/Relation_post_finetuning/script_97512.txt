@@ -1,0 +1,21 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_SR/LC08_045033_20170925",
+            "LANDSAT/LC08/C01/T1_SR/LC08_045033_20180928"
+        ],
+        "Function": [
+            "Data Acquisition And Preprocessing"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "users/cade/ca_MendocinoComplex"
+        ],
+        "Function": [
+            "Calculating terrain slope and aspect from DEMs",
+            "Vegetation And Water Indices Calculation",
+            "Visualization And Output Generation"
+        ]
+    }
+}

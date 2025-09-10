@@ -1,0 +1,728 @@
+ancestor_note,sub_note,similarity1,similarity2,similarity3
+Data Acquisition And Preprocessing,Spatial Analysis,0,0,0
+Data Preparation,Data Acquisition And Preprocessing,0.757440925,0.5018242,0.757440925
+Import/Load Data,Data Preparation,0.411125273,0.905560514,0.905560514
+Covering Grid Generation,Import/Load Data,0.325824738,0.880781001,0.880781001
+Binary Image Creation,Import/Load Data,0.167062029,0.880781001,0.880781001
+Ancillary Layer Computation,Import/Load Data,0.299093336,0.880781001,0.880781001
+Select Data,Data Acquisition And Preprocessing,0.428720921,0.572482305,0.572482305
+Select Image,Select Data,0.567200005,0.852072402,0.852072402
+Select Specific Bands From Images,Select Image,0.639779687,0.845730578,0.845730578
+Limit The Number Of Images,Select Image,0.399825811,0.845730578,0.845730578
+Selects Temperature Data,Select Image,0.241093144,0.877639576,0.877639576
+Selects Air Temperature Data,Selects Temperature Data,0.876446962,0.920762382,0.920762382
+Selects Surface Temperature Data,Selects Temperature Data,0.859672666,0.920762382,0.920762382
+Select And Clip Image,Select Image,0.867275059,0.845730578,0.867275059
+Select Specific Polarization From Images,Select Data,0.336619914,0.764071772,0.764071772
+Select Land Cover Types,Select Data,0.342039675,0.764071772,0.764071772
+Select DEM,Select Data,0.598344684,0.764071772,0.764071772
+Select Index,Select Data,0.707772851,0.764071772,0.764071772
+Area Of Interest Selection,Select Data,0.293488294,0.764071772,0.764071772
+Data Filtering,Data Acquisition And Preprocessing,0.50611341,0.722772913,0.722772913
+Filter Image Collection,Data Filtering,0.65964359,0.724571756,0.724571756
+Filter Image Collection By Time,Filter Image Collection,0.896588862,0.863840782,0.896588862
+Filter Image Collection By Date,Filter Image Collection By Time,0.922703803,0.896528853,0.922703803
+Filter Image Collection By Month,Filter Image Collection By Time,0.856729686,0.896528853,0.896528853
+Filter Image Collection By Year,Filter Image Collection By Time,0.867342949,0.896528853,0.896528853
+Filter Image Collection By Region,Filter Image Collection,0.885343373,0.808413842,0.885343373
+Filter Image Collection By Bounds,Filter Image Collection,0.886702895,0.808413842,0.886702895
+Filter Image Collection By Date And Region,Filter Image Collection,0.848941565,0.808413842,0.848941565
+Filter Image Collection By Date And Boundaries,Filter Image Collection,0.85105449,0.808413842,0.85105449
+Filter Image Collection By Cloud Coverage,Filter Image Collection,0.819747269,0.808413842,0.819747269
+Filter Images,Data Filtering,0.643259227,0.734304138,0.734304138
+Filter Images by wind conditions,Filter Images,0.767729759,0.798318753,0.798318753
+Filter And Process Images For Water Detection,Filter Images,0.695361793,0.798318753,0.798318753
+Filter Images By Time,Filter Images,0.857731104,0.853549341,0.857731104
+Filter Images By Date,Filter Images By Time,0.882913291,0.896528853,0.896528853
+Filter Images By Month,Filter Images By Time,0.812184989,0.896528853,0.896528853
+Filter Images By Year,Filter Images By Time,0.817406833,0.896528853,0.896528853
+Filter Images By Region,Filter Images,0.856978536,0.798318753,0.856978536
+Filter Images By Date And Region,Filter Images,0.805132091,0.798318753,0.805132091
+Filter Images By Cloud Cover,Filter Images,0.79740864,0.798318753,0.798318753
+Applying Mean Filter To Image,Filter Images,0.767909527,0.798318753,0.798318753
+Temporal Filtering,Data Filtering,0.620216966,0.657499324,0.657499324
+Temporal Image Collection Filtering,Temporal Filtering,0.761759281,0.880781001,0.880781001
+Temporal Data Filtering,Temporal Filtering,0.913369477,0.880781001,0.913369477
+Seasonal Filtering,Temporal Filtering,0.691212833,0.880781001,0.880781001
+Spatial Filtering,Data Filtering,0.702478707,0.674684917,0.702478707
+Filtering Polygons,Spatial Filtering,0.716057718,0.861759225,0.861759225
+Filtering Pixels,Spatial Filtering,0.727193236,0.861759225,0.861759225
+Filtering Administrative Boundaries,Spatial Filtering,0.719057679,0.861759225,0.861759225
+Angle Filtering,Spatial Filtering,0.698769748,0.861759225,0.861759225
+Speckle Filtering,Data Filtering,0.536760867,0.674684917,0.674684917
+Sigma Lee Speckle Filtering,Speckle Filtering,0.691376865,0.861759225,0.861759225
+Refined Lee Speckle Filtering,Speckle Filtering,0.853081584,0.861759225,0.861759225
+Apply Perona-Malik Anisotropic Diffusion Filter,Speckle Filtering,0.476177812,0.861759225,0.861759225
+Apply Gamma MAP Filter,Speckle Filtering,0.465295166,0.861759225,0.861759225
+Quality Filtering,Data Filtering,0.719927311,0.609290243,0.719927311
+Quality Control,Quality Filtering,0.731422484,0.936013437,0.936013437
+Filtering Training Data,Data Filtering,0.753716648,0.609290243,0.753716648
+Filtering Features,Data Filtering,0.836869776,0.657499324,0.836869776
+Filtering Precipitation Data,Filtering Features,0.576248825,0.880781001,0.880781001
+Filtering Soil Moisture Data,Filtering Features,0.471159011,0.880781001,0.880781001
+Cloud Filtering,Filtering Features,0.580865085,0.880781001,0.880781001
+Filter Feature,Data Filtering,0.749806643,0.657499324,0.749806643
+Filter Feature Collection,Filter Feature,0.914739966,0.880781001,0.914739966
+Filter And Buffer A Feature Collection,Filter Feature,0.781347036,0.880781001,0.880781001
+Feature Filtering And Mapping,Filter Feature,0.770506024,0.880781001,0.880781001
+Filter And Visualize,Data Filtering,0.668291509,0.609290243,0.668291509
+Filter And Sort,Data Filtering,0.608535707,0.609290243,0.609290243
+Filter And Select,Data Filtering,0.694766819,0.609290243,0.694766819
+Filter And Process,Data Filtering,0.686609745,0.609290243,0.686609745
+Filter And Mask,Data Filtering,0.581055284,0.609290243,0.609290243
+Filter And Map,Data Filtering,0.68648845,0.609290243,0.68648845
+Filter And Display,Data Filtering,0.657491684,0.609290243,0.657491684
+Filter And Composite,Data Filtering,0.524985492,0.609290243,0.609290243
+Filter And Clip,Data Filtering,0.61607945,0.609290243,0.61607945
+Filter And Classify,Data Filtering,0.749902546,0.609290243,0.749902546
+Filter And Mosaic,Data Filtering,0.549797535,0.609290243,0.609290243
+Filter And Merge,Data Filtering,0.551766932,0.609290243,0.609290243
+Sort Images,Data Acquisition And Preprocessing,0.157675341,0.538598626,0.538598626
+Sort Image Collection By Time,Sort Images,0.82795918,0.835128708,0.835128708
+Sort Images By Start Time,Sort Image Collection By Time,0.814769626,0.904385946,0.904385946
+Sort Images By Acquisition Time,Sort Image Collection By Time,0.904808283,0.904385946,0.904808283
+Sort Image Collection By Feature,Sort Images,0.799943268,0.835128708,0.835128708
+Sort Image Collections By Cloud Cover,Sort Image Collection By Feature,0.765142024,0.904385946,0.904385946
+Sort Images By Quality,Sort Image Collection By Feature,0.796423137,0.904385946,0.904385946
+Sort Image Collection By Region,Sort Images,0.836287975,0.835128708,0.836287975
+Sort Pixels,Sort Image Collection By Region,0.656650424,0.904385946,0.904385946
+Sort By Area Size,Sort Image Collection By Region,0.689454317,0.904385946,0.904385946
+Data Fusion,Data Acquisition And Preprocessing,0.513308883,0.642220051,0.642220051
+Image Addition,Data Fusion,0.249236122,0.772512131,0.772512131
+Add Variables To Imagery,Image Addition,0.582340658,0.845730578,0.845730578
+Add A Legend,Image Addition,0.324723721,0.845730578,0.845730578
+Add Date Information To Images,Image Addition,0.546336293,0.845730578,0.845730578
+Add Vegetation Indices,Image Addition,0.293658853,0.877639576,0.877639576
+Addition Of NDVI,Add Vegetation Indices,0.121727914,0.920762382,0.920762382
+Addition Of NDWI,Add Vegetation Indices,0.113764375,0.920762382,0.920762382
+Image Aggregation,Data Fusion,0.356843948,0.887146184,0.887146184
+Aggregate Multiple Images,Image Aggregation,0.74780184,0.906568694,0.906568694
+Temporal Aggregation,Aggregate Multiple Images,0.355591506,0.77693611,0.77693611
+Image Stacking,Aggregate Multiple Images,0.597914219,0.77693611,0.77693611
+Stacking Multiple Images,Image Stacking,0.824384749,0.96355162,0.96355162
+Generate Image Composites,Aggregate Multiple Images,0.536019683,0.919459931,0.919459931
+Generate Image Composites For Indices/Index,Generate Image Composites,0.89867419,0.819375898,0.89867419
+Create Image Composites To Minimize Cloud Cover,Generate Image Composites,0.726852536,0.819375898,0.819375898
+Create Median Composite Of Images,Generate Image Composites,0.744554281,0.819375898,0.819375898
+Create RGB Composite Image,Generate Image Composites,0.755890846,0.819375898,0.819375898
+Temporal Compositing,Generate Image Composites,0.016138634,0.913588351,0.913588351
+Creating Seasonal Composite,Temporal Compositing,0.222551346,0.875085018,0.875085018
+Creating Annual Composite,Temporal Compositing,0.164524883,0.875085018,0.875085018
+Creating Monthly Composite,Temporal Compositing,0.216651976,0.875085018,0.875085018
+Creating Median Composites For Specific Time Periods,Temporal Compositing,0.383687526,0.875085018,0.875085018
+Creates Time Series Composites Of Satellite Images,Temporal Compositing,0.282772958,0.875085018,0.875085018
+Merge Feature Collections,Aggregate Multiple Images,0.407482088,0.77693611,0.77693611
+Merge And Sort Image Collections,Aggregate Multiple Images,0.587400734,0.77693611,0.77693611
+Combine Multiple Image Properties,Image Aggregation,0.593761802,0.821791526,0.821791526
+Union Of Administrative Units,Combine Multiple Image Properties,0.09697824,0.86046536,0.86046536
+Union Of Geometries,Combine Multiple Image Properties,0.065090269,0.86046536,0.86046536
+Aggregate Fire Data,Combine Multiple Image Properties,0.232901543,0.86046536,0.86046536
+Aggregate Land Cover,Combine Multiple Image Properties,0.213538468,0.86046536,0.86046536
+Merge Different Land Cover Feature Collections,Aggregate Land Cover,0.565385997,0.96355162,0.96355162
+Aggregate Temperature Data,Combine Multiple Image Properties,0.193801105,0.86046536,0.86046536
+Image Mosaicking,Data Acquisition And Preprocessing,0.206304327,0.515868964,0.515868964
+Mosaic Landsat Images,Image Mosaicking,0.808128178,0.832642076,0.832642076
+Filter And Mosaic Landsat Images,Mosaic Landsat Images,0.820441067,0.936013437,0.936013437
+Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover,Filter And Mosaic Landsat Images,0.806042731,0.953164601,0.953164601
+Creates And Exports Image Mosaics,Image Mosaicking,0.790292621,0.832642076,0.832642076
+Quality Mosaic Generation,Image Mosaicking,0.662497401,0.832642076,0.832642076
+Annual Mosaick,Image Mosaicking,0.572927654,0.832642076,0.832642076
+Building Annual Mosaic Collection,Annual Mosaick,0.805083573,0.936013437,0.936013437
+Image Masking,Data Acquisition And Preprocessing,0.082426198,0.64633987,0.64633987
+Mask Application,Image Masking,0.771802068,0.909973676,0.909973676
+Quality Masking,Mask Application,0.747080266,0.707319316,0.747080266
+Vegetation Masking,Mask Application,0.429297656,0.707319316,0.707319316
+Spatial Masking,Mask Application,0.59390074,0.707319316,0.707319316
+Shadow Removal,Mask Application,0.442898303,0.707319316,0.707319316
+Shadow Masking,Mask Application,0.64850229,0.707319316,0.707319316
+Elevation Masking,Mask Application,0.44570151,0.707319316,0.707319316
+Remove Elevation Effects,Mask Application,0.167009011,0.707319316,0.707319316
+Remove Double Counts,Mask Application,0.009429161,0.707319316,0.707319316
+Remove Invalid Value,Mask Application,0.06494759,0.707319316,0.707319316
+Apply Masks To Classified Images,Mask Application,0.650542796,0.707319316,0.707319316
+Flood Mask Generation,Mask Application,0.56604743,0.707319316,0.707319316
+Temperature Masking,Mask Application,0.589447796,0.707319316,0.707319316
+Edge Masking,Mask Application,0.668790996,0.707319316,0.707319316
+Clear Pixel Masking,Mask Application,0.660442412,0.707319316,0.707319316
+Burn Masking,Mask Application,0.678749084,0.707319316,0.707319316
+Image Cloud Masking,Mask Application,0.555605054,0.833161732,0.833161732
+Analyze Frequency Of Clouds And Vegetation,Image Cloud Masking,0.429885566,0.82196498,0.82196498
+Cloud And Shade Masking,Image Cloud Masking,0.784254432,0.82196498,0.82196498
+Cloud And Cloud Shadow Masking,Cloud And Shade Masking,0.818588316,0.96355162,0.96355162
+Cloud And Snow Masking,Image Cloud Masking,0.631105304,0.82196498,0.82196498
+Cloud And Water Masking,Image Cloud Masking,0.784428596,0.82196498,0.82196498
+Cloud Probability Masking,Image Cloud Masking,0.656981111,0.82196498,0.82196498
+Image Cloud Removal,Image Cloud Masking,0.805515945,0.878449819,0.878449819
+Reduce Cloud Effects,Image Cloud Removal,0.637985289,0.906015175,0.906015175
+Cloud And Shadow Removal,Image Cloud Removal,0.768952847,0.906015175,0.906015175
+Cloud Cover Removal,Image Cloud Removal,0.85880214,0.906015175,0.906015175
+Update Masks,Image Masking,0.52567786,0.683554395,0.683554395
+Image Preprocessing,Data Acquisition And Preprocessing,0.508881271,0.665404293,0.665404293
+Image Enhancement,Image Preprocessing,0.660357177,0.664228768,0.664228768
+Image Scaling,Image Preprocessing,0.529313087,0.664228768,0.664228768
+Image Segmentation,Image Preprocessing,0.506007731,0.664228768,0.664228768
+Data Partitioning,Image Segmentation,0.291274726,0.936013437,0.936013437
+Image Stretching,Image Preprocessing,0.429790437,0.664228768,0.664228768
+Image Resampling,Image Preprocessing,0.682630658,0.664228768,0.682630658
+Projection,Image Preprocessing,0.312156498,0.692768184,0.692768184
+Image Reprojection,Projection,0.382561505,0.904385946,0.904385946
+Shadow Projection,Projection,0.709441364,0.904385946,0.904385946
+Image Reduction,Image Preprocessing,0.645376325,0.761104977,0.761104977
+Reduction Of Image Regions,Image Reduction,0.838244438,0.831822115,0.838244438
+Reduction To Single Image,Image Reduction,0.893429518,0.831822115,0.893429518
+Reduction Of Image Collection,Image Reduction,0.841326773,0.831822115,0.841326773
+Reduction Of Feature Data,Image Reduction,0.609256804,0.831822115,0.831822115
+Reduction By Statistics,Image Reduction,0.473131448,0.831822115,0.831822115
+Reduce Image Collection To Minimum Value,Image Reduction,0.696202695,0.831822115,0.831822115
+Noise Reduction,Image Preprocessing,0.199652657,0.732414567,0.732414567
+Radar Image Noise Reduction,Noise Reduction,0.678344846,0.861759225,0.861759225
+Speckle Reduction,Noise Reduction,0.460816056,0.893804687,0.893804687
+Speckle Noise Removal,Speckle Reduction,0.76854521,0.920762382,0.920762382
+Speckle Noise Reduction,Speckle Reduction,0.835438788,0.920762382,0.920762382
+Mean Reduction,Noise Reduction,0.496595353,0.861759225,0.861759225
+Smoothing,Image Preprocessing,0.285564959,0.761104977,0.761104977
+Smooth Radar Speckle In Images,Smoothing,0.407313555,0.831822115,0.831822115
+Harmonic Smoothing,Smoothing,0.729327619,0.831822115,0.831822115
+Spatial Smoothing,Smoothing,0.782586098,0.831822115,0.831822115
+Temporal Smoothing,Smoothing,0.756360114,0.831822115,0.831822115
+Focal Median Smoothing,Smoothing,0.685506165,0.831822115,0.831822115
+Focal Mean Smoothing,Smoothing,0.789724767,0.831822115,0.831822115
+Data Standardization,Image Preprocessing,0.040272068,0.761104977,0.761104977
+Unit Conversion,Data Standardization,0.31031388,0.907263945,0.907263945
+Unit Conversion For Daily Averages,Unit Conversion,0.588938475,0.876969125,0.876969125
+Unit Conversion For Energy Balance Components,Unit Conversion,0.736805499,0.876969125,0.876969125
+Unit Conversion For Hourly Dataset,Unit Conversion,0.641513705,0.876969125,0.876969125
+Unit Conversion For Temperature Data,Unit Conversion,0.666664362,0.876969125,0.876969125
+"Merge, Harmonize, And Standardize Landsat Image Collections",Data Standardization,0.365646511,0.831822115,0.831822115
+Image Normalization,Data Standardization,0.306588113,0.831822115,0.831822115
+Image Band Normalization,Image Normalization,0.831968307,0.953164601,0.953164601
+Spectral And Temporal Analysis,Spatial Analysis,0,0,0
+Image Index Calculation,Spectral And Temporal Analysis,0.187839046,0.795858499,0.795858499
+Spectral Index Computation,Image Index Calculation,0.500542879,0.766384178,0.766384178
+Calculate Temporal Spectral Indices,Spectral Index Computation,0.712646484,0.861759225,0.861759225
+Calculate Seasonal And Temporal Spectral Indices,Calculate Temporal Spectral Indices,0.876813114,0.953164601,0.953164601
+Calculate Spectral Indices And Ratios From Satellite Bands,Spectral Index Computation,0.631699979,0.861759225,0.861759225
+Spectral Distance Calculation,Spectral Index Computation,0.712925494,0.861759225,0.861759225
+Addition Of Spectral Indices,Spectral Index Computation,0.796337664,0.861759225,0.861759225
+Vegetation Indices/Index Calculation,Image Index Calculation,0.503795624,0.847256765,0.847256765
+Calculate Environmental And Vegetation Indices,Vegetation Indices/Index Calculation,0.898132086,0.940009706,0.940009706
+Calculate Construction Land Index (CLI),Calculate Environmental And Vegetation Indices,0.587484777,0.793032042,0.793032042
+Computes Normalized Difference Vegetation Index (NDVI),Calculate Environmental And Vegetation Indices,0.705935061,0.793032042,0.793032042
+Compute Median Of NDVI,Calculates Median Values,0.702099681,0.876969125,0.876969125
+Fractional Vegetation Cover (FVC) Calculation,Calculate Environmental And Vegetation Indices,0.630062699,0.793032042,0.793032042
+Calculates Forest Structural Complexity Index (FSCI),Calculate Environmental And Vegetation Indices,0.557992876,0.793032042,0.793032042
+Fractional Vegetation Calculation,Calculate Environmental And Vegetation Indices,0.703612208,0.793032042,0.793032042
+"Calculate Other Vegetation Indices/index (SAVI, EVI)",Calculate Environmental And Vegetation Indices,0.866465092,0.793032042,0.866465092
+Calculate Normalized Infrared Vegetation Index (NIRV),Calculate Environmental And Vegetation Indices,0.68399322,0.793032042,0.793032042
+Chlorophyll-a Calculation,Calculate Environmental And Vegetation Indices,0.364712,0.793032042,0.793032042
+Calculates Green Leaf Index (GLI),Calculate Environmental And Vegetation Indices,0.605502307,0.793032042,0.793032042
+Seasonal NDVI Analysis,Calculate Environmental And Vegetation Indices,0.348581195,0.793032042,0.793032042
+Emissivity Calculation,Image Index Calculation,0.385288715,0.696774271,0.696774271
+Compute Emissivity From Vegetation Fraction,Emissivity Calculation,0.672552764,0.936013437,0.936013437
+Water Indices/Index Calculation,Image Index Calculation,0.57620281,0.766384178,0.766384178
+Calculates Normalized Difference Water Index (NDWI),Water Indices/Index Calculation,0.681483686,0.861759225,0.861759225
+Calculate Normalized Difference Flood Index (NDFI),Water Indices/Index Calculation,0.54781121,0.861759225,0.861759225
+Calculates Modified Normalized Difference Water Index (MNDWI),Water Indices/Index Calculation,0.640284538,0.861759225,0.861759225
+Calculate Normalized Difference Water Body Index (NDWBI),Water Indices/Index Calculation,0.652512193,0.861759225,0.861759225
+Calculate Normalized Difference And Other Indices,Image Index Calculation,0.335796803,0.696774271,0.696774271
+Image Band Manipulation,Spectral And Temporal Analysis,0.127894163,0.727409072,0.727409072
+Rename Image Bands,Image Band Manipulation,0.534104288,0.764071772,0.764071772
+Rename Spectral Bands,Rename Image Bands,0.735063016,0.936013437,0.936013437
+Merging (Combining Multiple Bands),Image Band Manipulation,0.345473737,0.794349983,0.794349983
+Stack VV And VH Bands,Merging (Combining Multiple Bands),0.265820712,0.904385946,0.904385946
+Stack Multiple Image Bands,Merging (Combining Multiple Bands),0.474434853,0.904385946,0.904385946
+Image Band Addition,Image Band Manipulation,0.737444878,0.866068431,0.866068431
+Add Normalized Difference Band,Image Band Addition,0.460448027,0.831822115,0.831822115
+Add NDVI Band To Images,Image Band Addition,0.63257122,0.831822115,0.831822115
+Add NDWI Band To Images,Image Band Addition,0.675693631,0.831822115,0.831822115
+Add Cloud Cover Percentage Band,Image Band Addition,0.495184422,0.831822115,0.831822115
+Add Cloud Probability And Mask As Image Bands,Add Cloud Cover Percentage Band,0.705282927,0.953164601,0.953164601
+Add Tasseled Cap Transformation Bands,Image Band Addition,0.379125029,0.831822115,0.831822115
+Addition Of Time Band,Image Band Addition,0.583847046,0.831822115,0.831822115
+Add Date Bands To Images,Addition Of Time Band,0.51412183,0.953164601,0.953164601
+Spectral Values Extraction,Image Band Manipulation,0.234597951,0.764071772,0.764071772
+Multi-Temporal Synthesis,Spectral And Temporal Analysis,0.461958736,0.676527133,0.676527133
+Temporal Collection Creation,Multi-Temporal Synthesis,0.448671192,0.817471069,0.817471069
+Temporal Analysis,Multi-Temporal Synthesis,0.518696249,0.89089602,0.89089602
+Time Series Analysis,Temporal Analysis,0.654202998,0.918025841,0.918025841
+Generate Time Series Data For NDVI Changes,Time Series Analysis,0.591268599,0.896528853,0.896528853
+Trend Analysis,Time Series Analysis,0.492326617,0.929269514,0.929269514
+Detect Trends In Time Series Data,Trend Analysis,0.544762492,0.930652943,0.930652943
+Harmonic Trend Analysis,Trend Analysis,0.65610075,0.930652943,0.930652943
+Temporal Averaging,Temporal Analysis,0.731767178,0.861759225,0.861759225
+Spatial Analysis And Modeling,Spatial Analysis,0,0,0
+Buffer Analysis,Spatial Analysis And Modeling,0.387154847,0.45421238,0.45421238
+Buffer Creation,Buffer Analysis,0.841291726,0.906385234,0.906385234
+Buffering Features,Buffer Creation,0.799789786,0.861759225,0.861759225
+Buffering Edges,Buffer Creation,0.681932151,0.861759225,0.861759225
+Buffering Geometries,Buffer Creation,0.575380266,0.893804687,0.893804687
+Buffering Points,Buffering Geometries,0.709344864,0.953623222,0.953623222
+Buffering Points To Create Zones For Analysis,Buffering Points,0.790647745,0.930652943,0.930652943
+Buffering Points For Sample Expansion,Buffering Points,0.783051014,0.930652943,0.930652943
+Clip Images,Spatial Analysis And Modeling,0.161853611,0.491989764,0.491989764
+Spatial Clipping,Clip Images,0.69581759,0.854825523,0.854825523
+Clip Images To A Specific Region,Spatial Clipping,0.727905393,0.893804687,0.893804687
+Clip Temperature Data To Area Of Interest,Clip Images To A Specific Region,0.506301165,0.920762382,0.920762382
+Clip Population Data To Flood-Affected Regions,Clip Images To A Specific Region,0.499362767,0.920762382,0.920762382
+Clip Images To Specific Geographic Boundaries,Spatial Clipping,0.720108271,0.861759225,0.861759225
+Define And Utilize Multiple Polygon Geometries For Analysis,Spatial Clipping,0.307981819,0.861759225,0.861759225
+Generate Ratio Images,Clip Images,0.43428725,0.782276594,0.782276594
+Clip Precipitation Data,Clip Images,0.554913819,0.782276594,0.782276594
+Clip And Visualize,Clip Images,0.781687438,0.782276594,0.782276594
+Clip And Export,Clip Images,0.749907315,0.782276594,0.782276594
+Area Calculation,Spatial Analysis And Modeling,0.465585858,0.465294478,0.465585858
+Pixel Area Calculation,Area Calculation,0.721083403,0.817471069,0.817471069
+Water body Area Calculation,Area Calculation,0.66363728,0.817471069,0.817471069
+Flood Area Calculation,Area Calculation,0.669683754,0.817471069,0.817471069
+Urban Area Calculation,Area Calculation,0.7060377,0.817471069,0.817471069
+Affected Urban Area Calculation,Urban Area Calculation,0.916722775,0.936013437,0.936013437
+Boundary Extraction,Area Calculation,0.468100548,0.817471069,0.817471069
+Boundary Statistics Calculation,Boundary Extraction,0.656834066,0.936013437,0.936013437
+Interpolation,Spatial Analysis And Modeling,0.253269911,0.465294478,0.465294478
+Intersection Of Geometries,Interpolation,0.374100804,0.817471069,0.817471069
+Interpolation Of Values,Interpolation,0.870111763,0.817471069,0.870111763
+Cubic Interpolation,Interpolation,0.849849761,0.817471069,0.849849761
+Interpolate Time Series,Interpolation,0.68300122,0.817471069,0.817471069
+Interpolate Missing Values,Interpolation,0.686640024,0.817471069,0.817471069
+Threshold Application,Spatial Analysis And Modeling,0.261568606,0.483924592,0.483924592
+Thresholding For Classification,Threshold Application,0.646115482,0.792714228,0.792714228
+Thresholding For Identification,Threshold Application,0.68904835,0.792714228,0.792714228
+Apply Threshold To Identify Water Surface,Thresholding For Identification,0.58129245,0.936013437,0.936013437
+Apply Threshold To Identify Flood Extent,Apply Threshold To Identify Water Surface,0.79983747,0.953164601,0.953164601
+Threshold Index Values,Threshold Application,0.802396417,0.792714228,0.802396417
+Threshold Determination For Suitability,Threshold Application,0.622072637,0.792714228,0.792714228
+Threshold Condition Application,Threshold Application,0.916343212,0.792714228,0.916343212
+Threshold Computation,Threshold Application,0.904378772,0.823371314,0.904378772
+Elevation Thresholding,Threshold Computation,0.589909256,0.904385946,0.904385946
+Otsu Thresholding,Threshold Computation,0.599481821,0.904385946,0.904385946
+Feature Calculation,Spatial Analysis And Modeling,0.283684671,0.649613349,0.649613349
+Cloud Score Computation,Feature Calculation,0.410560191,0.606930964,0.606930964
+Analyzing Soil Properties,Feature Calculation,0.188952506,0.606930964,0.606930964
+Calculate Minimum Backscatter,Feature Calculation,0.325418323,0.606930964,0.606930964
+Computes Percentage Of Cloud Cover,Feature Calculation,0.254925579,0.606930964,0.606930964
+Count Cloud Probability Occurrences,Computes Percentage Of Cloud Cover,0.616286457,0.936013437,0.936013437
+Calculate Data For Specific Spectral Bands,Feature Calculation,0.31943503,0.606930964,0.606930964
+Calculates Area,Feature Calculation,0.524662912,0.606930964,0.606930964
+Calculates And Displays Area For Each Land Cover Category,Calculates Area,0.70157671,0.936013437,0.936013437
+Calculate Features To Refine Flood Analysis,Feature Calculation,0.469534814,0.606930964,0.606930964
+Calculates Total Flooded Area In Hectares,Feature Calculation,0.26160726,0.606930964,0.606930964
+Map Function To Calculate And Analysis Features,Feature Calculation,0.586188555,0.606930964,0.606930964
+Calculate Precipitation,Feature Calculation,0.382391542,0.634177319,0.634177319
+Calculate Annual Precipitation,Calculate Precipitation,0.909325957,0.904385946,0.909325957
+Calculate Total Precipitation,Calculate Precipitation,0.942234337,0.904385946,0.942234337
+Apply Scale Factors To Image,Feature Calculation,0.407196671,0.655041297,0.655041297
+Apply Scale Factors To Features,Apply Scale Factors To Image,0.734773576,0.880781001,0.880781001
+Scaling Image Values,Apply Scale Factors To Image,0.774507761,0.880781001,0.880781001
+Scaling index/indices values,Scaling Image Values,0.648982584,0.953164601,0.953164601
+Reflectance Value Scaling,Apply Scale Factors To Image,0.482581496,0.880781001,0.880781001
+Principal Component Analysis (PCA),Feature Calculation,0.363410503,0.606930964,0.606930964
+Calculate Irrecoverable Carbon Loss,Feature Calculation,0.169512212,0.606930964,0.606930964
+Vegetation Growth Analysis,Feature Calculation,0.209394202,0.672194811,0.672194811
+Secondary Scaling Factors Calculation,Vegetation Growth Analysis,0.258190691,0.861759225,0.861759225
+Secondary Vegetation Age Determination,Vegetation Growth Analysis,0.693628132,0.861759225,0.861759225
+Forest Area Calculation,Vegetation Growth Analysis,0.612585425,0.893804687,0.893804687
+Calculate Urban Green Density,Forest Area Calculation,0.405895799,0.920762382,0.920762382
+Forest Canopy Density Calculation,Forest Area Calculation,0.785088122,0.920762382,0.920762382
+Unmixing Analysis,Feature Calculation,0.346416026,0.634177319,0.634177319
+Spectral Unmixing,Unmixing Analysis,0.612199068,0.904385946,0.904385946
+Fractional Unmixing,Unmixing Analysis,0.562643409,0.904385946,0.904385946
+Vectorization,Feature Calculation,0.444401592,0.634177319,0.634177319
+Endmember extraction,Vectorization,0.121240795,0.904385946,0.904385946
+Endmember generation,Vectorization,-0.014193007,0.904385946,0.904385946
+Total Suspended Solids (TSS) Calculation,Feature Calculation,0.266957164,0.606930964,0.606930964
+Topographic Variable Extraction,Feature Calculation,0.439206541,0.634177319,0.634177319
+Elevation Data Extraction,Topographic Variable Extraction,0.739721954,0.904385946,0.904385946
+Topographic Wetness Index (TWI) Computation,Topographic Variable Extraction,0.648671031,0.904385946,0.904385946
+Texture Analysis,Feature Calculation,0.387789518,0.634177319,0.634177319
+Texture Calculation,Texture Analysis,0.87876904,0.904385946,0.904385946
+Texture Feature Extraction,Texture Analysis,0.819864333,0.904385946,0.904385946
+Temperature Analysis,Feature Calculation,0.186693802,0.606930964,0.606930964
+Temperature Calculation,Temperature Analysis,0.893400908,0.936013437,0.936013437
+Surface Temperature Calculation,Temperature Calculation,0.837156713,0.953164601,0.953164601
+Tasseled Cap index computation,Feature Calculation,0.327105403,0.606930964,0.606930964
+Surface water area computation,Feature Calculation,0.377269685,0.606930964,0.606930964
+Species richness analysis,Feature Calculation,0.104212046,0.606930964,0.606930964
+Species count analysis,Feature Calculation,0.256968737,0.606930964,0.606930964
+Solar position calculation,Feature Calculation,0.28795433,0.606930964,0.606930964
+Solar angle calculation,Feature Calculation,0.340085536,0.606930964,0.606930964
+Slope calculation,Feature Calculation,0.479468614,0.634177319,0.634177319
+Elevation slope calculation,Slope calculation,0.914454222,0.904385946,0.914454222
+Elevation statistics calculation,Slope calculation,0.678850055,0.904385946,0.904385946
+amplitude calculation,Feature Calculation,0.482427448,0.606930964,0.606930964
+Radiance calculation,Feature Calculation,0.316090226,0.606930964,0.606930964
+Photosynthetically active radiation (PAR) calculation,Feature Calculation,0.237319425,0.606930964,0.606930964
+Phenological characteristics computation,Feature Calculation,0.349930823,0.606930964,0.606930964
+Nighttime light data analysis,Feature Calculation,0.207238302,0.606930964,0.606930964
+Brightness Calculation,Feature Calculation,0.335984975,0.634177319,0.634177319
+Brightness Temperature Calculation,Brightness Calculation,0.904050589,0.904385946,0.904385946
+Brightness Temperature Difference Calculation,Brightness Calculation,0.884194136,0.904385946,0.904385946
+Feature Importance Analysis,Feature Calculation,0.579923451,0.634177319,0.634177319
+Feature Importance Extraction,Feature Importance Analysis,0.884669662,0.904385946,0.904385946
+Feature Importance Calculation,Feature Importance Analysis,0.897830963,0.904385946,0.904385946
+Entropy Computation,Feature Calculation,0.333987296,0.606930964,0.606930964
+Elevation Calculation,Feature Calculation,0.484029293,0.606930964,0.606930964
+Identify Objection,Spatial Analysis And Modeling,0.060770594,0.499435549,0.499435549
+Indentify Vegetation,Identify Objection,0.164392218,0.845065256,0.845065256
+Identify Data Related To Agricultural,Indentify Vegetation,0.405999631,0.861759225,0.861759225
+identify Forested And Deforested Areas,Indentify Vegetation,0.614749908,0.861759225,0.861759225
+Identify Tree Cover,Indentify Vegetation,0.524101675,0.861759225,0.861759225
+Calculate Tree Cover Area,Identify Tree Cover,0.838353336,0.953164601,0.953164601
+Identify Forest Loss,Indentify Vegetation,0.47603026,0.861759225,0.861759225
+Calculate Forest Loss,Identify Forest Loss,0.923401952,0.953164601,0.953164601
+Identifying Water Body,Identify Objection,0.164427519,0.772785691,0.772785691
+Identify Water And Flood Surfaces Using Indices,Identifying Water Body,0.70221746,0.936013437,0.936013437
+Identify Outlier Areas,Identify Objection,0.228047222,0.772785691,0.772785691
+Identify And Display Outlier Areas,Identify Outlier Areas,0.951118588,0.936013437,0.951118588
+Secondary Growth Identification,Identify Objection,0.182136491,0.772785691,0.772785691
+Identifying Homogeneous Areas,Identify Objection,0.251427233,0.772785691,0.772785691
+Identifying Burned Areas,Identify Objection,0.143288985,0.772785691,0.772785691
+Calculate Burned Area,Identifying Burned Areas,0.826465726,0.936013437,0.936013437
+Detection,Spatial Analysis And Modeling,0.259193033,0.589607435,0.589607435
+Hotspot Detection,Detection,0.536324978,0.667865074,0.667865074
+Detects Forest Loss,Detection,0.426610917,0.667865074,0.667865074
+Edge Detection,Detection,0.651908278,0.667865074,0.667865074
+Shadow Detection,Detection,0.656977117,0.667865074,0.667865074
+Calculate Detection Accuracy,Detection,0.741743743,0.667865074,0.741743743
+Burn Region Detection,Detection,0.464642078,0.667865074,0.667865074
+Detect Water,Detection,0.558065772,0.667865074,0.667865074
+Open Water Detection,Detect Water,0.780672371,0.936013437,0.936013437
+Mask Areas To Refine Flood Detection,Detection,0.506738424,0.667865074,0.667865074
+Urban Area Detection,Detection,0.680115759,0.696479265,0.696479265
+Detect Land Development Areas,Urban Area Detection,0.616148055,0.904385946,0.904385946
+Calculate Land Development Areas,Detect Land Development Areas,0.858590961,0.953164601,0.953164601
+Calculate Built-up Area,Calculate Land Development Areas,0.612587452,0.96355162,0.96355162
+Detect Urban Renewal Areas,Urban Area Detection,0.628324986,0.904385946,0.904385946
+Anomaly Detection,Detection,0.6939888,0.718314958,0.718314958
+Anomaly Calculation,Anomaly Detection,0.687778115,0.880781001,0.880781001
+Accumulating Anomalies,Anomaly Calculation,0.608645737,0.953164601,0.953164601
+Accumulating EVI Anomalies,Accumulating Anomalies,0.789304554,0.96355162,0.96355162
+Time Series Anomaly Detection,Anomaly Detection,0.807075262,0.880781001,0.880781001
+Thermal Anomaly Detection,Anomaly Detection,0.670230746,0.880781001,0.880781001
+Change Detection,Detection,0.677212119,0.846149607,0.846149607
+Calculate Ratio Between Recent And Historical Images,Change Detection,0.158592492,0.751120203,0.751120203
+Burn Area Index Calculation,Change Detection,0.0997262,0.890106935,0.890106935
+Burn Date Extraction,Burn Area Index Calculation,0.515755057,0.811531006,0.811531006
+Calculate Area Of Fire Scar,Burn Area Index Calculation,0.649943531,0.811531006,0.811531006
+Calculate Difference Normalized Burn Ratio (dNBR),Burn Area Index Calculation,0.606290579,0.811531006,0.811531006
+Detect Changes By Comparing Pre- And Post-Fire Images,Burn Area Index Calculation,0.288266003,0.811531006,0.811531006
+Compute Difference Between Pre- And Post-Fire NBR,Burn Area Index Calculation,0.275845855,0.811531006,0.811531006
+Calculate dNBR For Fire Severity,Burn Area Index Calculation,0.459016085,0.811531006,0.811531006
+Calculate Normalized Burn Ratio (NBR) For Images,Burn Area Index Calculation,0.645828724,0.811531006,0.811531006
+Calculate NBR For Pre-Fire Image,Burn Area Index Calculation,0.428001046,0.811531006,0.811531006
+Calculate NBR for Post-Fire Image,Burn Area Index Calculation,0.476234287,0.811531006,0.811531006
+Generates Visual Comparisons Of Pre- And Post-Event Images,Change Detection,0.269450158,0.751120203,0.751120203
+Land Cover Change Analysis,Change Detection,0.430265248,0.751120203,0.751120203
+Image Differencing,Change Detection,0.262831062,0.781877571,0.781877571
+Difference Calculation,Image Differencing,0.306293368,0.920762382,0.920762382
+Performs Image Differencing To Compare Changes,Image Differencing,0.754451394,0.920762382,0.920762382
+Run Algorithm For Change Detection,Change Detection,0.861472487,0.751120203,0.861472487
+Land Cover Change Detection,Run Algorithm For Change Detection,0.602675736,0.953164601,0.953164601
+Harmonization,Spatial Analysis And Modeling,0.260959417,0.45421238,0.45421238
+Harmonization Transformation,Harmonization,0.887826085,0.832642076,0.887826085
+Harmonization Of Reflectance,Harmonization,0.626344562,0.832642076,0.832642076
+Harmonization Of Images,Harmonization,0.614841878,0.832642076,0.832642076
+Harmonic Modeling,Harmonization,0.376514137,0.832642076,0.832642076
+Harmonic Regression Modeling,Harmonic Modeling,0.88851738,0.936013437,0.936013437
+Statistics Calculation,Spatial Analysis And Modeling,0.32415247,0.623614587,0.623614587
+"Maximum, Minimum And Mean Statistical Analysis",Statistics Calculation,0.482004851,0.777440612,0.777440612
+Compute Mean Values,"Maximum, Minimum And Mean Statistical Analysis",0.421821952,0.811617273,0.811617273
+Compute Averages,Compute Mean Values,0.701087952,0.953623222,0.953623222
+Calculating Annual Average,Compute Averages,0.524187505,0.930652943,0.930652943
+Calculate Long-Term Averages,Compute Averages,0.650506973,0.930652943,0.930652943
+Calculates Median Values,"Maximum, Minimum And Mean Statistical Analysis",0.404994696,0.85463057,0.85463057
+Calculate Median Filtering And Smoothing,Calculates Median Values,0.68622005,0.876969125,0.876969125
+Calculates Median Of Image Collection,Calculates Median Values,0.763509512,0.876969125,0.876969125
+Calculates Mean Of Image Collection,Calculates Median Values,0.399524391,0.876969125,0.876969125
+Compute Maximum Values,"Maximum, Minimum And Mean Statistical Analysis",0.572448313,0.78043955,0.78043955
+Compute Minimum Values,"Maximum, Minimum And Mean Statistical Analysis",0.589125514,0.78043955,0.78043955
+Focal Max And Min Calculations,"Maximum, Minimum And Mean Statistical Analysis",0.466233075,0.78043955,0.78043955
+"Maximum, Minimum And Mean Statistical Analysis (Temperature)","Maximum, Minimum And Mean Statistical Analysis",0.764125168,0.78043955,0.78043955
+"Maximum, Minimum And Mean Statistical Analysis (NDVI and Vegetation Indices)","Maximum, Minimum And Mean Statistical Analysis",0.713063419,0.78043955,0.78043955
+Count Pixels,Statistics Calculation,0.402676314,0.632553836,0.632553836
+Calculate And Export Statistics,Statistics Calculation,0.679355979,0.632553836,0.679355979
+Calculate Statistical Indicators Of Image Collection,Statistics Calculation,0.444463044,0.632553836,0.632553836
+Calculate Area Statistics,Statistics Calculation,0.67227459,0.681701335,0.681701335
+Area Degradation Assessment,Calculate Area Statistics,0.484317422,0.880781001,0.880781001
+Area Degradation Calculation,Calculate Area Statistics,0.531555474,0.880781001,0.880781001
+Area Statistics Calculation,Calculate Area Statistics,0.939029098,0.880781001,0.939029098
+Significance Testing,Statistics Calculation,0.450035065,0.632553836,0.632553836
+Sensitivity Calculation,Statistics Calculation,0.555315554,0.632553836,0.632553836
+Shortest Path Analysis,Statistics Calculation,0.17228201,0.632553836,0.632553836
+Image Fraction Calculation,Statistics Calculation,0.376549184,0.632553836,0.632553836
+Regression Analysis,Statistics Calculation,0.452423245,0.681701335,0.681701335
+Performs Linear Regression,Regression Analysis,0.725982606,0.880781001,0.880781001
+Performs Linear Fits,Regression Analysis,0.324481994,0.880781001,0.880781001
+Performs Linear Interpolation,Regression Analysis,0.263317406,0.880781001,0.880781001
+Radiometric Terrain Normalization,Statistics Calculation,0.191654086,0.632553836,0.632553836
+Quantifying Pixels,Statistics Calculation,0.432005376,0.632553836,0.632553836
+Pixel Count Calculation,Statistics Calculation,0.529038608,0.632553836,0.632553836
+Gradient Calculation,Statistics Calculation,0.410354018,0.632553836,0.632553836
+Distance Calculation,Statistics Calculation,0.518532991,0.632553836,0.632553836
+Euclidean Distance Calculation,Distance Calculation,0.827316761,0.936013437,0.936013437
+Geometric Index Calculation,Statistics Calculation,0.488550693,0.632553836,0.632553836
+Standard Deviation Calculation,Statistics Calculation,0.575587511,0.632553836,0.632553836
+Error Matrix Computation,Statistics Calculation,0.327528179,0.632553836,0.632553836
+Error Propagation Calculation,Statistics Calculation,0.484438151,0.632553836,0.632553836
+Generating Confusion Matrix,Statistics Calculation,0.242242232,0.632553836,0.632553836
+Cross-Polarization Calculation,Statistics Calculation,0.309937954,0.632553836,0.632553836
+Correlation Analysis,Statistics Calculation,0.431494623,0.681701335,0.681701335
+Auto-correlation Computation,Correlation Analysis,0.702730834,0.880781001,0.880781001
+Cross-correlation Calculation,Correlation Analysis,0.777381599,0.880781001,0.880781001
+Spatial Correlation,Correlation Analysis,0.751146674,0.880781001,0.880781001
+Calculates Spatial Correlation,Spatial Correlation,0.926837981,0.953164601,0.953164601
+Covariance Computation,Statistics Calculation,0.433295012,0.632553836,0.632553836
+Auto-covariance Computation,Covariance Computation,0.880272746,0.936013437,0.936013437
+Terrain Analysis,Spatial Analysis And Modeling,0.544135451,0.45421238,0.544135451
+Terrain Data Generation and Analysis,Terrain Analysis,0.883577883,0.906385234,0.906385234
+Terrain Occlusion Masking,Terrain Data Generation and Analysis,0.572008252,0.861759225,0.861759225
+Terrain Flattening,Terrain Data Generation and Analysis,0.680302262,0.861759225,0.861759225
+Terrain Slope Calculation,Terrain Data Generation and Analysis,0.705181181,0.861759225,0.861759225
+Hillshade Generation,Terrain Data Generation and Analysis,0.458573133,0.861759225,0.861759225
+Hydrological Analysis,Spatial Analysis And Modeling,0.432719052,0.425798356,0.432719052
+Watershed Delineation,Hydrological Analysis,0.584280968,0.873146705,0.873146705
+Hydrological Variables Calculation,Hydrological Analysis,0.874226272,0.873146705,0.874226272
+Image Correction,Spatial Analysis And Modeling,0.249773026,0.518994428,0.518994428
+Image Gap Filling,Image Correction,0.511460125,0.748496233,0.748496233
+Apply Techniques To  Correct And Fill Data Gaps,Image Gap Filling,0.510039687,0.936013437,0.936013437
+Band Correction,Image Correction,0.508015513,0.748496233,0.748496233
+Angle Correction,Image Correction,0.650602043,0.748496233,0.748496233
+Topographic Corrections,Image Correction,0.446778566,0.748496233,0.748496233
+Terrain Correction,Topographic Corrections,0.716996968,0.936013437,0.936013437
+Terrain Slope Correction,Terrain Correction,0.894642234,0.953164601,0.953164601
+Atmospheric Correction,Image Correction,0.558098674,0.748496233,0.748496233
+BRDF Correction,Image Correction,0.466152102,0.748496233,0.748496233
+Surface Correction,Image Correction,0.614237964,0.748496233,0.748496233
+Surface Reflectance Correction,Surface Correction,0.790981472,0.936013437,0.936013437
+Radar Data Correction,Image Correction,0.564647138,0.748496233,0.748496233
+Correction For Polarization,Image Correction,0.429269552,0.748496233,0.748496233
+Pixel Correction,Image Correction,0.727892697,0.748496233,0.748496233
+Cloud Correction Function,Image Correction,0.530340374,0.748496233,0.748496233
+Border Noise Correction,Image Correction,0.434649229,0.748496233,0.748496233
+Cluster Analysis,Spatial Analysis And Modeling,0.411983877,0.483924592,0.483924592
+Train A Clusterer,Cluster Analysis,0.556185663,0.792714228,0.792714228
+Compute Metric Within Clusters,Cluster Analysis,0.665709794,0.792714228,0.792714228
+Image Clustering,Cluster Analysis,0.709734678,0.823371314,0.823371314
+Segment Image Into Clusters,Image Clustering,0.823437631,0.904385946,0.904385946
+Cluster Image Data,Image Clustering,0.895255744,0.904385946,0.904385946
+Unsupervised Clustering,Cluster Analysis,0.701604903,0.792714228,0.792714228
+Remap Cluster Results To Simplified Classes,Cluster Analysis,0.671716213,0.792714228,0.792714228
+Time Series Clustering And Prediction,Cluster Analysis,0.690263331,0.792714228,0.792714228
+Classification And Machine Learning,Spatial Analysis And Modeling,0.243476361,0.644696334,0.644696334
+Classification,Classification And Machine Learning,0.772535145,0.813744137,0.813744137
+Prepares Images For Classification,Classification,0.649018288,0.722079642,0.722079642
+Burned Area Classification,Classification,0.456310809,0.775439341,0.775439341
+Classify And Evaluate Burned Areas,Burned Area Classification,0.878283203,0.896528853,0.896528853
+Severity Classification,Burned Area Classification,0.429329008,0.896528853,0.896528853
+Classify And Visualize Burn Severity,Severity Classification,0.519199431,0.96355162,0.96355162
+Classify Images Based On Pre And Post Fire Data,Burned Area Classification,0.531740069,0.896528853,0.896528853
+Built-up Area Classification,Classification,0.712665975,0.722079642,0.722079642
+Elevation Classification,Classification,0.651818991,0.722079642,0.722079642
+Slope Classification,Classification,0.635888696,0.722079642,0.722079642
+Support Vector Machine (SVM) Classification,Classification,0.541919053,0.722079642,0.722079642
+Classify Images Based On Training Data,Classification,0.535393596,0.722079642,0.722079642
+Classify Images Based On Trained Model,Classification,0.516765952,0.722079642,0.722079642
+Vegetation Cover Classification,Classification,0.552051663,0.722079642,0.722079642
+Fractional Vegetation Cover (FVC) Classification,Vegetation Cover Classification,0.749671936,0.953164601,0.953164601
+Land Cover Classification And Mapping,Classification,0.535310626,0.722079642,0.722079642
+Training And Sampling For Land Cover Classification,Classification,0.499103278,0.722079642,0.722079642
+Correct Classification Results Using Specified Conditions,Classification,0.713153958,0.722079642,0.722079642
+Apply Mask To Classification Results,Classification,0.64707011,0.722079642,0.722079642
+Evaluate Classifier Performance Using Confusion Matrix,Classification,0.497497737,0.722079642,0.722079642
+Reclassify,Classification,0.508923054,0.722079642,0.722079642
+Machine Learning Classification,Classification,0.773203552,0.775439341,0.775439341
+Random Forest Classification,Machine Learning Classification,0.56039995,0.896528853,0.896528853
+Decision Tree Classification,Machine Learning Classification,0.608464897,0.896528853,0.896528853
+SVM Classification,Machine Learning Classification,0.600794375,0.896528853,0.896528853
+Data Preparation For Training,Classification And Machine Learning,0.482807904,0.78380192,0.78380192
+Sampling Image,Data Preparation For Training,0.279946685,0.909164623,0.909164623
+Sampling Regions,Sampling Image,0.696244359,0.868684374,0.868684374
+Sampling Regions For Classifier Training,Sampling Regions,0.603973687,0.886108575,0.886108575
+Sampling Regions For Training Data,Sampling Regions,0.701157928,0.886108575,0.886108575
+Sampling Regions For Test Data,Sampling Regions,0.862511396,0.886108575,0.886108575
+Sampling Regions For Validation,Sampling Regions,0.864053369,0.886108575,0.886108575
+Sampling Data,Sampling Image,0.795252919,0.913378482,0.913378482
+Sample Collection,Sampling Data,0.737381995,0.841715216,0.841715216
+Sample Data Preparation,Sampling Data,0.666883469,0.841715216,0.841715216
+Training Data Sampling,Sampling Data,0.718592048,0.841715216,0.841715216
+Stratified Sampling,Sampling Data,0.753990173,0.841715216,0.841715216
+Random Sampling,Sampling Data,0.763818622,0.841715216,0.841715216
+Random Point Generation,Random Sampling,0.597920299,0.970437837,0.970437837
+Feature Sampling For Training,Sampling Data,0.596456707,0.841715216,0.841715216
+Feature Collection Sampling For Training,Sampling Data,0.563158214,0.841715216,0.841715216
+Split Data Into Training And Testing Sets,Data Preparation For Training,0.686121583,0.751120203,0.751120203
+Merge Feature Collections For Training Data,Data Preparation For Training,0.620015144,0.751120203,0.751120203
+Training Data Creation,Data Preparation For Training,0.88117671,0.751120203,0.88117671
+Feature Selection For Training,Data Preparation For Training,0.634325802,0.751120203,0.751120203
+Training Model,Classification And Machine Learning,0.396299601,0.745980601,0.745980601
+Trains And Applies Classifier,Training Model,0.466833144,0.894450623,0.894450623
+Training CART Classifier,Trains And Applies Classifier,0.615659297,0.846128427,0.846128427
+Decision Tree Modeling ,Trains And Applies Classifier,0.303321064,0.846128427,0.846128427
+Train And Apply SVM Classifier,Trains And Applies Classifier,0.623683035,0.846128427,0.846128427
+Train And Apply Random Forest Classifier,Trains And Applies Classifier,0.58103627,0.846128427,0.846128427
+Random Forest Regression Training,Trains And Applies Classifier,0.282793581,0.846128427,0.846128427
+Neural Network Application,Trains And Applies Classifier,0.326708138,0.846128427,0.846128427
+Image Convolution,Neural Network Application,0.307892144,0.96355162,0.96355162
+Fit Model To Image Collection,Training Model,0.241791084,0.789038142,0.789038142
+Unsupervised Learning,Training Model,0.42028752,0.789038142,0.789038142
+Supervised Classification,Training Model,0.335019499,0.789038142,0.789038142
+Machine Learning Model Training,Training Model,0.791240811,0.789038142,0.791240811
+Validation Data,Classification And Machine Learning,0.3436746,0.639051935,0.639051935
+Validating The Model,Validation Data,0.691413283,0.904385946,0.904385946
+Validating Classification,Validation Data,0.602305055,0.904385946,0.904385946
+Estimation,Spatial Analysis And Modeling,0.339427978,0.518994428,0.518994428
+Estimate Population Affected By Flood,Estimation,0.41465202,0.748496233,0.748496233
+Affected Urban Area Estimation,Estimation,0.57302624,0.748496233,0.748496233
+Estimation Of Sensible Heat Flux,Estimation,0.434632301,0.748496233,0.748496233
+Estimating Watersheds Area,Estimation,0.482862473,0.748496233,0.748496233
+Estimating Soil Properties,Estimation,0.417243779,0.748496233,0.748496233
+Estimating Phenology Metrics,Estimation,0.525383532,0.748496233,0.748496233
+Estimating Fire Accumulation,Estimation,0.389996022,0.748496233,0.748496233
+Estimating Soil Loss,Estimation,0.375813872,0.748496233,0.748496233
+Estimate Forest loss,Estimation,0.421455383,0.748496233,0.748496233
+Estimate Emissions,Estimation,0.519471824,0.748496233,0.748496233
+Estimate Carbon,Estimation,0.356482923,0.748496233,0.748496233
+Quality Assessment,Estimation,0.316940814,0.748496233,0.748496233
+Accuracy Assessment,Quality Assessment,0.678639412,0.936013437,0.936013437
+Validation And Accuracy Assessment,Accuracy Assessment,0.847356975,0.953164601,0.953164601
+Refinement Of Results,Spatial Analysis And Modeling,0.1731603,0.425798356,0.425798356
+Refinement Of Datasets,Refinement Of Results,0.55357343,0.873146705,0.873146705
+Refine Detection Results,Refinement Of Results,0.582261384,0.873146705,0.873146705
+Visualization And Output Generation,Spatial Analysis,0,0,0
+Data Visualization,Visualization And Output Generation,0.743962049,0.797972304,0.797972304
+Visualization Selection,Data Visualization,0.743691981,0.583274691,0.743691981
+Visualization Setup,Data Visualization,0.80034548,0.583274691,0.80034548
+Visualize Satellite Images,Data Visualization,0.600750446,0.66159899,0.66159899
+Visualize Images In Different Band Combinations,Visualize Satellite Images,0.483392596,0.845730578,0.845730578
+Displays Composite Image,Visualize Satellite Images,0.462799937,0.845730578,0.845730578
+Display Specific Spectral Bands And Colors,Visualize Satellite Images,0.206460357,0.845730578,0.845730578
+Display Selected Images,Visualize Satellite Images,0.461719692,0.845730578,0.845730578
+Display Selected Band,Visualize Satellite Images,0.162843883,0.845730578,0.845730578
+Animal Density Visualization,Data Visualization,0.574693143,0.583274691,0.583274691
+Visualize The Processed Data,Data Visualization,0.821631432,0.583274691,0.821631432
+Visualize NDVI Results,Data Visualization,0.526346326,0.609924031,0.609924031
+Visualize NDVI And Date Information,Visualize NDVI Results,0.764534056,0.904385946,0.904385946
+Creates Animation Of NDVI Over Time,Visualize NDVI Results,0.67851609,0.904385946,0.904385946
+Visualize Data Layers,Data Visualization,0.752686083,0.609924031,0.752686083
+Visualize Data Using Specific Band Combinations,Visualize Data Layers,0.491539448,0.904385946,0.904385946
+Visualize Multi-Temporal Satellite Data,Visualize Data Layers,0.524565637,0.904385946,0.904385946
+Visualize Temporal changes,Data Visualization,0.553667367,0.609924031,0.609924031
+Visualize Satellite Imagery Changes Over Time,Visualize Temporal changes,0.625758588,0.904385946,0.904385946
+Visualize Changes In Forest Cover Over Time,Visualize Temporal changes,0.597940445,0.904385946,0.904385946
+Visualize Data With Specific Color Palettes,Data Visualization,0.604774535,0.583274691,0.604774535
+Visualize True Color Images,Data Visualization,0.573627174,0.583274691,0.583274691
+Visualize Radar Images,Data Visualization,0.599453211,0.583274691,0.599453211
+Visualize Radar Images With Specific Visualization Parameters,Visualize Radar Images,0.914398015,0.936013437,0.936013437
+Visualize Boundary,Data Visualization,0.540900171,0.583274691,0.583274691
+Visualize Fire Data,Data Visualization,0.611142755,0.630358349,0.630358349
+Load and Display Pre- And Post-Fire Satellite Image,Visualize Fire Data,0.359152108,0.880781001,0.880781001
+Visualize Burned Areas,Visualize Fire Data,0.714066386,0.880781001,0.880781001
+Visualize Disaster Impacts,Visualize Fire Data,0.586856723,0.880781001,0.880781001
+Visualize Classified Data And Indices,Data Visualization,0.751159728,0.583274691,0.751159728
+Visualize Tree Loss,Data Visualization,0.532793701,0.583274691,0.583274691
+Visualizing Land Cover,Data Visualization,0.551424742,0.609924031,0.609924031
+Visualize Vegetation Data,Visualizing Land Cover,0.688800395,0.936712059,0.936712059
+Visualize Forest Cover,Visualize Vegetation Data,0.754010439,0.920762382,0.920762382
+Visualize Tree Cover,Visualize Vegetation Data,0.692082226,0.920762382,0.920762382
+Visualize Terrain Features,Data Visualization,0.593309581,0.609924031,0.609924031
+Visualize Elevation Data (DEM),Visualize Terrain Features,0.625444114,0.904385946,0.904385946
+Display Canopy Height,Visualize Terrain Features,0.3061001,0.904385946,0.904385946
+Visualize Precipitation Data,Data Visualization,0.600929618,0.583274691,0.600929618
+Visualize Clustered Data,Data Visualization,0.705208838,0.583274691,0.705208838
+Enhancing Image Visualization,Data Visualization,0.758327007,0.583274691,0.758327007
+Map Visualization Of Feature Collection,Data Visualization,0.703381062,0.705659206,0.705659206
+Visualize Temperature Data,Map Visualization Of Feature Collection,0.352548301,0.798318753,0.798318753
+Generate Spectral Signature Chart,Map Visualization Of Feature Collection,0.255985558,0.798318753,0.798318753
+Display Classified Image and Indices,Map Visualization Of Feature Collection,0.43212527,0.798318753,0.798318753
+Display Land Cover,Map Visualization Of Feature Collection,0.343605459,0.798318753,0.798318753
+Display Carbon Data,Map Visualization Of Feature Collection,0.211463407,0.87299277,0.87299277
+Display Manageable Carbon,Display Carbon Data,0.799108326,0.876969125,0.876969125
+Display Irrecoverable Carbons,Display Carbon Data,0.794949412,0.876969125,0.876969125
+Display Total Carbon,Display Carbon Data,0.878870964,0.876969125,0.878870964
+Display Vulnerable Carbon,Display Carbon Data,0.767999887,0.876969125,0.876969125
+Display Distance,Map Visualization Of Feature Collection,0.230415121,0.798318753,0.798318753
+Display Interactive Map,Data Visualization,0.417705089,0.583274691,0.583274691
+Generate Visualizations and Charts For Analysis,Data Visualization,0.721977293,0.685710967,0.721977293
+Generate Visualizations And Statistical Charts For Classification Results,Generate Visualizations and Charts For Analysis,0.860825121,0.819500269,0.860825121
+Generating Histograms,Generate Visualizations and Charts For Analysis,0.505628407,0.851149375,0.851149375
+Generate And Display a Histogram,Generating Histograms,0.918713331,0.920762382,0.920762382
+Generate Histograms For Image Data Analysis,Generating Histograms,0.841801643,0.920762382,0.920762382
+Generate And Display A Scatter Plot,Generate Visualizations and Charts For Analysis,0.553601503,0.819500269,0.819500269
+Generate Reflectance Charts,Generate Visualizations and Charts For Analysis,0.630806684,0.819500269,0.819500269
+Generate ColumnChart For Precipitation,Generate Visualizations and Charts For Analysis,0.463861734,0.819500269,0.819500269
+Create A Thematic Map,Generate Visualizations and Charts For Analysis,0.540384173,0.819500269,0.819500269
+Link Maps For Synchronized Viewing,Data Visualization,0.338549405,0.583274691,0.583274691
+Render,Data Visualization,0.374425411,0.583274691,0.583274691
+Remapping,Data Visualization,0.31007874,0.609924031,0.609924031
+Remapping Land Cover Classes,Remapping,0.533889055,0.904385946,0.904385946
+Remapping Values,Remapping,0.862237155,0.904385946,0.904385946
+Image Mapping,Data Visualization,0.537732065,0.647176518,0.647176518
+Mapping Land Cover,Image Mapping,0.613076866,0.861759225,0.861759225
+Mapping Cloud Cover,Image Mapping,0.53159982,0.861759225,0.861759225
+Mapping Index/Indices,Image Mapping,0.51989305,0.861759225,0.861759225
+Mapping Features,Image Mapping,0.691365719,0.861759225,0.861759225
+Legend Creation,Data Visualization,0.184595734,0.583274691,0.583274691
+Layer Addition To Map,Data Visualization,0.3088395,0.609924031,0.609924031
+Add A Feature Collection,Layer Addition To Map,0.3394427,0.904385946,0.904385946
+Add Land Use Layer,Layer Addition To Map,0.521909595,0.904385946,0.904385946
+Annotate Images,Data Visualization,0.423187822,0.583274691,0.583274691
+Data Conversion,Visualization And Output Generation,0.387198299,0.596934892,0.596934892
+Converts Joined Data To Image Collection,Data Conversion,0.563704669,0.782276594,0.782276594
+Convert And Format Spatial Data For Export,Data Conversion,0.518225193,0.782276594,0.782276594
+Convert Radar Backscatter,Data Conversion,0.351193726,0.782276594,0.782276594
+Distance Transformation,Data Conversion,0.404726684,0.782276594,0.782276594
+Tasseled Cap Transformation,Data Conversion,0.271732748,0.782276594,0.782276594
+Add Tasseled Cap Transformation,Tasseled Cap Transformation,0.960155606,0.936013437,0.960155606
+Conversion Feature Collection,Data Conversion,0.621556699,0.782276594,0.782276594
+Convert Image,Data Conversion,0.533985734,0.812801783,0.812801783
+Convert Vector To Raster,Convert Image,0.479285032,0.904385946,0.904385946
+Convert Raster To Vector,Convert Image,0.46356222,0.904385946,0.904385946
+Convert Flood Detection Results To Vector Polygons,Convert Raster To Vector,0.489042103,0.953164601,0.953164601
+Export Processed Data,Visualization And Output Generation,0.403947234,0.676545879,0.676545879
+Export Processed Data To Drive,Export Processed Data,0.859220445,0.696774271,0.859220445
+Export Processed Data To Google Drive,Export Processed Data,0.703433096,0.696774271,0.703433096
+Export Results,Export Processed Data,0.812330544,0.838463015,0.838463015
+Export Features,Export Results,0.734885395,0.939746644,0.939746644
+Exporting Prediction Results,Export Features,0.618174434,0.801931818,0.801931818
+Export Burned Area,Export Features,0.445151836,0.801931818,0.801931818
+Export Burn Severity And Area Data,Export Burned Area,0.788797796,0.96355162,0.96355162
+Export Flood Extent,Export Features,0.566972315,0.801931818,0.801931818
+Export The Change Detection,Export Features,0.591824532,0.801931818,0.801931818
+Export Species List,Export Features,0.61048466,0.801931818,0.801931818
+Export Species Richness,Export Features,0.541991532,0.801931818,0.801931818
+Export Land Cover Data,Export Features,0.570734859,0.801931818,0.801931818
+Export Fitted Parameters And Phases,Export Features,0.5697366,0.801931818,0.801931818
+Export Classification Results,Export Features,0.699817181,0.801931818,0.801931818
+Export Surface Temperature,Export Features,0.390228659,0.801931818,0.801931818
+Derive Land Surface Temperature Using Thermal Properties,Export Surface Temperature,0.644597828,0.96355162,0.96355162
+Export Time Series Data,Export Processed Data,0.566453218,0.696774271,0.696774271
+Export Clipped Data,Export Processed Data,0.794926524,0.696774271,0.794926524
+Export Training Data,Export Processed Data,0.683731496,0.696774271,0.696774271
+Export Validation Result,Export Processed Data,0.620202541,0.696774271,0.696774271
+Export Validation Information,Export Validation Result,0.94836241,0.936013437,0.94836241
+Export Statistics,Export Processed Data,0.685868144,0.696774271,0.696774271
+Export Sampled Data,Export Processed Data,0.850601733,0.696774271,0.850601733
+Export Training Samples,Export Sampled Data,0.554790437,0.936013437,0.936013437
+Export Raster Data,Export Processed Data,0.636002183,0.696774271,0.696774271
+Export Geospatial Data,Export Processed Data,0.606008947,0.696774271,0.696774271
+Export Anomaly Data,Export Processed Data,0.651562929,0.696774271,0.696774271
+Export Processed Images,Visualization And Output Generation,0.433643013,0.620433085,0.620433085
+Export Processed Images To Drive,Export Processed Images,0.901685178,0.756007828,0.901685178
+Export Processed Images To Google Drive,Export Processed Images,0.791190863,0.756007828,0.791190863
+Export Tiled Images,Export Processed Images,0.75315541,0.756007828,0.756007828
+Export Composite Image,Export Processed Images,0.766768396,0.756007828,0.766768396
+Export Clustered Image,Export Processed Images,0.744710207,0.756007828,0.756007828
+Export Clipped Image,Export Processed Images,0.788199008,0.756007828,0.788199008
+Export Selected Image,Export Processed Images,0.783650339,0.756007828,0.783650339
+Export Mosaic,Export Processed Images,0.609422624,0.756007828,0.756007828
+Export Terrain Layers,Export Processed Images,0.495407134,0.756007828,0.756007828
+Export Masked Image,Export Processed Images,0.653406739,0.756007828,0.756007828
+Exporting Classified Images,Export Processed Images,0.774931967,0.756007828,0.774931967
+Exporting Classified Raster,Exporting Classified Images,0.610332191,0.936013437,0.936013437
+Time Series Graphs And Statistics,Visualization And Output Generation,0.209961355,0.566685126,0.566685126
+Generate Time Series Charts,Time Series Graphs And Statistics,0.721775353,0.90710796,0.90710796
+Generate Time Series Charts For NDVI,Generate Time Series Charts,0.800943613,0.845730578,0.845730578
+Generate Time Series Charts Of Temperature Data,Generate Time Series Charts,0.78160274,0.845730578,0.845730578
+Generate Time Series Charts Of Corrected Data,Generate Time Series Charts,0.822811544,0.845730578,0.845730578
+Generate Time Series Charts Of Water Area,Generate Time Series Charts,0.748929203,0.845730578,0.845730578
+Generate Time Series Charts Of Cloud Scores,Generate Time Series Charts,0.658672392,0.845730578,0.845730578
+,,0.571646813,0.788326865,0.795337401

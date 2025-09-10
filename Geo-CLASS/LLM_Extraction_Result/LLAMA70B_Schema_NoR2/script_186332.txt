@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover classification and crop type identification in Maharashtra, India"],
+  "DataSource": ["MODIS/006/MOD09Q1"],
+  "Function": ["Clipping image collection to a specific region", "Calculating NDVI from image bands", "Creating a multiband image from time-series data", "Training a clusterer for unsupervised classification", "Clustering input data using a trained clusterer", "Merging classes based on specific criteria", "Creating a refined classification layer", "Generating a mosaic from multiple classification layers"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["MODIS/006/MOD09Q1"],
+        "Function": ["Clipping image collection to a specific region", "Calculating NDVI from image bands", "Creating a multiband image from time-series data"]
+    },
+    "relation_2": {
+        "DataSource": ["MODIS/006/MOD09Q1"],
+        "Function": ["Training a clusterer for unsupervised classification", "Clustering input data using a trained clusterer", "Merging classes based on specific criteria", "Creating a refined classification layer", "Generating a mosaic from multiple classification layers"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4081, 'completion_tokens': 293, 'total_tokens': 4374}

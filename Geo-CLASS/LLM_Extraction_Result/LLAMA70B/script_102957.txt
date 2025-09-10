@@ -1,0 +1,27 @@
+Entity Recognition:
+```
+{
+  "Theme": ["Land cover analysis in Los Angeles County"],
+  "DataSource": ["LANDSAT/LC09/C02/T1_L2", "FAO/GAUL_SIMPLIFIED_500m/2015/level2"],
+  "Function": ["Filter image collection by spatial bounds", "Mask clear pixels", "Mask cloud and cloud shadow", "Convert DN to SR", "Filter image collection by time window", "Median composite to convert IC to Image"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC09/C02/T1_L2"],
+        "Function": ["Filter image collection by spatial bounds", "Mask clear pixels", "Mask cloud and cloud shadow", "Convert DN to SR", "Filter image collection by time window", "Median composite to convert IC to Image"]
+    },
+    "relation_2": {
+        "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2"],
+        "Function": ["Filter image collection by spatial bounds", "Mask clear pixels", "Mask cloud and cloud shadow", "Convert DN to SR", "Filter image collection by time window", "Median composite to convert IC to Image"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2770, 'completion_tokens': 305, 'total_tokens': 3075}

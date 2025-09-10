@@ -1,0 +1,22 @@
+{
+    "Summary": [
+        "Script extracts NDVI from Sentinel-2 images and visualizes it with a gradient bar, frame, and scalebar."
+    ],
+    "Theme": [
+        "NORMALIZED DIFFERENCE VEGETATION INDEX (NDVI)"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2_SR"
+    ],
+    "Function": [
+        "NDWI (Normalized Difference Water Index calculation)",
+        "Cloud Masking And Quality Filtering",
+        "Spatial Analysis",
+        "Image Band Manipulation",
+        "NDWI (Normalized Difference Water Index calculation)",
+        "Exporting And Data Conversion",
+        "Data Visualization And Mapping",
+        "Data Visualization And Mapping",
+        "Data Visualization And Mapping"
+    ]
+}

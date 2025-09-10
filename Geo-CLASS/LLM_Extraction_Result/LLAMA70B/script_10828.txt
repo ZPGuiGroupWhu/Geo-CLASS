@@ -1,0 +1,33 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Vegetation Index Analysis"],
+  "DataSource": ["MODIS/006/MOD09A1", "users/kongdd/public:Math/pkg_smooth.js", "users/kongdd/public:pkg_vis.js"],
+  "Function": ["Cloud masking", "NDVI calculation", "Linear interpolation", "Image collection filtering", "Region reduction", "Feature collection iteration", "Table export"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["MODIS/006/MOD09A1"],
+        "Function": ["Cloud masking", "NDVI calculation", "Linear interpolation"]
+    },
+    "relation_2": {
+        "DataSource": ["users/kongdd/public:Math/pkg_smooth.js"],
+        "Function": ["Linear interpolation", "Image collection filtering"]
+    },
+    "relation_3": {
+        "DataSource": ["users/kongdd/public:pkg_vis.js"],
+        "Function": ["Region reduction", "Feature collection iteration", "Table export"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3590, 'completion_tokens': 273, 'total_tokens': 3863}

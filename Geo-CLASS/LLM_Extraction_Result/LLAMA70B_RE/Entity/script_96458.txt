@@ -1,0 +1,24 @@
+{
+    "Theme": [
+        "Rice paddy monitoring",
+        "Urban area detection",
+        "Water area detection",
+        "Vegetation monitoring"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2",
+        "COPERNICUS/S1_GRD",
+        "users/eeranyartrodrigo/ferrocarriles/estaciones_prospectadas_area",
+        "WWF/HydroSHEDS/03VFDEM"
+    ],
+    "Function": [
+        "Image collection filtering",
+        "Cloud removal",
+        "Median calculation",
+        "Normalized difference index calculation",
+        "Thresholding",
+        "Image masking",
+        "Terrain analysis",
+        "Slope calculation"
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "Theme": [
+        "Land cover classification and cloud cover analysis"
+    ],
+    "DataSource": [
+        "LANDSAT/LC8_SR",
+        "LANDSAT/LE7_SR",
+        "LANDSAT/LT5_SR",
+        "USGS/NED",
+        "ft:1_RZgjlcqixp-L9hyS6NYGqLaKOlnhSC35AB5M5Ll"
+    ],
+    "Function": [
+        "Image collection filtering",
+        "Cloud cover calculation",
+        "Image classification",
+        "Image masking",
+        "Feature collection creation"
+    ]
+}

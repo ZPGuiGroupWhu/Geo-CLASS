@@ -1,0 +1,175 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var table = ee.FeatureCollection("users/cxliu2015/Arctic_treeline_Project_Russia");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+// This codes are used for count the No. of valid Landsat observations for a region.
+
+// Simple regression of year versus NDVI.
+
+
+var regionName = 'Russia';
+var StartYear = 1989; 
+var EndYear = 1989;
+
+
+var region = table;
+var empty = ee.Image().byte(); 
+var outline = empty.paint({
+  featureCollection: region,
+  color: 1,
+  width: 1 
+});
+Map.addLayer(outline,{palette: '00fbff'}, 'region');
+/*------------------------------ IMPORT STUDY AREA -------------------------- */
+// https://www.google.com/fusiontables/DataSource?docid=1Lphn5PR9YbneoY4sPkKGMUOJcurihIcCx0J82h7U
+
+// WRS1 is for MSS satellites (Landsat 1-3), and WRS2 is for non-MSS (LS 4-8)
+
+var wrs2_areas = ee.FeatureCollection("ft:1XXheLy1fnGiQKRtkcP9iD9s3gqdcx2PqtkKJP7Ig", "geometry");
+
+/* ----------------------------- IMPORT IMAGERY ------------------------------*/
+
+var lt4 = ee.ImageCollection("LANDSAT/LT04/C01/T1_TOA").filterBounds(region);
+var lt5 = ee.ImageCollection("LANDSAT/LT05/C01/T1_TOA").filterBounds(region);
+var le7 = ee.ImageCollection("LANDSAT/LE07/C01/T1_TOA").filterBounds(region);
+var lc8 = ee.ImageCollection("LANDSAT/LC08/C01/T1_TOA").filterBounds(region);
+// Functions
+// Cloud removal function for TM and later sensors.
+var maskClouds = function(image) {
+  var scored = ee.Algorithms.Landsat.simpleCloudScore(image);
+  return image.updateMask(scored.select(['cloud']).lt(20));
+      // Lower the number in the above line to more-strictly find clouds
+};
+// Function to cloud mask from the quality band of Landsat 8.
+var maskCloudLC08 = function (image) {
+  var qa = image.select('BQA');
+  // Make a mask to exclude cloudy pixels.
+  var mask = qa.bitwiseAnd(ee.Number(2).pow(12).int()).eq(1).and(  // cirrus
+             qa.bitwiseAnd(ee.Number(2).pow(13).int()).eq(1)).or(  // cirrus
+             qa.bitwiseAnd(ee.Number(2).pow(4).int()).neq(0)).and( // cloud
+             qa.bitwiseAnd(ee.Number(2).pow(7).int()).neq(0))      // cloud
+             // Negate this.  Don't want high confidence of cloud or cirrus.
+             .not();
+  return image.updateMask(mask);
+};
+// Function to cloud mask from the quality band of Landsat 4/5/7.
+var maskCloudLT5 = function (image) {
+  var qa = image.select('BQA');
+  // Make a mask to exclude cloudy pixels.
+  var mask = qa.bitwiseAnd(ee.Number(2).pow(4).int()).neq(0).and( // cloud
+             qa.bitwiseAnd(ee.Number(2).pow(7).int()).neq(0))      // cloud
+             // Negate this.  Don't want high confidence of cloud or cirrus.
+             .not();
+  return image.updateMask(mask);
+  };
+  
+var lt4Collection = lt4
+  .filterBounds(region)
+  .filterDate('1984-01-01', '1993-12-31')
+  .filter(ee.Filter.calendarRange(StartYear, EndYear, 'year'))
+  .filter(ee.Filter.calendarRange(7, 8, 'month'))
+  .map(maskClouds)
+  .map(function(image) {
+    return image.addBands(image.normalizedDifference(['B4', 'B3']).rename('NDVI'))
+  .select(["B1", "B2", "B3", "B4", "NDVI"])
+  .rename(["B", "G", "R", "IR", "NDVI"]);
+  });
+var lt5Collection = lt5
+  .filterBounds(region)
+  .filterDate('1984-01-01', '2011-12-31')
+  .filter(ee.Filter.calendarRange(StartYear, EndYear, 'year'))
+  .filter(ee.Filter.calendarRange(7, 8, 'month'))
+  .map(maskClouds)
+  .map(function(image) {
+    return image.addBands(image.normalizedDifference(['B4', 'B3']).rename('NDVI'))
+  .select(["B1", "B2", "B3", "B4", "NDVI"])
+  .rename(["B", "G", "R", "IR", "NDVI"]);
+  });
+
+var le7Collection = le7
+  .filterBounds(region)
+  .filterDate('1999-01-01', Date.now())
+  .filter(ee.Filter.calendarRange(StartYear, EndYear, 'year'))
+  .filter(ee.Filter.calendarRange(7, 8, 'month'))
+  .map(maskClouds)
+  .sort('system:time_start', false)
+  .map(function(image) {
+    return image.addBands(image.normalizedDifference(['B4', 'B3']).rename('NDVI'))
+  .select(["B1", "B2", "B3", "B4", "NDVI"])
+  .rename(["B", "G", "R", "IR", "NDVI"]);
+  });
+
+
+var lc8Collection = lc8
+  .filterBounds(region)
+  .filterDate('2013-01-01', Date.now())
+  .filter(ee.Filter.calendarRange(StartYear, EndYear, 'year'))
+  .filter(ee.Filter.calendarRange(7, 8, 'month'))
+  .map(maskClouds)
+  .map(function(image) {
+    return image.addBands(image.normalizedDifference(['B5', 'B4']).rename('NDVI'))
+  .select(["B2", "B3", "B4", "B5", "NDVI"])
+  .rename(["B", "G", "R", "IR", "NDVI"]);
+  });
+
+// harmonize Landsat 8 and Landsat 7 according to Roy 
+//Roy, David P., et al. "Characterization of Landsat-7 to Landsat-8 reflective wavelength and normalized difference 
+//vegetation index continuity." Remote sensing of Environment 185 (2016): 57-70.
+
+
+
+
+
+var oli2tm = function(oli){
+  var slopes = ee.Image.constant([0.8155, 0.8911,0.9129,0.7660,0.9690]);
+  var itcp = ee.Image.constant([0.0219, 0.0128, 0.0128, 0.0438,-0.0110]);
+  var y = oli.select(["B", "G", "R", "IR", "NDVI"])
+          .multiply(slopes).add(itcp)
+          .set('system:time_start', oli.get('system:time_start'))
+  return y
+}
+var lc8Collection = lc8Collection.map(oli2tm);
+// Merge all the collections into one.
+var lsCollection = lt4Collection
+    .merge(lt5Collection)
+    .merge(le7Collection)
+    .merge(lc8Collection);
+
+/*------------------ EXPORTING INPUT IMAGE COUNT IMAGES ----------------------*/
+var exportImg = lsCollection
+    .filter(ee.Filter.calendarRange(StartYear, EndYear, 'year'))
+    
+    
+    
+    .filter(ee.Filter.calendarRange(7, 8, 'month')) // For summer images only
+    .select("B")
+    .reduce(ee.Reducer.count());
+
+var exportImg1 = lsCollection
+    .filter(ee.Filter.calendarRange(StartYear, StartYear, 'year'))
+    
+    
+    
+    .filter(ee.Filter.calendarRange(7, 7, 'month')); // For summer images only
+print(exportImg1)
+// Save each count image to your Google Drive
+var ndviPalette = ['FFFFFF', 'CE7E45', 'DF923D', 'F1B555', 'FCD163', '99B718',
+               '74A901', '66A000', '529400', '3E8601', '207401', '056201',
+               '004C00', '023B01', '012E01', '011D01', '011301'];
+ var vizParams = {
+  min: 1,
+  max: 34,
+  palette: ndviPalette
+};
+Map.addLayer(exportImg,vizParams,'exportImg');
+
+Export.image.toDrive({
+  image: exportImg,
+  description: "imgCount_EPSG_"+regionName+'_'+StartYear+'_'+EndYear, // Be careful here with multi-year MSS
+  
+  
+  folder: 'ArcticNDVITrendSlope',
+  region:table,
+  crs:'EPSG:5940',  //EPSG Russia Polar Stereographic
+  scale: 3000, // Note the large scale; using the original scale didn't work
+  maxPixels: 1e9
+});

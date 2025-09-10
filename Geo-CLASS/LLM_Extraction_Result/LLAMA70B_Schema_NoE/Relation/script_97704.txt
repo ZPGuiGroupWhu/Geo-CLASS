@@ -1,0 +1,47 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "NOAA/NGDC/ETOPO1",
+            "NASA/ASTER_GED/AG100_003",
+            "OSU/GIMP/DEM"
+        ],
+        "Function": [
+            "Clip and select DEM data",
+            "Visualize DEM data",
+            "Export DEM data to Drive"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "CPOM/CryoSat2/ANTARCTICA_DEM",
+            "JAXA/ALOS/AW3D30_V1_1"
+        ],
+        "Function": [
+            "Clip and select DEM data",
+            "Create histogram of DEM data"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "USGS/GMTED2010",
+            "USGS/SRTMGL1_003",
+            "USGS/GTOPO30"
+        ],
+        "Function": [
+            "Visualize DEM data",
+            "Export DEM data to Drive",
+            "Display histogram of DEM data"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "WWF/HydroSHEDS/03CONDEM",
+            "WWF/HydroSHEDS/30CONDEM",
+            "WWF/HydroSHEDS/15CONDEM"
+        ],
+        "Function": [
+            "Create histogram of DEM data",
+            "Display histogram of DEM data"
+        ]
+    }
+}

@@ -1,0 +1,10 @@
+{
+  "relation_1": {
+    "DataSource": ["LANDSAT/LT05/C02/T1_L2", "LANDSAT/LE07/C02/T1_L2", "LANDSAT/LC08/C02/T1_L2"],
+    "Function": ["Filter image collection by date", "Apply scale factors to images", "Rename image bands", "Perform spectral mixture analysis", "Compute cloud score", "Process images", "Merge image collections", "Filter images by date and bounds", "Calculate probabilities", "Create quality mosaic", "Export image to asset"]
+  },
+  "relation_2": {
+    "DataSource": ["projects/mapbiomas-raisg/PRODUCTOS/AGUA/DATOS_AUXILIARES/TEMP/bigGrids_Suriname"],
+    "Function": ["Filter images by date and bounds", "Create quality mosaic", "Export image to asset"]
+  }
+}

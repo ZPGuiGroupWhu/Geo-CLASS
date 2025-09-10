@@ -1,0 +1,37 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/zolokiala/buffer"
+        ],
+        "Function": [
+            "Cloud masking using Sentinel-2 QA band"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Cloud masking using Sentinel-2 QA band",
+            "Vegetation index computation"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "users/zolokiala/training",
+            "users/zolokiala/test"
+        ],
+        "Function": [
+            "Image classification using SVM",
+            "Accuracy assessment"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "users/zolokiala/parthenium1"
+        ],
+        "Function": [
+            "Vegetation index computation"
+        ]
+    }
+}

@@ -1,0 +1,5 @@
+{
+  "Theme": ["Water detection and river boundary analysis"],
+  "DataSource": ["COPERNICUS/S2", "JRC/GSW1_0/MonthlyHistory", "users/christinacorbane/MT_comp_proj"],
+  "Function": ["Filtering image collection by geometry", "Resampling image", "Calculating normalized difference water index", "Applying Otsu thresholding", "Detecting edges using Canny algorithm", "Computing threshold using Otsu method"]
+}

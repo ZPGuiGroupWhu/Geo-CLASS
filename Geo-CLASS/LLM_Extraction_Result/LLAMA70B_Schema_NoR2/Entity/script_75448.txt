@@ -1,0 +1,5 @@
+{
+  "Theme": ["Lake surface area analysis over time"],
+  "DataSource": ["LANDSAT/LT05/C01/T1"],
+  "Function": ["Filtering image collection by boundary", "Generating annual composite images", "Calculating NDWI for composite images", "Segmenting waterbody using Otsu method", "Calculating area of segmented waterbody"]
+}

@@ -1,0 +1,23 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/thao226355/share/VietNam_Ranh_gioi_tinh"
+        ],
+        "Function": [
+            "Cloud Masking And Quality Filtering",
+            "Visualization And Output Generation",
+            "NDVI (Normalized Difference Vegetation Index calculation)",
+            "Vegetation And Water Indices Calculation"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2_SR"
+        ],
+        "Function": [
+            "Visualization And Output Generation",
+            "NDVI (Normalized Difference Vegetation Index calculation)",
+            "Vegetation And Water Indices Calculation"
+        ]
+    }
+}

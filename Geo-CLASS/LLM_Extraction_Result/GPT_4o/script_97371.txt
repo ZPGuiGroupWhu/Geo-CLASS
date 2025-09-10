@@ -1,0 +1,29 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Rice and wheat crop analysis", "NDVI time series analysis"],
+  "DataSource": ["FAO/GAUL/2015/level1", "USGS/GFSAD1000_V0", "COPERNICUS/S2_SR"],
+  "Function": ["Filter image collection by date", "Mask clouds and shadows", "Add NDVI band", "Filter points by region", "Generate sample points", "Calculate median composite", "Create time series chart", "Export time series to CSV", "Calculate maximum NDVI", "Format data for export", "Merge observations by date"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["FAO/GAUL/2015/level1"],
+    "Function": ["Filter points by region", "Generate sample points"]
+  },
+  "relation_2": {
+    "DataSource": ["USGS/GFSAD1000_V0"],
+    "Function": ["Generate sample points"]
+  },
+  "relation_3": {
+    "DataSource": ["COPERNICUS/S2_SR"],
+    "Function": ["Filter image collection by date", "Mask clouds and shadows", "Add NDVI band", "Calculate median composite", "Create time series chart", "Export time series to CSV", "Calculate maximum NDVI", "Format data for export", "Merge observations by date"]
+  }
+}
+```
+
+Total_Token_Usage:
+7190

@@ -1,0 +1,28 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Vegetation Index Analysis"],
+  "DataSource": ["COPERNICUS/S2"],
+  "Function": ["Image Collection Filtering", "Cloud Masking", "NDVI Calculation", "Median Composite Image Creation", "Time Series Chart Generation", "Image Export"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Image Collection Filtering", "Cloud Masking", "NDVI Calculation", "Median Composite Image Creation", "Time Series Chart Generation"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Moisture Stress Index Calculation", "Median Composite Image Creation", "Time Series Chart Generation", "Image Export"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4034, 'completion_tokens': 218, 'total_tokens': 4252}

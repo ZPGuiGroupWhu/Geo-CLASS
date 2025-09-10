@@ -1,0 +1,35 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Forest monitoring and land cover change detection"],
+  "DataSource": ["LANDSAT/LC8_SR", "LANDSAT/LC8_L1T_TOA", "LANDSAT/LE7_L1T_TOA_FMASK", "LANDSAT/LE7_L1T_TOA", "COPERNICUS/S2", "ft:1TFcNAU6zr_9svAb610dlsyqNiiXMLYlFrfP23ZuH"],
+  "Function": ["Filtering image collection by date", "Calculating NDVI and NBR indices", "Mosaicking images", "Exporting image properties to CSV", "Exporting mosaic image to Drive", "Exporting individual scenes to Drive"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response that organizes the extracted information into a structured format:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC8_SR", "LANDSAT/LC8_L1T_TOA"],
+        "Function": ["Filtering image collection by date", "Calculating NDVI and NBR indices"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LE7_L1T_TOA_FMASK", "LANDSAT/LE7_L1T_TOA"],
+        "Function": ["Mosaicking images"]
+    },
+    "relation_3": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Exporting image properties to CSV", "Exporting mosaic image to Drive"]
+    },
+    "relation_4": {
+        "DataSource": ["ft:1TFcNAU6zr_9svAb610dlsyqNiiXMLYlFrfP23ZuH"],
+        "Function": ["Exporting individual scenes to Drive"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 6148, 'completion_tokens': 429, 'total_tokens': 6577}

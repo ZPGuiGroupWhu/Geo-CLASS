@@ -1,0 +1,11 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S1_GRD"
+        ],
+        "Function": [
+            "Convert Radar Backscatter",
+            "Mask Areas To Refine Flood Detection"
+        ]
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "Theme": [
+        "Surface water mask computation using Sentinel-1 data and Canny Edge detector with Otsu thresholding"
+    ],
+    "DataSource": [
+        "COPERNICUS/S1_GRD",
+        "NOAA/CFSV2/FOR6H",
+        "users/gena/GlobalHAND/30m/hand-5000"
+    ],
+    "Function": [
+        "Refined Lee filter for speckle noise reduction",
+        "Angle correction using toGamma0 function",
+        "Surface water mask computation using Canny Edge detector with Otsu thresholding",
+        "Perona Malik filter for image denoising"
+    ]
+}

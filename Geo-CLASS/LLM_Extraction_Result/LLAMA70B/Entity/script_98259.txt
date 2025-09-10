@@ -1,0 +1,5 @@
+{
+  "Theme": ["Flood monitoring and water detection in Hue, Vietnam"],
+  "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2", "LANDSAT/LT05/C01/T1_SR"],
+  "Function": ["Filtering image collection by bounds and date", "Sorting image collection by cloud cover", "Creating mosaic image", "Clipping image to boundary", "Calculating normalized difference water index", "Subtracting images", "Applying threshold to image", "Detecting edges in image"]
+}

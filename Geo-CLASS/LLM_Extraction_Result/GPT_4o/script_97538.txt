@@ -1,0 +1,21 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Vegetation index calculation", "Landsat 8 imagery analysis"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Define study area", "Center map on study area", "Add study area layer", "Filter image collection by bounds", "Filter image collection by date", "Filter image collection by path", "Filter image collection by row", "Filter image collection by cloud cover", "Calculate median image", "Clip image to study area", "Add median image layer", "Calculate NDVI", "Calculate SAVI", "Export NDVI to Drive", "Export SAVI to Drive", "Select and scale thermal band B10", "Select and scale thermal band B11", "Export B10 to Drive", "Export B11 to Drive"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+    "Function": ["Filter image collection by bounds", "Filter image collection by date", "Filter image collection by path", "Filter image collection by row", "Filter image collection by cloud cover", "Calculate median image", "Clip image to study area", "Calculate NDVI", "Calculate SAVI", "Select and scale thermal band B10", "Select and scale thermal band B11"]
+  }
+}
+```
+
+Total_Token_Usage:
+4442

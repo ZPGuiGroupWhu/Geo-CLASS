@@ -1,0 +1,16 @@
+{
+    "Theme": [
+        "Forest monitoring and land cover classification"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2",
+        "ft:1ovvyN_dzo01mRw8uSNMIYNg-HKyGTrqLErfg26X0"
+    ],
+    "Function": [
+        "Image collection filtering",
+        "NDVI calculation",
+        "NBR calculation",
+        "Image mosaicking",
+        "Image exporting"
+    ]
+}

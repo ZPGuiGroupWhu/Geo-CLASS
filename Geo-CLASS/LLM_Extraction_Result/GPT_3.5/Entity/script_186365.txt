@@ -1,0 +1,6 @@
+{
+  "Summary": ["The script processes Landsat imagery for various geoprocessing tasks."],
+  "Theme": ["Vegetation analysis", "Water analysis", "Burn area index calculation", "Snow analysis", "Spectral unmixing", "HSV transformation"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_TOA", "LANDSAT/LT5_L1T_TOA"],
+  "Function": ["Image filtering by date and location", "NDVI calculation", "EVI calculation", "NDWI calculation", "NDBI calculation", "BAI calculation", "NBRT calculation", "NDSI calculation", "Linear transformation", "Principal Component Analysis", "Spectral unmixing", "HSV transformation"]
+}

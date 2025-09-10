@@ -1,0 +1,29 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["NDVI and precipitation correlation"],
+  "DataSource": ["MODIS/006/MOD13Q1", "UCSB-CHG/CHIRPS/DAILY", "FAO/GAUL/2015/level1"],
+  "Function": ["Filter region by geometry", "Sum monthly precipitation", "Mean monthly NDVI", "Resample precipitation data", "Join collections by time", "Calculate spatial correlation", "Aggregate pixel values", "Create scatter plot"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["FAO/GAUL/2015/level1"],
+    "Function": ["Filter region by geometry"]
+  },
+  "relation_2": {
+    "DataSource": ["UCSB-CHG/CHIRPS/DAILY"],
+    "Function": ["Sum monthly precipitation", "Resample precipitation data", "Join collections by time", "Calculate spatial correlation", "Aggregate pixel values", "Create scatter plot"]
+  },
+  "relation_3": {
+    "DataSource": ["MODIS/006/MOD13Q1"],
+    "Function": ["Mean monthly NDVI", "Join collections by time", "Calculate spatial correlation", "Aggregate pixel values", "Create scatter plot"]
+  }
+}
+```
+
+Total_Token_Usage:
+5131

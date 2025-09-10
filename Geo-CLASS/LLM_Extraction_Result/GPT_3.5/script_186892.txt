@@ -1,0 +1,19 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["The script collects satellite images, calculates NDVI and NBR, exports image properties, creates mosaics, and detects forest loss using Sentinel-2 imagery."],
+  "Theme": ["Satellite image processing", "NDVI and NBR calculation", "Image export and mosaic creation", "Forest loss detection"],
+  "DataSource": ["COPERNICUS/S2", "ft:1Oaa3b2LdFGrAXL4jqFJzA-3iBeiNq6AQZkyFLVvp", "ft:1tAjm5bGsh0TWPSawKIsX-iWXd7vocIoG_98QjhU1", "ft:1iovW6_vHSX3JOx5OvcFr-ljJdx5mGmqK6Q_ETiSO", "ft:1zmsdCSa-do_XXh6-w6bpfXpz_kN7nGBGmKAcBRFQ", "ft:1gGjM2T5JEgKFoxbWORCn3WPqB98p2adAz42eqycf"],
+  "Function": ["NDVI calculation over image collection", "NBR calculation over image collection", "Exporting image properties to Drive", "Creating and exporting mosaic image", "Exporting individual scenes", "Forest loss detection using Sentinel-2 imagery"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2", "ft:1Oaa3b2LdFGrAXL4jqFJzA-3iBeiNq6AQZkyFLVvp", "ft:1tAjm5bGsh0TWPSawKIsX-iWXd7vocIoG_98QjhU1", "ft:1iovW6_vHSX3JOx5OvcFr-ljJdx5mGmqK6Q_ETiSO", "ft:1zmsdCSa-do_XXh6-w6bpfXpz_kN7nGBGmKAcBRFQ", "ft:1gGjM2T5JEgKFoxbWORCn3WPqB98p2adAz42eqycf"],
+        "Function": ["NDVI calculation over image collection", "NBR calculation over image collection", "Exporting image properties to Drive", "Creating and exporting mosaic image", "Exporting individual scenes", "Forest loss detection using Sentinel-2 imagery"]
+    }
+}
+```

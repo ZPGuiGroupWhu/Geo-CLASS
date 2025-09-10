@@ -1,0 +1,33 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/EL/Grenada"
+        ],
+        "Function": [
+            "Buffering country borders"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LE7_L1T",
+            "LANDSAT/LC08/C01/T1_RT"
+        ],
+        "Function": [
+            "Filtering Landsat imagery by date and cloud cover",
+            "Compositing Landsat images",
+            "Calculating spectral ratios",
+            "Merging image bands"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "users/EL/G_forest"
+        ],
+        "Function": [
+            "Masking non-forest areas",
+            "Training classification model",
+            "Classifying land cover",
+            "Classifying land cover change"
+        ]
+    }
+}

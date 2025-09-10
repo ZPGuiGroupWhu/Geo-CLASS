@@ -1,0 +1,16 @@
+{
+    "Summary": [
+        "Script extracts and displays flood images over time in Thua Thien - Hue region."
+    ],
+    "Theme": [
+        "FLOOD FREQUENCY"
+    ],
+    "DataSource": [
+        "FAO/GAUL_SIMPLIFIED_500m/2015/level2",
+        "COPERNICUS/S1_GRD"
+    ],
+    "Function": [
+        "Filter Images By Date And Region",
+        "Visualize True Color Images"
+    ]
+}

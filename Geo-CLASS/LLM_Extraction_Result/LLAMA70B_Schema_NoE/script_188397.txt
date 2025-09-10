@@ -1,0 +1,25 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Burn area analysis using MODIS images"],
+  "DataSource": ["MODIS/006/MCD64A1"],
+  "Function": ["Filtering MODIS images by date", "Selecting BurnDate band", "Creating a video thumbnail from the image collection"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["MODIS/006/MCD64A1"],
+        "Function": ["Filtering MODIS images by date", "Selecting BurnDate band", "Creating a video thumbnail from the image collection"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 8357, 'completion_tokens': 159, 'total_tokens': 8516}

@@ -1,0 +1,47 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/abuhafsgaa/Makarfi",
+            "users/abuhafsgaa/ALLsample",
+            "users/abuhafsgaa/DATASET_COMPOSITION_2017_21",
+            "users/abuhafsgaa/TEST_SAR_2017_DATASET_BOXCAR"
+        ],
+        "Function": [
+            "Vegetation And Water Indices Calculation",
+            "Buffer Analysis",
+            "Vegetation And Water Indices Calculation",
+            "Spatial Statistics And Cluster Analysis",
+            "Data Visualization And Mapping"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "users/abuhafsgaa/Makarfi",
+            "users/abuhafsgaa/ALLsample",
+            "users/abuhafsgaa/DATASET_COMPOSITION_2017_21",
+            "users/abuhafsgaa/TEST_SAR_2017_DATASET_BOXCAR"
+        ],
+        "Function": [
+            "Vegetation And Water Indices Calculation",
+            "Buffer Analysis",
+            "Vegetation And Water Indices Calculation",
+            "Spatial Statistics And Cluster Analysis",
+            "Data Visualization And Mapping"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "users/abuhafsgaa/Makarfi",
+            "users/abuhafsgaa/ALLsample",
+            "users/abuhafsgaa/DATASET_COMPOSITION_2017_21",
+            "users/abuhafsgaa/TEST_SAR_2017_DATASET_BOXCAR"
+        ],
+        "Function": [
+            "Vegetation And Water Indices Calculation",
+            "Buffer Analysis",
+            "Vegetation And Water Indices Calculation",
+            "Spatial Statistics And Cluster Analysis",
+            "Data Visualization And Mapping"
+        ]
+    }
+}

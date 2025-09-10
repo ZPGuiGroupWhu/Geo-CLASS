@@ -1,0 +1,25 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land cover analysis and cloud masking of Sentinel-2 images"],
+  "DataSource": ["COPERNICUS/S2"],
+  "Function": ["maskS2clouds function to mask clouds and cirrus from Sentinel-2 images", "Filtering and mapping of image collection to remove cloudy pixels and apply cloud masking", "Median calculation of filtered image collection", "Exporting of median image to Google Drive"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["maskS2clouds function to mask clouds and cirrus from Sentinel-2 images", "Filtering and mapping of image collection to remove cloudy pixels and apply cloud masking", "Median calculation of filtered image collection", "Exporting of median image to Google Drive"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3585, 'completion_tokens': 215, 'total_tokens': 3800}

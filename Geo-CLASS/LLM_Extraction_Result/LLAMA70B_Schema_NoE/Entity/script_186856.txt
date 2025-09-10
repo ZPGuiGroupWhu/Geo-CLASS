@@ -1,0 +1,18 @@
+{
+    "Theme": [
+        "Cloud masking and shadow detection for Sentinel-2 images"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "sentinelCloudScore: computes cloud score for Sentinel-2 images",
+        "maskS2clouds: masks clouds using Sentinel-2 QA band",
+        "simpleTDOM2: masks dark outliers in time series",
+        "projectShadows: projects cloud shadows based on solar geometry",
+        "bustClouds: busts clouds from Sentinel-2 image",
+        "wrapIt: wraps entire cloud masking and shadow detection process",
+        "getS2: gets Sentinel-2 data for a given geometry",
+        "dailyMosaics: simplifies data into daily mosaics"
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "Summary": [
+        "LandTrendr geoprocessing workflow for Cambodia from 1990 to 2021."
+    ],
+    "Theme": [
+        "LAND USE/LAND COVER"
+    ],
+    "DataSource": [
+        "USDOS/LSIB/2017"
+    ],
+    "Function": [
+        "Data Acquisition And Preprocessing",
+        "NDWI (Normalized Difference Water Index calculation)",
+        "Change Detection"
+    ]
+}

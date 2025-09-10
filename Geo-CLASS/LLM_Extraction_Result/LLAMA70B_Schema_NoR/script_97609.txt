@@ -1,0 +1,35 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Drought monitoring and seasonal rainfall analysis"],
+  "DataSource": ["users/eijulio/valles_altos_estados", "FAO/GAUL_SIMPLIFIED_500m/2015/level2", "ECMWF/ERA5/DAILY", "UCSB-CHG/CHIRPS/PENTAD"],
+  "Function": ["Filtering image collections by date", "Calculating monthly totals from image collections", "Computing long-term means of monthly rainfall", "Calculating seasonal deviation from normal rainfall", "Clipping images to area of interest", "Reducing images to mean values", "Painting vector features with mean values", "Exporting images to drive", "Exporting tables to drive"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response that organizes the extracted information into a structured format:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/eijulio/valles_altos_estados"],
+        "Function": ["Filtering image collections by date", "Clipping images to area of interest", "Exporting images to drive"]
+    },
+    "relation_2": {
+        "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2"],
+        "Function": ["Painting vector features with mean values"]
+    },
+    "relation_3": {
+        "DataSource": ["ECMWF/ERA5/DAILY"],
+        "Function": ["Calculating monthly totals from image collections", "Computing long-term means of monthly rainfall", "Calculating seasonal deviation from normal rainfall"]
+    },
+    "relation_4": {
+        "DataSource": ["UCSB-CHG/CHIRPS/PENTAD"],
+        "Function": ["Reducing images to mean values", "Exporting tables to drive"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2996, 'completion_tokens': 428, 'total_tokens': 3424}

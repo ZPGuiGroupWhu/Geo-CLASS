@@ -1,0 +1,5 @@
+{
+  "Theme": ["Vegetation monitoring using NDVI in Wisconsin"],
+  "DataSource": ["users/elaurenyoung/usa_states", "users/elaurenyoung/Site_summary_12_Apr_2022-point", "LANDSAT/LC08/C02/T1_L2", "LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Buffer creation around state and transect points", "Image collection filtering by date and cloud cover", "Masking clouds and water in Landsat images", "Calculating NDVI from Landsat images", "Reducing regions to calculate mean, standard deviation, and variance of NDVI"]
+}

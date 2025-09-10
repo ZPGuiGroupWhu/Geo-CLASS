@@ -1,0 +1,19 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Script generates cloud-free composite images from Sentinel-2 data for a specific region."],
+  "Theme": ["Land cover classification"],
+  "DataSource": ["COPERNICUS/S2_SR_HARMONIZED", "COPERNICUS/S2_CLOUD_PROBABILITY"],
+  "Function": ["Mosaic creation from daily images", "Cloud masking for composite generation"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2_SR_HARMONIZED", "COPERNICUS/S2_CLOUD_PROBABILITY"],
+        "Function": ["Mosaic creation from daily images", "Cloud masking for composite generation"]
+    }
+}
+```

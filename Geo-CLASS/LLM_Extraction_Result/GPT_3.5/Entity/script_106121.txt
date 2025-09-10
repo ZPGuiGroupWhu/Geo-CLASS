@@ -1,0 +1,6 @@
+{
+  "Summary": ["Reprojection of Sentinel-2 images to EPSG:4326 for export."],
+  "Theme": ["Image reprojection for geospatial data export"],
+  "DataSource": ["COPERNICUS/S2"],
+  "Function": ["Filtering Sentinel-2 images by cloud cover and date", "Selecting specific bands for reprojection", "Reprojecting image to EPSG:4326 for export"]
+}

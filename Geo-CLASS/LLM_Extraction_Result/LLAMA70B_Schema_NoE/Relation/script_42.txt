@@ -1,0 +1,33 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "USDOS/LSIB/2017"
+        ],
+        "Function": [
+            "Filtering feature collection by country",
+            "Reducing regions",
+            "Sampling regions"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "UMD/hansen/global_forest_change_2020_v1_8"
+        ],
+        "Function": [
+            "Selecting bands from images",
+            "Applying reducer to image",
+            "Classifying image"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "users/ak_glaciers/NDVI_fitted_image_stack_from_LTOP_1990_start",
+            "users/ak_glaciers/NBR_fitted_image_stack_from_LTOP_1990_start"
+        ],
+        "Function": [
+            "Creating random points",
+            "Allocating points to training and validation",
+            "Training random forest classifier"
+        ]
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "Theme": [
+        "MODIS data analysis for vegetation monitoring"
+    ],
+    "DataSource": [
+        "MODIS/006/MOD09GA",
+        "users/giswqs/public/countries"
+    ],
+    "Function": [
+        "Image collection filtering",
+        "Cloud masking",
+        "Image scaling",
+        "NDVI calculation",
+        "Date extraction",
+        "Month extraction",
+        "Day of year extraction",
+        "Quality mosaic creation"
+    ]
+}

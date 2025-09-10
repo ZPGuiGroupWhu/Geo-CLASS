@@ -1,0 +1,14 @@
+{
+    "relation_1": {
+        "DataSource": ["users/ujavalgandhi/public/soi_india_boundary"],
+        "Function": ["Clip image to geometry", "Extract landcover classification", "Create image with agriculture and urban zones"]
+    },
+    "relation_2": {
+        "DataSource": ["NOAA/DMSP-OLS/NIGHTTIME_LIGHTS"],
+        "Function": ["Filter image collection by date", "Classify nightlights image into categorical values", "Compute statistics on classified image using grouped reducer"]
+    },
+    "relation_3": {
+        "DataSource": ["MODIS/006/MCD12Q1"],
+        "Function": ["Select specific band from image collection", "Extract landcover classification", "Create image with agriculture and urban zones"]
+    }
+}

@@ -1,0 +1,5 @@
+{
+  "Theme": ["Flood monitoring in Thua Thien - Hue"],
+  "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2", "COPERNICUS/S1_GRD"],
+  "Function": ["Define area of interest", "Filter images by date and metadata", "Count and display flood images", "Set visualization parameters", "Display images on map"]
+}

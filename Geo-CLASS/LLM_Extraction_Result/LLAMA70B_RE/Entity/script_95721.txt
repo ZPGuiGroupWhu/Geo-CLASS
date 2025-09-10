@@ -1,0 +1,21 @@
+{
+    "Theme": [
+        "Vegetation Index Analysis"
+    ],
+    "DataSource": [
+        "users/eduardosperanza-Embrapa/Projeto-Coplacana/Piracicaba-H2Copla-UTM",
+        "COPERNICUS/S2_SR"
+    ],
+    "Function": [
+        "Cloud and shadow pixel removal",
+        "NDVI calculation",
+        "VARI calculation",
+        "EVI calculation",
+        "Buffer creation",
+        "Image collection filtering",
+        "Image masking",
+        "Region reduction",
+        "Feature joining",
+        "Property removal"
+    ]
+}

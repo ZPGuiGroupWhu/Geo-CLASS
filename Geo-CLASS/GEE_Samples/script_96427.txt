@@ -1,0 +1,179 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var jrc = ee.Image("JRC/GSW1_0/GlobalSurfaceWater"),
+    lake2 = ee.FeatureCollection("users/sntopp/Lakes_ply_20171106"),
+    lake3 = ee.FeatureCollection("users/sntopp/NCSC_Horsepen_Lake"),
+    lake1 = ee.FeatureCollection("users/sarinarinab/CitSci_Washington_Lakes");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+// load the required functions
+var ls_fun = require('users/eeProject/water_surface_interpolation:functions_landsat.js');
+var occ = jrc.select('occurrence');
+var calcAreaImage = function(maskImage) {
+  return(ee.Image.pixelArea().divide(1000000).mask(maskImage).rename(maskImage.bandNames()));
+};
+var Outline = function(img) {
+  var kernel = ee.Kernel.circle({radius: 1});
+  var outline = img.focal_max({kernel: kernel, iterations: 1}).subtract(img);
+  return(outline);
+};
+var OutlinePoly = function(poly) {
+  return(ee.Geometry.LineString(ee.List(poly.coordinates()).get(0)));
+};
+
+var createParagraphPanel = function(paragraph, labelStyle) {
+  var labelList = [];
+  for (var i = 0; i < paragraph.length; i++) {
+    labelList.push(ui.Label(paragraph[i], labelStyle));
+  }
+  return(ui.Panel(labelList));
+}; 
+
+// set parameters
+var MAXDISTANCE = 1000; // used in cumulative_cost function to isolate lake area from water area
+var waterClassification = 'Jones2019_2'; 
+
+
+// load and merge lake polygons and sort them by their polygon area
+lake1 = lake1.select(['GNIS_Name', 'AreaSqKm'], ['GNIS_NAME', 'AREASQKM']);
+var lakes = lake1.merge(lake2).merge(lake3)
+.map(function(f) {return(f.set('polygonArea', f.area(10).divide(1000000)))})
+.sort('polygonArea');
+
+var lakesNames = lakes.aggregate_array('GNIS_NAME');
+// load landsat images
+var dat = ls_fun.merge_collections_std_bandnames_collection1tier1_sr()
+.filterDate('2017-01-01', '2030-01-01')
+.filterMetadata('CLOUD_COVER_LAND', 'less_than', 50);
+
+// get layers of the current map
+var layers = Map.layers();
+
+
+var lakeSelector = ui.Select(lakesNames.getInfo(), 'Select a lake');
+
+lakeSelector.onChange(function(name) {
+  
+  var f = ee.Feature(lakes.filterMetadata('GNIS_NAME', 'equals', name).first());
+  var aoi = f.geometry();
+  
+  Map.centerObject(aoi);
+  
+  var result = ee.ImageCollection(ls_fun.filterContained(dat, aoi))
+  .map(function(img) {
+    var i = ls_fun.CalculateWaterAddFlagsSR(img, waterClassification); // water classificaton method can be changed here
+    var aoiBuffered = aoi.buffer(200);
+    
+    var waterMask = i.select(['waterMask']); // waterMask
+    var obsMask = i.select(['fmask']).gte(2).rename(['obsMask']); // obstructionMask
+    
+    // reconstruct the water surface
+    var recon = ls_fun.fillWater(waterMask, obsMask, aoiBuffered);
+    
+    // calculate lakeMask after reconstructing the water surface
+    var reconstructedLake = ls_fun.ExtractChannel(recon.select(['Reconstructed']), aoi.buffer(-50), MAXDISTANCE)
+    .rename(['Reconstructed']);
+    var reconstructedLakeAll = ls_fun.ExtractChannel(recon.select(['ReconstructedAll']), aoi.buffer(-50), MAXDISTANCE)
+    .rename(['ReconstructedAll']);
+    var rawLake = waterMask.and(reconstructedLake).rename(['lakeMask']);
+    recon = recon.select(['obsMask']).addBands(reconstructedLake).addBands(rawLake).addBands(reconstructedLakeAll);
+    
+    
+    var areaImage = calcAreaImage(recon.select(['lakeMask']))
+    .addBands(calcAreaImage(recon.select(['obsMask'])))
+    .addBands(calcAreaImage(recon.select(['Reconstructed'])))
+    .addBands(calcAreaImage(recon.select(['ReconstructedAll'])));
+    
+    // add the pixel areas together to calculate total area
+    var lakeArea = areaImage.reduceRegion({
+      reducer: ee.Reducer.sum(), 
+      geometry: aoiBuffered, 
+      scale: 30});
+      
+    return(i.addBands(recon).setMulti(lakeArea).copyProperties(recon).set('polygonArea', f.get('polygonArea')));
+  });
+   
+  var halfArea = ee.Number(f.get('polygonArea')).divide(2);
+  
+  var chart = ui.Chart.feature.byFeature({
+    features: result
+    
+    .filterMetadata('lakeMask', 'greater_than', halfArea)
+    .sort('timestamp'), 
+    xProperty: 'timestamp', 
+    yProperties: ['polygonArea', 'ReconstructedAll']})
+    .setChartType('ScatterChart')
+    .setOptions({
+      title: 'Changes in lake area: ' + name + ' (size of lake polygon: ' + String(ee.Number(f.get('polygonArea')).multiply(1000).round().divide(1000).getInfo()) + ' km^2)',
+      vAxis: {title: 'Lake area (km^2)'},
+      hAxis: {title: 'Date'},
+      curveType: 'none',
+      lineWidth: 1,
+      pointSize: 4,
+      explorer: {
+        keepInBounds: true,
+        actions: ['dragToZoom', 'rightClickToReset']
+      },
+      series: [
+        {color: 'orange', labelInLegend: 'Lake polygon area', pointSize: 0},
+        {color: 'cyan', labelInLegend: 'Lake area'}
+      ]
+    });
+    
+  chart.style({
+    stretch: 'vertical',
+    minHeight: '800px'
+  });
+  
+  var outLines = ee.ImageCollection(result
+  .map(function(f) {
+    return(f.select(['ReconstructedAll']));
+  }));
+  
+  var changeZone = outLines.max().subtract(outLines.min()).selfMask();
+  
+  chart.onClick(function(x, y, z) {
+    var f = ee.Image(result
+    .filterMetadata('timestamp', 'equals', x)
+    .filterMetadata(z, 'equals', y)
+    .first());
+    
+    var imgId = f.get('image_id');
+    var img = ee.Image(dat.filterMetadata('LANDSAT_ID', 'equals', imgId).first());
+    Map.centerObject(aoi);
+    layers.set(0, ui.Map.Layer(img, {bands: ['Red', 'Green', 'Blue'], min: 0, max: 2500}, 'rgb image', true));
+    layers.set(1, ui.Map.Layer(img.normalizedDifference(['Green', 'Swir1']), {min: -1, max: 1, palette: ['#d8b365','#f5f5f5','#5ab4ac']}, 'mndwi image', false));
+    
+    
+    layers.set(2, ui.Map.Layer(Outline(f.select(['ReconstructedAll'])).selfMask(), {palette: ['cyan']}, 'lake area (fill in entire lake area)', true, 0.8));
+    layers.set(3, ui.Map.Layer(f.select(['fmask']).gte(2).selfMask(), {palette: ['yellow']}, 'obstructions', false, 0.5));
+    layers.set(4, ui.Map.Layer(occ.selfMask(), {palette: ['#9e0142','#d53e4f','#f46d43','#fdae61','#fee08b','#ffffbf','#e6f598','#abdda4','#66c2a5','#3288bd','#5e4fa2'], min: 1, max: 100}, 'jrc_occ', false, 0.7));
+    layers.set(5, ui.Map.Layer(OutlinePoly(aoi), {color: 'orange'}, 'lake polygons', true, 0.5));
+    layers.set(6, ui.Map.Layer(changeZone, {palette: ['yellow']}, 'Outlines', false, 0.5));
+    //diagnose water classification
+    var wm = ls_fun.CalculateWaterAddFlagsSR(img, waterClassification).select('waterMask');
+    
+    });
+  
+  chartPanel.widgets().set(0, chart);
+  chartPanel.widgets().set(1, paragraphPanel);
+  
+  Export.table.toDrive({
+    collection: result, 
+    description: name + '_lake_area', 
+    folder: '', 
+    fileNamePrefix: name + '_lake_area', 
+    fileFormat: 'csv'});
+});
+
+Map.setOptions('satellite');
+Map.add(lakeSelector);
+var chartPanel = ui.Panel([], ui.Panel.Layout.Flow('vertical'), {position: 'bottom-right', stretch: 'vertical', maxHeight: '800px'});
+var paragraph = [
+  'Lake polygon area (km^2): lake areas according to the lake polygon.',
+  'Lake area (km^2): lake area estimated from water occurrence map (Pekel et al, 2017).'
+  ];
+var txtStyleMain = {position: 'top-center', stretch: 'horizontal', textAlign: 'left', padding: '2px 10px 2px 10px', margin: '0px'};
+var paragraphPanel = createParagraphPanel(paragraph, txtStyleMain);
+
+ui.root.insert(1, chartPanel);
+ui.root.setLayout(ui.Panel.Layout.flow('vertical', false));
+

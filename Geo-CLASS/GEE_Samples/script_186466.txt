@@ -1,0 +1,508 @@
+// Phần I: Thu thập ảnh, metadata và tổ hợp b
+
+
+
+// Load the Sentinel-1 ImageCollection.
+
+
+
+          
+
+var Socson_Hn = ee.FeatureCollection('ft:10RV_TKg9w5SMTutAz-XZpGcd2ejYgbQs6IVy2TF7','geometry');
+
+
+
+var Socson_Hnp = ee.FeatureCollection('ft:10RV_TKg9w5SMTutAz-XZpGcd2ejYgbQs6IVy2TF7','geometry');
+
+
+
+var Socson_Hnr = ee.FeatureCollection('ft:10RV_TKg9w5SMTutAz-XZpGcd2ejYgbQs6IVy2TF7','geometry');
+
+
+
+
+
+var myImages = ee.ImageCollection('COPERNICUS/S1_GRD')
+
+  .filter(ee.Filter.listContains('transmitterReceiverPolarisation', 'VV'))
+
+  .filter(ee.Filter.listContains('transmitterReceiverPolarisation', 'VH'))
+
+  .filterDate('2018-01-1', '2019-03-8')
+
+  .filterBounds(Socson_Hn)
+
+  
+
+  
+
+    
+
+print(myImages);
+
+var imagesize = myImages.size();
+
+print('Number of images: ', imagesize);
+
+print(myImages.count());
+
+
+
+
+
+var sentinel1 = ee.ImageCollection('COPERNICUS/S1_GRD');
+
+  // Filter by metadata properties.
+
+var vh = sentinel1
+
+  // Filter to get images with VV and VH dual polarization.
+
+  .filter(ee.Filter.listContains('transmitterReceiverPolarisation', 'VV'))
+
+  .filter(ee.Filter.listContains('transmitterReceiverPolarisation', 'VH'))
+
+  .filterDate('2018-01-1', '2019-03-8')
+
+  .filterBounds(Socson_Hn);
+
+  // Filter to get images collected in interferometric wide swath mode.
+
+  
+
+  
+
+print(vh);
+
+var imagesize = vh.size();
+
+print('Number of images: ', imagesize);
+
+print(vh.count());
+
+
+
+
+
+// Filter to get images from different look angles.
+
+var vhAscending = vh.filter(ee.Filter.eq('orbitProperties_pass', 'ASCENDING'));
+
+var vhDescending = vh.filter(ee.Filter.eq('orbitProperties_pass', 'DESCENDING'));   
+
+    
+
+// Create a composite from means at different polarizations and look angles.
+
+var composite = ee.Image.cat([
+
+  vhAscending.select('VH').mean(),
+
+  ee.ImageCollection(vhAscending.select('VV').merge(vhDescending.select('VV'))).mean(),
+
+  vhDescending.select('VH').mean()
+
+]).focal_median();
+
+
+
+// Display as a composite of polarization and backscattering characteristics.
+
+Map.addLayer(composite, {min: [-25, -25], max: [1, 1]}, 'composite');
+
+
+
+Export.image.toDrive({
+
+  image: composite,
+
+  description: 'composite',
+
+  scale: 10, // Set this to resolution (in meters) you want for image
+
+  region: Socson_Hn
+
+});
+
+
+
+
+
+var myImagesList = myImages.toList(1000); //Make this number larger than how many images you expect
+
+print('Images',myImages);
+
+
+
+var imageIDs = myImagesList.map(function(img){
+
+  img = ee.Image(img);
+
+  return img.get('system:index');
+
+});
+
+print(imageIDs);
+
+
+
+var imageProperties = myImages.map(function(img){
+
+  var fOut = ee.Feature(img.geometry());
+
+  return fOut.copyProperties(img);
+
+});
+
+Export.table.toDrive(imageProperties,'ImageProperties');
+
+
+
+// Export images
+
+imageIDs.evaluate(
+
+  function(imageIDsClient) {
+
+    imageIDsClient.map(function(ID){
+
+      var img = myImages.filter(ee.Filter.equals('system:index',ID));
+
+      img = ee.Image(img.first());
+
+      Export.image.toDrive({
+
+        image: img,
+
+        description: ID,
+
+        scale: 10, // Set this to resolution (in meters) you want for image
+
+        region: Socson_Hn
+
+      });
+
+    });
+
+  }
+
+);
+
+
+
+
+
+
+
+
+
+//// Phần II: Phát hiện sớm mất rừng, suy thoái rừng
+
+
+
+
+
+// Display a grid of linked maps, each with a different visualization.
+
+
+
+// Load Sentinel-1 C-band SAR Ground Range collection (log scaling, VV co-polar)
+
+
+
+
+
+
+
+
+
+
+
+
+
+var faoip = ee.FeatureCollection('ft:10RV_TKg9w5SMTutAz-XZpGcd2ejYgbQs6IVy2TF7','geometry');
+
+
+
+var faoir = ee.FeatureCollection('ft:10RV_TKg9w5SMTutAz-XZpGcd2ejYgbQs6IVy2TF7','geometry');
+
+
+
+
+
+var faoip1 = ee.Image().paint(faoir,'#f00',3);
+
+
+
+var image = ee.ImageCollection('COPERNICUS/S1_GRD')
+
+  .filter(ee.Filter.listContains('transmitterReceiverPolarisation', 'VV'))
+
+  .select('VV')
+
+  .filterDate('2016-09-1', '2016-09-10')
+
+  .mosaic();
+
+// Display map
+
+var image2 = ee.ImageCollection('COPERNICUS/S1_GRD')
+
+  .filter(ee.Filter.listContains('transmitterReceiverPolarisation', 'VV'))
+
+  .select('VV')
+
+  .filterDate('2016-09-11', '2016-09-20')
+
+  .mosaic();
+
+var vis = {min: -15, max: -8, palette: [
+
+  'FFFFFF','FCD163','CE7E45','0000ff','011301', '012E01', '023B01', '004C00', '00ff00',
+
+  '207401', '66A000']};
+
+  
+
+  // For water detection:
+
+  
+
+  
+
+  
+
+
+
+var NAMES = [
+
+  'Trước',
+
+  'Sau',
+
+];
+
+
+
+
+
+// Create a map for each visualization option.
+
+var maps1 = [];
+
+NAMES.forEach(function(name, index) {
+
+  var map = ui.Map();
+
+  map.add(ui.Label(name));
+
+  map.addLayer(image, vis, name);
+
+  
+
+  map.addLayer(faoip1, {palette: '#f00'}, 'faoir');
+
+   //Add original points to the map in pink.
+
+  map.addLayer(Socson_Hnp, {
+
+    'color': 'ff00ff',
+
+    'opacity': 0.5
+
+});
+
+  map.setControlVisibility(false);
+
+  maps1.push(map);
+
+});
+
+var maps2 = [];
+
+NAMES.forEach(function(name, index) {
+
+  var map = ui.Map();
+
+  map.add(ui.Label(name));
+
+  map.addLayer(image2, vis,name);
+
+  
+
+  map.addLayer(faoip1, {palette: '#f00'}, 'faoip');
+
+   //Add original points to the map in pink.
+
+  map.addLayer(Socson_Hnp, {
+
+    'color': 'ff00ff',
+
+    'opacity': 0.5
+
+});
+
+  map.setControlVisibility(false);
+
+  maps2.push(map);
+
+});
+
+var linker = ui.Map.Linker(maps1, maps2);
+
+// Enable zooming on the top-left map.
+
+maps1[(0)].setControlVisibility({zoomControl: true});
+
+// Show the scale (e.g. '500m') on the bottom-right map.
+
+maps1[0].setControlVisibility({scaleControl: true});
+
+maps2[1].setControlVisibility({scaleControl: true});
+
+// Create a title..
+
+var title = ui.Label('Phát hiện sớm mất rừng, suy thoái rừng ở Cẩm Lĩnh, Ba Vì, Hà Nội bằng ảnh vệ tinh Sentinel 1', {
+
+  stretch: 'horizontal',
+
+  textAlign: 'center',
+
+  fontWeight: 'bold',
+
+  fontSize: '24px',
+
+  color: 'FF0000'
+
+});
+
+
+
+
+
+// Create a panel to hold our widgets.
+
+var panel = ui.Panel();
+
+panel.style().set('width', '300px');
+
+
+
+
+
+// Create a grid of maps.
+
+var mapGrid = ui.Panel([
+
+    ui.Panel([maps1[0]], null, {stretch: 'both'}),
+
+    ui.Panel([maps2[1]], null, {stretch: 'both'})
+
+  ],
+
+  ui.Panel.Layout.Flow('horizontal'), {stretch: 'both'}
+
+);
+
+
+
+// Add the maps and title to the ui.root.
+
+ui.root.widgets().reset([title, mapGrid]);
+
+ui.root.setLayout(ui.Panel.Layout.Flow('vertical'));
+
+
+
+// Center the maps to Quang Son.
+
+maps1[0].setCenter(105.3506, 21.1729, 11);
+
+maps2[1].setCenter(105.3506, 21.1729, 11);
+
+
+
+ui.Map.Linker([maps1[0], maps2[1]]);
+
+
+
+// Create an intro panel with labels.
+
+var intro = ui.Panel([
+
+  ui.Label({
+
+    value: 'Two Chart Inspector',
+
+    style: {fontSize: '20px', fontWeight: 'bold'}
+
+  }),
+
+  ui.Label('Click a point on the map to inspect.')
+
+]);
+
+panel.add(intro);
+
+
+
+// Create panels to hold lon/lat values.
+
+var lon = ui.Label();
+
+var lat = ui.Label();
+
+panel.add(ui.Panel([lon, lat], ui.Panel.Layout.flow('horizontal')));
+
+
+
+/***
+
+ * Add marker point after mouse is clicked
+
+ */
+
+function onMapClick(coords) {
+
+  // Update the lon/lat panel with values from the click event.
+
+  lon.setValue('lon: ' + coords.lon.toFixed(5)),
+
+  lat.setValue('lat: ' + coords.lat.toFixed(5));
+
+
+
+  // Add a red dot for the point clicked on.
+
+  var point = ee.Geometry.Point(coords.lon, coords.lat);
+
+  
+
+  var dot = ui.Map.Layer(point, {color: 'FF0000'});
+
+  maps1[0].layers().set(1, dot);
+
+  
+
+  var dot = ui.Map.Layer(point, {color: 'FF0000'});
+
+  maps2[1].layers().set(1, dot);
+
+}
+
+
+
+
+
+// Register a callback on the default map to be invoked when the map is clicked.
+
+maps1[0].onClick(onMapClick);
+
+maps2[1].onClick(onMapClick);
+
+
+
+
+
+
+

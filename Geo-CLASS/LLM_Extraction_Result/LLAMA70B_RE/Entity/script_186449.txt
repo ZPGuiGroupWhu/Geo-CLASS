@@ -1,0 +1,14 @@
+{
+    "Theme": [
+        "Land cover classification and analysis"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C01/T1_SR/LC08_118062_20150819"
+    ],
+    "Function": [
+        "Image selection and filtering",
+        "Feature collection creation",
+        "Image sampling",
+        "Scatter plot generation"
+    ]
+}

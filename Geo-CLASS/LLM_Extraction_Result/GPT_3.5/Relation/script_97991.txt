@@ -1,0 +1,22 @@
+{
+    "relation_1": {
+        "DataSource": ["users/EL/TrinidadandTobago"],
+        "Function": ["Filtering Landsat images by bounds, date, and cloud cover", "Creating a composite image using Landsat simple composite algorithm", "Training a classifier for image classification", "Creating masks for water bodies and cities"]
+    },
+    "relation_2": {
+        "DataSource": ["users/EL/trinidad_forest_type_landcover_28july2011", "users/EL/tobago_forest_type_landcover_06may2011"],
+        "Function": ["Filtering Landsat images by bounds, date, and cloud cover", "Creating a composite image using Landsat simple composite algorithm", "Training a classifier for image classification", "Creating masks for water bodies and cities"]
+    },
+    "relation_3": {
+        "DataSource": ["LANDSAT/LC8_L1T"],
+        "Function": ["Filtering Landsat images by bounds, date, and cloud cover", "Creating a composite image using Landsat simple composite algorithm", "Training a classifier for image classification", "Creating masks for water bodies and cities"]
+    },
+    "relation_4": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Filtering Landsat images by bounds, date, and cloud cover", "Creating a composite image using Landsat simple composite algorithm", "Training a classifier for image classification", "Creating masks for water bodies and cities"]
+    },
+    "relation_5": {
+        "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+        "Function": ["Creating masks for water bodies and cities"]
+    }
+}

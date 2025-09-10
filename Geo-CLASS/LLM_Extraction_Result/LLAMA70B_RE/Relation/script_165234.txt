@@ -1,0 +1,24 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "MODIS/006/MOD09GA"
+        ],
+        "Function": [
+            "Image collection filtering",
+            "Cloud masking",
+            "Image scaling",
+            "NDVI calculation",
+            "Date extraction",
+            "Month extraction",
+            "Day of year extraction"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "users/giswqs/public/countries"
+        ],
+        "Function": [
+            "Region of interest filtering"
+        ]
+    }
+}

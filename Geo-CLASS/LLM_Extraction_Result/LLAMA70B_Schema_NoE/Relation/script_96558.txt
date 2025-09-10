@@ -1,0 +1,33 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "UCSB-CHG/CHIRPS/DAILY"
+        ],
+        "Function": [
+            "Filtering and summing CHIRPS data by month",
+            "Resampling CHIRPS data from 5Km to 250m",
+            "Joining CHIRPS and NDVI data",
+            "Calculating spatial correlation between NDVI and precipitation",
+            "Generating scatter plot of NDVI vs precipitation"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "MODIS/006/MOD13Q1"
+        ],
+        "Function": [
+            "Filtering and averaging NDVI data by month",
+            "Joining CHIRPS and NDVI data",
+            "Calculating spatial correlation between NDVI and precipitation",
+            "Generating scatter plot of NDVI vs precipitation"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "FAO/GAUL/2015/level1"
+        ],
+        "Function": [
+            "None"
+        ]
+    }
+}

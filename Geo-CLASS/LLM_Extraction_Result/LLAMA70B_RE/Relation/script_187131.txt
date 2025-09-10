@@ -1,0 +1,39 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "ft:1iovW6_vHSX3JOx5OvcFr-ljJdx5mGmqK6Q_ETiSO"
+        ],
+        "Function": [
+            "Filtering image collection by date and region",
+            "Reducing to vectors"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LT5_L1T"
+        ],
+        "Function": [
+            "Creating cloud-free composite"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "LANDSAT/LE7_L1T_TOA",
+            "LANDSAT/LC8_L1T_TOA"
+        ],
+        "Function": [
+            "Filtering image collection by date and region",
+            "Creating cloud-free composite",
+            "Calculating NBR index"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "FIRMS"
+        ],
+        "Function": [
+            "Filtering image collection by date and region",
+            "Reducing to vectors"
+        ]
+    }
+}

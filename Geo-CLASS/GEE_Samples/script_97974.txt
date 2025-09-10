@@ -1,0 +1,199 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var StableForest = /* color: #d63000 */ee.FeatureCollection([]),
+    Stablenonforest = /* color: #98ff00 */ee.FeatureCollection([]),
+    FO00_17 = /* color: #0b4a8b */ee.FeatureCollection([]);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+// after have put in the asset the shapefile with granada borders I call his ID image with this command
+
+var Country = ee.FeatureCollection("users/EL/Grenada");
+
+Map.centerObject (Country); //I center the map on the country
+
+
+
+// I add a buffer area if 100m around the borders of the country
+
+var bufferPoly = function(feature) {
+
+  return feature.buffer(100);   
+
+};
+
+var bufferedPolys = Country.map(bufferPoly);
+
+
+
+
+
+
+
+
+
+//Upload Landsat imagery
+
+var Landsat7 = ee.ImageCollection('LANDSAT/LE7_L1T');
+
+var Landsat8 = ee.ImageCollection('LANDSAT/LC08/C01/T1_RT');
+
+
+
+
+
+//----------------------------------------------------CHANGES---------------------------------------------------------
+
+
+
+//------------------LANDSAT 7   years 1998-2002
+
+//DRY season 
+
+var Landsat7FilteredD = Landsat7.filterBounds(bufferedPolys)
+
+.filterDate('1998-01-01', '2002-12-31') // years
+
+.filter(ee.Filter.calendarRange(335,151, 'day_of_year')) //DRY SEASON (Jan-Jun)
+
+.filterMetadata('CLOUD_COVER','less_than', 90); //cloud cover
+
+var mosaic2000 = ee.Algorithms.Landsat.simpleComposite(Landsat7FilteredD, 60, 10, 40, true).clip(bufferedPolys);
+
+
+
+var rat43_2000 = mosaic2000.select('B4').divide(mosaic2000.select('B3'));
+
+var rat73_2000 = mosaic2000.select('B7').divide(mosaic2000.select('B3'));
+
+var rat54_2000 = mosaic2000.select('B5').divide(mosaic2000.select('B4'));
+
+var rat53_2000 = mosaic2000.select('B5').divide(mosaic2000.select('B3'));
+
+var image2000 = mosaic2000.addBands(rat43_2000).addBands(rat73_2000).addBands(rat54_2000)
+
+.addBands(rat53_2000);
+
+
+
+//code to visualise the mosaic of the years 1998-2002
+
+Map.addLayer (image2000, {bands: ['B4','B5','B3'],min: [0.16,0.09,0.01],max: [0.35, 0.3, 0.4] },'dry season 2000',true );
+
+
+
+
+
+
+
+//------------------LANDSAT 8   years 2015-2017
+
+//DRY season 
+
+var Landsat8FilteredD2 = Landsat8.filterBounds(bufferedPolys)
+
+.filterDate('2015-01-01', '2017-12-31') // years
+
+.filter(ee.Filter.calendarRange(335,151, 'day_of_year')) //DRY SEASON (Jan-Jun)
+
+.filterMetadata('CLOUD_COVER','less_than', 90); //cloud cover
+
+var mosaicZ = ee.Algorithms.Landsat.simpleComposite(Landsat8FilteredD2, 60, 10, 40, true).clip(bufferedPolys);
+
+
+
+var rat43_2015 = mosaicZ.select('B4').divide(mosaicZ.select('B3'));
+
+var rat73_2015 = mosaicZ.select('B7').divide(mosaicZ.select('B3'));
+
+var rat54_2015 = mosaicZ.select('B5').divide(mosaicZ.select('B4'));
+
+var rat53_2015 = mosaicZ.select('B5').divide(mosaicZ.select('B3'));
+
+var image8 = mosaicZ.addBands(rat43_2015).addBands(rat73_2015).addBands(rat54_2015).addBands(rat53_2015);
+
+
+
+//code to visualise the mosaic of the years 2015-2017
+
+Map.addLayer (image8, {bands: ['B5','B6','B4'],min: [0.16,0.09,0.01],max: [0.4, 0.3, 0.4] },'dry season 2017',true );
+
+
+
+
+
+//ALL
+
+// merging the bands of all the mosaics
+
+var mosaic_all = image2000.addBands(rat43_2000).addBands(rat73_2000).addBands(rat54_2000).addBands(rat53_2000)
+
+.addBands(image8).addBands(rat43_2015)
+
+.addBands(rat73_2015).addBands(rat54_2015).addBands(rat53_2015);
+
+
+
+
+
+//Mask of Forest previuosly classified
+
+var imageclass = ee.Image('users/EL/G_forest');
+
+var notforest = (imageclass.eq(2).or(imageclass.eq(4)).or(imageclass.eq(6)));
+
+var acqua = (imageclass.eq(5));
+
+var mask = notforest.add(acqua)
+
+Map.addLayer (notforest)
+
+
+
+
+
+//Land change classification
+
+var points = ee.FeatureCollection([StableForest, Stablenonforest, FO00_17]).flatten();
+
+var training = mosaic_all.sampleRegions({
+
+  collection: points,
+
+  properties: ['class'],
+
+  scale: 30
+
+});
+
+
+
+var bands = ['B3', 'B4', 'B5', 'B3_1', 'B4_2', 'B5_3', 'B4_4', 'B5_6', 'B6_1'];
+
+
+
+var trained = ee.Classifier.cart().train(training, 'class', bands);
+
+var e = trained.explain();
+
+print (e);
+
+
+
+var masked = mosaic_all.mask(notforest);
+
+
+
+Map.addLayer(masked);
+
+
+
+var classified = masked.select(bands).classify(trained);
+
+
+
+
+
+Map.addLayer(classified,{ min:1, max:5, palette: ['339820','e6f0c2', 'ec9f13','d80a0a', '19d8c6'] },'Classification');
+
+
+
+
+

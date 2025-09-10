@@ -1,0 +1,19 @@
+{
+    "Theme": [
+        "Land surface reflectance analysis and vegetation index calculation"
+    ],
+    "DataSource": [
+        "LANDSAT/LT05/C01/T1_SR",
+        "LANDSAT/LC08/C01/T1_SR",
+        "users/cxliu2015/PA_Qinghai_EnglishNames",
+        "users/cxliu2015/PA_Qinghai_cdm_studiedRectangle"
+    ],
+    "Function": [
+        "Load surface reflectance images",
+        "Mask bad QA pixels",
+        "Calculate NDVI and LSWI indices",
+        "Compute median of Landsat images",
+        "Clip images to region of interest",
+        "Export images to Drive"
+    ]
+}

@@ -1,0 +1,6 @@
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LT05/C02/T1_L2", "LANDSAT/LE07/C02/T1_L2", "LANDSAT/LC08/C02/T1_L2"],
+        "Function": ["Image scale factor adjustment", "Spectral unmixing analysis", "Cloud filtering", "Classification probability calculation"]
+    }
+}

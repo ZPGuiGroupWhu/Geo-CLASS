@@ -1,0 +1,6 @@
+{
+    "relation_1": {
+        "DataSource": ["MODIS/006/MCD64A1"],
+        "Function": ["Filter image collection by date", "Select specific image band", "Add first image to map", "Set visualization parameters", "Create video thumbnail", "Add thumbnail to map"]
+    }
+}

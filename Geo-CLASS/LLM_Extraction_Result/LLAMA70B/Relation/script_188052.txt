@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["projects/ee-kimmmydanny/assets/tingxialiuyu", "LANDSAT/LC08/C01/T1_RT_TOA"],
+        "Function": ["Cloud masking for Landsat 8 images", "Calculating MNDWI index for Landsat 8 images", "Water body extraction using MNDWI index", "Area calculation for water bodies"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["Cloud masking for Sentinel-2 images", "Calculating MNDWI index for Sentinel-2 images", "Otsu thresholding for water extraction", "Water body extraction using MNDWI index", "Area calculation for water bodies"]
+    }
+}

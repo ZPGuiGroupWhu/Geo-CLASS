@@ -1,0 +1,23 @@
+{
+  "Theme": ["Flood detection and analysis"],
+  "DataSource": [
+    "FAO/GAUL_SIMPLIFIED_500m/2015/level2",
+    "LANDSAT/LC08/C01/T1_SR",
+    "JRC/GSW1_0/GlobalSurfaceWater",
+    "WWF/HydroSHEDS/03VFDEM"
+  ],
+  "Function": [
+    "Filter regions by name",
+    "Add layer to map",
+    "Filter image collection by area and date",
+    "Sort images by cloud cover",
+    "Create mosaic and clip to boundary",
+    "Calculate NDWI",
+    "Compute difference image",
+    "Thresholding",
+    "Mask permanent water",
+    "Compute pixel connectivity",
+    "Mask areas with high slope",
+    "Mask clouds"
+  ]
+}

@@ -1,0 +1,150 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var L8_SR1 = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR"),
+    Flagstaff = 
+    /* color: #1ed639 */
+    /* shown: false */
+    ee.Geometry.Polygon(
+        [[[-111.71502619546321, 35.2296543038847],
+          [-111.71502619546321, 35.15053113631935],
+          [-111.54027491372493, 35.15053113631935],
+          [-111.54027491372493, 35.2296543038847]]], null, false);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+/// Ed Grasinger -- WILD 6750 --  Lab 2   
+
+// Question 1:  What are the start and end dates for the Landsat 8 Surface Reflectance collection?
+
+// Answer to Q1:   For this collection, the start date is April 11, 2013 and the end date is September 02, 2020    
+
+
+
+
+print(L8_SR1.size());
+
+// Question 2:  How many different Landsat 8 surface reflectance images are stored in this collection?
+/// Answer to Q2:  1,044,328 different Landsat 8 images are stored in the collection. 
+
+// Q2a What are the start and end dates for your own filtered image collection? 
+// Answer to Q2a:  Start Date: January 01, 2020   End Date: September 02, 2020   
+
+// Q3a What Bits in the pixel_qa layer are associated with cloud and cloud shadow?
+/// Answer to Q3a: In the pixel_qa layer, Cloud shadow is associated with Bit 3 and cloud is associated with Bit 5.
+
+// Filter date range and get count 
+// Choosing dates from the beginning of the year to current day 
+var MyL8Collection = L8_SR1.filterDate('2020-01-01','2020-09-02'); 
+print (MyL8Collection.size()); 
+
+// Question 3: How many images are in your collection after filtering for a date range?
+// Answer to Q3: 94,932 images are in my date filtered collection. 
+
+// add the filterBounds filter to collection to count the amount of images in the ROI (Flagstaff, AZ)
+var MyL8Collection = L8_SR1.filterDate('2020-01-01','2020-09-02').filterBounds(Flagstaff); 
+print (MyL8Collection.size());
+
+// Question 4: How many images are in your collection after filtering for date range and geography? 
+// Answer to Q4: 28 images 
+
+// Statistical functions
+var Image_mean = MyL8Collection.mean();
+var Image_max = MyL8Collection.max();
+var Image_min = MyL8Collection.min();
+var Image_median = MyL8Collection.median(); 
+Map.addLayer(MyL8Collection);
+print(MyL8Collection);
+
+
+// Apply the cloud filter mask for Landsat 8 image 
+function maskL8sr(image) {
+  // Bits 3 and 5 are cloud shadow and cloud, respectively.
+  var cloudShadowBitMask = (1 << 3);
+  var cloudsBitMask = (1 << 5);
+  // Get the pixel QA band.
+  var qa = image.select('pixel_qa');
+  // Both flags should be set to zero, indicating clear conditions.
+  var mask = qa.bitwiseAnd(cloudShadowBitMask).eq(0)
+                 .and(qa.bitwiseAnd(cloudsBitMask).eq(0));
+  return image.updateMask(mask);
+}
+
+// applying the necessary filters
+var MyL8Collection = L8_SR1.filterDate('2020-01-01','2020-09-02')
+                     .filterBounds(Flagstaff)
+                     .map(maskL8sr)
+                     .map(function(image){return image.clip(Flagstaff)}); // Clip Image to ROI
+            
+
+//Create a list of IDs for your own cloud-free image collection
+var MyL8ImageList = MyL8Collection.toList(MyL8Collection.size()); 
+print('My Image List', MyL8ImageList);
+
+var masked_images = MyL8Collection.map(maskL8sr);
+
+var masked_list = masked_images.toList(masked_images.size()); 
+print("Masked Images List", masked_list);
+
+ 
+
+// Setting the parameters for a natural color Landsat 8 image 
+var VizParams1 = {
+    bands: ['B4', 'B3', 'B2'],
+    min: 0,
+    max: 3000,
+    gamma: 1.4
+};
+
+// Parameters for False Color image
+var VizParams2 = {
+    bands: ['B7', 'B5', 'B3'],
+    min: 0,
+    max: 3000,
+    gamma: 1.4
+};
+
+var Image_median = MyL8Collection.median(); 
+
+// Natural Color
+Map.addLayer(Image_median, VizParams1, "Natural Color Image");
+
+// False Color
+Map.addLayer(Image_median, VizParams2, "False Color Image");
+
+
+// Question 5
+//a. What image collection am I using and how is it filtered 
+
+// It is being filtered using the 'maskL8sr' function; which identifies the Bits (3 and 5) associated with clouds and cloud shadows 
+
+
+// b. What does the script do? What does 'ff0000' and the other entries like it mean?
+
+//is the code for green, and '0000ff' is the code for blue. 
+
+// c. On Line 43, why do I only select spectral bands 1-7?
+// answer to c: You want bands 1 - 7 because they are the necessary wavelength range for the spectral signatures of water, vegetation, and fire burns.
+    // Band 1: Coastal Aerosol (0.43-0.45 um)
+    // Band 2: Blue (0.45-0.51 um)
+    // Band 3: Green (0.53-0.59 um)
+    // Band 4: Red (0.64-0.67 um)
+    // Band 5: NIR (0.85-0.88 um)
+    // Band 6: SWIR (1.57-1.65 um)
+    // Band 7: SWIR2 (2.11-2.29 um) 
+
+// d. What spectral bands am I displaying for the image on screen?
+// answer to d: The bands being used for the image displayed are bands 7 (SWIR2), 5 (NIR), and 3 (green); False color image.
+    // a. Why do fire scars appear red in the image (not the graph)?
+    // answer: The fire scars are red because burned land reflects shortwave infrared (SWIR) wavelengths and therefore appears red with the false color
+    // band combination. 
+    
+    // b. Why does vegetation appear green?
+    // answer: This is because vegetation highly reflects near infrared (NIR) wavelengths, NIR is displayed as green color 
+    // in the band combination/false color image. 
+    
+    // c. Why does water look dark blue and black? i. Why is Strawberry Reservoir closer to a black color than Utah lake which appears dark blue?
+    // The water in Strawberry Reservoir is close to black because the water in this reservoir absorbs all three of the wavelengths in the band combo. 
+    // The water in Utah Lake appears blue is because there is probably sediment present in the water, sediment reflects blue light in the 
+    // SWIR (B7), IR (B5), and Green (B3) band combination. 
+    
+    
+    
+    
+    // and the fire scars are reflecting blue light. 

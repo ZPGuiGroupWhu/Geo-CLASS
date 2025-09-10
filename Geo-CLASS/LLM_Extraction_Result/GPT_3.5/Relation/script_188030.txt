@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["projects/ee-kimiachenaary/assets/Tehran"],
+        "Function": ["Cloud masking to remove clouds from images", "NDVI calculation for vegetation health assessment", "Exporting time-series data for further analysis"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_TOA"],
+        "Function": ["Cloud masking to remove clouds from images", "NDVI calculation for vegetation health assessment", "Exporting time-series data for further analysis"]
+    }
+}

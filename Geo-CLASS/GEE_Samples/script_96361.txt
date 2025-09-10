@@ -1,0 +1,166 @@
+exports.LoadLandsat578C1T1TOA = function() {
+  // """merge landsat 5, 7, 8 collection 1 tier 1 imageCollections and standardize band names
+  // """
+  // ## standardize band names
+  var bn8 = ['B2', 'B3', 'B4', 'B6', 'B7', 'BQA', 'B5', 'B10', 'B11'];
+  var bn7 = ['B1', 'B2', 'B3', 'B5', 'B7', 'BQA', 'B4', 'B6_VCID_1', 'B6_VCID_2'];
+  var bn5 = ['B1', 'B2', 'B3', 'B5', 'B7', 'BQA', 'B4', 'B6', 'B6'];
+  var bns = ['Blue', 'Green', 'Red', 'Swir1', 'Swir2', 'BQA', 'Nir', 'BT1', 'BT2'];
+  
+  // # create a merged collection from landsat 5, 7, and 8
+  var ls5 = ee.ImageCollection("LANDSAT/LT05/C01/T1_TOA").select(bn5, bns);
+  
+  var ls7 = (ee.ImageCollection("LANDSAT/LE07/C01/T1_RT_TOA")
+  .filterDate('1999-01-01', '2003-05-30')
+  .select(bn7, bns));
+  
+  var ls8 = ee.ImageCollection("LANDSAT/LC08/C01/T1_RT_TOA").select(bn8, bns);
+  
+  var merged = ee.ImageCollection(ls5.merge(ls7).merge(ls8));
+  
+  return(merged);
+};
+
+var Unpack = function(bitBand, startingBit, bitWidth) {
+  // unpacking bit bands
+  // see: https://groups.google.com/forum/#!starred/google-earth-engine-developers/iSV4LwzIW7A
+  return(bitBand
+  .rightShift(startingBit)
+  .bitwiseAnd(ee.Number(2).pow(bitWidth).subtract(1).int()));
+};
+var UnpackAllTOA = function(bitBand) {
+  var bitInfo = {
+    'Cloud': [4, 1],
+    'CloudConfidence': [5, 2],
+    'CloudShadowConfidence': [7, 2],
+    'SnowIceConfidence': [9, 2]
+  };
+  var unpackedImage = ee.Image();
+  for (var key in bitInfo) {
+    unpackedImage = ee.Image.cat(
+      unpackedImage, Unpack(bitBand, bitInfo[key][0], bitInfo[key][1])
+      .rename(key));
+  }
+  return unpackedImage.select(Object.keys(bitInfo));
+};
+exports.AddFmaskTOA = function(image) {
+  
+  var temp = UnpackAllTOA(image.select(['BQA']));
+  
+  // ## define fmask water manually
+  var ndvi = image.normalizedDifference(['Nir', 'Red']);
+  var nir = image.select(['Nir']);
+  var fwater = ndvi.lt(0.01).and(nir.lt(0.11)).or(ndvi.lt(0.1).and(nir.lt(0.05)));
+
+  var fmask = (fwater.rename(['fmask'])
+  .where(temp.select(['SnowIceConfidence']).eq(3), ee.Image(3))
+  .where(temp.select(['CloudShadowConfidence']).eq(3), ee.Image(2))
+  .where(temp.select(['Cloud']), ee.Image(4)))
+  .mask(temp.select(['Cloud']).gte(0)); 
+
+  return(image.addBands(fmask));
+};
+
+
+var Mndwi = function(image) {
+  return(image.normalizedDifference(['Green', 'Swir1']).rename('mndwi'));
+};
+exports.prepPredictorsTOA = function(image) {
+  
+  // add texture
+  image = image.addBands(image.multiply(100).int16().glcmTexture({size: 3}));
+  
+  image = exports.AddFmaskTOA(image);
+  
+  // add Landsat No.
+  image = image
+  .addBands(ee.Image.constant(ee.Number.parse(ee.String(image.get('LANDSAT_SCENE_ID')).slice(2, 3), 10)).select(['constant'], ['Landsat']));
+  
+  // add hsv
+  
+  
+  // mask land area
+  
+  
+  return(image);
+};
+
+exports.LoadLandsat578C1T1SR = function() {
+  // merge landsat 5, 7, 8 collection 1 tier 1 imageCollections and standardize band names
+  
+  // refer and define standard band names
+  var bn8 = ['B1', 'B2', 'B3', 'B4', 'B6', 'pixel_qa', 'B5', 'B7', 'B10', 'B11'];
+  var bn7 = ['B1', 'B1', 'B2', 'B3', 'B5', 'pixel_qa', 'B4', 'B7', 'B6', 'B6'];
+  var bn5 = ['B1', 'B1', 'B2', 'B3', 'B5', 'pixel_qa', 'B4', 'B7', 'B6', 'B6'];
+  var bns = ['uBlue', 'Blue', 'Green', 'Red', 'Swir1', 'BQA', 'Nir', 'Swir2', 'BT1', 'BT2'];
+
+  // create a merged collection from landsat 5, 7, and 8
+  var ls5 = ee.ImageCollection("LANDSAT/LT05/C01/T1_SR").select(bn5, bns);
+  var ls7 = (ee.ImageCollection("LANDSAT/LE07/C01/T1_SR")
+  .filterDate('1999-04-15', '2003-05-30') // exclude LE7 images that affected by failure of Scan Line Corrector (SLC) 
+  .select(bn7, bns));
+  var ls8 = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR").select(bn8, bns);
+  var merged = ls5.merge(ls7).merge(ls8);
+
+  return(merged);
+};
+
+/* functions to add quality band (Fmask and hillshade) */
+var UnpackSR = function(qualityBand, startingBit, bitWidth) {
+  // unpacking bit information from the quality band given the bit position and width
+  // see: https://groups.google.com/forum/#!starred/google-earth-engine-developers/iSV4LwzIW7A
+  return(qualityBand
+  .rightShift(startingBit)
+  .bitwiseAnd(ee.Number(2).pow(bitWidth).subtract(1).int()));
+};
+var UnpackAllSR = function(bitBand) {
+  // apply Unpack function for multiple pixel qualities
+  var bitInfoSR = {
+    'Cloud': [5, 1],
+    'CloudShadow': [3, 1], 
+    'SnowIce': [4, 1],
+    'Water': [2, 1]
+  };
+  var unpackedImage = ee.Image();
+  for (var key in bitInfoSR) {
+    unpackedImage = ee.Image.cat(
+      unpackedImage, UnpackSR(bitBand, bitInfoSR[key][0], bitInfoSR[key][1])
+      .rename(key));
+  }
+  return(unpackedImage.select(Object.keys(bitInfoSR)));
+};
+exports.AddFmaskSR = function(image) {
+  // add fmask as a separate band to the input image
+  var temp = UnpackAllSR(image.select(['BQA']));
+
+  // construct the fmask
+  var fmask = (temp.select(['Water']).rename(['fmask'])
+  .where(temp.select(['SnowIce']), ee.Image(3))
+  .where(temp.select(['CloudShadow']), ee.Image(2))
+  .where(temp.select(['Cloud']), ee.Image(4)))
+  .mask(temp.select(['Cloud']).gte(0)); 
+
+  return(image.addBands(fmask));
+};
+exports.prepPredictorsSR = function(image) {
+  
+  // add texture
+  image = image.select(['BQA'])
+  .addBands(image.select(['Blue', 'Green', 'Red', 'Swir1', 'BQA', 'Nir', 'Swir2']).divide(10000))
+  .addBands(image.select(['BT1', 'BT2']).divide(10));
+  image = image.addBands(image.multiply(100).int16().glcmTexture({size: 3}));
+  
+  image = exports.AddFmaskSR(image);
+  
+  // add Landsat No.
+  image = image
+  .addBands(ee.Image.constant(ee.Number.parse(ee.String(image.get('LANDSAT_ID')).slice(3, 4), 10)).select(['constant'], ['Landsat']));
+  
+  // add hsv
+  
+  
+  // mask land area
+  
+  
+  return(image);
+};

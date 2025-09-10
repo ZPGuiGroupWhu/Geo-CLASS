@@ -1,0 +1,29 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["NDVI trend analysis in Beijing"],
+  "DataSource": ["users/kidsherry/Beijing", "MODIS/006/MOD13A1"],
+  "Function": ["Extracting maximum NDVI values", "Performing linear trend analysis", "Clipping images to a region of interest", "Calculating mean NDVI time series"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/kidsherry/Beijing"],
+        "Function": ["Extracting maximum NDVI values", "Clipping images to a region of interest"]
+    },
+    "relation_2": {
+        "DataSource": ["MODIS/006/MOD13A1"],
+        "Function": ["Performing linear trend analysis", "Calculating mean NDVI time series"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3454, 'completion_tokens': 213, 'total_tokens': 3667}

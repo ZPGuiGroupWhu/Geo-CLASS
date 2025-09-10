@@ -1,0 +1,5 @@
+{
+  "Theme": ["Forest monitoring and deforestation detection"],
+  "DataSource": ["LANDSAT/LC8_SR", "LANDSAT/LC8_L1T_TOA", "LANDSAT/LE7_L1T_TOA_FMASK", "LANDSAT/LT5_L1T_TOA_FMASK", "COPERNICUS/S2", "ft:11R-JRBIylckCHZsQf20C-tgHLlWWZ8BoXrL9u2re"],
+  "Function": ["Filtering image collection by date", "Sorting image collection by time", "Filtering image collection by bounds", "Calculating NDVI", "Calculating NBR", "Mosaicking images", "Painting feature collection", "Adding bands to image"]
+}

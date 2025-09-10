@@ -1,0 +1,416 @@
+// Phần 1: Thu thập ảnh, các chỉ số và metadata
+
+
+
+
+
+var l8_sr = ee.ImageCollection("LANDSAT/LC8_SR"),
+
+    l8_toa = ee.ImageCollection("LANDSAT/LC8_L1T_TOA");
+
+    
+
+var l5 = ee.ImageCollection("LANDSAT/LT5_L1T_TOA_FMASK"),
+
+    l7 = ee.ImageCollection("LANDSAT/LE7_L1T_TOA_FMASK");
+
+    
+
+var s2 = ee.ImageCollection("COPERNICUS/S2");
+
+
+
+// Choose Image Collection: Sentinel-2 (s2) or Landsat 8 Raw (l8raw):
+
+var collection = l8_toa;
+
+
+
+
+
+// Choose study area: 
+
+
+
+var BM_TH = ee.FeatureCollection('ft:1jAZtLqcNzJvkjSwTMe9CGASiWffqNQRuDRynFPAe','geometry');
+
+
+
+var myArea = BM_TH;
+
+
+
+
+
+var empty = ee.Image().byte();
+
+var outline = empty.paint({featureCollection: myArea, color: 1, width: 3});
+
+Map.centerObject(myArea,9);
+
+Map.addLayer(outline, {palette: 'FF0000'}, 'myarea');
+
+
+
+var collect = collection
+
+                  .filterDate('2016-03-10', '2016-04-30')
+
+                  
+
+                  .sort('system:time_start', false)
+
+                  .filterBounds(myArea)
+
+                  
+
+                  
+
+                  .select(['B2', 'B3', 'B4', 'B5', 'B7']);//for Landsat8
+
+print('Images',myImages);
+
+
+
+// This function calculates the NDVI
+
+var addNDVI = function(image) {
+
+  return image.addBands(image.normalizedDifference(['B5', 'B4']));
+
+};
+
+
+
+// This maps the function over the entire image collection
+
+var myImages0 = collect.map(addNDVI);
+
+
+
+// This function calculates the NBR
+
+var addNBR = function(image) {
+
+  return image.addBands(image.normalizedDifference(['B5', 'B7']));
+
+};
+
+
+
+// This maps the function over the entire image collection
+
+var myImages1 = myImages0.map(addNBR);
+
+
+
+
+
+var myImages = myImages1.select(['nd','nd_1','B2','B3','B4','B5','B7']);
+
+
+
+
+
+print('Images',myImages);
+
+
+
+// For exporting individual scenes run the code below: 
+
+var myImagesList = myImages.toList(1000); //Make this number larger than how many images you expect
+
+print('Images',myImages);
+
+
+
+var imageIDs = myImagesList.map(function(img){
+
+  img = ee.Image(img);
+
+  return img.get('system:index');
+
+});
+
+print(imageIDs);
+
+
+
+
+
+
+
+// Export images
+
+imageIDs.evaluate(
+
+  function(imageIDsClient) {
+
+    imageIDsClient.map(function(ID){
+
+      var img = myImages.filter(ee.Filter.equals('system:index',ID));
+
+      img = ee.Image(img.first());
+
+      Export.image.toDrive({
+
+        image: img,
+
+        description: ID,
+
+        scale: 30, // Set this to resolution (in meters) you want for image
+
+        region: myArea
+
+      });
+
+    });
+
+  }
+
+);
+
+
+
+
+
+
+
+
+
+// Phần II: Phát hiện sớm mất rừng, suy thoái rừng và lửa rừng
+
+
+
+var faoi1 = ee.FeatureCollection('ft:1jAZtLqcNzJvkjSwTMe9CGASiWffqNQRuDRynFPAe')
+
+var faoi = ee.FeatureCollection('ft:1jAZtLqcNzJvkjSwTMe9CGASiWffqNQRuDRynFPAe','geometry');
+
+
+
+var aoi = ee.Image().paint(faoi,'#f00',5);
+
+
+
+
+
+var images=[
+
+  ee.ImageCollection('LANDSAT/LC8_L1T_TOA')
+
+  .filterDate('2016-3-12', '2016-3-16')
+
+  .mosaic(),
+
+  ee.ImageCollection('LANDSAT/LC8_L1T_TOA')
+
+  .filterDate('2016-10-5', '2016-10-15')
+
+  .mosaic()
+
+  ];
+
+
+
+var vis = [
+
+  {gamma: 1.3, min: 0, max: 1.0, bands: ['B6', 'B5', 'B2']},
+
+  {gamma: 1.3, min: 0, max: 1.0, bands: ['B6', 'B5', 'B2']}
+
+];
+
+
+
+var NAMES = [
+
+  'Trước khi mất rừng',
+
+  'Sau khi mất rừng',
+
+];
+
+
+
+// Create a map for each visualization option.
+
+var maps = [];
+
+NAMES.forEach(function(name,index) {
+
+  var map = ui.Map();
+
+  map.add(ui.Label(name));
+
+  map.addLayer(images[index], vis[index], name);
+
+  map.addLayer(aoi, {palette: '#f00'}, 'aoi');
+
+  map.setControlVisibility(true);
+
+  maps.push(map);
+
+});
+
+
+
+var linker = ui.Map.Linker(maps);
+
+// Enable zooming on the top-left map.
+
+maps[0].setControlVisibility({zoomControl: true});
+
+// Show the scale (e.g. '500m') on the bottom-right map.
+
+maps[0].setControlVisibility({scaleControl: true});
+
+maps[1].setControlVisibility({scaleControl: true});
+
+// Create a title..
+
+var title = ui.Label('Phát hiện sớm mất rừng, suy thoái rừng và lửa rừng ở Bha Lê, Tây Giang, Quảng Nam bằng ảnh vệ tinh Landsat 8', {
+
+  stretch: 'horizontal',
+
+  textAlign: 'center',
+
+  fontWeight: 'bold',
+
+  fontSize: '24px',
+
+  color: 'FF0000'
+
+});
+
+
+
+
+
+// Create a panel to hold our widgets..
+
+var panel = ui.Panel();
+
+panel.style().set('width', '300px');
+
+
+
+
+
+// Create a grid of maps.
+
+var mapGrid = ui.Panel([
+
+    ui.Panel([maps[0]], null, {stretch: 'both'}),
+
+    ui.Panel([maps[1]], null, {stretch: 'both'})
+
+  ],
+
+  ui.Panel.Layout.Flow('horizontal'), {stretch: 'both'}
+
+);
+
+
+
+// Add the maps and title to the ui.root.
+
+ui.root.widgets().reset([title, mapGrid]);
+
+ui.root.setLayout(ui.Panel.Layout.Flow('vertical'));
+
+
+
+// Center the maps to Quang Son.
+
+maps[0].setCenter(107.5153, 15.9691, 11);
+
+
+
+
+
+ui.Map.Linker([maps[0], maps[1]]);
+
+
+
+// Create an intro panel with labels.
+
+var intro = ui.Panel([
+
+  ui.Label({
+
+    value: 'Two Chart Inspector',
+
+    style: {fontSize: '20px', fontWeight: 'bold'}
+
+  }),
+
+  ui.Label('Click a point on the map to inspect.')
+
+]);
+
+panel.add(intro);
+
+
+
+// Create panels to hold lon/lat values.
+
+var lon = ui.Label();
+
+var lat = ui.Label();
+
+panel.add(ui.Panel([lon, lat], ui.Panel.Layout.flow('horizontal')));
+
+
+
+/***
+
+ * Add marker point after mouse is clicked
+
+ */
+
+function onMapClick(coords) {
+
+  // Update the lon/lat panel with values from the click event.
+
+  lon.setValue('lon: ' + coords.lon.toFixed(5)),
+
+  lat.setValue('lat: ' + coords.lat.toFixed(5));
+
+
+
+  // Add a red dot for the point clicked on.
+
+  var point = ee.Geometry.Point(coords.lon, coords.lat);
+
+  
+
+  var dot = ui.Map.Layer(point, {color: 'FF0000'});
+
+  maps[0].layers().set(1, dot);
+
+  
+
+  var dot = ui.Map.Layer(point, {color: 'FF0000'});
+
+  maps[1].layers().set(1, dot);
+
+}
+
+
+
+
+
+// Register a callback on the default map to be invoked when the map is clicked.
+
+maps[0].onClick(onMapClick);
+
+maps[1].onClick(onMapClick);
+
+
+
+Map.centerObject(aoi, 18);
+
+
+
+
+

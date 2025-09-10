@@ -1,0 +1,6 @@
+{
+  "Summary": ["Script processes Sentinel 2 images for Cordoba region in two periods."],
+  "Theme": ["Land cover monitoring", "Water index calculation"],
+  "DataSource": ["users/cesarnon/datos_cba_2017/Cordoba_limite", "COPERNICUS/S2"],
+  "Function": ["Image collection filtering based on date and location", "Band selection and renaming", "Quality band index calculation", "Image mosaicking"]
+}

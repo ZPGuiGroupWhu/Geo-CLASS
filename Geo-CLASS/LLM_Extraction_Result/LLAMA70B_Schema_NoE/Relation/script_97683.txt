@@ -1,0 +1,51 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "NOAA/VIIRS/DNB/MONTHLY_V1/VCMCFG",
+            "NOAA/VIIRS/001/VNP09GA"
+        ],
+        "Function": [
+            "Filtering and clipping satellite images",
+            "Applying filters to image collections based on date and cloud cover"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "VITO/PROBAV/C1/S1_TOC_100M"
+        ],
+        "Function": [
+            "Applying median filter to image collections"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "MODIS/006/MCD43A1"
+        ],
+        "Function": [
+            "Converting radiance values to reflectance"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "ASTER/AST_L1T_003",
+            "LANDSAT/LT04/C01/T1_TOA",
+            "LANDSAT/LT05/C01/T1_TOA",
+            "LANDSAT/LE07/C01/T1_TOA",
+            "LANDSAT/LC08/C01/T1_TOA"
+        ],
+        "Function": [
+            "Clipping images to a specified geometry",
+            "Exporting images to Google Drive"
+        ]
+    },
+    "relation_5": {
+        "DataSource": [
+            "COPERNICUS/S3/OLCI",
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Filtering and clipping satellite images",
+            "Applying filters to image collections based on date and cloud cover"
+        ]
+    }
+}

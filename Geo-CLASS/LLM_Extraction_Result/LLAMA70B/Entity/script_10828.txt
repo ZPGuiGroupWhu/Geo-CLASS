@@ -1,0 +1,5 @@
+{
+  "Theme": ["Vegetation Index Analysis"],
+  "DataSource": ["MODIS/006/MOD09A1", "users/kongdd/public:Math/pkg_smooth.js", "users/kongdd/public:pkg_vis.js"],
+  "Function": ["Cloud masking", "NDVI calculation", "Linear interpolation", "Image collection filtering", "Region reduction", "Feature collection iteration", "Table export"]
+}

@@ -1,0 +1,16 @@
+{
+    "Theme": [
+        "Land cover classification and feature extraction"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C01/T1_TOA",
+        "LANDSAT/LT5_L1T_TOA"
+    ],
+    "Function": [
+        "Filtering and sorting of Landsat 8 images based on cloud cover and date",
+        "Calculation of NDVI, EVI, NDWI, NDBI, BAI, NBRT, and NDSI indices",
+        "Linear transformation and principal component analysis (PCA) of Landsat 5 images",
+        "Spectral unmixing of Landsat 8 images",
+        "HSV transform and pan-sharpening of Landsat 8 images"
+    ]
+}

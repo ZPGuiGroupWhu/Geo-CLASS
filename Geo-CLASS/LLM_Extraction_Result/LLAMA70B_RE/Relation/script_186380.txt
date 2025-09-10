@@ -1,0 +1,32 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "ft:1QKw5K7582CuFBKiqDcYEPADrvjHTLAkz3EIxL_TI",
+            "ft:1iQ8RECwcWSVF3AkSPVdxgpnENRJc-su6G6c1CZiF"
+        ],
+        "Function": [
+            "Buffering survey points",
+            "Clipping images to buffer"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LC8_L1T_TOA"
+        ],
+        "Function": [
+            "Cloud masking",
+            "Adding spectral indices",
+            "Calculating mean values around survey points"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "LANDSAT/LE7_L1T_TOA"
+        ],
+        "Function": [
+            "Cloud masking",
+            "Adding spectral indices",
+            "Calculating mean values around survey points"
+        ]
+    }
+}

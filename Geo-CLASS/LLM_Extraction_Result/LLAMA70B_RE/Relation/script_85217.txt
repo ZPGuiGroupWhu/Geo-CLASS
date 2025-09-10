@@ -1,0 +1,22 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1"
+        ],
+        "Function": [
+            "Load Landsat 8 image collection",
+            "Create cloud-free composite",
+            "Sample composite to generate training data",
+            "Classify composite"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1"
+        ],
+        "Function": [
+            "Train CART classifier",
+            "Perform accuracy assessment"
+        ]
+    }
+}

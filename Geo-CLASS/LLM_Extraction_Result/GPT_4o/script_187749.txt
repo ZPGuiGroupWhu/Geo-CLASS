@@ -1,0 +1,25 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["NDVI trend analysis in Beijing"],
+  "DataSource": ["users/kidsherry/Beijing", "MODIS/006/MOD13A1"],
+  "Function": ["Create a list of years", "Filter image collection by date", "Select maximum NDVI value", "Set image timestamp", "Create image collection from list", "Perform linear trend analysis", "Visualize trend analysis", "Define regions of interest", "Add regions to map", "Generate NDVI time series chart", "Display NDVI time series chart"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/kidsherry/Beijing"],
+        "Function": ["Visualize trend analysis", "Define regions of interest", "Add regions to map"]
+    },
+    "relation_2": {
+        "DataSource": ["MODIS/006/MOD13A1"],
+        "Function": ["Filter image collection by date", "Select maximum NDVI value", "Set image timestamp", "Create image collection from list", "Perform linear trend analysis", "Generate NDVI time series chart", "Display NDVI time series chart"]
+    }
+}
+```
+
+Total_Token_Usage:
+4948

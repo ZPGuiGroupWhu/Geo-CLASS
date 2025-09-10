@@ -1,0 +1,18 @@
+{
+    "Summary": [
+        "Process Sentinel-2 images for water detection and analyze JRC monthly water occurrence."
+    ],
+    "Theme": [
+        "WATER-LEAVING RADIANCE",
+        "HOURLY PRECIPITATION AMOUNT"
+    ],
+    "DataSource": [
+        "JRC/GSW1_0/MonthlyHistory",
+        "COPERNICUS/S2",
+        "users/christinacorbane/MT_comp_proj"
+    ],
+    "Function": [
+        "Image Preprocessing",
+        "Otsu Thresholding"
+    ]
+}

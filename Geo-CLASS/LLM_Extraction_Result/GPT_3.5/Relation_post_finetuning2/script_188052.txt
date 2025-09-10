@@ -1,0 +1,31 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "projects/ee-kimmmydanny/assets/tingxialiuyu"
+        ],
+        "Function": [
+            "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover",
+            "Otsu Thresholding",
+            "Surface water area computation"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_RT_TOA"
+        ],
+        "Function": [
+            "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover",
+            "Otsu Thresholding",
+            "Surface water area computation"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "COPERNICUS/S2_SR"
+        ],
+        "Function": [
+            "Otsu Thresholding",
+            "Surface water area computation"
+        ]
+    }
+}

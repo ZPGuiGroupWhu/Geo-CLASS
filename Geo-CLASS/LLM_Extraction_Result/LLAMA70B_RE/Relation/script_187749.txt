@@ -1,0 +1,20 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/kidsherry/Beijing"
+        ],
+        "Function": [
+            "Select region of interest"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "MODIS/006/MOD13A1"
+        ],
+        "Function": [
+            "Compose 20-year maximum NDVI images",
+            "Perform trend analysis",
+            "Plot NDVI time series"
+        ]
+    }
+}

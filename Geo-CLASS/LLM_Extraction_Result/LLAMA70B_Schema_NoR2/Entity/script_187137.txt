@@ -1,0 +1,5 @@
+{
+  "Theme": ["Land Surface Temperature Analysis"],
+  "DataSource": ["users/khoapv_vnuf/Thanhhoa_t", "MODIS/MOD11A2"],
+  "Function": ["Filtering and aggregating images by year", "Transforming Kelvin to Celsius", "Calculating annual temperature range", "Generating dates by months for all years", "Calculating monthly max and min temperatures", "Creating image collections", "Charting temperature series by month"]
+}

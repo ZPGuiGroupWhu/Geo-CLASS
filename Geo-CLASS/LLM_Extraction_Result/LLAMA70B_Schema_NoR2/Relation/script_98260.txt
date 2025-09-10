@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2"],
+        "Function": ["Filtering image collection by bounds and date", "Clipping image to boundary"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LT05/C01/T1_SR"],
+        "Function": ["Calculating normalized difference water index", "Computing histogram of NIR band", "Charting histogram", "Otsu thresholding for water detection"]
+    }
+}

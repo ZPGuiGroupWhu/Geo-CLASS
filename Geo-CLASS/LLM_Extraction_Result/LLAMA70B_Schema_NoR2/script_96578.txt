@@ -1,0 +1,31 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Wildfire analysis and monitoring in Tasmania"],
+  "DataSource": ["COPERNICUS/S2_SR", "MODIS/006/MOD14A1", "MODIS/006/MOD11A1"],
+  "Function": ["Filtering image collections by date", "Converting Kelvin to Celsius", "Calculating maximum temperature", "Unmasking image collection", "Generating charts for temperature and radiative power", "Calculating NDVI", "Identifying fire masks using NDVI"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["Filtering image collections by date", "Unmasking image collection", "Calculating NDVI", "Identifying fire masks using NDVI"]
+    },
+    "relation_2": {
+        "DataSource": ["MODIS/006/MOD14A1"],
+        "Function": ["Converting Kelvin to Celsius", "Calculating maximum temperature"]
+    },
+    "relation_3": {
+        "DataSource": ["MODIS/006/MOD11A1"],
+        "Function": ["Generating charts for temperature and radiative power"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3663, 'completion_tokens': 297, 'total_tokens': 3960}

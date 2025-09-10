@@ -1,0 +1,31 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Landsat 5, 7, 8 image processing and analysis"],
+  "DataSource": ["LANDSAT/LT05/C01/T1_TOA", "LANDSAT/LE07/C01/T1_RT_TOA", "LANDSAT/LC08/C01/T1_RT_TOA", "LANDSAT/LT05/C01/T1_SR", "LANDSAT/LE07/C01/T1_SR", "LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Merging Landsat image collections", "Standardizing band names", "Unpacking bit bands", "Adding Fmask", "Calculating MNDWI", "Adding texture", "Masking land area"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response that organizes the extracted information into a structured format:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LT05/C01/T1_TOA", "LANDSAT/LT05/C01/T1_SR"],
+        "Function": ["Merging Landsat image collections", "Unpacking bit bands", "Adding Fmask", "Masking land area"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LE07/C01/T1_RT_TOA", "LANDSAT/LE07/C01/T1_SR"],
+        "Function": ["Merging Landsat image collections", "Standardizing band names", "Unpacking bit bands", "Adding Fmask", "Masking land area"]
+    },
+    "relation_3": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_RT_TOA", "LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Merging Landsat image collections", "Standardizing band names", "Unpacking bit bands", "Adding Fmask", "Calculating MNDWI", "Adding texture", "Masking land area"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3976, 'completion_tokens': 486, 'total_tokens': 4462}

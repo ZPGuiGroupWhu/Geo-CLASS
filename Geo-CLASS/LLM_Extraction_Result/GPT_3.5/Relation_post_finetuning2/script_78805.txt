@@ -1,0 +1,20 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/philipegeo/pol_jeremoabo"
+        ],
+        "Function": [
+            "Filter Images By Cloud Cover",
+            "Add NDVI Band To Images"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LT05/C01/T1_TOA"
+        ],
+        "Function": [
+            "Filter Images By Cloud Cover",
+            "Add NDVI Band To Images"
+        ]
+    }
+}

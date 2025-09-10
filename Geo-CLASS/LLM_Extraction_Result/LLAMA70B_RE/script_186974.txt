@@ -1,0 +1,36 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Land surface reflectance analysis"],
+  "DataSource": ["LANDSAT/LT05/C01/T1_SR", "LANDSAT/LE07/C01/T1_SR", "LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Cloud masking", "Image collection filtering", "Band selection", "Image renaming", "NDWI and MNDWI calculation", "Image collection merging", "Time series analysis"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LT05/C01/T1_SR"],
+        "Function": ["Cloud masking", "Image collection filtering", "Band selection", "Image renaming"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LE07/C01/T1_SR"],
+        "Function": ["Cloud masking", "Image collection filtering", "Band selection", "Image renaming"]
+    },
+    "relation_3": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Cloud masking", "Image collection filtering", "Band selection", "Image renaming"]
+    },
+    "relation_4": {
+        "DataSource": ["LANDSAT/LT05/C01/T1_SR", "LANDSAT/LE07/C01/T1_SR", "LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Image collection merging", "NDWI and MNDWI calculation", "Time series analysis"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4306, 'completion_tokens': 409, 'total_tokens': 4715}

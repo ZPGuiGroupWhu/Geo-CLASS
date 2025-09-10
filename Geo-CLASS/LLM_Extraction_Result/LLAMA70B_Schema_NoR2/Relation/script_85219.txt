@@ -1,0 +1,14 @@
+{
+    "relation_1": {
+        "DataSource": ["users/diegogmzd/CHACO"],
+        "Function": ["Filtering image collection by date and bounds", "Clipping images to region of interest"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Applying cloud mask to images", "Calculating median of image collection", "Computing normalized difference indices"]
+    },
+    "relation_3": {
+        "DataSource": ["COPERNICUS/S3/OLCI"],
+        "Function": ["Mosaicking images", "Visualizing results with custom palettes"]
+    }
+}

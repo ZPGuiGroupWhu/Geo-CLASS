@@ -1,0 +1,17 @@
+{
+    "Theme": [
+        "Land cover classification"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C01/T1_SR",
+        "LANDSAT/LC08/C01/T1",
+        "users/nclinton/demo_landcover_labels"
+    ],
+    "Function": [
+        "Cloud masking",
+        "Image collection filtering",
+        "Image classification",
+        "Accuracy assessment",
+        "Area calculation"
+    ]
+}

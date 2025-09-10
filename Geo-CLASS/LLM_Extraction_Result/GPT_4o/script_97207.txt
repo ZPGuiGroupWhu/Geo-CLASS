@@ -1,0 +1,25 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Fire impact analysis using NDVI"],
+  "DataSource": ["users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016", "COPERNICUS/S2"],
+  "Function": ["Define fire area polygon", "Set timezone", "Set fire event dates", "Set image collection date range", "Filter fires by area and date", "Select Sentinel-2 bands", "Filter image collection by date and area", "Calculate mean image", "Normalize image", "Clip image to fire area", "Mask invalid zones", "Calculate NDVI", "Calculate NDVI difference", "Classify burned areas", "Evaluate classification accuracy", "Display results on map", "Generate histogram chart", "Generate accuracy chart"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016"],
+    "Function": ["Filter fires by area and date", "Mask invalid zones", "Classify burned areas", "Evaluate classification accuracy"]
+  },
+  "relation_2": {
+    "DataSource": ["COPERNICUS/S2"],
+    "Function": ["Select Sentinel-2 bands", "Filter image collection by date and area", "Calculate mean image", "Normalize image", "Clip image to fire area", "Calculate NDVI", "Calculate NDVI difference", "Display results on map", "Generate histogram chart", "Generate accuracy chart"]
+  }
+}
+```
+
+Total_Token_Usage:
+7696

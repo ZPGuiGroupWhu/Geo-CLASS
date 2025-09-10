@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Analyzing NDVI trends in different vegetation areas using Landsat 8 and Sentinel-2 data."],
+  "Theme": ["NDVI trend analysis in various vegetation types"],
+  "DataSource": ["users/nicolasalejandromari/Sitios_NDVI_Tessi", "users/franciscoalaggia/Transectas", "LANDSAT/LC08/C01/T1_SR", "COPERNICUS/S2_SR"],
+  "Function": ["Masking clouds in Landsat 8 images", "Adding NDVI and time bands to Landsat 8 images", "Filtering and processing Landsat 8 data", "Masking clouds in Sentinel-2 images", "Adding NDVI and time bands to Sentinel-2 images", "Filtering and processing Sentinel-2 data", "Creating and displaying a temporal signature chart for NDVI in different vegetation areas"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/nicolasalejandromari/Sitios_NDVI_Tessi", "users/franciscoalaggia/Transectas"],
+        "Function": ["Masking clouds in Landsat 8 images", "Adding NDVI and time bands to Landsat 8 images", "Filtering and processing Landsat 8 data"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Masking clouds in Sentinel-2 images", "Adding NDVI and time bands to Sentinel-2 images", "Filtering and processing Sentinel-2 data", "Creating and displaying a temporal signature chart for NDVI in different vegetation areas"]
+    }
+}
+```

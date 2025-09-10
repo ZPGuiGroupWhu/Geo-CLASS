@@ -1,0 +1,18 @@
+{
+    "Summary": [
+        "The script remaps land cover data from different years and applies a geoprocessing model to track changes over time."
+    ],
+    "Theme": [
+        "LAND USE/LAND COVER"
+    ],
+    "DataSource": [
+        "USGS/NLCD/NLCD1992",
+        "USGS/NLCD/NLCD2001",
+        "USGS/NLCD/NLCD2006"
+    ],
+    "Function": [
+        "Remapping Land Cover Classes",
+        "Data Acquisition And Preprocessing",
+        "Data Acquisition And Preprocessing"
+    ]
+}

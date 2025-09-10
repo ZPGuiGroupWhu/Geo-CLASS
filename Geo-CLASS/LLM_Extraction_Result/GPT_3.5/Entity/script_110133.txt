@@ -1,0 +1,6 @@
+{
+  "Summary": ["The script aims to analyze flood extent using Sentinel-1 imagery before and after a flood event, refining the results with additional datasets for accuracy."],
+  "Theme": ["Flood extent analysis"],
+  "DataSource": ["users/felixgeooperations/Drin/20210112_Drin_flood", "COPERNICUS/S1_GRD", "JRC/GSW1_0/GlobalSurfaceWater", "WWF/HydroSHEDS/03VFDEM", "JRC/GHSL/P2016/POP_GPW_GLOBE_V1/2015"],
+  "Function": ["Selecting Sentinel-1 GRD data based on defined parameters", "Calculating flood extent by comparing before and after images", "Refining flood result using JRC surface water seasonality data", "Masking out areas with more than 5% slope using a Digital Elevation Model", "Calculating exposed population density based on GHSL data"]
+}

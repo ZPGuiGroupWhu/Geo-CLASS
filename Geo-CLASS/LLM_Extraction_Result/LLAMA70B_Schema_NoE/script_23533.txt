@@ -1,0 +1,23 @@
+Entity Recognition:
+```
+{
+  "Theme": ["Land cover classification and change detection"],
+  "DataSource": ["USGS/NLCD/NLCD1992", "USGS/NLCD/NLCD2001", "USGS/NLCD/NLCD2006"],
+  "Function": ["Remapping land cover classes", "Assembling image collection for land cover change detection", "Applying BULC function for land cover classification and change detection"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["USGS/NLCD/NLCD1992", "USGS/NLCD/NLCD2001", "USGS/NLCD/NLCD2006"],
+        "Function": ["Remapping land cover classes", "Assembling image collection for land cover change detection", "Applying BULC function for land cover classification and change detection"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3109, 'completion_tokens': 217, 'total_tokens': 3326}

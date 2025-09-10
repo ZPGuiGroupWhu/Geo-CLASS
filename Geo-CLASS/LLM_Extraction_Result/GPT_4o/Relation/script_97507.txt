@@ -1,0 +1,10 @@
+{
+  "relation_1": {
+    "DataSource": ["TIGER/2018/Counties"],
+    "Function": ["Load county dataset", "Filter county by name", "Center map on county", "Add county layer to map"]
+  },
+  "relation_2": {
+    "DataSource": ["LANDSAT/LC08/C02/T1_L2"],
+    "Function": ["Load Landsat 8 images", "Filter images by cloud cover", "Filter images by path and row", "Filter images by date", "Extract image dates", "Create visualization parameters", "Display images by date"]
+  }
+}

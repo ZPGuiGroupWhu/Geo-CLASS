@@ -1,0 +1,398 @@
+//Calculate average spectral indices around marsh bird survey points along the ColRiver
+
+
+
+//import feature collection of survey points from 2 study areas
+
+var Imperial = ee.FeatureCollection("ft:1QKw5K7582CuFBKiqDcYEPADrvjHTLAkz3EIxL_TI"),
+
+    Cibola = ee.FeatureCollection("ft:1iQ8RECwcWSVF3AkSPVdxgpnENRJc-su6G6c1CZiF");
+
+
+
+// build buffer function to clip images to marshbird points
+
+
+
+var buff200 = function(feature){return feature.buffer(200);  
+
+};
+
+//buffer marshbird survey points and merge into 1 featurecollection
+
+var cibolabuffer200 = Cibola.map(buff200)
+
+ var imp200 =Imperial.map(buff200)
+
+ var marshbuffer200 = cibolabuffer200.merge(imp200);    
+
+
+
+//function to map over image collection 
+
+var bufferMask200= function(image){return image.clip(marshbuffer200)}
+
+
+
+
+
+// import landsat7 and landsat 8 TOA image collections, filter by dates and general area of interest
+
+
+
+var l8toa=ee.ImageCollection('LANDSAT/LC8_L1T_TOA')
+
+ .filterDate('2013-01-01', '2017-10-15')
+
+  .filterBounds(marshbuffer200)
+
+
+
+var l7toa= ee.ImageCollection("LANDSAT/LE7_L1T_TOA")
+
+ .filterDate('2000-01-01', '2017-10-15')
+
+.filterBounds(marshbuffer200)
+
+
+
+//number of landsat images in each image Collection...just out of curiosity
+
+print(l7toa.size(),'toa images')//762 images in collection
+
+
+
+
+
+//to save some typing
+
+var timefield= 'system:time_start';
+
+
+
+
+
+// create cloud mask using the BQA band in LS 8 TOA imagery...pre-calculated quality scores
+
+var maskclouds = function(image){
+
+  var quality = image.select("BQA");
+
+  var cloud01 = quality.eq(61440);
+
+  var cloud02 = quality.eq(53248);
+
+  var cloud03 = quality.eq(28672);
+
+  var mask = cloud01.or(cloud02).or(cloud03).not();
+
+  return image.updateMask(mask);
+
+  
+
+}
+
+// make a function to add variables of interest to landsat 8 imagery
+
+var addVariables8 = function(image){
+
+  var date=ee.Date(image.get(timefield));
+
+  var years = date.difference(ee.Date("1970-01-01"),"year");
+
+  //Return the image with added bands
+
+  return image
+
+  //add NDVI
+
+  .addBands(image.normalizedDifference(["B5","B4"]).rename("NDVI")).float()
+
+    // add NDWBI
+
+  .addBands(image.normalizedDifference(['B3','B4']).rename('NDWBI').float())
+
+    // add NDWI
+
+  .addBands(image.normalizedDifference(['B5','B6']).rename('NDWI').float())
+
+  //add time band
+
+  .addBands(ee.Image(years).rename('t').float())
+
+  
+
+};
+
+//add variables to landsat 8 imagey, mask out cloudy images and clip to area of interest
+
+
+
+var filteredlandsat8 = l8toa
+
+.map(bufferMask200)
+
+.map(maskclouds)
+
+.map(addVariables8)
+
+;
+
+//inspect filteredlandsat
+
+print(filteredlandsat8.first())
+
+
+
+// make a function to add variables of interest to landsat 7 imagery
+
+
+
+var addVariables7 = function(image){
+
+  var date=ee.Date(image.get(timefield));
+
+  var years = date.difference(ee.Date("1970-01-01"),"year");
+
+  //Return the image with added bands
+
+  return image
+
+  //add NDVI
+
+  .addBands(image.normalizedDifference(["B4","B3"]).rename("NDVI")).float()
+
+  // add NDWBI
+
+  .addBands(image.normalizedDifference(['B2','B4']).rename("NDWBI").float())
+
+  // add NDWI
+
+  .addBands(image.normalizedDifference(['B4','B5']).rename("NDWI").float())
+
+  //add time band
+
+  .addBands(ee.Image(years).rename('t').float())
+
+  
+
+};
+
+// set cloud threshold
+
+var cloud_thresh = 40;
+
+
+
+// create cloud score function for LS 7 imagery taking advantage of the built in algorithm cloudscore
+
+var cloudfunction = function(image){
+
+  //use add the cloud likelihood band to the image
+
+  var CloudScore = ee.Algorithms.Landsat.simpleCloudScore(image);
+
+  //isolate the cloud likelihood band
+
+  var quality = CloudScore.select('cloud');
+
+  //get pixels above the threshold
+
+  var cloud01 = quality.gt(cloud_thresh);
+
+  //create a mask from high likelihood pixels
+
+  var cloudmask = image.mask().and(cloud01.not());
+
+  //mask those pixels from the image
+
+  return image.updateMask(cloudmask);
+
+};
+
+
+
+//add variables to landsat 7 imagey, mask out cloudy images and clip to area of interest
+
+
+
+var filteredlandsat7 = l7toa
+
+.map(bufferMask200)
+
+.map(cloudfunction)
+
+.map(addVariables7)
+
+;
+
+//add images to map
+
+  
+
+var ndvi_palette =
+
+    'FFFFFF, CE7E45, DF923D, F1B555, FCD163, 99B718, 74A901, 66A000, 529400,' +
+
+    '3E8601, 207401, 056201, 004C00, 023B01, 012E01, 011D01, 011301';
+
+    
+
+
+
+
+
+
+
+  
+
+
+
+//commentted out for now
+
+
+
+
+
+
+
+//create function to calculate mean values around each marshbird survey point
+
+var pointsmean = function(image) {
+
+  var means = image.reduceRegions({
+
+    collection: marshbuffer200.select(['IDENT']),
+
+    reducer: ee.Reducer.mean(),
+
+    scale: 30
+
+  })
+
+  
+
+  
+
+  // assign time for every feature
+
+  means = means.map(function(f) { return f.set({date: image.date()}) })
+
+  
+
+  return means
+
+};
+
+
+
+//select the 3 bands of interest from landsat 7 image collection
+
+var  indices_Ls7= filteredlandsat7.select(['NDVI','NDWI','NDWBI'])
+
+print(indices_Ls7.first())
+
+
+
+//map reducer function over image collection
+
+var results7=indices_Ls7.map(pointsmean).flatten()
+
+print(results7.first())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//select the 3 bands of interest from landsat 8 image collection
+
+
+
+var  indices_Ls8= filteredlandsat8.select(['NDVI','NDWI','NDWBI'])
+
+print(indices_Ls8.first())
+
+
+
+//map reducer function over image collection
+
+var results8=indices_Ls8.map(pointsmean).flatten()
+
+
+
+print(results8.first())
+
+
+
+// generate dates, 1st day of a month
+
+var times = ee.List.sequence(1999, 2017).map(function(y) {
+
+  return ee.List.sequence(1, 12).map(function(m) {
+
+    return ee.Date.fromYMD(y, m, 1)
+
+  })
+
+}).flatten()
+
+
+
+print(times)
+
+
+
+// generate monthly averages
+
+var indices_Ls7Monthly = times.map(function(t) {
+
+  var t0 = ee.Date(t)
+
+  var t1 = t0.advance(1, 'month')
+
+  
+
+  var images = indices_Ls7.filterDate(t0, t1)
+
+  
+
+  var mean = images.mean()
+
+    .set({ 'system:time_start': t0.millis() })
+
+    .set({ isEmpty: images.select(0).size().eq(0) })
+
+  
+
+  return mean
+
+})
+
+
+
+
+
+// also leave only non-empty means
+
+indices_Ls7Monthly = ee.ImageCollection(indices_Ls7Monthly)
+
+  .filter(ee.Filter.eq('isEmpty', 0))
+
+
+
+var results = indices_Ls7Monthly.map(pointsmean).flatten()
+
+print(results.limit(10))
+

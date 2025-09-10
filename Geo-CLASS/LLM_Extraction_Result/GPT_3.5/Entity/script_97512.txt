@@ -1,0 +1,6 @@
+{
+  "Summary": ["Visualizing burn severity of Medocino Complex Fire using Landsat imagery."],
+  "Theme": ["Burn severity assessment"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR/LC08_045033_20170925", "LANDSAT/LC08/C01/T1_SR/LC08_045033_20180928", "users/cade/ca_MendocinoComplex"],
+  "Function": ["Compute NDBR for pre and post-fire images", "Compute Delta NDR and clip to fire perimeter", "Reclassify fire severity levels and generate histogram", "Generate thumbnail image for sharing"]
+}

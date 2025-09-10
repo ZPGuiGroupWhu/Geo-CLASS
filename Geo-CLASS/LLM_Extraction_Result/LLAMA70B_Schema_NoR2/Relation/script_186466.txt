@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Filtering Sentinel-1 images by polarization and date", "Creating composite images from means at different polarizations"]
+    },
+    "relation_2": {
+        "DataSource": ["ft:10RV_TKg9w5SMTutAz-XZpGcd2ejYgbQs6IVy2TF7"],
+        "Function": ["Exporting images to Google Drive", "Detecting water bodies using SAR data"]
+    }
+}

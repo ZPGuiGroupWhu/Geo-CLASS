@@ -1,0 +1,36 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/diegogmzd/CHACO"
+        ],
+        "Function": [
+            "Image Cloud Masking",
+            "Filter Image Collection",
+            "Image Mosaicking",
+            "Add Normalized Difference Band",
+            "Visualization Setup"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Image Cloud Masking",
+            "Filter Image Collection",
+            "Image Mosaicking",
+            "Add Normalized Difference Band",
+            "Visualization Setup"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "COPERNICUS/S3/OLCI"
+        ],
+        "Function": [
+            "Filter Image Collection",
+            "Image Mosaicking",
+            "Visualization Setup"
+        ]
+    }
+}

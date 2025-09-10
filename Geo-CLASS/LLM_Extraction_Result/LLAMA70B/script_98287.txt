@@ -1,0 +1,25 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Vegetation monitoring using Sentinel-2 imagery"],
+  "DataSource": ["COPERNICUS/S2_SR"],
+  "Function": ["Filtering image collection by cloud coverage", "Computing NDVI and adding as new band", "Masking cloudy pixels", "Computing NDWI and adding as new band", "Plotting NDVI and NDWI time series"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["Filtering image collection by cloud coverage", "Computing NDVI and adding as new band", "Masking cloudy pixels", "Computing NDWI and adding as new band", "Plotting NDVI and NDWI time series"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3767, 'completion_tokens': 201, 'total_tokens': 3968}

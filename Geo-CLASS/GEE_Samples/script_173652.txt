@@ -1,0 +1,357 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var geometry = 
+    /* color: #d63000 */
+    /* shown: false */
+    /* displayProperties: [
+      {
+        "type": "rectangle"
+      }
+    ] */
+    ee.Geometry.Polygon(
+        [[[-77.44055015760195, 7.5565751236128],
+          [-77.44055015760195, 7.3788807768900195],
+          [-77.18408806043398, 7.3788807768900195],
+          [-77.18408806043398, 7.5565751236128]]], null, false),
+    table = ee.FeatureCollection("users/jrmancerafGEE/POL_SUB_AE_1055"),
+    table2 = ee.FeatureCollection("users/jrmancerafGEE/PTS_SUB_AE_1055");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+
+
+var CAM171819=ee.FeatureCollection("users/jrmancerafGEE/PTS_SUB_AE_1055");
+
+Map.addLayer(CAM171819,{color:'blue'},'CAM171819',0);
+
+
+
+var PAR=ee.FeatureCollection("users/jrmancerafGEE/POL_SUB_AE_1055");
+
+Map.addLayer(PAR,{color:'green'},'Area de estudio',0);
+
+
+
+var aoi1 = PAR
+
+/////////////////////////////////SERIE LANDSAT 8 T1SR///
+
+/**
+
+ * Function to mask clouds based on the pixel_qa band of Landsat 8 SR data.
+
+ * @param {ee.Image} image input Landsat 8 SR image
+
+ * @return {ee.Image} cloudmasked Landsat 8 image
+
+ */
+
+function maskL8sr(image) {
+
+  // Bits 3 and 5 are cloud shadow and cloud, respectively.
+
+  var cloudShadowBitMask = (1 << 3);
+
+  var cloudsBitMask = (1 << 5);
+
+  // Get the pixel QA band.
+
+  var qa = image.select('pixel_qa');
+
+  // Both flags should be set to zero, indicating clear conditions.
+
+  var mask = qa.bitwiseAnd(cloudShadowBitMask).eq(0)
+
+                 .and(qa.bitwiseAnd(cloudsBitMask).eq(0));
+
+  return image.updateMask(mask);
+
+}
+
+
+
+var LC082019 = ee.ImageCollection('LANDSAT/LC08/C01/T1_SR')
+
+                  .filterDate('2019-01-01', '2019-12-31')
+
+                  .map(maskL8sr);
+
+
+
+var LC082018 = ee.ImageCollection('LANDSAT/LC08/C01/T1_SR')
+
+                  .filterDate('2018-01-01', '2018-12-31')
+
+                  .map(maskL8sr);
+
+
+
+var LC082017 = ee.ImageCollection('LANDSAT/LC08/C01/T1_SR')
+
+                  .filterDate('2017-01-01', '2017-12-31')
+
+                  .map(maskL8sr);
+
+
+
+
+
+                  
+
+
+
+var visParams = {
+
+  bands: ['B5', 'B6', 'B3'],
+
+  min: 0,
+
+  max: 8000,
+
+  gamma: 1.1,
+
+};
+
+//Map.setCenter(-76.4463, 7.4178, 14);
+
+Map.addLayer(LC082017.median().clip(aoi1), visParams,'LANDSAT 8 SR_2017',0);
+
+Map.addLayer(LC082018.median().clip(aoi1), visParams,'LANDSAT 8 SR_2018',0);
+
+Map.addLayer(LC082019.median().clip(aoi1), visParams,'LANDSAT 8 SR_2019',0);
+
+
+
+
+
+
+
+
+
+
+
+
+
+//##########################################################################################
+
+// START INPUTS
+
+//##########################################################################################
+
+////////////////////////////////////MAG 300/////////////////////
+
+// define collection parameters
+
+var startYear = 2000;
+
+var endYear = 2019;
+
+var startDay = '01-01';
+
+var endDay = '12-31';
+
+var aoi = aoi1
+
+var index = 'ENC';
+
+var maskThese = ['cloud', 'shadow', 'snow', 'water'];
+
+
+
+// define landtrendr parameters
+
+var runParams = { 
+
+  maxSegments:            2,
+
+  spikeThreshold:         0.05,
+
+  vertexCountOvershoot:   1,
+
+  preventOneYearRecovery: true,
+
+  recoveryThreshold:      0.125,
+
+  pvalThreshold:          0.05,
+
+  bestModelProportion:    1,
+
+  minObservationsNeeded:  10
+
+};
+
+
+
+// define change parameters
+
+var changeParams = {
+
+  delta:  'loss',
+
+  sort:   'greatest',
+
+  year:   {checked:false, start:1990, end:2018},
+
+  mag:    {checked:false, value:800,  operator:'>'},
+
+  dur:    {checked:false, value:4,    operator:'<'},
+
+  preval: {checked:false, value:300,  operator:'>'},
+
+  mmu:    {checked:false, value:11},
+
+  
+
+};
+
+
+
+//##########################################################################################
+
+// END INPUTS
+
+//##########################################################################################
+
+
+
+// load the LandTrendr.js module
+
+var ltgee = require('users/emaprlab/public:Modules/LandTrendr.js'); 
+
+
+
+// add index to changeParams object
+
+changeParams.index = index;
+
+
+
+// run landtrendr
+
+var lt = ltgee.runLT(startYear, endYear, startDay, endDay, aoi, index, [], runParams, maskThese);
+
+
+
+// get the change map layers
+
+var changeImg = ltgee.getChangeMap(lt, changeParams).clip(aoi);
+
+
+
+// set visualization dictionaries
+
+var palette = ['#9400D3', '#4B0082', '#0000FF', '#00FF00', '#FFFF00', '#FF7F00', '#FF0000'];
+
+var yodVizParms = {
+
+  min: startYear,
+
+  max: endYear,
+
+  palette: palette
+
+};
+
+
+
+var magVizParms = {
+
+  min: 200,
+
+  max: 800,
+
+  palette: palette
+
+};
+
+
+
+// display the change attribute map - note that there are other layers - print changeImg to console to see all
+
+Map.centerObject(aoi, 14);
+
+Map.addLayer(changeImg.select(['mag']), magVizParms, 'Magnitude of Change',1);
+
+Map.addLayer(changeImg.select(['yod']), yodVizParms, 'Year of Detection',0);
+
+print(changeImg,'ltdr')
+
+
+
+
+
+// export change data to google drive
+
+
+
+//var exportImg = changeImg.clip(aoi).unmask(0).short();
+
+//Export.image.toDrive({
+
+//image: exportImg, 
+
+//description: 'lt-gee_disturbance_map', 
+
+//folder: 'lt-gee_disturbance_map_test', 
+
+//fileNamePrefix: 'lt-gee_disturbance_map_TEST4', 
+
+//region: aoi, 
+
+//scale: 30, 
+
+//crs: 'EPSG:32618', 
+
+//maxPixels: 1e13
+
+//});
+
+
+
+var collection = changeImg.reduceRegions({
+
+ collection: CAM171819,
+
+ reducer:ee.Reducer.mean(),
+
+ crs: 'EPSG:32618',  
+
+ tileScale:16,
+
+ scale: 15,
+
+});
+
+
+
+var collection_with_latlon = collection.map(function (feature) {
+
+ var coordinates = feature.geometry().transform('epsg:32618').coordinates();
+
+ return feature.set('lon', coordinates.get(0), 'lat', coordinates.get(1));
+
+});
+
+
+
+
+
+//////////////////////////////export values to point
+
+
+
+Export.table.toDrive({
+
+collection: collection_with_latlon,
+
+description: "LTDRTESTSUB",
+
+folder: "LTDR_test_Kappa_SUB",
+
+fileNamePrefix: "TEST_SUB_003",
+
+fileFormat: "SHP",
+
+selectors: ['ID','CAMBIO', 'yod','mag']
+
+ 
+
+});
+

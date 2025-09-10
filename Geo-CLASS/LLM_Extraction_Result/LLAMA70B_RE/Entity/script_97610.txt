@@ -1,0 +1,19 @@
+{
+    "Theme": [
+        "Climate analysis of temperature in Sinaloa"
+    ],
+    "DataSource": [
+        "ECMWF/ERA5/DAILY",
+        "FAO/GAUL_SIMPLIFIED_500m/2015/level2"
+    ],
+    "Function": [
+        "Filtering image collection by date",
+        "Converting temperature units",
+        "Clipping images to AOI",
+        "Calculating minimum temperature",
+        "Calculating maximum temperature",
+        "Calculating mean temperature",
+        "Visualizing data",
+        "Exporting images to drive"
+    ]
+}

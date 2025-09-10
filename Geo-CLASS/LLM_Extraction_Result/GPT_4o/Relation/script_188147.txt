@@ -1,0 +1,68 @@
+{
+  "relation_1": {
+    "DataSource": [
+      "users/kindgard/Asia/Asia",
+      "users/kindgard/Africa",
+      "users/kindgard/SUD",
+      "users/kindgard/AfricaS",
+      "users/kindgard/AmericaN",
+      "users/kindgard/Asia2"
+    ],
+    "Function": [
+      "Merge image collections",
+      "Create mosaic from image collection",
+      "Clip image to country boundary"
+    ]
+  },
+  "relation_2": {
+    "DataSource": [
+      "users/kindgard/ESACCI-LC-L4-LC10-Map-20m-P1Y-2016-v10",
+      "users/ValeriaContessa/Map_1992_rast"
+    ],
+    "Function": [
+      "Clip image to country boundary"
+    ]
+  },
+  "relation_3": {
+    "DataSource": [
+      "COPERNICUS/S2"
+    ],
+    "Function": [
+      "Filter image collection by date",
+      "Filter image collection by cloud cover",
+      "Calculate band ratios",
+      "Sample regions for training",
+      "Train classifier",
+      "Classify image",
+      "Mask water areas",
+      "Mask urban areas"
+    ]
+  },
+  "relation_4": {
+    "DataSource": [
+      "LANDSAT/LT5_L1T",
+      "LANDSAT/LE7_L1T",
+      "LANDSAT/LC08/C01/T1_RT"
+    ],
+    "Function": [
+      "Filter image collection by date",
+      "Filter image collection by cloud cover",
+      "Create mosaic from image collection",
+      "Calculate band ratios",
+      "Sample regions for training",
+      "Train classifier",
+      "Classify image",
+      "Mask water areas",
+      "Mask urban areas"
+    ]
+  },
+  "relation_5": {
+    "DataSource": [
+      "JRC/GSW1_0/GlobalSurfaceWater"
+    ],
+    "Function": [
+      "Clip image to country boundary",
+      "Mask water areas"
+    ]
+  }
+}

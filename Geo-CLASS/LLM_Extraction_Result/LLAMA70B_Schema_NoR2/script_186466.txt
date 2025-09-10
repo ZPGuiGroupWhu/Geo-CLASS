@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Forest monitoring and land cover classification"],
+  "DataSource": ["COPERNICUS/S1_GRD", "ft:10RV_TKg9w5SMTutAz-XZpGcd2ejYgbQs6IVy2TF7"],
+  "Function": ["Filtering Sentinel-1 images by polarization and date", "Creating composite images from means at different polarizations", "Exporting images to Google Drive", "Detecting water bodies using SAR data"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Filtering Sentinel-1 images by polarization and date", "Creating composite images from means at different polarizations"]
+    },
+    "relation_2": {
+        "DataSource": ["ft:10RV_TKg9w5SMTutAz-XZpGcd2ejYgbQs6IVy2TF7"],
+        "Function": ["Exporting images to Google Drive", "Detecting water bodies using SAR data"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4844, 'completion_tokens': 260, 'total_tokens': 5104}

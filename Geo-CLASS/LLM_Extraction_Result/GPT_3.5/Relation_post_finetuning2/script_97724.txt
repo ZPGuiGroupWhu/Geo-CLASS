@@ -1,0 +1,41 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "TIGER/2018/States"
+        ],
+        "Function": [
+            "Cloud And Cloud Shadow Masking",
+            "Add NDVI Band To Images",
+            "Filter Image Collection",
+            "Flood Mask Generation",
+            "Image Reduction",
+            "Merging (Combining Multiple Bands)"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "users/eisen520/chinesePrivet"
+        ],
+        "Function": [
+            "Cloud And Cloud Shadow Masking",
+            "Add NDVI Band To Images",
+            "Filter Image Collection",
+            "Flood Mask Generation",
+            "Image Reduction",
+            "Merging (Combining Multiple Bands)"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "COPERNICUS/S2_SR"
+        ],
+        "Function": [
+            "Cloud And Cloud Shadow Masking",
+            "Add NDVI Band To Images",
+            "Filter Image Collection",
+            "Flood Mask Generation",
+            "Image Reduction",
+            "Merging (Combining Multiple Bands)"
+        ]
+    }
+}

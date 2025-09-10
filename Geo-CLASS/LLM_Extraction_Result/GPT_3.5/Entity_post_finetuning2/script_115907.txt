@@ -1,0 +1,23 @@
+{
+    "Summary": [
+        "Analyzing NDVI trends in different vegetation areas using Landsat 8 and Sentinel-2 data."
+    ],
+    "Theme": [
+        "NORMALIZED DIFFERENCE VEGETATION INDEX (NDVI)"
+    ],
+    "DataSource": [
+        "users/nicolasalejandromari/Sitios_NDVI_Tessi",
+        "users/franciscoalaggia/Transectas",
+        "LANDSAT/LC08/C01/T1_SR",
+        "COPERNICUS/S2_SR"
+    ],
+    "Function": [
+        "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover",
+        "Add NDVI Band To Images",
+        "Filter And Mosaic Landsat Images",
+        "Cloud And Snow Masking",
+        "Add NDVI Band To Images",
+        "Buffering Points For Sample Expansion",
+        "Maximum, Minimum And Mean Statistical Analysis (NDVI and Vegetation Indices)"
+    ]
+}

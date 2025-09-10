@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["MODIS/006/MOD09GA"],
+        "Function": ["Cloud masking", "NDVI calculation", "Quality mosaic"]
+    },
+    "relation_2": {
+        "DataSource": ["users/giswqs/public/countries"],
+        "Function": ["Date extraction", "Month extraction", "DOY extraction"]
+    }
+}

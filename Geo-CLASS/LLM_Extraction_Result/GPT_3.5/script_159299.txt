@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Script processes Sentinel-2 images for land cover classification in Gujrat City."],
+  "Theme": ["Land cover classification"],
+  "DataSource": ["users/jannat/gujratCityExt", "COPERNICUS/S2"],
+  "Function": ["Image collection filtering", "Image median calculation", "Feature collection merging", "Training data creation", "Classifier training", "Image classification"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/jannat/gujratCityExt"],
+        "Function": ["Image collection filtering", "Image median calculation", "Feature collection merging"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Training data creation", "Classifier training", "Image classification"]
+    }
+}
+```

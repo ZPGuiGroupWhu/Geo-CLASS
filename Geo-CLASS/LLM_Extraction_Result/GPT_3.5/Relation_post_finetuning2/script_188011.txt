@@ -1,0 +1,24 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "projects/ee-kimiachenaary/assets/msh"
+        ],
+        "Function": [
+            "Derive Land Surface Temperature Using Thermal Properties",
+            "Clip Temperature Data To Area Of Interest",
+            "Maximum, Minimum And Mean Statistical Analysis (Temperature)",
+            "Calculates Forest Structural Complexity Index (FSCI)"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_TOA"
+        ],
+        "Function": [
+            "Derive Land Surface Temperature Using Thermal Properties",
+            "Clip Temperature Data To Area Of Interest",
+            "Maximum, Minimum And Mean Statistical Analysis (Temperature)",
+            "Calculates Forest Structural Complexity Index (FSCI)"
+        ]
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "Theme": [
+        "Land cover classification and analysis"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2",
+        "USGS/NED"
+    ],
+    "Function": [
+        "Mask clouds from Sentinel-2 images",
+        "Perform unsupervised classification",
+        "Generate cluster means",
+        "Create scatter plots",
+        "Create signature plots"
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2_SR"
+        ],
+        "Function": [
+            "NDWI (Normalized Difference Water Index calculation)",
+            "Cloud Masking And Quality Filtering",
+            "Spatial Analysis",
+            "Image Band Manipulation",
+            "NDWI (Normalized Difference Water Index calculation)",
+            "Exporting And Data Conversion",
+            "Data Visualization And Mapping",
+            "Data Visualization And Mapping",
+            "Data Visualization And Mapping"
+        ]
+    }
+}

@@ -1,0 +1,6 @@
+{
+  "Summary": ["Blend Dynamic World LULC labels with Sentinel-2 imagery."],
+  "Theme": ["Land cover classification"],
+  "DataSource": ["GOOGLE/DYNAMICWORLD/V1", "COPERNICUS/S2"],
+  "Function": ["Filter Dynamic World and Sentinel-2 collections by date and region", "Join corresponding DW and S2 images", "Create visualization blending DW class label with probability", "Generate RGB image of the label on [0, 1]", "Get most likely class probability", "Combine RGB image with hillshade"]
+}

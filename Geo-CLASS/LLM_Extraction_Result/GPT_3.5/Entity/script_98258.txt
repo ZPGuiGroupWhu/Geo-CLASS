@@ -1,0 +1,6 @@
+{
+  "Summary": ["Script extracts and visualizes flood images over time in Thua Thien - Hue, Vietnam."],
+  "Theme": ["Flood monitoring"],
+  "DataSource": ["COPERNICUS/S1_GRD"],
+  "Function": ["Filter flood images by date and location", "Create flood image mosaics", "Calculate NDFI for flood detection", "Determine threshold for flooded areas"]
+}

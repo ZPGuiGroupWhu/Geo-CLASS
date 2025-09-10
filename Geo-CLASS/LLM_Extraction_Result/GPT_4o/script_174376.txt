@@ -1,0 +1,21 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover classification", "Urban area analysis", "Water body analysis", "Vegetation analysis"],
+  "DataSource": ["LANDSAT/LC08/C01/T1"],
+  "Function": ["Define region of interest", "Load Landsat image collection", "Filter image collection by date", "Create cloud-free composite", "Visualize composite", "Merge feature collections", "Sample training data", "Train random forest classifier", "Classify imagery", "Display classification results", "Calculate confusion matrix", "Calculate classification accuracy"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["LANDSAT/LC08/C01/T1"],
+    "Function": ["Load Landsat image collection", "Filter image collection by date", "Create cloud-free composite", "Visualize composite", "Sample training data", "Train random forest classifier", "Classify imagery", "Display classification results", "Calculate confusion matrix", "Calculate classification accuracy"]
+  }
+}
+```
+
+Total_Token_Usage:
+14642

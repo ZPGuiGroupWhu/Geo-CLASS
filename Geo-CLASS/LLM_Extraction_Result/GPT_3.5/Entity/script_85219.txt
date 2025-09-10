@@ -1,0 +1,6 @@
+{
+  "Summary": ["Script compares false-color images and NBR index using Sentinel 2 data."],
+  "Theme": ["Wildfire severity assessment"],
+  "DataSource": ["users/diegogmzd/CHACO", "COPERNICUS/S2", "COPERNICUS/S3/OLCI"],
+  "Function": ["Cloud masking", "Image collection filtering", "Image mosaicking", "Normalized difference calculation", "Visualization setup"]
+}

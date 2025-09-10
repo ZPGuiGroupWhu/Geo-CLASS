@@ -1,0 +1,18 @@
+{
+    "Summary": [
+        "Script prepares and analyzes Sentinel-2 imagery for NDVI calculation."
+    ],
+    "Theme": [
+        "NORMALIZED DIFFERENCE VEGETATION INDEX (NDVI)"
+    ],
+    "DataSource": [
+        "users/cesarnon/datos_cba_2017/Cordoba_limite",
+        "COPERNICUS/S2_SR"
+    ],
+    "Function": [
+        "Filter Image Collection By Date And Region",
+        "Generate Time Series Charts For NDVI",
+        "Creates Animation Of NDVI Over Time",
+        "Generate Time Series Data For NDVI Changes"
+    ]
+}

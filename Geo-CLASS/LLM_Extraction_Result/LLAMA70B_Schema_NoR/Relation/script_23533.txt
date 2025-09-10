@@ -1,0 +1,22 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "USGS/NLCD/NLCD1992",
+            "USGS/NLCD/NLCD2001",
+            "USGS/NLCD/NLCD2006"
+        ],
+        "Function": [
+            "Image selection and remapping",
+            "Image collection creation and merging"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "users/alemlakes/r-2900-BULC-Dev:BULC/2020/3-BULC-Minimal/BULC-Minimal-ModInDev-44-assembleTables"
+        ],
+        "Function": [
+            "Land cover classification using BULC function",
+            "Image layer addition to map"
+        ]
+    }
+}

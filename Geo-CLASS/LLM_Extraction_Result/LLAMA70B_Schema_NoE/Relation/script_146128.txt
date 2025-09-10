@@ -1,0 +1,14 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Filtering and sorting Sentinel-2 images by date and cloud cover",
+            "Merging feature collections",
+            "Creating training data using sample regions",
+            "Training a classifier using CART algorithm",
+            "Running classification on Sentinel-2 image"
+        ]
+    }
+}

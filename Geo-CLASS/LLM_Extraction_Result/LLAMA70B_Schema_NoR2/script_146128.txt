@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover classification using Sentinel-2 imagery"],
+  "DataSource": ["COPERNICUS/S2"],
+  "Function": ["Filtering image collection by date and cloud cover", "Merging feature collections", "Creating training data for classification", "Training a classifier", "Running classification on an image"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Filtering image collection by date and cloud cover", "Merging feature collections", "Creating training data for classification", "Training a classifier", "Running classification on an image"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 7686, 'completion_tokens': 157, 'total_tokens': 7843}

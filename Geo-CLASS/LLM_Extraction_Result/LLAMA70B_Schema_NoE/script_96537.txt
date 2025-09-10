@@ -1,0 +1,41 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land cover classification and geomedian analysis"],
+  "DataSource": ["users/eeranyartrodrigo/geoMediana/gm_2018_MX_014009", "users/eeranyartrodrigo/geoMediana/gm_2019_MX_014009", "users/eeranyartrodrigo/Pabellon", "LANDSAT/LE07/C01/T1_SR", "MODIS/006/MCD12Q1", "MODIS/NTSG/MOD16A2/105"],
+  "Function": ["Cloud masking and image filtering", "Land cover classification using random forest algorithm", "Geomedian analysis and data reprojection", "Image normalization and feature extraction", "Accuracy assessment and validation", "Evapotranspiration analysis"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/eeranyartrodrigo/geoMediana/gm_2018_MX_014009", "users/eeranyartrodrigo/geoMediana/gm_2019_MX_014009"],
+        "Function": ["Cloud masking and image filtering", "Land cover classification using random forest algorithm", "Geomedian analysis and data reprojection"]
+    },
+    "relation_2": {
+        "DataSource": ["users/eeranyartrodrigo/Pabellon"],
+        "Function": ["Image normalization and feature extraction"]
+    },
+    "relation_3": {
+        "DataSource": ["LANDSAT/LE07/C01/T1_SR"],
+        "Function": ["Cloud masking and image filtering", "Image normalization and feature extraction"]
+    },
+    "relation_4": {
+        "DataSource": ["MODIS/006/MCD12Q1"],
+        "Function": ["Land cover classification using random forest algorithm", "Accuracy assessment and validation"]
+    },
+    "relation_5": {
+        "DataSource": ["MODIS/NTSG/MOD16A2/105"],
+        "Function": ["Evapotranspiration analysis"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4492, 'completion_tokens': 532, 'total_tokens': 5024}

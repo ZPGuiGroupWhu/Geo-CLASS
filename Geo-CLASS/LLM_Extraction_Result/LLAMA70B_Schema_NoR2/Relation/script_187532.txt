@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Filtering Sentinel-1 images by ROI and date", "Converting images to natural scale", "Smoothing images using focal median", "Calculating band ratios"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Generating histograms", "Classifying flood areas", "Visualizing results on a map", "Exporting images to Drive"]
+    }
+}

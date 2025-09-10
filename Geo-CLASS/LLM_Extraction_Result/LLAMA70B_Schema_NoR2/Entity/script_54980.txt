@@ -1,0 +1,5 @@
+{
+  "Theme": ["Land use and land cover change analysis"],
+  "DataSource": ["users/edimilsonrodriguessantos/MAPBIOMAS/INFRAURBANA6-FT-v6/"],
+  "Function": ["Image collection creation", "Image masking and renaming", "Image band addition", "Image remapping", "Video generation"]
+}

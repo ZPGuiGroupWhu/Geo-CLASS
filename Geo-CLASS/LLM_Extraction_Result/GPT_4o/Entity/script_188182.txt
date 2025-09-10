@@ -1,0 +1,24 @@
+{
+  "Theme": ["Land cover change detection in Zimbabwe"],
+  "DataSource": [
+    "users/kindgard/Africa",
+    "users/kindgard/Asia/Asia",
+    "users/kindgard/SUD",
+    "users/kindgard/AfricaS",
+    "users/kindgard/AmericaN",
+    "users/kindgard/Asia2",
+    "users/ValeriaContessa/ZWEsettlements",
+    "users/ValeriaContessa/zim_waterbody",
+    "users/ValeriaContessa/Zimbabwe_Anderson"
+  ],
+  "Function": [
+    "Filter image collection by date and cloud cover",
+    "Create image mosaic",
+    "Calculate band ratios",
+    "Sample regions for training",
+    "Train classifier",
+    "Classify image",
+    "Apply masks to classified image",
+    "Correct classification using feature collections"
+  ]
+}

@@ -1,0 +1,33 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Topographic analysis of global DEMs"],
+  "DataSource": ["NOAA/NGDC/ETOPO1", "NASA/ASTER_GED/AG100_003", "OSU/GIMP/DEM", "CPOM/CryoSat2/ANTARCTICA_DEM", "JAXA/ALOS/AW3D30_V1_1", "USGS/GMTED2010", "USGS/SRTMGL1_003", "USGS/GTOPO30", "WWF/HydroSHEDS/03CONDEM", "WWF/HydroSHEDS/30CONDEM", "WWF/HydroSHEDS/15CONDEM"],
+  "Function": ["Extracting global DEMs", "Clipping DEMs to a specific geometry", "Visualizing DEMs", "Exporting DEMs to Drive", "Generating histogram of DEM values"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["NOAA/NGDC/ETOPO1", "NASA/ASTER_GED/AG100_003", "OSU/GIMP/DEM", "CPOM/CryoSat2/ANTARCTICA_DEM", "JAXA/ALOS/AW3D30_V1_1"],
+        "Function": ["Extracting global DEMs", "Visualizing DEMs"]
+    },
+    "relation_2": {
+        "DataSource": ["USGS/GMTED2010", "USGS/SRTMGL1_003", "USGS/GTOPO30"],
+        "Function": ["Clipping DEMs to a specific geometry", "Exporting DEMs to Drive"]
+    },
+    "relation_3": {
+        "DataSource": ["WWF/HydroSHEDS/03CONDEM", "WWF/HydroSHEDS/30CONDEM", "WWF/HydroSHEDS/15CONDEM"],
+        "Function": ["Generating histogram of DEM values"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4510, 'completion_tokens': 508, 'total_tokens': 5018}

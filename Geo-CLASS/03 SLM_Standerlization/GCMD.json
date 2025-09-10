@@ -1,0 +1,3904 @@
+{
+    "Earth Science": {
+        "AGRICULTURE": {
+            "AGRICULTURAL AQUATIC SCIENCES": {
+                "AQUACULTURE": {},
+                "FISHERIES": {},
+                "ICE STUPA": {}
+            },
+            "AGRICULTURAL CHEMICALS": {
+                "FERTILIZERS": {},
+                "PESTICIDES": {}
+            },
+            "AGRICULTURAL ENGINEERING": {
+                "AGRICULTURAL EQUIPMENT": {},
+                "FARM STRUCTURES": {}
+            },
+            "AGRICULTURAL PLANT SCIENCE": {
+                "CROP/PLANT YIELDS": {},
+                "CROPPING SYSTEMS": {},
+                "IRRIGATION": {},
+                "PLANT BREEDING AND GENETICS": {},
+                "PLANT DISEASES/DISORDERS/PESTS": {},
+                "RECLAMATION/REVEGETATION/RESTORATION": {},
+                "WEEDS, NOXIOUS PLANTS OR INVASIVE PLANTS": {}
+            },
+            "ANIMAL COMMODITIES": {
+                "DAIRY PRODUCTS": {},
+                "LIVESTOCK PRODUCTS": {},
+                "POULTRY PRODUCTS": {}
+            },
+            "ANIMAL SCIENCE": {
+                "ANIMAL BREEDING AND GENETICS": {},
+                "ANIMAL DISEASES/DISORDERS/PESTS": {},
+                "ANIMAL ECOLOGY AND BEHAVIOR": {},
+                "ANIMAL MANAGEMENT SYSTEMS": {},
+                "ANIMAL MANURE AND WASTE": {},
+                "ANIMAL NUTRITION": {},
+                "ANIMAL PHYSIOLOGY AND BIOCHEMISTRY": {},
+                "ANIMAL YIELDS": {},
+                "APICULTURE": {},
+                "SERICULTURE": {}
+            },
+            "FEED PRODUCTS": {
+                "FEED COMPOSITION": {},
+                "FEED CONTAMINATION AND TOXICOLOGY": {},
+                "FEED PROCESSING": {},
+                "FEED STORAGE": {}
+            },
+            "FOOD SCIENCE": {
+                "FOOD ADDITIVES": {},
+                "FOOD CONTAMINATION AND TOXICOLOGY": {},
+                "FOOD PACKAGING": {},
+                "FOOD PROCESSING": {},
+                "FOOD QUALITY": {},
+                "FOOD STORAGE": {}
+            },
+            "FOREST SCIENCE": {
+                "AFFORESTATION/REFORESTATION": {},
+                "DEFOLIANTS": {},
+                "FOREST CONSERVATION": {},
+                "FOREST FIRE SCIENCE": {},
+                "FOREST HARVESTING AND ENGINEERING": {},
+                "FOREST MANAGEMENT": {},
+                "FOREST MENSURATION": {},
+                "FOREST PRODUCTS/COMMODITIES": {},
+                "FOREST PROTECTION": {},
+                "FOREST YIELDS": {},
+                "REFORESTATION": {},
+                "SILVICULTURE": {}
+            },
+            "PLANT COMMODITIES": {
+                "FIELD CROP PRODUCTS": {},
+                "FRUIT PRODUCTS": {},
+                "HORTICULTURAL PRODUCTS": {},
+                "VEGETABLE PRODUCTS": {}
+            },
+            "SOILS": {
+                "CALCIUM": {},
+                "CARBON": {},
+                "CATION EXCHANGE CAPACITY": {},
+                "DENITRIFICATION RATE": {},
+                "ELECTRICAL CONDUCTIVITY": {},
+                "HEAVY METALS": {},
+                "HYDRAULIC CONDUCTIVITY": {},
+                "IRON": {},
+                "MACROFAUNA": {},
+                "MAGNESIUM": {},
+                "MICROFAUNA": {},
+                "MICROFLORA": {},
+                "MICRONUTRIENTS/TRACE ELEMENTS": {},
+                "NITROGEN": {},
+                "ORGANIC MATTER": {},
+                "PERMAFROST": {},
+                "PHOSPHORUS": {},
+                "POTASSIUM": {},
+                "RECLAMATION/REVEGETATION/RESTORATION": {},
+                "SOIL ABSORPTION": {},
+                "SOIL BIOGEOCHEMISTRY": {},
+                "SOIL BULK DENSITY": {},
+                "SOIL CHEMISTRY": {},
+                "SOIL CLASSIFICATION": {},
+                "SOIL COLOR": {},
+                "SOIL COMPACTION": {},
+                "SOIL CONSISTENCE": {},
+                "SOIL DEPTH": {},
+                "SOIL EROSION": {},
+                "SOIL FERTILITY": {},
+                "SOIL GAS/AIR": {},
+                "SOIL HEAT BUDGET": {},
+                "SOIL HORIZONS/PROFILE": {},
+                "SOIL IMPEDANCE": {},
+                "SOIL INFILTRATION": {},
+                "SOIL MECHANICS": {},
+                "SOIL MOISTURE/WATER CONTENT": {},
+                "SOIL PH": {},
+                "SOIL PLASTICITY": {},
+                "SOIL POROSITY": {},
+                "SOIL PRODUCTIVITY": {},
+                "SOIL RESPIRATION": {},
+                "SOIL ROOTING DEPTH": {},
+                "SOIL SALINITY/SOIL SODICITY": {},
+                "SOIL STRUCTURE": {},
+                "SOIL TEMPERATURE": {},
+                "SOIL TEXTURE": {},
+                "SOIL WATER HOLDING CAPACITY": {},
+                "SULFUR": {},
+                "THERMAL CONDUCTIVITY": {}
+            }
+        },
+        "ATMOSPHERE": {
+            "AEROSOLS": {
+                "AEROSOL ABSORPTION": {},
+                "AEROSOL BACKSCATTER": {
+                    "AEROSOL FRACTION": {}
+                },
+                "AEROSOL EXTINCTION": {},
+                "AEROSOL FORWARD SCATTER": {},
+                "AEROSOL OPTICAL DEPTH/THICKNESS": {
+                    "ANGSTROM EXPONENT": {},
+                    "UV AEROSOL INDEX": {}
+                },
+                "AEROSOL PARTICLE PROPERTIES": {
+                    "AEROSOL CONCENTRATION": {},
+                    "AEROSOL SIZE DISTRIBUTION": {}
+                },
+                "AEROSOL RADIANCE": {},
+                "AMMONIUM AEROSOLS": {},
+                "BLACK CARBON": {},
+                "CARBONACEOUS AEROSOLS": {},
+                "CHEMICAL COMPOSITION": {
+                    "ELEMENTAL CARBON": {},
+                    "NON-REFRACTORY AEROSOL ORGANIC MASS": {},
+                    "WATER-SOLUBLE AEROSOL ORGANIC MASS": {}
+                },
+                "CLOUD CONDENSATION NUCLEI": {},
+                "DEPOSITION": {},
+                "DUST/ASH/SMOKE": {},
+                "NITRATE PARTICLES": {},
+                "ORGANIC PARTICLES": {},
+                "PARTICULATE MATTER": {
+                    "PARTICULATE MATTER (PM 1.0)": {},
+                    "PARTICULATE MATTER (PM 10)": {},
+                    "PARTICULATE MATTER (PM 2.5)": {}
+                },
+                "SEA SALT": {},
+                "SULFATE PARTICLES": {}
+            },
+            "AIR QUALITY": {
+                "CARBON MONOXIDE": {},
+                "EMISSIONS": {},
+                "LEAD": {},
+                "NITROGEN OXIDES": {},
+                "PARTICULATE MATTER (PM 1.0)": {},
+                "PARTICULATE MATTER (PM 10)": {},
+                "PARTICULATE MATTER (PM 2.5)": {},
+                "PARTICULATES": {},
+                "SMOG": {},
+                "SULFUR OXIDES": {},
+                "TROPOSPHERIC OZONE": {},
+                "TURBIDITY": {},
+                "VISIBILITY": {},
+                "VOLATILE ORGANIC COMPOUNDS": {}
+            },
+            "ALTITUDE": {
+                "BAROMETRIC ALTITUDE": {},
+                "GEOPOTENTIAL HEIGHT": {},
+                "MESOPAUSE": {},
+                "PLANETARY BOUNDARY LAYER HEIGHT": {},
+                "STATION HEIGHT": {},
+                "STRATOPAUSE": {},
+                "TROPOPAUSE": {}
+            },
+            "ATMOSPHERIC CHEMISTRY": {
+                "CARBON AND HYDROCARBON COMPOUNDS": {
+                    "ACETYLENE": {},
+                    "ATMOSPHERIC CARBON DIOXIDE": {
+                        "CARBON DIOXIDE PROFILES": {},
+                        "CARBON DIOXIDE SURFACE": {},
+                        "PARTIAL PRESSURE OF CARBON DIOXIDE": {}
+                    },
+                    "ATMOSPHERIC CARBON MONOXIDE": {
+                        "CARBON MONOXIDE PROFILES": {},
+                        "CARBON MONOXIDE SURFACE": {}
+                    },
+                    "CHLORINATED HYDROCARBONS": {},
+                    "DICARBON MONOXIDE": {},
+                    "ETHANE": {},
+                    "FORMALDEHYDE": {},
+                    "FORMIC ACID": {},
+                    "HYDROGEN CYANIDE": {},
+                    "HYPOCHLOROUS MONOXIDE": {},
+                    "ISOPRENE": {},
+                    "METHANE": {},
+                    "METHYL CYANIDE": {},
+                    "NON-METHANE HYDROCARBONS/VOLATILE ORGANIC COMPOUNDS": {}
+                },
+                "HALOCARBONS AND HALOGENS": {
+                    "BROMINE MONOXIDE": {},
+                    "CARBON TETRACHLORIDE": {},
+                    "CARBON TETRAFLUORIDE": {},
+                    "CARBONYL FLUORIDE": {},
+                    "CHLORINE DIOXIDE": {},
+                    "CHLORINE MONOXIDE": {},
+                    "CHLORINE NITRATE": {},
+                    "CHLOROFLUOROCARBONS": {
+                        "CFC-11": {},
+                        "CFC-12": {}
+                    },
+                    "HALOCARBONS": {},
+                    "HALONS": {},
+                    "HYDROCHLOROFLUOROCARBONS": {
+                        "HCFC-22": {}
+                    },
+                    "HYDROFLUOROCARBONS": {},
+                    "HYDROGEN CHLORIDE": {},
+                    "HYDROGEN FLUORIDE": {},
+                    "HYPOCHLOROUS ACID": {},
+                    "METHANOL": {},
+                    "METHYL BROMIDE": {},
+                    "METHYL CHLORIDE": {},
+                    "METHYL FLUORIDE": {}
+                },
+                "HYDROGEN COMPOUNDS": {
+                    "DEUTERIUM OXIDE/HEAVY WATER": {},
+                    "HYDROGEN OXIDES": {
+                        "HYDROGEN OXIDE PROFILES": {},
+                        "HYDROGEN OXIDE SURFACE": {}
+                    },
+                    "HYDROGEN-DEUTERIUM OXIDE": {},
+                    "HYDROPEROXY": {},
+                    "HYDROXYL": {},
+                    "MOLECULAR HYDROGEN": {}
+                },
+                "NITROGEN COMPOUNDS": {
+                    "AMMONIA": {},
+                    "ATMOSPHERIC NITRIC ACID": {},
+                    "CLOUD-SCREENED TOTAL COLUMN NITROGEN DIOXIDE (NO2)": {},
+                    "CLOUD-SCREENED TROPOSHERIC COLUMN NO2": {},
+                    "DINITROGEN PENTOXIDE": {},
+                    "MOLECULAR NITROGEN": {},
+                    "NITRIC OXIDE": {},
+                    "NITROGEN": {},
+                    "NITROGEN DIOXIDE": {},
+                    "NITROGEN OXIDES": {},
+                    "NITROUS OXIDE": {},
+                    "PEROXYACETYL NITRATE": {},
+                    "PEROXYNITRIC ACID": {},
+                    "Peroxyacyl Nitrate": {}
+                },
+                "NOBLE GAS": {
+                    "ATMOSPHERIC RADON": {
+                        "RADON PROFILES": {},
+                        "RADON SURFACE": {}
+                    }
+                },
+                "OXYGEN COMPOUNDS": {
+                    "ATMOSPHERIC OZONE": {
+                        "OZONE PROFILES": {},
+                        "OZONE SURFACE": {},
+                        "TOTAL OZONE": {}
+                    },
+                    "HYDROGEN PEROXIDE": {},
+                    "MOLECULAR OXYGEN": {}
+                },
+                "PHOTOCHEMISTRY": {
+                    "PHOTOLYSIS RATES": {}
+                },
+                "SULFUR COMPOUNDS": {
+                    "CARBONYL SULFIDE": {},
+                    "DIMETHYL SULFIDE": {},
+                    "SULFATE": {},
+                    "SULFUR DIOXIDE": {
+                        "SULFUR DIOXIDE PROFILES": {},
+                        "SULFUR DIOXIDE SURFACE": {}
+                    },
+                    "SULFUR HEXAFLUORIDE": {
+                        "SULFUR HEXAFLUORIDE PROFILES": {},
+                        "SULFUR HEXAFLUORIDE SURFACE": {}
+                    },
+                    "SULFUR OXIDES": {}
+                },
+                "TRACE ELEMENTS/TRACE METALS": {},
+                "TRACE GASES/TRACE SPECIES": {}
+            },
+            "ATMOSPHERIC ELECTRICITY": {
+                "ATMOSPHERIC CONDUCTIVITY": {},
+                "ELECTRIC FIELD": {},
+                "LIGHTNING": {},
+                "TOTAL ELECTRON CONTENT": {}
+            },
+            "ATMOSPHERIC PRESSURE": {
+                "AIR MASS/DENSITY": {},
+                "ANTICYCLONES/CYCLONES": {},
+                "ATMOSPHERIC PRESSURE MEASUREMENTS": {},
+                "DIFFERENTIAL PRESSURE": {},
+                "GRAVITY WAVE": {},
+                "HYDROSTATIC PRESSURE": {},
+                "OSCILLATIONS": {},
+                "PLANETARY BOUNDARY LAYER HEIGHT": {},
+                "PLANETARY/ROSSBY WAVES": {},
+                "PRESSURE ANOMALIES": {},
+                "PRESSURE TENDENCY": {},
+                "PRESSURE THICKNESS": {},
+                "SEA LEVEL PRESSURE": {},
+                "STATIC PRESSURE": {},
+                "SURFACE PRESSURE": {},
+                "TOPOGRAPHIC WAVES": {}
+            },
+            "ATMOSPHERIC RADIATION": {
+                "ABSORPTION": {},
+                "ACTINIC FLUX": {},
+                "AIRGLOW": {},
+                "ALBEDO": {},
+                "ANISOTROPY": {},
+                "ATMOSPHERIC EMITTED RADIATION": {},
+                "ATMOSPHERIC HEATING": {},
+                "EARTH RADIATION BUDGET": {},
+                "EMISSIVITY": {},
+                "HEAT FLUX": {},
+                "INCOMING SOLAR RADIATION": {},
+                "LONGWAVE RADIATION": {
+                    "DOWNWELLING LONGWAVE RADIATION": {},
+                    "UPWELLING LONGWAVE RADIATION": {}
+                },
+                "NET RADIATION": {},
+                "OPTICAL DEPTH/THICKNESS": {},
+                "OUTGOING LONGWAVE RADIATION": {},
+                "POLARIZED REFLECTANCE": {},
+                "RADIATIVE FLUX": {},
+                "RADIATIVE FORCING": {},
+                "REFLECTANCE": {
+                    "TOP OF ATMOSPHERE (TOA) REFLECTANCE": {}
+                },
+                "SCATTERING": {},
+                "SHORTWAVE RADIATION": {
+                    "DOWNWELLING SHORTWAVE RADIATION": {}
+                },
+                "SOLAR IRRADIANCE": {
+                    "SHORTWAVE DOWNWARD IRRADIANCE": {}
+                },
+                "SOLAR RADIATION": {},
+                "SPECTRAL IRRADIANCE": {},
+                "SUNSHINE": {},
+                "TRANSMITTANCE": {},
+                "ULTRAVIOLET RADIATION": {
+                    "UV SPECTRAL": {}
+                }
+            },
+            "ATMOSPHERIC TEMPERATURE": {
+                "ATMOSPHERIC STABILITY": {},
+                "ATMOSPHERIC TEMPERATURE INDICES": {
+                    "COMMON SENSE CLIMATE INDEX": {},
+                    "COOLING DEGREE DAYS": {},
+                    "FREEZING INDEX": {},
+                    "GROWING DEGREE DAYS": {},
+                    "HEAT INDEX": {},
+                    "HEATING DEGREE DAYS": {},
+                    "RESIDENTIAL ENERGY DEMAND TEMPERATURE INDEX": {},
+                    "TEMPERATURE CONCENTRATION INDEX": {},
+                    "THAWING INDEX": {},
+                    "WIND CHILL INDEX": {}
+                },
+                "SURFACE TEMPERATURE": {
+                    "AIR TEMPERATURE": {},
+                    "BOUNDARY LAYER TEMPERATURE": {},
+                    "DEICED TEMPERATURE": {},
+                    "DEW POINT TEMPERATURE": {
+                        "DEWPOINT DEPRESSION": {}
+                    },
+                    "MAXIMUM/MINIMUM TEMPERATURE": {
+                        "24 HOUR MAXIMUM TEMPERATURE": {},
+                        "24 HOUR MINIMUM TEMPERATURE": {},
+                        "6 HOUR MAXIMUM TEMPERATURE": {},
+                        "6 HOUR MINIMUM TEMPERATURE": {}
+                    },
+                    "POTENTIAL TEMPERATURE": {},
+                    "SKIN TEMPERATURE": {},
+                    "STATIC TEMPERATURE": {},
+                    "TEMPERATURE ANOMALIES": {},
+                    "TEMPERATURE TENDENCY": {},
+                    "VIRTUAL TEMPERATURE": {}
+                },
+                "UPPER AIR TEMPERATURE": {
+                    "BOUNDARY LAYER TEMPERATURE": {},
+                    "DEICED TEMPERATURE": {},
+                    "DEW POINT TEMPERATURE": {
+                        "DEW POINT DEPRESSION": {}
+                    },
+                    "TEMPERATURE ANOMALIES": {},
+                    "VERTICAL PROFILES": {
+                        "DRY ADIABATIC LAPSE RATE": {},
+                        "ENVIRONMENTAL LAPSE RATE": {},
+                        "INVERSION HEIGHT": {},
+                        "SATURATED ADIABATIC LAPSE RATE": {}
+                    },
+                    "VIRTUAL TEMPERATURE": {}
+                }
+            },
+            "ATMOSPHERIC WATER VAPOR": {
+                "WATER VAPOR INDICATORS": {
+                    "DEW POINT TEMPERATURE": {},
+                    "HUMIDITY": {
+                        "ABSOLUTE HUMIDITY": {},
+                        "HUMIDITY MIXING RATIO": {},
+                        "RELATIVE HUMIDITY": {},
+                        "SATURATION SPECIFIC HUMIDITY": {},
+                        "SPECIFIC HUMIDITY": {}
+                    },
+                    "LAYERED PRECIPITABLE WATER": {},
+                    "SATURATION VAPOR PRESSURE": {},
+                    "STABLE ISOTOPES": {},
+                    "TOTAL PRECIPITABLE WATER": {},
+                    "VAPOR PRESSURE": {},
+                    "WATER VAPOR": {}
+                },
+                "WATER VAPOR INDICES": {
+                    "HUMIDITY INDEX": {},
+                    "WATER VAPOR TRANSPORT INDEX": {}
+                },
+                "WATER VAPOR PROCESSES": {
+                    "CONDENSATION": {},
+                    "EVAPORATION": {},
+                    "EVAPOTRANSPIRATION": {
+                        "EFFECTIVE EVAPOTRANSPIRATION": {},
+                        "POTENTIAL EVAPOTRANSPIRATION": {}
+                    },
+                    "SUBLIMATION": {},
+                    "SUPERSATURATION": {},
+                    "WATER VAPOR CONVERGENCE": {},
+                    "WATER VAPOR DIVERGENCE": {},
+                    "WATER VAPOR FLUX": {},
+                    "WATER VAPOR TENDENCY": {}
+                },
+                "WATER VAPOR PROFILES": {
+                    "VERTICALLY RESOLVED BACKSCATTER LIGHT": {},
+                    "WATER VAPOR CONCENTRATION PROFILES": {},
+                    "WATER VAPOR MIXING RATIO PROFILES": {}
+                }
+            },
+            "ATMOSPHERIC WINDS": {
+                "LOCAL WINDS": {
+                    "DUST DEVILS": {},
+                    "LAND BREEZES": {},
+                    "MICROBURSTS": {},
+                    "OROGRAPHIC WINDS": {
+                        "ANABATIC WINDS": {},
+                        "BORA WINDS": {},
+                        "FOEHN WINDS": {},
+                        "KATABATIC WINDS": {},
+                        "MOUNTAIN BREEZES": {},
+                        "VALLEY BREEZES": {}
+                    },
+                    "SEA BREEZES": {}
+                },
+                "SURFACE WINDS": {
+                    "STORM RELATIVE WINDS": {},
+                    "U/V WIND COMPONENTS": {},
+                    "WIND DIRECTION": {},
+                    "WIND DIRECTION TENDENCY": {},
+                    "WIND SPEED": {},
+                    "WIND SPEED TENDENCY": {}
+                },
+                "UPPER LEVEL WINDS": {
+                    "BOUNDARY LAYER WINDS": {},
+                    "FLIGHT LEVEL WINDS": {},
+                    "STORM RELATIVE WINDS": {},
+                    "U/V WIND COMPONENTS": {},
+                    "WIND DIRECTION": {},
+                    "WIND DIRECTION TENDENCY": {},
+                    "WIND SPEED": {},
+                    "WIND SPEED TENDENCY": {}
+                },
+                "WIND DYNAMICS": {
+                    "ADVECTION": {},
+                    "CONVECTION": {},
+                    "CONVERGENCE": {},
+                    "DIVERGENCE": {},
+                    "HORIZONTAL WIND VELOCITY/SPEED": {},
+                    "OROGRAPHIC LIFTING": {},
+                    "STREAMFUNCTIONS": {},
+                    "TURBULENCE": {},
+                    "VERTICAL WIND VELOCITY/SPEED": {},
+                    "VORTICITY": {
+                        "POTENTIAL VORTICITY": {},
+                        "VORTICITY ADVECTION": {}
+                    },
+                    "WIND SHEAR": {
+                        "HORIZONTAL WIND SHEAR": {},
+                        "VERTICAL WIND SHEAR": {}
+                    },
+                    "WIND STRESS": {}
+                },
+                "WIND INDICES": {
+                    "GOES WIND INDEX": {},
+                    "QUASI-BIENNIAL OSCILLATION (QBO) ZONAL WIND INDEX": {}
+                },
+                "WIND PROFILES": {
+                    "LINE OF SIGHT WINDS": {},
+                    "VELOCITY AZIMUTH DISPLAY VERTICAL WIND PROFILES": {},
+                    "WIND DIRECTION PROFILES": {},
+                    "WIND VELOCITY/SPEED PROFILES": {}
+                }
+            },
+            "CLOUDS": {
+                "CLOUD DROPLET DISTRIBUTION": {},
+                "CLOUD DYNAMICS": {
+                    "HEAT FLUX": {},
+                    "MOISTURE FLUX": {
+                        "DOWNWARD MOISTURE FLUX": {},
+                        "UPWARD MOISTURE FLUX": {}
+                    },
+                    "RADIATIONAL COOLING": {},
+                    "RADIATIONAL DIVERGENCE": {},
+                    "THETA-E ENTRAINMENT": {},
+                    "VORTEX STREET": {
+                        "KARMAN VORTEX STREET": {}
+                    },
+                    "WATER VAPOR TRANSPORT": {}
+                },
+                "CLOUD MICROPHYSICS": {
+                    "CLOUD CONDENSATION NUCLEI": {},
+                    "CLOUD DROPLET CONCENTRATION/SIZE": {},
+                    "CLOUD LIQUID WATER/ICE": {},
+                    "CLOUD MASS FLUX": {},
+                    "CLOUD OPTICAL DEPTH/THICKNESS": {},
+                    "CLOUD PRECIPITABLE WATER": {},
+                    "COLLISION RATE": {},
+                    "DROPLET GROWTH": {
+                        "ACCRETION": {
+                            "RIMING": {}
+                        },
+                        "AGGREGATION": {},
+                        "COALESCENCE": {}
+                    },
+                    "ICE NUCLEI": {},
+                    "PARTICLE SIZE DISTRIBUTION": {},
+                    "SEDIMENTATION": {
+                        "SEDIMENTATION RATE": {}
+                    }
+                },
+                "CLOUD PROPERTIES": {
+                    "CLOUD AMOUNT": {},
+                    "CLOUD ASYMMETRY": {},
+                    "CLOUD BASE HEIGHT": {},
+                    "CLOUD BASE PRESSURE": {},
+                    "CLOUD BASE TEMPERATURE": {},
+                    "CLOUD CEILING": {},
+                    "CLOUD FRACTION": {},
+                    "CLOUD FREQUENCY": {},
+                    "CLOUD HEIGHT": {},
+                    "CLOUD MIDLAYER TEMPERATURE": {},
+                    "CLOUD TOP HEIGHT": {},
+                    "CLOUD TOP PHASE": {},
+                    "CLOUD TOP PRESSURE": {},
+                    "CLOUD TOP TEMPERATURE": {},
+                    "CLOUD VERTICAL DISTRIBUTION": {}
+                },
+                "CLOUD RADIATIVE TRANSFER": {
+                    "ABSORPTION": {},
+                    "CLOUD EMISSIVITY": {},
+                    "CLOUD RADIATIVE FORCING": {},
+                    "CLOUD REFLECTANCE": {},
+                    "DROPLET GROWTH": {},
+                    "EMISSION": {},
+                    "SCATTERING": {}
+                },
+                "CLOUD TYPES": {},
+                "CONVECTIVE CLOUDS/SYSTEMS (OBSERVED/ANALYZED)": {
+                    "CLOUD CLUSTERS": {},
+                    "CUMULONIMBUS": {
+                        "CUMULONIMBUS CALVUS": {},
+                        "CUMULONIMBUS CAPILLATUS": {
+                            "CUMULONIMBUS INCUS": {}
+                        },
+                        "PYROCUMULONIMBUS": {}
+                    },
+                    "CUMULUS": {
+                        "CUMULUS CASTELLANUS": {},
+                        "CUMULUS CONGESTUS": {
+                            "TOWERING CUMULUS": {}
+                        },
+                        "CUMULUS HUMILIS": {
+                            "FAIR WEATHER CUMULUS": {}
+                        },
+                        "CUMULUS MEDIOCRIS": {},
+                        "PYROCUMULUS": {}
+                    },
+                    "DEEP CONVECTIVE CLOUD SYSTEMS": {},
+                    "MESOSCALE CONVECTIVE COMPLEX": {},
+                    "PERCENT CONVECTIVE CLOUDS": {},
+                    "PRECIPITATING CONVECTIVE CLOUD SYSTEMS": {},
+                    "SQUALL LINE": {},
+                    "TROPICAL OCEANIC CLOUD SYSTEMS": {}
+                },
+                "MESOSPHERIC CLOUDS (OBSERVED/ANALYZED)": {
+                    "NOCTILUCENT CLOUDS": {},
+                    "POLAR MESOSPHERIC CLOUDS": {}
+                },
+                "STRATOSPHERIC CLOUDS (OBSERVED/ANALYZED)": {
+                    "POLAR STRATOSPHERIC CLOUDS/NACREOUS": {}
+                },
+                "TROPOSPHERIC/HIGH-LEVEL CLOUDS (OBSERVED/ANALYZED)": {
+                    "CIRROCUMULUS": {},
+                    "CIRROSTRATUS": {},
+                    "CIRRUS/SYSTEMS": {
+                        "CIRRUS CLOUD SYSTEMS": {},
+                        "CIRRUS KELVIN-HELMHOLTZ COLOMBIAH": {}
+                    },
+                    "CONTRAILS": {},
+                    "PILEUS": {}
+                },
+                "TROPOSPHERIC/LOW LEVEL CLOUDS (OBSERVED/ANALYZED)": {
+                    "FOG": {
+                        "ADVECTION FOG": {},
+                        "FRONTAL FOG": {},
+                        "ICE FOG": {},
+                        "RADIATION FOG": {},
+                        "STEAM FOG": {},
+                        "UPSLOPE FOG": {}
+                    },
+                    "NIMBOSTRATUS": {},
+                    "STRATOCUMULUS": {
+                        "MARINE STRATOCUMULUS": {},
+                        "STRATOCUMULUS CUMILIFORMIS": {
+                            "STRATOCUMULUS CASTELLANUS": {},
+                            "STRATOCUMULUS DIURNALIS": {},
+                            "STRATOCUMULUS MAMMATUS": {},
+                            "STRATOCUMULUS VESPERALIS": {}
+                        },
+                        "STRATOCUMULUS UNDULATAS": {
+                            "STRATOCUMULUS LENTICULARIS": {},
+                            "STRATOCUMULUS OPACUS": {},
+                            "STRATOCUMULUS PERLUCIDUS": {},
+                            "STRATOCUMULUS TRANSLUCIDUS": {}
+                        }
+                    },
+                    "STRATUS": {}
+                },
+                "TROPOSPHERIC/MID-LEVEL CLOUDS (OBSERVED/ANALYZED)": {
+                    "ALTOCUMULUS": {
+                        "ALTOCUMULUS CASTELLANUS": {},
+                        "ALTOCUMULUS LENTICULARIS": {
+                            "LENTICULAR CLOUDS": {}
+                        },
+                        "ALTOCUMULUS UNDULATUS": {}
+                    },
+                    "ALTOSTRATUS": {
+                        "ALTOSTRATUS UNDULATUS": {}
+                    }
+                }
+            },
+            "PRECIPITATION": {
+                "ACCUMULATIVE CONVECTIVE PRECIPITATION": {},
+                "ATMOSPHERIC PRECIPITATION INDICES": {
+                    "CENTRAL INDIAN PRECIPITATION INDEX": {},
+                    "ENSO PRECIPITATION INDEX": {},
+                    "STANDARDIZED PRECIPITATION INDEX": {},
+                    "WEIGHTED ANOMALY STANDARDIZED PRECIPITATION INDEX": {}
+                },
+                "DROPLET SIZE": {},
+                "HYDROMETEORS": {},
+                "LIQUID PRECIPITATION": {
+                    "DRIZZLE": {
+                        "FREEZING DRIZZLE": {}
+                    },
+                    "LIQUID SURFACE PRECIPITATION RATE": {},
+                    "RAIN": {
+                        "ACID RAIN": {},
+                        "FREEZING RAIN": {}
+                    }
+                },
+                "LIQUID WATER EQUIVALENT": {},
+                "PRECIPITATION AMOUNT": {
+                    "12 HOUR PRECIPITATION AMOUNT": {},
+                    "24 HOUR PRECIPITATION AMOUNT": {},
+                    "3 AND 6 HOUR PRECIPITATION AMOUNT": {},
+                    "HOURLY PRECIPITATION AMOUNT": {}
+                },
+                "PRECIPITATION ANOMALIES": {},
+                "PRECIPITATION PROFILES": {
+                    "CLOUD WATER PATH": {},
+                    "ICE WATER PATH": {},
+                    "LATENT HEAT FLUX": {},
+                    "MELTING LAYER HEIGHT": {},
+                    "RAIN TYPE": {},
+                    "RAIN WATER PATH": {}
+                },
+                "PRECIPITATION RATE": {
+                    "CONVECTIVE PRECIPITATION": {},
+                    "FROZEN PRECIPITATION": {},
+                    "SURFACE PRECIPITATION": {}
+                },
+                "SNOW WATER EQUIVALENT": {},
+                "SOLID PRECIPITATION": {
+                    "CONVECTIVE SURFACE PRECIPITATION RATE": {},
+                    "HAIL": {},
+                    "ICE PELLETS": {
+                        "SLEET": {},
+                        "SMALL HAIL": {}
+                    },
+                    "SNOW": {
+                        "SNOW GRAINS": {},
+                        "SNOW PELLETS": {}
+                    }
+                },
+                "TOTAL SURFACE PRECIPITATION RATE": {},
+                "VIRGA": {}
+            },
+            "WEATHER EVENTS": {
+                "COLD WAVE": {},
+                "DROUGHTS": {
+                    "DROUGHT DURATION": {},
+                    "DROUGHT FREQUENCY": {},
+                    "DROUGHT SEVERITY": {}
+                },
+                "EXTRATROPICAL CYCLONES": {
+                    "EXTRATROPICAL CYCLONE FREQUENCY": {},
+                    "EXTRATROPICAL CYCLONE MOTION": {},
+                    "EXTRATROPICAL CYCLONE TRACK": {}
+                },
+                "FOG": {},
+                "FREEZE/FROST": {
+                    "FIRST FREEZE/FROST DATE": {},
+                    "FIRST FREEZE/FROST PROBABILITY": {},
+                    "FIRST MODERATE FREEZE/FROST DATE": {},
+                    "FREEZE FREE PERIOD LENGTH": {},
+                    "LAST FREEZE/FROST DATE": {},
+                    "LAST FREEZE/FROST PROBABILITY": {},
+                    "LAST MODERATE FREEZE/FROST DATE": {}
+                },
+                "HAIL STORMS": {},
+                "HEAT WAVE": {},
+                "ICE STORMS": {
+                    "TOTAL FREEZING RAIN ACCUMULATION": {}
+                },
+                "LIGHTNING": {},
+                "MONSOONS": {},
+                "RAIN STORMS": {},
+                "SNOW STORMS": {
+                    "BLIZZARDS": {},
+                    "BLOWING SNOW": {},
+                    "LAKE EFFECT SNOW": {}
+                },
+                "SUBTROPICAL CYCLONES": {
+                    "SUBTROPICAL DEPRESSION": {
+                        "SUBTROPICAL DEPRESSION TRACK": {}
+                    },
+                    "SUBTROPICAL STORM": {
+                        "SUBTROPICAL STORM MOTION": {},
+                        "SUBTROPICAL STORM TRACK": {}
+                    }
+                },
+                "Stability/Severe Weather Indices": {
+                    "CONVECTIVE AVAILABLE POTENTIAL ENERGY (CAPE)": {},
+                    "K-index (KI)": {},
+                    "LIFTED INDEX (LI)": {},
+                    "SHOWALTER STABILITY INDEX (SI)": {},
+                    "TOTAL TOTALS INDEX (TT)": {}
+                },
+                "TORNADOES": {
+                    "DESTRUCTION POTENTIAL INDEX": {},
+                    "ENHANCED FUJITA SCALE RATING": {},
+                    "STORM SYSTEM MOTION": {},
+                    "TORNADO CLIMATOLOGY": {},
+                    "TORNADO DENSITY": {},
+                    "TORNADO FREQUENCY": {},
+                    "TORNADO PATH LENGTH": {},
+                    "TORNADO PATH WIDTH": {},
+                    "TORNADO VORTEX SIGNATURE": {},
+                    "WATER SPOUT": {}
+                },
+                "TROPICAL CYCLONES": {
+                    "ACCUMULATED CYCLONE ENERGY": {
+                        "CYCLONES (SW INDIAN)": {},
+                        "HURRICANES (N. ATLANTIC/E. PACIFIC)": {},
+                        "SEVERE CYCLONIC STORMS (N. INDIAN)": {},
+                        "SEVERE TROPICAL CYCLONES (SW PACIFIC/SE INDIAN)": {},
+                        "TYPHOONS (WESTERN N. PACIFIC)": {}
+                    },
+                    "LANDFALL INTENSITY": {
+                        "CYCLONES (SW INDIAN)": {},
+                        "HURRICANES (N. ATLANTIC/E. PACIFIC)": {},
+                        "SEVERE CYCLONIC STORMS (N. INDIAN)": {},
+                        "SEVERE TROPICAL CYCLONES (SW PACIFIC/SE INDIAN)": {},
+                        "TYPHOONS (WESTERN N. PACIFIC)": {}
+                    },
+                    "MAXIMUM 1-MINUTE SUSTAINED WIND": {
+                        "CYCLONES (SW INDIAN)": {},
+                        "HURRICANES (N. ATLANTIC/E. PACIFIC)": {},
+                        "SEVERE CYCLONIC STORMS (N. INDIAN)": {},
+                        "SEVERE TROPICAL CYCLONES (SW PACIFIC/SE INDIAN)": {},
+                        "TYPHOONS (WESTERN N. PACIFIC)": {}
+                    },
+                    "MAXIMUM SURFACE WIND": {
+                        "CYCLONES (SW INDIAN)": {},
+                        "HURRICANES (N. ATLANTIC/E. PACIFIC)": {},
+                        "SEVERE CYCLONIC STORMS (N. INDIAN)": {},
+                        "SEVERE TROPICAL CYCLONES (SW PACIFIC/SE INDIAN)": {},
+                        "TYPHOONS (WESTERN N. PACIFIC)": {}
+                    },
+                    "MAXIMUM WIND GUST": {
+                        "CYCLONES (SW INDIAN)": {},
+                        "HURRICANES (N. ATLANTIC/E. PACIFIC)": {},
+                        "SEVERE CYCLONIC STORMS (N. INDIAN)": {},
+                        "SEVERE TROPICAL CYCLONES (SW PACIFIC/SE INDIAN)": {},
+                        "TYPHOONS (WESTERN N. PACIFIC)": {}
+                    },
+                    "MINIMUM CENTRAL PRESSURE": {
+                        "CYCLONES (SW INDIAN)": {},
+                        "HURRICANES (N. ATLANTIC/E. PACIFIC)": {},
+                        "SEVERE CYCLONIC STORMS (N. INDIAN)": {},
+                        "SEVERE TROPICAL CYCLONES (SW PACIFIC/SE INDIAN)": {},
+                        "TYPHOONS (WESTERN N. PACIFIC)": {}
+                    },
+                    "PEAK INTENSITY": {
+                        "CYCLONES (SW INDIAN)": {},
+                        "HURRICANES (N. ATLANTIC/E. PACIFIC)": {},
+                        "SEVERE CYCLONIC STORMS (N. INDIAN)": {},
+                        "SEVERE TROPICAL CYCLONES (SW PACIFIC/SE INDIAN)": {},
+                        "TYPHOONS (WESTERN N. PACIFIC)": {}
+                    },
+                    "SAFFIR-SIMPSON SCALE AT LANDFALL (CATEGORY 1)": {
+                        "HURRICANES (N. ATLANTIC/E. PACIFIC)": {}
+                    },
+                    "SAFFIR-SIMPSON SCALE AT LANDFALL (CATEGORY 2)": {
+                        "HURRICANES (N. ATLANTIC/E. PACIFIC)": {}
+                    },
+                    "SAFFIR-SIMPSON SCALE AT LANDFALL (CATEGORY 3)": {
+                        "HURRICANES (N. ATLANTIC/E. PACIFIC)": {}
+                    },
+                    "SAFFIR-SIMPSON SCALE AT LANDFALL (CATEGORY 4)": {
+                        "HURRICANES (N. ATLANTIC/E. PACIFIC)": {}
+                    },
+                    "SAFFIR-SIMPSON SCALE AT LANDFALL (CATEGORY 5)": {
+                        "HURRICANES (N. ATLANTIC/E. PACIFIC)": {}
+                    },
+                    "TROPICAL CYCLONE FORCE WIND EXTENT": {
+                        "CYCLONES (SW INDIAN)": {},
+                        "HURRICANES (N. ATLANTIC/E. PACIFIC)": {},
+                        "SEVERE CYCLONIC STORMS (N. INDIAN)": {},
+                        "SEVERE TROPICAL CYCLONES (SW PACIFIC/SE INDIAN)": {},
+                        "TYPHOONS (WESTERN N. PACIFIC)": {}
+                    },
+                    "TROPICAL CYCLONE MOTION": {
+                        "CYCLONES (SW INDIAN)": {},
+                        "HURRICANES (N. ATLANTIC/E. PACIFIC)": {},
+                        "SEVERE CYCLONIC STORMS (N. INDIAN)": {},
+                        "SEVERE TROPICAL CYCLONES (SW PACIFIC/SE INDIAN)": {},
+                        "TYPHOONS (WESTERN N. PACIFIC)": {}
+                    },
+                    "TROPICAL CYCLONE RADIUS": {
+                        "CYCLONES (SW INDIAN)": {},
+                        "HURRICANES (N. ATLANTIC/E. PACIFIC)": {},
+                        "SEVERE CYCLONIC STORMS (N. INDIAN)": {},
+                        "SEVERE TROPICAL CYCLONES (SW PACIFIC/SE INDIAN)": {},
+                        "TYPHOONS (WESTERN N. PACIFIC)": {}
+                    },
+                    "TROPICAL CYCLONE TRACK": {
+                        "CYCLONES (SW INDIAN)": {},
+                        "HURRICANES (N. ATLANTIC/E. PACIFIC)": {},
+                        "SEVERE CYCLONIC STORMS (N. INDIAN)": {},
+                        "SEVERE TROPICAL CYCLONES (SW PACIFIC/SE INDIAN)": {},
+                        "TYPHOONS (WESTERN N. PACIFIC)": {}
+                    },
+                    "TROPICAL DEPRESSION FREQUENCY": {},
+                    "TROPICAL DEPRESSION MOTION": {},
+                    "TROPICAL DEPRESSION TRACK": {},
+                    "TROPICAL STORM FORCE WIND EXTENT": {},
+                    "TROPICAL STORM FREQUENCY": {},
+                    "TROPICAL STORM MOTION": {},
+                    "TROPICAL STORM TRACK": {}
+                },
+                "WEATHER/CLIMATE ADVISORIES": {
+                    "Weather Forecast": {}
+                },
+                "WIND STORMS": {
+                    "DERECHO": {},
+                    "GALE": {},
+                    "MICROBURST": {},
+                    "SQUALL": {}
+                }
+            }
+        },
+        "BIOLOGICAL CLASSIFICATION": {
+            "ANIMALS/INVERTEBRATES": {
+                "ACORN WORMS": {},
+                "ARROW WORMS": {},
+                "ARTHROPODS": {
+                    "CHELICERATES": {
+                        "ARACHNIDS": {}
+                    },
+                    "CRUSTACEANS": {
+                        "AMPHIPODS": {},
+                        "BARNACLES": {},
+                        "COPEPODS": {},
+                        "DECAPODS": {},
+                        "EUPHAUSIIDS (KRILL)": {},
+                        "ISOPODS": {},
+                        "MYSIDS": {},
+                        "OSTRACODS": {}
+                    },
+                    "HEXAPODS": {
+                        "ENTOGNATHA": {},
+                        "INSECTS": {}
+                    },
+                    "MYRIAPODS": {
+                        "CENTIPEDES": {},
+                        "MILLIPEDES": {}
+                    }
+                },
+                "BRYOZOANS/MOSS ANIMALS": {},
+                "BURROWS/SPOON WORMS": {},
+                "CNIDARIANS": {
+                    "ANTHOZOANS/HEXACORALS": {
+                        "HARD OR STONY CORALS": {},
+                        "SEA ANEMONES": {}
+                    },
+                    "ANTHOZOANS/OCTOCORALS": {
+                        "SEA FANS/SEA WHIPS": {},
+                        "SEA PENS": {},
+                        "SOFT CORALS": {}
+                    },
+                    "HYDROZOANS": {},
+                    "JELLYFISHES": {}
+                },
+                "COMB JELLIES": {},
+                "ECHINODERMS": {
+                    "BRITTLE/BASKET STARS": {},
+                    "SEA STARS": {},
+                    "SEA URCHINS": {}
+                },
+                "ENTOPROCTS": {},
+                "FLATWORMS/FLUKES/TAPEWORMS": {},
+                "GNATHOSTOMULIDS": {},
+                "HORSEHAIR WORMS": {},
+                "LAMP SHELLS": {},
+                "LORICIFERANS": {},
+                "MOLLUSKS": {
+                    "APLACOPHORANS": {},
+                    "BIVALVES": {
+                        "CLAMS": {},
+                        "MUSSELS": {},
+                        "OYSTERS": {}
+                    },
+                    "CEPHALOPODS": {
+                        "SQUIDS": {}
+                    },
+                    "CHITONS": {},
+                    "GASTROPODS": {}
+                },
+                "PEANUT WORMS": {},
+                "PHORONIDS": {},
+                "PRIAPULANS": {},
+                "RIBBON WORMS": {},
+                "ROTIFERS": {},
+                "ROUNDWORMS": {},
+                "SEGMENTED WORMS (ANNELIDS)": {
+                    "BRISTLE WORMS": {},
+                    "EARTHWORMS": {},
+                    "LEECHES": {}
+                },
+                "SPINY-HEADED WORMS": {},
+                "SPONGES": {},
+                "TUNICATES": {
+                    "LARVACEANS": {},
+                    "SALPS": {},
+                    "SEA SQUIRTS": {}
+                },
+                "WATER BEARS (TARDIGRADES)": {},
+                "WHEEL WEAVERS (CYCLIOPHORANS)": {}
+            },
+            "ANIMALS/VERTEBRATES": {
+                "AMPHIBIANS": {
+                    "FROGS/TOADS": {},
+                    "SALAMANDERS": {}
+                },
+                "BIRDS": {
+                    "ALBATROSSES/PETRELS AND ALLIES": {},
+                    "CRANES AND ALLIES": {},
+                    "DUCKS/GEESE/SWANS": {},
+                    "EAGLES/FALCONS/HAWKS AND ALLIES": {},
+                    "GREBES": {},
+                    "HERONS/EGRETS AND ALLIES": {},
+                    "IBISES/SPOONBILLS": {},
+                    "LOONS": {},
+                    "PELICANS AND ALLIES": {},
+                    "PENGUINS": {},
+                    "PERCHING BIRDS": {},
+                    "SANDPIPERS": {},
+                    "WADERS/GULLS/AUKS AND ALLIES": {}
+                },
+                "FISH": {
+                    "LAMPREYS/HAGFISHES": {},
+                    "RAY-FINNED FISHES": {
+                        "ANCHOVIES/HERRINGS": {},
+                        "CATFISHES/MINNOWS": {},
+                        "CODS/HADDOCKS": {},
+                        "FLOUNDERS": {},
+                        "NEEDLEFISHES": {},
+                        "PERCH-LIKE FISHES": {
+                            "TUNAS AND ALLIES": {}
+                        },
+                        "PUPFISHES": {},
+                        "SALMONS/TROUTS": {},
+                        "STICKLEBACKS": {},
+                        "STURGEONS/PADDLEFISHES": {}
+                    },
+                    "SHARKS/RAYS/CHIMAERAS": {}
+                },
+                "MAMMALS": {
+                    "BATS": {},
+                    "CARNIVORES": {
+                        "BEARS": {},
+                        "DOGS/FOXES/WOLVES": {},
+                        "MARTENS/WEASELS/WOLVERINES": {},
+                        "OTTERS": {},
+                        "SEALS/SEA LIONS/WALRUSES": {}
+                    },
+                    "CETACEANS": {
+                        "BALEEN WHALES": {},
+                        "TOOTHED WHALES": {}
+                    },
+                    "DUGONGS/MANATEES": {},
+                    "ELEPHANTS": {},
+                    "EVEN-TOED UNGULATES": {
+                        "CATTLE/SHEEP": {},
+                        "DEER/MOOSE": {},
+                        "HOGS/PIGS": {}
+                    },
+                    "RODENTS": {}
+                },
+                "MARINE MAMMALS": {
+                    "DOLPHINS": {},
+                    "PINNIPED": {}
+                },
+                "REPTILES": {
+                    "ALLIGATORS/CROCODILES": {},
+                    "LIZARDS/SNAKES": {},
+                    "TURTLES": {
+                        "SEA TURTLES": {}
+                    }
+                }
+            },
+            "BACTERIA/ARCHAEA": {
+                "CYANOBACTERIA (BLUE-GREEN ALGAE)": {}
+            },
+            "FUNGI": {
+                "LICHENS": {},
+                "MUSHROOMS": {},
+                "SLIME MOLDS": {},
+                "YEASTS/TRUFFLES": {}
+            },
+            "PLANTS": {
+                "ANGIOSPERMS (FLOWERING PLANTS)": {
+                    "DICOTS": {},
+                    "MONOCOTS": {
+                        "SEAGRASS": {}
+                    }
+                },
+                "FERNS AND ALLIES": {
+                    "CLUB MOSSES": {},
+                    "FERNS": {},
+                    "HORSETAILS": {},
+                    "WHISK FERNS": {}
+                },
+                "GYMNOSPERMS": {
+                    "CONIFERS": {},
+                    "CYCADS": {},
+                    "GINKGO": {},
+                    "GNETOPS": {}
+                },
+                "MACROALGAE (SEAWEEDS)": {
+                    "BROWN ALGAE": {},
+                    "GREEN ALGAE": {},
+                    "RED ALGAE": {}
+                },
+                "MICROALGAE": {
+                    "CRYPTOMONADS": {},
+                    "DIATOMS": {},
+                    "DINOFLAGELLATES": {},
+                    "HAPTOPHYTES": {
+                        "COCCOLITHOPHORES": {}
+                    }
+                },
+                "MOSSES/HORNWORTS/LIVERWORTS": {}
+            },
+            "PROTISTS": {
+                "AMOEBOIDS": {
+                    "AMOEBAS": {},
+                    "FORAMINIFERS": {},
+                    "RADIOLARIANS": {}
+                },
+                "CILIATES": {},
+                "DIATOMS": {},
+                "FLAGELLATES": {
+                    "CRYPTOMONADS": {},
+                    "DINOFLAGELLATES": {},
+                    "HAPTOPHYTES": {
+                        "COCCOLITHOPHORES": {}
+                    }
+                },
+                "MACROALGAE (SEAWEEDS)": {
+                    "BROWN ALGAE": {},
+                    "GREEN ALGAE": {},
+                    "RED ALGAE": {}
+                },
+                "PLANKTON": {
+                    "PHYTOPLANKTON": {}
+                },
+                "SLIME MOLDS": {},
+                "SPOROZOANS": {}
+            },
+            "VIRUSES": {}
+        },
+        "BIOSPHERE": {
+            "ECOLOGICAL DYNAMICS": {
+                "COMMUNITY DYNAMICS": {
+                    "BIODIVERSITY FUNCTIONS": {},
+                    "COMMUNITY STRUCTURE": {},
+                    "GRAZING DYNAMICS / PLANT ECOLOGY": {},
+                    "INDICATOR SPECIES": {},
+                    "INVASIVE SPECIES": {},
+                    "PLANT SUCCESSION": {},
+                    "SPECIES DOMINANCE INDICES": {},
+                    "SPECIES RECRUITMENT": {}
+                },
+                "ECOSYSTEM FUNCTIONS": {
+                    "BIOGEOCHEMICAL CYCLES": {},
+                    "BIOMASS DYNAMICS": {},
+                    "CARBON SEQUESTRATION": {},
+                    "CHEMOSYNTHESIS": {},
+                    "CONSUMPTION RATES": {},
+                    "DECOMPOSITION": {},
+                    "EXCRETION RATES": {},
+                    "FATTY ACID DESATURASE": {},
+                    "FOOD-WEB DYNAMICS": {},
+                    "NUTRIENT CYCLING": {},
+                    "NUTRITIONAL CONSTRAINTS": {},
+                    "OXYGEN DEMAND": {},
+                    "PHOTOSYNTHESIS": {},
+                    "POLYUNSATURATED FATTY ACID": {},
+                    "PRIMARY PRODUCTION": {},
+                    "RESPIRATION RATE": {},
+                    "SECONDARY PRODUCTION": {},
+                    "TROPHIC DYNAMICS": {}
+                },
+                "ECOTOXICOLOGY": {
+                    "BIOAVAILABILITY": {},
+                    "SPECIES BIOACCUMULATION": {},
+                    "TOXICITY LEVELS": {}
+                },
+                "FIRE ECOLOGY": {
+                    "FIRE DISTURBANCE": {},
+                    "FIRE DYNAMICS": {},
+                    "FIRE MODELS": {},
+                    "FIRE OCCURRENCE": {}
+                },
+                "SPECIES/POPULATION INTERACTIONS": {
+                    "BIOLUMINESCENCE": {},
+                    "DIURNAL MOVEMENTS": {},
+                    "ENDANGERED SPECIES": {},
+                    "EVOLUTIONARY ADAPTATION": {},
+                    "EXOTIC SPECIES": {},
+                    "EXTINCTION RATE": {},
+                    "GRAZING DYNAMICS/PLANT HERBIVORY": {},
+                    "HIBERNATION": {},
+                    "INDIGENOUS/NATIVE SPECIES": {},
+                    "MICROBIAL CHANGES": {},
+                    "MIGRATORY RATES/ROUTES": {},
+                    "MORPHOLOGICAL ADAPTATION": {},
+                    "MUTATION RATES": {},
+                    "MUTUALISM": {},
+                    "NATURAL SELECTION": {},
+                    "PARASITISM": {},
+                    "POLLINATOR SPECIES": {},
+                    "POPULATION DYNAMICS": {},
+                    "POST-BREEDING PERIODS": {},
+                    "RANGE CHANGES": {},
+                    "SCAVENGING": {},
+                    "SPECIES COMPETITION": {},
+                    "SPECIES LIFE HISTORY": {},
+                    "SPECIES PREDATION": {},
+                    "SURVIVAL RATES": {},
+                    "SYMBIOSIS": {},
+                    "USE/FEEDING HABITATS": {}
+                }
+            },
+            "ECOSYSTEMS": {
+                "ANTHROPOGENIC/HUMAN INFLUENCED ECOSYSTEMS": {
+                    "AGRICULTURAL LANDS": {
+                        "CROPLAND": {},
+                        "FOREST PLANTATION": {},
+                        "PASTURE": {},
+                        "RANGELAND": {}
+                    },
+                    "RESOURCE DEVELOPMENT SITE": {
+                        "MINING/DRILLING SITE": {},
+                        "SOLAR FARM": {},
+                        "WATER IMPOUNDMENT": {},
+                        "WIND FARM": {}
+                    },
+                    "URBAN LANDS": {
+                        "CANAL": {},
+                        "GARDEN": {},
+                        "PARK": {},
+                        "ROADSIDE": {}
+                    }
+                },
+                "AQUATIC ECOSYSTEMS": {
+                    "PLANKTON": {
+                        "PHYTOPLANKTON": {},
+                        "ZOOPLANKTON": {}
+                    },
+                    "WETLANDS": {
+                        "ESTUARINE WETLANDS": {},
+                        "LACUSTRINE WETLANDS": {},
+                        "MARINE": {},
+                        "MARSHES": {},
+                        "PALUSTRINE WETLANDS": {},
+                        "PEATLANDS": {},
+                        "RIPARIAN WETLANDS": {},
+                        "SWAMPS": {},
+                        "VERNAL POOL": {}
+                    }
+                },
+                "FRESHWATER ECOSYSTEMS": {
+                    "LAKE/POND": {
+                        "MONTANE LAKE": {},
+                        "SALINE LAKES": {}
+                    },
+                    "RIVERS/STREAM": {
+                        "EPHEMERAL STREAM": {},
+                        "HEADWATER STREAM": {},
+                        "INTERMITTENT STREAM": {},
+                        "PERENNIAL STREAM/RIVER": {},
+                        "RIVER DELTA": {}
+                    }
+                },
+                "MARINE ECOSYSTEMS": {
+                    "ABYSSAL": {
+                        "COLD SEEP": {},
+                        "HYDROTHERMAL VENT": {}
+                    },
+                    "BENTHIC": {},
+                    "COASTAL": {
+                        "BEACHES": {},
+                        "DUNES": {},
+                        "KELP FOREST": {},
+                        "LAGOON": {},
+                        "MANGROVE SWAMP": {},
+                        "MUDFLAT": {},
+                        "ROCKY INTERTIDAL": {},
+                        "SALT MARSH": {},
+                        "SAV/SEA GRASS BED": {}
+                    },
+                    "DEMERSAL": {},
+                    "ESTUARY": {
+                        "BRACKISH MARSH": {},
+                        "MANGROVE SWAMP": {},
+                        "MUDFLAT": {},
+                        "SAV/SEA GRASS BED": {}
+                    },
+                    "PELAGIC": {
+                        "NERITIC ZONE": {},
+                        "OCEANIC ZONE": {}
+                    },
+                    "REEF": {
+                        "CORAL REEF": {},
+                        "OYSTER REEF": {}
+                    }
+                },
+                "TERRESTRIAL ECOSYSTEMS": {
+                    "ALPINE/TUNDRA": {
+                        "ALPINE TUNDRA": {},
+                        "ARCTIC TUNDRA": {},
+                        "SUBALPINE": {}
+                    },
+                    "CAVE/SUBTERRANEAN": {},
+                    "DESERTS": {
+                        "DESERT SCRUB": {}
+                    },
+                    "FORESTS": {
+                        "BOREAL FOREST/TIAGA": {},
+                        "TEMPERATE CONIFEROUS FOREST": {},
+                        "TEMPERATE DECIDUOUS FOREST": {},
+                        "TEMPERATE MIXED FOREST": {},
+                        "TEMPERATE RAINFOREST": {},
+                        "TROPICAL RAINFOREST": {}
+                    },
+                    "GRASSLANDS": {
+                        "MONTANE GRASSLAND": {},
+                        "SAVANNA": {}
+                    },
+                    "ISLANDS": {},
+                    "KARST LANDSCAPE": {},
+                    "MONTANE HABITATS": {},
+                    "SAVANNAS": {},
+                    "SHRUBLAND/SCRUB": {
+                        "CHAPARRAL": {},
+                        "MONTANE SHRUBLAND": {}
+                    },
+                    "WETLANDS": {
+                        "ESTUARINE WETLANDS": {},
+                        "LACUSTRINE WETLANDS": {},
+                        "MARINE": {},
+                        "MARSHES": {},
+                        "PALUSTRINE WETLANDS": {},
+                        "PEATLANDS": {},
+                        "RIPARIAN WETLANDS": {},
+                        "SWAMPS": {}
+                    }
+                }
+            },
+            "VEGETATION": {
+                "AFFORESTATION/REFORESTATION": {},
+                "BIOMASS": {},
+                "CANOPY CHARACTERISTICS": {
+                    "VEGETATION HEIGHT": {}
+                },
+                "CANOPY TRANSMITTANCE": {},
+                "CARBON": {},
+                "CHLOROPHYLL": {},
+                "CROWN": {},
+                "DECIDUOUS VEGETATION": {},
+                "DOMINANT SPECIES": {},
+                "EVERGREEN VEGETATION": {},
+                "EXOTIC VEGETATION": {},
+                "FOREST COMPOSITION/VEGETATION STRUCTURE": {},
+                "HERBIVORY": {},
+                "IMPORTANCE VALUE": {},
+                "INDIGENOUS VEGETATION": {},
+                "LEAF CHARACTERISTICS": {
+                    "LEAF AREA INDEX (LAI)": {}
+                },
+                "LITTER CHARACTERISTICS": {},
+                "MACROPHYTES": {},
+                "NITROGEN": {},
+                "NUTRIENTS": {},
+                "PHOSPHORUS": {},
+                "PHOTOSYNTHETICALLY ACTIVE RADIATION": {
+                    "FRACTION OF ABSORBED PHOTOSYNTHETICALLY ACTIVE RADIATION (FAPAR)": {}
+                },
+                "PIGMENTS": {},
+                "PLANT CHARACTERISTICS": {
+                    "CROP DENSITY": {},
+                    "CROP HEIGHT": {},
+                    "VEGETATION WATER CONTENT": {},
+                    "XYLEM DIELECTRIC PERMITTIVITY": {}
+                },
+                "PLANT PHENOLOGY": {
+                    "GROWTH STAGE": {}
+                },
+                "POLLEN": {},
+                "RECLAMATION/REVEGETATION/RESTORATION": {},
+                "REFORESTATION": {},
+                "SOLAR INDUCED FLUORESCENCE": {},
+                "TREE RINGS": {},
+                "VEGETATION COVER": {},
+                "VEGETATION INDEX": {
+                    "LEAF AREA INDEX (LAI)": {},
+                    "NORMALIZED DIFFERENCE VEGETATION INDEX (NDVI)": {}
+                },
+                "VEGETATION OPTICAL DEPTH": {},
+                "VEGETATION SPECIES": {},
+                "VEGETATION WATER POTENTIAL": {}
+            }
+        },
+        "CLIMATE INDICATORS": {
+            "ATMOSPHERIC/OCEAN INDICATORS": {
+                "CLOUD INDICATORS": {
+                    "INCREASED/DECREASED CLOUD FRACTION": {}
+                },
+                "COMPOUND EXTREME EVENTS": {},
+                "EXTREME WEATHER": {
+                    "EXTREME DROUGHT": {},
+                    "EXTREME PRECIPITATION": {},
+                    "HEAT/COLD WAVE FREQUENCY/INTENSITY": {},
+                    "MONSOON ONSET/INTENSITY": {},
+                    "TROPICAL OR EXTRATROPICAL CYCLONE FREQUENCY/INTENSITY": {}
+                },
+                "FRESH WATER RIVER DISCHARGE": {},
+                "HUMIDITY INDICES": {
+                    "HUMIDITY INDEX": {},
+                    "TEMPERATURE-HUMIDITY INDEX": {},
+                    "WATER VAPOR TRANSPORT INDEX": {}
+                },
+                "OCEAN ACIDIFICATION": {},
+                "OCEAN OVERTURNING": {},
+                "OCEAN UPWELLING INDICES": {
+                    "OCEAN COASTAL UPWELLING INDEX": {}
+                },
+                "OCEAN UPWELLING/DOWNWELLING": {},
+                "PRECIPITATION INDICATORS": {
+                    "PRECIPITATION TRENDS": {},
+                    "PRECIPITATION VARIABILITY": {},
+                    "SAHEL STANDARDIZED RAINFALL": {}
+                },
+                "PRECIPITATION INDICES": {
+                    "ENSO PRECIPITATION INDEX": {},
+                    "NORTHEAST BRAZIL RAINFALL ANOMALY": {},
+                    "STANDARDIZED PRECIPITATION INDEX": {},
+                    "WEIGHTED ANOMALY STANDARDIZED PRECIPITATION INDEX": {}
+                },
+                "SEA LEVEL RISE": {
+                    "EROSION": {},
+                    "INUNDATION": {}
+                },
+                "SEA SURFACE TEMPERATURE INDICES": {
+                    "ATLANTIC TRIPOLE SST": {},
+                    "CARIBBEAN INDEX": {},
+                    "CENTRAL TROPICAL PACIFIC SST": {
+                        "NINO 4 INDEX": {}
+                    },
+                    "EAST CENTRAL TROPICAL PACIFIC SST": {
+                        "NINO 3.4 INDEX": {}
+                    },
+                    "EXTREME EASTERN TROPICAL PACIFIC SST": {
+                        "NINO 1+2 INDEX": {}
+                    },
+                    "KAPLAN SST INDEX": {},
+                    "NINO 3 INDEX": {},
+                    "NORTH TROPICAL ATLANTIC INDEX": {},
+                    "OCEANIC NINO INDEX": {},
+                    "PACIFIC WARM POOL": {},
+                    "TRANS-NINO INDEX": {},
+                    "TROPICAL NORTH ATLANTIC INDEX": {},
+                    "TROPICAL PACIFIC SST EOF": {},
+                    "TROPICAL SOUTH ATLANTIC INDEX": {},
+                    "WESTERN HEMISPHERE WARM POOL": {}
+                },
+                "SURFACE SALINITY": {},
+                "TELECONNECTIONS": {
+                    "ANTARCTIC OSCILLATION": {},
+                    "ARCTIC OSCILLATION": {},
+                    "ATLANTIC MERIDIONAL MODE": {},
+                    "ATLANTIC MULTIDECADAL OSCILLATION LONG VERSION": {},
+                    "BIVARIATE ENSO TIMESERIES INDEX": {},
+                    "BLOCKING INDEX": {},
+                    "EAST ATLANTIC JET PATTERN": {},
+                    "EAST ATLANTIC PATTERN": {},
+                    "EASTERN ATLANTIC WESTERN RUSSIA PATTERN": {},
+                    "EASTERN PACIFIC OSCILLATION": {},
+                    "EL NINO SOUTHERN OSCILLATION (ENSO)": {},
+                    "EQUATORIAL PACIFIC MERIDIONAL WIND ANOMALY INDEX": {},
+                    "EQUATORIAL PACIFIC ZONAL WIND ANOMALY INDEX": {},
+                    "GLOBALLY INTEGRATED ANGULAR MOMENTUM": {},
+                    "MADDEN-JULIAN OSCILLATION": {},
+                    "MULTIVARIATE ENSO INDEX": {},
+                    "NORTH ATLANTIC OSCILLATION": {},
+                    "NORTH PACIFIC OSCILLATION": {},
+                    "NORTH PACIFIC PATTERN": {},
+                    "NORTHERN OSCILLATION INDEX": {},
+                    "PACIFIC DECADAL OSCILLATION": {},
+                    "PACIFIC/NORTH AMERICAN (PNA) PATTERN": {},
+                    "Pacific Transition Index": {},
+                    "QUASI-BIENNIAL OSCILLATION": {},
+                    "SOUTHERN OSCILLATION INDEX": {},
+                    "TROPICAL/NORTHERN HEMISPHERE PATTERN": {},
+                    "WEST PACIFIC INDEX": {}
+                },
+                "TEMPERATURE INDICATORS": {
+                    "HIGHER MAXIMUM DAYTIME TEMPERATURES": {},
+                    "HIGHER MINIMUM NIGHTIME TEMPERATURES": {},
+                    "STRATOSPHERIC TEMPERATURE ANOMALIES": {},
+                    "TEMPERATURE TRENDS": {},
+                    "TEMPERATURE VARIABILITY": {},
+                    "TROPOSPHERIC TEMPERATURE ANOMALIES": {}
+                },
+                "TEMPERATURE INDICES": {
+                    "COMMON SENSE CLIMATE INDEX": {},
+                    "COOLING DEGREE DAYS": {},
+                    "FREEZING INDEX": {},
+                    "GROWING DEGREE DAYS": {},
+                    "HEATING DEGREE DAYS": {},
+                    "RESIDENTIAL ENERGY DEMAND TEMPERATURE INDEX": {},
+                    "TEMPERATURE CONCENTRATION INDEX (TCI)": {},
+                    "THAWING INDEX": {}
+                }
+            },
+            "BIOSPHERIC INDICATORS": {
+                "BIRTH RATE DECLINE/INCREASE": {},
+                "BREEDING PRODUCTIVITY": {},
+                "CANOPY TEMPERATURE VARIABILITY": {},
+                "HYPOXIC CONDITIONS": {},
+                "INDICATOR SPECIES": {},
+                "INVASIVE SPECIES": {},
+                "PHENOLOGICAL CHANGES": {
+                    "ANIMAL PHENOLOGICAL CHANGES": {},
+                    "PLANT PHENOLOGICAL CHANGES": {}
+                },
+                "RANGE CHANGES": {},
+                "SPECIES MIGRATION": {},
+                "VECTOR SPECIES": {}
+            },
+            "CARBON FLUX": {},
+            "CLIMATE FEEDBACKS": {
+                "ATMOSPHERIC FEEDBACKS": {},
+                "COUPLED SYSTEM FEEDBACKS": {},
+                "CRYOSPHERIC FEEDBACKS": {},
+                "LAND SURFACE FEEDBACKS": {},
+                "OCEANIC FEEDBACKS": {}
+            },
+            "CRYOSPHERIC INDICATORS": {
+                "AVALANCHE": {},
+                "CLIMATE WARMING": {},
+                "DEPTH HOAR": {},
+                "FIRN LIMIT": {},
+                "GLACIAL MEASUREMENTS": {
+                    "GLACIER ELEVATION/ICE SHEET ELEVATION": {
+                        "Hypsometry": {}
+                    },
+                    "GLACIER FACIES": {},
+                    "GLACIER MASS BALANCE/ICE SHEET MASS BALANCE": {},
+                    "GLACIER MOTION/ICE SHEET MOTION": {},
+                    "GLACIER/ICE SHEET THICKNESS": {},
+                    "GLACIER/ICE SHEET TOPOGRAPHY": {}
+                },
+                "ICE DEPTH/THICKNESS": {},
+                "ICE EDGES": {},
+                "ICE EXTENT": {},
+                "ICE FLOES": {},
+                "ICE GROWTH/MELT": {},
+                "RIVER ICE DEPTH/EXTENT": {},
+                "SALINITY": {},
+                "SEA ICE CONCENTRATION": {},
+                "SEA ICE ELEVATION": {},
+                "SNOW COVER": {},
+                "SNOW DEPTH": {},
+                "SNOW ENERGY BALANCE": {},
+                "SNOW MELT": {}
+            },
+            "ENVIRONMENTAL VULNERABILITY INDEX (EVI)": {
+                "FIJI INDEX": {},
+                "SAMOA INDEX": {},
+                "TUVALU INDEX": {}
+            },
+            "LAND SURFACE/AGRICULTURE INDICATORS": {
+                "DROUGHT DURATION": {},
+                "DROUGHT FREQUENCY": {},
+                "DROUGHT INDICES": {
+                    "PALMER DROUGHT CROP MOISTURE INDEX": {},
+                    "PALMER DROUGHT SEVERITY INDEX": {},
+                    "PALMER HYDROLOGICAL DROUGHT INDEX": {},
+                    "PALMER Z INDEX": {}
+                },
+                "DROUGHT SEVERITY": {},
+                "EROSION": {},
+                "FIRE WEATHER INDEX": {},
+                "FOREST FIRE DANGER INDEX": {},
+                "LANDSLIDES": {},
+                "LENGTH OF GROWING SEASON": {
+                    "CROP HARVEST DATES": {},
+                    "FIRST BLOOM DATE": {},
+                    "FIRST LEAF DATE": {},
+                    "FREEZE/FROST DATE": {},
+                    "FREEZE/FROST PROBABILITY": {},
+                    "LENGTH OF FREEZE FREE PERIOD": {}
+                },
+                "SATELLITE SOIL MOISTURE INDEX": {},
+                "SOIL EROSION": {},
+                "SOIL MOISTURE": {},
+                "SOIL TEMPERATURE": {},
+                "SURFACE MOISTURE INDEX": {},
+                "TREE LINE SHIFT": {},
+                "VEGETATION COVER": {}
+            },
+            "PALEOCLIMATE INDICATORS": {
+                "ALUMINUM-26 ANALYSIS": {},
+                "BERYLLIUM-10 ANALYSIS": {},
+                "BIOLOGICAL RECORDS": {
+                    "BIOMARKER": {},
+                    "CORAL DEPOSITS": {},
+                    "FAUNA": {},
+                    "MACROFOSSILS": {},
+                    "MICROFOSSILS": {},
+                    "PALEOVEGETATION": {},
+                    "POLLEN": {},
+                    "POPULATION ABUNDANCE": {},
+                    "TREE RINGS": {
+                        "ISOTOPIC ANALYSIS": {
+                            "CARBON ISOTOPE": {},
+                            "HYDROGEN ISOTOPE": {},
+                            "OXYGEN ISOTOPE": {}
+                        }
+                    }
+                },
+                "ICE CORE RECORDS": {
+                    "CARBON DIOXIDE": {},
+                    "ELECTRICAL PROPERTIES": {},
+                    "ICE CORE AIR BUBBLES": {},
+                    "IONS": {},
+                    "ISOTOPES": {
+                        "ARGON ISOTOPES": {},
+                        "NITROGEN ISOTOPES": {},
+                        "OXYGEN ISOTOPES": {}
+                    },
+                    "METHANE": {},
+                    "NITROUS OXIDE": {},
+                    "PARTICULATE MATTER": {
+                        "MICROPARTICLE CONCENTRATION": {}
+                    },
+                    "VOLCANIC DEPOSITS": {}
+                },
+                "LAND RECORDS": {
+                    "BOREHOLES": {},
+                    "CAVE DEPOSITS": {},
+                    "FIRE HISTORY": {
+                        "CHARCOAL SEDIMENT": {},
+                        "FIRE SCAR DATE": {}
+                    },
+                    "GLACIAL RETREAT": {},
+                    "GLACIATION": {},
+                    "ISOTOPES": {},
+                    "LOESS": {},
+                    "PALEOMAGNETIC DATA": {},
+                    "PALEOSOLS": {},
+                    "RADIOCARBON": {},
+                    "SEDIMENTS": {
+                        "SEDIMENT THICKNESS": {}
+                    },
+                    "STRATIGRAPHIC SEQUENCE": {},
+                    "VOLCANIC DEPOSITS": {}
+                },
+                "MASS EXTINCTIONS": {},
+                "OCEAN/LAKE RECORDS": {
+                    "BOREHOLES": {},
+                    "CORAL DEPOSITS": {},
+                    "ISOTOPES": {},
+                    "LAKE LEVELS": {},
+                    "MACROFOSSILS": {},
+                    "MICROFOSSILS": {},
+                    "OXYGEN ISOTOPES": {},
+                    "PALEOMAGNETIC DATA": {},
+                    "POLLEN": {},
+                    "RADIOCARBON": {},
+                    "SEDIMENTS": {
+                        "SEDIMENT THICKNESS": {}
+                    },
+                    "STRATIGRAPHIC SEQUENCE": {},
+                    "VARVE DEPOSITS": {}
+                },
+                "OXYGEN ISOTOPE ANALYSIS": {},
+                "PALEOCLIMATE FORCING": {
+                    "CARBON DIOXIDE FORCING": {},
+                    "ORBITAL CHANGE FORCING": {},
+                    "SOLAR FORCING": {},
+                    "VOLCANIC FORCING": {}
+                },
+                "PALEOCLIMATE RECONSTRUCTIONS": {
+                    "AIR TEMPERATURE RECONSTRUCTION": {},
+                    "ATMOSPHERIC CIRCULATION RECONSTRUCTION": {},
+                    "DROUGHT/PRECIPITATION RECONSTRUCTION": {},
+                    "GROUND WATER RECONSTRUCTION": {},
+                    "LAKE LEVEL RECONSTRUCTION": {},
+                    "OCEAN SALINITY RECONSTRUCTION": {},
+                    "SEA LEVEL RECONSTRUCTION": {},
+                    "SEA SURFACE TEMPERATURE RECONSTRUCTION": {},
+                    "SEDIMENTS": {
+                        "SEDIMENT THICKNESS": {}
+                    },
+                    "SOLAR FORCING/INSOLATION RECONSTRUCTION": {},
+                    "STREAMFLOW RECONSTRUCTION": {},
+                    "VEGETATION RECONSTRUCTION": {}
+                },
+                "PERMAFROST/METHANE RELEASE": {},
+                "PLATE TECTONICS": {},
+                "SPELEOTHEMS": {},
+                "VOLCANIC ACTIVITY": {}
+            },
+            "REGIONAL CLIMATE LEVELS": {
+                "MACROCLIMATE": {},
+                "MESOCLIMATE": {},
+                "MICROCLIMATE": {}
+            },
+            "SUN-EARTH INTERACTIONS": {
+                "SUNSPOT ACTIVITY": {
+                    "LENGTH OF THE SOLAR CYCLE": {},
+                    "SOLAR FLUX": {}
+                }
+            },
+            "TERRESTRIAL HYDROSPHERE INDICATORS": {
+                "FRESHWATER RUNOFF": {},
+                "MOUNTAIN SNOW LINE SHIFT": {},
+                "PERMAFROST MELT": {},
+                "RIVER/LAKE ICE BREAKUP": {},
+                "RIVER/LAKE ICE FREEZE": {},
+                "SNOW COVER DEGRADATION": {}
+            }
+        },
+        "CRYOSPHERE": {
+            "FROZEN GROUND": {
+                "ACTIVE LAYER": {},
+                "CRYOSOLS": {},
+                "GROUND ICE": {},
+                "PERIGLACIAL PROCESSES": {},
+                "PERMAFROST": {
+                    "PERMAFROST TEMPERATURE": {}
+                },
+                "ROCK GLACIERS": {},
+                "SEASONALLY FROZEN GROUND": {},
+                "SOIL TEMPERATURE": {},
+                "TALIK": {}
+            },
+            "GLACIERS/ICE SHEETS": {
+                "ABLATION ZONES/ACCUMULATION ZONES": {},
+                "AGE AT ICE-THICKNESS-NORMALIZED DEPTHS": {},
+                "AGE OF INTERNAL REFLECTIONS": {},
+                "BASAL SHEAR STRESS": {},
+                "BASINS": {},
+                "COASTLINE": {},
+                "DEPTHS AT SPECIFIC AGES": {},
+                "FIRN": {
+                    "FIRN AIR CONTENT": {},
+                    "SNOW GRAIN SIZE": {}
+                },
+                "GEOMETRY OF INTERNAL REFLECTIONS": {},
+                "GLACIER ELEVATION/ICE SHEET ELEVATION": {},
+                "GLACIER FACIES": {},
+                "GLACIER MASS BALANCE/ICE SHEET MASS BALANCE": {},
+                "GLACIER MOTION/ICE SHEET MOTION": {},
+                "GLACIER THICKNESS/ICE SHEET THICKNESS": {},
+                "GLACIER TOPOGRAPHY/ICE SHEET TOPOGRAPHY": {},
+                "GLACIERS": {
+                    "DEBRIS THICKNESS": {},
+                    "GLACIAL LAKE EXTENT": {},
+                    "GLACIER ABLATION": {},
+                    "GLACIER ACCUMULATION": {},
+                    "GLACIER AREA": {},
+                    "GLACIER EXTENT": {},
+                    "GLACIER MASS": {},
+                    "GLACIER MELT": {},
+                    "GLACIER REFREEZE": {},
+                    "GLACIER RUNOFF": {},
+                    "GLACIER TERMINUS": {},
+                    "GROUNDING LINE": {},
+                    "ICE STUPA": {},
+                    "SUB-DEBRIS MELT ENHANCEMENT": {}
+                },
+                "ICE SHEETS": {
+                    "ICE SHEET MEASUREMENTS": {
+                        "RIFTS": {}
+                    },
+                    "SURFACE MORPHOLOGY": {}
+                },
+                "ICE SHELVES": {},
+                "ICEBERGS": {}
+            },
+            "LAND ICE/OCEAN CLASSIFICATION": {},
+            "SEA ICE": {
+                "FREEBOARD": {},
+                "HEAT FLUX": {
+                    "LATENT HEAT FLUX": {},
+                    "LONGWAVE HEAT FLUX": {},
+                    "SENSIBLE HEAT FLUX": {},
+                    "SHORTWAVE HEAT FLUX": {}
+                },
+                "ICE DEFORMATION": {},
+                "ICE DEPTH/THICKNESS": {},
+                "ICE DRAFT": {},
+                "ICE EDGES": {},
+                "ICE EXTENT": {},
+                "ICE FLOES": {},
+                "ICE GROWTH/MELT": {},
+                "ICE ROUGHNESS": {},
+                "ICE TEMPERATURE": {},
+                "ICE TYPES": {},
+                "ICEBERGS": {},
+                "ISOTOPES": {},
+                "LEADS": {},
+                "PACK ICE": {},
+                "POLYNYAS": {},
+                "REFLECTANCE": {},
+                "SALINITY": {},
+                "SEA ICE AGE": {},
+                "SEA ICE CONCENTRATION": {
+                    "ICE FRACTION": {}
+                },
+                "SEA ICE DYNAMICS": {},
+                "SEA ICE ELEVATION": {},
+                "SEA ICE MASS BALANCE": {},
+                "SEA ICE MOTION": {},
+                "SEA ICE STRAIN RATES": {},
+                "SEA ICE STRENGTH": {},
+                "SEA ICE STRESS": {},
+                "SEA ICE VOLUME BUDGET": {
+                    "ADVECTION": {},
+                    "DIFFUSION": {},
+                    "FLOODING": {},
+                    "ICE GROWTH/MELT": {},
+                    "SUBLIMATION": {}
+                },
+                "SEA ICE/OCEAN CLASSIFICATION": {},
+                "SNOW DEPTH": {},
+                "SNOW MELT": {}
+            },
+            "SNOW/ICE": {
+                "ALBEDO": {},
+                "AVALANCHE": {},
+                "BLOWING SNOW": {},
+                "DEPTH HOAR": {},
+                "FREEZE/THAW": {
+                    "TRANSITION DIRECTION": {}
+                },
+                "FROST": {},
+                "ICE DEPTH/THICKNESS": {},
+                "ICE EXTENT": {},
+                "ICE GROWTH/MELT": {},
+                "ICE MELANGE": {
+                    "ICE MELANGE VELOCITY": {}
+                },
+                "ICE MOTION": {},
+                "ICE SURFACE TEMPERAT": {},
+                "ICE VELOCITY": {},
+                "LAKE ICE": {},
+                "PERMAFROST": {},
+                "REFLECTANCE": {
+                    "BIDIRECTIONAL REFLECTANCE DISTRIBUTION FUNCTION": {},
+                    "BIDIRECTIONAL REFLECTANCE FACTOR": {}
+                },
+                "RIVER ICE": {},
+                "SNOW CLASSIFICATION": {},
+                "SNOW COVER": {},
+                "SNOW DENSITY": {},
+                "SNOW DEPTH": {},
+                "SNOW ENERGY BALANCE": {},
+                "SNOW FACIES": {},
+                "SNOW MELT": {},
+                "SNOW MICROSTRUCTURE": {
+                    "SPECIFIC SURFACE AREA": {}
+                },
+                "SNOW STRATIGRAPHY": {},
+                "SNOW VOLUME BUDGET": {
+                    "ADVECTION": {},
+                    "DIFFUSION": {},
+                    "PRECIPITATION": {},
+                    "SNOW MELT": {},
+                    "SUBLIMATION": {}
+                },
+                "SNOW WATER EQUIVALENT": {},
+                "SNOW/ICE CHEMISTRY": {},
+                "SNOW/ICE TEMPERATURE": {},
+                "SURFACE MELT": {},
+                "WHITEOUT": {}
+            }
+        },
+        "HUMAN DIMENSIONS": {
+            "BOUNDARIES": {
+                "ADMINISTRATIVE DIVISIONS": {},
+                "BOUNDARY SURVEYS": {},
+                "POLITICAL DIVISIONS": {
+                    "COUNTRY BOUNDARIES": {},
+                    "STATE BOUNDARIES": {}
+                }
+            },
+            "ECONOMIC RESOURCES": {
+                "AGRICULTURE PRODUCTION": {
+                    "MONOCULTURE": {}
+                },
+                "AQUACULTURE PRODUCTION": {},
+                "ENERGY PRODUCTION/USE": {
+                    "BIOMASS ENERGY PRODUCTION/USE": {},
+                    "COAL PRODUCTION/USE": {},
+                    "GEOTHERMAL ENERGY PRODUCTION/USE": {},
+                    "HYDROELECTRIC ENERGY PRODUCTION/USE": {},
+                    "HYDROGEN PRODUCTION/USE": {},
+                    "METHANE PRODUCTION/USE": {},
+                    "NATURAL GAS PRODUCTION/USE": {},
+                    "NUCLEAR ENERGY PRODUCTION/USE": {},
+                    "OIL PRODUCTION/USE": {},
+                    "PETROLEUM PRODUCTION/USE": {},
+                    "SOLAR ENERGY PRODUCTION/USE": {},
+                    "TIDAL ENERGY PRODUCTION/USE": {},
+                    "WAVE ENERGY PRODUCTION/USE": {},
+                    "WIND ENERGY PRODUCTION/USE": {}
+                },
+                "MARICULTURE PRODUCTION": {},
+                "TOURISM": {
+                    "ECOTOURISM": {}
+                }
+            },
+            "ENVIRONMENTAL GOVERNANCE/MANAGEMENT": {
+                "CARBON CAPTURE AND STORAGE": {},
+                "CARBON FOOTPRINT": {},
+                "ENVIRONMENTAL ASSESSMENTS": {},
+                "ENVIRONMENTAL REGULATIONS": {},
+                "FIRE MANAGEMENT": {},
+                "GEOENGINEERING": {
+                    "CARBON DIOXIDE REMOVAL": {},
+                    "SOLAR RADIATION MANAGEMENT": {}
+                },
+                "LAND MANAGEMENT": {
+                    "LAND TENURE": {},
+                    "LAND USE CLASSES": {},
+                    "LAND USE/LAND COVER CLASSIFICATION": {}
+                },
+                "TREATY AGREEMENTS/RESULTS": {},
+                "WATER MANAGEMENT": {
+                    "GROUNDWATER MANAGEMENT": {},
+                    "STORMWATER MANAGEMENT": {},
+                    "WASTEWATER MANAGEMENT": {},
+                    "WATER STORAGE": {
+                        "ICE STUPA": {}
+                    }
+                }
+            },
+            "ENVIRONMENTAL IMPACTS": {
+                "ACID DEPOSITION": {},
+                "AGRICULTURAL EXPANSION": {},
+                "BIOCHEMICAL RELEASE": {},
+                "BIOMASS BURNING": {},
+                "CHEMICAL SPILLS": {},
+                "CIVIL DISTURBANCE": {},
+                "CONSERVATION": {},
+                "CONTAMINANT LEVELS/SPILLS": {},
+                "ELECTRIC/MAGNETIC FIELD EXPOSURE": {},
+                "FOSSIL FUEL BURNING": {},
+                "GAS EXPLOSIONS/LEAKS": {},
+                "GAS FLARING": {},
+                "HEAVY METALS CONCENTRATION": {},
+                "INDUSTRIAL EMISSIONS": {},
+                "MARINE DEBRIS REMOVAL": {},
+                "MECHANICAL DISTURBANCE": {},
+                "MINE DRAINAGE": {},
+                "NUCLEAR RADIATION EXPOSURE": {},
+                "OIL SPILLS": {},
+                "PRESCRIBED BURNS/FIRES": {},
+                "SEWAGE DISPOSAL": {},
+                "WATER RESOURCES": {}
+            },
+            "GLOBAL CHANGE RESPONSES": {
+                "CLIMATE ADAPTATION": {},
+                "CLIMATE MITIGATION": {},
+                "SCENARIO PLANNING": {}
+            },
+            "HABITAT CONVERSION/FRAGMENTATION": {
+                "DEFORESTATION": {},
+                "DESERTIFICATION": {},
+                "ECOLOGICAL CORRIDORS": {},
+                "EUTROPHICATION": {},
+                "IRRIGATION": {},
+                "RECLAMATION/REVEGETATION/RESTORATION": {},
+                "REFORESTATION/REVEGETATION": {},
+                "URBANIZATION/URBAN SPRAWL": {}
+            },
+            "HUMAN SETTLEMENTS": {
+                "ARCHAEOLOGICAL AREAS": {},
+                "COASTAL AREAS": {},
+                "RURAL AREAS": {},
+                "TRIBAL LANDS": {},
+                "URBAN AREAS": {}
+            },
+            "INFRASTRUCTURE": {
+                "BUILDINGS": {},
+                "COMMUNICATIONS": {},
+                "CULTURAL FEATURES": {},
+                "ELECTRICITY": {},
+                "GREEN INFRASTRUCTURE": {},
+                "PIPELINES": {},
+                "TRANSPORTATION": {},
+                "WATER STORAGE": {}
+            },
+            "NATURAL HAZARDS": {
+                "BIOLOGICAL HAZARDS": {},
+                "DROUGHTS": {
+                    "DROUGHT DURATION": {},
+                    "DROUGHT FREQUENCY": {},
+                    "DROUGHT SEVERITY": {}
+                },
+                "EARTHQUAKES": {},
+                "FAMINE": {},
+                "FLOODS": {},
+                "HEAT": {},
+                "LAND SUBSIDENCE": {},
+                "LANDSLIDES": {},
+                "SEVERE STORMS": {},
+                "TORNADOES": {},
+                "TROPICAL CYCLONES": {
+                    "CYCLONES": {},
+                    "HURRICANES": {},
+                    "SEVERE CYCLONIC STORMS": {},
+                    "SEVERE TROPICAL CYCLONES": {},
+                    "TYPHOONS": {}
+                },
+                "TSUNAMIS": {},
+                "VOLCANIC ERUPTIONS": {},
+                "WILDFIRES": {
+                    "BURNED AREA": {},
+                    "WILDFIRE SUPPRESSION": {}
+                }
+            },
+            "POPULATION": {
+                "MORTALITY": {
+                    "INFANT MORTALITY RATES": {},
+                    "MORTALITY RATES": {}
+                },
+                "NATALITY": {
+                    "NATALITY RATES": {}
+                },
+                "POPULATION DENSITY": {},
+                "POPULATION DISTRIBUTION": {},
+                "POPULATION ESTIMATES": {},
+                "POPULATION SIZE": {},
+                "VULNERABLE POPULATIONS": {}
+            },
+            "PUBLIC HEALTH": {
+                "DISEASES/EPIDEMICS": {
+                    "EPIDEMIOLOGY": {
+                        "TELE-EPIDEMIOLOGY": {}
+                    },
+                    "FOODBORNE DISEASES": {},
+                    "VECTOR-BORN DISEASES": {},
+                    "WATERBORNE DISEASES": {}
+                },
+                "ENVIRONMENTAL HEALTH FACTORS": {
+                    "AEROALLERGENS": {},
+                    "PARTICULATE MATTER (PM 1.0)": {},
+                    "PARTICULATE MATTER (PM 10)": {},
+                    "PARTICULATE MATTER (PM 2.5)": {},
+                    "PARTICULATE MATTER CONCENTRATIONS": {},
+                    "Urban Heat Island": {}
+                },
+                "FOOD SECURITY": {},
+                "MALNUTRITION": {
+                    "MALNUTRITION RATES": {}
+                },
+                "MENTAL HEALTH IMPACTS": {},
+                "MORBIDITY": {
+                    "MORBIDITY RATES": {}
+                },
+                "RADIATION EXPOSURE": {},
+                "WATER TREATMENT DISRUPTION": {}
+            },
+            "SOCIAL BEHAVIOR": {
+                "CONSERVATION": {},
+                "CONSUMER BEHAVIOR": {},
+                "DISASTER RESPONSE": {},
+                "ENVIRONMENTAL JUSTICE": {},
+                "HAZARD MITIGATION/PLANNING": {},
+                "PRESERVATION": {},
+                "RECREATIONAL ACTIVITIES/AREAS": {},
+                "RECYCLING": {},
+                "VULNERABILITY LEVELS/INDEX": {}
+            },
+            "SOCIOECONOMICS": {
+                "HOUSEHOLD INCOME": {},
+                "INDUSTRIALIZATION": {},
+                "POVERTY LEVELS": {},
+                "PURCHASING POWER": {}
+            },
+            "SUSTAINABILITY": {
+                "ENVIRONMENTAL SUSTAINABILITY": {},
+                "SUSTAINABLE DEVELOPMENT": {}
+            }
+        },
+        "LAND SURFACE": {
+            "EROSION/SEDIMENTATION": {
+                "DEGRADATION": {},
+                "ENTRAINMENT": {},
+                "EROSION": {},
+                "LANDSLIDES": {},
+                "SEDIMENT CHEMISTRY": {},
+                "SEDIMENT COMPOSITION": {},
+                "SEDIMENT TRANSPORT": {},
+                "SEDIMENTATION": {},
+                "SEDIMENTS": {},
+                "STRATIGRAPHIC SEQUENCE": {},
+                "SUSPENDED SOLIDS": {},
+                "WEATHERING": {}
+            },
+            "FROZEN GROUND": {
+                "ACTIVE LAYER": {},
+                "CRYOSOLS": {},
+                "GROUND ICE": {},
+                "PERIGLACIAL PROCESSES": {},
+                "PERMAFROST": {},
+                "ROCK GLACIERS": {},
+                "SEASONALLY FROZEN GROUND": {},
+                "SOIL TEMPERATURE": {},
+                "TALIK": {}
+            },
+            "GEOMORPHIC LANDFORMS/PROCESSES": {
+                "AEOLIAN LANDFORMS": {
+                    "DUNES": {
+                        "CRESCENTIC (BARCHAN/TRANSVERSE) DUNE": {},
+                        "DOME DUNE": {},
+                        "LONGITUDINAL/LINEAR DUNE": {},
+                        "PARABOLIC DUNE": {},
+                        "STAR DUNE": {}
+                    },
+                    "RIPPLES": {}
+                },
+                "AEOLIAN PROCESSES": {
+                    "ABRASION": {
+                        "VENTIFACTS": {},
+                        "YARDANGS": {}
+                    },
+                    "DEFLATION": {},
+                    "DEGRADATION": {},
+                    "SALTATION": {},
+                    "SEDIMENT TRANSPORT": {
+                        "LOESS": {},
+                        "MONADNOCK": {}
+                    },
+                    "SEDIMENTATION": {
+                        "SEDIMENT CHEMISTRY": {},
+                        "SEDIMENT COMPOSITION": {},
+                        "STRATIGRAPHIC SEQUENCE": {}
+                    },
+                    "WEATHERING": {}
+                },
+                "COASTAL LANDFORMS": {
+                    "BARRIER ISLANDS": {},
+                    "BEACHES": {},
+                    "CORAL REEFS": {
+                        "APRON REEF": {},
+                        "ATOLL REEF": {},
+                        "BANK REEF": {},
+                        "BARRIER REEF": {},
+                        "FRINGING REEF": {},
+                        "PATCH REEF": {},
+                        "RIBBON REEF": {},
+                        "TABLE REEF": {}
+                    },
+                    "CUSPATE FORELANDS": {},
+                    "DELTAS": {},
+                    "DUNES": {
+                        "CRESCENTIC (BARCHAN/TRANSVERSE)": {},
+                        "DOME DUNE": {},
+                        "LONGITUDINAL/LINEAR DUNE": {},
+                        "PARABOLIC DUNE": {},
+                        "STAR DUNE": {}
+                    },
+                    "ESTUARIES": {},
+                    "FJORDS": {},
+                    "HEADLANDS/BAYS/CAPE": {},
+                    "INLETS": {},
+                    "ISTHMUS": {},
+                    "LAGOONS": {},
+                    "RIA": {},
+                    "SALT MARSH": {},
+                    "SEA ARCHES": {},
+                    "SEA CAVES": {},
+                    "SEA CLIFFS": {},
+                    "SHOALS": {},
+                    "SHORELINES": {},
+                    "SOUNDS": {},
+                    "SPITS AND BARS": {},
+                    "TOMBOLOS": {},
+                    "WAVE-CUT NOTCH/PLATFORMS": {}
+                },
+                "COASTAL PROCESSES": {
+                    "ABRASION": {},
+                    "ACCRETION": {},
+                    "ATTRITION/WEATHERING": {},
+                    "CHEMICAL SOLUTION": {},
+                    "DEPOSITION": {},
+                    "FLOODING": {},
+                    "HYDRAULIC ACTION": {},
+                    "SALTATION": {},
+                    "SEA LEVEL CHANGES": {},
+                    "SEDIMENT TRANSPORT": {},
+                    "SEDIMENTATION": {
+                        "SEDIMENT CHEMISTRY": {},
+                        "SEDIMENT COMPOSITION": {},
+                        "STRATIGRAPHIC SEQUENCE": {}
+                    },
+                    "SUBMERGENCE": {},
+                    "SUBSIDENCE": {},
+                    "SUSPENSION": {},
+                    "WAVE BREAKING": {},
+                    "WAVE DIFFRACTION": {},
+                    "WAVE EROSION": {},
+                    "WAVE REFRACTION": {},
+                    "WAVE SHOALING": {}
+                },
+                "FLUVIAL LANDFORMS": {
+                    "AIT": {},
+                    "BAR": {},
+                    "BAYOU": {},
+                    "CANYON": {},
+                    "CONFLUENCE": {},
+                    "CUTBANK": {},
+                    "DELTAS": {},
+                    "ENDORHEIC BASIN": {},
+                    "FLOOD PLAIN": {},
+                    "GULLY": {},
+                    "ISLAND": {},
+                    "LACUSTRINE PLAIN": {},
+                    "MARSH": {},
+                    "MEANDER": {},
+                    "OX-BOW LAKE": {},
+                    "PINGO": {},
+                    "POINT BAR": {},
+                    "POND": {},
+                    "RIFFLE": {},
+                    "RIVER": {},
+                    "SPRING": {},
+                    "STREAM": {},
+                    "STREAM TERRACE": {},
+                    "SWAMP": {},
+                    "VALLEY": {
+                        "V SHAPED VALLEY": {}
+                    },
+                    "WATERFALL": {},
+                    "WATERSHED/DRAINAGE BASIN": {}
+                },
+                "FLUVIAL PROCESSES": {
+                    "ABRASION": {},
+                    "ATTRITION": {},
+                    "DEGRADATION": {},
+                    "DOWNCUTTING": {},
+                    "ENTRAINMENT": {},
+                    "HYDRAULIC ACTION": {},
+                    "LANDSLIDES": {},
+                    "SALTATION": {},
+                    "SEDIMENT TRANSPORT": {},
+                    "SEDIMENTATION": {
+                        "SEDIMENT CHEMISTRY": {},
+                        "SEDIMENT COMPOSITION": {},
+                        "SEDIMENT THICKNESS": {},
+                        "SEDIMENTARY STRUCTURES": {},
+                        "SEDIMENTARY TEXTURES": {},
+                        "STRATIGRAPHIC SEQUENCE": {}
+                    },
+                    "SUSPENSION": {},
+                    "WEATHERING": {}
+                },
+                "GLACIAL LANDFORMS": {
+                    "ARETES": {},
+                    "CIRQUES/COMBES": {},
+                    "CREVASSES": {
+                        "LONGITUDINAL CREVASSES": {},
+                        "MARGINAL CREVASSES": {},
+                        "TRANSVERSE CREVASSES": {}
+                    },
+                    "DRUMLINS": {},
+                    "ESKERS": {},
+                    "FJORDS": {},
+                    "GLACIAL HORNS": {},
+                    "GLACIER STRIATIONS/GROOVES": {},
+                    "GLACIER/HANGING/U-SHAPED VALLEYS": {},
+                    "GLACIER/ICE CAVES": {},
+                    "ICE-DAMMED LAKES": {},
+                    "KAME DELTA": {},
+                    "KAMES": {},
+                    "KETTLE HOLES": {},
+                    "MORAINES": {
+                        "LATERAL MORAINE": {},
+                        "MEDIAL MORAINE": {},
+                        "RECESSIONAL MORAINE": {},
+                        "RIBBED/ROGAN MORAINE": {},
+                        "TERMINAL MORAINE": {}
+                    },
+                    "NUNATAKS": {},
+                    "OUTWASH FANS/PLAINS": {},
+                    "ROCHE MOUTONNEES/SHEEPBACK": {},
+                    "ROCK GLACIERS": {},
+                    "TILL PLAINS": {}
+                },
+                "GLACIAL PROCESSES": {
+                    "ABLATION": {},
+                    "ABRASION": {},
+                    "CRUST REBOUND": {},
+                    "DEGRADATION": {},
+                    "DUMPING": {},
+                    "ENTRAINMENT": {},
+                    "FIRN FORMATION": {},
+                    "FREEZE/THAW": {
+                        "BASAL ICE FREEZING": {}
+                    },
+                    "GLACIAL DISPLACEMENT": {},
+                    "GLACIAL DRIFT": {},
+                    "GLACIAL GROWTH": {},
+                    "GLACIAL STRIATION": {},
+                    "GLACIER CRUST SUBSIDENCE": {},
+                    "PERIGLACIAL PROCESSES": {},
+                    "PLUCKING": {},
+                    "SCOURING": {},
+                    "SEDIMENT TRANSPORT": {},
+                    "SEDIMENTATION": {
+                        "SEDIMENT CHEMISTRY": {},
+                        "STRATIGRAPHIC SEQUENCE": {}
+                    },
+                    "WEATHERING": {}
+                },
+                "KARST LANDFORMS": {
+                    "CAVES": {},
+                    "COCKPIT/TOWER KARST": {},
+                    "KARST VALLEY": {},
+                    "SINKHOLES (DOLINES)": {},
+                    "UVALA": {}
+                },
+                "KARST PROCESSES": {
+                    "CAC03": {},
+                    "DISSOLVED CO2": {},
+                    "KARST HYDROLOGY": {},
+                    "POROSITY": {},
+                    "WEATHERING": {}
+                },
+                "TECTONIC LANDFORMS": {
+                    "CALDERA": {},
+                    "CINDER CONE": {},
+                    "FAULTS": {},
+                    "FOLDS": {},
+                    "GEYSER": {},
+                    "GRABEN": {},
+                    "HORST": {},
+                    "LAVA DOME": {},
+                    "LAVA PLAIN": {},
+                    "MAAR": {},
+                    "MOUNTAINS": {},
+                    "PLATEAU": {},
+                    "RIDGE": {},
+                    "RIFT VALLEY": {},
+                    "TUYA": {},
+                    "VOLCANO": {}
+                },
+                "TECTONIC PROCESSES": {
+                    "EPEIROGENIC MOVEMENT": {},
+                    "ISOSTATIC UPLIFT": {},
+                    "OROGENIC MOVEMENT": {},
+                    "RIFTING": {},
+                    "SUBDUCTION": {},
+                    "TECTONIC UPLIFT": {}
+                }
+            },
+            "LAND USE/LAND COVER": {
+                "DISTURBANCE": {},
+                "LAND PRODUCTIVITY": {},
+                "LAND RESOURCES": {},
+                "LAND USE CLASSES": {},
+                "LAND USE/LAND COVER CLASSIFICATION": {
+                    "VEGETATION INDEX": {
+                        "NORMALIZED DIFFERENCE VEGETATION INDEX (NDVI)": {}
+                    }
+                },
+                "LAND/OCEAN/ICE FRACTION": {},
+                "LAND/OCEAN/ICE MASK": {}
+            },
+            "LANDSCAPE": {
+                "LANDSCAPE ECOLOGY": {},
+                "LANDSCAPE MANAGEMENT": {},
+                "LANDSCAPE PATTERNS": {},
+                "LANDSCAPE PROCESSES": {},
+                "RECLAMATION/REVEGETATION/RESTORATION": {},
+                "REFORESTATION": {}
+            },
+            "SOILS": {
+                "CALCIUM": {},
+                "CARBON": {
+                    "NET ECOSYSTEM CO2 EXCHANGE (NEE)": {},
+                    "SOIL ORGANIC CARBON (SOC)": {}
+                },
+                "CATION EXCHANGE CAPACITY": {},
+                "DENITRIFICATION RATE": {},
+                "ELECTRICAL CONDUCTIVITY": {},
+                "HEAVY METALS": {},
+                "HYDRAULIC CONDUCTIVITY": {},
+                "IRON": {},
+                "MACROFAUNA": {},
+                "MAGNESIUM": {},
+                "MICROFAUNA": {},
+                "MICROFLORA": {},
+                "MICRONUTRIENTS/TRACE ELEMENTS": {},
+                "NITROGEN": {},
+                "ORGANIC MATTER": {},
+                "PERMAFROST": {},
+                "PHOSPHORUS": {},
+                "POTASSIUM": {},
+                "RECLAMATION/REVEGETATION/RESTORATION": {},
+                "SOIL ABSORPTION": {},
+                "SOIL BIOGEOCHEMISTRY": {},
+                "SOIL BULK DENSITY": {},
+                "SOIL CHEMISTRY": {},
+                "SOIL CLASSIFICATION": {},
+                "SOIL COLOR": {},
+                "SOIL COMPACTION": {},
+                "SOIL CONSISTENCE": {},
+                "SOIL DEPTH": {},
+                "SOIL EROSION": {},
+                "SOIL FERTILITY": {},
+                "SOIL GAS/AIR": {},
+                "SOIL HEAT BUDGET": {},
+                "SOIL HORIZONS/PROFILE": {},
+                "SOIL IMPEDANCE": {},
+                "SOIL INFILTRATION": {},
+                "SOIL MECHANICS": {},
+                "SOIL MOISTURE/WATER CONTENT": {
+                    "ROOT ZONE SOIL MOISTURE": {},
+                    "SURFACE SOIL MOISTURE": {}
+                },
+                "SOIL PH": {},
+                "SOIL PLASTICITY": {},
+                "SOIL POROSITY": {},
+                "SOIL PRODUCTIVITY": {
+                    "GROSS PRIMARY PRODUCTION (GPP)": {}
+                },
+                "SOIL RESPIRATION": {
+                    "AUTOTROPHIC RESPIRATION (Ra)": {},
+                    "HETEROTROPHIC RESPIRATION (Rh)": {}
+                },
+                "SOIL ROOTING DEPTH": {},
+                "SOIL SALINITY/SOIL SODICITY": {},
+                "SOIL STRUCTURE": {},
+                "SOIL TEMPERATURE": {},
+                "SOIL TEXTURE": {},
+                "SOIL WATER HOLDING CAPACITY": {},
+                "SULFUR": {},
+                "THERMAL CONDUCTIVITY": {}
+            },
+            "SURFACE RADIATIVE PROPERTIES": {
+                "ALBEDO": {},
+                "ANISOTROPY": {},
+                "EMISSIVITY": {},
+                "REFLECTANCE": {}
+            },
+            "SURFACE THERMAL PROPERTIES": {
+                "HEAT FLUX": {
+                    "LATENT HEAT FLUX": {},
+                    "LONGWAVE HEAT FLUX": {},
+                    "SENSIBLE HEAT FLUX": {},
+                    "SHORTWAVE HEAT FLUX": {}
+                },
+                "LAND HEAT CAPACITY": {},
+                "LAND SURFACE TEMPERATURE": {},
+                "SKIN TEMPERATURE": {}
+            },
+            "TOPOGRAPHY": {
+                "SURFACE ROUGHNESS": {},
+                "TERRAIN ELEVATION": {
+                    "BED ELEVATION": {},
+                    "CONTOUR MAPS": {},
+                    "DIGITAL ELEVATION/TERRAIN MODEL (DEM)": {},
+                    "Digital Surface Model (DSM)": {},
+                    "TOPOGRAPHICAL RELIEF MAPS": {}
+                },
+                "TOPOGRAPHIC EFFECTS": {}
+            }
+        },
+        "OCEANS": {
+            "AQUATIC SCIENCES": {
+                "AQUACULTURE": {},
+                "FISHERIES": {}
+            },
+            "BATHYMETRY/SEAFLOOR TOPOGRAPHY": {
+                "ABYSSAL HILLS/PLAINS": {},
+                "BATHYMETRY": {
+                    "COASTAL BATHYMETRY": {}
+                },
+                "CONTINENTAL MARGINS": {},
+                "FRACTURE ZONES": {},
+                "OCEAN PLATEAUS/RIDGES": {},
+                "SEAFLOOR TOPOGRAPHY": {},
+                "SEAMOUNTS": {},
+                "SUB-BOTTOM PROFILE": {},
+                "SUBMARINE CANYONS": {},
+                "TRENCHES": {},
+                "WATER DEPTH": {}
+            },
+            "COASTAL PROCESSES": {
+                "BARRIER ISLANDS": {},
+                "BEACHES": {},
+                "BOTTOM COVER TYPE": {},
+                "COASTAL ELEVATION": {},
+                "CORAL REEFS": {
+                    "CORAL BLEACHING": {},
+                    "CORAL REEF ASSESSMENT": {},
+                    "CORAL REEF EXTENT": {}
+                },
+                "DELTAS": {},
+                "DUNES": {},
+                "EROSION": {},
+                "ESTUARIES": {},
+                "FJORDS": {},
+                "INLETS": {},
+                "INTERTIDAL ZONE": {},
+                "LAGOONS": {},
+                "LOCAL SUBSIDENCE TRENDS": {},
+                "LONGSHORE CURRENTS": {},
+                "MANGROVES": {},
+                "MARSHES": {},
+                "ROCKY COASTS": {},
+                "SALTWATER INTRUSION": {},
+                "SEA LEVEL RISE": {},
+                "SEA SURFACE HEIGHT": {},
+                "SEDIMENT TRANSPORT": {},
+                "SEDIMENTATION": {},
+                "SHOALS": {},
+                "SHORELINE DISPLACEMENT": {},
+                "SHORELINES": {
+                    "SHORELINE MAPPING": {}
+                },
+                "STORM SURGE": {},
+                "TIDAL HEIGHT": {}
+            },
+            "GEOLOGICAL FEATURES": {
+                "LAND/OCEAN/ICE FRACTION": {},
+                "LAND/OCEAN/ICE MASK": {}
+            },
+            "HYDROGRAPHY": {},
+            "MARINE ENVIRONMENT MONITORING": {
+                "ENFORCEMENT": {},
+                "MARINE OBSTRUCTIONS": {},
+                "MARINE SUBMERGED DEBRIS": {},
+                "MARINE SURFACE ELEMENTS": {
+                    "MARINE SURFACE DEBRIS": {},
+                    "MARINE VESSELS": {}
+                }
+            },
+            "MARINE GEOPHYSICS": {
+                "MAGNETIC ANOMALIES": {},
+                "MARINE GRAVITY FIELD": {},
+                "MARINE MAGNETICS": {},
+                "PLATE TECTONICS": {}
+            },
+            "MARINE SEDIMENTS": {
+                "BIOGENIC SEDIMENTS": {},
+                "BIOTURBATION": {},
+                "DIAGENESIS": {},
+                "GEOTECHNICAL PROPERTIES": {},
+                "HYDROGENOUS SEDIMENTS": {},
+                "PARTICLE FLUX": {},
+                "SEDIMENT CHEMISTRY": {},
+                "SEDIMENT COMPOSITION": {},
+                "SEDIMENT THICKNESS": {},
+                "SEDIMENT TRANSPORT": {},
+                "SEDIMENTARY STRUCTURES": {},
+                "SEDIMENTARY TEXTURES": {},
+                "SEDIMENTATION": {},
+                "STRATIGRAPHIC SEQUENCE": {},
+                "SUSPENDED SOLIDS": {},
+                "TERRIGENOUS SEDIMENTS": {},
+                "TURBIDITY": {}
+            },
+            "MARINE VOLCANISM": {
+                "BENTHIC HEAT FLOW": {},
+                "HYDROTHERMAL VENTS": {},
+                "ISLAND ARCS": {},
+                "MID-OCEAN RIDGES": {},
+                "RIFT VALLEYS": {}
+            },
+            "OCEAN ACOUSTICS": {
+                "ACOUSTIC ATTENUATION/TRANSMISSION": {},
+                "ACOUSTIC FREQUENCY": {},
+                "ACOUSTIC REFLECTIVITY": {},
+                "ACOUSTIC SCATTERING": {},
+                "ACOUSTIC TOMOGRAPHY": {},
+                "ACOUSTIC VELOCITY": {},
+                "AMBIENT NOISE": {
+                    "BIOLOGICAL AMBIENT NOISE": {},
+                    "PHYSICAL AMBIENT NOISE": {},
+                    "TOTAL AMBIENT NOISE": {}
+                }
+            },
+            "OCEAN CHEMISTRY": {
+                "ALKALINITY": {},
+                "AMMONIA": {},
+                "BIOGEOCHEMICAL CYCLES": {},
+                "BIOMEDICAL CHEMICALS": {},
+                "CARBON": {},
+                "CARBON DIOXIDE": {
+                    "CARBON DIOXIDE PARTIAL PRESSURE": {}
+                },
+                "CARBONATE": {},
+                "CHLOROPHYLL": {},
+                "DISSOLVED GASES": {},
+                "DISSOLVED SOLIDS": {},
+                "HYDROCARBONS": {},
+                "HYPOXIA": {},
+                "INORGANIC CARBON": {},
+                "INORGANIC MATTER": {},
+                "MARINE GEOCHEMISTRY": {},
+                "NITRATE": {},
+                "NITRIC ACID": {},
+                "NITRITE": {},
+                "NITROGEN": {},
+                "NITROGEN DIOXIDE": {},
+                "NITROUS OXIDE": {},
+                "NUTRIENTS": {
+                    "NUTRIENT PROFILES": {},
+                    "SURFACE NUTRIENTS": {}
+                },
+                "OCEAN TRACERS": {},
+                "ORGANIC CARBON": {},
+                "ORGANIC MATTER": {
+                    "COLORED DISSOLVED ORGANIC MATTER": {}
+                },
+                "OXYGEN": {},
+                "PH": {},
+                "PHOSPHATE": {},
+                "PIGMENTS": {
+                    "CHLOROPHYLL": {}
+                },
+                "RADIOCARBON": {},
+                "RADIONUCLIDES": {},
+                "SILICATE": {},
+                "STABLE ISOTOPES": {},
+                "SUSPENDED SOLIDS": {},
+                "TRACE ELEMENTS": {}
+            },
+            "OCEAN CIRCULATION": {
+                "ADVECTION": {},
+                "BUOY POSITION": {},
+                "CONVECTION": {},
+                "DIFFUSION": {},
+                "EDDIES": {
+                    "MESOSCALE EDDIES": {},
+                    "SUBMESOCALE EDDIES": {}
+                },
+                "FRESH WATER FLUX": {},
+                "FRONTS": {},
+                "GYRES": {},
+                "OCEAN CURRENTS": {
+                    "CURRENT PROFILES": {},
+                    "HORIZONTAL CURRENT SHEAR": {},
+                    "SPEED PROFILES": {},
+                    "SUBSURFACE CURRENTS": {},
+                    "SURFACE CURRENTS": {},
+                    "SURFACE SPEED": {},
+                    "VERTICAL CURRENT SHEAR": {}
+                },
+                "OCEAN MASS": {},
+                "OCEAN MIXED LAYER": {},
+                "SUBDUCTION": {},
+                "THERMOHALINE CIRCULATION": {},
+                "TURBULENCE": {},
+                "UPWELLING/DOWNWELLING": {},
+                "VORTICITY": {
+                    "POTENTIAL VORTICITY": {},
+                    "RELATIVE VORTICITY": {}
+                },
+                "WATER MASSES": {},
+                "WIND-DRIVEN CIRCULATION": {}
+            },
+            "OCEAN HEAT BUDGET": {
+                "ADVECTION": {},
+                "BOWEN RATIO": {},
+                "CONDENSATION": {},
+                "CONDUCTION": {},
+                "CONVECTION": {},
+                "DIFFUSION": {},
+                "EVAPORATION": {},
+                "HEAT FLUX": {
+                    "CONDUCTIVE HEAT FLUX": {},
+                    "GEOTHERMAL HEAT FLUX": {},
+                    "LATENT HEAT FLUX": {},
+                    "SENSIBLE HEAT FLUX": {},
+                    "TURBULENT HEAT FLUX": {}
+                },
+                "HEATING RATE": {},
+                "LONGWAVE RADIATION": {},
+                "REFLECTANCE": {},
+                "SHORTWAVE RADIATION": {}
+            },
+            "OCEAN OPTICS": {
+                "ABSORPTION": {},
+                "APHOTIC/PHOTIC ZONE": {},
+                "ATTENUATION/TRANSMISSION": {},
+                "BIOLUMINESCENCE": {},
+                "CHLOROPHYLL": {
+                    "CHLOROPHYLL CONCENTRATION": {}
+                },
+                "EXTINCTION COEFFICIENTS": {},
+                "FLUORESCENCE": {},
+                "GELBSTOFF": {},
+                "IRRADIANCE": {},
+                "OCEAN COLOR": {},
+                "OPTICAL DEPTH": {},
+                "PHOTOSYNTHETICALLY ACTIVE RADIATION": {},
+                "RADIANCE": {},
+                "REFLECTANCE": {},
+                "SCATTERING": {},
+                "SECCHI DEPTH": {},
+                "TURBIDITY": {},
+                "WATER-LEAVING RADIANCE": {}
+            },
+            "OCEAN PRESSURE": {
+                "OCEAN BOTTOM PRESSURE": {},
+                "SEA LEVEL PRESSURE": {},
+                "WATER PRESSURE": {}
+            },
+            "OCEAN TEMPERATURE": {
+                "OCEAN BARRIER LAYER": {},
+                "OCEAN MIXED LAYER": {},
+                "OCEAN TEMPERATURE PROFILES": {},
+                "POTENTIAL TEMPERATURE": {},
+                "SEA SURFACE TEMPERATURE": {
+                    "SEA SURFACE FOUNDATION TEMPERATURE": {},
+                    "SEA SURFACE SKIN TEMPERATURE": {},
+                    "SEA SURFACE SUBSKIN TEMPERATURE": {},
+                    "SEA SURFACE TEMPERATURE ANOMALY": {}
+                },
+                "THERMOCLINE": {},
+                "WATER TEMPERATURE": {}
+            },
+            "OCEAN VOLUME BUDGET": {
+                "ADVECTION": {},
+                "DIFFUSION": {},
+                "EVAPORATION": {},
+                "ICE GROWTH/MELT": {},
+                "PRECIPITATION": {},
+                "RUNOFF": {},
+                "SNOW MELT": {}
+            },
+            "OCEAN WAVES": {
+                "GRAVITY WAVES": {},
+                "ROSSBY/PLANETARY WAVES": {},
+                "SEA STATE": {},
+                "SEICHES": {},
+                "SIGNIFICANT WAVE HEIGHT": {},
+                "STORM SURGE": {},
+                "SURF BEAT": {},
+                "SWELLS": {
+                    "SWELL DIRECTION": {},
+                    "SWELL HEIGHT": {},
+                    "SWELL PERIOD": {}
+                },
+                "TOPOGRAPHIC WAVES": {},
+                "TSUNAMIS": {},
+                "WAVE DIRECTION": {},
+                "WAVE FETCH": {},
+                "WAVE FREQUENCY": {},
+                "WAVE HEIGHT": {},
+                "WAVE LENGTH": {},
+                "WAVE OVERTOPPING": {},
+                "WAVE PERIOD": {},
+                "WAVE RUNUP": {},
+                "WAVE SETUP": {},
+                "WAVE SPECTRA": {},
+                "WAVE SPEED": {},
+                "WAVE SPEED/DIRECTION": {},
+                "WAVE TYPES": {},
+                "WIND WAVES": {}
+            },
+            "OCEAN WINDS": {
+                "CONVERGENCE/DIVERGENCE": {},
+                "SURFACE WINDS": {
+                    "WIND DIRECTION": {},
+                    "WIND SPEED": {}
+                },
+                "TURBULENCE": {},
+                "VERTICAL WIND MOTION": {},
+                "VORTICITY": {},
+                "WIND CHILL": {},
+                "WIND SHEAR": {},
+                "WIND STRESS": {},
+                "WIND VELOCITY/SPEED": {}
+            },
+            "PRECIPITATION": {
+                "LIQUID PRECIPITATION": {
+                    "RAIN": {}
+                },
+                "SOLID PRECIPITATION": {
+                    "SNOW": {}
+                }
+            },
+            "SALINITY/DENSITY": {
+                "CONDUCTIVITY": {
+                    "CONDUCTIVITY PROFILES": {},
+                    "SURFACE CONDUCTIVITY": {}
+                },
+                "DENSITY": {},
+                "DESALINIZATION": {},
+                "HALOCLINE": {},
+                "OCEAN SALINITY": {
+                    "ABSOLUTE SALINITY": {},
+                    "OCEAN SALINITY BUDGET": {
+                        "ADVECTION": {},
+                        "DIFFUSION": {},
+                        "EVAPORATION": {},
+                        "ICE GROWTH/MELT": {},
+                        "PRECIPITATION": {},
+                        "RUNOFF": {},
+                        "SNOW MELT": {}
+                    },
+                    "OCEAN SALINITY PROFILES": {},
+                    "OCEAN SURFACE SALINITY": {},
+                    "PRACTICAL SALINITY": {},
+                    "SALT FLUX": {}
+                },
+                "POTENTIAL DENSITY": {},
+                "PYCNOCLINE": {},
+                "SALINITY": {},
+                "SALT TRANSPORT": {}
+            },
+            "SEA ICE": {
+                "HEAT FLUX": {},
+                "ICE DEFORMATION": {},
+                "ICE DEPTH/THICKNESS": {},
+                "ICE DRAFT": {},
+                "ICE EDGES": {},
+                "ICE EXTENT": {},
+                "ICE FLOES": {},
+                "ICE GROWTH/MELT": {},
+                "ICE ROUGHNESS": {},
+                "ICE TEMPERATURE": {},
+                "ICE TYPES": {},
+                "ICEBERGS": {},
+                "ISOTOPES": {},
+                "LEADS": {},
+                "PACK ICE": {},
+                "POLYNYAS": {},
+                "REFLECTANCE": {},
+                "SALINITY": {},
+                "SEA ICE AGE": {},
+                "SEA ICE AREA": {},
+                "SEA ICE CONCENTRATION": {},
+                "SEA ICE DYNAMICS": {},
+                "SEA ICE ELEVATION": {},
+                "SEA ICE MASS BALANCE": {},
+                "SEA ICE MOTION": {
+                    "SEA ICE DIRECTION": {},
+                    "SEA ICE SPEED": {}
+                },
+                "SEA ICE ORIGIN": {},
+                "SEA ICE TOPOGRAPHY": {},
+                "SEA ICE VOLUME": {},
+                "SEA ICE/OCEAN CLASSIFICATION": {},
+                "SNOW DEPTH": {},
+                "SNOW MELT": {}
+            },
+            "SEA SURFACE TOPOGRAPHY": {
+                "DYNAMIC TOPOGRAPHY": {
+                    "ABSOLUTE DYNAMIC TOPOGRAPHY": {},
+                    "MEAN DYNAMIC TOPOGRAPHY": {}
+                },
+                "MEAN SEA SURFACE": {},
+                "SEA LEVEL": {
+                    "MEAN SEA LEVEL": {},
+                    "SEA LEVEL ANOMALY": {}
+                },
+                "SEA SURFACE HEIGHT": {
+                    "SEA SURFACE HEIGHT ANOMALY (SSHA)": {}
+                },
+                "SEA SURFACE SLOPE": {}
+            },
+            "TIDES": {
+                "STORM SURGE": {},
+                "TIDAL COMPONENTS": {},
+                "TIDAL CURRENTS": {},
+                "TIDAL HEIGHT": {},
+                "TIDAL RANGE": {}
+            },
+            "WATER QUALITY": {
+                "HARMFUL ALGAL BLOOM (HABs)": {
+                    "CELL CONCENTRATION": {},
+                    "TOXIN CONCENTRATION": {}
+                },
+                "OCEAN CONTAMINANTS": {},
+                "SEA SURFACE CONTAMINANTS": {
+                    "MICROPLASTIC CONCENTRATION": {}
+                }
+            }
+        },
+        "PALEOCLIMATE": {
+            "ICE CORE RECORDS": {
+                "CALCIUM": {},
+                "CARBON DIOXIDE": {},
+                "ELECTRICAL PROPERTIES": {},
+                "ICE CORE AIR BUBBLES": {},
+                "IONS": {},
+                "IRON": {},
+                "ISOTOPES": {},
+                "METHANE": {},
+                "NITROUS OXIDE": {},
+                "PARTICULATE MATTER": {},
+                "POTASSIUM": {},
+                "SODIUM": {},
+                "VELOCITY": {},
+                "VOLCANIC DEPOSITS": {}
+            },
+            "LAND RECORDS": {
+                "BOREHOLES": {},
+                "CAVE DEPOSITS": {},
+                "GLACIATION": {},
+                "ISOTOPES": {},
+                "LOESS": {},
+                "MACROFOSSILS": {},
+                "MICROFOSSILS": {},
+                "PALEOMAGNETIC DATA": {},
+                "PALEOSOLS": {},
+                "PALEOVEGETATION": {},
+                "POLLEN": {},
+                "RADIOCARBON": {},
+                "SEDIMENTS": {},
+                "STRATIGRAPHIC SEQUENCE": {},
+                "TREE RINGS": {
+                    "SEA SALT": {}
+                },
+                "VOLCANIC DEPOSITS": {}
+            },
+            "OCEAN/LAKE RECORDS": {
+                "BOREHOLES": {},
+                "CORAL DEPOSITS": {},
+                "ISOTOPES": {},
+                "LAKE LEVELS": {},
+                "MACROFOSSILS": {},
+                "MICROFOSSILS": {},
+                "OXYGEN ISOTOPES": {},
+                "PALEOMAGNETIC DATA": {},
+                "POLLEN": {},
+                "RADIOCARBON": {},
+                "SEDIMENT CORE": {},
+                "SEDIMENTS": {},
+                "STRATIGRAPHIC SEQUENCE": {},
+                "VARVE DEPOSITS": {}
+            },
+            "PALEOCLIMATE RECONSTRUCTIONS": {
+                "AIR TEMPERATURE RECONSTRUCTION": {},
+                "ATMOSPHERIC CIRCULATION RECONSTRUCTION": {},
+                "DROUGHT/PRECIPITATION RECONSTRUCTION": {},
+                "GROUND WATER RECONSTRUCTION": {},
+                "LAKE LEVEL RECONSTRUCTION": {},
+                "OCEAN SALINITY RECONSTRUCTION": {},
+                "SEA LEVEL RECONSTRUCTION": {},
+                "SEA SURFACE TEMPERATURE RECONSTRUCTION": {},
+                "SOLAR FORCING/INSOLATION RECONSTRUCTION": {},
+                "STREAMFLOW RECONSTRUCTION": {},
+                "VEGETATION RECONSTRUCTION": {}
+            }
+        },
+        "SOLID EARTH": {
+            "EARTH GASES/LIQUIDS": {
+                "HYDROGEN GAS": {
+                    "HYDROGEN GAS VERTICAL/GEOGRAPHIC DISTRIBUTION": {}
+                },
+                "NATURAL GAS": {
+                    "NATURAL GAS VERTICAL/GEOGRAPHIC DISTRIBUTION": {}
+                },
+                "PETROLEUM": {
+                    "MICROFOSSIL": {},
+                    "PETROLEUM VERTICAL/GEOGRAPHIC DISTRIBUTION": {}
+                },
+                "RECLAMATION/REVEGETATION/RESTORATION": {}
+            },
+            "GEOCHEMISTRY": {
+                "BIOGEOCHEMICAL PROCESSES": {
+                    "CHEMICAL DECOMPOSITION": {},
+                    "HYDROLYSIS": {},
+                    "NITRIFICATION": {}
+                },
+                "GEOCHEMICAL PROCESSES": {
+                    "BIODEGRATION": {},
+                    "CARBONATE FORMATION": {},
+                    "CHEMICAL FIXATION": {},
+                    "CHEMICAL WEATHERING": {},
+                    "DECOMPOSITION": {},
+                    "HYDRATION": {},
+                    "ION EXCHANGE": {},
+                    "MINERAL DISSOLUTION": {},
+                    "OXIDATION/REDUCTION": {}
+                },
+                "GEOCHEMICAL PROPERTIES": {
+                    "CHEMICAL CONCENTRATIONS": {},
+                    "ISOTOPE MEASUREMENTS": {},
+                    "ISOTOPE RATIOS": {},
+                    "ISOTOPES": {},
+                    "ISOTOPIC AGE": {},
+                    "ROCK-EVAL PRYOLYSIS": {}
+                },
+                "MARINE GEOCHEMICAL PROCESSES": {
+                    "CHEMICAL DECOMPOSITION": {},
+                    "DISSOLUTION": {},
+                    "MINERAL DISSOLUTION": {}
+                }
+            },
+            "GEODETICS": {
+                "COORDINATE REFERENCE SYSTEM": {
+                    "COUNTRY/REGIONAL COORDINATE REFERENCE SYSTEM": {},
+                    "GLOBAL COORDINATE REFERENCE SYSTEM": {}
+                },
+                "ELLIPSOID CHARACTERISTICS": {},
+                "GEOID CHARACTERISTICS": {}
+            },
+            "GEOMAGNETISM": {
+                "ELECTRICAL FIELD": {
+                    "ELECTRICAL ANOMALIES": {},
+                    "ELECTRICAL INTENSITY": {}
+                },
+                "GEOMAGNETIC FORECASTS": {
+                    "GEOMAGNETIC ACTIVITY": {},
+                    "GEOMAGNETIC STORM CATEGORY": {},
+                    "TOTAL INTENSITY": {}
+                },
+                "GEOMAGNETIC INDICES": {
+                    "AA INDEX": {},
+                    "AE INDEX": {},
+                    "AM INDEX": {},
+                    "DST INDEX": {},
+                    "KP INDEX": {}
+                },
+                "MAGNETIC FIELD": {
+                    "GEOMAGNETIC INDUCTION": {},
+                    "MAGNETIC ANOMALIES": {},
+                    "MAGNETIC DECLINATION": {},
+                    "MAGNETIC INCLINATION": {},
+                    "MAGNETIC INTENSITY": {}
+                },
+                "PALEOMAGNETISM": {},
+                "REFERENCE FIELDS": {}
+            },
+            "GEOMORPHIC LANDFORMS/PROCESSES": {
+                "AEOLIAN LANDFORMS": {
+                    "DUNES": {
+                        "CRESCENTIC (BARCHAN/TRANSVERSE) DUNE": {},
+                        "DOME DUNE": {},
+                        "LONGITUDINAL/LINEAR DUNE": {},
+                        "PARABOLIC DUNE": {},
+                        "STAR DUNE": {}
+                    },
+                    "RIPPLES": {}
+                },
+                "AEOLIAN PROCESSES": {
+                    "ABRASION": {
+                        "VENTIFACTS": {},
+                        "YARDANGS": {}
+                    },
+                    "DEFLATION": {},
+                    "DEGRADATION": {},
+                    "SALTATION": {},
+                    "SEDIMENT TRANSPORT": {
+                        "LOESS": {},
+                        "MONADNOCK": {}
+                    },
+                    "SEDIMENTATION": {
+                        "SEDIMENT CHEMISTRY": {},
+                        "SEDIMENT COMPOSITION": {},
+                        "STRATIGRAPHIC SEQUENCE": {}
+                    },
+                    "WEATHERING": {}
+                },
+                "COASTAL LANDFORMS": {
+                    "BARRIER ISLANDS": {},
+                    "BEACHES": {},
+                    "CORAL REEFS": {
+                        "APRON REEF": {},
+                        "ATOLL REEF": {},
+                        "BANK REEF": {},
+                        "BARRIER REEF": {},
+                        "FRINGING REEF": {},
+                        "PATCH REEF": {},
+                        "RIBBON REEF": {},
+                        "TABLE REEF": {}
+                    },
+                    "CUSPATE FORELANDS": {},
+                    "DELTAS": {},
+                    "DUNES": {
+                        "CRESCENTIC (BARCHAN/TRANSVERSE) DUNE": {},
+                        "DOME DUNE": {},
+                        "LONGITUDINAL/LINEAR DUNE": {},
+                        "PARABOLIC DUNE": {},
+                        "STAR DUNE": {}
+                    },
+                    "ESTUARIES": {},
+                    "FJORDS": {},
+                    "HEADLANDS/BAYS/CAPE": {},
+                    "INLETS": {},
+                    "ISTHMUS": {},
+                    "LAGOONS": {},
+                    "RIA": {},
+                    "SALT MARSH": {},
+                    "SEA ARCHES": {},
+                    "SEA CAVES": {},
+                    "SEA CLIFFS": {},
+                    "SHOALS": {},
+                    "SHORELINES": {},
+                    "SOUNDS": {},
+                    "SPITS AND BARS": {},
+                    "TOMBOLOS": {},
+                    "WAVE-CUT NOTCH/PLATFORMS": {}
+                },
+                "COASTAL PROCESSES": {
+                    "ABRASION": {},
+                    "ACCRETION": {},
+                    "ATTRITION/WEATHERING": {},
+                    "CHEMICAL SOLUTION": {},
+                    "DEPOSITION": {},
+                    "FLOODING": {},
+                    "HYDRAULIC ACTION": {},
+                    "SALTATION": {},
+                    "SEA LEVEL CHANGE": {},
+                    "SEDIMENT TRANSPORT": {},
+                    "SEDIMENTATION": {
+                        "SEDIMENT CHEMISTRY": {},
+                        "SEDIMENT COMPOSITION": {},
+                        "STRAITRAPHIC SEQUENCE": {}
+                    },
+                    "SUBMERGENCE": {},
+                    "SUBSIDENCE": {},
+                    "SUSPENSION": {},
+                    "WAVE BREAKING": {},
+                    "WAVE DIFFRACTION": {},
+                    "WAVE EROSION": {
+                        "DEGRADATION": {}
+                    },
+                    "WAVE REFRACTION": {},
+                    "WAVE SHOALING": {}
+                },
+                "FLUVIAL LANDFORMS": {
+                    "AIT": {},
+                    "BAR": {},
+                    "BAYOU": {},
+                    "CANYON": {},
+                    "CONFLUENCE": {},
+                    "CUTBANK": {},
+                    "DELTAS": {},
+                    "ENDORHERIC BASIN": {},
+                    "FLOOD PLAIN": {},
+                    "GULLY": {},
+                    "ISLAND": {},
+                    "LACUSTRINE PLAIN": {},
+                    "MARSH": {},
+                    "MEANDER": {},
+                    "OX-BOW LAKE": {},
+                    "PINGO": {},
+                    "POINT BAR": {},
+                    "POND": {},
+                    "RIFFLE": {},
+                    "RIVER": {},
+                    "SPRING": {},
+                    "STREAM": {},
+                    "STREAM TERRACE": {},
+                    "SWAMP": {},
+                    "VALLEY": {
+                        "V SHAPED VALLEY": {}
+                    },
+                    "WATERFALL": {},
+                    "WATERSHED/DRAINAGE BASINS": {}
+                },
+                "FLUVIAL PROCESSES": {
+                    "ABRASION": {},
+                    "ATTRITION": {},
+                    "DEGRADATION": {},
+                    "DOWNCUTTING": {},
+                    "ENTRAINMENT": {},
+                    "HYDRAULIC ACTION": {},
+                    "LANDSLIDE": {},
+                    "SALTATION": {},
+                    "SEDIMENT TRANSPORT": {},
+                    "SEDIMENTATION": {
+                        "SEDIMENT CHEMISTRY": {},
+                        "SEDIMENT COMPOSITION": {},
+                        "STRAITIGRAPHIC SEQUENCE": {}
+                    },
+                    "SUSPENSION": {},
+                    "WEATHERING": {}
+                },
+                "GLACIAL LANDFORMS": {
+                    "ARETES": {},
+                    "CIRQUES/COMBES": {},
+                    "CREVASSES": {
+                        "LONGITUDINAL CREVASSES": {},
+                        "MARGINAL CREVASSES": {},
+                        "TRANSVERSE CREVASSES": {}
+                    },
+                    "DRUMLINS": {},
+                    "ESKERS": {},
+                    "FJORDS": {},
+                    "GLACIAL HORNS": {},
+                    "GLACIER STRIATIONS/GROOVES": {},
+                    "GLACIER/HANGING/U-SHAPED VALLEYS": {},
+                    "GLACIER/ICE CAVES": {},
+                    "ICE-DAMMED LAKES": {},
+                    "KAME DELTA": {},
+                    "KAMES": {},
+                    "KETTLE HOLES": {},
+                    "MORAINES": {
+                        "LATERAL MORAINE": {},
+                        "MEDIAL MORAINE": {},
+                        "RECESSIONAL MORAINE": {},
+                        "RIBBED/ROGAN MORAINE": {},
+                        "TERMINAL MORAINE": {}
+                    },
+                    "NUNATAKS": {},
+                    "OUTWASH FANS/PLAINS": {},
+                    "ROCHE MOUNTONNEES/SHEEPBACK": {},
+                    "ROCK GLACIERS": {},
+                    "TILL PLAINS": {}
+                },
+                "GLACIAL PROCESSES": {
+                    "ABLATION": {},
+                    "ABRASION": {},
+                    "CRUST REBOUND": {},
+                    "DEGRADATION": {},
+                    "DUMPING": {},
+                    "ENTRAINMENT": {},
+                    "FIRN FORMATION": {},
+                    "FREEZE/THAW": {
+                        "BASAL ICE FREEZING": {}
+                    },
+                    "GLACIAL DISPLACEMENT": {},
+                    "GLACIAL DRIFT": {},
+                    "GLACIAL GROWTH": {},
+                    "GLACIAL STRIATION": {},
+                    "GLACIER CRUST SUBSIDENCE": {},
+                    "PERIGLACIAL PROCESSES": {},
+                    "PLUCKING": {},
+                    "SCOURING": {},
+                    "SEDIMENT TRANSPORT": {},
+                    "SEDIMENTATION": {
+                        "SEDIMENT CHEMISTRY": {},
+                        "STRATIGRAPHIC SEQUENCE": {}
+                    },
+                    "WEATHERING": {}
+                },
+                "KARST LANDFORMS": {
+                    "CAVES": {},
+                    "COCKPIT/TOWER KARST": {},
+                    "KARST VALLEY": {},
+                    "SINKHOLES (DOLINES)": {},
+                    "UVALA": {}
+                },
+                "KARST PROCESSES": {
+                    "CACO3": {},
+                    "DISSOLVED CO2": {},
+                    "KARST HYDROLOGY": {
+                        "SUBSURFACE DRAINAGE": {}
+                    },
+                    "POROSITY": {},
+                    "WEATHERING": {}
+                },
+                "TECTONIC LANDFORMS": {
+                    "CALDERA": {},
+                    "CINDER CONE": {},
+                    "FAULTS": {},
+                    "FOLDS": {},
+                    "GEYSER": {},
+                    "GRABEN": {},
+                    "HORST": {},
+                    "LAVA DOME": {},
+                    "LAVA PLAIN": {},
+                    "MAAR": {},
+                    "MOUNTAINS": {},
+                    "PLATEAU": {},
+                    "RIDGE": {},
+                    "RIFT VALLEY": {},
+                    "TUYA": {},
+                    "VOLCANO": {}
+                },
+                "TECTONIC PROCESSES": {
+                    "EPEIROGENIC MOVEMENT": {},
+                    "ISOSTATIC UPLIFT": {},
+                    "OROGENIC MOVEMENT": {},
+                    "RIFTING": {},
+                    "SUBDUCTION": {},
+                    "TECTONIC UPLIFT": {}
+                }
+            },
+            "GEOTHERMAL DYNAMICS": {
+                "GEOTHERMAL ENERGY": {
+                    "ENERGY DISTRIBUTION": {},
+                    "ENERGY OUTPUT": {}
+                },
+                "GEOTHERMAL TEMPERATURE": {
+                    "AMBIENT TEMPERATURE": {},
+                    "TEMPERATURE GRADIENT": {
+                        "TEMPERATURE GRADIENT RATE": {}
+                    },
+                    "TEMPERATURE PROFILES": {}
+                }
+            },
+            "GRAVITY/GRAVITATIONAL FIELD": {
+                "CONTROL SURVEYS": {},
+                "CRUSTAL MOTION": {
+                    "ISOSTATIC ADJUSTMENTS": {},
+                    "OCEAN CRUST DEFORMATION": {}
+                },
+                "GRAVITATIONAL FIELD": {},
+                "GRAVITY": {},
+                "GRAVITY ANOMALIES": {},
+                "POLAR MOTION": {
+                    "ANNUAL ELLIPTICAL COMPONENT": {},
+                    "CHANDLER CIRCULAR COMPONENT": {}
+                },
+                "ROTATIONAL MOTION/VARIATIONS": {
+                    "ROTATIONAL RATE/SPEED": {},
+                    "TIDAL FRICTION": {}
+                },
+                "SATELLITE ORBITS/REVOLUTION": {
+                    "ANGLE OF ELEVATION": {},
+                    "ANGLE OF INCLINATION": {},
+                    "ORBIT TYPE": {},
+                    "ORBIT VELOCITY": {},
+                    "ORBITAL POSITION": {}
+                }
+            },
+            "ROCKS/MINERALS/CRYSTALS": {
+                "AGE DETERMINATIONS": {},
+                "BEDROCK LITHOLOGY": {},
+                "ELEMENTS": {
+                    "MAJOR ELEMENTS": {},
+                    "MINOR ELEMENTS": {},
+                    "RADIOACTIVE ELEMENTS": {},
+                    "TRACE ELEMENTS": {}
+                },
+                "GAS HYDRATES": {
+                    "GAS HYDRATES AGE DETERMINATIONS": {},
+                    "GAS HYDRATES FORMATION": {},
+                    "GAS HYDRATES PHYSICAL/OPTICAL PROPERTIES": {
+                        "CLEAVAGE": {},
+                        "COLOR": {},
+                        "COMPOSITION/TEXTURE": {},
+                        "ELECTRICAL": {},
+                        "HARDNESS": {},
+                        "LUMINESCENCE": {},
+                        "LUSTER": {},
+                        "REFLECTION": {},
+                        "SPECIFIC GRAVITY": {},
+                        "STABILITY": {}
+                    },
+                    "GAS HYDRATES VERTICAL/GEOGRAPHIC DISTRIBUTION": {}
+                },
+                "IGNEOUS ROCKS": {
+                    "IGNEOUS ROCK AGE DETERMINATIONS": {},
+                    "IGNEOUS ROCK FORMATION": {},
+                    "IGNEOUS ROCK PHYSICAL/OPTICAL PROPERTIES": {
+                        "CLEAVAGE": {},
+                        "COLOR": {},
+                        "COMPOSITION/TEXTURE": {},
+                        "ELECTRICAL": {},
+                        "HARDNESS": {},
+                        "LUMINESCENCE": {},
+                        "LUSTER": {},
+                        "REFLECTION": {},
+                        "SPECIFIC GRAVITY": {},
+                        "STABILITY": {}
+                    },
+                    "IGNEOUS ROCK VERTICAL/GEOGRAPHIC DISTRIBUTION": {}
+                },
+                "METALS": {
+                    "METALS AGE DETERMINATIONS": {},
+                    "METALS PHYSICAL/OPTICAL PROPERTIES": {
+                        "CLEAVAGE": {},
+                        "COLOR": {},
+                        "COMPOSITION/STRUCTURE": {},
+                        "ELECTRICAL": {},
+                        "HARDNESS": {},
+                        "LUMINESCENCE": {},
+                        "LUSTER": {},
+                        "REFLECTION": {},
+                        "SPECIFIC GRAVITY": {},
+                        "STABILITY": {}
+                    },
+                    "METALS VERTICAL/GEOGRAPHIC DISTRIBUTION": {}
+                },
+                "METAMORPHIC ROCKS": {
+                    "METAMORPHIC ROCK AGE DETERMINATIONS": {},
+                    "METAMORPHIC ROCK FORMATION": {},
+                    "METAMORPHIC ROCK PHYSICAL/OPTICAL PROPERTIES": {
+                        "CLEAVAGE": {},
+                        "COLOR": {},
+                        "COMPOSITION/TEXTURE": {},
+                        "ELECTRICIAL": {},
+                        "HARDNESS": {},
+                        "LUMINESCENCE": {},
+                        "LUSTER": {},
+                        "REFLECTION": {},
+                        "SPECIFIC GRAVITY": {},
+                        "STABILITY": {}
+                    },
+                    "METAMORPHIC ROCK VERTICAL/GEOGRAPHIC DISTRIBUTION": {}
+                },
+                "METEORITES": {
+                    "METEORITE AGE DETERMINATIONS": {},
+                    "METEORITE ORIGIN": {},
+                    "METEORITE PHYSICAL/OPTICAL PROPERTIES": {
+                        "CLEAVAGE": {},
+                        "COLOR": {},
+                        "COMPOSITION/STRUCTURE": {},
+                        "ELECTRICAL": {},
+                        "HARDNESS": {},
+                        "LUMINESCENCE": {},
+                        "LUSTER": {},
+                        "REFLECTION": {},
+                        "SPECIFIC GRAVITY": {},
+                        "STABILITY": {}
+                    },
+                    "METEORITE VERTICAL/GEOGRPAHIC DISTRIBUTION": {
+                        "LUSTER": {}
+                    }
+                },
+                "MINERALS": {
+                    "MINERAL AGE DETERMINATIONS": {},
+                    "MINERAL FORMATION": {},
+                    "MINERAL PHYSICAL/OPTICAL PROPERTIES": {
+                        "CLEAVAGE": {},
+                        "COLOR": {},
+                        "COMPOSITION/TEXTURE": {},
+                        "ELECTRICAL": {},
+                        "HARDNESS": {},
+                        "LUMINESCENCE": {},
+                        "LUSTER": {},
+                        "REFLECTION": {},
+                        "SPECIFIC GRAVITY": {},
+                        "STABILITY": {}
+                    },
+                    "MINERAL VERTICAL/GEOGRAPHIC DISTRIBUTION": {},
+                    "MINERALOIDS": {}
+                },
+                "NON-METALLIC MINERALS": {
+                    "NON-METALLIC MINERAL AGE DETERMINATIONS": {},
+                    "NON-METALLIC MINERAL FORMATION": {},
+                    "NON-METALLIC MINERAL PHYSICAL/OPTICAL PROPERTIES": {
+                        "CLEAVAGE": {},
+                        "COLOR": {},
+                        "COMPOSITION/TEXTURE": {},
+                        "ELECTRICAL": {},
+                        "HARDNESS": {},
+                        "LUMINESCENCE": {},
+                        "LUSTER": {},
+                        "REFLECTION": {},
+                        "SPECIFIC GRAVITY": {},
+                        "STABILITY": {}
+                    },
+                    "NON-METALLIC MINERAL VERTICAL/GEOGRAPHIC DISTRIBUTION": {}
+                },
+                "SEDIMENTARY ROCKS": {
+                    "COAL": {},
+                    "SEDIMENTARY ROCK AGE DETERMINATIONS": {},
+                    "SEDIMENTARY ROCK FORMATION": {},
+                    "SEDIMENTARY ROCK PHYSICAL/OPTICAL PROPERTIES": {
+                        "CLEAVAGE": {},
+                        "COLOR": {},
+                        "COMPOSITION/TEXTURE": {},
+                        "ELECTRICAL": {},
+                        "HARDNESS": {},
+                        "LUMINESCENCE": {},
+                        "LUSTER": {},
+                        "REFLECTION": {},
+                        "SPECIFIC GRAVITY": {},
+                        "STABILITY": {}
+                    },
+                    "SEDIMENTARY ROCK VERTICAL/GEOGRAPHIC DISTRIBUTION": {}
+                },
+                "SEDIMENTS": {}
+            },
+            "TECTONICS": {
+                "CORE PROCESSES": {},
+                "EARTHQUAKES": {
+                    "EARTHQUAKE MAGNITUDE/INTENSITY": {},
+                    "EARTHQUAKE OCCURRENCES": {},
+                    "EARTHQUAKE PREDICTIONS": {},
+                    "SEISMIC PROFILE": {
+                        "SEISMIC BODY WAVES": {},
+                        "SEISMIC SURFACE WAVES": {}
+                    }
+                },
+                "NEOTECTONICS": {},
+                "PLATE TECTONICS": {
+                    "CRUSTAL MOTION": {
+                        "CRUSTAL MOTION DIRECTION": {},
+                        "CRUSTAL MOTION RATE": {}
+                    },
+                    "FAULT MOVEMENT": {
+                        "FAULT MOVEMENT DIRECTION": {},
+                        "FAULT MOVEMENT RATE": {}
+                    },
+                    "FOLDS": {},
+                    "ISOSTATIC REBOUND": {
+                        "REBOUND DIRECTION": {},
+                        "REBOUND RATE": {}
+                    },
+                    "LITHOSPHERIC PLATE MOTION": {
+                        "PLATE MOTION DIRECTION": {},
+                        "PLATE MOTION RATE": {}
+                    },
+                    "PLATE BOUNDARIES": {},
+                    "STRAIN": {},
+                    "STRATIGRAPHIC SEQUENCE": {},
+                    "STRESS": {}
+                },
+                "VOLCANIC ACTIVITY": {
+                    "ERUPTION DYNAMICS": {
+                        "ASH/DUST COMPOSITION": {},
+                        "ASH/DUST DISPERSION": {},
+                        "GAS/AEROSOL COMPOSITION": {},
+                        "GAS/AEROSOL DISPERSION": {},
+                        "LAVA COMPOSITION/TEXTURE": {},
+                        "LAVA SPEED/FLOW": {},
+                        "MAGMA COMPOSITION/TEXTURE": {},
+                        "MAGMA SPEED/FLOW": {},
+                        "PYROCLASTIC PARTICAL SIZE DISTRIBUTION": {},
+                        "PYROCLASTICS COMPOSITION/TEXTURE": {},
+                        "VOLCANIC EXPLOSIVITY": {},
+                        "VOLCANIC GASES": {}
+                    },
+                    "VOLCANO MAGNITUDE/INTENSITY": {},
+                    "VOLCANO OCCURRENCES": {},
+                    "VOLCANO PREDICTIONS": {}
+                }
+            }
+        },
+        "SPECTRAL/ENGINEERING": {
+            "GAMMA RAY": {
+                "GAMMA RAY FLUX": {}
+            },
+            "INFRARED WAVELENGTHS": {
+                "BRIGHTNESS TEMPERATURE": {},
+                "INFRARED FLUX": {},
+                "INFRARED IMAGERY": {},
+                "INFRARED RADIANCE": {},
+                "REFLECTED INFRARED": {},
+                "SENSOR COUNTS": {},
+                "THERMAL INFRARED": {}
+            },
+            "LIDAR": {
+                "APPARENT SURFACE REFLECTIVITY": {},
+                "LIDAR BACKSCATTER": {},
+                "LIDAR DEPOLARIZATION RATIO": {},
+                "LIDAR WAVEFORM": {}
+            },
+            "MICROWAVE": {
+                "ANTENNA TEMPERATURE": {},
+                "BRIGHTNESS TEMPERATURE": {},
+                "MICROWAVE IMAGERY": {},
+                "MICROWAVE RADIANCE": {},
+                "SENSOR COUNTS": {}
+            },
+            "PLATFORM CHARACTERISTICS": {
+                "AIRSPEED/GROUND SPEED": {},
+                "ATTITUDE CHARACTERISTICS": {},
+                "CALIBRATION": {},
+                "DATA SYNCHRONIZATION TIME": {},
+                "FLIGHT DATA LOGS": {},
+                "LINE OF SIGHT VELOCITY": {},
+                "ORBITAL CHARACTERISTICS": {},
+                "VIEWING GEOMETRY": {}
+            },
+            "RADAR": {
+                "DOPPLER VELOCITY": {},
+                "MEAN RADIAL VELOCITY": {},
+                "RADAR BACKSCATTER": {
+                    "COMMON MIDPOINT GATHER": {}
+                },
+                "RADAR CROSS-SECTION": {},
+                "RADAR IMAGERY": {},
+                "RADAR REFLECTIVITY": {
+                    "Two-Way Travel Time": {}
+                },
+                "RADIAL VELOCITY": {},
+                "RETURN POWER": {},
+                "SENSOR COUNTS": {},
+                "SIGMA NAUGHT": {},
+                "SPECTRUM WIDTH": {}
+            },
+            "RADIO WAVE": {
+                "RADIO WAVE FLUX": {}
+            },
+            "SENSOR CHARACTERISTICS": {
+                "DOME TEMPERATURE": {},
+                "ELECTRICAL PROPERTIES": {},
+                "GEOLOCATION": {},
+                "PHASE AND AMPLITUDE": {},
+                "SINK TEMPERATURE": {},
+                "THERMAL PROPERTIES": {},
+                "TOTAL PRESSURE": {},
+                "TOTAL TEMPERATURE": {},
+                "ULTRAVIOLET SENSOR TEMPERATURE": {},
+                "VIEWING GEOMETRY": {}
+            },
+            "ULTRAVIOLET WAVELENGTHS": {
+                "SENSOR COUNTS": {},
+                "ULTRAVIOLET FLUX": {},
+                "ULTRAVIOLET RADIANCE": {}
+            },
+            "VISIBLE WAVELENGTHS": {
+                "SENSOR COUNTS": {},
+                "VISIBLE FLUX": {},
+                "VISIBLE IMAGERY": {},
+                "VISIBLE RADIANCE": {}
+            },
+            "X-RAY": {
+                "X-RAY FLUX": {}
+            }
+        },
+        "SUN-EARTH INTERACTIONS": {
+            "IONOSPHERE/MAGNETOSPHERE DYNAMICS": {
+                "AURORAE": {},
+                "ELECTRIC FIELDS/ELECTRIC CURRENTS": {},
+                "GEOMAGNETIC FORECASTS": {},
+                "GEOMAGNETIC INDICES": {},
+                "ION CHEMISTRY/IONIZATION": {},
+                "MAGNETIC FIELDS/MAGNETIC CURRENTS": {},
+                "MAGNETIC STORMS": {},
+                "PLASMA WAVES": {},
+                "SOLAR WIND": {}
+            },
+            "SOLAR ACTIVITY": {
+                "CORONA": {},
+                "CORONA HOLES": {},
+                "CORONAL MASS EJECTIONS": {},
+                "COSMIC RAYS": {},
+                "SOLAR ACTIVE REGIONS": {},
+                "SOLAR FLARES": {},
+                "SOLAR IMAGERY": {},
+                "SOLAR IRRADIANCE": {},
+                "SOLAR OSCILLATIONS": {},
+                "SOLAR PROMINENCES/SOLAR FILAMENTS": {},
+                "SOLAR RADIO WAVE EMISSIONS": {},
+                "SOLAR SYNOPTIC MAPS": {},
+                "SOLAR ULTRAVIOLET EMISSIONS": {},
+                "SOLAR VELOCITY FIELDS": {},
+                "SOLAR X-RAY EMISSIONS": {},
+                "SUNSPOTS": {}
+            },
+            "SOLAR ENERGETIC PARTICLE FLUX": {
+                "ALPHA PARTICLE FLUX": {},
+                "ELECTRON FLUX": {},
+                "HEAVY NUCLEI FLUX": {},
+                "ION FLUX": {},
+                "NEUTRAL PARTICLE FLUX": {},
+                "PROTON FLUX": {},
+                "SUB-ATOMIC PARTICLE FLUX": {},
+                "X-RAY FLUX": {}
+            },
+            "SOLAR ENERGETIC PARTICLE PROPERTIES": {
+                "ENERGY DEPOSITION": {},
+                "PARTICLE COMPOSITION": {},
+                "PARTICLE DENSITY": {},
+                "PARTICLE DISTRIBUTION FUNCTIONS": {},
+                "PARTICLE SPEED": {},
+                "PARTICLE TEMPERATURE": {},
+                "TOTAL ELECTRON CONTENT": {}
+            }
+        },
+        "TERRESTRIAL HYDROSPHERE": {
+            "GLACIERS/ICE SHEETS": {
+                "ABLATION ZONES/ACCUMULATION ZONES": {},
+                "BASINS": {},
+                "COASTLINE": {},
+                "FIRN": {
+                    "SNOW GRAIN SIZE": {}
+                },
+                "GLACIER ELEVATION/ICE SHEET ELEVATION": {},
+                "GLACIER FACIES": {},
+                "GLACIER MASS BALANCE/ICE SHEET MASS BALANCE": {},
+                "GLACIER MOTION/ICE SHEET MOTION": {},
+                "GLACIER THICKNESS/ICE SHEET THICKNESS": {},
+                "GLACIER TOPOGRAPHY/ICE SHEET TOPOGRAPHY": {},
+                "GLACIERS": {
+                    "GLACIER ABLATION": {},
+                    "GLACIER ACCUMULATION": {},
+                    "GLACIER AREA": {},
+                    "GLACIER EXTENT": {},
+                    "GLACIER MASS": {},
+                    "GLACIER MELT": {},
+                    "GLACIER REFREEZE": {},
+                    "GLACIER RUNOFF": {},
+                    "GLACIER TERMINUS": {},
+                    "GROUNDING LINE": {},
+                    "ICE STUPA": {}
+                },
+                "ICE SHEETS": {},
+                "ICE SHELVES": {},
+                "ICEBERGS": {}
+            },
+            "GROUND WATER": {
+                "GROUND WATER FEATURES": {
+                    "AQUIFERS": {},
+                    "FRESHWATER SPRINGS": {},
+                    "WATER TABLE": {
+                        "WATER TABLE DEPTH": {}
+                    }
+                },
+                "GROUND WATER PROCESSES/MEASUREMENTS": {
+                    "AQUIFER RECHARGE": {
+                        "AQUIFER DEPTH": {},
+                        "RECHARGE AMOUNT": {},
+                        "RECHARGE FREQUENCY": {}
+                    },
+                    "DISCHARGE": {
+                        "DISCHARGE AMOUNT": {},
+                        "DISCHARGE RATE": {}
+                    },
+                    "DISPERSION": {
+                        "DISPERSION FREQUENCY": {},
+                        "DISPERSION RATE": {}
+                    },
+                    "DRAINAGE": {
+                        "DRAINAGE AMOUNT": {},
+                        "DRAINAGE DIRECTION": {}
+                    },
+                    "INFILTRATION": {
+                        "INFILTRATION AMOUNT": {},
+                        "INFILTRATION FREQUENCY": {},
+                        "INFILTRATION RATE": {}
+                    },
+                    "LAND SUBSIDENCE": {
+                        "SUBSIDENCE AMOUNT": {},
+                        "SUBSIDENCE RATE": {}
+                    },
+                    "PERCOLATION": {
+                        "PERCOLATION AMOUNT": {},
+                        "PERCOLATION RATE": {}
+                    },
+                    "SALTWATER INTRUSION": {
+                        "INTRUSION AMOUNT": {},
+                        "INTRUSION RATE": {}
+                    },
+                    "SUBSURFACE FLOW": {
+                        "AVERAGE FLOW": {},
+                        "FLOW VELOCITY": {},
+                        "PEAK FLOW": {}
+                    }
+                },
+                "GROUNDWATER CHEMISTRY": {}
+            },
+            "SNOW/ICE": {
+                "ALBEDO": {},
+                "AVALANCHE": {},
+                "BLOWING SNOW": {},
+                "DEPTH HOAR": {},
+                "FREEZE/THAW": {
+                    "TRANSITION DIRECTION": {}
+                },
+                "FROST": {},
+                "ICE DEPTH/THICKNESS": {},
+                "ICE EXTENT": {},
+                "ICE GROWTH/MELT": {},
+                "ICE MOTION": {},
+                "ICE VELOCITY": {},
+                "LAKE ICE": {},
+                "LIQUID WATER CONTENT": {},
+                "PERMAFROST": {},
+                "RIVER ICE": {},
+                "SNOW COVER": {},
+                "SNOW DENSITY": {},
+                "SNOW DEPTH": {},
+                "SNOW ENERGY BALANCE": {},
+                "SNOW FACIES": {},
+                "SNOW MELT": {},
+                "SNOW STRATIGRAPHY": {},
+                "SNOW WATER EQUIVALENT": {},
+                "SNOW/ICE CHEMISTRY": {},
+                "SNOW/ICE TEMPERATURE": {},
+                "WHITEOUT": {}
+            },
+            "SURFACE MASS": {
+                "LIQUID WATER EQUIVALENT THICKNESS (LWET)": {},
+                "MASS BALANCE": {},
+                "MASS TRANSPORT": {}
+            },
+            "SURFACE WATER": {
+                "SURFACE WATER CHEMISTRY": {},
+                "SURFACE WATER FEATURES": {
+                    "DRAINAGE BASINS": {},
+                    "LAKES/RESERVOIRS": {},
+                    "RIVERS/STREAMS": {},
+                    "WATER CHANNELS": {},
+                    "WETLANDS": {}
+                },
+                "SURFACE WATER PROCESSES/MEASUREMENTS": {
+                    "AQUIFER RECHARGE": {
+                        "AQUIFER DEPTH": {},
+                        "RECHARGE AMOUNT": {},
+                        "RECHARGE FREQUENCY": {}
+                    },
+                    "DISCHARGE/FLOW": {
+                        "AVERAGE FLOW": {},
+                        "BASE FLOW": {},
+                        "FLOW VELOCITY": {},
+                        "PEAK FLOW": {}
+                    },
+                    "DRAINAGE": {
+                        "DRAINAGE AMOUNT": {},
+                        "DRAINAGE DIRECTION": {}
+                    },
+                    "FLOODS": {
+                        "FLOOD FREQUENCY": {},
+                        "FLOOD LEVELS": {}
+                    },
+                    "HYDROPATTERN": {},
+                    "HYDROPERIOD": {},
+                    "INUNDATION": {
+                        "INUNDATION AMOUNT": {},
+                        "INUNDATION FREQUENCY": {},
+                        "INUNDATION LEVEL": {}
+                    },
+                    "RUNOFF": {
+                        "RUNOFF RATE": {},
+                        "TOTAL RUNOFF": {}
+                    },
+                    "STAGE HEIGHT": {},
+                    "TOTAL SURFACE WATER": {},
+                    "WATER DEPTH": {},
+                    "WATER PRESSURE": {},
+                    "WATER YIELD": {}
+                },
+                "WATERSHED CHARACTERISTICS": {
+                    "WATERSHED BOUNDARIES": {},
+                    "WATERSHED DRAINAGE": {},
+                    "WATERSHED LENGTH": {},
+                    "WATERSHED SHAPE": {},
+                    "WATERSHED SLOPE": {}
+                }
+            },
+            "WATER BUDGET": {
+                "HYDROLOGIC REGIME": {},
+                "TERRESTRIAL WATER STORAGE": {}
+            },
+            "WATER QUALITY/WATER CHEMISTRY": {
+                "CONTAMINANTS": {
+                    "ACID RAIN": {},
+                    "ARSENIC": {},
+                    "BARIUM": {},
+                    "CALCIUM": {},
+                    "CARCINOGENS": {},
+                    "CHROMIUM": {},
+                    "COPPER": {},
+                    "DISINFECTANTS": {},
+                    "HARMFUL ALGAL BLOOMS (HABs)": {},
+                    "INORGANIC MATTER": {},
+                    "IRON": {},
+                    "LEAD": {},
+                    "MAGNESIUM": {},
+                    "METALS/MINERALS": {},
+                    "ORGANIC MATTER": {},
+                    "PATHOGEN": {},
+                    "PESTICIDES": {},
+                    "PETROLEUM HYDROCARBONS": {},
+                    "POTASSIUM": {},
+                    "SELENIUM": {},
+                    "SEWAGE OVERFLOWS": {},
+                    "TITANIUM": {},
+                    "TOXIC CHEMICALS": {},
+                    "TRACE METALS": {},
+                    "ZINC": {}
+                },
+                "GASES": {
+                    "DISSOLVED CARBON DIOXIDE": {},
+                    "DISSOLVED GASES": {},
+                    "DISSOLVED NITROGEN": {},
+                    "DISSOLVED OXYGEN": {}
+                },
+                "ISOTOPES": {
+                    "RADIOISOTOPES": {},
+                    "STABLE ISOTOPES": {}
+                },
+                "NUTRIENTS": {
+                    "HYDROCARBONS": {},
+                    "INORGANIC MATTER": {},
+                    "NITROGEN": {},
+                    "NITROGEN COMPOUNDS": {},
+                    "ORGANIC MATTER": {},
+                    "PHOSPHOROUS": {}
+                },
+                "SOLIDS": {
+                    "SEDIMENTS": {},
+                    "SUSPENDED SOLIDS": {},
+                    "TOTAL DISSOLVED SOLIDS": {}
+                },
+                "WATER CHARACTERISTICS": {
+                    "ALKALINITY": {},
+                    "BIOCHEMICAL OXYGEN DEMAND (BOD)": {},
+                    "CHLOROPHYLL CONCENTRATIONS": {},
+                    "CONDUCTIVITY": {},
+                    "EUTROPHICATION": {},
+                    "HYDROCARBONS": {},
+                    "INORGANIC MATTER": {},
+                    "LIGHT TRANSMISSION": {},
+                    "NITROGEN COMPOUNDS": {},
+                    "ORGANIC MATTER": {},
+                    "PHOSPHOROUS COMPOUNDS": {},
+                    "POTABILITY": {},
+                    "SALINE CONCENTRATION": {},
+                    "TURBIDITY": {},
+                    "WATER COLOR": {},
+                    "WATER HARDNESS": {},
+                    "WATER ION CONCENTRATIONS": {},
+                    "WATER ODOR": {},
+                    "WATER TEMPERATURE": {},
+                    "WATER TRACE ELEMENTS": {},
+                    "pH": {}
+                },
+                "WATER QUALITY INDEXES": {
+                    "GLOBAL DRINKING WATER QUALITY INDEX": {},
+                    "INDEX OF BIOTIC INTEGRITY": {},
+                    "NATIONAL SANITATION FOUNDATION WATER QUALITY INDEX": {},
+                    "TROPHIC STATE INDEX": {}
+                }
+            }
+        }
+    }
+}

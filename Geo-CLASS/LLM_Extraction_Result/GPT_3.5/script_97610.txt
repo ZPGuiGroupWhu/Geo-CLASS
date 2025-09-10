@@ -1,0 +1,19 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Extracts and processes ERA5 temperature data for Sinaloa region."],
+  "Theme": ["Temperature analysis for Sinaloa region"],
+  "DataSource": ["ECMWF/ERA5/DAILY", "FAO/GAUL_SIMPLIFIED_500m/2015/level2"],
+  "Function": ["Filter and process minimum temperature data", "Filter and process maximum temperature data", "Filter and process mean temperature data", "Visualize temperature layers", "Export temperature data to Google Drive"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["ECMWF/ERA5/DAILY", "FAO/GAUL_SIMPLIFIED_500m/2015/level2"],
+        "Function": ["Filter and process minimum temperature data", "Filter and process maximum temperature data", "Filter and process mean temperature data", "Visualize temperature layers", "Export temperature data to Google Drive"]
+    }
+}
+```

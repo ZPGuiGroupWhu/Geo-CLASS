@@ -1,0 +1,35 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Forest fire detection and monitoring"],
+  "DataSource": ["LANDSAT/LC8_SR", "LANDSAT/LC8_L1T_TOA", "LANDSAT/LE7_L1T_TOA_FMASK", "LANDSAT/LT5_L1T_TOA_FMASK", "COPERNICUS/S2", "ft:11R-JRBIylckCHZsQf20C-tgHLlWWZ8BoXrL9u2re"],
+  "Function": ["Filtering image collection by date", "Sorting image collection by time", "Filtering image collection by bounds", "Calculating NDVI", "Calculating NBR", "Mosaicking images", "Visualizing images"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC8_SR", "LANDSAT/LC8_L1T_TOA"],
+        "Function": ["Filtering image collection by date", "Sorting image collection by time"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LE7_L1T_TOA_FMASK", "LANDSAT/LT5_L1T_TOA_FMASK"],
+        "Function": ["Filtering image collection by bounds", "Calculating NDVI"]
+    },
+    "relation_3": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Calculating NBR"]
+    },
+    "relation_4": {
+        "DataSource": ["ft:11R-JRBIylckCHZsQf20C-tgHLlWWZ8BoXrL9u2re"],
+        "Function": ["Mosaicking images", "Visualizing images"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3895, 'completion_tokens': 421, 'total_tokens': 4316}

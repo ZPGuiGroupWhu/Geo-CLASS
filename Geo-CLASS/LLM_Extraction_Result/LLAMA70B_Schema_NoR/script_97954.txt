@@ -1,0 +1,31 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover classification and land change detection in the Bahamas"],
+  "DataSource": ["users/EL/Bahamas", "LANDSAT/LT5_L1T", "LANDSAT/LE7_L1T", "LANDSAT/LC08/C01/T1_RT", "users/EL/Bahamas_class"],
+  "Function": ["Filtering image collections by date and cloud cover", "Compositing images", "Calculating spectral ratios", "Masking non-forest areas", "Training a classifier", "Classifying land cover"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response that organizes the extracted information into a structured format according to the JSON format of the Relation reply example:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/EL/Bahamas", "LANDSAT/LT5_L1T", "LANDSAT/LE7_L1T", "LANDSAT/LC08/C01/T1_RT"],
+        "Function": ["Filtering image collections by date and cloud cover", "Compositing images"]
+    },
+    "relation_2": {
+        "DataSource": ["users/EL/Bahamas_class"],
+        "Function": ["Training a classifier", "Classifying land cover"]
+    },
+    "relation_3": {
+        "DataSource": ["LANDSAT/LT5_L1T", "LANDSAT/LE7_L1T", "LANDSAT/LC08/C01/T1_RT"],
+        "Function": ["Calculating spectral ratios", "Masking non-forest areas"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3170, 'completion_tokens': 367, 'total_tokens': 3537}

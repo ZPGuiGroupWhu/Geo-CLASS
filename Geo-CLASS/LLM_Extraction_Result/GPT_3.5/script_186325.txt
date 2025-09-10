@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["The script collects satellite images, calculates NDVI and NBR, exports image properties, creates mosaics, and detects forest loss and degradation using Landsat 8 data."],
+  "Theme": ["Satellite image processing", "Vegetation monitoring", "Forest loss detection"],
+  "DataSource": ["LANDSAT/LC8_SR", "LANDSAT/LC8_L1T_TOA", "LANDSAT/LT5_L1T_TOA_FMASK", "LANDSAT/LE7_L1T_TOA_FMASK", "LANDSAT/LE7_L1T_TOA", "COPERNICUS/S2", "ft:1TFcNAU6zr_9svAb610dlsyqNiiXMLYlFrfP23ZuH"],
+  "Function": ["Calculates NDVI for each image in the collection", "Calculates NBR for each image in the collection", "Exports image properties to a CSV file", "Creates and exports a mosaic image", "Detects forest loss and degradation using Landsat 8 data"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC8_SR", "LANDSAT/LC8_L1T_TOA", "LANDSAT/LT5_L1T_TOA_FMASK", "LANDSAT/LE7_L1T_TOA_FMASK", "LANDSAT/LE7_L1T_TOA", "COPERNICUS/S2"],
+        "Function": ["Calculates NDVI for each image in the collection", "Calculates NBR for each image in the collection", "Exports image properties to a CSV file", "Creates and exports a mosaic image"]
+    },
+    "relation_2": {
+        "DataSource": ["ft:1TFcNAU6zr_9svAb610dlsyqNiiXMLYlFrfP23ZuH"],
+        "Function": ["Detects forest loss and degradation using Landsat 8 data"]
+    }
+}
+```

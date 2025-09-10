@@ -1,0 +1,333 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var features = /* color: #d63000 */ee.FeatureCollection(
+        [ee.Feature(
+            ee.Geometry.Point([20.712661743164062, 39.196342884101114]),
+            {
+              "system:index": "0"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([20.753860473632812, 39.21815723034759]),
+            {
+              "system:index": "1"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([20.7861328125, 39.205388679179805]),
+            {
+              "system:index": "2"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([20.795745849609375, 39.17292482951875]),
+            {
+              "system:index": "3"
+            }),
+        ee.Feature(
+            ee.Geometry.Polygon(
+                [[[102.59814801054426, 22.00059900660014],
+                  [102.72998394804426, 21.954753238588026],
+                  [102.83984722929426, 21.95730061399783],
+                  [102.89203228788801, 21.96494246625253],
+                  [102.95520367460676, 22.35920963738486],
+                  [102.44433941679426, 22.511531272151743],
+                  [102.37567486601301, 22.34396828770323]]]),
+            {
+              "system:index": "4"
+            })]);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+// Define some useful functions
+
+
+
+
+
+// 1. functions to add NDVI and time
+
+var addNDVI = function(image) {
+
+  return image.addBands(image.normalizedDifference(['B5', 'B4']).rename('NDVI'))
+
+}
+
+
+
+var addTime = function(img) {
+
+  return img
+
+    // System Time
+
+    .addBands(img.metadata('system:time_start').divide(1e18).rename('Time'))
+
+    // Date - Day is the Julian date
+
+    .set('Date', ee.Date(img.get('system:time_start')).format('YYYY-MM-DD'))
+
+};
+
+
+
+//Set some variables
+
+var dateStart ='2015-03-04'
+
+var dateEnd='2018-04-12'
+
+
+
+//Define the vector data
+
+// 1. Study area
+
+var areaOfInterest = /* color: #98ff00 */ee.FeatureCollection(
+
+		[ee.Feature(
+
+            ee.Geometry.Polygon(
+
+                [[[102.59814801054426, 22.00059900660014],
+
+                  [102.72998394804426, 21.954753238588026],
+
+                  [102.83984722929426, 21.95730061399783],
+
+                  [102.89203228788801, 21.96494246625253],
+
+                  [102.95520367460676, 22.35920963738486],
+
+                  [102.44433941679426, 22.511531272151743],
+
+                  [102.37567486601301, 22.34396828770323]]]),
+
+            {
+
+              "system:index": "4"
+
+            })]);
+
+
+
+Map.centerObject(areaOfInterest)
+
+
+
+
+
+// 2. The stations in one feature
+
+var stations2 = ee.FeatureCollection("users/khoapv/xatong"); 
+
+print(stations2)
+
+
+
+// custom locations
+
+stations2 = features
+
+areaOfInterest = features
+
+
+
+// SENTINEL 1 DATA
+
+var imageVisParam = {min:-20, max:1}
+
+var collectionVV = ee.ImageCollection('COPERNICUS/S1_GRD')
+
+    .filterDate(dateStart,dateEnd)
+
+    .filterBounds(areaOfInterest)
+
+    .filter(ee.Filter.eq('instrumentMode', 'IW'))
+
+    .filter(ee.Filter.listContains('transmitterReceiverPolarisation', 'VV'))
+
+    
+
+    .filterMetadata('resolution_meters', 'equals' , 10)
+
+    .select(['VV'])
+
+    .map(addTime)
+
+
+
+print('S1 Collection VV',collectionVV)
+
+
+
+//Clipping the S1 Data
+
+
+
+
+
+
+
+
+
+// LANDSAT 8 DATA
+
+var l8data = ee.ImageCollection('LANDSAT/LC08/C01/T1_SR')
+
+
+
+//Fetch the data
+
+var l8 = l8data
+
+  .filterBounds(areaOfInterest)
+
+  .filterDate(dateStart,dateEnd)
+
+  .map(addNDVI)
+
+  .map(addTime)
+
+  .map(function(img) {
+
+  return img.addBands(ee.Image.pixelLonLat())
+
+})
+
+print('Landsat data',l8)
+
+
+
+// SENTINEL 2 DATA
+
+var s2 = ee.ImageCollection("COPERNICUS/S2")
+
+  .filterDate(dateStart, dateEnd)
+
+  .filterBounds(areaOfInterest)
+
+  .filterMetadata('CLOUDY_PIXEL_PERCENTAGE', 'less_than', 3)
+
+
+
+    .map(addNDVI)
+
+    .map(addTime)
+
+    .map(function(img) {
+
+      return img.addBands(ee.Image.pixelLonLat())
+
+    })
+
+
+
+
+
+
+
+
+
+//GET COMBINED COLLECTION BY DATE
+
+// Define an allowable time difference: one day in milliseconds.
+
+var oneDayMillis = 1 * 24 * 60 * 60 * 1000;
+
+
+
+// Create a time filter to define a match as overlapping timestamps.
+
+var timeFilter = ee.Filter.or(
+
+  ee.Filter.maxDifference({
+
+    difference: oneDayMillis,
+
+    leftField: 'system:time_start',
+
+    rightField: 'system:time_end'
+
+  }),
+
+  ee.Filter.maxDifference({
+
+    difference: oneDayMillis,
+
+    leftField: 'system:time_end',
+
+    rightField: 'system:time_start'
+
+  })
+
+);
+
+
+
+// Define the join.
+
+var saveAllJoin = ee.Join.saveAll({
+
+  matchesKey: 'backscatter',
+
+  ordering: 'system:time_start',
+
+  ascending: true
+
+});
+
+
+
+// Apply the join.
+
+var s1l8 = saveAllJoin.apply(collectionVV, l8, timeFilter);
+
+
+
+// Display the combined result.
+
+print('Join.saveAll:', s1l8);
+
+
+
+//Reduce Regions for each station 
+
+var myReducer=function(img) {
+
+  img = ee.Image(img)
+
+  
+
+  var matches = ee.List(img.get('backscatter'))
+
+  
+
+  var ndvi = ee.Image(matches.get(0)).select('NDVI')
+
+  
+
+  img = img.select('VV').addBands(ndvi)
+
+  
+
+  return img.reduceRegions({
+
+    collection: stations2,
+
+    reducer: ee.Reducer.mean(),
+
+    scale: 30
+
+  })
+
+};
+
+
+
+var s1l8Ft = s1l8
+
+  .map(myReducer).flatten()
+
+  .filter(ee.Filter.notNull(['NDVI', 'VV']))
+
+
+
+print(s1l8Ft, "L8 NDVI AND BACKSCATTER DATA")
+
+
+

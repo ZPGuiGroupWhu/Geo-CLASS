@@ -1,0 +1,19 @@
+{
+    "Theme": [
+        "Land surface temperature analysis",
+        "Fire detection and monitoring"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2_SR",
+        "MODIS/006/MOD14A1",
+        "MODIS/006/MOD11A1"
+    ],
+    "Function": [
+        "Filtering and masking of image collections",
+        "Conversion of Kelvin to Celsius",
+        "Calculation of maximum temperature",
+        "Unmasking of fire probability image collection",
+        "Calculation of NDVI",
+        "Fire detection using NDVI difference"
+    ]
+}

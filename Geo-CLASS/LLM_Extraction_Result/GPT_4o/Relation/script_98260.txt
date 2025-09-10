@@ -1,0 +1,10 @@
+{
+  "relation_1": {
+    "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2"],
+    "Function": ["Filter regions by attribute", "Add layer to map", "Center map on region"]
+  },
+  "relation_2": {
+    "DataSource": ["LANDSAT/LT05/C01/T1_SR"],
+    "Function": ["Filter image collection by bounds", "Filter image collection by date", "Filter image collection by metadata", "Sort image collection", "Create mosaic image", "Clip image to boundary", "Add RGB layer to map", "Calculate NDWI", "Add NDWI layer to map", "Compute histogram", "Chart histogram", "Calculate Otsu threshold", "Classify image by threshold", "Add classified layer to map"]
+  }
+}

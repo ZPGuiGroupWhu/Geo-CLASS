@@ -1,0 +1,5 @@
+{
+  "Theme": ["Wildfire monitoring and analysis"],
+  "DataSource": ["LANDSAT/LC08/C02/T1_TOA", "users/avaise99/KP_Boundary"],
+  "Function": ["Filtering image collection by date and cloud cover", "Masking clouds from images", "Mosaicking images", "Clipping images to boundary", "Visualizing images"]
+}

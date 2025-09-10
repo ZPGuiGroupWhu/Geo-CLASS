@@ -1,0 +1,6 @@
+{
+  "Summary": ["Creates cloud-free Landsat composites over specified intervals for Colombia."],
+  "Theme": ["Landsat imagery compositing"],
+  "DataSource": ["FAO/GAUL/2015/level0"],
+  "Function": ["Acquires Landsat TOA image collection", "Computes cloud score and masks clouds", "Finds and masks out dark outliers", "Projects cloud and shadow masking", "Calculates NDVI", "Runs reducer on image collection"]
+}

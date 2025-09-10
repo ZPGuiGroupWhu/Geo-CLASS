@@ -1,0 +1,5 @@
+{
+  "Theme": ["NDVI calculation", "SAVI calculation", "Image collection filtering", "Median and mean reduction"],
+  "DataSource": ["users/philipegeo/pol_jeremoabo", "LANDSAT/LT05/C01/T1_TOA"],
+  "Function": ["Filter images by cloud cover", "Filter images by date", "Filter images by location", "Print image collection", "Print image count", "Convert image collection to list", "Select image from list", "Display image", "Calculate median of image collection", "Calculate mean of image collection", "Calculate NDVI from median", "Calculate NDVI from mean", "Display NDVI", "Calculate SAVI from median", "Display SAVI", "Calculate SAVI from mean"]
+}

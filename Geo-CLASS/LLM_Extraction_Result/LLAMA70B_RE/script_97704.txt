@@ -1,0 +1,48 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Topographic analysis of global DEMs"],
+  "DataSource": ["NOAA/NGDC/ETOPO1", "NASA/ASTER_GED/AG100_003", "OSU/GIMP/DEM", "CPOM/CryoSat2/ANTARCTICA_DEM", "JAXA/ALOS/AW3D30_V1_1", "USGS/GMTED2010", "USGS/SRTMGL1_003", "USGS/GTOPO30", "WWF/HydroSHEDS/03CONDEM", "WWF/HydroSHEDS/30CONDEM", "WWF/HydroSHEDS/15CONDEM"],
+  "Function": ["DEM extraction and clipping", "Image visualization", "Histogram generation", "Image export to Drive"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["NOAA/NGDC/ETOPO1"],
+        "Function": ["DEM extraction and clipping", "Image export to Drive"]
+    },
+    "relation_2": {
+        "DataSource": ["NASA/ASTER_GED/AG100_003"],
+        "Function": ["DEM extraction and clipping", "Image export to Drive"]
+    },
+    "relation_3": {
+        "DataSource": ["OSU/GIMP/DEM"],
+        "Function": ["DEM extraction and clipping", "Image export to Drive"]
+    },
+    "relation_4": {
+        "DataSource": ["CPOM/CryoSat2/ANTARCTICA_DEM"],
+        "Function": ["DEM extraction and clipping", "Image export to Drive"]
+    },
+    "relation_5": {
+        "DataSource": ["JAXA/ALOS/AW3D30_V1_1"],
+        "Function": ["DEM extraction and clipping", "Image visualization", "Histogram generation", "Image export to Drive"]
+    },
+    "relation_6": {
+        "DataSource": ["USGS/GMTED2010"],
+        "Function": ["DEM extraction and clipping", "Image export to Drive"]
+    },
+    "relation_7": {
+        "DataSource": ["USGS/SRTMGL1_003"],
+        "Function": ["DEM extraction and clipping", "Image export to Drive"]
+    },
+    "relation_8": {
+        "DataSource": ["
+
+Total_Usage:
+{'prompt_tokens': 3978, 'completion_tokens': 589, 'total_tokens': 4567}

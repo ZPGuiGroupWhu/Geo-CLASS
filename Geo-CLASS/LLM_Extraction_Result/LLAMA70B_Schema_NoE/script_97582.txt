@@ -1,0 +1,29 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land cover analysis and burned patches confirmation using Landsat 8 TOA collection"],
+  "DataSource": ["LANDSAT/LC08/C02/T1_TOA", "users/avaise99/KP_Boundary"],
+  "Function": ["Filtering Landsat 8 TOA collection by date and cloud cover", "Clipping images to KP boundary", "Mosaicking images", "Updating mask to remove clouds", "Adding layers to the map"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C02/T1_TOA"],
+        "Function": ["Filtering Landsat 8 TOA collection by date and cloud cover", "Mosaicking images", "Updating mask to remove clouds", "Adding layers to the map"]
+    },
+    "relation_2": {
+        "DataSource": ["users/avaise99/KP_Boundary"],
+        "Function": ["Clipping images to KP boundary"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3673, 'completion_tokens': 256, 'total_tokens': 3929}

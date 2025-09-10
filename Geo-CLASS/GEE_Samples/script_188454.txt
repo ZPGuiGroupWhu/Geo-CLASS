@@ -1,0 +1,186 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var imageVisParam = {"opacity":1,"bands":["probability"],"max":72,"palette":["585dff","5cd2ff","58ff6d","efff6e","ffce1b","ff0404"]},
+    imageVisParam2 = {"opacity":1,"bands":["probability"],"palette":["3f94ff","49ff92","40ff1d","e6ff16","ff7310","ff1004"]},
+    imageVisParam3 = {"opacity":1,"bands":["sum"],"palette":["29b0ff","49ff3d","ffc214","ff0c0c"]},
+    imageVisParam4 = {"opacity":1,"bands":["sum"],"palette":["3dc0ff","5cff49","f3ff43","ff880e","ff1800"]},
+    roi = /* color: #d63000 */ee.Feature(
+        ee.Geometry.Polygon(
+            [[[95.30524924376348, 27.925194085373313],
+              [90.82282736876348, 21.584588064120812],
+              [92.75642111876348, 18.196667496196582],
+              [93.41560080626348, 15.9704988560205],
+              [95.26130393126348, 14.953999748942053],
+              [97.23884299376348, 16.603221656480454],
+              [97.67753156069647, 12.91908785197905],
+              [98.11698468569647, 10.85506892626209],
+              [97.63358624819647, 7.689401441018158],
+              [99.43534406069647, 5.987791862609713],
+              [99.96268781069647, 5.025468179311364],
+              [103.69803937319647, 4.850339398139197],
+              [100.75370343569647, 8.4290880695409],
+              [100.40214093569647, 12.103962742642931],
+              [101.98417218569647, 11.286343157727652],
+              [103.03885968569647, 9.947392167045923],
+              [104.18143781069647, 9.254119721854122],
+              [104.22538312319647, 8.124675409774921],
+              [107.12577374819647, 8.4290880695409],
+              [109.80643781069647, 11.41560034833666],
+              [109.36698468569647, 15.982632319447532],
+              [105.93925031069647, 18.75048592812294],
+              [107.25760968569647, 20.159272862566688],
+              [108.44413312319647, 21.14616562700695],
+              [107.96073468569647, 22.329924343313223],
+              [106.51053937319647, 23.42309911455584],
+              [106.14057214360943, 24.339396422334552],
+              [105.28363854985943, 24.579404788126087],
+              [104.95404870610943, 25.217174236997334],
+              [104.95404870610943, 26.14785153086791],
+              [104.93207604985943, 26.914534000162252],
+              [104.66840417485943, 27.090729791151862],
+              [105.45941979985943, 27.286178284224096],
+              [105.61322839360943, 27.695500668568243],
+              [104.97602136235943, 28.548152269916347],
+              [104.11908776860943, 29.0871916284024],
+              [103.26215417485943, 28.490232974183197],
+              [102.47113854985943, 26.914534000162252],
+              [102.22943933110943, 26.561317187660404],
+              [101.04291589360943, 28.412957795882132],
+              [100.44965417485943, 29.144779967922084],
+              [99.43891198735943, 29.795183793231168],
+              [98.53803308110943, 29.661618642704603],
+              [96.60443933110943, 29.0871916284024]]]),
+        {
+          "system:index": "0"
+        }),
+    EAST_ASIA = ee.FeatureCollection("users/kitmyfaceplease2/eastsouth_asia");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+var MONTH=2
+
+var start ='2016-'+MONTH+'-01'
+var finish = '2016-'+MONTH+'-11'
+ 
+start = ee.Date(start);
+finish = ee.Date(finish);
+
+var cloud_probability=50
+
+  
+  
+function MONNTH_CUL(start, finish,roi){    
+
+var collection =ee.ImageCollection('COPERNICUS/S2_CLOUD_PROBABILITY')
+                  .filterBounds(roi.geometry())
+                  .filterDate(start, finish);
+
+// Difference in days between start and finish
+var diff = finish.difference(start, 'day')
+ 
+// Make a list of all dates
+var range = ee.List.sequence(0, diff.subtract(1)).map(function(day){return start.advance(day,'day')})
+
+// Funtion for iteraton over the range of dates
+var day_mosaics = function(date, newlist) {
+  // Cast
+  date = ee.Date(date)
+  newlist = ee.List(newlist)
+  
+  // Filter collection between date and the next day
+  var filtered = collection.filterDate(date, date.advance(1,'day'))
+  
+  // Make the mosaic
+  var image = ee.Image(filtered.mosaic())
+  
+  // Add the mosaic to a list only if the collection has images
+  return ee.List(ee.Algorithms.If(filtered.size(), newlist.add(image), newlist))
+}
+
+// Iterate over the range to make a new list, and then cast the list to an imagecollection
+var newcol = ee.ImageCollection(ee.List(range.iterate(day_mosaics, ee.List([]))))
+
+
+var collection_count =newcol.map(function(img) {return img.select('probability')});
+var count_image = collection_count.count().clip(roi);
+
+
+  var ROI_TOImg =  ee.FeatureCollection(roi).reduceToImage({
+        properties: ['probability'],
+        reducer: ee.Reducer.first()
+    });
+    
+  var ROI_IMAGE=ROI_TOImg.uint8().select("first").rename("probability")
+  function maskClouds(img) {
+            var img_roi_collection=ee.ImageCollection.fromImages([ROI_IMAGE.clip(roi.geometry()),img.clip(roi.geometry()).gt(cloud_probability)]);
+            var ROI_TOImg_add=img_roi_collection.qualityMosaic("probability")
+            
+            return ROI_TOImg_add
+      }
+      
+  function GPP_pre(collection){
+          //调用GPP_clip
+          
+          var myCollection = collection;
+          //获取collection的合成值 先将Collection转为数组list，再对每个图像的list进行合成                   
+          //collection转为数组
+          var listOfImages = myCollection.toList(myCollection.size());
+          var sum_image = ee.Image(listOfImages.get(0));
+          //合成
+          var A=listOfImages.length()
+          for(var order=1;order<89;order++){
+            sum_image=sum_image.add(ee.Image(listOfImages.get(order)))
+            }
+          return sum_image
+        }
+  var s2Clouds=newcol.map(maskClouds)
+  
+  
+  var sum2 = s2Clouds.sum();
+  
+  
+  
+  
+  var sum3 = s2Clouds.toBands();
+  var sum_bands = sum3.reduce('sum')
+  
+  
+  
+  
+  
+  
+  
+  var percentage_image=sum_bands.divide(count_image)
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  //   maxPixels:1e13
+  
+  return percentage_image
+}
+
+var percentage_image_HEBING=MONNTH_CUL(start, finish,roi)
+for (var DATE_ADDVANCE=0; DATE_ADDVANCE <7;DATE_ADDVANCE++){
+  
+  var YEAR=2016+DATE_ADDVANCE
+  start=start.advance(DATE_ADDVANCE, 'years')
+  finish =start.advance(DATE_ADDVANCE, 'years')
+  percentage_image_HEBING=percentage_image_HEBING+MONNTH_CUL(start, finish,roi)
+  Map.addLayer(percentage_image_HEBING,imageVisParam4)
+}
+  
+  
+ var empty = ee.Image().byte();
+ var outlines =empty.paint({
+  featureCollection: EAST_ASIA,
+  color: 'BIOME_NUM',
+  width: 'NNH'
+});
+
+
+Map.addLayer(outlines)

@@ -1,0 +1,25 @@
+{
+    "Summary": [
+        "The script processes Sentinel-2 data to generate vegetation indices and cloud/shadow masks."
+    ],
+    "Theme": [
+        "VEGETATION INDEX",
+        "CLOUD WATER PATH"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2_CLOUD_PROBABILITY",
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "Filter Image Collection By Date And Boundaries",
+        "Visualize Elevation Data (DEM)",
+        "Add Cloud Probability And Mask As Image Bands",
+        "Identify Outlier Areas",
+        "Cloud And Cloud Shadow Masking",
+        "Cloud And Cloud Shadow Masking",
+        "Calculate Other Vegetation Indices/index (SAVI, EVI)",
+        "Add NDWI Band To Images",
+        "Add NDVI Band To Images",
+        "Calculate Other Vegetation Indices/index (SAVI, EVI)"
+    ]
+}

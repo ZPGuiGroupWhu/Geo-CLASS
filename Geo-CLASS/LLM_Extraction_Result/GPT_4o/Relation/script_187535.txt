@@ -1,0 +1,6 @@
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Filter Sentinel-1 images by region", "Select most recent image", "Filter images by polarization", "Smooth images", "Calculate band ratio", "Threshold images for water detection", "Generate histograms", "Visualize results on map"]
+    }
+}

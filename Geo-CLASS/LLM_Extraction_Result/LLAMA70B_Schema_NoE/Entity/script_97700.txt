@@ -1,0 +1,18 @@
+{
+    "Theme": [
+        "Land cover classification using Sentinel-2 and Sentinel-1 data"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2",
+        "COPERNICUS/S1_GRD"
+    ],
+    "Function": [
+        "Filtering Sentinel-2 images by date and cloud cover",
+        "Computing Normalized Difference Vegetation Index (NDVI) and Green Chlorophyll Index (GCI)",
+        "Clustering GCI and NDVI images using k-means algorithm",
+        "Filtering Sentinel-1 images by instrument mode, polarization, and resolution",
+        "Applying speckle filter to Sentinel-1 images",
+        "Clustering Sentinel-1 images using k-means algorithm",
+        "Exporting classified images to Google Drive"
+    ]
+}

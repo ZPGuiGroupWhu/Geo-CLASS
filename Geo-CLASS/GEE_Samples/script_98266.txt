@@ -1,0 +1,211 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var imageCollection = ee.ImageCollection("COPERNICUS/S1_GRD"),
+    regions = ee.FeatureCollection("FAO/GAUL_SIMPLIFIED_500m/2015/level2");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+//STEP 0: Define area of interest, imge collection and visualization parameters
+
+var regions = ee.FeatureCollection(
+  'FAO/GAUL_SIMPLIFIED_500m/2015/level2');
+  
+var hue = regions.filter(
+  ee.Filter.eq('ADM1_NAME', 'Thua Thien - Hue'));
+Map.addLayer(hue, {color: 'yellow'}, 'Admin2 Boundaries', 0,1);
+
+var vis_Param = {bands: ['VH'], min:-25, max:0};
+
+//STEP 1: Create individual image collections before the flood and after the flood
+
+  //Create Reference Image Collection, set date range
+
+    var startRef = ee.Date ('2020-02-01');
+    var endRef = ee.Date ('2020-09-15');
+
+    var RefVH = ee.ImageCollection("COPERNICUS/S1_GRD")
+      .filterBounds(hue)
+      .filterDate (startRef, endRef)
+      .filterMetadata('orbitProperties_pass', 'equals', 'DESCENDING')
+      .filter(ee.Filter.listContains('transmitterReceiverPolarisation', 'VH'))
+      .filter(ee.Filter.eq('instrumentMode', 'IW'))
+      .select('VH');
+
+//Print number of images in Reference image collection 
+
+var count = RefVH.size();
+print ('size of collection Reference in VH', count);
+
+//Create Flood Image Collection, set date range
+
+var startFlood = ee.Date('2020-10-08');
+var endFlood = ee.Date ('2020-10-11');
+
+var FloodVH = ee.ImageCollection("COPERNICUS/S1_GRD")
+      .filterBounds(hue)
+      .filterDate (startFlood, endFlood)
+      .filterMetadata('orbitProperties_pass', 'equals', 'DESCENDING')
+      .filter(ee.Filter.listContains('transmitterReceiverPolarisation', 'VH'))
+      .filter(ee.Filter.eq('instrumentMode', 'IW'))
+      .select('VH');
+
+//Print number of images in the flood image collection
+
+var count = FloodVH.size();
+print('size of collection FloodVH', count);
+
+//Print metadata for the image collection to look at properties
+print (FloodVH, 'Flood Collection');
+
+
+//FELIX: FYI Image that looks qualitatively bad
+var img1 = ee.Image('COPERNICUS/S1_GRD/S1A_IW_GRDH_1SDV_20201010T224341_20201010T224410_034740_040C29_D8BD');
+
+Map.addLayer (img1, vis_Param, 'weird Image', 0,1);
+
+// STEP 2: Mosaic image collections and create RGB composite
+
+var RefVHmosaic = RefVH.median().clip(hue);
+var FloodVHmosaic = FloodVH.mosaic().clip(hue);
+
+//Display combined images
+
+Map.addLayer(RefVHmosaic, {min:-25, max:0}, 'Reference Mosaic', 0, 1);
+Map.addLayer(FloodVHmosaic, {min:-25, max:0}, 'Flood Mosaic', 0, 1);
+
+//Display RGB composite
+
+Map.addLayer(RefVHmosaic.addBands(FloodVHmosaic).addBands(RefVHmosaic), {min: -25, max: 0}, 'RefVH/FloodVH/RefVH composite');
+
+
+//STEP 3: APPLY SPECKLE FILTER
+var smoothing_radius = 25;
+
+var RefVHmosaic_filtered = RefVHmosaic.focal_mean(smoothing_radius, 'circle', 'meters');
+var FloodVHmosaic_filtered = FloodVHmosaic.focal_mean(smoothing_radius, 'circle', 'meters');
+
+// display filtered images
+
+Map.addLayer(RefVHmosaic_filtered, {min:-25, max: 0}, 'Before Flood VH filtered', 0, 1);
+Map.addLayer(FloodVHmosaic_filtered, {min:-25, max: 0}, 'After Flood VH filtered', 0, 1);
+
+//Display RGB composite of filtered image
+
+Map.addLayer(RefVHmosaic_filtered.addBands(FloodVHmosaic_filtered).addBands(RefVHmosaic_filtered), {min: -25, max: 0}, 'RefVH/FloodVH/RefVH composite', 0, 1);
+
+//STEP 4: CREATE DIFFERENCE IMAGE
+
+//Calculate difference between before and after
+var diffVH = FloodVHmosaic.divide(RefVHmosaic);
+
+Map.addLayer(diffVH, {min:0, max:2}, 'Difference Image', 0, 1); //--> Last time did not work, maybe leave out
+
+
+//STEP 5: Find the optimal threshold (Otsu method)
+
+// Compute the histogram of the VH band. The mean and variance are only FYI.
+
+var histogram = diffVH.select('VH').reduceRegion({
+  reducer: ee.Reducer.histogram(255, 2)
+      .combine('mean', null, true)
+      .combine('variance', null, true), 
+  geometry: hue,
+  scale: 10, 
+  bestEffort: false
+  maxPixels: //what does best Effort do?
+});
+print(histogram);
+
+// Chart the histogram
+print(Chart.image.histogram(diffVH.select('VH'), hue, 10));
+
+//Return the DN that maximizes interclass variance in VH (in the region).
+ var otsu = function(histogram) {
+ var counts = ee.Array(ee.Dictionary(histogram).get('histogram'));
+ var means = ee.Array(ee.Dictionary(histogram).get('bucketMeans'));
+ var size = means.length().get([0]);
+ var total = counts.reduce(ee.Reducer.sum(), [0]).get([0]);
+ var sum = means.multiply(counts).reduce(ee.Reducer.sum(), [0]).get([0]);
+ var mean = sum.divide(total);
+  
+var indices = ee.List.sequence(1, size);
+  
+  //Compute between sum of squares, where each mean partitions the data.
+  var bss = indices.map(function(i) {
+  var aCounts = counts.slice(0, 0, i);
+  var aCount = aCounts.reduce(ee.Reducer.sum(), [0]).get([0]);
+  var aMeans = means.slice(0, 0, i);
+  var aMean = aMeans.multiply(aCounts)
+      .reduce(ee.Reducer.sum(), [0]).get([0])
+      .divide(aCount);
+  var bCount = total.subtract(aCount);
+  var bMean = sum.subtract(aCount.multiply(aMean)).divide(bCount);
+  return aCount.multiply(aMean.subtract(mean).pow(2)).add(
+          bCount.multiply(bMean.subtract(mean).pow(2)));
+ });
+  
+print(ui.Chart.array.values(ee.Array(bss), 0, means));
+  
+  // Return the mean value corresponding to the maximum BSS.
+return means.sort(bss).get([-1]);
+    };
+
+var threshold = otsu(histogram.get('VH_histogram'));
+print(threshold, 'threshold');
+
+var classA = diffVH.select('VH').lt(threshold);
+
+
+// Create histogram
+
+//Pre-define some customization options
+
+var options = {
+  title: 'Histogram Difference Image',
+  fontSize: 20,
+  hAxis: {title: 'DN'},
+  vAxis: {title: 'count of DN'},
+  series: {
+    1: {color: 'red'},
+    2: {color: 'green'},
+    }};
+
+// Make the histogram, set the options.
+var histogram = ui.Chart.image.histogram(diffVH, hue, 30)
+    .setSeriesNames(['VH', 'VV'])
+    .setOptions(options);
+
+// Display the histogram.
+print(histogram);
+
+var DIFF_THRES =-16.91;
+var Flood_thres = diffVH.lt(DIFF_THRES);
+
+Map.addLayer (Flood_thres.updateMask(Flood_thres),{palette:"0000FF"}, 'flooded areas - before refinement', 0);
+
+
+//STEP 6: Refine flood result using additional datasets
+      
+      // Include JRC layer on surface water seasonality to mask flood pixels from areas
+      // of "permanent" water (where there is water > 10 months of the year)
+      var permwater = ee.Image('JRC/GSW1_0/GlobalSurfaceWater').select('seasonality');
+      var permwater_mask = permwater.gte(10).updateMask(permwater.gte(10));
+      
+      //Flooded layer where perennial water bodies (water > 10 mo/yr) is assigned a 0 value
+      var flooded_mask = Flood_thres.where(permwater_mask,0);
+      
+      // final flooded area without pixels in perennial waterbodies
+      var flooded = flooded_mask.updateMask(flooded_mask);
+      
+      // Compute connectivity of pixels to eliminate those connected to 8 or fewer neighbours
+      // This operation reduces noise of the flood extent product 
+      var connections = flooded.connectedPixelCount();
+      print (connections, 'connected pixels');
+      var flooded = flooded.updateMask(connections.gte(10));
+      
+      // Mask out areas with more than 5 percent slope using a Digital Elevation Model 
+      var DEM = ee.Image('WWF/HydroSHEDS/03VFDEM');
+      var terrain = ee.Algorithms.Terrain(DEM);
+      var slope = terrain.select('slope');
+      var flooded = flooded.updateMask(slope.lt(5));
+      
+      Map.addLayer (flooded,{palette:"0000FF"}, 'Refined flooded Area', 1);
+      
+   

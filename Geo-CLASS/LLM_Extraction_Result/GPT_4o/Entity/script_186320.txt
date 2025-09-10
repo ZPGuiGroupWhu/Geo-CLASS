@@ -1,0 +1,5 @@
+{
+  "Theme": ["Forest loss detection", "Forest degradation", "Forest fire detection"],
+  "DataSource": ["COPERNICUS/S2"],
+  "Function": ["Define study area", "Filter image collection by date", "Filter image collection by location", "Select specific bands", "Calculate NDVI", "Calculate NBR", "Add layers to map", "Create mosaic image", "Export image properties", "Export mosaic image", "Export individual images", "Create linked maps", "Add click event to map"]
+}

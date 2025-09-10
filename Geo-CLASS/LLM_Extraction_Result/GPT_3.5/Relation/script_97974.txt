@@ -1,0 +1,18 @@
+{
+    "relation_1": {
+        "DataSource": ["users/EL/Grenada"],
+        "Function": ["Buffer creation around country borders"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LE7_L1T"],
+        "Function": ["Image collection filtering based on date and cloud cover", "Composite creation for Landsat 7"]
+    },
+    "relation_3": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_RT"],
+        "Function": ["Image collection filtering based on date and cloud cover", "Composite creation for Landsat 8"]
+    },
+    "relation_4": {
+        "DataSource": ["users/EL/G_forest"],
+        "Function": ["Land change classification using CART classifier"]
+    }
+}

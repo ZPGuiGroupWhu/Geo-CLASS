@@ -1,0 +1,5 @@
+{
+  "Theme": ["Locust damage assessment using remote sensing"],
+  "DataSource": ["MODIS/MOD09GA_006_NDVI", "USGS/SRTMGL1_003", "MODIS/006/MCD12Q1", "COPERNICUS/S2_SR"],
+  "Function": ["Filter image collection by date range and area of interest", "Compute NDVI values for an image", "Create a buffer around sample points", "Extract RGB image with the greenest pixels", "Compute mean NDVI values for each step"]
+}

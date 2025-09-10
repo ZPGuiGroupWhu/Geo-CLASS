@@ -1,0 +1,36 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/khoirurrizqi/Jawa"
+        ],
+        "Function": [
+            "Cloud Masking And Quality Filtering",
+            "Metadata Filtering",
+            "NDWI (Normalized Difference Water Index calculation)",
+            "Band Synthesis",
+            "NDWI (Normalized Difference Water Index calculation)",
+            "Vegetation And Water Indices Calculation",
+            "Vegetation And Water Indices Calculation",
+            "Vegetation And Water Indices Calculation",
+            "Renaming image bands",
+            "Image Band Manipulation"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "Cloud Masking And Quality Filtering",
+            "Metadata Filtering",
+            "NDWI (Normalized Difference Water Index calculation)",
+            "Band Synthesis",
+            "NDWI (Normalized Difference Water Index calculation)",
+            "Vegetation And Water Indices Calculation",
+            "Vegetation And Water Indices Calculation",
+            "Vegetation And Water Indices Calculation",
+            "Renaming image bands",
+            "Image Band Manipulation"
+        ]
+    }
+}

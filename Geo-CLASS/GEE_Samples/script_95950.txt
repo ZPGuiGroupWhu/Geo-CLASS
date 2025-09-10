@@ -1,0 +1,298 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var geometry = 
+    /* color: #d63000 */
+    /* shown: false */
+    ee.Geometry.Polygon(
+        [[[50.934469072162656, 35.82160912089946],
+          [50.934469072162656, 35.79515853029836],
+          [50.97978767567828, 35.79515853029836],
+          [50.97978767567828, 35.82160912089946]]], null, false);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+var ROI = geometry
+
+
+
+function maskS2clouds(image) {
+
+  var qa = image.select('QA60');
+
+
+
+  // Bits 10 and 11 are clouds and cirrus, respectively.
+
+  var cloudBitMask = 1 << 10;
+
+  var cirrusBitMask = 1 << 11;
+
+
+
+  // Both flags should be set to zero, indicating clear conditions.
+
+  var mask = qa.bitwiseAnd(cloudBitMask).eq(0)
+
+      .and(qa.bitwiseAnd(cirrusBitMask).eq(0));
+
+
+
+  return image.updateMask(mask).divide(10000).copyProperties(image,['system:time_start','system:time_end']);
+
+}
+
+
+
+
+
+var dataset =ee.ImageCollection('COPERNICUS/S2')
+
+                  .filterDate('2020-06-06','2020-08-15')
+
+                  .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE',5))
+
+                  .filterBounds(ROI)
+
+                  .map(maskS2clouds) 
+
+
+
+var index = dataset.map(
+
+  function(img){
+
+var bands = img
+
+var clip = bands.clip(ROI);
+
+var ndvi = clip.normalizedDifference(['B8','B4']).rename('ndvi');
+
+var red=clip.select('B4').rename('red');
+
+return ndvi.addBands(red).copyProperties(img,['system:time_start','system:time_end'])
+
+ });
+
+
+
+
+
+
+
+var MOD = ee.ImageCollection(index)
+
+          .select('ndvi')
+
+Map.centerObject(ROI,12)
+
+
+
+
+
+
+
+var addDate = function(image) {
+
+ 
+
+ 
+
+
+
+ var year = image.date().getRelative('year', 'year');
+
+ var yearBand = ee.Image.constant(year).uint16().rename('year')
+
+  yearBand = yearBand.updateMask(image.select('ndvi').mask())
+
+  var month = image.date().getRelative('month', 'year');
+
+ var monthBand = ee.Image.constant(month).uint16().rename('month')
+
+  monthBand = monthBand.updateMask(image.select('ndvi').mask())
+
+  var day = image.date().getRelative('day','month');
+
+  var dayBand = ee.Image.constant(day).uint16().rename('day')
+
+  dayBand = dayBand.updateMask(image.select('ndvi').mask())
+
+
+
+  return image.addBands(yearBand).addBands(monthBand).addBands(dayBand);
+
+  
+
+  
+
+  };
+
+  
+
+  
+
+var NDVI = MOD.map(addDate)
+
+print('NDVI', NDVI)
+
+// turn image collection into an array
+
+var array = NDVI.toArray()
+
+print('array', array)
+
+// sort array by the first band, keeping other bands
+
+var axes = { image:0, band:1 }
+
+print('axes', axes)
+
+var sort = array.arraySlice(axes.band, 0, 1);  // select bands from index 0 to 1 (NDVI)
+
+print('sort', sort)
+
+var sorted = array.arraySort(sort);
+
+print('sorted', sorted)
+
+
+
+
+
+// take the first image only (MAX NDVI)
+
+var length = sorted.arrayLength(axes.image)
+
+var valuesMax = sorted.arraySlice(axes.image, length.subtract(1), length);
+
+var valuesMin = sorted.arraySlice(axes.image, 0, 1);
+
+
+
+
+
+
+
+
+
+
+
+
+
+// convert back to an image  
+
+var max = valuesMax.arrayProject([axes.band]).arrayFlatten([['ndvi','year','month','day']])
+
+var min = valuesMin.arrayProject([axes.band]).arrayFlatten([['ndvi','year','month','day']])
+
+print(max,'MAX')
+
+// add to map
+
+
+
+  var p1 = ee.Geometry.Point([50.94910404960741 ,  35.80488179725941]);
+
+Map.addLayer(p1, {min: 0, max: 1}, 'value' )
+
+
+
+
+
+var ndviMax = max.select(0)
+
+var yearMax = max.select(1)
+
+var monthMax = max.select(2)
+
+var dayMax = max.select(3)
+
+
+
+print(yearMax,'yearMax')
+
+print(monthMax,'monthMax')
+
+print(dayMax,'dayMax')
+
+
+
+
+
+Map.addLayer(ndviMax.clip(ROI), {min: 0, max: 1}, 'NDVI max value',0 );
+
+Map.addLayer(yearMax.clip(ROI).randomVisualizer(), {}, 'NDVI day for max ',0);
+
+Map.addLayer(monthMax.clip(ROI).randomVisualizer(), {}, 'NDVI day for max ',0);
+
+Map.addLayer(dayMax.clip(ROI).randomVisualizer(), {}, 'NDVI day for max ',0);
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+var reduced = yearMax.reduceRegion({
+
+    reducer:ee.Reducer.toList(),
+
+    geometry:ROI,
+
+    maxPixels:1e8,
+
+    scale:10});
+
+
+
+print("reduced", reduced);
+
+print(('The list of dictionary keys', reduced.keys());
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+print(month1,'m1')
+
+print(day1,'d1')
+
+
+
+var pointtime= ee.Date.fromYMD( ee.Number(year1),ee.Number(month1),ee.Number(day1));
+
+
+
+ee.Number(month1),
+
+
+
+print(pointtime,'pointtime');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

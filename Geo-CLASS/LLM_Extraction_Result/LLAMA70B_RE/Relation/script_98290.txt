@@ -1,0 +1,29 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "Cloud masking",
+            "Image collection filtering"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1"
+        ],
+        "Function": [
+            "Image collection filtering"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "users/nclinton/demo_landcover_labels"
+        ],
+        "Function": [
+            "Image classification",
+            "Accuracy assessment",
+            "Area calculation"
+        ]
+    }
+}

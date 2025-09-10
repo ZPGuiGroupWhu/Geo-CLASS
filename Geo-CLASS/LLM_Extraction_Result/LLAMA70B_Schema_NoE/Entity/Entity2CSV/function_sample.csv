@@ -1,0 +1,1314 @@
+ID,Script_ID,Entity_Type,Value
+1,script_102957.txt,Function,Filtering Landsat 9 imagery to Los Angeles county and a specific time window
+2,script_102957.txt,Function,Applying clear pixel mask to the imagery
+3,script_102957.txt,Function,Applying cloud and cloud shadow mask to the imagery
+4,script_102957.txt,Function,Converting digital numbers to surface reflectance
+5,script_102957.txt,Function,Creating a median composite image from the filtered and masked imagery
+6,script_10376.txt,Function,Filtering image collection by date and extent
+7,script_10376.txt,Function,Applying scale factors to optical and thermal bands
+8,script_10376.txt,Function,Visualizing images in different bands and combinations
+9,script_10376.txt,Function,Exporting images to Google Drive
+10,script_103827.txt,Function,getWeeklySentinelComposite function for compositing Sentinel-1 images
+11,script_103827.txt,Function,addLayerSelector function for adding layer selection widgets to maps
+12,script_103827.txt,Function,updateMap function for updating maps based on user selection
+13,script_106121.txt,Function,"Filtering Sentinel-2 image collection by cloud percentage, date, and geometry"
+14,script_106121.txt,Function,Selecting a single band from the filtered image collection
+15,script_106121.txt,Function,Reprojecting the image to EPSG:4326
+16,script_106121.txt,Function,Exporting the reprojected image to Google Drive
+17,script_106121.txt,Function,Visualizing the raw and reprojected images on a map
+18,script_10828.txt,Function,getGlobalRoi: generates a global region of interest
+19,script_10828.txt,Function,maskClouds: masks clouds in MODIS images
+20,script_10828.txt,Function,cal_nirv: calculates NIRV values from MODIS images
+21,script_10828.txt,Function,pkg_smooth.linearInterp: performs linear interpolation on NIRV values
+22,script_10828.txt,Function,fill: extracts point information from NIRV images
+23,script_110133.txt,Function,Filtering Sentinel-1 GRD data by predefined parameters
+24,script_110133.txt,Function,Selecting images by predefined dates
+25,script_110133.txt,Function,Creating a mosaic of selected tiles and clipping to study area
+26,script_110133.txt,Function,Applying reduce radar speckle by smoothing
+27,script_110133.txt,Function,Calculating flood extent
+28,script_110133.txt,Function,Refining flood result using additional datasets
+29,script_110133.txt,Function,Calculating flood extent area
+30,script_110133.txt,Function,Damage assessment
+31,script_110133.txt,Function,Exposed population density calculation
+32,script_118175.txt,Function,applyScaleFactors: scales optical and thermal bands of Landsat imagery
+33,script_118175.txt,Function,maskS2Clouds: masks clouds in Sentinel-2 imagery
+34,script_118175.txt,Function,add_NDVI: calculates Normalized Difference Vegetation Index
+35,script_118175.txt,Function,add_NDWI: calculates Normalized Difference Water Index
+36,script_118175.txt,Function,add_MNDWI: calculates Modified Normalized Difference Water Index
+37,script_118175.txt,Function,add_NDSI: calculates Normalized Difference Snow Index
+38,script_118175.txt,Function,add_EWI: calculates Enhanced Wetness Index
+39,script_118175.txt,Function,add_ICE: extracts ice cover information from Sentinel-2 imagery
+40,script_119133.txt,Function,Normalized Burn Ratio (NBR) calculation
+41,script_119133.txt,Function,Difference NBR (dNBR) calculation
+42,script_119133.txt,Function,Layer stacking
+43,script_119133.txt,Function,Training dataset generation
+44,script_119133.txt,Function,Weka Cascade K-Means clustering
+45,script_119133.txt,Function,Image classification
+46,script_119133.txt,Function,Statistics calculation
+47,script_119133.txt,Function,Visualization
+48,script_119133.txt,Function,Filtering
+49,script_119133.txt,Function,Masking
+50,script_119133.txt,Function,Image multiplication
+51,script_11983.txt,Function,maskL8sr (cloud masking and image correction)
+52,script_11983.txt,Function,ndvi (calculating Normalized Difference Vegetation Index)
+53,script_11983.txt,Function,image filtering and compositing
+54,script_11983.txt,Function,image differencing and anomaly calculation
+55,script_120271.txt,Function,addNDVI function to calculate NDVI band
+56,script_120271.txt,Function,median function to calculate median image
+57,script_120271.txt,Function,clip function to clip image to testing area
+58,script_120271.txt,Function,select function to select NDVI band
+59,script_120271.txt,Function,reduceRegion function to calculate percentile
+60,script_120271.txt,Function,Map.addLayer function to add layers to the map
+61,script_120557.txt,Function,Filtering the region of interest (Florida) from the TIGER/2016/States feature collection
+62,script_120557.txt,Function,Filtering Landsat 8 images within the region of interest and date range
+63,script_120557.txt,Function,Extracting QA bits for cloud masking
+64,script_120557.txt,Function,Masking out cloudy pixels
+65,script_120557.txt,Function,Applying decision tree classification for land cover types (water and vegetation)
+66,script_125294.txt,Function,Cloud masking for Landsat 5 images
+67,script_125294.txt,Function,Image collection filtering and reduction
+68,script_125294.txt,Function,Percentile calculation and image clipping
+69,script_125294.txt,Function,Map visualization and layering
+70,script_125294.txt,Function,Image export to Google Drive
+71,script_144864.txt,Function,Filtering and selecting administrative boundaries
+72,script_144864.txt,Function,Cloud masking and image filtering
+73,script_144864.txt,Function,Image collection and mosaicking
+74,script_144864.txt,Function,NDVI calculation and land cover classification
+75,script_144864.txt,Function,Area calculation and statistics
+76,script_146128.txt,Function,Filtering and sorting Sentinel-2 images by date and cloud cover
+77,script_146128.txt,Function,Merging feature collections
+78,script_146128.txt,Function,Creating training data using sample regions
+79,script_146128.txt,Function,Training a classifier using CART algorithm
+80,script_146128.txt,Function,Running classification on Sentinel-2 image
+81,script_15043.txt,Function,Sample regions for training data
+82,script_15043.txt,Function,Classify images using Random Forest and CART classifiers
+83,script_15043.txt,Function,Compute variable importance
+84,script_15043.txt,Function,Classify test data
+85,script_15043.txt,Function,Accuracy assessment
+86,script_15043.txt,Function,Visualize results
+87,script_155017.txt,Function,Filtering MODIS images by bounds and date
+88,script_155017.txt,Function,Clipping images to Himachal Pradesh region
+89,script_155017.txt,Function,Scaling LST values
+90,script_155017.txt,Function,Reducing regions to mean LST values
+91,script_155017.txt,Function,Joining tables by label and imageId
+92,script_155017.txt,Function,Exporting results to CSV
+93,script_165234.txt,Function,Filtering MODIS data by year (2019) and applying cloud mask
+94,script_165234.txt,Function,Scaling MODIS data
+95,script_165234.txt,Function,Calculating NDVI
+96,script_165234.txt,Function,"Extracting date, month, and day of year from MODIS data"
+97,script_165234.txt,Function,Creating a quality mosaic of NDVI
+98,script_165234.txt,Function,"Visualizing NDVI, greenest pixel, greenest month, and greenest day of year"
+99,script_173652.txt,Function,maskL8sr
+100,script_173652.txt,Function,filterDate
+101,script_173652.txt,Function,map
+102,script_173652.txt,Function,clip
+103,script_173652.txt,Function,median
+104,script_173652.txt,Function,reduceRegions
+105,script_173652.txt,Function,Export.table.toDrive
+106,script_174474.txt,Function,Filtering image collection by cloud cover and date
+107,script_174474.txt,Function,Masking clouds and shadows in images
+108,script_174474.txt,Function,Calculating NDVI
+109,script_174474.txt,Function,Clipping images to a specific geometry
+110,script_174474.txt,Function,Compositing images
+111,script_174474.txt,Function,Adding layers to the map
+112,script_174747.txt,Function,Filtering country boundaries
+113,script_174747.txt,Function,Importing LST image collection
+114,script_174747.txt,Function,Scaling to Kelvin and converting to Celsius
+115,script_174747.txt,Function,Charting time series of LST
+116,script_174747.txt,Function,Calculating 8-day mean temperature
+117,script_174747.txt,Function,Testing trend with Sen's slope
+118,script_174747.txt,Function,Exporting images to Drive
+119,script_179626.txt,Function,Cloud masking using Landsat 8 imagery
+120,script_179626.txt,Function,NDVI calculation and visualization
+121,script_179626.txt,Function,Thermal band selection and visualization
+122,script_179626.txt,Function,Fractional Vegetation Cover (FV) calculation
+123,script_179626.txt,Function,Emissivity (EM) calculation
+124,script_179626.txt,Function,Land Surface Temperature (LST) calculation and visualization
+125,script_180257.txt,Function,Filtering Landsat 7 imagery by date
+126,script_180257.txt,Function,Painting a feature collection onto an image
+127,script_180257.txt,Function,Buffering points
+128,script_180257.txt,Function,Calculating zonal statistics
+129,script_180257.txt,Function,Masking clouds and shadows in Landsat 7 imagery
+130,script_180257.txt,Function,Renaming bands in Landsat 7 imagery
+131,script_180257.txt,Function,Preparing Landsat 7 imagery for analysis
+132,script_186294.txt,Function,Filtering Sentinel-2 images by date and bounds
+133,script_186294.txt,Function,Applying NDVI function to the image collection
+134,script_186294.txt,Function,Masking images using QA60 band
+135,script_186294.txt,Function,Clipping and visualizing NDVI results
+136,script_186294.txt,Function,Exporting NDVI image to Google Drive
+137,script_186319.txt,Function,Filtering and sorting image collections
+138,script_186319.txt,Function,Calculating NDVI and NBR indices
+139,script_186319.txt,Function,Mosaicking and exporting images
+140,script_186319.txt,Function,Visualizing and comparing images
+141,script_186319.txt,Function,Detecting forest loss and deforestation
+142,script_186320.txt,Function,Filtering and sorting image collection
+143,script_186320.txt,Function,Calculating NDVI and NBR
+144,script_186320.txt,Function,Exporting image properties and mosaic
+145,script_186320.txt,Function,Visualizing images with different visualization options
+146,script_186321.txt,Function,Filtering and sorting image collection
+147,script_186321.txt,Function,Calculating NDVI and NBR
+148,script_186321.txt,Function,Exporting image properties and mosaic
+149,script_186321.txt,Function,Visualizing images with different visualization options
+150,script_186323.txt,Function,Image collection filtering and sorting
+151,script_186323.txt,Function,NDVI and NBR calculation
+152,script_186323.txt,Function,Image masking and mosaicking
+153,script_186323.txt,Function,Feature collection creation and manipulation
+154,script_186323.txt,Function,Image exporting and visualization
+155,script_186325.txt,Function,Image filtering and sorting
+156,script_186325.txt,Function,NDVI and NBR calculation
+157,script_186325.txt,Function,Image mosaicking and exporting
+158,script_186325.txt,Function,Feature collection creation and exporting
+159,script_186325.txt,Function,Map visualization and layer management
+160,script_186326.txt,Function,Filtering image collection by date and bounds
+161,script_186326.txt,Function,Calculating NDVI and NBR
+162,script_186326.txt,Function,Exporting image properties to CSV
+163,script_186326.txt,Function,Creating and exporting mosaic
+164,script_186326.txt,Function,Exporting individual scenes
+165,script_186329.txt,Function,Filtering and sorting image collections
+166,script_186329.txt,Function,Calculating NDVI and NBR indices
+167,script_186329.txt,Function,Mosaicking images
+168,script_186329.txt,Function,Exporting image properties and mosaics
+169,script_186329.txt,Function,Visualizing and comparing images
+170,script_186329.txt,Function,Detecting forest loss and deforestation
+171,script_186332.txt,Function,Buffer creation around sugar mills
+172,script_186332.txt,Function,Image collection creation and filtering
+173,script_186332.txt,Function,NDVI calculation and addition to image collection
+174,script_186332.txt,Function,Multiband image creation for unsupervised classification
+175,script_186332.txt,Function,Training dataset creation
+176,script_186332.txt,Function,Unsupervised classification using k-means clustering
+177,script_186332.txt,Function,Class merging and refinement
+178,script_186332.txt,Function,Layer visualization and mapping
+179,script_186333.txt,Function,Buffer creation around sugar mills
+180,script_186333.txt,Function,Image collection creation and filtering by date
+181,script_186333.txt,Function,NDVI calculation and addition to image collection
+182,script_186333.txt,Function,Multiband image creation for unsupervised classification
+183,script_186333.txt,Function,Training dataset creation and clusterer training
+184,script_186333.txt,Function,Unsupervised classification and clustering
+185,script_186333.txt,Function,Merging and refining of classes
+186,script_186333.txt,Function,Visualization of results
+187,script_186334.txt,Function,Buffer creation around sugar mills
+188,script_186334.txt,Function,Image collection creation and filtering
+189,script_186334.txt,Function,NDVI calculation and addition to image collection
+190,script_186334.txt,Function,Multiband image creation for unsupervised classification
+191,script_186334.txt,Function,Training dataset creation
+192,script_186334.txt,Function,Unsupervised classification using k-means clustering
+193,script_186334.txt,Function,Class merging and refinement
+194,script_186334.txt,Function,Image visualization and mapping
+195,script_186356.txt,Function,Refined Lee speckle filtering
+196,script_186356.txt,Function,Image compositing
+197,script_186356.txt,Function,Image classification using CART classifier
+198,script_186365.txt,Function,Filtering and sorting of Landsat 8 images based on cloud cover and date
+199,script_186365.txt,Function,"Calculation of NDVI, EVI, NDWI, NDBI, BAI, NBRT, and NDSI indices"
+200,script_186365.txt,Function,Linear transformation and principal component analysis (PCA) of Landsat 5 images
+201,script_186365.txt,Function,Spectral unmixing of Landsat 8 images
+202,script_186365.txt,Function,HSV transform and pan-sharpening of Landsat 8 images
+203,script_186378.txt,Function,Add NDVI and time to images
+204,script_186378.txt,Function,Filter images by date and bounds
+205,script_186378.txt,Function,Map functions to image collections
+206,script_186378.txt,Function,Join image collections by date
+207,script_186378.txt,Function,Reduce regions for each station
+208,script_186380.txt,Function,buffer function to clip images to marshbird points
+209,script_186380.txt,Function,map over image collection
+210,script_186380.txt,Function,create cloud mask using the BQA band in LS 8 TOA imagery
+211,script_186380.txt,Function,add variables of interest to landsat 8 imagery
+212,script_186380.txt,Function,add variables of interest to landsat 7 imagery
+213,script_186380.txt,Function,create cloud score function for LS 7 imagery
+214,script_186380.txt,Function,calculate mean values around each marshbird survey point
+215,script_186380.txt,Function,generate monthly averages
+216,script_186418.txt,Function,filterCollection
+217,script_186418.txt,Function,getLandsatRAD
+218,script_186418.txt,Function,getLandsatTOA
+219,script_186418.txt,Function,getLandsatSR
+220,script_186418.txt,Function,getNCEP
+221,script_186418.txt,Function,addAtmosBands
+222,script_186418.txt,Function,joinLandsatCollections
+223,script_186418.txt,Function,addNDVI
+224,script_186418.txt,Function,coreEmissivity
+225,script_186418.txt,Function,getEmissivity
+226,script_186418.txt,Function,getPsis
+227,script_186418.txt,Function,getSurfaceTemp
+228,script_186442.txt,Function,Filtering and compositing of Landsat 8 images
+229,script_186442.txt,Function,Calculation of land surface temperature
+230,script_186442.txt,Function,Calculation of NDVI
+231,script_186442.txt,Function,Calculation of NMDI
+232,script_186442.txt,Function,Clipping of elevation data
+233,script_186442.txt,Function,Calculation of BAI
+234,script_186442.txt,Function,Training of classifiers
+235,script_186442.txt,Function,Classification of images using different classifiers
+236,script_186449.txt,Function,sampleRegions
+237,script_186449.txt,Function,select
+238,script_186449.txt,Function,merge
+239,script_186449.txt,Function,addLayer
+240,script_186449.txt,Function,setCenter
+241,script_186449.txt,Function,sampleRegions
+242,script_186449.txt,Function,feature.groups
+243,script_186449.txt,Function,setChartType
+244,script_186449.txt,Function,setOptions
+245,script_186466.txt,Function,Filtering Sentinel-1 images by polarization and date
+246,script_186466.txt,Function,Creating a composite image from means at different polarizations and look angles
+247,script_186466.txt,Function,Exporting images to Google Drive
+248,script_186466.txt,Function,Creating a grid of linked maps for visualization
+249,script_186503.txt,Function,Refined Lee speckle filtering
+250,script_186503.txt,Function,CART classification
+251,script_186503.txt,Function,Image clipping
+252,script_186503.txt,Function,Image conversion between dB and natural units
+253,script_186503.txt,Function,Image filtering using mean and variance calculations
+254,script_186503.txt,Function,Image visualization
+255,script_186507.txt,Function,landsatCloudScore
+256,script_186507.txt,Function,cFmaskCloud
+257,script_186507.txt,Function,cFmaskCloudShadow
+258,script_186507.txt,Function,simpleTDOM2
+259,script_186507.txt,Function,addIndices
+260,script_186507.txt,Function,medoidMosaicMSD
+261,script_186507.txt,Function,exportToAssetWrapper
+262,script_186528.txt,Function,Refined Lee speckle filtering
+263,script_186528.txt,Function,Image compositing
+264,script_186528.txt,Function,Image classification using CART classifier
+265,script_186540.txt,Function,Filtering Landsat 8 images by date and location
+266,script_186540.txt,Function,Cloud masking using simpleCloudScore algorithm
+267,script_186540.txt,Function,Calculating NDVI
+268,script_186540.txt,Function,Reducing and exporting mean NDVI values for rich forest and no forest areas
+269,script_186548.txt,Function,Refined Lee filter for speckle noise reduction
+270,script_186548.txt,Function,Angle correction using toGamma0 function
+271,script_186548.txt,Function,Surface water mask computation using Canny Edge detector with Otsu thresholding
+272,script_186548.txt,Function,Perona Malik filter for image denoising
+273,script_186562.txt,Function,Filtering and sorting image collections by date and spatial bounds
+274,script_186562.txt,Function,Calculating NDVI and NBR indices
+275,script_186562.txt,Function,Exporting images to Google Drive
+276,script_186562.txt,Function,Visualizing images using different visualization options
+277,script_186562.txt,Function,Detecting forest loss and land cover changes
+278,script_186570.txt,Function,Image collection filtering and sorting
+279,script_186570.txt,Function,NDVI and NBR calculation
+280,script_186570.txt,Function,Image masking and mosaicking
+281,script_186570.txt,Function,Feature collection creation and property copying
+282,script_186570.txt,Function,Image exporting and visualization
+283,script_186601.txt,Function,Filtering Sentinel-1 images by polarization and date
+284,script_186601.txt,Function,Creating a composite image from means at different polarizations and look angles
+285,script_186601.txt,Function,Exporting images to Google Drive
+286,script_186601.txt,Function,Creating a grid of linked maps for visualization
+287,script_186605.txt,Function,Image collection filtering and sorting
+288,script_186605.txt,Function,NDVI and NBR calculation
+289,script_186605.txt,Function,Image masking and mosaicking
+290,script_186605.txt,Function,Feature collection painting and visualization
+291,script_186605.txt,Function,Map creation and linking
+292,script_186607.txt,Function,Filtering image collections by date and bounds
+293,script_186607.txt,Function,Calculating NDVI and NBR indices
+294,script_186607.txt,Function,Mosaicking images
+295,script_186607.txt,Function,Visualizing images with different visualization options
+296,script_186607.txt,Function,Creating a map with multiple layers and controls
+297,script_186815.txt,Function,Image collection filtering and sorting
+298,script_186815.txt,Function,NDVI and NBR calculation
+299,script_186815.txt,Function,Image masking and mosaicking
+300,script_186815.txt,Function,Image exporting and visualization
+301,script_186815.txt,Function,Feature collection creation and manipulation
+302,script_186815.txt,Function,Map visualization and interaction
+303,script_186822.txt,Function,Buffering features to reduce border effect
+304,script_186822.txt,Function,"Filtering satellite images by date, polarization, resolution, and orbit"
+305,script_186822.txt,Function,Converting satellite data to natural values and back to dB
+306,script_186822.txt,Function,Calculating mean and standard deviation for buffered fields
+307,script_186822.txt,Function,Exporting data tables to drive
+308,script_186829.txt,Function,Masking forested and deforested areas using Hansen et al. forest change dataset
+309,script_186829.txt,Function,Filtering Landsat 8 images by forested areas
+310,script_186829.txt,Function,Calculating mean air surface temperature over forested areas in the Amazon Basin
+311,script_186856.txt,Function,sentinelCloudScore: computes cloud score for Sentinel-2 images
+312,script_186856.txt,Function,maskS2clouds: masks clouds using Sentinel-2 QA band
+313,script_186856.txt,Function,simpleTDOM2: masks dark outliers in time series
+314,script_186856.txt,Function,projectShadows: projects cloud shadows based on solar geometry
+315,script_186856.txt,Function,bustClouds: busts clouds from Sentinel-2 image
+316,script_186856.txt,Function,wrapIt: wraps entire cloud masking and shadow detection process
+317,script_186856.txt,Function,getS2: gets Sentinel-2 data for a given geometry
+318,script_186856.txt,Function,dailyMosaics: simplifies data into daily mosaics
+319,script_186886.txt,Function,Filtering and sorting image collections
+320,script_186886.txt,Function,Calculating NDVI and NBR indices
+321,script_186886.txt,Function,Mosaicking and exporting images
+322,script_186886.txt,Function,Visualizing and comparing images
+323,script_186886.txt,Function,Detecting forest fires and monitoring land cover changes
+324,script_186888.txt,Function,Cloud masking using fmask
+325,script_186888.txt,Function,Incoming shortwave radiation calculation
+326,script_186888.txt,Function,Radiance calculation
+327,script_186888.txt,Function,NDVI and NDWI calculation
+328,script_186888.txt,Function,Land surface temperature calculation
+329,script_186888.txt,Function,Scatter plot of LST vs NDVI
+330,script_186892.txt,Function,Filtering Sentinel-2 images by cloud cover and date
+331,script_186892.txt,Function,Calculating NDVI and NBR indices
+332,script_186892.txt,Function,Mosaicking images
+333,script_186892.txt,Function,Exporting image properties to a CSV file
+334,script_186892.txt,Function,Creating a mosaic and exporting it to Drive
+335,script_186892.txt,Function,Exporting individual scenes to Drive
+336,script_186892.txt,Function,Visualizing images using different visualization options
+337,script_186914.txt,Function,Load Sentinel-1 C-band SAR Ground Range collection and filter by ROI and polarisation
+338,script_186914.txt,Function,Mosaic images before and after event of interest in specific time ranges
+339,script_186914.txt,Function,Threshold smoothed radar intensities to identify flooded areas
+340,script_186914.txt,Function,Topological intersection and calculation of difference between before and after flood images
+341,script_186914.txt,Function,"Display map with before, after, and difference images"
+342,script_186914.txt,Function,"Generate thumbnails of before, after, and difference images"
+343,script_186914.txt,Function,Update flooded area after thresholding and clean-up of false positive pixels
+344,script_186914.txt,Function,Convert unmasked pixels to polygons and calculate population within flooded areas
+345,script_186915.txt,Function,Load Sentinel-1 C-band SAR Ground Range collection and filter by ROI and polarisation
+346,script_186915.txt,Function,Mosaic images before and after event of interest in specific time ranges
+347,script_186915.txt,Function,Threshold smoothed radar intensities to identify flooded areas
+348,script_186915.txt,Function,Topological intersection and calculation of difference between before and after flood images
+349,script_186915.txt,Function,"Display map with before, after, and difference images"
+350,script_186915.txt,Function,"Generate thumbnails of before, after, and difference images"
+351,script_186915.txt,Function,Update flooded area after thresholding and clean-up of false positive pixels
+352,script_186915.txt,Function,Convert unmasked pixels to polygons and calculate population within flooded areas
+353,script_186915.txt,Function,Export flooded area to Drive
+354,script_186940.txt,Function,Harmonization of Landsat 8 to Landsat 7 reflectance bands
+355,script_186940.txt,Function,Retrieval of surface reflectance image collections for a given year and area of interest
+356,script_186940.txt,Function,Medoid compositing of image collections to reduce to single image per year
+357,script_186940.txt,Function,Building of annual mosaic collection from medoid composites
+358,script_186974.txt,Function,Cloud masking and band selection for Landsat 5
+359,script_186974.txt,Function,Cloud masking and band selection for Landsat 7
+360,script_186974.txt,Function,Cloud masking and band selection for Landsat 8
+361,script_186974.txt,Function,Merging and renaming of satellite collections
+362,script_186974.txt,Function,Calculation of NDWI and MNDWI indices
+363,script_186974.txt,Function,Generation of annual means for NDWI and MNDWI
+364,script_187038.txt,Function,Image collection filtering and renaming
+365,script_187038.txt,Function,Feature collection filtering and geometry extraction
+366,script_187038.txt,Function,Image masking and cloud cover calculation
+367,script_187038.txt,Function,Image classification and water class extraction
+368,script_187038.txt,Function,Image collection merging and reduction
+369,script_187038.txt,Function,Vector region creation and raster exporting
+370,script_187038.txt,Function,Image exporting to Drive
+371,script_187038.txt,Function,Metadata extraction and exporting to CSV
+372,script_187125.txt,Function,"Process Sentinel-2 image by filtering, resampling, and normalizing bands"
+373,script_187125.txt,Function,Compute NDWI and MNDWI indices for water detection
+374,script_187125.txt,Function,Apply Otsu thresholding method for automatic threshold selection
+375,script_187125.txt,Function,Detect water bodies using Canny edge detection and thresholding
+376,script_187125.txt,Function,Compute JRC monthly water occurrence for a few months
+377,script_187131.txt,Function,Filtering regions by metadata
+378,script_187131.txt,Function,Filtering hotspots by year and region
+379,script_187131.txt,Function,Creating cloud-free composites
+380,script_187131.txt,Function,Removing clouds from composites
+381,script_187131.txt,Function,Calculating NBR indices
+382,script_187131.txt,Function,Creating burned area masks
+383,script_187131.txt,Function,Reducing to vectors
+384,script_187131.txt,Function,Exporting to Drive
+385,script_187137.txt,Function,Extracting Land Surface Temperature (LST) from MODIS images
+386,script_187137.txt,Function,Transforming Kelvin to Celsius
+387,script_187137.txt,Function,Aggregating images by year
+388,script_187137.txt,Function,Calculating annual percentiles
+389,script_187137.txt,Function,Generating dates by months for all years
+390,script_187137.txt,Function,"Calculating monthly max, min, and mean temperatures"
+391,script_187137.txt,Function,"Visualizing monthly min, max, and mean temperatures"
+392,script_187137.txt,Function,"Calculating temperature max, min, and mean by month of the year"
+393,script_187138.txt,Function,Masking forested and deforested areas using Hansen et al. forest change dataset
+394,script_187138.txt,Function,Filtering Landsat 8 images by forested areas
+395,script_187138.txt,Function,Calculating mean air surface temperature over forested areas in the Amazon Basin
+396,script_187226.txt,Function,sentinel2toa: converts Sentinel-2 image to top-of-atmosphere reflectance
+397,script_187226.txt,Function,sentinelCloudScore: computes cloud score based on several indicators of cloudiness
+398,script_187226.txt,Function,shadowMask: detects cloud shadows based on solar geometry and dark pixel detection
+399,script_187226.txt,Function,waterMask: detects water based on NDWI
+400,script_187226.txt,Function,"cloud_and_shadow_mask: combines cloud, shadow, and water masks to filter out unwanted features"
+401,script_187248.txt,Function,Masking cloud shadows and clouds from Landsat 8 images
+402,script_187248.txt,Function,Calculating NDVI and thermal bands
+403,script_187248.txt,Function,Calculating fractional vegetation and emissivity
+404,script_187248.txt,Function,Calculating Land Surface Temperature (LST)
+405,script_187481.txt,Function,Filtering Sentinel-1 images by date and polarization
+406,script_187481.txt,Function,Applying smoothing filter to reduce noise
+407,script_187481.txt,Function,Calculating band ratio to identify flood areas
+408,script_187481.txt,Function,Generating histograms for backscatter values
+409,script_187523.txt,Function,Filtering Sentinel-1 images by geometry and date
+410,script_187523.txt,Function,Converting images from dB to natural scale
+411,script_187523.txt,Function,Smoothing images using focal median filter
+412,script_187523.txt,Function,Calculating band ratio and flood extent
+413,script_187523.txt,Function,Generating histograms of backscatter values
+414,script_187523.txt,Function,Visualizing flood and river extent using RGB composites
+415,script_187528.txt,Function,Filtering Sentinel-1 images by date and polarization
+416,script_187528.txt,Function,Applying smoothing filter to reduce noise
+417,script_187528.txt,Function,Calculating band ratio to identify flooded areas
+418,script_187528.txt,Function,Generating histograms for backscatter values
+419,script_187530.txt,Function,Filtering Sentinel-1 images by date and polarization
+420,script_187530.txt,Function,Applying smoothing filter to reduce noise
+421,script_187530.txt,Function,Calculating band ratios for flood mapping
+422,script_187530.txt,Function,Generating histograms for backscatter values
+423,script_187530.txt,Function,Creating RGB composites for visualization
+424,script_187532.txt,Function,Filtering Sentinel-1 images by ROI and date
+425,script_187532.txt,Function,Converting images from dB to natural scale
+426,script_187532.txt,Function,Smoothing images using focal median filter
+427,script_187532.txt,Function,Calculating band ratios
+428,script_187532.txt,Function,Generating histograms
+429,script_187532.txt,Function,"Classifying flood, wet, and dry areas"
+430,script_187532.txt,Function,Visualizing results on the map
+431,script_187532.txt,Function,Exporting flood image to Drive
+432,script_187533.txt,Function,Filtering Sentinel-1 images by date and polarization
+433,script_187533.txt,Function,Applying smoothing filter to reduce noise
+434,script_187533.txt,Function,Calculating band ratios for flood detection
+435,script_187533.txt,Function,Generating histograms for backscatter values
+436,script_187533.txt,Function,Visualizing flood extent using RGB composites
+437,script_187534.txt,Function,Filtering Sentinel-1 images by date and polarization
+438,script_187534.txt,Function,Applying smoothing filter to images
+439,script_187534.txt,Function,Calculating band ratios
+440,script_187534.txt,Function,Generating histograms
+441,script_187534.txt,Function,Classifying flood and water areas
+442,script_187535.txt,Function,Filtering Sentinel-1 images by date and polarization
+443,script_187535.txt,Function,Applying smoothing filter to images
+444,script_187535.txt,Function,Calculating band ratios and backscatter values
+445,script_187535.txt,Function,Generating histograms of image values
+446,script_187535.txt,Function,Classifying flood and river areas based on backscatter values
+447,script_187582.txt,Function,Masking clouds using Sentinel-2 QA band
+448,script_187582.txt,Function,"Computing vegetation indices (NDVI, SAVI, DVI, GNDVI, EVI, chl, SRI, GDVI, IPVI, NDWI, GI, GRVI)"
+449,script_187582.txt,Function,Classifying land cover using SVM classifier
+450,script_187582.txt,Function,Accuracy assessment using confusion matrix and kappa coefficient
+451,script_187585.txt,Function,Calculate average of MODIS EVI of each year
+452,script_187585.txt,Function,Perform Principal Component Analysis (PCA) on the average EVI images
+453,script_187586.txt,Function,Calculate average of MODIS EVI of each year
+454,script_187586.txt,Function,Perform Principal Component Analysis (PCA) on the average EVI images
+455,script_187587.txt,Function,Calculate average of MODIS EVI of each year
+456,script_187587.txt,Function,Perform Principal Component Analysis (PCA)
+457,script_187738.txt,Function,Load NAIP image collection and filter by date and bounds
+458,script_187738.txt,Function,Load CDL 2016 image and select cropland layer
+459,script_187738.txt,Function,Clip images to ROI and normalize
+460,script_187738.txt,Function,Create mosaic from NAIP scenes
+461,script_187738.txt,Function,Perform random forest classification
+462,script_187738.txt,Function,Perform object-based image analysis using SNIC
+463,script_187738.txt,Function,Compute cluster means and standard deviation
+464,script_187738.txt,Function,Compute cluster area and perimeter
+465,script_187738.txt,Function,Compute cluster width and height
+466,script_187738.txt,Function,Build new classifier with additional properties
+467,script_187738.txt,Function,Compute confusion matrix
+468,script_187749.txt,Function,Extracting maximum NDVI values for each year from 2000 to 2019
+469,script_187749.txt,Function,Performing linear trend analysis on the NDVI time series
+470,script_187749.txt,Function,Visualizing the trend analysis results
+471,script_187749.txt,Function,"Defining regions of interest (northwest, center, southeast) for time series analysis"
+472,script_187749.txt,Function,Generating NDVI time series charts for each region of interest
+473,script_187888.txt,Function,Cloud masking and NDVI calculation for Landsat 8 images
+474,script_187888.txt,Function,"Cloud masking and NDVI calculation for Landsat 4, 5, and 7 images"
+475,script_187888.txt,Function,Merging and renaming NDVI collections
+476,script_187888.txt,Function,Sampling NDVI values at intermediate points
+477,script_187888.txt,Function,Merging NDVI images into a single image
+478,script_187888.txt,Function,Sampling NDVI values at intermediate points for a single image
+479,script_187895.txt,Function,Filtering training points by land cover type
+480,script_187895.txt,Function,Cloud masking for Landsat 8 and 4-7
+481,script_187895.txt,Function,Calculating BSI for Landsat 8 and 4-7
+482,script_187895.txt,Function,Merging and renaming BSI collections
+483,script_187895.txt,Function,Sampling BSI values at training points
+484,script_187895.txt,Function,Exporting results to CSV
+485,script_188011.txt,Function,Filtering Landsat 8 TOA images by geometry and selecting B10 band
+486,script_188011.txt,Function,Converting Kelvin to Celsius
+487,script_188011.txt,Function,Clipping images to geometry
+488,script_188011.txt,Function,Calculating seasonal temperatures and elevations
+489,script_188011.txt,Function,"Reducing images to mean, max, and min values"
+490,script_188011.txt,Function,Exporting results to CSV files
+491,script_188011.txt,Function,Calculating NDVI values and filtering by count
+492,script_188011.txt,Function,"Reducing regions to mean, max, and min values"
+493,script_188011.txt,Function,Exporting results to CSV files
+494,script_188030.txt,Function,Cloud masking using BQA band
+495,script_188030.txt,Function,NDVI calculation using Landsat 8 bands
+496,script_188030.txt,Function,Clipping dataset according to geometry
+497,script_188030.txt,Function,Filtering dataset by date and bounds
+498,script_188030.txt,Function,Visualizing dataset using RGB and NDVI color palettes
+499,script_188030.txt,Function,Calculating mean and max values for each polygon
+500,script_188030.txt,Function,Exporting results to CSV files
+501,script_188052.txt,Function,Cloud masking for Landsat images
+502,script_188052.txt,Function,Calculating MNDWI index for Landsat images
+503,script_188052.txt,Function,Sentinel-2 based water detection
+504,script_188052.txt,Function,Otsu thresholding for water extraction
+505,script_188052.txt,Function,Water area calculation for Landsat and Sentinel-2 images
+506,script_188068.txt,Function,Filtering and selecting SAR images based on polarization and pass direction
+507,script_188068.txt,Function,Calculating the difference between before and after flood images
+508,script_188068.txt,Function,Applying a threshold to identify flooded areas
+509,script_188068.txt,Function,Calculating the area of flooded land
+510,script_188068.txt,Function,Calculating the population affected by the flood
+511,script_188068.txt,Function,Calculating the area of affected cropland and urban areas
+512,script_188147.txt,Function,Image collection creation and filtering
+513,script_188147.txt,Function,Feature collection creation and filtering
+514,script_188147.txt,Function,Image masking and clipping
+515,script_188147.txt,Function,Image compositing and mosaicking
+516,script_188147.txt,Function,Image classification using CART algorithm
+517,script_188147.txt,Function,Image ratio calculation
+518,script_188147.txt,Function,Image quality assessment
+519,script_188147.txt,Function,Change detection analysis
+520,script_188163.txt,Function,Merging and mosaicking of image collections
+521,script_188163.txt,Function,Clipping images to a country boundary
+522,script_188163.txt,Function,Applying filters to image collections
+523,script_188163.txt,Function,Calculating spectral indices
+524,script_188163.txt,Function,Classifying land cover using a Cart algorithm
+525,script_188163.txt,Function,Applying masks to classified images
+526,script_188182.txt,Function,Filtering and compositing Landsat images
+527,script_188182.txt,Function,Calculating spectral ratios
+528,script_188182.txt,Function,Classifying land cover using CART algorithm
+529,script_188182.txt,Function,"Applying masks for settlements, water bodies, and forest areas"
+530,script_188182.txt,Function,Correcting classification errors using feature collections
+531,script_188190.txt,Function,Filtering and compositing of Landsat and Sentinel-2 images
+532,script_188190.txt,Function,Clipping and masking of images using country and climatic zone boundaries
+533,script_188190.txt,Function,Calculation of vegetation indices and ratios
+534,script_188190.txt,Function,Land cover classification using CART algorithm
+535,script_188190.txt,Function,Change detection using Hansen forest change data
+536,script_188211.txt,Function,createLandsatCollection
+537,script_188211.txt,Function,maskL457sr
+538,script_188211.txt,Function,maskL8sr
+539,script_188211.txt,Function,excludeBand
+540,script_188211.txt,Function,formatDate
+541,script_188211.txt,Function,mergeObjects
+542,script_188211.txt,Function,Norm_ID
+543,script_188211.txt,Function,Two_Divide
+544,script_188211.txt,Function,cal_index
+545,script_188211.txt,Function,get_water
+546,script_188211.txt,Function,get_water_2
+547,script_188211.txt,Function,get_area
+548,script_188211.txt,Function,processSSC
+549,script_188217.txt,Function,maskL457sr
+550,script_188217.txt,Function,maskL8sr
+551,script_188217.txt,Function,renameBandsL8
+552,script_188217.txt,Function,addIndices
+553,script_188217.txt,Function,normalize
+554,script_188217.txt,Function,print_hist
+555,script_188217.txt,Function,classArea
+556,script_188217.txt,Function,create_chart
+557,script_188217.txt,Function,blend_image
+558,script_188217.txt,Function,fillImage
+559,script_188217.txt,Function,lulcreclassification
+560,script_188217.txt,Function,focal_reclass
+561,script_188217.txt,Function,combinatorialAnd
+562,script_188217.txt,Function,buffer_by_area
+563,script_188221.txt,Function,Filtering image collection by date range and selecting variables
+564,script_188221.txt,Function,Reducing region to get mean values of variables within a geometry
+565,script_188221.txt,Function,Mapping over image collection to extract mean values of variables
+566,script_188221.txt,Function,Exporting feature collection as a CSV to Google Drive
+567,script_188386.txt,Function,Image collection creation
+568,script_188386.txt,Function,Geometry definition and creation
+569,script_188397.txt,Function,Filtering MODIS images by date
+570,script_188397.txt,Function,Selecting BurnDate band
+571,script_188397.txt,Function,Creating a video thumbnail from the image collection
+572,script_188400.txt,Function,clipBorder
+573,script_188400.txt,Function,filterDate
+574,script_188400.txt,Function,limit
+575,script_188400.txt,Function,select
+576,script_188400.txt,Function,clip
+577,script_188400.txt,Function,map
+578,script_188401.txt,Function,clipBorder
+579,script_188401.txt,Function,filterDate
+580,script_188401.txt,Function,select
+581,script_188401.txt,Function,limit
+582,script_188401.txt,Function,map
+583,script_188412.txt,Function,Cloud masking using pixel QA band
+584,script_188412.txt,Function,Image filtering by date and geometry
+585,script_188412.txt,Function,Image clipping to geometry
+586,script_188412.txt,Function,Median image calculation
+587,script_188412.txt,Function,NDVI calculation
+588,script_188412.txt,Function,LST calculation using thermal band 10
+589,script_188412.txt,Function,Emissivity calculation
+590,script_188412.txt,Function,Fractional vegetation calculation
+591,script_188412.txt,Function,Image visualization and layer addition
+592,script_188413.txt,Function,Cloud masking using pixel QA band
+593,script_188413.txt,Function,Image filtering by date and geometry
+594,script_188413.txt,Function,Image clipping to geometry
+595,script_188413.txt,Function,Median image calculation
+596,script_188413.txt,Function,NDVI calculation
+597,script_188413.txt,Function,LST calculation using thermal band 10
+598,script_188413.txt,Function,Emissivity calculation
+599,script_188413.txt,Function,Fractional vegetation calculation
+600,script_188413.txt,Function,Image visualization and export to Drive
+601,script_188414.txt,Function,Cloud masking using pixel QA band
+602,script_188414.txt,Function,Image collection filtering by date and geometry
+603,script_188414.txt,Function,Image clipping to geometry
+604,script_188414.txt,Function,Median image calculation
+605,script_188414.txt,Function,NDVI calculation
+606,script_188414.txt,Function,LST calculation using thermal band 10
+607,script_188414.txt,Function,Emissivity calculation
+608,script_188414.txt,Function,Fractional vegetation calculation
+609,script_188414.txt,Function,Image visualization and export
+610,script_188419.txt,Function,Cloud masking using pixel QA band
+611,script_188419.txt,Function,Image filtering by date and geometry
+612,script_188419.txt,Function,Image clipping to geometry
+613,script_188419.txt,Function,Median image calculation
+614,script_188419.txt,Function,NDVI calculation
+615,script_188419.txt,Function,LST calculation using thermal band 10
+616,script_188419.txt,Function,Emissivity calculation
+617,script_188419.txt,Function,Fractional vegetation calculation
+618,script_188419.txt,Function,Image visualization and export to Drive
+619,script_188454.txt,Function,Filtering image collection by cloud probability
+620,script_188454.txt,Function,Creating a mosaic of images
+621,script_188454.txt,Function,Counting images in a collection
+622,script_188454.txt,Function,Masking clouds in an image
+623,script_188454.txt,Function,Calculating the sum of a collection
+624,script_188454.txt,Function,Calculating the percentage of cloud probability
+625,script_188455.txt,Function,Filtering image collection by date and cloud probability
+626,script_188455.txt,Function,Creating a mosaic of images
+627,script_188455.txt,Function,Masking clouds from images
+628,script_188455.txt,Function,Calculating sum of images
+629,script_188455.txt,Function,Calculating percentage of cloud cover
+630,script_188455.txt,Function,Exporting image to Drive
+631,script_188458.txt,Function,Filtering image collection by cloud probability
+632,script_188458.txt,Function,Creating a mosaic of images
+633,script_188458.txt,Function,Masking clouds from images
+634,script_188458.txt,Function,Calculating sum of images
+635,script_188458.txt,Function,Calculating percentage of cloud cover
+636,script_188458.txt,Function,Exporting image to Drive
+637,script_188465.txt,Function,Filtering image collection by date and bounds
+638,script_188465.txt,Function,Creating a mosaic of images
+639,script_188465.txt,Function,Reducing an image collection to a single image
+640,script_188465.txt,Function,Masking clouds in an image
+641,script_188465.txt,Function,Calculating the sum of a collection of images
+642,script_188502.txt,Function,"Filtering Sentinel-1 data by date, transmitter receiver polarization, instrument mode, and relative orbit number"
+643,script_188502.txt,Function,Applying OTSU thresholding to extract water bodies
+644,script_188502.txt,Function,Calculating water body area and generating a time series chart
+645,script_188502.txt,Function,Visualizing water body extraction results as an animation
+646,script_188506.txt,Function,Filtering image collection by date and cloud probability
+647,script_188506.txt,Function,Creating a mosaic of images for each day
+648,script_188506.txt,Function,Masking clouds from images
+649,script_188506.txt,Function,Calculating the sum of images
+650,script_188506.txt,Function,Calculating the percentage of cloud probability
+651,script_188509.txt,Function,Filtering and reducing CHIRPS image collection to calculate total precipitation
+652,script_188509.txt,Function,Filtering and reducing S2 cloud probability image collection to calculate cloud probability
+653,script_188509.txt,Function,Calculating correlation between precipitation and cloud probability using CrossCorrelation algorithm
+654,script_188509.txt,Function,Masking clouds using qualityMosaic and probability threshold
+655,script_188509.txt,Function,Calculating sum of cloud probability images using GPP_pre function
+656,script_188509.txt,Function,Calculating percentage of cloud probability using sum and count images
+657,script_188511.txt,Function,Filtering and reducing image collections
+658,script_188511.txt,Function,Clipping and masking images
+659,script_188511.txt,Function,Calculating cloud probability and precipitation
+660,script_188511.txt,Function,Performing cross-correlation analysis
+661,script_188511.txt,Function,Exporting images to Drive
+662,script_23533.txt,Function,Remapping land cover classes
+663,script_23533.txt,Function,Assembling image collection for land cover change detection
+664,script_23533.txt,Function,Applying BULC function for land cover classification and change detection
+665,script_28.txt,Function,Harmonization of Landsat 8 to Landsat 7
+666,script_28.txt,Function,Harmonization of TM and ETM+ to OLI
+667,script_28.txt,Function,Retrieval of surface reflectance collections
+668,script_28.txt,Function,Calculation of snow persistence
+669,script_28.txt,Function,Generation of HUC-based statistics
+670,script_28.txt,Function,Export of results to CSV file
+671,script_3043.txt,Function,renameOli
+672,script_3043.txt,Function,renameEtm
+673,script_3043.txt,Function,etmToOli
+674,script_3043.txt,Function,fmask
+675,script_3043.txt,Function,calNDVI
+676,script_3043.txt,Function,calmNDWI
+677,script_3043.txt,Function,calLSWI
+678,script_3043.txt,Function,calEVI
+679,script_3043.txt,Function,calAWEInsh
+680,script_3043.txt,Function,prepOli
+681,script_3043.txt,Function,prepEtm
+682,script_3043.txt,Function,colWF
+683,script_3043.txt,Function,colVF
+684,script_32.txt,Function,Generate daily composites of optical data
+685,script_32.txt,Function,Generate Sentinel-1 image collection for wet snow detection
+686,script_32.txt,Function,Create test mask by updating Sentinel-1 image with optical composite
+687,script_32.txt,Function,Generate stats for snow covered area/persistence
+688,script_35538.txt,Function,Filtering images by date and bounds
+689,script_35538.txt,Function,Calculating median image
+690,script_35538.txt,Function,Clipping image to ROI
+691,script_35538.txt,Function,Visualizing image
+692,script_35538.txt,Function,Calculating NDVI
+693,script_35538.txt,Function,Masking image based on NDVI threshold
+694,script_35538.txt,Function,Generating histogram for NDVI image
+695,script_41838.txt,Function,Filtering Landsat 8 images by date and cloud cover
+696,script_41838.txt,Function,Clipping images to a region of interest
+697,script_41838.txt,Function,Merging feature collections
+698,script_41838.txt,Function,Selecting bands for classification
+699,script_41838.txt,Function,Sampling regions for training
+700,script_41838.txt,Function,Training a random forest classifier
+701,script_41838.txt,Function,Classifying land cover
+702,script_41838.txt,Function,Visualizing classification results
+703,script_42.txt,Function,Filtering feature collection by country
+704,script_42.txt,Function,Selecting bands from images
+705,script_42.txt,Function,Applying reducer to image
+706,script_42.txt,Function,Creating random points
+707,script_42.txt,Function,Reducing regions
+708,script_42.txt,Function,Allocating points to training and validation
+709,script_42.txt,Function,Sampling regions
+710,script_42.txt,Function,Training random forest classifier
+711,script_42.txt,Function,Classifying image
+712,script_43.txt,Function,Get average canopy cover across a feature
+713,script_43.txt,Function,Get coordinate list of a feature
+714,script_43.txt,Function,Define a threshold for the example feature
+715,script_43.txt,Function,Create a mask based on the canopy cover of the CF
+716,script_43.txt,Function,Move the features around
+717,script_43.txt,Function,"Filter the features based on country, overlap with existing CF, and similar canopy cover"
+718,script_43803.txt,Function,Filtering image collections by bounds and date
+719,script_43803.txt,Function,Sorting image collections by cloud cover
+720,script_43803.txt,Function,Clipping images to a region of interest
+721,script_43803.txt,Function,Selecting specific bands from an image
+722,script_43803.txt,Function,Mosaicking images
+723,script_43803.txt,Function,Exporting images to Google Drive
+724,script_43803.txt,Function,Visualizing images on a map
+725,script_45435.txt,Function,Filtering image collections by date
+726,script_45435.txt,Function,Selecting specific bands from image collections
+727,script_45435.txt,Function,Reducing image collections using mean reducer
+728,script_45435.txt,Function,Performing arithmetic operations on image collections
+729,script_45435.txt,Function,Applying data quality control to MODIS data
+730,script_45435.txt,Function,Visualizing and exporting image data to Drive
+731,script_48.txt,Function,Filtering and buffering of AOI
+732,script_48.txt,Function,Importing kmeans cluster image
+733,script_48.txt,Function,Selecting LT params
+734,script_48.txt,Function,Importing vertices image from LTOP
+735,script_48.txt,Function,Preparing image collection and LT breakpoints
+736,script_48.txt,Function,Running LT fit
+737,script_48.txt,Function,Converting LT fit to LT prem
+738,script_48.txt,Function,Calculating time since last vertex and segment length
+739,script_49902.txt,Function,Filtering image collection by date and geometry
+740,script_49902.txt,Function,Calculating NDVI index using NIR and Red bands
+741,script_49902.txt,Function,Calculating NDMI index using normalizedDifference function
+742,script_49902.txt,Function,Creating a legend for NDMI index
+743,script_49902.txt,Function,Adding layers to the map
+744,script_50.txt,Function,Filtering feature collection by country
+745,script_50.txt,Function,Selecting bands from images
+746,script_50.txt,Function,Reducing regions to get canopy cover
+747,script_50.txt,Function,Creating random points for training
+748,script_50.txt,Function,Training a random forest classifier
+749,script_50.txt,Function,Classifying images using the trained model
+750,script_51624.txt,Function,getWeeklySentinelComposite function composites Sentinel-1 ImageCollection for 7 days after a given date
+751,script_51624.txt,Function,addLayerSelector function adds a layer selection widget to a map
+752,script_51624.txt,Function,updateMap function updates a map to show a selected image
+753,script_52026.txt,Function,Mean ozone concentration calculation for each month of 2019
+754,script_52026.txt,Function,Clipping of ozone concentration data to the region of interest
+755,script_52026.txt,Function,Filtering of ozone concentration data by date and bounds
+756,script_52026.txt,Function,Reduction of ozone concentration data to mean values
+757,script_54980.txt,Function,Importing and processing land cover classification images for multiple years
+758,script_54980.txt,Function,Applying a remapping function to the classification images
+759,script_54980.txt,Function,Generating a video thumbnail from the classified images
+760,script_59099.txt,Function,Filtering image collection by date and cloud percentage
+761,script_59099.txt,Function,Calculating NDVI index
+762,script_59099.txt,Function,Mapping NDVI values to a visualization palette
+763,script_59099.txt,Function,Charting NDVI values over time
+764,script_62526.txt,Function,Filtering Sentinel-2 images by date and ROI
+765,script_62526.txt,Function,Calculating difference in days between start and finish dates
+766,script_62526.txt,Function,Creating a list of dates
+767,script_62526.txt,Function,Iterating over dates to create daily mosaics
+768,script_62526.txt,Function,Adding NDWI band to images
+769,script_62526.txt,Function,Calculating water area using pixel area method
+770,script_62526.txt,Function,Creating a time series chart of water area
+771,script_62526.txt,Function,Exporting results to Google Drive
+772,script_65671.txt,Function,Cloud masking and median computation for Landsat 5 images
+773,script_65671.txt,Function,Cloud masking and median computation for Landsat 8 images
+774,script_65671.txt,Function,Image export to Drive
+775,script_65671.txt,Function,Table export to Drive
+776,script_65671.txt,Function,Count and date range computation
+777,script_67562.txt,Function,rmCloud: remove cloud and cloud shadow from Landsat 8 SR image
+778,script_67562.txt,Function,scaleImage: scale Landsat 8 SR image
+779,script_67562.txt,Function,NDVI: calculate normalized difference vegetation index
+780,script_67562.txt,Function,NDWI: calculate normalized difference water index
+781,script_67562.txt,Function,NDBI: calculate normalized difference built-up index
+782,script_67562.txt,Function,Terrain: calculate elevation and slope from SRTM DEM
+783,script_71184.txt,Function,"Cloud scoring function using blue, red, green, nir, swir1, swir2, and temp bands"
+784,script_71184.txt,Function,Add MNDWI function using normalized difference of green and swir1 bands
+785,script_71184.txt,Function,Filter function using cloudscore and MNDWI thresholds
+786,script_71184.txt,Function,FillClouds function using flooding frequency for gap filling
+787,script_72.txt,Function,Buffering the area of interest (AOI) by 5000 meters
+788,script_72.txt,Function,Running LandTrendr temporal segmentation
+789,script_72.txt,Function,Building a spectral response collection
+790,script_72.txt,Function,Calculating the Normalized Burn Ratio (NBR) index
+791,script_72.txt,Function,Running LandTrendr fit
+792,script_72.txt,Function,Converting LandTrendr fit output to LandTrendr prem
+793,script_72.txt,Function,Performing change detection
+794,script_72.txt,Function,Exporting the change detection image to an asset
+795,script_75448.txt,Function,Filtering image collection by boundary
+796,script_75448.txt,Function,Generating annual composite images using LandsatSimple Composite
+797,script_75448.txt,Function,Calculating NDWI for composite images
+798,script_75448.txt,Function,Segmenting waterbody using Otsu method
+799,script_75448.txt,Function,Calculating area of segmented waterbody
+800,script_76696.txt,Function,maskClouds function for cloud removal
+801,script_76696.txt,Function,maskCloudLC08 function for cloud masking from the quality band of Landsat 8
+802,script_76696.txt,Function,maskCloudLT5 function for cloud masking from the quality band of Landsat 4/5/7
+803,script_76696.txt,Function,oli2tm function for harmonizing Landsat 8 and Landsat 7
+804,script_76709.txt,Function,Filtering Sentinel-2 collection for ROI and cloud-coverage
+805,script_76709.txt,Function,Masking clouds and cirrus from Sentinel-2 images
+806,script_76709.txt,Function,"Calculating NDVI, MNDWI, NDMI, NBR, NDVIreln, NDVIrel, and CI indices"
+807,script_76709.txt,Function,"Computing percentiles (10th, 50th, 90th) of NDVI, MNDWI, NDMI, NBR, NDVIreln, NDVIrel, and CI indices"
+808,script_76709.txt,Function,Creating composite images from Sentinel-2 bands and indices
+809,script_76709.txt,Function,Exporting results to Google Drive
+810,script_76805.txt,Function,Mask pixels with high SummaryQA
+811,script_76805.txt,Function,Mask out water
+812,script_76805.txt,Function,Calculate NDVI and EVI annual max values
+813,script_76805.txt,Function,Prepare images for regression analysis
+814,script_76805.txt,Function,Calculate slopes using Theil-Sen regression
+815,script_76805.txt,Function,Map the coefficients
+816,script_76805.txt,Function,Calculate average NDVI and EVI in region from image
+817,script_76805.txt,Function,Data export
+818,script_76839.txt,Function,Load and filter Landsat surface reflectance images
+819,script_76839.txt,Function,Mask bad QA pixels
+820,script_76839.txt,Function,Calculate NDVI and LSWI indices
+821,script_76839.txt,Function,Clip and export results to Drive
+822,script_76840.txt,Function,Load and filter Landsat surface reflectance images
+823,script_76840.txt,Function,Mask bad QA pixels
+824,script_76840.txt,Function,Calculate NDVI and LSWI indices
+825,script_76840.txt,Function,Export results to Google Drive
+826,script_76841.txt,Function,Load surface reflectance images
+827,script_76841.txt,Function,Mask bad QA pixels
+828,script_76841.txt,Function,Calculate NDVI and LSWI indices
+829,script_76841.txt,Function,Compute median of Landsat images
+830,script_76841.txt,Function,Clip images to region of interest
+831,script_76841.txt,Function,Export images to Drive
+832,script_78663.txt,Function,Apply LIA Correction function to Sentinel-1 Image Collection
+833,script_78663.txt,Function,Generate time-series chart of corrected and uncorrected data
+834,script_78805.txt,Function,Clip the image collection to the specified feature collection
+835,script_78805.txt,Function,"Filter the image collection by cloud cover, date, and bounds"
+836,script_78805.txt,Function,Calculate the median and mean of the image collection
+837,script_78805.txt,Function,Compute the NDVI and SAVI indices from the median and mean images
+838,script_78805.txt,Function,Visualize the results using different visualization parameters
+839,script_85061.txt,Function,applyScaleFactors
+840,script_85061.txt,Function,rename_bands
+841,script_85061.txt,Function,sma
+842,script_85061.txt,Function,cloudScore
+843,script_85061.txt,Function,process_image
+844,script_85061.txt,Function,class_1_probs2
+845,script_85061.txt,Function,qualityMosaic
+846,script_85061.txt,Function,clip
+847,script_85061.txt,Function,set
+848,script_85061.txt,Function,select
+849,script_85061.txt,Function,multiply
+850,script_85061.txt,Function,toInt16
+851,script_85061.txt,Function,addBands
+852,script_85061.txt,Function,Export.image.toAsset
+853,script_85217.txt,Function,Load Landsat 8 scaled radiance image collection
+854,script_85217.txt,Function,Make a cloud-free composite
+855,script_85217.txt,Function,Merge geometry layers into a single FeatureCollection
+856,script_85217.txt,Function,Sample the composite to generate training data
+857,script_85217.txt,Function,Train a CART classifier
+858,script_85217.txt,Function,Classify the composite
+859,script_85217.txt,Function,Perform accuracy assessment using random uniforms and testing partition
+860,script_85219.txt,Function,MascaraNubesS function to mask clouds in Sentinel-2 images
+861,script_85219.txt,Function,Calculation of median image for pre-fire and fire periods
+862,script_85219.txt,Function,Calculation of NBR index for fire severity analysis
+863,script_85219.txt,Function,Calculation of NDVI index for vegetation health analysis
+864,script_85219.txt,Function,Mosaicking and clipping of Sentinel-2 and Sentinel-3 images
+865,script_89887.txt,Function,maskCloud function to mask clouds from MOD09GA images
+866,script_89887.txt,Function,maskWater function to mask water from MOD09GA images
+867,script_89887.txt,Function,Generation of hillshade using ee.Terrain.hillshade
+868,script_89887.txt,Function,Generation of true color image using median of MOD09GA images
+869,script_89887.txt,Function,Calculation of percentile values for true color image bands
+870,script_95721.txt,Function,maskCloudAndShadows: Function to remove cloud and snow pixels
+871,script_95721.txt,Function,addNDVI: Function to calculate and add an NDVI band
+872,script_95721.txt,Function,addVARI: Function to calculate and add a VARI band
+873,script_95721.txt,Function,addEVI: Function to calculate and add an EVI band
+874,script_95721.txt,Function,bufferBy: Function to create a buffer
+875,script_95721.txt,Function,"reduceRegions: Function to reduce regions and calculate mean NDVI, VARI, and EVI"
+876,script_95950.txt,Function,Masking clouds and cirrus from Sentinel-2 images
+877,script_95950.txt,Function,Calculating NDVI from Sentinel-2 images
+878,script_95950.txt,Function,Extracting date information from images
+879,script_95950.txt,Function,Sorting images by NDVI values
+880,script_95950.txt,Function,Selecting images with maximum NDVI values
+881,script_96316.txt,Function,Filtering Sentinel-2 images by date and cloud coverage
+882,script_96316.txt,Function,Renaming bands of Sentinel-2 images
+883,script_96316.txt,Function,"Calculating NDVI, NDWI, and NDWI1 indices"
+884,script_96316.txt,Function,Creating quality mosaics of Sentinel-2 images
+885,script_96316.txt,Function,Clipping images to Cordoba region
+886,script_96316.txt,Function,Adding bands to images
+887,script_96316.txt,Function,Mapping images to the Map
+888,script_96317.txt,Function,Filtering Sentinel-2 images by date and cloud coverage
+889,script_96317.txt,Function,Renaming bands of Sentinel-2 images
+890,script_96317.txt,Function,"Calculating vegetation indices (EVI, MSAVI, MNDWI)"
+891,script_96317.txt,Function,"Calculating quality bands (NDVI, NDWI, NDWI1)"
+892,script_96317.txt,Function,Creating mosaics of Sentinel-2 images
+893,script_96317.txt,Function,Clipping mosaics to Cordoba region
+894,script_96317.txt,Function,Stacking NDVI bands from mosaics
+895,script_96322.txt,Function,Filtering Sentinel-2 images by date and cloud cover
+896,script_96322.txt,Function,Renaming Sentinel-2 bands
+897,script_96322.txt,Function,"Calculating vegetation indices (NDVI, NDWI, NDWI1)"
+898,script_96322.txt,Function,Creating mosaics from Sentinel-2 images
+899,script_96322.txt,Function,Sampling regions for training data
+900,script_96332.txt,Function,Filtering and renaming Sentinel 2 image collections
+901,script_96332.txt,Function,Calculating normalized difference water index
+902,script_96332.txt,Function,Mosaicking image collections
+903,script_96332.txt,Function,Adding layers to the map
+904,script_96361.txt,Function,"Merging and standardizing Landsat 5, 7, 8 image collections"
+905,script_96361.txt,Function,Unpacking bit bands and creating Fmask
+906,script_96361.txt,Function,Adding texture and predictors to images
+907,script_96361.txt,Function,Unpacking quality band and adding Fmask for SR images
+908,script_96361.txt,Function,Preparing predictors for TOA and SR images
+909,script_96424.txt,Function,Clipping the global surface water image to the area of interest
+910,script_96424.txt,Function,Selecting the occurrence band from the global surface water image
+911,script_96424.txt,Function,Creating a cloud mask layer from the feature collection
+912,script_96424.txt,Function,Calculating the lake shore extent using focal operations
+913,script_96424.txt,Function,Reconstructing the lake extent using the shoreline occurrence statistics
+914,script_96426.txt,Function,load lake polygons
+915,script_96426.txt,Function,load landsat images
+916,script_96426.txt,Function,calculate lake area
+917,script_96426.txt,Function,reconstruct water surface
+918,script_96426.txt,Function,extract lake mask
+919,script_96426.txt,Function,calculate pixel areas
+920,script_96426.txt,Function,generate chart for lake area changes
+921,script_96427.txt,Function,calcAreaImage
+922,script_96427.txt,Function,Outline
+923,script_96427.txt,Function,OutlinePoly
+924,script_96427.txt,Function,createParagraphPanel
+925,script_96427.txt,Function,ls_fun.merge_collections_std_bandnames_collection1tier1_sr
+926,script_96427.txt,Function,ls_fun.filterContained
+927,script_96427.txt,Function,ls_fun.CalculateWaterAddFlagsSR
+928,script_96427.txt,Function,ls_fun.fillWater
+929,script_96427.txt,Function,ls_fun.ExtractChannel
+930,script_96458.txt,Function,Filtering Sentinel-2 data by date and geometry
+931,script_96458.txt,Function,"Filtering Sentinel-1 data by date, geometry, and polarization"
+932,script_96458.txt,Function,Removing clouds from Sentinel-2 data
+933,script_96458.txt,Function,Calculating median of cloud-free Sentinel-2 data
+934,script_96458.txt,Function,"Calculating normalized difference indices (NDVI, NDBI, NDWI)"
+935,script_96458.txt,Function,Applying thresholds to classify land cover
+936,script_96458.txt,Function,Detecting rice paddies using Sentinel-1 data and terrain analysis
+937,script_96459.txt,Function,Otsu thresholding for binary classification
+938,script_96459.txt,Function,Image filtering and masking
+939,script_96459.txt,Function,Image normalization and feature extraction
+940,script_96459.txt,Function,Unmixing and classification
+941,script_96459.txt,Function,Histogram analysis and thresholding
+942,script_96519.txt,Function,Selecting elevation data from USGS/GMTED2010
+943,script_96519.txt,Function,Visualizing built-up areas using JRC/GHSL/P2016/BUILT_LDSMT_GLOBE_V1
+944,script_96519.txt,Function,Filtering flood events from GLOBAL_FLOOD_DB/MODIS_EVENTS/V1
+945,script_96519.txt,Function,Calculating historical flood plain using GFD
+946,script_96519.txt,Function,Identifying permanent water using JRC permanent water data
+947,script_96519.txt,Function,Buffering sismos features based on magnitude
+948,script_96519.txt,Function,Computing area of fire perimeters from JRC/GWIS/GlobFire/v2/DailyPerimeters
+949,script_96537.txt,Function,Cloud masking and image filtering
+950,script_96537.txt,Function,Land cover classification using random forest algorithm
+951,script_96537.txt,Function,Geomedian analysis and data reprojection
+952,script_96537.txt,Function,Image normalization and feature extraction
+953,script_96537.txt,Function,Accuracy assessment and validation
+954,script_96537.txt,Function,Evapotranspiration analysis
+955,script_96538.txt,Function,Buffering panteones features
+956,script_96538.txt,Function,Masking clouds in Sentinel-2 images
+957,script_96538.txt,Function,Adding bands to Sentinel-2 images
+958,script_96538.txt,Function,Calculating median values of bands and indices
+959,script_96538.txt,Function,Characterizing panteones using Sentinel-2 data
+960,script_96558.txt,Function,Filtering and summing CHIRPS data by month
+961,script_96558.txt,Function,Filtering and averaging NDVI data by month
+962,script_96558.txt,Function,Resampling CHIRPS data from 5Km to 250m
+963,script_96558.txt,Function,Joining CHIRPS and NDVI data
+964,script_96558.txt,Function,Calculating spatial correlation between NDVI and precipitation
+965,script_96558.txt,Function,Generating scatter plot of NDVI vs precipitation
+966,script_96578.txt,Function,Filtering and masking of image collections
+967,script_96578.txt,Function,Conversion of Kelvin to Celsius
+968,script_96578.txt,Function,Calculation of maximum temperature
+969,script_96578.txt,Function,Unmasking of fire probability image collection
+970,script_96578.txt,Function,Calculation of NDVI
+971,script_96578.txt,Function,Fire detection using NDVI difference
+972,script_96593.txt,Function,addNDVI
+973,script_96593.txt,Function,filterDate
+974,script_96593.txt,Function,filterBounds
+975,script_96593.txt,Function,filterMetadata
+976,script_96593.txt,Function,mean
+977,script_96593.txt,Function,clip
+978,script_96593.txt,Function,map
+979,script_96593.txt,Function,qualityMosaic
+980,script_96593.txt,Function,buffer
+981,script_96593.txt,Function,image.seriesByRegion
+982,script_96611.txt,Function,Filtering Landsat 8 images by date range
+983,script_96611.txt,Function,Calculating median of Landsat 8 images
+984,script_96611.txt,Function,Creating a simple composite of Landsat 8 images
+985,script_96611.txt,Function,Calculating NDVI for a specific image
+986,script_96611.txt,Function,Creating a custom composite of Landsat 8 images
+987,script_96611.txt,Function,Calculating NDVI for a collection of images
+988,script_96611.txt,Function,Creating a quality mosaic of NDVI images
+989,script_96611.txt,Function,Calculating the mean day of year for NDVI images
+990,script_96611.txt,Function,Exporting NDVI image to Google Drive
+991,script_96611.txt,Function,Calculating pixel area for NDVI images
+992,script_96611.txt,Function,Creating a histogram of NDVI images
+993,script_97207.txt,Function,Filtering fires with valid dates and within the general fire area
+994,script_97207.txt,Function,Calculating NDVI index from Sentinel-2 imagery
+995,script_97207.txt,Function,Classifying burned and unburned areas based on NDVI threshold
+996,script_97207.txt,Function,Evaluating classification accuracy using confusion matrix
+997,script_97208.txt,Function,Filtering and mapping of fire areas based on date and location
+998,script_97208.txt,Function,"Calculation of indices (EVI, NBR1, NBR2) from Sentinel-2 images"
+999,script_97208.txt,Function,Classification of burned and unburned areas based on indices and thresholds
+1000,script_97208.txt,Function,Evaluation of classification accuracy using confusion matrices and histograms
+1001,script_97209.txt,Function,Filtering and mapping fire features
+1002,script_97209.txt,Function,Creating image collections for before and after fire
+1003,script_97209.txt,Function,Calculating indices for image classification
+1004,script_97209.txt,Function,Classifying images using different classifiers
+1005,script_97210.txt,Function,Filtering fires by date and location
+1006,script_97210.txt,Function,Creating image collections before and after the fire
+1007,script_97210.txt,Function,Calculating indices for image classification
+1008,script_97210.txt,Function,Classifying images using different classifiers
+1009,script_97211.txt,Function,Filtering fires by date and location
+1010,script_97211.txt,Function,Creating image collections for before and after the fire
+1011,script_97211.txt,Function,Calculating indices for image classification
+1012,script_97211.txt,Function,Classifying images using different classifiers
+1013,script_97212.txt,Function,Filtering fires by date and location
+1014,script_97212.txt,Function,Creating image collections before and after the fire
+1015,script_97212.txt,Function,Calculating indices for image classification
+1016,script_97212.txt,Function,Classifying images using different classifiers
+1017,script_97250.txt,Function,Filtering and selecting night lights data
+1018,script_97250.txt,Function,Extracting landcover classification
+1019,script_97250.txt,Function,Creating zones for agriculture and urban areas
+1020,script_97250.txt,Function,Classifying nightlights image into categorical values
+1021,script_97250.txt,Function,Computing statistics on classified image using grouped reducer
+1022,script_97292.txt,Function,Filtering and mosaicking of NAIP images
+1023,script_97292.txt,Function,Clipping and normalizing of images
+1024,script_97292.txt,Function,Segmentation using SNIC algorithm
+1025,script_97292.txt,Function,Computing per-cluster standard deviation and other properties
+1026,script_97292.txt,Function,"Computing area, perimeter, width, and height of clusters"
+1027,script_97292.txt,Function,Training a classifier using CDL 2016 image
+1028,script_97292.txt,Function,Classifying objects using random forest classifier
+1029,script_97292.txt,Function,Computing spectral angle between each pixel and cluster mean
+1030,script_97292.txt,Function,Finding max pixels and recomputing SNIC
+1031,script_97295.txt,Function,Filtering Dynamic World and Sentinel-2 collections by region and date
+1032,script_97295.txt,Function,Joining corresponding DW and S2 images by system:index
+1033,script_97295.txt,Function,Extracting an example DW image and its source S2 image
+1034,script_97295.txt,Function,Creating a visualization that blends DW class label with probability
+1035,script_97295.txt,Function,Generating a legend for LULC classification
+1036,script_97367.txt,Function,getImageCollection
+1037,script_97367.txt,Function,landsatCloudScore
+1038,script_97367.txt,Function,simpleTDOM2
+1039,script_97367.txt,Function,cloudProject
+1040,script_97367.txt,Function,ndvi_function
+1041,script_97371.txt,Function,Selecting 'landcover' band with pixel values 1
+1042,script_97371.txt,Function,Filtering by 'ADM1_NAME' equals 'Piura'
+1043,script_97371.txt,Function,Generating points using stratified sampling
+1044,script_97371.txt,Function,Masking cloud and snow pixels
+1045,script_97371.txt,Function,Adding NDVI band
+1046,script_97371.txt,Function,Filtering by date and bounds
+1047,script_97371.txt,Function,Calculating NDVI time series for a single location
+1048,script_97371.txt,Function,Exporting time series to CSV
+1049,script_97371.txt,Function,Charting maximum NDVI for all points
+1050,script_97371.txt,Function,Merging observations for each day and taking the max NDVI value
+1051,script_97430.txt,Function,"get_s2_sr_cld_col: Filter S2 SR and S2 cloud probability collections by AOI and date range, and join them by system:index"
+1052,script_97430.txt,Function,add_cloud_bands: Add cloud probability and cloud mask bands to an image
+1053,script_97430.txt,Function,"add_shadow_bands: Identify dark NIR pixels and project cloud shadows, adding shadow bands to an image"
+1054,script_97430.txt,Function,"add_cld_shdw_mask: Combine cloud and shadow masks, remove small patches, and dilate remaining pixels"
+1055,script_97430.txt,Function,apply_cld_shdw_mask: Apply the cloud-shadow mask to an image
+1056,script_97430.txt,Function,addSWI: Calculate the Soil Water Index (SWI) for an image
+1057,script_97430.txt,Function,addMNDWI_S2: Calculate the Modified Normalized Difference Water Index (MNDWI) for an image
+1058,script_97430.txt,Function,addNDVI_S2: Calculate the Normalized Difference Vegetation Index (NDVI) for an image
+1059,script_97430.txt,Function,addSAVI_S2: Calculate the Soil Adjusted Vegetation Index (SAVI) for an image
+1060,script_97431.txt,Function,Add MNDWI band to Landsat 8 image
+1061,script_97431.txt,Function,Simple cloud score calculation
+1062,script_97431.txt,Function,Masking of cloudy pixels
+1063,script_97431.txt,Function,Quality mosaic calculation
+1064,script_97431.txt,Function,Median calculation
+1065,script_97431.txt,Function,Filtering by month and cloud cover
+1066,script_97446.txt,Function,maskS2clouds function to mask clouds and cirrus from Sentinel-2 images
+1067,script_97446.txt,Function,Filtering and mapping of image collection to remove cloudy pixels and apply cloud masking
+1068,script_97446.txt,Function,Median calculation of filtered image collection
+1069,script_97446.txt,Function,Exporting of median image to Google Drive
+1070,script_97475.txt,Function,maskS2clouds
+1071,script_97475.txt,Function,filterDate
+1072,script_97475.txt,Function,filterBounds
+1073,script_97475.txt,Function,map
+1074,script_97475.txt,Function,select
+1075,script_97475.txt,Function,median
+1076,script_97475.txt,Function,clip
+1077,script_97475.txt,Function,rename
+1078,script_97475.txt,Function,sample
+1079,script_97475.txt,Function,train
+1080,script_97475.txt,Function,cluster
+1081,script_97475.txt,Function,addBands
+1082,script_97475.txt,Function,reduceRegion
+1083,script_97475.txt,Function,toArray
+1084,script_97475.txt,Function,toList
+1085,script_97475.txt,Function,image.histogram
+1086,script_97475.txt,Function,feature.groups
+1087,script_97475.txt,Function,image.byClass
+1088,script_97477.txt,Function,Filtering cloud cover for Landsat 8 images
+1089,script_97477.txt,Function,Clipping images to a region of interest (Oneida Lake)
+1090,script_97477.txt,Function,Calculating the median of a collection of images
+1091,script_97477.txt,Function,Computing the Normalized Difference Vegetation Index (NDVI)
+1092,script_97477.txt,Function,Computing the Enhanced Vegetation Index (EVI)
+1093,script_97477.txt,Function,Computing the Soil Adjusted Vegetation Index (SABI)
+1094,script_97479.txt,Function,Filtering image collection by date range
+1095,script_97479.txt,Function,"Filtering image collection by geography (Flagstaff, AZ)"
+1096,script_97479.txt,Function,Applying cloud filter mask for Landsat 8 images
+1097,script_97479.txt,Function,"Calculating statistical functions (mean, max, min, median)"
+1098,script_97479.txt,Function,"Clipping images to ROI (Flagstaff, AZ)"
+1099,script_97479.txt,Function,Creating a list of IDs for cloud-free image collection
+1100,script_97479.txt,Function,Visualizing images in natural color and false color
+1101,script_97507.txt,Function,Filtering US county dataset to extract Merced County
+1102,script_97507.txt,Function,Loading and filtering Landsat 8 Image Collection
+1103,script_97507.txt,Function,Extracting dates from the image collection
+1104,script_97507.txt,Function,Creating visualization parameters
+1105,script_97507.txt,Function,Displaying images with extracted dates
+1106,script_97508.txt,Function,Create an NDVI time series for a vegetated and bare earth area
+1107,script_97508.txt,Function,Apply NDVI function to image collection
+1108,script_97508.txt,Function,Create a chart series by region
+1109,script_97508.txt,Function,Load landsat image for reference
+1110,script_97508.txt,Function,Add map layer
+1111,script_97509.txt,Function,Loading pre-fire and post-fire images
+1112,script_97509.txt,Function,Visualizing pre and post fire images using true color and false color infrared displays
+1113,script_97510.txt,Function,Load pre-fire image
+1114,script_97510.txt,Function,Load post-fire image
+1115,script_97510.txt,Function,Compute NDBR for pre image
+1116,script_97510.txt,Function,Compute NDBR for post image
+1117,script_97510.txt,Function,Display true color images
+1118,script_97510.txt,Function,Display NBR images
+1119,script_97512.txt,Function,Compute NDBR
+1120,script_97512.txt,Function,Compute Delta NDR
+1121,script_97512.txt,Function,Reclassify and export a thumbnail
+1122,script_97538.txt,Function,"Filtering Landsat 8 images by geometry, date, WRS_PATH, WRS_ROW, and cloud cover"
+1123,script_97538.txt,Function,Calculating median of filtered images
+1124,script_97538.txt,Function,Clipping median image to geometry
+1125,script_97538.txt,Function,Calculating NDVI and SAVI indices
+1126,script_97538.txt,Function,"Exporting NDVI, SAVI, and Landsat 8 bands to Google Drive"
+1127,script_97539.txt,Function,"Filtering Landsat 8 images by geometry, date, WRS path, WRS row, and cloud cover"
+1128,script_97539.txt,Function,Calculating median of filtered images
+1129,script_97539.txt,Function,Clipping median image to geometry
+1130,script_97539.txt,Function,Calculating NDVI and SAVI indices
+1131,script_97539.txt,Function,"Exporting NDVI, SAVI, and Landsat 8 bands to Google Drive"
+1132,script_97582.txt,Function,Filtering Landsat 8 TOA collection by date and cloud cover
+1133,script_97582.txt,Function,Clipping images to KP boundary
+1134,script_97582.txt,Function,Mosaicking images
+1135,script_97582.txt,Function,Updating mask to remove clouds
+1136,script_97582.txt,Function,Adding layers to the map
+1137,script_97609.txt,Function,Filtering and clipping of image collections
+1138,script_97609.txt,Function,Calculation of monthly totals and long-term means
+1139,script_97609.txt,Function,Computation of seasonal deviation
+1140,script_97609.txt,Function,Reduction of regions and styling of vectors
+1141,script_97609.txt,Function,Image and table export to Drive
+1142,script_97610.txt,Function,"Extract Tmin, Tmax, and Tavg from ERA5Re dataset"
+1143,script_97610.txt,Function,Filter data by date and administrative boundary
+1144,script_97610.txt,Function,Clip data to administrative boundary
+1145,script_97610.txt,Function,Visualize data on the map
+1146,script_97610.txt,Function,Export images to Google Drive
+1147,script_97651.txt,Function,Filtering image collections by date and WRS path/row
+1148,script_97651.txt,Function,"Masking occluded pixels using cloud confidence, cloud shadow, snow, water, and terrain occlusion"
+1149,script_97651.txt,Function,Applying mask to image collections
+1150,script_97651.txt,Function,Exporting results to Google Drive
+1151,script_97683.txt,Function,Filtering and clipping satellite images
+1152,script_97683.txt,Function,Applying median filter to image collections
+1153,script_97683.txt,Function,Exporting images to Google Drive
+1154,script_97683.txt,Function,Clipping images to a specified geometry
+1155,script_97683.txt,Function,Applying filters to image collections based on date and cloud cover
+1156,script_97683.txt,Function,Converting radiance values to reflectance
+1157,script_97700.txt,Function,Filtering Sentinel-2 images by date and cloud cover
+1158,script_97700.txt,Function,Computing Normalized Difference Vegetation Index (NDVI) and Green Chlorophyll Index (GCI)
+1159,script_97700.txt,Function,Clustering GCI and NDVI images using k-means algorithm
+1160,script_97700.txt,Function,"Filtering Sentinel-1 images by instrument mode, polarization, and resolution"
+1161,script_97700.txt,Function,Applying speckle filter to Sentinel-1 images
+1162,script_97700.txt,Function,Clustering Sentinel-1 images using k-means algorithm
+1163,script_97700.txt,Function,Exporting classified images to Google Drive
+1164,script_97704.txt,Function,Clip and select DEM data
+1165,script_97704.txt,Function,Visualize DEM data
+1166,script_97704.txt,Function,Export DEM data to Drive
+1167,script_97704.txt,Function,Create histogram of DEM data
+1168,script_97704.txt,Function,Display histogram of DEM data
+1169,script_97718.txt,Function,Filtering S-2 imagery by date and geometry
+1170,script_97718.txt,Function,Masking cloud from built-in quality band
+1171,script_97718.txt,Function,Calculating and adding NDVI band
+1172,script_97718.txt,Function,Extracting NDVI band and creating NDVI median composite image
+1173,script_97718.txt,Function,Creating a time series chart for NDVI
+1174,script_97718.txt,Function,Displaying NDVI results on map
+1175,script_97718.txt,Function,Exporting NDVI results to Drive
+1176,script_97718.txt,Function,Computing MSI (Moisture Stress Index)
+1177,script_97718.txt,Function,Creating a time series chart for MSI
+1178,script_97718.txt,Function,Displaying MSI results on map
+1179,script_97718.txt,Function,Exporting MSI results to Drive
+1180,script_97724.txt,Function,Filtering and mapping of feature collections
+1181,script_97724.txt,Function,Cloud and snow pixel masking
+1182,script_97724.txt,Function,NDVI calculation
+1183,script_97724.txt,Function,Image collection filtering and mapping
+1184,script_97724.txt,Function,Chart creation
+1185,script_97724.txt,Function,Region-based reduction
+1186,script_97724.txt,Function,Joining and merging of tables
+1187,script_97954.txt,Function,Filtering and compositing Landsat imagery for 2000 and 2017
+1188,script_97954.txt,Function,Calculating spectral ratios for 2000 and 2017
+1189,script_97954.txt,Function,Masking non-forest areas
+1190,script_97954.txt,Function,Land cover classification using CART algorithm
+1191,script_97955.txt,Function,Filtering and compositing Landsat imagery
+1192,script_97955.txt,Function,Calculating spectral indices
+1193,script_97955.txt,Function,Masking non-forest areas
+1194,script_97955.txt,Function,Training a classifier for land cover classification
+1195,script_97955.txt,Function,Classifying land cover using the trained classifier
+1196,script_97974.txt,Function,Buffering country borders
+1197,script_97974.txt,Function,Filtering Landsat imagery by date and cloud cover
+1198,script_97974.txt,Function,Compositing Landsat imagery
+1199,script_97974.txt,Function,Calculating spectral indices
+1200,script_97974.txt,Function,Visualizing mosaics
+1201,script_97974.txt,Function,Merging bands
+1202,script_97974.txt,Function,Masking non-forest areas
+1203,script_97974.txt,Function,Sampling regions for training
+1204,script_97974.txt,Function,Training a classifier
+1205,script_97974.txt,Function,Classifying land cover
+1206,script_97988.txt,Function,Upload and clip raster and vector data
+1207,script_97988.txt,Function,Filter and composite Landsat and Sentinel imagery
+1208,script_97988.txt,Function,Calculate spectral indices and perform land cover classification
+1209,script_97988.txt,Function,Apply water mask and visualize results
+1210,script_97988.txt,Function,Export classified image to asset
+1211,script_97991.txt,Function,Feature collection creation
+1212,script_97991.txt,Function,Image collection creation
+1213,script_97991.txt,Function,Image filtering by bounds and date
+1214,script_97991.txt,Function,Image filtering by cloud cover and day of year
+1215,script_97991.txt,Function,Image mosaicking
+1216,script_97991.txt,Function,Ratio band creation
+1217,script_97991.txt,Function,Image classification
+1218,script_97991.txt,Function,Post-classification editing
+1219,script_97991.txt,Function,Masking
+1220,script_97991.txt,Function,Image export to asset
+1221,script_98003.txt,Function,Filtering and merging of country boundaries
+1222,script_98003.txt,Function,Filtering and compositing of Landsat images
+1223,script_98003.txt,Function,Cloud score calculation and masking
+1224,script_98003.txt,Function,Sentinel-2 image processing and mosaicking
+1225,script_98003.txt,Function,Feature collection filtering and centroid calculation
+1226,script_98169.txt,Function,Filtering and masking of Landsat 8 images
+1227,script_98169.txt,Function,Calculation of NDVI using Landsat 8 images
+1228,script_98169.txt,Function,Buffering and clipping of ROI and transect locations
+1229,script_98169.txt,Function,"Calculation of mean, standard deviation, and variance of NDVI values"
+1230,script_98169.txt,Function,Exporting results to Google Drive
+1231,script_98257.txt,Function,Filtering feature collection by ADM1_NAME
+1232,script_98257.txt,Function,"Filtering image collection by bounds, date, and metadata"
+1233,script_98257.txt,Function,Mosaicking and clipping image collections
+1234,script_98257.txt,Function,Calculating mean and standard deviation of image collections
+1235,script_98257.txt,Function,Calculating NDFI and thresholding for flood detection
+1236,script_98258.txt,Function,Filtering area of interest (AOI) from feature collection 'regions'
+1237,script_98258.txt,Function,Filtering flood images in the flood period
+1238,script_98258.txt,Function,Creating flood images over time
+1239,script_98258.txt,Function,Calculating NDFI (Normalized Difference Flood Index)
+1240,script_98258.txt,Function,Thresholding for masking flood areas
+1241,script_98259.txt,Function,Filtering and sorting of Landsat 5 images based on cloud cover and date
+1242,script_98259.txt,Function,Calculation of NDWI for reference and flood images
+1243,script_98259.txt,Function,Subtraction of NDWI images to detect changes
+1244,script_98259.txt,Function,Thresholding and masking to identify flooded areas
+1245,script_98259.txt,Function,Application of Canny Edge detector for boundary detection
+1246,script_98260.txt,Function,Filtering administrative boundaries by name
+1247,script_98260.txt,Function,Filtering Landsat 5 images by date and cloud cover
+1248,script_98260.txt,Function,Calculating NDWI
+1249,script_98260.txt,Function,Computing histogram of NDWI
+1250,script_98260.txt,Function,Charting histogram
+1251,script_98260.txt,Function,Applying Otsu thresholding
+1252,script_98260.txt,Function,Classifying water areas
+1253,script_98261.txt,Function,Filtering and sorting of Landsat 8 image collection
+1254,script_98261.txt,Function,Mosaicking and clipping of images
+1255,script_98261.txt,Function,Calculation of NDWI
+1256,script_98261.txt,Function,Difference image calculation
+1257,script_98261.txt,Function,Thresholding and masking
+1258,script_98261.txt,Function,Refining flood results using additional datasets
+1259,script_98261.txt,Function,Computing connectivity of pixels
+1260,script_98261.txt,Function,Masking out areas with high slope
+1261,script_98261.txt,Function,Masking out clouds
+1262,script_98262.txt,Function,Filtering and clipping of MODIS images
+1263,script_98262.txt,Function,Calculation of NDWI
+1264,script_98262.txt,Function,Difference image calculation
+1265,script_98262.txt,Function,Thresholding and masking
+1266,script_98262.txt,Function,Flood extent area calculation
+1267,script_98262.txt,Function,Refining flood results using additional datasets
+1268,script_98263.txt,Function,Filtering image collections by bounds and date
+1269,script_98263.txt,Function,Sorting image collections by cloud percentage
+1270,script_98263.txt,Function,Filtering image collections by cloud percentage
+1271,script_98263.txt,Function,Calculating NDWI
+1272,script_98263.txt,Function,Visualizing true color images
+1273,script_98263.txt,Function,Visualizing NDWI images
+1274,script_98266.txt,Function,Filtering and selecting images from COPERNICUS/S1_GRD collection
+1275,script_98266.txt,Function,Creating individual image collections before and after the flood
+1276,script_98266.txt,Function,Mosaicking and creating RGB composite
+1277,script_98266.txt,Function,Applying speckle filter
+1278,script_98266.txt,Function,Creating difference image
+1279,script_98266.txt,Function,Finding optimal threshold using Otsu method
+1280,script_98266.txt,Function,Refining flood result using additional datasets
+1281,script_98267.txt,Function,Filtering and mosaicking Sentinel-1 images for before and after flood events
+1282,script_98267.txt,Function,Applying speckle filter to mosaicked images
+1283,script_98267.txt,Function,Calculating difference between before and after flood images
+1284,script_98267.txt,Function,Applying threshold to difference image
+1285,script_98267.txt,Function,Refining flood result using additional datasets
+1286,script_98267.txt,Function,Computing connectivity of pixels to eliminate noise
+1287,script_98267.txt,Function,Masking out areas with high slope using a Digital Elevation Model
+1288,script_98275.txt,Function,Filtering feature collection to define area of interest (AOI)
+1289,script_98275.txt,Function,Filtering image collection to find flood images in a specific period
+1290,script_98275.txt,Function,Creating flood images over time
+1291,script_98275.txt,Function,Setting visualization parameters
+1292,script_98275.txt,Function,Displaying flood images on the map
+1293,script_98287.txt,Function,maskS2clouds: cloud removal function
+1294,script_98287.txt,Function,addNDVI: function to compute NDVI and add result as new band
+1295,script_98287.txt,Function,addNDWI: function to compute NDWI and add result as new band
+1296,script_98287.txt,Function,ui.Chart.image.seriesByRegion: function to plot NDVI and NDWI annual evolution
+1297,script_98289.txt,Function,Filtering image collection by date range
+1298,script_98289.txt,Function,Filtering image collection by geography
+1299,script_98289.txt,Function,Flattening image collection into single image for display
+1300,script_98289.txt,Function,Removing images with more than 5% cloud cover
+1301,script_98289.txt,Function,Masking clouds in images
+1302,script_98289.txt,Function,Assigning colors and intensities to represent spectral bands
+1303,script_98290.txt,Function,maskL8sr: cloud masking function for Landsat 8 SR data
+1304,script_98290.txt,Function,composite: median composite of cloud-masked images
+1305,script_98290.txt,Function,classify: land cover classification using CART classifier
+1306,script_98290.txt,Function,train: training of CART classifier
+1307,script_98290.txt,Function,errorMatrix: accuracy assessment using confusion matrix
+1308,script_98290.txt,Function,byClass: area calculation by class
+1309,script_98290.txt,Function,reduceRegion: area calculation by class using reducer
+1310,script_98290.txt,Function,classify: land cover classification using Random Forest classifier
+1311,script_98290.txt,Function,classify: land cover classification using Naive Bayes classifier
+1312,script_98290.txt,Function,classify: land cover classification using SVM classifier
+1313,script_98290.txt,Function,mode: mode calculation of classified images

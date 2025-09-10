@@ -1,0 +1,5 @@
+{
+  "Theme": ["Forest classification", "Land change detection", "Landsat imagery analysis"],
+  "DataSource": ["users/EL/Grenada", "LANDSAT/LE7_L1T", "LANDSAT/LC08/C01/T1_RT", "users/EL/G_forest"],
+  "Function": ["Center map on country", "Buffer country borders", "Filter Landsat images by date and cloud cover", "Create image mosaic", "Calculate band ratios", "Add bands to image", "Visualize image mosaic", "Merge image bands", "Mask non-forest areas", "Sample regions for training", "Train classifier", "Classify image"]
+}

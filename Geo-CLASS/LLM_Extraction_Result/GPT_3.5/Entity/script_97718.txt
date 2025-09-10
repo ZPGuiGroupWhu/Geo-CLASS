@@ -1,0 +1,6 @@
+{
+  "Summary": ["The script processes Sentinel-2 imagery data to calculate NDVI and MSI, generating time series charts and exporting results."],
+  "Theme": ["Vegetation health monitoring"],
+  "DataSource": ["COPERNICUS/S2"],
+  "Function": ["Cloud masking to improve image quality", "NDVI calculation to assess vegetation health", "MSI calculation for moisture stress evaluation"]
+}

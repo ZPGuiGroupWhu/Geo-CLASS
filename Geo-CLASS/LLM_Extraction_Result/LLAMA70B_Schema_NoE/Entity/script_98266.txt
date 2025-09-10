@@ -1,0 +1,20 @@
+{
+    "Theme": [
+        "Flood Extent Mapping"
+    ],
+    "DataSource": [
+        "COPERNICUS/S1_GRD",
+        "FAO/GAUL_SIMPLIFIED_500m/2015/level2",
+        "JRC/GSW1_0/GlobalSurfaceWater",
+        "WWF/HydroSHEDS/03VFDEM"
+    ],
+    "Function": [
+        "Filtering and selecting images from COPERNICUS/S1_GRD collection",
+        "Creating individual image collections before and after the flood",
+        "Mosaicking and creating RGB composite",
+        "Applying speckle filter",
+        "Creating difference image",
+        "Finding optimal threshold using Otsu method",
+        "Refining flood result using additional datasets"
+    ]
+}

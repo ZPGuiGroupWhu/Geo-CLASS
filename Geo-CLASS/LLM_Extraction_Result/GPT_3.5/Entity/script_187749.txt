@@ -1,0 +1,6 @@
+{
+  "Summary": ["Generate annual maximum NDVI composite for 20 years, analyze trends, and visualize NDVI time series."],
+  "Theme": ["Vegetation monitoring"],
+  "DataSource": ["users/kidsherry/Beijing", "MODIS/006/MOD13A1"],
+  "Function": ["Composite annual NDVI images", "Analyze NDVI trends", "Visualize NDVI time series"]
+}

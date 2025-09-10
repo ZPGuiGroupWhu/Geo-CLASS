@@ -1,0 +1,22 @@
+{
+    "Theme": [
+        "Land cover classification and cloud cover analysis"
+    ],
+    "DataSource": [
+        "LANDSAT/LC8_SR",
+        "LANDSAT/LE7_SR",
+        "LANDSAT/LT5_SR",
+        "USGS/NED",
+        "ft:1_RZgjlcqixp-L9hyS6NYGqLaKOlnhSC35AB5M5Ll"
+    ],
+    "Function": [
+        "Filtering image collections by date and location",
+        "Renaming image bands",
+        "Computing cloud cover percentage",
+        "Classifying land cover using band thresholds",
+        "Masking images based on cloud cover and land cover",
+        "Reducing image collections to vectors",
+        "Exporting images to Drive",
+        "Extracting metadata to CSV file"
+    ]
+}

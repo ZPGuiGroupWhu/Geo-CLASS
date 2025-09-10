@@ -1,0 +1,53 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/eeranyartrodrigo/A_Hist",
+            "USGS/GMTED2010"
+        ],
+        "Function": [
+            "Elevation Data Visualization",
+            "Flood Plain Mapping"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "users/eeranyartrodrigo/A_Conc"
+        ],
+        "Function": [
+            "Flood Event Identification"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "users/eeranyartrodrigo/SSNMX_catalogo_20220801_20220810"
+        ],
+        "Function": [
+            "Buffering Earthquake Locations",
+            "Earthquake Magnitude Calculation"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "GLOBAL_FLOOD_DB/MODIS_EVENTS/V1"
+        ],
+        "Function": [
+            "Flood Event Identification"
+        ]
+    },
+    "relation_5": {
+        "DataSource": [
+            "JRC/GHSL/P2016/BUILT_LDSMT_GLOBE_V1"
+        ],
+        "Function": [
+            "Built-Up Area Analysis"
+        ]
+    },
+    "relation_6": {
+        "DataSource": [
+            "JRC/GWIS/GlobFire/v2/DailyPerimeters"
+        ],
+        "Function": [
+            "Fire Perimeter Analysis"
+        ]
+    }
+}

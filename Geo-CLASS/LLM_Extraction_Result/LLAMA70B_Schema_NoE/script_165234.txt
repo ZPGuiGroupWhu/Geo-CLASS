@@ -1,0 +1,41 @@
+Entity Recognition:
+```
+{
+  "Theme": ["Land cover analysis using MODIS data"],
+  "DataSource": ["MODIS/006/MOD09GA", "users/giswqs/public/countries"],
+  "Function": [
+    "Filtering MODIS data by year (2019) and applying cloud mask",
+    "Scaling MODIS data",
+    "Calculating NDVI",
+    "Extracting date, month, and day of year from MODIS data",
+    "Creating a quality mosaic of NDVI",
+    "Visualizing NDVI, greenest pixel, greenest month, and greenest day of year"
+  ]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["MODIS/006/MOD09GA"],
+        "Function": [
+            "Filtering MODIS data by year (2019) and applying cloud mask",
+            "Scaling MODIS data",
+            "Calculating NDVI",
+            "Extracting date, month, and day of year from MODIS data",
+            "Creating a quality mosaic of NDVI",
+            "Visualizing NDVI, greenest pixel, greenest month, and greenest day of year"
+        ]
+    },
+    "relation_2": {
+        "DataSource": ["users/giswqs/public/countries"],
+        "Function": ["None"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2236, 'completion_tokens': 328, 'total_tokens': 2564}

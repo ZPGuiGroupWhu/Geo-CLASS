@@ -1,0 +1,6 @@
+{
+  "Summary": ["Script processes Sentinel-1 data for land cover classification."],
+  "Theme": ["Land cover classification using Sentinel-1 data"],
+  "DataSource": ["COPERNICUS/S1_GRD", "urban", "forest", "water"],
+  "Function": ["Refined Lee speckle filtering", "Composite image creation", "Land cover classification"]
+}

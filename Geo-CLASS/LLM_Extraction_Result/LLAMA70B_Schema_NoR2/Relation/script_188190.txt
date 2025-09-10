@@ -1,0 +1,34 @@
+{
+    "relation_1": {
+        "DataSource": ["users/ValeriaContessa/n_regions", "users/kindgard/Africa"],
+        "Function": ["Clipping images to a specific country boundary"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LT5_L1T", "LANDSAT/LE7_L1T", "LANDSAT/LC08/C01/T1_RT"],
+        "Function": ["Filtering image collections by date and cloud cover", "Applying quality bands to images", "Calculating ratios of image bands"]
+    },
+    "relation_3": {
+        "DataSource": ["users/kindgard/Asia", "users/kindgard/Asia2"],
+        "Function": ["Merging image collections"]
+    },
+    "relation_4": {
+        "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+        "Function": ["Masking water and urban areas"]
+    },
+    "relation_5": {
+        "DataSource": ["users/kindgard/AfricaS", "users/kindgard/AmericaN"],
+        "Function": ["Classifying land cover using CART algorithm"]
+    },
+    "relation_6": {
+        "DataSource": ["users/ValeriaContessa/Map_1992_rast"],
+        "Function": ["Creating mosaics of images"]
+    },
+    "relation_7": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Filtering image collections by date and cloud cover"]
+    },
+    "relation_8": {
+        "DataSource": ["users/kindgard/SUD", "users/kindgard/ESACCI-LC-L4-LC10-Map-20m-P1Y-2016-v10"],
+        "Function": ["Classifying land cover using CART algorithm"]
+    }
+}

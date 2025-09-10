@@ -1,0 +1,5 @@
+{
+  "Theme": ["Agricultural land cover analysis"],
+  "DataSource": ["USDA/NASS/CDL"],
+  "Function": ["Load image collection", "Define geometry"]
+}

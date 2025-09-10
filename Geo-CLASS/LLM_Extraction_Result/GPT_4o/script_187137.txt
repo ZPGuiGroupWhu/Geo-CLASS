@@ -1,0 +1,25 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Temperature analysis", "Monthly temperature trends", "Annual temperature range"],
+  "DataSource": ["users/khoapv_vnuf/Thanhhoa_t", "MODIS/MOD11A2"],
+  "Function": ["Select region of interest", "Collect and scale temperature bands", "Convert temperature from Kelvin to Celsius", "Aggregate images by year", "Generate dates by months", "Calculate monthly max temperature", "Calculate monthly min temperature", "Calculate monthly mean temperature", "Visualize temperature data", "Generate temperature charts"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["users/khoapv_vnuf/Thanhhoa_t"],
+    "Function": ["Select region of interest", "Generate temperature charts"]
+  },
+  "relation_2": {
+    "DataSource": ["MODIS/MOD11A2"],
+    "Function": ["Collect and scale temperature bands", "Convert temperature from Kelvin to Celsius", "Aggregate images by year", "Generate dates by months", "Calculate monthly max temperature", "Calculate monthly min temperature", "Calculate monthly mean temperature", "Visualize temperature data"]
+  }
+}
+```
+
+Total_Token_Usage:
+5623

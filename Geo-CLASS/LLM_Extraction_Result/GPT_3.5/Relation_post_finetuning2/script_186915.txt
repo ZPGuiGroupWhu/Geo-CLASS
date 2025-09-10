@@ -1,0 +1,20 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S1_GRD"
+        ],
+        "Function": [
+            "Binary Image Creation",
+            "Thresholding For Identification",
+            "Flood Area Calculation"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "CIESIN/GPWv4/population-count"
+        ],
+        "Function": [
+            "Spatial Clipping"
+        ]
+    }
+}

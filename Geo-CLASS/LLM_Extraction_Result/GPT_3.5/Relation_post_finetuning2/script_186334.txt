@@ -1,0 +1,21 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "MODIS/006/MOD09Q1"
+        ],
+        "Function": [
+            "Filter Images By Date And Region",
+            "Computes Normalized Difference Vegetation Index (NDVI)",
+            "Visualize Data Using Specific Band Combinations"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "users/khoapv/Ranhgioi_DL"
+        ],
+        "Function": [
+            "Unsupervised Clustering",
+            "Classify Images Based On Trained Model"
+        ]
+    }
+}

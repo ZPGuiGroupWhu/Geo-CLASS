@@ -1,0 +1,26 @@
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_32DAY_NDVI"],
+        "Function": ["Filter image collection by date and polygon", "Compute NDVI from Landsat image"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1"],
+        "Function": ["Compute calibrated radiance from Landsat images", "Compute top of atmosphere brightness temperature", "Compute surface reflectance from Landsat images"]
+    },
+    "relation_3": {
+        "DataSource": ["LANDSAT/LC8_SR"],
+        "Function": ["Compute surface reflectance from Landsat images"]
+    },
+    "relation_4": {
+        "DataSource": ["NCEP_RE/surface_temp", "NCEP_RE/surface_wv"],
+        "Function": ["Get NCEP atmospheric data for Landsat image dates"]
+    },
+    "relation_5": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_32DAY_NDVI", "LANDSAT/LC08/C01/T1"],
+        "Function": ["Join Landsat collections based on system:time_start"]
+    },
+    "relation_6": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_32DAY_NDVI"],
+        "Function": ["Compute emissivity from NDVI", "Compute surface temperature from Landsat image"]
+    }
+}

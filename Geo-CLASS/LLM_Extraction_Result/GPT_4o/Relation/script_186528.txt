@@ -1,0 +1,17 @@
+{
+  "relation_1": {
+    "DataSource": ["COPERNICUS/S1_GRD"],
+    "Function": [
+      "Define region of interest",
+      "Filter image collection",
+      "Create composite image",
+      "Apply Refined Lee filter",
+      "Convert image to natural units",
+      "Convert image to dB",
+      "Visualize results",
+      "Sample training data",
+      "Train classifier",
+      "Classify image"
+    ]
+  }
+}

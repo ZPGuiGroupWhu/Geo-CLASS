@@ -1,0 +1,14 @@
+{
+    "relation_1": {
+        "DataSource": ["users/liuchongwhu/Arctic/Arctic_greeness/treeline_country"],
+        "Function": ["Center map on region", "Add layer to map", "Calculate mean in region"]
+    },
+    "relation_2": {
+        "DataSource": ["MODIS/006/MOD13Q1"],
+        "Function": ["Load image collection", "Mask pixels by quality", "Mask water pixels", "Filter by year and month", "Select max value", "Add year property", "Calculate time difference", "Add bands to image", "Calculate regression slope", "Clip image to region", "Calculate mean in region", "Export image to Drive"]
+    },
+    "relation_3": {
+        "DataSource": ["MODIS/006/MOD44W"],
+        "Function": ["Mask water pixels"]
+    }
+}

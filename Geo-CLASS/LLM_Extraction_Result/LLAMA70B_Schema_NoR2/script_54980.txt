@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land use and land cover change analysis"],
+  "DataSource": ["users/edimilsonrodriguessantos/MAPBIOMAS/INFRAURBANA6-FT-v6/"],
+  "Function": ["Image collection creation", "Image masking and renaming", "Image band addition", "Image remapping", "Video generation"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/edimilsonrodriguessantos/MAPBIOMAS/INFRAURBANA6-FT-v6/"],
+        "Function": ["Image collection creation", "Image masking and renaming", "Image band addition", "Image remapping", "Video generation"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2410, 'completion_tokens': 182, 'total_tokens': 2592}

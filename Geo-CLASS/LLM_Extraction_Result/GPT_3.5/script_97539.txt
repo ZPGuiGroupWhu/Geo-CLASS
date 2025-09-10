@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Script extracts Landsat 8 data, calculates NDVI and SAVI, and exports images."],
+  "Theme": ["Vegetation analysis"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Filter Landsat 8 images by date, path, row, and cloud cover", "Calculate NDVI and SAVI indices", "Export NDVI and SAVI images to Google Drive", "Multiply bands B10 and B11 by 0.1 and export"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Filter Landsat 8 images by date, path, row, and cloud cover", "Calculate NDVI and SAVI indices", "Export NDVI and SAVI images to Google Drive"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Multiply bands B10 and B11 by 0.1 and export"]
+    }
+}
+```

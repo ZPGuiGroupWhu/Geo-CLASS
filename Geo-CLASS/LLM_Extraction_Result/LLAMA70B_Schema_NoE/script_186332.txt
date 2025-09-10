@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover classification and crop type identification using MODIS data and unsupervised classification"],
+  "DataSource": ["MODIS/006/MOD09Q1", "User-defined sugar mills locations"],
+  "Function": ["Buffer creation around sugar mills", "Image collection creation and filtering", "NDVI calculation and addition to image collection", "Multiband image creation for unsupervised classification", "Training dataset creation", "Unsupervised classification using k-means clustering", "Class merging and refinement", "Layer visualization and mapping"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["MODIS/006/MOD09Q1"],
+        "Function": ["Image collection creation and filtering", "NDVI calculation and addition to image collection", "Multiband image creation for unsupervised classification", "Unsupervised classification using k-means clustering", "Class merging and refinement", "Layer visualization and mapping"]
+    },
+    "relation_2": {
+        "DataSource": ["User-defined sugar mills locations"],
+        "Function": ["Buffer creation around sugar mills", "Training dataset creation"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3903, 'completion_tokens': 272, 'total_tokens': 4175}

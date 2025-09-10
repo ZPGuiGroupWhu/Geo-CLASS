@@ -1,0 +1,24 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "MODIS/006/MOD09Q1"
+        ],
+        "Function": [
+            "Clipping image collection to a specific region",
+            "Calculating NDVI from image bands",
+            "Creating a multiband image from time-series data"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "MODIS/006/MOD09Q1"
+        ],
+        "Function": [
+            "Training a clusterer for unsupervised classification",
+            "Clustering input data using a trained clusterer",
+            "Merging classes based on specific criteria",
+            "Creating a refined classification layer",
+            "Mosaicking multiple classification layers"
+        ]
+    }
+}

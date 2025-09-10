@@ -1,0 +1,36 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Flood extent analysis"],
+  "DataSource": ["COPERNICUS/S1_GRD", "FAO/GAUL_SIMPLIFIED_500m/2015/level2", "JRC/GSW1_0/GlobalSurfaceWater", "WWF/HydroSHEDS/03VFDEM"],
+  "Function": ["Image collection filtering", "Mosaicking", "Speckle filtering", "Difference image creation", "Thresholding", "Flood extent refinement"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Image collection filtering", "Mosaicking", "Speckle filtering", "Difference image creation"]
+    },
+    "relation_2": {
+        "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2"],
+        "Function": ["Image collection filtering", "Mosaicking"]
+    },
+    "relation_3": {
+        "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+        "Function": ["Flood extent refinement"]
+    },
+    "relation_4": {
+        "DataSource": ["WWF/HydroSHEDS/03VFDEM"],
+        "Function": ["Flood extent refinement"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4183, 'completion_tokens': 341, 'total_tokens': 4524}

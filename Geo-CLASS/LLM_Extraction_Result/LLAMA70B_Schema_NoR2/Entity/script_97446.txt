@@ -1,0 +1,5 @@
+{
+  "Theme": ["Land cover analysis in Kalimantan region"],
+  "DataSource": ["COPERNICUS/S2"],
+  "Function": ["Filtering image collection by date and cloud percentage", "Masking clouds and cirrus from images", "Calculating median of image collection", "Downloading image with specified scale and region"]
+}

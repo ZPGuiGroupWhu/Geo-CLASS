@@ -1,0 +1,18 @@
+{
+    "relation_1": {
+        "DataSource": ["users/kiniklihakan/milanshp"],
+        "Function": ["Print histogram", "Calculate class area", "Create land cover chart"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C02/T1_L2"],
+        "Function": ["Apply cloud and shadow mask", "Rename image bands", "Blend images to fill gaps"]
+    },
+    "relation_3": {
+        "DataSource": ["LANDSAT/LT05/C02/T1_L2"],
+        "Function": ["Apply cloud and shadow mask", "Blend images to fill gaps"]
+    },
+    "relation_4": {
+        "DataSource": ["LANDSAT/LE07/C02/T1_L2"],
+        "Function": ["Apply cloud and shadow mask", "Blend images to fill gaps"]
+    }
+}

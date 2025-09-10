@@ -1,0 +1,16 @@
+{
+    "Theme": [
+        "Land cover classification and water quality analysis"
+    ],
+    "DataSource": [
+        "users/cesarnon/datos_cba_2017/Cordoba_limite",
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "Filtering image collections by date and cloud coverage",
+        "Renaming image bands",
+        "Calculating normalized difference water index",
+        "Mosaicking images",
+        "Adding layers to the map"
+    ]
+}

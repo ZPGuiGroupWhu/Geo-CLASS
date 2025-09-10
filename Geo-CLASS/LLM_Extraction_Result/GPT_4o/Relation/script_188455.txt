@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["users/kitmyfaceplease2/eastsouth_asia", "projects/ee-kitmyfaceplease2/assets/EAST_SOUTH_SPLIT2"],
+        "Function": ["Filter image collection by date and region", "Convert feature collection to image", "Export image to Google Drive"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2_CLOUD_PROBABILITY"],
+        "Function": ["Filter image collection by date and region", "Create daily mosaics", "Count images in collection", "Mask clouds in images", "Sum images in collection", "Calculate percentage of cloud-free pixels", "Export image to Google Drive"]
+    }
+}

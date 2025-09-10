@@ -1,0 +1,18 @@
+{
+    "Summary": [
+        "Geoprocessing modeling for cloud probability analysis in East Asia."
+    ],
+    "Theme": [
+        "CLOUD REFLECTANCE"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2_CLOUD_PROBABILITY",
+        "users/kitmyfaceplease2/eastsouth_asia"
+    ],
+    "Function": [
+        "Image Mosaicking",
+        "Cloud Probability Masking",
+        "Cloud Probability Masking",
+        "Add Cloud Cover Percentage Band"
+    ]
+}

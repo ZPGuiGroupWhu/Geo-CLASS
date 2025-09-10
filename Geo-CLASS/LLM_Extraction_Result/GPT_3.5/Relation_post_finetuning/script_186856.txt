@@ -1,0 +1,15 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Cloud Masking And Quality Filtering",
+            "MNDWI (Modified Normalized Difference Water Index calculation)",
+            "Time Series Clustering And Prediction",
+            "Time Series Clustering And Prediction",
+            "NDVI (Normalized Difference Vegetation Index calculation)",
+            "MNDWI (Modified Normalized Difference Water Index calculation)"
+        ]
+    }
+}

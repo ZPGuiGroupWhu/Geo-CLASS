@@ -1,0 +1,6 @@
+{
+  "Summary": ["Script analyzes Landsat 8 surface reflectance data for Flagstaff, AZ."],
+  "Theme": ["Landsat 8 surface reflectance analysis"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Filtering images by date and location", "Applying cloud and cloud shadow mask"]
+}

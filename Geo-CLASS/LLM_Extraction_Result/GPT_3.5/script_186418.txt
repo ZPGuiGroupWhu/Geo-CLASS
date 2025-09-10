@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Script processes Landsat data for surface temperature retrieval."],
+  "Theme": ["Surface temperature retrieval from Landsat data"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_32DAY_NDVI", "LANDSAT/LC08/C01/T1", "LANDSAT/LC08/C01/T1_TOA", "LANDSAT/LC8_SR", "NCEP_RE/surface_temp", "NCEP_RE/surface_wv"],
+  "Function": ["Filter Landsat collections by date and location", "Compute surface temperature from Landsat data", "Compute emissivity from NDVI", "Compute psi functions for surface temperature calculation"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_32DAY_NDVI", "LANDSAT/LC08/C01/T1", "LANDSAT/LC08/C01/T1_TOA", "LANDSAT/LC8_SR"],
+        "Function": ["Filter Landsat collections by date and location", "Compute surface temperature from Landsat data"]
+    },
+    "relation_2": {
+        "DataSource": ["NCEP_RE/surface_temp", "NCEP_RE/surface_wv"],
+        "Function": ["Compute surface temperature from Landsat data", "Compute emissivity from NDVI", "Compute psi functions for surface temperature calculation"]
+    }
+}
+```

@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["GOOGLE/DYNAMICWORLD/V1"],
+        "Function": ["Filter image collection by date", "Filter image collection by region", "Join image collections by system:index"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Extract most likely class label", "Create visualization with hillshade"]
+    }
+}

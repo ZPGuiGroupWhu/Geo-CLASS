@@ -1,0 +1,29 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Landsat 8 Surface Reflectance Analysis", "Cloud and Cloud Shadow Filtering", "Temporal Mosaics", "Spectral Signatures"],
+  "DataSource": ["LANDSAT/LC08/C02/T1_L2"],
+  "Function": ["Count total images in collection", "Filter images by date range", "Filter images by geographic region", "Create median composite image", "Filter images by cloud cover", "Mask clouds and shadows", "Display image with visualization parameters"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["LANDSAT/LC08/C02/T1_L2"],
+    "Function": [
+      "Count total images in collection",
+      "Filter images by date range",
+      "Filter images by geographic region",
+      "Create median composite image",
+      "Filter images by cloud cover",
+      "Mask clouds and shadows",
+      "Display image with visualization parameters"
+    ]
+  }
+}
+```
+
+Total_Token_Usage:
+5723

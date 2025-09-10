@@ -1,0 +1,22 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/ce15btech11022/Final_Cities/Ahmedabad"
+        ],
+        "Function": [
+            "Convert Flood Detection Results To Vector Polygons",
+            "Calculates Normalized Difference Water Index (NDWI)",
+            "Generate Time Series Charts Of Water Area"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Convert Flood Detection Results To Vector Polygons",
+            "Calculates Normalized Difference Water Index (NDWI)",
+            "Generate Time Series Charts Of Water Area"
+        ]
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_SR",
+            "LANDSAT/LC08/C01/T1"
+        ],
+        "Function": [
+            "maskL8sr: cloud masking function for Landsat 8 SR data",
+            "composite: median composite of cloud-masked images",
+            "classify: land cover classification using CART classifier",
+            "classify: land cover classification using Random Forest classifier",
+            "classify: land cover classification using Naive Bayes classifier",
+            "classify: land cover classification using SVM classifier",
+            "mode: mode calculation of classified images"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "users/nclinton/demo_landcover_labels"
+        ],
+        "Function": [
+            "train: training of CART classifier",
+            "errorMatrix: accuracy assessment using confusion matrix",
+            "byClass: area calculation by class",
+            "reduceRegion: area calculation by class using reducer"
+        ]
+    }
+}

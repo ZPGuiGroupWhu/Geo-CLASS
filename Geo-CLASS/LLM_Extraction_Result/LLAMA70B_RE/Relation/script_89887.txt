@@ -1,0 +1,29 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "TIGER/2018/States"
+        ],
+        "Function": [
+            "Image collection filtering",
+            "Boundary creation"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "MODIS/006/MOD09GA"
+        ],
+        "Function": [
+            "Cloud masking",
+            "Water masking",
+            "Image visualization"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "USGS/GMTED2010"
+        ],
+        "Function": [
+            "Hillshade generation"
+        ]
+    }
+}

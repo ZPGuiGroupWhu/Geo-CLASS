@@ -1,0 +1,17 @@
+{
+    "Theme": [
+        "Satellite data processing and analysis for agricultural field monitoring"
+    ],
+    "DataSource": [
+        "users/dgilad/SA",
+        "users/dgilad/Fields",
+        "COPERNICUS/S1_GRD"
+    ],
+    "Function": [
+        "Buffering features to reduce border effect",
+        "Filtering satellite images by date, polarization, resolution, and orbit",
+        "Converting satellite data to natural values and back to dB",
+        "Calculating mean and standard deviation for buffered fields",
+        "Exporting data tables to drive"
+    ]
+}

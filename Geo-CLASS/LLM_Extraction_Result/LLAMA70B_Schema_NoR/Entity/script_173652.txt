@@ -1,0 +1,20 @@
+{
+    "Theme": [
+        "Land cover change detection and analysis"
+    ],
+    "DataSource": [
+        "users/jrmancerafGEE/POL_SUB_AE_1055",
+        "users/jrmancerafGEE/PTS_SUB_AE_1055",
+        "LANDSAT/LC08/C01/T1_SR"
+    ],
+    "Function": [
+        "Masking cloud shadows and clouds in Landsat 8 images",
+        "Filtering image collection by date",
+        "Clipping images to area of interest",
+        "Calculating median of image collection",
+        "Running LandTrendr algorithm",
+        "Getting change map layers",
+        "Reducing regions to mean values",
+        "Exporting data to Google Drive"
+    ]
+}

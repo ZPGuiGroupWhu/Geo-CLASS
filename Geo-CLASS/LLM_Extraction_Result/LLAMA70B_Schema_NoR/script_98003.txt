@@ -1,0 +1,34 @@
+Entity Recognition:
+```json
+{
+"Theme": ["Land cover classification and change detection in Central America"],
+"DataSource": ["ft:1uRKhdFB2QPg6_om0fGjUs_wI8UZAi7ZIqdSKtbxI", "LANDSAT/LT05/C01/T1", "LANDSAT/LE07/C01/T1", "LANDSAT/LC08/C01/T1_RT", "COPERNICUS/S2", "users/EL/L5_2000_BelizeCubaCRP", "users/EL/L7_2010_BelizeCubaCRP", "users/EL/L8_2017_BelizeCubaCRP", "users/EL/S2_2017_BelizeCubaCRPv2", "users/ValeriaContessa/dggrid_CA_1", "users/ValeriaContessa/dggrid_CA_2", "users/ValeriaContessa/dggrid_CA_3", "users/ValeriaContessa/dggrid_CA_4", "users/ValeriaContessa/dggrid_CA_5", "users/ValeriaContessa/dggrid_CA_6", "users/ValeriaContessa/dggrid_CA_7", "users/ValeriaContessa/dggrid_CA_8", "users/ValeriaContessa/dggrid_CA_9", "users/ValeriaContessa/dggrid_CA_10", "users/ValeriaContessa/dggrid_CA_11", "users/ValeriaContessa/dggrid_CA_12", "users/ValeriaContessa/dggrid_CA_13", "users/ValeriaContessa/dggrid_CA_14", "users/ValeriaContessa/dggrid_Carib_1", "users/ValeriaContessa/dggrid_Carib_2", "users/ValeriaContessa/dggrid_Carib_3", "users/ValeriaContessa/dggrid_Carib_4", "users/ValeriaContessa/dggrid_Carib_5", "users/ValeriaContessa/dggrid_Carib_6"],
+"Function": ["Filtering image collections by date and cloud cover", "Mosaicking images", "Clipping images to a region", "Applying cloud score algorithm", "Masking clouds", "Computing median of image collection
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["ft:1uRKhdFB2QPg6_om0fGjUs_wI8UZAi7ZIqdSKtbxI"],
+        "Function": ["Filtering image collections by date and cloud cover", "Mosaicking images"]
+    },
+```
+    "relation_2": {
+        "DataSource": ["LANDSAT/LT05/C01/T1", "LANDSAT/LE07/C01/T1", "LANDSAT/LC08/C01/T1_RT"],
+        "Function": ["Filtering image collections by date and cloud cover", "Mosaicking images", "Clipping images to a region"]
+    },
+    "relation_3": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Applying cloud score algorithm", "Masking clouds"]
+    },
+    "relation_4": {
+        "DataSource": ["users/EL/L5_2000_BelizeCubaCRP", "users/EL/L7_2010_BelizeCubaCRP", "users/EL/L8_2017_BelizeCubaCRP", "users/EL/S2_2017_BelizeCubaCRPv2"],
+        "Function": ["Computing median of image collection"]
+    },
+    "relation_5": {
+        "DataSource": ["users/ValeriaContessa/dggrid_CA_1", "users/ValeriaContessa/dggrid_CA_2", "users/ValeriaContessa/dggrid_CA_3", "users/ValeriaContessa/dggrid_CA_4", "users/ValeriaContessa/dggrid_CA_5", "users/ValeriaContessa/dggrid_CA_6", "users/ValeriaContessa/dggrid_CA_7", "users/ValeriaContessa/dggrid_CA_8", "users/ValeriaContessa/dggrid_CA_9", "users/ValeriaContessa/dggrid_CA_10", "users/ValeriaContessa/dggrid_CA_11", "users/ValeriaContessa/dggrid_CA_12", "users/ValeriaContessa/dggrid_CA_13", "users/ValeriaContessa/dggrid_CA_14", "users/ValeriaContessa/dggrid
+
+Total_Usage:
+{'prompt_tokens': 6995, 'completion_tokens': 1117, 'total_tokens': 8112}

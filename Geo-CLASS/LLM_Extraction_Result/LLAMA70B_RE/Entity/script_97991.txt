@@ -1,0 +1,27 @@
+{
+    "Theme": [
+        "Land cover classification and forest type analysis"
+    ],
+    "DataSource": [
+        "users/EL/TrinidadandTobago",
+        "users/EL/trinidad_forest_type_landcover_28july2011",
+        "users/EL/tobago_forest_type_landcover_06may2011",
+        "LANDSAT/LC8_L1T",
+        "COPERNICUS/S2",
+        "users/christinacorbane/MT_comp_proj",
+        "JRC/GSW1_0/GlobalSurfaceWater"
+    ],
+    "Function": [
+        "Vector upload and visualization",
+        "Raster upload and visualization",
+        "Image collection filtering",
+        "Image filtering by date and cloud cover",
+        "Polygon creation",
+        "Mosaic creation with Landsat simple composite",
+        "Ratio band calculation",
+        "Image classification",
+        "Post-classification editing",
+        "Masking",
+        "Image exporting"
+    ]
+}

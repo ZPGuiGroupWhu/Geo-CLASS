@@ -1,0 +1,19 @@
+{
+    "Theme": [
+        "Land cover change analysis using Landsat 8 imagery and LandTrendr algorithm"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C01/T1_SR",
+        "users/jrmancerafGEE/POL_SUB_AE_1055",
+        "users/jrmancerafGEE/PTS_SUB_AE_1055"
+    ],
+    "Function": [
+        "maskL8sr",
+        "filterDate",
+        "map",
+        "clip",
+        "median",
+        "reduceRegions",
+        "Export.table.toDrive"
+    ]
+}

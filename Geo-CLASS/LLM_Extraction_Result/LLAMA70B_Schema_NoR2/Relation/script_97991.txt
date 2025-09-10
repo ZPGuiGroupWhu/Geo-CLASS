@@ -1,0 +1,30 @@
+{
+    "relation_1": {
+        "DataSource": ["users/EL/TrinidadandTobago"],
+        "Function": ["Upload and visualize shapefile"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC8_L1T"],
+        "Function": ["Filter Landsat images by date and cloud cover", "Mosaic with Landsat simple Composite and ratio bands"]
+    },
+    "relation_3": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Filter satellite images by polygon"]
+    },
+    "relation_4": {
+        "DataSource": ["users/EL/trinidad_forest_type_landcover_28july2011", "users/EL/tobago_forest_type_landcover_06may2011"],
+        "Function": ["Classify image using training points", "Post-classification editing"]
+    },
+    "relation_5": {
+        "DataSource": ["users/christinacorbane/MT_comp_proj"],
+        "Function": ["Use of masks for cities and water"]
+    },
+    "relation_6": {
+        "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+        "Function": ["Use of masks for cities and water"]
+    },
+    "relation_7": {
+        "DataSource": ["users/EL/trinidad_forest_type_landcover_28july2011", "users/EL/tobago_forest_type_landcover_06may2011"],
+        "Function": ["Export image to asset", "Print statistics for forest area"]
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "Summary": [
+        "Massive extraction of global DEM files for various regions."
+    ],
+    "Theme": [
+        "DIGITAL ELEVATION/TERRAIN MODEL (DEM)"
+    ],
+    "DataSource": [
+        "NOAA/NGDC/ETOPO1",
+        "NASA/ASTER_GED/AG100_003",
+        "OSU/GIMP/DEM",
+        "CPOM/CryoSat2/ANTARCTICA_DEM",
+        "JAXA/ALOS/AW3D30_V1_1",
+        "USGS/GMTED2010",
+        "USGS/SRTMGL1_003",
+        "USGS/GTOPO30",
+        "WWF/HydroSHEDS/03CONDEM",
+        "WWF/HydroSHEDS/30CONDEM",
+        "WWF/HydroSHEDS/15CONDEM"
+    ],
+    "Function": [
+        "Exporting And Data Conversion",
+        "Terrain And Hydrological Analysis",
+        "Terrain And Hydrological Analysis"
+    ]
+}

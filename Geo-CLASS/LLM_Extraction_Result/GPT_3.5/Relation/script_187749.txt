@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["users/kidsherry/Beijing"],
+        "Function": ["Composite annual NDVI images", "Analyze NDVI trends", "Visualize NDVI time series"]
+    },
+    "relation_2": {
+        "DataSource": ["MODIS/006/MOD13A1"],
+        "Function": ["Composite annual NDVI images", "Analyze NDVI trends"]
+    }
+}

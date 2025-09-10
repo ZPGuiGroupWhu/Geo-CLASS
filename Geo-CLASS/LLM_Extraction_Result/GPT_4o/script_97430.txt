@@ -1,0 +1,21 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Cloud and shadow masking", "Vegetation indices calculation"],
+  "DataSource": ["COPERNICUS/S2_CLOUD_PROBABILITY", "COPERNICUS/S2"],
+  "Function": ["Filter image collection by date and cloud cover", "Join image collections by index", "Add cloud probability band", "Identify dark NIR pixels", "Project cloud shadows", "Combine cloud and shadow masks", "Mask clouds and shadows", "Calculate normalized difference water index", "Calculate modified normalized difference water index", "Calculate normalized difference vegetation index", "Calculate soil-adjusted vegetation index"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2_CLOUD_PROBABILITY", "COPERNICUS/S2"],
+        "Function": ["Filter image collection by date and cloud cover", "Join image collections by index", "Add cloud probability band", "Identify dark NIR pixels", "Project cloud shadows", "Combine cloud and shadow masks", "Mask clouds and shadows", "Calculate normalized difference water index", "Calculate modified normalized difference water index", "Calculate normalized difference vegetation index", "Calculate soil-adjusted vegetation index"]
+    }
+}
+```
+
+Total_Token_Usage:
+6431

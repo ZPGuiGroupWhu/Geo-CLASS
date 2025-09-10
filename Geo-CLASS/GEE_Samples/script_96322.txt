@@ -1,0 +1,304 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var geometry = /* color: #d63000 */ee.Geometry.MultiPoint(
+        [[-64.27788593322408, -31.382400154314958],
+         [-64.2924771502651, -31.38192386830119],
+         [-64.46060564921511, -31.375693229201456]]),
+    recetas = ee.FeatureCollection("users/eemapascordoba/LCLU_2021/recetas_ago20_abr21_pstxcultivo_masLCollect_buffer2306"),
+    datos_rindes = ee.FeatureCollection("users/eemapascordoba/var_ambientales_rindes/rindes_alf_rol_training_zona");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+
+
+var Cordoba= ee.FeatureCollection('users/capas/provincia_wgs')
+
+
+
+
+
+var s2 = ee.ImageCollection('COPERNICUS/S2') 
+
+  .filterDate('2020-07-01', '2021-04-30')
+
+  .filterBounds(Cordoba)
+
+  .filterMetadata('CLOUDY_PIXEL_PERCENTAGE', 'less_than' ,10);
+
+  
+
+print(s2,'s2')
+
+//Preparar las colecciones --- Sentinel 2
+
+var s2c1 = ee.ImageCollection('COPERNICUS/S2') 
+
+  .filterDate('2020-07-01', '2020-08-26')
+
+  .filterBounds(Cordoba)
+
+  .filterMetadata('CLOUDY_PIXEL_PERCENTAGE', 'less_than' ,10);
+
+  
+
+var s2c2 = ee.ImageCollection('COPERNICUS/S2')
+
+  .filterDate('2020-08-26', '2020-10-10')
+
+  .filterBounds(Cordoba)
+
+  .filterMetadata('CLOUDY_PIXEL_PERCENTAGE', 'less_than' ,10);
+
+
+
+var s2c3 = ee.ImageCollection('COPERNICUS/S2')
+
+  .filterDate('2020-10-15', '2020-11-15')
+
+  .filterBounds(Cordoba)
+
+  .filterMetadata('CLOUDY_PIXEL_PERCENTAGE', 'less_than' ,10);
+
+ 
+
+var s2c4 = ee.ImageCollection('COPERNICUS/S2')
+
+  .filterDate('2020-11-16', '2020-12-25')
+
+  .filterBounds(Cordoba)
+
+  .filterMetadata('CLOUDY_PIXEL_PERCENTAGE', 'less_than' ,10);
+
+
+
+var s2c5 = ee.ImageCollection('COPERNICUS/S2')
+
+  .filterDate('2021-01-05', '2021-02-28')
+
+  .filterBounds(Cordoba)
+
+  .filterMetadata('CLOUDY_PIXEL_PERCENTAGE', 'less_than' ,10);
+
+
+
+var s2c6 = ee.ImageCollection('COPERNICUS/S2')
+
+  .filterDate('2021-03-01', '2021-03-31')
+
+  .filterBounds(Cordoba)
+
+  .filterMetadata('CLOUDY_PIXEL_PERCENTAGE', 'less_than' ,10);
+
+
+
+var s2c7 = ee.ImageCollection('COPERNICUS/S2')
+
+  .filterDate('2021-03-25', '2021-04-30')
+
+  .filterBounds(Cordoba)
+
+  .filterMetadata('CLOUDY_PIXEL_PERCENTAGE', 'less_than' ,10);
+
+  
+
+//Renamer Sentinel 2
+
+var renamer = function(collect) {
+
+  return collect.select(
+
+  ['B2','B3','B4','B5','B6','B7','B8','B8A','B11','B12'],  
+
+  ['BLUE','GREEN', 'RED','RedE1','RedE2','RedE3','NIR','RedE4','SWIR1','SWIR2'])};  
+
+  
+
+var s2c1r = renamer(s2c1);
+
+var s2c2r = renamer(s2c2);
+
+var s2c3r = renamer(s2c3);
+
+var s2c4r = renamer(s2c4);
+
+var s2c5r = renamer(s2c5);
+
+var s2c6r = renamer(s2c6);
+
+var s2c7r = renamer(s2c7);
+
+
+
+
+
+
+
+
+
+//Agregar indice para la QualityBand
+
+
+
+
+var qBand = function(image) { //NDVI
+
+var ndvi = image.expression(
+
+    '10000 * ((NIR - RED) / (NIR + RED))', {
+
+      'NIR': image.select('NIR'),
+
+      'RED': image.select('RED'),
+
+});
+
+var ndwi = image.expression(
+
+    '10000 * ((NIR - SWIR1) / (NIR +SWIR1))', {
+
+      'NIR': image.select('NIR'),
+
+      'SWIR1': image.select('SWIR1'),
+
+});
+
+var ndwi1 = image.expression(
+
+    '10000 * ((GREEN - NIR) / (GREEN +NIR))', {
+
+      'NIR': image.select('NIR'),
+
+      'GREEN': image.select('GREEN'),
+
+});
+
+var newImage = image
+
+.addBands(ndvi.rename('NDVI'))
+
+.addBands(ndwi1.rename('NDWI1'))
+
+.addBands(ndwi.rename('NDWI'));
+
+return (newImage);
+
+};  
+
+
+
+
+
+var s2c1rq = s2c1r.map(qBand);
+
+var s2c2rq = s2c2r.map(qBand);
+
+var s2c3rq = s2c3r.map(qBand);
+
+var s2c4rq = s2c4r.map(qBand);
+
+var s2c5rq = s2c5r.map(qBand);
+
+var s2c6rq = s2c6r.map(qBand);
+
+var s2c7rq = s2c7r.map(qBand);
+
+
+
+
+
+//Hacer el mosaico QB
+
+var s2m1 = s2c1rq.qualityMosaic('NDVI').clip(Cordoba);
+
+var s2m2 = s2c2rq.qualityMosaic('NDVI').clip(Cordoba);
+
+var s2m3 = s2c3rq.qualityMosaic('NDVI').clip(Cordoba);
+
+var s2m4 = s2c4rq.qualityMosaic('NDVI').clip(Cordoba);
+
+var s2m5 = s2c5rq.qualityMosaic('NDVI').clip(Cordoba);
+
+var s2m6 = s2c6rq.qualityMosaic('NDVI').clip(Cordoba);
+
+var s2m7 = s2c7rq.qualityMosaic('NDVI').clip(Cordoba);
+
+
+
+
+
+
+
+//Mostrar los mosaicos
+
+
+
+Map.addLayer (s2m1, {bands: ['NIR','RED','GREEN'], min: [900,300,600], max: [4500, 2000, 1700] }, 's2m1', false );
+
+Map.addLayer (s2m2, {bands: ['NIR','RED','GREEN'], min: [900,300,600], max: [4500, 2000, 1700] }, 's2m2', false );
+
+Map.addLayer (s2m3, {bands: ['NIR','RED','GREEN'], min: [900,300,600], max: [4500, 2000, 1700] }, 's2m3', false );
+
+Map.addLayer (s2m4, {bands: ['NIR','RED','GREEN'], min: [900,300,600], max: [4500, 2000, 1700] }, 's2m4', false );
+
+Map.addLayer (s2m5, {bands: ['NIR','RED','GREEN'], min: [900,300,600], max: [4500, 2000, 1700] }, 's2m5', false );
+
+Map.addLayer (s2m6, {bands: ['NIR','RED','GREEN'], min: [900,300,600], max: [4500, 2000, 1700] }, 's2m6', false );
+
+Map.addLayer (s2m7, {bands: ['NIR','RED','GREEN'], min: [900,300,600], max: [4500, 2000, 1700] }, 's2m7', false );
+
+Map.addLayer(recetas)
+
+
+
+
+var NDVI= s2m1.select('NDVI').rename('m1median').addBands([
+
+  s2m2.select('NDVI').rename('m2median'),
+
+  s2m3.select('NDVI').rename('m3median'),
+
+  s2m4.select('NDVI').rename('m4median'),
+
+  s2m5.select('NDVI').rename('m5median'),
+
+  s2m6.select('NDVI').rename('m6median'),
+
+  s2m7.select('NDVI').rename('m7median')]).toInt16();
+
+  
+
+print(NDVI,'NDVI')
+
+Map.addLayer(NDVI,{},'NDVI');
+
+
+
+// colectar puntos de entrenamiento.
+
+var puntosMuestra = NDVI.sampleRegions({
+
+  collection: datos_rindes,
+
+  
+
+  scale: 10,
+
+  tileScale:8,
+
+  
+
+  geometries: true,
+
+});
+
+print(puntosMuestra,'puntosMuestra');
+
+
+
+Map.addLayer(puntosMuestra,{},'puntosMuestra');
+
+Export.table.toDrive({
+
+  collection:puntosMuestra,
+
+  description: 'puntosMuestra'});
+
+
+

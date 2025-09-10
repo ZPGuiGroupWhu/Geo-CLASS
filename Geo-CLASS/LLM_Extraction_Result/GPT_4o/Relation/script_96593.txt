@@ -1,0 +1,18 @@
+{
+  "relation_1": {
+    "DataSource": ["MODIS/MOD09GA_006_NDVI"],
+    "Function": ["Filter data by date and area", "Compute mean NDVI", "Add layers to map"]
+  },
+  "relation_2": {
+    "DataSource": ["USGS/SRTMGL1_003"],
+    "Function": ["None"]
+  },
+  "relation_3": {
+    "DataSource": ["MODIS/006/MCD12Q1"],
+    "Function": ["Filter data by date and area", "Add layers to map"]
+  },
+  "relation_4": {
+    "DataSource": ["COPERNICUS/S2_SR"],
+    "Function": ["Calculate NDVI", "Filter data by date and area", "Generate NDVI time series chart", "Add layers to map"]
+  }
+}

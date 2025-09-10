@@ -1,0 +1,270 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var MOD13Q1 = ee.ImageCollection("MODIS/006/MOD13Q1"),
+    Mongol = /* color: #d63000 */ee.Geometry.Polygon(
+        [[[87.04303245706217, 52.736564354513504],
+          [86.95514183206217, 40.69764047188042],
+          [91.96490745706217, 40.69764047188042],
+          [102.42389183206217, 40.63097188872536],
+          [110.15826683206217, 40.497434860040485],
+          [120.44146995706217, 40.36363151036731],
+          [120.52936058206217, 52.20114975352699],
+          [114.64068870706217, 52.469671208080456],
+          [108.48834495706217, 52.57662363562496],
+          [100.49029808206217, 52.630002231965534]]]);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+///// produce average of MODIS EVI of each year
+
+var calculate=function(data,date){
+
+  var i;
+
+  ///// for loop is to filter date and remain single year again and again.
+
+  for (i=date;i<date+19;i++){
+
+    var filter_data=data.filter(ee.Filter.calendarRange(i,i,'year')).filter(ee.Filter.calendarRange(7,7,'month'));
+
+    /////Calculate average of remained images to all bands (average of each bands)
+
+    var MOD13Q1_mean = filter_data.mean().divide(10000);
+
+    ///// Pick out Band "EVI"
+
+    var MOD13Q1_mean_EVI=MOD13Q1_mean.select('EVI').rename(i+'EVI').clip(Mongol)
+
+    print(MOD13Q1_mean_EVI)
+
+    /////visualize on the map
+
+    var vizParams = { min:-1,max:1,palette: ['red', 'yellow','green']};
+
+    Map.addLayer(MOD13Q1_mean_EVI,vizParams,i+"MODIS_EVI")
+
+    //export the average of MODIS EVI (each year for one images)
+
+    Export.image.toDrive({ 
+
+               image: MOD13Q1_mean_EVI,
+
+               description:i+"_07_MODIS_EVI",
+
+               scale: 250,
+
+               maxPixels:1e13,
+
+               region: Mongol});
+
+  }
+
+  
+
+};
+
+var outcome=calculate(MOD13Q1,2000);
+
+
+
+
+
+
+
+var empty_image=ee.Image()
+
+
+
+var multiple_July_mean_PC_image=calculate(MOD13Q1,2000,empty_image)
+
+
+
+var multiple_July_mean_PC_image_2=multiple_July_mean_PC_image.select(multiple_July_mean_PC_image.bandNames().removeAll(["constant"]))
+
+print (multiple_July_mean_PC_image_2)
+
+
+
+///////////////////PCA
+
+function doPCA(image){
+
+  // Set some information about the input to be used later.
+
+var scale = 5000;
+
+var bandNames = image.bandNames();
+
+var region = image.geometry();
+
+// Mean center the data to enable a faster covariance reducer
+
+// and an SD stretch of the principal components.
+
+var meanDict = image.reduceRegion({
+
+    reducer: ee.Reducer.mean(),
+
+    geometry: region,
+
+    scale: scale,
+
+    maxPixels: 1e9
+
+});
+
+
+
+var means = ee.Image.constant(meanDict.values(bandNames));
+
+var centered = image.subtract(means);
+
+
+
+
+
+var getNewBandNames = function(prefix) {
+
+  var seq = ee.List.sequence(1, bandNames.length());
+
+  return seq.map(function(b) {
+
+    return ee.String(prefix).cat(ee.Number(b).int());
+
+  });
+
+};
+
+
+
+// This function accepts mean centered imagery, a scale and
+
+
+
+// Principal Components (PC) in the region as a new image.
+
+var getPrincipalComponents = function(centered, scale, region) {
+
+  // Collapse the bands of the image into a 1D array per pixel.
+
+  var arrays = centered.toArray();
+
+
+
+  // Compute the covariance of the bands within the region.
+
+  var covar = arrays.reduceRegion({
+
+    reducer: ee.Reducer.centeredCovariance(),
+
+    geometry: region,
+
+    scale: scale,
+
+    maxPixels: 1e9
+
+  });
+
+
+
+  // Get the 'array' covariance result and cast to an array.
+
+  // This represents the band-to-band covariance within the region.
+
+  var covarArray = ee.Array(covar.get('array'));
+
+
+
+  // Perform an eigen analysis and slice apart the values and vectors.
+
+  var eigens = covarArray.eigen();
+
+
+
+  // This is a P-length vector of Eigenvalues.
+
+  var eigenValues = eigens.slice(1, 0, 1);
+
+  print ('eigenValues',eigenValues)
+
+  // This is a PxP matrix with eigenvectors in rows.
+
+  var eigenVectors = eigens.slice(1, 1);
+
+  print('eigenVectors',eigenVectors)
+
+  // Convert the array image to 2D arrays for matrix computations.
+
+  var arrayImage = arrays.toArray(1);
+
+  // Left multiply the image array by the matrix of eigenvectors.
+
+  var principalComponents = ee.Image(eigenVectors).matrixMultiply(arrayImage);
+
+
+
+  // Turn the square roots of the Eigenvalues into a P-band image.
+
+  var sdImage = ee.Image(eigenValues.sqrt())
+
+    .arrayProject([0]).arrayFlatten([getNewBandNames('sd')]);
+
+
+
+  // Turn the PCs into a P-band image, normalized by SD.
+
+  return principalComponents
+
+    // Throw out an an unneeded dimension, [[]] -> [].
+
+    .arrayProject([0])
+
+    // Make the one band array image a multi-band image, [] -> image.
+
+    .arrayFlatten([getNewBandNames('pc')])
+
+    // Normalize the PCs by their SDs.
+
+    .divide(sdImage);
+
+};
+
+// Get the PCs at the specified scale and in the specified region
+
+var pcImage = getPrincipalComponents(centered, scale, region);
+
+
+
+// Plot each PC as a new layer
+
+for (var i = 0; i < bandNames.length().getInfo(); i++) {
+
+  var band = pcImage.bandNames().get(i).getInfo();
+
+  Map.addLayer(pcImage.select([band]), {min: -2, max: 2}, band);
+
+}
+
+return (pcImage)
+
+}
+
+
+
+var pca_outcome = doPCA(multiple_July_mean_PC_image_2)
+
+print (pca_outcome)
+
+
+
+Export.image.toDrive({ 
+
+               image: pca_outcome,
+
+               description:"PCA_PC",
+
+               scale: 2000,
+
+               maxPixels:1e13,
+
+               region: Mongol});
+
+               
+

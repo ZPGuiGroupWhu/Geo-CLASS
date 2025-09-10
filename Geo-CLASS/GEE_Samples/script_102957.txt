@@ -1,0 +1,93 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var Sr = ee.ImageCollection("LANDSAT/LC09/C02/T1_L2"),
+    gbl2 = ee.FeatureCollection("FAO/GAUL_SIMPLIFIED_500m/2015/level2");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+/////////////////////////////////////////////////////////////////////////////////
+// Geog 415 TD.3.2                                                             //  
+//                                                                             //
+// Always remember to use 'var' to define an object in JavaScript              //
+// Please use consistent indentation                                           //
+//                                                                             //
+// Please uncomment each line or block of code to run                          //
+// Mac Users: cmd+/ to comment or uncomment each line or block of code         //
+// Windows: ctrl+/ to comment or uncomment each line or block of code          //
+//                                                                             //
+// ctrl+shift+H to access keyboard shortcuts                                   //
+/////////////////////////////////////////////////////////////////////////////////
+
+// Note all ImageCollection assets are defined in the global variables above
+
+// Remote Sensing analyst don't use simpleComposite() 
+// It is a cushion to reduce your initial shock to a brand new program
+// Now that you are slightly more comfortable
+// Let's take a look at how things are done for production
+
+// SR ///////////////////////////////////////////////////////////////////////////
+
+// AOI
+var laGeom = ee.Feature(gbl2.filter(ee.Filter.eq('ADM2_NAME','Los Angeles')).first()) 
+  .geometry()
+
+// Bands involved
+var bands = ['SR_B2','SR_B3','SR_B4','SR_B5','SR_B6','SR_B7']
+
+// Clear pixel mask
+var clrMsk = function(image){
+  // Bitmask for clear pixels
+  var QABits = 6;
+  // Select the pixel QA band (Different between collections)
+  var clear = image.select('QA_PIXEL')
+    // bitwiseAnd to isolate to this particular bit location 
+    .bitwiseAnd(Math.pow(2, QABits))
+    // Shift to the first position to retrieve the value
+    .rightShift(QABits) 
+    // Use only pixels that are clear
+    .eq(1);
+  return image
+    .select(bands)
+    .updateMask(clear)
+};
+    
+// Cloud and cloud shadow mask
+var cldMsk = function(image){
+  // Bitmask for cloud and shift to first bit position to retrieve the value
+  var cloudBitMask = (1 << 3);
+  // Bitmask for cloud shadow and shift to first bit position to retrieve the value
+  var cloudShadowBitMask = (1 << 4);
+  // Select the pixel QA band (Different between collections)
+  var qa = image.select('QA_PIXEL');
+  // Both flags should be set to zero, indicating clear conditions.
+  var mask = qa.bitwiseAnd(cloudBitMask).eq(0)
+    .and(qa.bitwiseAnd(cloudShadowBitMask).eq(0));
+  return image
+    .select(bands)
+    .updateMask(mask);
+};
+
+// Function to convert DN to SR
+var dnToSr = function(image) { 
+  return image
+    .select(bands)
+    // Multiply Scale
+    .multiply(0.0000275)
+    // Add Offset
+    .add(-0.2)
+}
+
+// Filter ImageCollection
+var composite = Sr
+  // Filter to LA county
+  .filterBounds(laGeom)
+  // Filter to time window
+  .filterDate('2022-01-01', '2022-04-01')
+  // Mask cloud
+  //.map(clrMsk)
+  .map(cldMsk)
+  // Convert DN to SR
+  .map(dnToSr)
+  // Median composite to convert IC to Image
+  .median()
+
+// Add that image to map, note the difference in visualization parameters
+var vizParamsSr = {bands: ['SR_B4','SR_B3','SR_B2'], max: 0.3}
+Map.addLayer(composite, vizParamsSr, 'True Color SR', false);

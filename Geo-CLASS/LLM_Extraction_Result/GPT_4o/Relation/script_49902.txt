@@ -1,0 +1,22 @@
+{
+  "relation_1": {
+    "DataSource": ["COPERNICUS/S2_SR"],
+    "Function": [
+      "Filter image collection by date and location",
+      "Add image layer to map",
+      "Clip image to geometry",
+      "Calculate NDVI",
+      "Add NDVI layer to map",
+      "Center map on NDVI",
+      "Print NDVI values",
+      "Calculate NDMI",
+      "Add NDMI layer to map",
+      "Print NDMI values",
+      "Create legend panel",
+      "Add legend title",
+      "Add legend symbols",
+      "Center map on NDMI",
+      "Add legend to map"
+    ]
+  }
+}

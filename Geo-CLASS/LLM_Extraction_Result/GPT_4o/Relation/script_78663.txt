@@ -1,0 +1,6 @@
+{
+    "relation_1": {
+        "DataSource": ["users/danielp/LC-SLIAC:LC-SLIAC_global"],
+        "Function": ["Load external land cover correction module", "Apply land cover correction", "Print corrected image collection", "Create time series chart", "Display time series chart"]
+    }
+}

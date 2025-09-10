@@ -1,0 +1,14 @@
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Cloud masking from Landsat 8 SR data", "Image collection filtering by date", "Median image calculation"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1"],
+        "Function": ["Image collection filtering by date", "Median image calculation"]
+    },
+    "relation_3": {
+        "DataSource": ["users/nclinton/demo_landcover_labels"],
+        "Function": ["Image classification using Smile Cart", "Image classification using Smile Random Forest", "Image classification using Smile Naive Bayes", "Image classification using LibSVM", "Accuracy assessment using confusion matrix", "Area calculation by class", "Mode calculation from multiple classifications"]
+    }
+}

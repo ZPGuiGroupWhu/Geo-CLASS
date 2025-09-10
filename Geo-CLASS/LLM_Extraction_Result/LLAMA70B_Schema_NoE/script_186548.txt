@@ -1,0 +1,31 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Surface water mask computation using Sentinel-1 data and Canny Edge detector with Otsu thresholding"],
+  "DataSource": ["COPERNICUS/S1_GRD", "NOAA/CFSV2/FOR6H", "users/gena/GlobalHAND/30m/hand-5000"],
+  "Function": ["Refined Lee filter for speckle noise reduction", "Angle correction using toGamma0 function", "Surface water mask computation using Canny Edge detector with Otsu thresholding", "Perona Malik filter for image denoising"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Refined Lee filter for speckle noise reduction", "Angle correction using toGamma0 function", "Surface water mask computation using Canny Edge detector with Otsu thresholding"]
+    },
+    "relation_2": {
+        "DataSource": ["NOAA/CFSV2/FOR6H"],
+        "Function": ["None"]
+    },
+    "relation_3": {
+        "DataSource": ["users/gena/GlobalHAND/30m/hand-5000"],
+        "Function": ["Perona Malik filter for image denoising"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 6894, 'completion_tokens': 311, 'total_tokens': 7205}

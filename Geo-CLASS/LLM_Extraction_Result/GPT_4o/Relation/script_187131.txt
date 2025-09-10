@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["FIRMS"],
+        "Function": ["Filter hotspots by year and region", "Create burned area mask", "Convert mask to vector"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LT5_L1T"],
+        "Function": ["Create cloud-free composite", "Create pre-fire composite", "Create post-fire composite", "Remove clouds from images", "Calculate NBR index", "Export NBR images to Drive"]
+    }
+}

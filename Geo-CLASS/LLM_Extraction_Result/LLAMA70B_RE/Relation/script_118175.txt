@@ -1,0 +1,39 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LC09/C02/T1_L2",
+            "LANDSAT/LC08/C02/T1_L2"
+        ],
+        "Function": [
+            "Apply scale factors to image",
+            "Filter image collection by date and cloud cover",
+            "Clip image to region of interest"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2_SR"
+        ],
+        "Function": [
+            "Mask clouds in Sentinel-2 image",
+            "Calculate NDVI",
+            "Calculate NDWI",
+            "Calculate MNDWI",
+            "Calculate NDSI",
+            "Calculate EWI",
+            "Calculate ICE"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "users/gena/packages:utils",
+            "users/gena/packages:text",
+            "users/gena/packages:palettes"
+        ],
+        "Function": [
+            "Join image collections",
+            "Quality mosaic of image collection",
+            "Maximum value composite of image collection"
+        ]
+    }
+}

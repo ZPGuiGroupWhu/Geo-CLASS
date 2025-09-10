@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["users/hrishippatel/IndiaStates"],
+        "Function": ["Clipping images to a region", "Visualizing images"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Filtering Sentinel-1 images by date and polarization", "Compositing images"]
+    }
+}

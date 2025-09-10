@@ -1,0 +1,26 @@
+{
+    "relation_1": {
+        "DataSource": ["NOAA/VIIRS/DNB/MONTHLY_V1/VCMCFG", "NOAA/VIIRS/001/VNP09GA"],
+        "Function": ["Filtering Image Collection by Date", "Filtering Image Collection by Metadata", "Calculating Median Image"]
+    },
+    "relation_2": {
+        "DataSource": ["VITO/PROBAV/C1/S1_TOC_100M"],
+        "Function": ["Filtering Image Collection by Bounds", "Clipping Image to Geometry"]
+    },
+    "relation_3": {
+        "DataSource": ["MODIS/006/MCD43A1"],
+        "Function": ["Filtering Image Collection by Metadata", "Calculating Median Image"]
+    },
+    "relation_4": {
+        "DataSource": ["ASTER/AST_L1T_003"],
+        "Function": ["Filtering Image Collection by Bounds", "Clipping Image to Geometry"]
+    },
+    "relation_5": {
+        "DataSource": ["LANDSAT/LT04/C01/T1_TOA", "LANDSAT/LT05/C01/T1_TOA", "LANDSAT/LE07/C01/T1_TOA", "LANDSAT/LC08/C01/T1_TOA"],
+        "Function": ["Filtering Image Collection by Date", "Filtering Image Collection by Bounds", "Clipping Image to Geometry", "Exporting Image to Drive"]
+    },
+    "relation_6": {
+        "DataSource": ["COPERNICUS/S3/OLCI", "COPERNICUS/S2"],
+        "Function": ["Visualizing Image in Map"]
+    }
+}

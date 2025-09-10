@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land Surface Temperature Analysis"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR", "users/khoirurrizqi/Jawa"],
+  "Function": ["Cloud mask application", "Image collection filtering", "NDVI calculation", "Thermal band extraction", "Fractional vegetation calculation", "Emissivity calculation", "Land Surface Temperature calculation", "Image visualization"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Cloud mask application", "Thermal band extraction", "Land Surface Temperature calculation"]
+    },
+    "relation_2": {
+        "DataSource": ["users/khoirurrizqi/Jawa"],
+        "Function": ["Image collection filtering", "NDVI calculation", "Fractional vegetation calculation", "Emissivity calculation", "Image visualization"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 5109, 'completion_tokens': 231, 'total_tokens': 5340}

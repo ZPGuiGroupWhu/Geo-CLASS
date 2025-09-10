@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land surface reflectance analysis"],
+  "DataSource": ["LANDSAT/LC08/C02/T1_L2"],
+  "Function": ["Image collection filtering", "Image clipping", "Reflectance conversion", "Image visualization", "Image exporting"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C02/T1_L2"],
+        "Function": ["Image collection filtering", "Image clipping", "Reflectance conversion", "Image visualization", "Image exporting"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2447, 'completion_tokens': 146, 'total_tokens': 2593}

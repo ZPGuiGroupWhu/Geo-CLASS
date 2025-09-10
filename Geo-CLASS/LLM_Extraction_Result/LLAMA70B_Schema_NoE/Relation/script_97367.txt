@@ -1,0 +1,25 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LT4_L1T_TOA",
+            "LANDSAT/LT5_L1T_TOA",
+            "LANDSAT/LC8_L1T_TOA",
+            "LANDSAT/LE7_L1T_TOA"
+        ],
+        "Function": [
+            "getImageCollection",
+            "landsatCloudScore",
+            "simpleTDOM2",
+            "cloudProject",
+            "ndvi_function"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "FAO/GAUL/2015/level0"
+        ],
+        "Function": [
+            "getImageCollection"
+        ]
+    }
+}

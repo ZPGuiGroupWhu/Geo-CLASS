@@ -1,0 +1,211 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var imageVisParam = {"opacity":1,"bands":["probability"],"max":72,"palette":["585dff","5cd2ff","58ff6d","efff6e","ffce1b","ff0404"]},
+    imageVisParam2 = {"opacity":1,"bands":["probability"],"palette":["3f94ff","49ff92","40ff1d","e6ff16","ff7310","ff1004"]},
+    imageVisParam3 = {"opacity":1,"bands":["sum"],"palette":["29b0ff","49ff3d","ffc214","ff0c0c"]},
+    imageVisParam4 = {"opacity":1,"bands":["sum"],"palette":["3dc0ff","5cff49","f3ff43","ff880e","ff1800"]},
+    roi = 
+    /* color: #d63000 */
+    /* shown: false */
+    ee.Feature(
+        ee.Geometry.Polygon(
+            [[[97.32086463937897, 28.75619558118315],
+              [91.08063026437897, 22.824893580870885],
+              [91.65191932687897, 20.33236535137648],
+              [93.67340370187897, 18.300395814508366],
+              [93.62945838937897, 15.568114026705194],
+              [95.82672401437897, 15.271570399196714],
+              [96.88141151437897, 16.286499311262954],
+              [97.45270057687897, 14.719738765988717],
+              [97.93609901437897, 12.24134851256271],
+              [97.67242713937897, 7.741579870955294],
+              [99.34234901437897, 5.777886536383813],
+              [100.88043495187897, 5.38425438382038],
+              [102.77008338937897, 5.252986078464658],
+              [103.38531776437897, 5.821606898582226],
+              [100.79254432687897, 7.78512239929313],
+              [99.95758338937897, 9.869392408340586],
+              [100.26520057687897, 11.596383766325202],
+              [101.10016151437897, 12.069508349897198],
+              [102.15484901437897, 12.112478786176375],
+              [102.68219276437897, 10.60456482049074],
+              [104.61578651437897, 9.782791122491577],
+              [105.05523963937897, 7.9222098603461975],
+              [108.52691932687897, 10.005701611027568],
+              [109.88922401437897, 11.602799576061113],
+              [110.37262245187897, 14.853541319386428],
+              [107.56012245187897, 18.34833019819464],
+              [106.28570838937897, 19.470796321560098],
+              [107.82379432687897, 21.28329237397517],
+              [108.39508338937897, 21.48789008135438],
+              [108.08746620187897, 22.911910755636736],
+              [106.37359901437897, 23.316085908040733],
+              [106.28570838937897, 24.720945915201007],
+              [104.96734901437897, 26.66126267677491],
+              [104.70367713937897, 27.20975139173273],
+              [105.71441932687897, 27.20975139173273],
+              [105.71441932687897, 28.375992179223285],
+              [103.82477088937897, 29.37648725659591],
+              [102.06695838937897, 26.779020269118316],
+              [101.62750526437897, 27.599886467589393],
+              [101.05621620187897, 29.06967029534327],
+              [99.51813026437897, 29.720553832362896],
+              [97.89215370187897, 29.911194545306977]]]),
+        {
+          "system:index": "0"
+        }),
+    ROI = ee.FeatureCollection("users/kitmyfaceplease2/eastsouth_asia"),
+    ROI2 = ee.FeatureCollection("projects/ee-kitmyfaceplease2/assets/EAST_SOUTH_SPLIT2"),
+    EAST_ASIA = ee.FeatureCollection("users/kitmyfaceplease2/eastsouth_asia");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+var start = ee.Date('2019-1-01');
+var finish = ee.Date('2022-12-31');
+var cloud_probability=50
+var YEAR=2019
+
+var filterSummer = ee.Filter.or(
+        ee.Filter.date('2015-11-1', '2016-5-31'),
+        ee.Filter.date('2016-11-1', '2017-5-31'),
+        ee.Filter.date('2017-11-1', '2018-5-31'),      
+        ee.Filter.date('2018-11-1', '2019-5-31'),
+        ee.Filter.date('2019-11-1', '2020-5-31'),
+        ee.Filter.date('2020-11-1', '2021-5-31'),        
+        ee.Filter.date('2021-11-1', '2022-5-31'))
+        
+var NAMES=["A","B","C","D","E","F","G","H","I","J","K"]
+
+
+for (var id=0; id <NAMES.length;id++){
+    // Focus on one region:
+    var NAME=NAMES[id];
+    var focusRegion = ROI2.filter(ee.Filter.eq('ISO', NAME));
+    var name = focusRegion.first().get("ISO");
+    
+    
+var collection =ee.ImageCollection('COPERNICUS/S2_CLOUD_PROBABILITY')
+                  .filterBounds(roi.geometry())
+                  .filter(filterSummer);
+                  
+
+// Difference in days between start and finish
+var diff = finish.difference(start, 'day')
+ 
+// Make a list of all dates
+var range = ee.List.sequence(0, diff.subtract(1)).map(function(day){return start.advance(day,'day')})
+
+// Funtion for iteraton over the range of dates
+var day_mosaics = function(date, newlist) {
+  // Cast
+  date = ee.Date(date)
+  newlist = ee.List(newlist)
+  
+  // Filter collection between date and the next day
+  var filtered = collection.filterDate(date, date.advance(1,'day'))
+  
+  // Make the mosaic
+  var image = ee.Image(filtered.mosaic())
+  
+  // Add the mosaic to a list only if the collection has images
+  return ee.List(ee.Algorithms.If(filtered.size(), newlist.add(image), newlist))
+}
+
+// Iterate over the range to make a new list, and then cast the list to an imagecollection
+var newcol = ee.ImageCollection(ee.List(range.iterate(day_mosaics, ee.List([]))))
+
+
+var collection_count =newcol.map(function(img) {return img.select('probability')});
+var count_image = collection_count.count().clip(roi);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var ROI_TOImg = ee.FeatureCollection(roi).reduceToImage({
+      properties: ['probability'],
+      reducer: ee.Reducer.first()
+  });
+  
+var ROI_IMAGE=ROI_TOImg.uint8().select("first").rename("probability")
+
+
+
+function maskClouds(img) {
+            var img_roi_collection=ee.ImageCollection.fromImages([ROI_IMAGE.clip(roi.geometry()),img.clip(roi.geometry()).gt(cloud_probability)]);
+            var ROI_TOImg_add=img_roi_collection.qualityMosaic("probability")
+            
+            return ROI_TOImg_add
+      }
+
+
+
+function GPP_pre(collection){
+        //调用GPP_clip
+        
+        var myCollection = collection;
+        //获取collection的合成值 先将Collection转为数组list，再对每个图像的list进行合成                   
+        //collection转为数组
+        var listOfImages = myCollection.toList(myCollection.size());
+        var sum_image = ee.Image(listOfImages.get(0));
+        //合成
+        var A=listOfImages.length()
+        for(var order=1;order<89;order++){
+          sum_image=sum_image.add(ee.Image(listOfImages.get(order)))
+          }
+        return sum_image
+      }
+var s2Clouds=newcol.map(maskClouds)
+
+
+var sum2 = s2Clouds.sum();
+
+
+
+
+var sum3 = s2Clouds.toBands();
+var sum_bands = sum3.reduce('sum')
+
+
+
+
+
+
+
+var percentage_image=sum_bands.divide(count_image)
+
+
+
+
+
+
+//导出数据
+Export.image.toDrive({
+  image:percentage_image,
+  description:NAME+"_"+YEAR,
+  fileNamePrefix:NAME+"_"+YEAR,
+  region:roi,
+  folder:"CLOUD"+"/"+"year"+"/"+YEAR+"/"+NAME,
+  scale:10,
+  maxPixels:1e13
+});
+    
+}
+
+Map.addLayer(percentage_image,imageVisParam4)
+ var empty = ee.Image().byte();
+ var outlines =empty.paint({
+  featureCollection: EAST_ASIA,
+  color: 'BIOME_NUM',
+  width: 'NNH'
+});
+Map.addLayer(outlines)
+
+ 
+ 

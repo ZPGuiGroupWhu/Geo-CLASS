@@ -1,0 +1,71 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var br = 
+    /* color: #ffc82d */
+    /* shown: false */
+    /* displayProperties: [
+      {
+        "type": "rectangle"
+      }
+    ] */
+    ee.Geometry.Polygon(
+        [[[-77.80924912053405, 6.951196785797111],
+          [-77.80924912053405, -35.94002305177066],
+          [-33.60026474553405, -35.94002305177066],
+          [-33.60026474553405, 6.951196785797111]]], null, false),
+    imageVisParam = {"opacity":1,"bands":["classification_1999"],"max":1,"gamma":1},
+    geometry = 
+    /* color: #98ff00 */
+    /* displayProperties: [
+      {
+        "type": "rectangle"
+      }
+    ] */
+    ee.Geometry.Polygon(
+        [[[-41.39765307525571, -21.674248888671777],
+          [-41.39765307525571, -21.83049815453441],
+          [-41.22530505279477, -21.83049815453441],
+          [-41.22530505279477, -21.674248888671777]]], null, false);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+var input_asset = 'users/edimilsonrodriguessantos/MAPBIOMAS/INFRAURBANA6-FT-v6/'
+var firstYear = [1985]
+
+var years = [
+  1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,
+  2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,
+  2015, 2016, 2017, 2018, 2019, 2020
+  ]
+  
+var img0 = ee.Image(input_asset + '1986-gr4-1').unmask().rename('classification_1986')
+
+years.map(function(year){
+  //var img = ee.Image(gr_result + year + '-gr4-1')
+  var prev = year - 1
+  
+  var year_prev = img0.select('classification_' + prev)
+  var year_0 = ee.Image(input_asset + year + '-gr4-' + 1).unmask().select('remapped')
+  
+  var imgResult = year_0.where(year_prev.add(year_0).divide(2).eq(0.5), 1).rename('classification_' + year)
+  img0 = img0.addBands(imgResult)
+})
+
+
+var img2col = years.map(function(year){
+  //Map.addLayer(img0.select('classification_' + year), {gamma: 1, max: 1, opacity: 0.4}, 'classification_' + year)  
+  var img = img0.select('classification_' + year).remap([1],[24])
+  
+  return img
+})
+
+var args = {
+  //crs: 'EPSG:3857',  // Maps Mercator
+  dimensions: '300',
+  region: geometry,
+  min: 24,
+  max: 24,
+  palette: 'red',
+  opacity: 0.4,
+  format:'gif',
+  framesPerSecond: 8
+};
+
+print(ee.ImageCollection(img2col).getVideoThumbURL(args))

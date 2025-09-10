@@ -1,0 +1,25 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Sugarcane crop classification", "NDVI time-series analysis", "Unsupervised clustering"],
+  "DataSource": ["MODIS/006/MOD09Q1", "users/khoapv/Ranhgioi_DL"],
+  "Function": ["Filter image collection by date", "Clip images to region", "Calculate NDVI", "Create multiband image", "Sample training data", "Train KMeans clusterer", "Cluster images", "Remap classes", "Visualize clusters", "Create buffers", "Convert feature to image", "Merge classes", "Refine classes", "Create mosaic"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["MODIS/006/MOD09Q1"],
+    "Function": ["Filter image collection by date", "Clip images to region", "Calculate NDVI", "Create multiband image", "Sample training data", "Train KMeans clusterer", "Cluster images", "Remap classes", "Visualize clusters", "Create mosaic"]
+  },
+  "relation_2": {
+    "DataSource": ["users/khoapv/Ranhgioi_DL"],
+    "Function": ["Clip images to region", "Sample training data", "Visualize clusters", "Create buffers", "Convert feature to image", "Merge classes", "Refine classes", "Create mosaic"]
+  }
+}
+```
+
+Total_Token_Usage:
+6359

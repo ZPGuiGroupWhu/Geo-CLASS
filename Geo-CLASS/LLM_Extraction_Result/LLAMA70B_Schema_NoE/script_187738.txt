@@ -1,0 +1,52 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land cover classification and object-based image analysis"],
+  "DataSource": ["USDA/NAIP/DOQQ", "USDA/NASS/CDL/2016"],
+  "Function": [
+    "Load NAIP image collection and filter by date and bounds",
+    "Load CDL 2016 image and select cropland layer",
+    "Clip images to ROI and normalize",
+    "Create mosaic from NAIP scenes",
+    "Perform random forest classification",
+    "Perform object-based image analysis using SNIC",
+    "Compute cluster means and standard deviation",
+    "Compute cluster area and perimeter",
+    "Compute cluster width and height",
+    "Build new classifier with additional properties",
+    "Compute confusion matrix"
+  ]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["USDA/NAIP/DOQQ"],
+        "Function": [
+            "Load NAIP image collection and filter by date and bounds",
+            "Create mosaic from NAIP scenes",
+            "Clip images to ROI and normalize",
+            "Perform random forest classification",
+            "Perform object-based image analysis using SNIC",
+            "Compute cluster means and standard deviation",
+            "Compute cluster area and perimeter",
+            "Compute cluster width and height",
+            "Build new classifier with additional properties",
+            "Compute confusion matrix"
+        ]
+    },
+    "relation_2": {
+        "DataSource": ["USDA/NASS/CDL/2016"],
+        "Function": ["Load CDL 2016 image and select cropland layer"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3334, 'completion_tokens': 402, 'total_tokens': 3736}

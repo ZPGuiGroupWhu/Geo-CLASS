@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Load Sentinel-1 image collection", "Filter image collection by date and polarization", "Mosaic images before and after event", "Smooth radar intensities", "Threshold radar intensities", "Display images on map", "Generate thumbnail URLs", "Update flooded area mask", "Clean false positive pixels", "Convert pixels to polygons", "Export polygons to Drive"]
+    },
+    "relation_2": {
+        "DataSource": ["CIESIN/GPWv4/population-count"],
+        "Function": ["Clip population data to polygons", "Sample population data", "Display images on map"]
+    }
+}

@@ -1,0 +1,25 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Cloud masking", "Landsat image analysis", "Percentile reduction", "RGB composition"],
+  "DataSource": ["users/GeoForPy/Tesis/EcorregionAltoParana", "LANDSAT/LT05/C01/T1_SR"],
+  "Function": ["Define region of interest", "Print region", "Add region to map", "Mask clouds in images", "Filter image collection by date", "Filter image collection by cloud cover", "Filter image collection by region", "Apply cloud mask to images", "Reduce image collection by percentiles", "Clip images to region", "Reduce image collection by mean", "Add mean image to map", "Add percentile images to map", "Create RGB compositions", "Link maps", "Configure map layout", "Center map on region", "Reset UI layout", "Select bands for export", "Export images to Drive"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["users/GeoForPy/Tesis/EcorregionAltoParana"],
+    "Function": ["Define region of interest", "Print region", "Add region to map", "Filter image collection by region", "Clip images to region", "Center map on region"]
+  },
+  "relation_2": {
+    "DataSource": ["LANDSAT/LT05/C01/T1_SR"],
+    "Function": ["Mask clouds in images", "Filter image collection by date", "Filter image collection by cloud cover", "Apply cloud mask to images", "Reduce image collection by percentiles", "Reduce image collection by mean", "Add mean image to map", "Add percentile images to map", "Create RGB compositions", "Link maps", "Configure map layout", "Reset UI layout", "Select bands for export", "Export images to Drive"]
+  }
+}
+```
+
+Total_Token_Usage:
+6931

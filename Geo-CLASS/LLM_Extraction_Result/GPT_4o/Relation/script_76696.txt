@@ -1,0 +1,10 @@
+{
+  "relation_1": {
+    "DataSource": ["users/cxliu2015/Arctic_treeline_Project_Russia"],
+    "Function": ["Draw region outline"]
+  },
+  "relation_2": {
+    "DataSource": ["LANDSAT/LT04/C01/T1_TOA", "LANDSAT/LT05/C01/T1_TOA", "LANDSAT/LE07/C01/T1_TOA", "LANDSAT/LC08/C01/T1_TOA"],
+    "Function": ["Filter image collection by region", "Filter image collection by date", "Filter image collection by month", "Mask clouds in images", "Calculate NDVI", "Harmonize Landsat 8 with Landsat 7", "Merge image collections", "Count valid observations", "Visualize NDVI", "Export image to Google Drive"]
+  }
+}

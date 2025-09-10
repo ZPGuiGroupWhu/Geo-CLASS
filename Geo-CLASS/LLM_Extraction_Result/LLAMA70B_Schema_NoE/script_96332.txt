@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Sentinel 2 Image Processing and Mosaicking"],
+  "DataSource": ["users/cesarnon/datos_cba_2017/Cordoba_limite", "COPERNICUS/S2"],
+  "Function": ["Filtering and renaming Sentinel 2 image collections", "Calculating normalized difference water index", "Mosaicking image collections", "Adding layers to the map"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/cesarnon/datos_cba_2017/Cordoba_limite"],
+        "Function": ["Filtering and renaming Sentinel 2 image collections", "Mosaicking image collections", "Adding layers to the map"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Filtering and renaming Sentinel 2 image collections", "Calculating normalized difference water index", "Mosaicking image collections", "Adding layers to the map"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2953, 'completion_tokens': 253, 'total_tokens': 3206}

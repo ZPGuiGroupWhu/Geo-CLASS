@@ -1,0 +1,31 @@
+{
+    "Theme": [
+        "Land Surface Temperature Retrieval",
+        "Atmospheric Correction",
+        "NDVI Computation",
+        "Emissivity Computation",
+        "Surface Temperature Computation"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C01/T1_32DAY_NDVI",
+        "LANDSAT/LC08/C01/T1",
+        "LANDSAT/LC08/C01/T1_TOA",
+        "LANDSAT/LC8_SR",
+        "NCEP_RE/surface_temp",
+        "NCEP_RE/surface_wv"
+    ],
+    "Function": [
+        "filterCollection",
+        "getLandsatRAD",
+        "getLandsatTOA",
+        "getLandsatSR",
+        "getNCEP",
+        "addAtmosBands",
+        "joinLandsatCollections",
+        "addNDVI",
+        "coreEmissivity",
+        "getEmissivity",
+        "getPsis",
+        "getSurfaceTemp"
+    ]
+}

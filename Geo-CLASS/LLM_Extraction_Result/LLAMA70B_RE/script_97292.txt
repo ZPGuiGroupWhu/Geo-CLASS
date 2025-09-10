@@ -1,0 +1,28 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover classification and object-based image analysis"],
+  "DataSource": ["USDA/NAIP/DOQQ", "USDA/NASS/CDL/2016"],
+  "Function": ["Image collection filtering", "Image segmentation", "Object-based classification", "Spectral distance calculation", "Image masking"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["USDA/NAIP/DOQQ"],
+        "Function": ["Image collection filtering", "Image segmentation", "Object-based classification", "Spectral distance calculation"]
+    },
+    "relation_2": {
+        "DataSource": ["USDA/NASS/CDL/2016"],
+        "Function": ["Object-based classification"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3225, 'completion_tokens': 207, 'total_tokens': 3432}

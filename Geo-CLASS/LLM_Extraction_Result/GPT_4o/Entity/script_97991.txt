@@ -1,0 +1,5 @@
+{
+  "Theme": ["Shapefile upload and visualization", "Raster data visualization", "Landsat image filtering", "Polygon creation", "Mosaic creation", "Band ratio calculation", "Sentinel image filtering", "Training points creation", "Classification", "Post-classification editing", "Masking", "Exporting image to asset", "Forest area statistics"],
+  "DataSource": ["users/EL/TrinidadandTobago", "users/EL/trinidad_forest_type_landcover_28july2011", "users/EL/tobago_forest_type_landcover_06may2011", "LANDSAT/LC8_L1T", "COPERNICUS/S2", "users/christinacorbane/MT_comp_proj", "JRC/GSW1_0/GlobalSurfaceWater"],
+  "Function": ["Upload and visualize shapefile", "Upload and visualize raster data", "Filter Landsat images by date and cloud cover", "Create and name a polygon", "Create a mosaic from filtered images", "Calculate band ratios", "Filter Sentinel images by date and cloud cover", "Rename Sentinel bands", "Add quality bands to images", "Create training points for classification", "Train classifier with training points", "Classify images", "Edit classification results", "Mask cities and water", "Export classified image to asset", "Calculate forest area statistics"]
+}

@@ -1,0 +1,5 @@
+{
+  "Theme": ["Cloud detection and removal", "Water body analysis"],
+  "DataSource": ["LANDSAT/LE7_L1T_32DAY_TOA"],
+  "Function": ["Compute cloud score", "Add MNDWI band", "Filter images by thresholds", "Filter image collection by date and location", "Map cloud score function", "Map MNDWI function", "Map filter function", "Generate time series chart", "Center map on point of interest", "Add image layer to map", "Add lake layer to map", "Fill clouds using flooding frequency"]
+}

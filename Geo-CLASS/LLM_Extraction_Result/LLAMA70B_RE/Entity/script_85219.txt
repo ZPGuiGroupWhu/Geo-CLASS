@@ -1,0 +1,17 @@
+{
+    "Theme": [
+        "Wildfire analysis and monitoring"
+    ],
+    "DataSource": [
+        "users/diegogmzd/CHACO",
+        "COPERNICUS/S2",
+        "COPERNICUS/S3/OLCI"
+    ],
+    "Function": [
+        "Image collection filtering",
+        "Cloud masking",
+        "Image compositing",
+        "Index calculation",
+        "Image visualization"
+    ]
+}

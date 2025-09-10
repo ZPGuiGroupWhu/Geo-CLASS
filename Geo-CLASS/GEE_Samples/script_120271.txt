@@ -1,0 +1,145 @@
+var geometryGradientBar = /* color: #d63000 */ee.Geometry.LineString(
+
+        [[6.666058926554456, 46.34691464842059],
+
+         [8.669070871861777, 46.46322380363606]]),
+
+    geometryFrame = /* color: #d63000 */ee.Geometry.LineString(
+
+        [[14.066022003237777, 46.58252305641619],
+
+         [6.5953188782377765, 43.83558109884231]]),
+
+    geometryScalebar = /* color: #98ff00 */ee.Geometry.LineString(
+
+        [[11.995928377238783, 43.94896632061474],
+
+         [13.73424086505213, 43.93216427302095]]),
+
+    testingarea = 
+
+    /* color: #d63000 */
+
+    /* displayProperties: [
+
+      {
+
+        "type": "rectangle"
+
+      }
+
+    ] */
+
+    ee.Geometry.Polygon(
+
+        [[[7.570229293345619, 46.11284170347482],
+
+          [7.570229293345619, 44.35291410108053],
+
+          [13.46988749647062, 44.35291410108053],
+
+          [13.46988749647062, 46.11284170347482]]], null, false);
+
+var colorbrewer = require('users/gena/packages:colorbrewer');
+
+var palettes = require('users/gena/packages:palettes')
+
+var style = require('users/gena/packages:style')
+
+var utils = require('users/gena/packages:utils')
+
+// Function to calculate and add an NDVI band
+
+var addNDVI = function(image) {
+
+return image.addBands(image.normalizedDifference(['B8', 'B4']).rename('ndvi'));
+
+};
+
+var start_date19up = '2019-11-01';
+
+var end_date19up = '2019-12-06';
+
+var s219up = ee.ImageCollection("COPERNICUS/S2_SR")
+
+    .filterDate(start_date19up, end_date19up)
+
+    .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE', 25))
+
+    .filterBounds(testingarea);
+
+print(s219up,'S-2_SR COLLECTION 19up');
+
+var median19up = s219up
+
+        .map(addNDVI)
+
+        .median()
+
+        .clip(testingarea);
+
+        
+
+var ndvi19 = median19up.select(['ndvi']);
+
+Map.addLayer(ndvi19, {min:-1, max:1, palette: colorbrewer.Palettes.RdYlGn[11]}, 'ndvi19',false);
+
+var dem = ee.Image(ndvi19)
+
+var minMax = dem.reduceRegion(ee.Reducer.percentile([1, 99]), Map.getBounds(true), Map.getScale()).values()
+
+print(minMax,"MINMAX")
+
+var min = ee.Number(minMax.get(0))
+
+print(min,"MIN")
+
+var max = ee.Number(minMax.get(1))
+
+print(max,"MAX")
+
+var palette = colorbrewer.Palettes.RdYlGn[11]
+
+var textProperties = { 
+
+  fontSize: 16, textColor: '000000', outlineColor: 'ffffff', outlineWidth: 0.1, outlineOpacity: 0.9,
+
+  marginLeft: 5, marginRight: 0.1, marginTop: 0.1, marginBottom: 0.1
+
+}
+
+// dim background
+
+Map.addLayer(ee.Image(1), {palette: ['ffffff']}, 'white', false, 0.5)
+
+// add a gradient bar
+
+var labels = ee.List.sequence(min, max, max.subtract(min)) //, max.subtract(min).divide(5)
+
+var gradient = style.GradientBar.draw(geometryGradientBar, {
+
+  min: min, max: max, palette: palette, labels: labels, format: '%.2f', text: textProperties
+
+})
+
+Map.addLayer(gradient, {}, 'gradient bar')
+
+Map.setOptions(null, {'Publish': [{featureType: 'all', stylers: [{ color: '#ffffff'}]}]})
+
+Map.addLayer(ee.Image(1), {palette:['ffffff'], opacity: 0.85}, 'white',false)
+
+var textProperties1 = { 
+
+  fontSize: 24, textColor: '000000',
+
+  marginLeft: 25, marginRight: 10, marginTop: 10, marginBottom: 10
+
+}
+
+var frame = style.Frame.draw(geometryFrame.bounds(), {steps:3, size: 5,  text: textProperties1, format: '%.1f'})
+
+Map.addLayer(frame, {}, 'frame')
+
+var scalebar = style.Scalebar.draw(geometryScalebar, {steps: 2, palette: ['666666', 'f5f5f5']})
+
+Map.addLayer(scalebar, {}, 'scalebar')

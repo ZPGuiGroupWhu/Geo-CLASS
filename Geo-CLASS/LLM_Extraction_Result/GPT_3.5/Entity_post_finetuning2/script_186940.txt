@@ -1,0 +1,18 @@
+{
+    "Summary": [
+        "Calculating mosaics from Landsat images within a specified area of interest."
+    ],
+    "Theme": [
+        "WAVE OVERTOPPING"
+    ],
+    "DataSource": [
+        "users/juandb/bloco_TIs_Kayapo",
+        "LANDSAT/LT05/C01/T1_SR",
+        "LANDSAT/LE07/C01/T1_SR",
+        "LANDSAT/LC08/C01/T1_SR"
+    ],
+    "Function": [
+        "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover",
+        "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover"
+    ]
+}

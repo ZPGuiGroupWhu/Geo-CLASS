@@ -1,0 +1,18 @@
+{
+    "Theme": [
+        "Land Surface Temperature Analysis in Michoacan, Mexico"
+    ],
+    "DataSource": [
+        "users/juanjoseromeroacm21/MORELIA",
+        "users/juanjoseromeroacm21/michoacan_state",
+        "USDOS/LSIB_SIMPLE/2017",
+        "MODIS/MOD11A2"
+    ],
+    "Function": [
+        "Filtering country boundaries",
+        "Importing LST image collection",
+        "Scaling to Kelvin and converting to Celsius",
+        "Calculating 8-day mean temperature",
+        "Testing trend with Sen's slope"
+    ]
+}

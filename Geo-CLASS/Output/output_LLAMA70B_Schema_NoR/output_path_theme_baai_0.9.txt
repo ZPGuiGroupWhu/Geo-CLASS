@@ -1,0 +1,4 @@
+Average Precision: 0.6609576427255985
+Average Recall: 0.656537753222836
+Average F1-Score: 0.6583458898376027
+Average Semantics Similarity: 0.634181943933258

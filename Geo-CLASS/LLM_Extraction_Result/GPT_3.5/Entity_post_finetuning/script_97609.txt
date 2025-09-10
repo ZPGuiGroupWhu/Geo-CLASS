@@ -1,0 +1,20 @@
+{
+    "Summary": [
+        "Calculate seasonal precipitation deviation and export results."
+    ],
+    "Theme": [
+        "PRECIPITATION INDICATORS"
+    ],
+    "DataSource": [
+        "users/eijulio/valles_altos_estados",
+        "FAO/GAUL_SIMPLIFIED_500m/2015/level2",
+        "ECMWF/ERA5/DAILY",
+        "UCSB-CHG/CHIRPS/PENTAD"
+    ],
+    "Function": [
+        "NDWI (Normalized Difference Water Index calculation)",
+        "Time Series Graphs And Statistics",
+        "Vegetation And Water Indices Calculation",
+        "Exporting And Data Conversion"
+    ]
+}

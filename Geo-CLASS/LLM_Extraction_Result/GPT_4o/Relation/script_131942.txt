@@ -1,0 +1,6 @@
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["Filter image collection by date", "Clip images to study area", "Mask clouds in images", "Sample regions for training", "Train random forest classifier", "Classify images", "Assess classification accuracy", "Reproject classified image", "Convert raster to vector", "Export image to Drive"]
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "Summary": [
+        "Identifying burned areas using FIRMS and Landsat data for a specific region and year."
+    ],
+    "Theme": [
+        "FIRE MANAGEMENT"
+    ],
+    "DataSource": [
+        "ft:1iovW6_vHSX3JOx5OvcFr-ljJdx5mGmqK6Q_ETiSO",
+        "FIRMS",
+        "LANDSAT/LT5_L1T",
+        "LANDSAT/LC8_L1T"
+    ],
+    "Function": [
+        "Buffering Points To Create Zones For Analysis",
+        "Generate Visualizations and Charts For Analysis",
+        "Calculate NBR For Pre-Fire Image"
+    ]
+}

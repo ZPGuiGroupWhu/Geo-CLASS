@@ -1,0 +1,25 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Entity Recognition": {
+    "Theme": ["Vegetation monitoring using MODIS EVI"],
+    "DataSource": ["MODIS/006/MOD13Q1"],
+    "Function": ["Filter image collection by date", "Calculate average of MODIS EVI", "Perform principal component analysis"]
+  },
+  "Relation Extraction": {
+    "relation_1": {
+      "DataSource": ["MODIS/006/MOD13Q1"],
+      "Function": ["Filter image collection by date", "Calculate average of MODIS EVI"]
+    },
+    "relation_2": {
+      "DataSource": ["MODIS/006/MOD13Q1"],
+      "Function": ["Perform principal component analysis"]
+    }
+  }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3755, 'completion_tokens': 192, 'total_tokens': 3947}

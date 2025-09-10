@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["users/kiniklihakan/milanshp"],
+        "Function": ["Cloud and shadow masking", "Band scaling and masking", "Band renaming for Landsat 8 images", "Calculation of spectral indices", "Image normalization", "Histogram generation", "Area calculation for each class", "Land cover chart creation", "Image blending for gap filling", "Reclassification of land cover classes", "Reclassification of built-up areas based on density", "Logical AND operation between two layers", "Buffering of polygons for area expansion"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C02/T1_L2", "LANDSAT/LT05/C02/T1_L2", "LANDSAT/LE07/C02/T1_L2"],
+        "Function": ["Cloud and shadow masking", "Band scaling and masking", "Band renaming for Landsat 8 images", "Calculation of spectral indices", "Image normalization", "Histogram generation", "Area calculation for each class", "Land cover chart creation", "Image blending for gap filling", "Reclassification of land cover classes", "Reclassification of built-up areas based on density", "Logical AND operation between two layers", "Buffering of polygons for area expansion"]
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "Theme": [
+        "Burn Severity of Mendocino Complex Fire"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C01/T1_SR/LC08_045033_20170925",
+        "LANDSAT/LC08/C01/T1_SR/LC08_045033_20180928"
+    ],
+    "Function": [
+        "Load pre-fire image",
+        "Load post-fire image",
+        "Compute NDBR for pre image",
+        "Compute NDBR for post image",
+        "Display true color images",
+        "Display NBR images"
+    ]
+}

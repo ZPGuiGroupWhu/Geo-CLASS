@@ -1,0 +1,18 @@
+{
+    "Theme": [
+        "Land cover classification and vegetation monitoring"
+    ],
+    "DataSource": [
+        "users/khoapv/xatong",
+        "COPERNICUS/S1_GRD",
+        "LANDSAT/LC08/C01/T1_SR",
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "Filtering image collections by date and bounds",
+        "Adding NDVI and time bands to images",
+        "Clipping images to area of interest",
+        "Joining image collections by date",
+        "Reducing regions for each station"
+    ]
+}

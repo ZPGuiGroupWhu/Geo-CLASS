@@ -1,0 +1,115 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var Crop = 
+    /* color: #ffc82d */
+    ee.Feature(
+        ee.Geometry.Polygon(
+            [[[-120.34392698578894, 37.22064726407999],
+              [-120.34392698578894, 37.216819678609276],
+              [-120.33946378998816, 37.216819678609276],
+              [-120.33946378998816, 37.22064726407999]]], null, false),
+        {
+          "system:index": "0"
+        }),
+    Bare = 
+    /* color: #00ffff */
+    ee.Feature(
+        ee.Geometry.Polygon(
+            [[[-120.22844157407941, 37.26220206050505],
+              [-120.22844157407941, 37.25632714265164],
+              [-120.22106013487043, 37.25632714265164],
+              [-120.22106013487043, 37.26220206050505]]], null, false),
+        {
+          "system:index": "0"
+        });
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+/*
+AUTHOR: Erin Hestir 
+DATE UPDATED: 02/24/2023
+TITLE: Tracking Crop Greenness in Merced County 
+////////////////////////////////////////////////////////////////////
+If you see these in the script
+*UC* uncomment this section to see what it does
+*CQ* Challenge question. If you fill comfortable with coding then see if you can asnwer this question
+*/
+
+// We will create an NDVI time series for a vegetated and bare earth area
+// You can select your own regions, but I already have two loaded
+// Create a feature collection
+var regions =  ee.FeatureCollection([Crop, Bare]);
+print(regions);
+// load our image collection
+
+
+// load our image collection
+var imgCol = ee.ImageCollection('LANDSAT/LC08/C02/T1_L2')
+    .filterMetadata('CLOUD_COVER','less_than',20)
+    .filter(ee.Filter.eq('WRS_PATH', 43))
+    .filter(ee.Filter.eq('WRS_ROW', 34))
+    .filterDate('2014-04-01', '2022-01-01');
+
+
+// write our ndvi function 
+var addNDVI = function(image) {
+  var ndvi = image.normalizedDifference(['SR_B5','SR_B4']).rename('NDVI');
+  return image.addBands(ndvi);
+};
+
+// apply the function using map
+var imgsNDVI= imgCol.map(addNDVI).select('NDVI');
+
+// create a chart series by region
+// this is what will allow us to plot from multiple regions
+
+var graph = ui.Chart.image.seriesByRegion({
+  imageCollection: imgsNDVI,
+  regions: regions,
+  reducer: ee.Reducer.mean(),
+  band: 'NDVI',
+  scale:30,
+})
+
+
+// create a predefined color table
+// we will use this layer for the map display
+var COLOR = {
+  BARE: '0000ff',
+  CROP: '00ff00'
+};
+
+// set series name 
+graph.setSeriesNames(['Crop', 'Bare']);
+// set a scatter chart
+// review other chart types
+graph.setChartType('ScatterChart');
+graph.setOptions({
+  title: 'NDVI over time in regions of Merced County',
+  vAxis: {
+    title: 'NDVI)'
+  },
+  lineWidth: 1,
+  pointSize: 4,
+  series: {
+    0: {color: COLOR.CROP},
+    1: {color: COLOR.BARE},
+  }
+});
+
+
+print(graph);
+
+// Load our landsat image for reference 
+var l8Img = ee.Image('LANDSAT/LC08/C02/T1_L2/LC08_043034_20190715');
+// color parameters
+var trueParams = { bands: ['SR_B4','SR_B3','SR_B2'], min: 7500, max: 16700, gamma: 1.0};
+// Center Map 
+Map.centerObject(regions,11)
+// add map layer
+Map.addLayer(l8Img,trueParams,'landsat8 true color')
+// add the two polygons and color them with the table matching the figure
+Map.addLayer(Crop, {color: COLOR.CROP});
+Map.addLayer(Bare, {color: COLOR.BARE});
+
+
+// CQ 1: Try adding a third point, or changing the original
+
+// CQ 2: Compare and contrast the NDVI Time Series of Crop and Bare 

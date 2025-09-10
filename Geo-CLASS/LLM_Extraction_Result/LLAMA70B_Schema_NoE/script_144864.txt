@@ -1,0 +1,33 @@
+Entity Recognition:
+```
+{
+  "Theme": ["Land cover classification and area calculation"],
+  "DataSource": ["users/thao226355/share/VietNam_Ranh_gioi_tinh", "COPERNICUS/S2_SR"],
+  "Function": [
+    "Filtering and selecting administrative boundaries",
+    "Cloud masking and image filtering",
+    "Image collection and mosaicking",
+    "NDVI calculation and land cover classification",
+    "Area calculation and statistics"
+  ]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/thao226355/share/VietNam_Ranh_gioi_tinh"],
+        "Function": ["Filtering and selecting administrative boundaries", "Area calculation and statistics"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["Cloud masking and image filtering", "Image collection and mosaicking", "NDVI calculation and land cover classification"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2547, 'completion_tokens': 254, 'total_tokens': 2801}

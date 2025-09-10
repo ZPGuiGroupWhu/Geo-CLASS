@@ -1,0 +1,14 @@
+{
+    "Summary": [
+        "Script extracts Landsat images for specific AOIs and masks clouds for autumn season export."
+    ],
+    "Theme": [
+        "AGE AT ICE-THICKNESS-NORMALIZED DEPTHS"
+    ],
+    "DataSource": [
+        "LANDSAT/LE07/C01/T1_SR"
+    ],
+    "Function": [
+        "Sort Image Collections By Cloud Cover"
+    ]
+}

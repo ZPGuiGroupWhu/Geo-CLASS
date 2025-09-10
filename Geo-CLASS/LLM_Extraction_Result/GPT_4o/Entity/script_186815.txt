@@ -1,0 +1,5 @@
+{
+  "Theme": ["Forest loss detection", "Forest degradation", "Forest fire detection"],
+  "DataSource": ["LANDSAT/LC8_SR", "LANDSAT/LC8_L1T_TOA", "LANDSAT/LT5_L1T_TOA_FMASK", "LANDSAT/LE7_L1T_TOA_FMASK", "COPERNICUS/S2"],
+  "Function": ["Define study areas", "Filter image collections by date", "Filter image collections by cloud cover", "Calculate NDVI", "Calculate NBR", "Create image mosaic", "Export image properties", "Export image mosaic", "Export individual images", "Visualize forest loss", "Visualize forest degradation", "Visualize forest fire", "Add map layers", "Link maps", "Add click event for coordinates"]
+}

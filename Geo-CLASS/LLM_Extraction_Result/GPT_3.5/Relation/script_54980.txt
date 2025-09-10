@@ -1,0 +1,6 @@
+{
+    "relation_1": {
+        "DataSource": ["users/edimilsonrodriguessantos/MAPBIOMAS/INFRAURBANA6-FT-v6/"],
+        "Function": ["Image classification generation based on previous year's classification"]
+    }
+}

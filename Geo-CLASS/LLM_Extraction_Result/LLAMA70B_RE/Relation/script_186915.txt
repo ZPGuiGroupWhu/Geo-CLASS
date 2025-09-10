@@ -1,0 +1,24 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S1_GRD"
+        ],
+        "Function": [
+            "Image collection filtering",
+            "Mosaicking",
+            "Thresholding",
+            "Focal median smoothing",
+            "Topological intersection",
+            "Image visualization"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "CIESIN/GPWv4/population-count"
+        ],
+        "Function": [
+            "Population counting",
+            "Vectorization"
+        ]
+    }
+}

@@ -1,0 +1,205 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var regions = ee.FeatureCollection("FAO/GAUL_SIMPLIFIED_500m/2015/level2"),
+    l5 = ee.ImageCollection("LANDSAT/LT05/C01/T1_SR"),
+    polygon = /* color: #d63000 */ee.Geometry.Polygon(
+        [[[107.64366468878589, 16.457446975174513],
+          [107.62443861456714, 16.427152970700043],
+          [107.65430769415698, 16.405746750179517],
+          [107.6934464881023, 16.437361261077797]]]);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+var hue = regions.filter(
+
+            ee.Filter.eq
+
+            ('ADM1_NAME', 'Thua Thien - Hue')
+
+            );
+
+            
+
+Map.addLayer(hue, {color: 'yellow'}, 'Administrative boundaries Hue', 0);
+
+
+
+// Filter the image collection using filterBounds() and filterDate() method.
+
+// Sort the collection by cloud cover metadata
+
+// Create the mosaic images and clip it to boundary
+
+
+
+
+
+var RGB = {
+
+       bands: ['B3', 'B2', 'B1'],
+
+       min: 200,
+
+       max: 3000,
+
+       };
+
+
+
+var Flood = l5
+
+                  .filterBounds(hue)
+
+                  .filterDate('1999-11-06', '1999-11-15')
+
+                  .filterMetadata ('CLOUD_COVER_LAND', 'less_than', 50) 
+
+                  .sort('CLOUDY_PIXEL_PERCENTAGE', false)
+
+                  ;
+
+
+
+  print (Flood.size(), 'size of flood collection');
+
+  print (Flood, 'Flood Image Collection');
+
+  
+
+  var Flood = Flood.mosaic().clip(hue);
+
+
+
+  Map.centerObject(hue, 10)
+
+  .addLayer(Flood, RGB, 'Flood RGB');
+
+  
+
+//Calculate NDWI                  
+
+var image = Flood.normalizedDifference(['B2', 'B4'])
+
+.rename('ndwi');
+
+
+
+print (image,'ndwi Flood');
+
+
+
+
+
+
+
+var waterPalette = ['red', 'yellow', 'green', 'blue'];
+
+
+
+Map.addLayer(image, {min: -1, max: 1, palette: waterPalette}, '2020 Flood NDWI');
+
+Map.centerObject(hue, 10);
+
+
+
+
+
+// Compute the histogram of the NIR band.  The mean and variance are only FYI.
+
+var histogram = image.select('ndwi').reduceRegion({
+
+  reducer: ee.Reducer.histogram(255, 2)
+
+      .combine('mean', null, true)
+
+      .combine('variance', null, true), 
+
+  geometry: polygon, 
+
+  scale: 30,
+
+  bestEffort: true
+
+});
+
+print(histogram);
+
+
+
+// Chart the histogram
+
+print(Chart.image.histogram(image.select('ndwi'), polygon, 30));
+
+
+
+// Return the DN that maximizes interclass variance in B5 (in the region).
+
+var otsu = function(histogram) {
+
+  var counts = ee.Array(ee.Dictionary(histogram).get('histogram'));
+
+  var means = ee.Array(ee.Dictionary(histogram).get('bucketMeans'));
+
+  var size = means.length().get([0]);
+
+  var total = counts.reduce(ee.Reducer.sum(), [0]).get([0]);
+
+  var sum = means.multiply(counts).reduce(ee.Reducer.sum(), [0]).get([0]);
+
+  var mean = sum.divide(total);
+
+  
+
+  var indices = ee.List.sequence(1, size);
+
+  
+
+  // Compute between sum of squares, where each mean partitions the data.
+
+  var bss = indices.map(function(i) {
+
+    var aCounts = counts.slice(0, 0, i);
+
+    var aCount = aCounts.reduce(ee.Reducer.sum(), [0]).get([0]);
+
+    var aMeans = means.slice(0, 0, i);
+
+    var aMean = aMeans.multiply(aCounts)
+
+        .reduce(ee.Reducer.sum(), [0]).get([0])
+
+        .divide(aCount);
+
+    var bCount = total.subtract(aCount);
+
+    var bMean = sum.subtract(aCount.multiply(aMean)).divide(bCount);
+
+    return aCount.multiply(aMean.subtract(mean).pow(2)).add(
+
+           bCount.multiply(bMean.subtract(mean).pow(2)));
+
+  });
+
+  
+
+  print(ui.Chart.array.values(ee.Array(bss), 0, means));
+
+  
+
+  // Return the mean value corresponding to the maximum BSS.
+
+  return means.sort(bss).get([-1]);
+
+};
+
+
+
+var threshold = otsu(histogram.get('ndwi_histogram'));
+
+print('threshold', threshold);
+
+
+
+var classA = image.select('ndwi').gt(threshold);
+
+
+
+Map.addLayer(classA.mask(classA), {palette: 'blue'}, 'class A');
+

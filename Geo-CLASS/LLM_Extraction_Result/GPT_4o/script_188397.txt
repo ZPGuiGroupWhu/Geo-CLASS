@@ -1,0 +1,21 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Burned area detection"],
+  "DataSource": ["MODIS/006/MCD64A1"],
+  "Function": ["Define region of interest", "Add region to map", "Center map on region", "Filter image collection by date", "Select specific image band", "Add first image to map", "Set visualization parameters", "Create video thumbnail", "Add thumbnail to map"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["MODIS/006/MCD64A1"],
+        "Function": ["Filter image collection by date", "Select specific image band", "Add first image to map", "Set visualization parameters", "Create video thumbnail", "Add thumbnail to map"]
+    }
+}
+```
+
+Total_Token_Usage:
+9639

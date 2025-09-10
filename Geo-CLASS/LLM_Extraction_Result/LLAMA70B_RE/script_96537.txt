@@ -1,0 +1,44 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover classification and analysis"],
+  "DataSource": ["users/eeranyartrodrigo/geoMediana/gm_2018_MX_014009", "users/eeranyartrodrigo/geoMediana/gm_2019_MX_014009", "users/eeranyartrodrigo/Pabellon", "LANDSAT/LE07/C01/T1_SR", "MODIS/006/MCD12Q1", "MODIS/NTSG/MOD16A2/105"],
+  "Function": ["Cloud masking", "Image collection filtering", "Median calculation", "Land cover classification", "Image reprojection", "NDVI calculation", "Random forest classification", "Accuracy assessment", "Image aggregation"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/eeranyartrodrigo/geoMediana/gm_2018_MX_014009"],
+        "Function": ["Cloud masking", "Median calculation", "Land cover classification", "Image reprojection"]
+    },
+    "relation_2": {
+        "DataSource": ["users/eeranyartrodrigo/geoMediana/gm_2019_MX_014009"],
+        "Function": ["Cloud masking", "Median calculation", "Land cover classification", "Image reprojection"]
+    },
+    "relation_3": {
+        "DataSource": ["users/eeranyartrodrigo/Pabellon"],
+        "Function": ["Image clipping", "Stratified sampling"]
+    },
+    "relation_4": {
+        "DataSource": ["LANDSAT/LE07/C01/T1_SR"],
+        "Function": ["Image collection filtering", "Cloud masking", "Median calculation"]
+    },
+    "relation_5": {
+        "DataSource": ["MODIS/006/MCD12Q1"],
+        "Function": ["Land cover classification", "Image reprojection"]
+    },
+    "relation_6": {
+        "DataSource": ["MODIS/NTSG/MOD16A2/105"],
+        "Function": ["Evapotranspiration calculation"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4615, 'completion_tokens': 560, 'total_tokens': 5175}

@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Landslide evaluation in Las Minas, Santa Rosa"],
+  "DataSource": ["COPERNICUS/S2_HARMONIZED"],
+  "Function": ["Create a point geometry", "Center map on point", "Add point to map", "Set map to satellite view", "Filter image collection by date and cloud coverage", "Calculate NDVI", "Map NDVI calculation over image collection", "Visualize NDVI", "Generate NDVI time series chart"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["COPERNICUS/S2_HARMONIZED"],
+    "Function": [
+      "Filter image collection by date and cloud coverage",
+      "Calculate NDVI",
+      "Map NDVI calculation over image collection",
+      "Visualize NDVI",
+      "Generate NDVI time series chart"
+    ]
+  }
+}
+```
+
+Total_Token_Usage:
+4440

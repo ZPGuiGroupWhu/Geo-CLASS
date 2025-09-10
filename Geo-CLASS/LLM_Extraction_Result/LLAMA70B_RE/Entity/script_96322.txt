@@ -1,0 +1,19 @@
+{
+    "Theme": [
+        "Land cover classification and vegetation index analysis"
+    ],
+    "DataSource": [
+        "users/eemapascordoba/LCLU_2021/recetas_ago20_abr21_pstxcultivo_masLCollect_buffer2306",
+        "users/eemapascordoba/var_ambientales_rindes/rindes_alf_rol_training_zona",
+        "COPERNICUS/S2",
+        "users/capas/provincia_wgs"
+    ],
+    "Function": [
+        "Filtering image collections by date and cloud cover",
+        "Renaming image bands",
+        "Calculating vegetation indices",
+        "Creating mosaics from image collections",
+        "Clipping images to a specific geometry",
+        "Sampling regions for training data"
+    ]
+}

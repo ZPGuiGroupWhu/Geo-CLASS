@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["The script generates composite images from Landsat and Sentinel data for specific countries."],
+  "Theme": ["Image compositing for land cover analysis"],
+  "DataSource": ["users/EL/L5_2000_BelizeCubaCRP", "users/EL/L7_2010_BelizeCubaCRP", "users/EL/L8_2017_BelizeCubaCRP", "users/EL/S2_2017_BelizeCubaCRPv2"],
+  "Function": ["Cloud score computation for cloud masking", "Image collection filtering for specific time periods"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/EL/L5_2000_BelizeCubaCRP", "users/EL/L7_2010_BelizeCubaCRP", "users/EL/L8_2017_BelizeCubaCRP"],
+        "Function": ["Cloud score computation for cloud masking"]
+    },
+    "relation_2": {
+        "DataSource": ["users/EL/S2_2017_BelizeCubaCRPv2"],
+        "Function": ["Image collection filtering for specific time periods"]
+    }
+}
+```

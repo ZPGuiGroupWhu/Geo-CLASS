@@ -1,0 +1,5 @@
+{
+  "Theme": ["Nighttime lights distribution", "Urban vs. agricultural areas"],
+  "DataSource": ["users/ujavalgandhi/public/soi_india_boundary", "NOAA/DMSP-OLS/NIGHTTIME_LIGHTS", "MODIS/006/MCD12Q1"],
+  "Function": ["Filter image collection by date", "Select specific band from image", "Clip image to geometry", "Classify landcover types", "Create zones for landcover classes", "Classify nighttime lights", "Compute zonal statistics"]
+}

@@ -1,0 +1,29 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Entity Recognition": {
+    "Theme": ["Forest canopy cover analysis"],
+    "DataSource": ["USDOS/LSIB/2017", "UMD/hansen/global_forest_change_2020_v1_8", "users/ak_glaciers/NDVI_fitted_image_stack_from_LTOP_1990_start", "users/ak_glaciers/NBR_fitted_image_stack_from_LTOP_1990_start"],
+    "Function": ["Create random points", "Get spectral information", "Train a model", "Classify images", "Create image collection"]
+  },
+  "Relation Extraction": {
+    "relation_1": {
+      "DataSource": ["USDOS/LSIB/2017"],
+      "Function": ["Create random points"]
+    },
+    "relation_2": {
+      "DataSource": ["UMD/hansen/global_forest_change_2020_v1_8"],
+      "Function": ["Get spectral information"]
+    },
+    "relation_3": {
+      "DataSource": ["users/ak_glaciers/NDVI_fitted_image_stack_from_LTOP_1990_start", "users/ak_glaciers/NBR_fitted_image_stack_from_LTOP_1990_start"],
+      "Function": ["Train a model", "Classify images", "Create image collection"]
+    }
+  }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2702, 'completion_tokens': 369, 'total_tokens': 3071}

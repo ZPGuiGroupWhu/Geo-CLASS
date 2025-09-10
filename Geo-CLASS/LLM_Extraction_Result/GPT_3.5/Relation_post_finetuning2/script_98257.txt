@@ -1,0 +1,24 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "FAO/GAUL_SIMPLIFIED_500m/2015/level2"
+        ],
+        "Function": [
+            "Filter Images By Date And Region",
+            "Visualize Satellite Imagery Changes Over Time",
+            "Calculate Normalized Difference Flood Index (NDFI)",
+            "Thresholding For Identification"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S1_GRD"
+        ],
+        "Function": [
+            "Filter Images By Date And Region",
+            "Visualize Satellite Imagery Changes Over Time",
+            "Calculate Normalized Difference Flood Index (NDFI)",
+            "Thresholding For Identification"
+        ]
+    }
+}

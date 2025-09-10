@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Water body analysis in Chad"],
+  "DataSource": ["users/eggenm/chad_rivers", "LANDSAT/LC08/C01/T1_TOA"],
+  "Function": ["Filtering image collection by cloud cover", "Calculating MNDWI index", "Applying cloud mask", "Selecting specific bands", "Filtering by date range", "Filtering by geometry", "Calculating quality mosaic", "Calculating median"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response that organizes the extracted information into a structured format:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/eggenm/chad_rivers"],
+        "Function": ["Filtering by geometry", "Selecting specific bands"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_TOA"],
+        "Function": ["Filtering image collection by cloud cover", "Applying cloud mask", "Calculating MNDWI index", "Calculating quality mosaic", "Calculating median", "Filtering by date range"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2808, 'completion_tokens': 263, 'total_tokens': 3071}

@@ -1,0 +1,6 @@
+{
+  "Summary": ["Script creates image collections before and after a flood, applies filters, and masks flooded areas."],
+  "Theme": ["Flood monitoring and analysis"],
+  "DataSource": ["COPERNICUS/S1_GRD", "FAO/GAUL_SIMPLIFIED_500m/2015/level2", "JRC/GSW1_0/GlobalSurfaceWater", "WWF/HydroSHEDS/03VFDEM"],
+  "Function": ["Filtering image collections based on date, polarization, and region", "Creating RGB composites of before and after flood images", "Applying speckle filter to reduce noise", "Refining flood results using additional datasets", "Masking out areas with more than 5 percent slope"]
+}

@@ -1,0 +1,6 @@
+{
+  "Summary": ["Script prepares and analyzes Sentinel-2 imagery for NDVI calculation."],
+  "Theme": ["Vegetation monitoring through NDVI analysis"],
+  "DataSource": ["users/cesarnon/datos_cba_2017/Cordoba_limite", "COPERNICUS/S2_SR"],
+  "Function": ["Image collection filtering by date and location", "Quality band creation for NDVI calculation", "Mosaicking of quality NDVI images", "NDVI band stacking for multiple time periods"]
+}

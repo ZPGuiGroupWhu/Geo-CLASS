@@ -1,0 +1,23 @@
+{
+    "Theme": [
+        "Land Surface Temperature Retrieval"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C01/T1_32DAY_NDVI",
+        "LANDSAT/LC08/C01/T1",
+        "LANDSAT/LC8_SR",
+        "NCEP_RE/surface_temp",
+        "NCEP_RE/surface_wv"
+    ],
+    "Function": [
+        "Filter image collection by date and polygon",
+        "Compute Landsat 8 calibrated radiance",
+        "Compute Landsat 8 TOA collection",
+        "Compute Landsat 8 SR collection",
+        "Get NCEP atmospheric data",
+        "Join Landsat collections",
+        "Compute NDVI",
+        "Compute emissivity",
+        "Compute surface temperature"
+    ]
+}

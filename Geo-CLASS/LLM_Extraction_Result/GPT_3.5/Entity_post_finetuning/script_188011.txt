@@ -1,0 +1,18 @@
+{
+    "Summary": [
+        "Calculating seasonal temperatures from Landsat 8 TOA data and exporting results."
+    ],
+    "Theme": [
+        "TEMPERATURE INDICATORS"
+    ],
+    "DataSource": [
+        "projects/ee-kimiachenaary/assets/msh",
+        "LANDSAT/LC08/C01/T1_TOA"
+    ],
+    "Function": [
+        "Calculating terrain slope and aspect from DEMs",
+        "Cloud Masking And Quality Filtering",
+        "NDWI (Normalized Difference Water Index calculation)",
+        "Exporting And Data Conversion"
+    ]
+}

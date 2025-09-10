@@ -1,0 +1,22 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/jannat/gujratCityExt"
+        ],
+        "Function": [
+            "Filter Image Collection",
+            "Image Index Calculation",
+            "Merge Feature Collections"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Training Data Creation",
+            "Training CART Classifier",
+            "Elevation Classification"
+        ]
+    }
+}

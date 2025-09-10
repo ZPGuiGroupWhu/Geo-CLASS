@@ -1,0 +1,310 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var regions = ee.FeatureCollection("FAO/GAUL_SIMPLIFIED_500m/2015/level2"),
+    MODIS = ee.ImageCollection("MODIS/006/MOD09GA");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+var hue = regions.filter(
+
+            ee.Filter.eq
+
+            ('ADM1_NAME', 'Thua Thien - Hue')
+
+            );
+
+            
+
+Map.addLayer(hue, {color: 'yellow'}, 'Administrative boundaries Hue', 0);
+
+
+
+
+
+// Filter the image collection using filterBounds() and filterDate() method.
+
+// Sort the collection by cloud cover metadata
+
+// Create the mosaic image and clip it to boundary
+
+var Ref = MODIS
+
+                  .filterBounds(hue)
+
+                  .filterDate('2009-06-20', '2009-06-25')
+
+                                    ;
+
+    print (Ref.size(),'size of Reference Collection');
+
+    
+
+    print(Ref,'Reference Image Collection');
+
+
+
+
+
+var falseColorVis = {
+
+  min: -100.0,
+
+  max: 8000.0,
+
+  bands: ['sur_refl_b02', 'sur_refl_b02', 'sur_refl_b01'],
+
+};
+
+
+
+var Ref = Ref.mosaic().clip(hue);
+
+
+
+
+
+Map.setCenter(6.746, 46.529, 2);
+
+Map.addLayer(Ref, falseColorVis, 'False Color Ref', 0);
+
+
+
+var Flood = MODIS
+
+                  .filterBounds(hue)
+
+                  .filterDate('2009-10-07', '2009-10-09')
+
+                                    ;
+
+
+
+  print (Flood.size(), 'size of flood collection');
+
+  print (Flood, 'Flood Image Collection');
+
+  
+
+  var Flood = Flood.mosaic().clip(hue);
+
+
+
+  
+
+  Map.addLayer(Flood, falseColorVis, 'False Color Flood', 0);
+
+  
+
+  //Calculate NDWI                  
+
+var ndwi_Ref = Ref.normalizedDifference(['sur_refl_b04', 'sur_refl_b02'])
+
+              .rename ('ndwi');
+
+var ndwi_Flood = Flood.normalizedDifference(['sur_refl_b04', 'sur_refl_b02'])
+
+.rename('ndwi');
+
+
+
+print (ndwi_Ref,'ndwi Ref');
+
+print (ndwi_Flood,'ndwi Flood');
+
+
+
+
+
+
+
+var waterPalette = ['red', 'yellow', 'green', 'blue'];
+
+Map.addLayer(ndwi_Ref, {min: -1, max: 1, palette: waterPalette}, '2020 Ref NDWI', 0);
+
+Map.addLayer(ndwi_Flood, {min: -1, max: 1, palette: waterPalette}, '2020 Flood NDWI', 0);
+
+Map.centerObject(hue, 10);
+
+
+
+// Get difference image of ndwi                                             
+
+     
+
+var diffNDWI = ndwi_Flood.subtract(ndwi_Ref);
+
+Map.addLayer(diffNDWI, {min:-1, max:2, gamma:0.8}, 'Difference NDWI', 0, 1);
+
+
+
+
+
+// set the threshold
+
+var THRES = 0.6;
+
+
+
+// select pixels greater than threshold
+
+var watermask = diffNDWI.gt(THRES);
+
+
+
+print (watermask);
+
+Map.addLayer (watermask.updateMask(watermask),{palette:"0000FF"}, 'flooded areas before refinement - Flood Image', 0);
+
+
+
+
+
+
+var pixelArea= watermask.multiply(ee.Image.pixelArea())
+
+              .reduceRegion(ee.Reducer.sum(),hue,500,null,null,false,1e13)
+
+              .get('ndwi');
+
+              
+
+pixelArea = ee.Number(pixelArea).divide(1e6);
+
+print (pixelArea, 'Area (km²)');
+
+
+
+
+
+//Refine flood result using additional datasets
+
+      
+
+      // Include JRC layer on surface water seasonality to mask flood pixels from areas
+
+      // of "permanent" water (where there is water > 10 months of the year)
+
+      var swater = ee.Image('JRC/GSW1_0/GlobalSurfaceWater').select('seasonality');
+
+      var swater_mask = swater.gte(10).updateMask(swater.gte(10));
+
+      
+
+      //Flooded layer where perennial water bodies (water > 10 mo/yr) is assigned a 0 value
+
+      var flooded_mask = watermask.where(swater_mask,0);
+
+      // final flooded area without pixels in perennial waterbodies
+
+      var flooded = flooded_mask.updateMask(flooded_mask);
+
+      
+
+        // Mask out areas with more than 5 percent slope using a Digital Elevation Model 
+
+      var DEM = ee.Image('WWF/HydroSHEDS/03VFDEM');
+
+      var terrain = ee.Algorithms.Terrain(DEM);
+
+      var slope = terrain.select('slope');
+
+      var flooded = flooded.updateMask(slope.lt(5));
+
+      
+
+
+
+//Flooded areas derived from difference image
+
+Map.addLayer(flooded,{palette:"0000FF"},'Flooded areas after refinement (Difference image)', 0);
+
+
+
+var pixelArea= flooded.multiply(ee.Image.pixelArea())
+
+              .reduceRegion(ee.Reducer.sum(),hue,500,null,null,false,1e13)
+
+              .get('ndwi');
+
+              
+
+pixelArea = ee.Number(pixelArea).divide(1e6);
+
+print (pixelArea, 'Area (km²)');
+
+
+
+//Try same method with Flood image see if it has better results 
+
+
+
+// set the threshold
+
+var THRES = 0.01;
+
+
+
+// select pixels greater than threshold
+
+var watermask = ndwi_Flood.gt(THRES);
+
+
+
+Map.addLayer (watermask.updateMask(watermask),{palette:"0000FF"}, 'flooded areas before refinement - Flood Image', 0);
+
+
+
+
+
+// Refine flood result using additional datasets
+
+      
+
+      // Include JRC layer on surface water seasonality to mask flood pixels from areas
+
+      // of "permanent" water (where there is water > 10 months of the year)
+
+      var swater = ee.Image('JRC/GSW1_0/GlobalSurfaceWater').select('seasonality');
+
+      var swater_mask = swater.gte(10).updateMask(swater.gte(10));
+
+      
+
+      //Flooded layer where perennial water bodies (water > 10 mo/yr) is assigned a 0 value
+
+      var flooded_mask = watermask.where(swater_mask,0);
+
+      // final flooded area without pixels in perennial waterbodies
+
+      var flooded = flooded_mask.updateMask(flooded_mask);
+
+      
+
+            // Mask out areas with more than 5 percent slope using a Digital Elevation Model 
+
+      var DEM = ee.Image('WWF/HydroSHEDS/03VFDEM');
+
+      var terrain = ee.Algorithms.Terrain(DEM);
+
+      var slope = terrain.select('slope');
+
+      var flooded = flooded.updateMask(slope.lt(5));
+
+    
+
+    Map.addLayer (flooded.updateMask(flooded),{palette:"0000FF"}, 'flooded areas - Flood Image', 0);  
+
+
+
+// Calculate flood extent area
+
+ 
+
+var pixelArea= flooded.multiply(ee.Image.pixelArea())
+
+              .reduceRegion(ee.Reducer.sum(),hue,500,null,null,false,1e13)
+
+              .get('ndwi');
+
+              
+
+pixelArea = ee.Number(pixelArea).divide(1e6);
+
+print (pixelArea, 'Area (km²)');

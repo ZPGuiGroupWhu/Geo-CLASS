@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Arctic greening patterns - MODIS max NDVI/EVI robust regression trends"],
+  "DataSource": ["users/liuchongwhu/Arctic/Arctic_greeness/treeline_country", "MODIS/006/MOD13Q1", "MODIS/006/MOD44W"],
+  "Function": ["Mask pixels with high SummaryQA", "Mask out water", "Calculate NDVI and EVI annual max values", "Prepare images for regression analysis", "Calculate slopes using Theil-Sen regression", "Map the coefficients", "Calculate average NDVI and EVI in region from image", "Data export"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/liuchongwhu/Arctic/Arctic_greeness/treeline_country"],
+        "Function": ["Mask pixels with high SummaryQA", "Mask out water", "Calculate NDVI and EVI annual max values", "Prepare images for regression analysis", "Calculate slopes using Theil-Sen regression", "Map the coefficients", "Calculate average NDVI and EVI in region from image", "Data export"]
+    },
+    "relation_2": {
+        "DataSource": ["MODIS/006/MOD13Q1", "MODIS/006/MOD44W"],
+        "Function": ["Mask pixels with high SummaryQA", "Mask out water", "Calculate NDVI and EVI annual max values", "Prepare images for regression analysis", "Calculate slopes using Theil-Sen regression", "Map the coefficients", "Calculate average NDVI and EVI in region from image", "Data export"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3226, 'completion_tokens': 384, 'total_tokens': 3610}

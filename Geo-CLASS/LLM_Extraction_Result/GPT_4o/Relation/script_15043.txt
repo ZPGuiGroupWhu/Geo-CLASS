@@ -1,0 +1,18 @@
+{
+    "relation_1": {
+        "DataSource": ["users/abuhafsgaa/Makarfi"],
+        "Function": ["Visualize classification results"]
+    },
+    "relation_2": {
+        "DataSource": ["users/abuhafsgaa/ALLsample"],
+        "Function": ["Sample pixel values", "Split data into training and testing", "Classify test data", "Compute confusion matrix", "Print validation accuracy", "Print training accuracy"]
+    },
+    "relation_3": {
+        "DataSource": ["users/abuhafsgaa/DATASET_COMPOSITION_2017_21"],
+        "Function": ["Sample pixel values", "Split data into training and testing", "Train Random Forest classifier", "Train CART classifier", "Explain classifier results", "Compute variable importance", "Display variable importance", "Classify imagery", "Classify test data", "Compute confusion matrix", "Print validation accuracy", "Print training accuracy", "Visualize classification results", "Combine optical and SAR data"]
+    },
+    "relation_4": {
+        "DataSource": ["users/abuhafsgaa/TEST_SAR_2017_DATASET_BOXCAR"],
+        "Function": ["Sample pixel values", "Split data into training and testing", "Train Random Forest classifier", "Train CART classifier", "Explain classifier results", "Compute variable importance", "Display variable importance", "Classify imagery", "Classify test data", "Compute confusion matrix", "Print validation accuracy", "Print training accuracy", "Visualize classification results", "Combine optical and SAR data"]
+    }
+}

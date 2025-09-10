@@ -1,0 +1,46 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2_SR"
+        ],
+        "Function": [
+            "Filter image collection by date and cloud percentage",
+            "Calculate NDVI band",
+            "Apply median to image collection",
+            "Clip image to testing area"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "users/gena/packages:colorbrewer"
+        ],
+        "Function": [
+            "Draw gradient bar"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "users/gena/packages:palettes"
+        ],
+        "Function": [
+            "Draw gradient bar"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "users/gena/packages:style"
+        ],
+        "Function": [
+            "Draw frame",
+            "Draw scalebar"
+        ]
+    },
+    "relation_5": {
+        "DataSource": [
+            "users/gena/packages:utils"
+        ],
+        "Function": [
+            "Reduce region to calculate percentile"
+        ]
+    }
+}

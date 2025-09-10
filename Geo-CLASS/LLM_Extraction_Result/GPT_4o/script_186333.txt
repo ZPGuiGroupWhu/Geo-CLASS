@@ -1,0 +1,21 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Sugarcane crop classification", "NDVI time-series analysis", "Unsupervised classification"],
+  "DataSource": ["MODIS/006/MOD09Q1"],
+  "Function": ["Define region of interest", "Buffer points by 25km", "Convert feature to image", "Filter image collection by date", "Clip images to region", "Calculate NDVI", "Create multiband image from NDVI", "Sample training data", "Train KMeans clusterer", "Cluster image using clusterer", "Remap cluster classes", "Mask and refine single crop", "Mask and refine double crop", "Mask and refine perennial crop", "Create mosaic from refined classes"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["MODIS/006/MOD09Q1"],
+        "Function": ["Filter image collection by date", "Clip images to region", "Calculate NDVI", "Create multiband image from NDVI", "Sample training data", "Train KMeans clusterer", "Cluster image using clusterer", "Remap cluster classes", "Mask and refine single crop", "Mask and refine double crop", "Mask and refine perennial crop", "Create mosaic from refined classes"]
+    }
+}
+```
+
+Total_Token_Usage:
+6579

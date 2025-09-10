@@ -1,0 +1,14 @@
+{
+  "relation_1": {
+    "DataSource": ["JRC/GSW1_0/MonthlyHistory"],
+    "Function": ["Add layers to map for visualization"]
+  },
+  "relation_2": {
+    "DataSource": ["COPERNICUS/S2"],
+    "Function": ["Load and process Sentinel-2 images", "Calculate NDWI", "Calculate MNDWI", "Apply threshold to detect water", "Add layers to map for visualization"]
+  },
+  "relation_3": {
+    "DataSource": ["users/christinacorbane/MT_comp_proj"],
+    "Function": ["Exclude urban areas", "Compute threshold using Otsu method", "Add layers to map for visualization"]
+  }
+}

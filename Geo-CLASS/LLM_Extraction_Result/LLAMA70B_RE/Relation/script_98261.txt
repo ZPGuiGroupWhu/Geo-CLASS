@@ -1,0 +1,36 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "FAO/GAUL_SIMPLIFIED_500m/2015/level2"
+        ],
+        "Function": [
+            "Filtering image collection by bounds"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "Filtering image collection by bounds and date",
+            "Calculating NDWI",
+            "Mosaicking and clipping images"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "JRC/GSW1_0/GlobalSurfaceWater"
+        ],
+        "Function": [
+            "Refining flood results using additional datasets"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "WWF/HydroSHEDS/03VFDEM"
+        ],
+        "Function": [
+            "Refining flood results using additional datasets"
+        ]
+    }
+}

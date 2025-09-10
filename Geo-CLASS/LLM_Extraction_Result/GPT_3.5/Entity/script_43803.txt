@@ -1,0 +1,6 @@
+{
+  "Summary": ["Mosaic and export Sentinel-2 images for Zhangjiakou region."],
+  "Theme": ["Satellite image processing"],
+  "DataSource": ["users/b20203080616/HB-data/Zhangjiakou", "COPERNICUS/S2_SR"],
+  "Function": ["Filter, sort, and mosaic Sentinel-2 images", "Clip and select specific bands for analysis", "Export processed image to Google Drive"]
+}

@@ -1,0 +1,25 @@
+{
+    "Theme": [
+        "DEM extraction and visualization"
+    ],
+    "DataSource": [
+        "NOAA/NGDC/ETOPO1",
+        "NASA/ASTER_GED/AG100_003",
+        "OSU/GIMP/DEM",
+        "CPOM/CryoSat2/ANTARCTICA_DEM",
+        "JAXA/ALOS/AW3D30_V1_1",
+        "USGS/GMTED2010",
+        "USGS/SRTMGL1_003",
+        "USGS/GTOPO30",
+        "WWF/HydroSHEDS/03CONDEM",
+        "WWF/HydroSHEDS/30CONDEM",
+        "WWF/HydroSHEDS/15CONDEM"
+    ],
+    "Function": [
+        "Clip and select DEM data",
+        "Visualize DEM data",
+        "Export DEM data to Drive",
+        "Create histogram of DEM data",
+        "Display histogram of DEM data"
+    ]
+}

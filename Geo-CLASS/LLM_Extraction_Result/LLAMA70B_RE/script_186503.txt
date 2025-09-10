@@ -1,0 +1,28 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover classification using Sentinel-1 data"],
+  "DataSource": ["COPERNICUS/S1_GRD", "ee.FeatureCollection(urban)", "ee.FeatureCollection(forest)", "ee.FeatureCollection(water)"],
+  "Function": ["Filtering Sentinel-1 image collection", "Applying Refined Lee speckle filter", "Converting to natural units", "Converting to dB", "Classifying land cover using CART algorithm"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Filtering Sentinel-1 image collection", "Applying Refined Lee speckle filter", "Converting to natural units", "Converting to dB"]
+    },
+    "relation_2": {
+        "DataSource": ["ee.FeatureCollection(urban)", "ee.FeatureCollection(forest)", "ee.FeatureCollection(water)"],
+        "Function": ["Classifying land cover using CART algorithm"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 5504, 'completion_tokens': 266, 'total_tokens': 5770}

@@ -1,0 +1,25 @@
+Entity Recognition:
+{
+"Theme": ["Wildfire analysis and classification"],
+"DataSource": ["users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016", "COPERNICUS/S2"],
+"Function": ["Filtering image collection by date and geometry", "Calculating vegetation indices", "Classifying images using machine learning algorithms", "Stratified sampling for training and validation"]
+}
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016"],
+        "Function": ["Filtering image collection by date and geometry", "Calculating vegetation indices", "Classifying images using machine learning algorithms", "Stratified sampling for training and validation"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Filtering image collection by date and geometry", "Calculating vegetation indices", "Classifying images using machine learning algorithms", "Stratified sampling for training and validation"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 6895, 'completion_tokens': 273, 'total_tokens': 7168}

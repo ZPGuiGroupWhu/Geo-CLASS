@@ -1,0 +1,25 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Flood detection using Sentinel-2 imagery"],
+  "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2", "COPERNICUS/S2"],
+  "Function": ["Load feature collection", "Filter image collection by location", "Filter image collection by date", "Sort image collection by cloud cover", "Filter image collection by cloud cover", "Add layer to map", "Print image collection size", "Print image collection details", "Calculate normalized difference water index", "Center map on region"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2"],
+        "Function": ["Load feature collection", "Filter image collection by location"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Filter image collection by location", "Filter image collection by date", "Sort image collection by cloud cover", "Filter image collection by cloud cover", "Add layer to map", "Print image collection size", "Print image collection details", "Calculate normalized difference water index", "Center map on region"]
+    }
+}
+```
+
+Total_Token_Usage:
+4643

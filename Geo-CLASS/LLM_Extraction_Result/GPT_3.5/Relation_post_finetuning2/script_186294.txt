@@ -1,0 +1,20 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Cloud And Snow Masking",
+            "Creates Animation Of NDVI Over Time"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "ft:1XPgyHDQHN4d5IF4x8u5ZkJxkVQ_xKWFFuUTi9ofT"
+        ],
+        "Function": [
+            "Cloud And Snow Masking",
+            "Creates Animation Of NDVI Over Time"
+        ]
+    }
+}

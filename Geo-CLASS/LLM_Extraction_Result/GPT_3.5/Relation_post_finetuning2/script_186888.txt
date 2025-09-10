@@ -1,0 +1,16 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LE7_L1T/LE71440512001014SGS00",
+            "LANDSAT/LE7_L1T_TOA_FMASK/LE71440512001014SGS00"
+        ],
+        "Function": [
+            "Image Cloud Masking",
+            "Error Propagation Calculation",
+            "Radiance calculation",
+            "Add NDVI Band To Images",
+            "Surface Temperature Calculation",
+            "Generate And Display A Scatter Plot"
+        ]
+    }
+}

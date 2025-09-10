@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["users/KARTIKA_EAA/Semarang"],
+        "Function": ["Cloud masking", "Image collection filtering", "Image visualization"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["NDVI calculation", "Thermal band selection", "Land surface temperature calculation"]
+    }
+}

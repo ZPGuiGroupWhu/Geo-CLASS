@@ -1,0 +1,10 @@
+{
+  "relation_1": {
+    "DataSource": ["MODIS/006/MOD09Q1"],
+    "Function": ["Filter image collection by date", "Clip images to region", "Calculate NDVI", "Create multiband image", "Sample training data", "Train KMeans clusterer", "Cluster images", "Remap classes", "Visualize clusters", "Create mosaic"]
+  },
+  "relation_2": {
+    "DataSource": ["users/khoapv/Ranhgioi_DL"],
+    "Function": ["Clip images to region", "Sample training data", "Visualize clusters", "Create buffers", "Convert feature to image", "Merge classes", "Refine classes", "Create mosaic"]
+  }
+}

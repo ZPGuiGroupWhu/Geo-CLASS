@@ -1,0 +1,25 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Entity Recognition": {
+    "Theme": ["Vegetation Cover Analysis"],
+    "DataSource": ["MODIS/006/MOD15A2H", "MODIS/006/MOD44B"],
+    "Function": ["Image Collection Filtering", "Image Selection", "Mean Reduction", "Data Quality Control", "Image Visualization"]
+  },
+  "Relation Extraction": {
+    "relation_1": {
+      "DataSource": ["MODIS/006/MOD15A2H"],
+      "Function": ["Image Collection Filtering", "Image Selection", "Mean Reduction"]
+    },
+    "relation_2": {
+      "DataSource": ["MODIS/006/MOD44B"],
+      "Function": ["Image Collection Filtering", "Image Selection", "Mean Reduction", "Data Quality Control"]
+    }
+  }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2554, 'completion_tokens': 218, 'total_tokens': 2772}

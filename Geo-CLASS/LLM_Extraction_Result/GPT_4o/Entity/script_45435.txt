@@ -1,0 +1,5 @@
+{
+  "Theme": ["MODIS LAI analysis", "Vegetation cover analysis"],
+  "DataSource": ["MODIS/006/MOD15A2H", "MODIS/006/MOD44B"],
+  "Function": ["Filter image collection by date", "Select specific bands", "Calculate mean of selected bands", "Add two datasets", "Limit values to a maximum", "Divide dataset by another", "Visualize data on map", "Export image to Google Drive"]
+}

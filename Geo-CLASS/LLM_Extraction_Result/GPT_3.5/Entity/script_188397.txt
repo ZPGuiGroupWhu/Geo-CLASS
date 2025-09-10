@@ -1,0 +1,6 @@
+{
+  "Summary": ["The script visualizes MODIS burn date data for a specific region."],
+  "Theme": ["Wildfire monitoring and analysis"],
+  "DataSource": ["MODIS/006/MCD64A1"],
+  "Function": ["Filtering MODIS images by date and selecting 'BurnDate' band", "Adding layers to the map for visualization", "Creating a video thumbnail for the image collection"]
+}

@@ -1,0 +1,18 @@
+{
+    "Theme": [
+        "Vegetation Index Analysis",
+        "SAR Image Analysis"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2",
+        "COPERNICUS/S1_GRD"
+    ],
+    "Function": [
+        "Image Collection Filtering",
+        "NDVI Calculation",
+        "GCI Calculation",
+        "Image Clustering",
+        "SAR Image Filtering",
+        "SAR Image Clustering"
+    ]
+}

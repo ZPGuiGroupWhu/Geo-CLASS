@@ -1,0 +1,5 @@
+{
+  "Theme": ["Parthenium classification", "Vegetation indices", "Cloud masking", "Accuracy assessment"],
+  "DataSource": ["users/zolokiala/parthenium1", "users/zolokiala/buffer", "users/zolokiala/training", "users/zolokiala/test", "COPERNICUS/S2"],
+  "Function": ["Display shapefiles", "Mask clouds", "Filter image collection", "Compute median composite", "Compute vegetation indices", "Mask NDVI range", "Sample regions", "Train classifier", "Classify image", "Compute confusion matrix", "Generate area chart", "Export image to Drive"]
+}

@@ -1,0 +1,17 @@
+{
+    "Theme": [
+        "Arctic greening patterns"
+    ],
+    "DataSource": [
+        "users/liuchongwhu/Arctic/Arctic_greeness/treeline_country",
+        "MODIS/006/MOD13Q1",
+        "MODIS/006/MOD44W"
+    ],
+    "Function": [
+        "Mask pixels with high SummaryQA",
+        "Mask out water",
+        "Calculate NDVI/EVI annual max",
+        "Calculate regression trends",
+        "Calculate average NDVI/EVI in region"
+    ]
+}

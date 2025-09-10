@@ -1,0 +1,5 @@
+{
+  "Theme": ["Water detection using satellite imagery"],
+  "DataSource": ["projects/ee-kimmmydanny/assets/tingxialiuyu", "LANDSAT/LC08/C01/T1_RT_TOA", "COPERNICUS/S2_SR"],
+  "Function": ["Mask clouds in Landsat images", "Define study area", "Filter Landsat images by date and location", "Mosaic and clip Landsat images", "Calculate MNDWI index", "Mask clouds in Sentinel-2 images", "Add MNDWI band to Sentinel-2 images", "Filter Sentinel-2 images by date and location", "Calculate median MNDWI for Sentinel-2", "Compute Otsu threshold", "Extract water using Otsu threshold for Landsat", "Export Landsat water image", "Extract water using Otsu threshold for Sentinel-2", "Export Sentinel-2 water image", "Compute water area from Landsat", "Compute water area from Sentinel-2"]
+}

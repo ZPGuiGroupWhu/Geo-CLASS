@@ -1,0 +1,2 @@
+ID,Script_ID,Entity_Type,Value,Value_BAAI,Top1_Similarity_BAAI,Value_BERT,Top1_Similarity_BERT,Value_BERT0,Top1_Similarity_BERT0,Value_sentence-t5-large,Top1_Similarity_sentence-t5-large,LLAMA70B,Usage
+1,script_102957.txt,Function,Filter image collection by spatial bounds,Filter Image Collection By Bounds,0.896336079,Filter Image Collection By Bounds,0.999745607,Filter Image Collection By Bounds,0.972790599,Filter Image Collection By Bounds,0.951050758,Filter Image Collection By Bounds,"{'prompt_tokens': 4014, 'completion_tokens': 6, 'total_tokens': 4020}"

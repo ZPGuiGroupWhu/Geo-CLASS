@@ -1,0 +1,14 @@
+{
+    "relation_1": {
+        "DataSource": ["ft:1iovW6_vHSX3JOx5OvcFr-ljJdx5mGmqK6Q_ETiSO"],
+        "Function": ["Creating vector masks for burned areas", "Generating cloud masks for Landsat images", "Calculating NBR indices for pre- and post-fire composites"]
+    },
+    "relation_2": {
+        "DataSource": ["FIRMS"],
+        "Function": ["Creating vector masks for burned areas"]
+    },
+    "relation_3": {
+        "DataSource": ["LANDSAT/LT5_L1T", "LANDSAT/LC8_L1T"],
+        "Function": ["Generating cloud masks for Landsat images", "Calculating NBR indices for pre- and post-fire composites"]
+    }
+}

@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Vegetation health monitoring using remote sensing"],
+  "DataSource": ["users/eduardosperanza-Embrapa/Projeto-Coplacana/Piracicaba-H2Copla-UTM", "COPERNICUS/S2_SR"],
+  "Function": ["Cloud and snow pixel removal", "NDVI calculation", "VARI calculation", "EVI calculation", "Buffer creation", "Image collection filtering", "NDVI median composite image creation", "Spatial join operation", "Property removal from features"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/eduardosperanza-Embrapa/Projeto-Coplacana/Piracicaba-H2Copla-UTM"],
+        "Function": ["Cloud and snow pixel removal", "Buffer creation", "Image collection filtering", "Property removal from features"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["NDVI calculation", "VARI calculation", "EVI calculation", "NDVI median composite image creation", "Spatial join operation"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3463, 'completion_tokens': 272, 'total_tokens': 3735}

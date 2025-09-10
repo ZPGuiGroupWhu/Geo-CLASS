@@ -1,0 +1,5 @@
+{
+  "Theme": ["Vegetation Index Analysis"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Filtering image collection by date and bounds", "Masking clouds and shadows", "Calculating NDVI", "Creating image composites", "Charting NDVI time series", "Creating GIF animation", "Calculating image differences", "Calculating standard anomalies"]
+}

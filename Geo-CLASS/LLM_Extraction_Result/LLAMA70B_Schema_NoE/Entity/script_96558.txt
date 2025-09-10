@@ -1,0 +1,19 @@
+{
+    "Theme": [
+        "Climate analysis",
+        "Spatial correlation analysis"
+    ],
+    "DataSource": [
+        "MODIS/006/MOD13Q1",
+        "UCSB-CHG/CHIRPS/DAILY",
+        "FAO/GAUL/2015/level1"
+    ],
+    "Function": [
+        "Filtering and summing CHIRPS data by month",
+        "Filtering and averaging NDVI data by month",
+        "Resampling CHIRPS data from 5Km to 250m",
+        "Joining CHIRPS and NDVI data",
+        "Calculating spatial correlation between NDVI and precipitation",
+        "Generating scatter plot of NDVI vs precipitation"
+    ]
+}

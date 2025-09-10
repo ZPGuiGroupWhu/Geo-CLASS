@@ -1,0 +1,30 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/eeranyartrodrigo/panteones/polygonsData/polsPanteon"
+        ],
+        "Function": [
+            "Buffering features",
+            "Clipping images",
+            "Reducing regions"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "projects/ee-vulnerability-gee4geo/assets/ranyartRodrigo/mexicoContorno"
+        ],
+        "Function": [
+            "Masking clouds and cirrus",
+            "Filtering image collection"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Calculating vegetation indices",
+            "Mapping functions over features"
+        ]
+    }
+}

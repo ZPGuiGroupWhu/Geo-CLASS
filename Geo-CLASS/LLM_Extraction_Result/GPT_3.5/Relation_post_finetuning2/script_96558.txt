@@ -1,0 +1,27 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "MODIS/006/MOD13Q1"
+        ],
+        "Function": [
+            "Add NDVI Band To Images",
+            "Generate Time Series Data For NDVI Changes",
+            "Calculate Normalized Difference Flood Index (NDFI)",
+            "Generate And Display A Scatter Plot",
+            "Creates Animation Of NDVI Over Time"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "UCSB-CHG/CHIRPS/DAILY"
+        ],
+        "Function": [
+            "Refinement Of Datasets",
+            "Calculates Modified Normalized Difference Water Index (MNDWI)",
+            "Generate Time Series Data For NDVI Changes",
+            "Calculate Normalized Difference Flood Index (NDFI)",
+            "Generate And Display A Scatter Plot",
+            "Creates Animation Of NDVI Over Time"
+        ]
+    }
+}

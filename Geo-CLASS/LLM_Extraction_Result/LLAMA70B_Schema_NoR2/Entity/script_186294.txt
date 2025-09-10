@@ -1,0 +1,5 @@
+{
+"Theme": ["Land cover classification and vegetation analysis"],
+"DataSource": ["ft:1XPgyHDQHN4d5IF4x8u5ZkJxkVQ_xKWFFuUTi9ofT", "COPERNICUS/S2"],
+"Function": ["Filtering image collection by date and bounds", "Applying quality mask to images", "Calculating NDVI from Sentinel-2 images", "Clipping and visualizing NDVI results", "Exporting NDVI image to Drive"]
+}

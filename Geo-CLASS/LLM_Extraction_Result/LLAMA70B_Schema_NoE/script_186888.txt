@@ -1,0 +1,33 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Radiance, NDVI, and Land Surface Temperature calculation"],
+  "DataSource": ["LANDSAT/LE7_L1T/LE71440512001014SGS00", "LANDSAT/LE7_L1T_TOA_FMASK/LE71440512001014SGS00"],
+  "Function": ["Cloud masking using fmask", "Incoming shortwave radiation calculation", "Radiance calculation", "NDVI and NDWI calculation", "Land surface temperature calculation", "Scatter plot of LST vs NDVI"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LE7_L1T/LE71440512001014SGS00", "LANDSAT/LE7_L1T_TOA_FMASK/LE71440512001014SGS00"],
+        "Function": ["Cloud masking using fmask", "Radiance calculation", "NDVI and NDWI calculation", "Land surface temperature calculation"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LE7_L1T/LE71440512001014SGS00"],
+        "Function": ["Incoming shortwave radiation calculation"]
+    },
+    "relation_3": {
+        "DataSource": ["LANDSAT/LE7_L1T_TOA_FMASK/LE71440512001014SGS00"],
+        "Function": ["Scatter plot of LST vs NDVI"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 6006, 'completion_tokens': 418, 'total_tokens': 6424}

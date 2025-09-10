@@ -1,0 +1,91 @@
+var era5 = ee.ImageCollection("ECMWF/ERA5/DAILY")
+
+var admin2 = ee.FeatureCollection("FAO/GAUL_SIMPLIFIED_500m/2015/level2")
+
+var aoi = admin2.filter(ee.Filter.eq('ADM1_NAME', 'Sinaloa'))
+
+var startDate = '1981-01-01';
+var endDate = '2021-01-01';
+
+// Get Tmin in ˚C from ERA5Re
+var tmin = era5.select('minimum_2m_air_temperature')
+  .filter(ee.Filter.date(startDate, endDate))
+  .filterBounds(aoi);
+var tmin = tmin.map(function(image) {
+  return image.subtract(273.15)
+  .copyProperties(image,['system:time_start']);
+});
+
+var tmin_re = tmin.min();
+var tmin_clip = tmin_re.clip(aoi);
+
+// Get Tmax in ˚C from ERA5Re
+var tmax = era5.select('maximum_2m_air_temperature')
+  .filter(ee.Filter.date(startDate, endDate))
+  .filterBounds(aoi);
+var tmax = tmax.map(function(image) {
+  return image.subtract(273.15)
+  .copyProperties(image,['system:time_start']);
+});
+
+var tmax_re = tmax.max();
+var tmax_clip = tmax_re.clip(aoi);
+
+// Get Tavg in ˚C from ERA5Re
+var tavg = era5.select('mean_2m_air_temperature')
+  .filter(ee.Filter.date(startDate, endDate))
+  .filterBounds(aoi);
+var tavg = tavg.map(function(image) {
+  return image.subtract(273.15)
+  .copyProperties(image,['system:time_start']);
+});
+
+var tavg_re = tavg.mean();
+var tavg_clip = tavg_re.clip(aoi);
+
+// Visualize AOI and Data Points
+var vis2mt = {
+  min: -10,
+  max: 50,
+  palette: [
+    '#000080', '#0000D9', '#4000FF', '#8000FF', '#0080FF', '#00FFFF', '#00FF80',
+    '#80FF00', '#DAFF00', '#FFFF00', '#FFF500', '#FFDA00', '#FFB000', '#FFA400',
+    '#FF4F00', '#FF2500', '#FF0A00', '#FF00FF'
+  ]
+};
+
+Map.addLayer(aoi)
+Map.centerObject(aoi,7)
+Map.addLayer(tmin_clip, vis2mt, 'Tmin (ERA5 RE)')
+Map.addLayer(tmax_clip, vis2mt, 'Tmax (ERA5 Land)')
+Map.addLayer(tavg_clip, vis2mt, 'Tmean (ERA5 Land)')
+
+// Image Export Function
+Export.image.toDrive({
+  image: tmin_clip,
+  description: 'ERA5Re_Tmin',
+  folder: 'earthengine',
+  fileNamePrefix: 'ERA5Re_Tmin',
+  scale: 1000,
+  region: aoi
+});
+
+// Image Export Function
+Export.image.toDrive({
+  image: tmax_clip,
+  description: 'ERA5Re_Tmax',
+  folder: 'earthengine',
+  fileNamePrefix: 'ERA5Re_Tmax',
+  scale: 1000,
+  region: aoi
+});
+
+// Image Export Function
+Export.image.toDrive({
+  image: tavg_clip,
+  description: 'ERA5Re_Tavg',
+  folder: 'earthengine',
+  fileNamePrefix: 'ERA5Re_Tavg',
+  scale: 1000,
+  region: aoi
+});

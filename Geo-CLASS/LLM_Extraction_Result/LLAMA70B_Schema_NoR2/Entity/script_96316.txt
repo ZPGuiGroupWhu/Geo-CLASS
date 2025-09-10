@@ -1,0 +1,5 @@
+{
+  "Theme": ["Land cover classification and vegetation monitoring"],
+  "DataSource": ["users/cesarnon/datos_cba_2017/Cordoba_limite", "COPERNICUS/S2_SR"],
+  "Function": ["Filtering image collections by date and cloud coverage", "Renaming image bands", "Calculating vegetation indices", "Creating quality mosaics", "Clipping images to a specific geometry", "Adding bands to an image", "Mapping image layers"]
+}

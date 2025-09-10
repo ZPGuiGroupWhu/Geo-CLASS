@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+"Theme": ["Land cover classification and vegetation analysis"],
+"DataSource": ["LANDSAT/LC8_L1T_TOA_FMASK", "ft:1XPgyHDQHN4d5IF4x8u5ZkJxkVQ_xKWFFuUTi9ofT"],
+"Function": ["Filtering image collection by date and location", "Cloud masking using cloud likelihood band", "Calculating NDVI from Landsat 8 images", "Reducing and exporting mean NDVI values"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC8_L1T_TOA_FMASK"],
+        "Function": ["Filtering image collection by date and location", "Cloud masking using cloud likelihood band", "Calculating NDVI from Landsat 8 images"]
+    },
+    "relation_2": {
+        "DataSource": ["ft:1XPgyHDQHN4d5IF4x8u5ZkJxkVQ_xKWFFuUTi9ofT"],
+        "Function": ["Reducing and exporting mean NDVI values"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 7895, 'completion_tokens': 269, 'total_tokens': 8164}

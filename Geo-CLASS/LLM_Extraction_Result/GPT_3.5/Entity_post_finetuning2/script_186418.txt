@@ -1,0 +1,22 @@
+{
+    "Summary": [
+        "Script processes Landsat data for surface temperature retrieval."
+    ],
+    "Theme": [
+        "LAND SURFACE FEEDBACKS"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C01/T1_32DAY_NDVI",
+        "LANDSAT/LC08/C01/T1",
+        "LANDSAT/LC08/C01/T1_TOA",
+        "LANDSAT/LC8_SR",
+        "NCEP_RE/surface_temp",
+        "NCEP_RE/surface_wv"
+    ],
+    "Function": [
+        "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover",
+        "Computes Percentage Of Cloud Cover",
+        "Compute Emissivity From Vegetation Fraction",
+        "Fractional Vegetation Cover (FVC) Calculation"
+    ]
+}

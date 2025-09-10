@@ -1,0 +1,6 @@
+{
+  "Summary": ["Script focuses on classifying land cover in Zimbabwe using Landsat imagery and training points."],
+  "Theme": ["Land cover classification"],
+  "DataSource": ["users/kindgard/ZWE_Forest_Plantations", "users/kindgard/Forest_Plantations_v2", "JRC/GSW1_0/GlobalSurfaceWater"],
+  "Function": ["Training a classifier for land cover classification", "Applying the classifier to classify land cover", "Post-classification editing to refine classification results", "Creating masks for water bodies and cities to exclude them from classification"]
+}

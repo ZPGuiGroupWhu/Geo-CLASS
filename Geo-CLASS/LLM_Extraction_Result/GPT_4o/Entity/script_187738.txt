@@ -1,0 +1,5 @@
+{
+  "Theme": ["Cropland classification", "Object-based image analysis", "Random forest classification"],
+  "DataSource": ["USDA/NAIP/DOQQ", "USDA/NASS/CDL/2016", "users/saicheems/classification", "users/saicheems/classification_snic"],
+  "Function": ["Load image collection", "Define region of interest", "Select and clip image", "Create image mosaic", "Normalize image", "Add image layer to map", "Generate seed grid", "Sample training points", "Train classifier", "Add classification layer to map", "Apply Gaussian filter", "Segment image", "Visualize clusters", "Compute cluster statistics", "Export classified image"]
+}

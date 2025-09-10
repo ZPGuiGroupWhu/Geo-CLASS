@@ -1,0 +1,21 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LT05/C01/T1_SR",
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "Load and filter Landsat surface reflectance images",
+            "Mask bad QA pixels",
+            "Calculate NDVI and LSWI indices"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "users/cxliu2015/QHPA_Yege"
+        ],
+        "Function": [
+            "Export results to Google Drive"
+        ]
+    }
+}

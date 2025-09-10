@@ -1,0 +1,373 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var SR8 = ee.ImageCollection("LANDSAT/LC8_SR"),
+    SR7 = ee.ImageCollection("LANDSAT/LE7_SR"),
+    SR5 = ee.ImageCollection("LANDSAT/LT5_SR"),
+    elevation = ee.Image("USGS/NED"),
+    geometry = /* color: #98ff00 */ee.Geometry.Point([-93.6474609375, 31.31610138349588]),
+    geometry2 = /* color: #d63000 */ee.Geometry.Polygon(
+        [[[-93.68316650390625, 31.302021690136108],
+          [-93.65982055664062, 31.258596058801725],
+          [-93.60626220703125, 31.304368451830978]]]);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+//// variables to play with!
+
+var jobname = 'Demo'
+
+var index = 0 // HAVE TO MANUALLY CHANGE THIS INDEX TO GENERATE OUTPUT FOR EACH P/R
+
+var startmonth = 6 // limit the temporal window for images to include
+
+var endmonth = 9
+
+var startyear = 1980
+
+var endyear = 2017
+
+var lowfrequencythreshold = 20 // mask all frequencies that are less than this percentage
+
+var cloudpercentmask = 1 // cloud mask
+
+
+
+
+
+
+
+var renamedSR8 = SR8.select(
+
+    ['B2', 'B6', 'B5', 'B4', 'B7', 'cfmask'], // old names
+
+    ['B1', 'B5', 'B4', 'B3', 'B7', 'cfmask']  // new names
+
+);
+
+
+
+var renamedSR5 = SR5.select(
+
+    ['B1', 'B5', 'B4', 'B3', 'B7', 'cfmask'], // old names
+
+    ['B1', 'B5', 'B4', 'B3', 'B7', 'cfmask']  // new names
+
+);
+
+var renamedSR7 = SR7.select(
+
+    ['B1', 'B5', 'B4', 'B3', 'B7', 'cfmask'], // old names
+
+    ['B1', 'B5', 'B4', 'B3', 'B7', 'cfmask']  // new names
+
+);
+
+
+
+
+
+var secondaryall = ee.FeatureCollection('ft:1_RZgjlcqixp-L9hyS6NYGqLaKOlnhSC35AB5M5Ll')
+
+            .filterBounds(ee.Geometry(geometry));
+
+Map.addLayer(secondaryall.draw({color: '0066FF', strokeWidth: 5}), {}, 'selected WRS');
+
+var numpr = secondaryall.size() // count of intersecting p/r
+
+print('Total Number of Potential P/R:', numpr)
+
+var prlist = secondaryall.toList(numpr);
+
+
+
+var selectedpr = ee.Image(prlist.get(index)); 
+
+var selectedpath = ee.Number(selectedpr.get('PATH')) 
+
+var selectedrow = ee.Number(selectedpr.get('ROW')) 
+
+print('Selected Path:', selectedpath)
+
+print('Selected Row:', selectedrow)
+
+
+
+
+
+var selSR8 = ee.ImageCollection(renamedSR8)
+
+    .filter(ee.Filter.eq('wrs_path', selectedpath))
+
+    .filter(ee.Filter.eq('wrs_row', selectedrow))
+
+    .filter(ee.Filter.calendarRange(startmonth, endmonth, 'month'))
+
+    .filter(ee.Filter.calendarRange(startyear, endyear, 'year'));
+
+
+
+var selSR7 = ee.ImageCollection(renamedSR7)
+
+    .filter(ee.Filter.eq('wrs_path', selectedpath))
+
+    .filter(ee.Filter.eq('wrs_row', selectedrow))
+
+    .filterDate('1999-04-15', '2003-05-31')
+
+    .filter(ee.Filter.calendarRange(startmonth, endmonth, 'month'))
+
+    .filter(ee.Filter.calendarRange(startyear, endyear, 'year'));
+
+
+
+var selSR5 = ee.ImageCollection(renamedSR5)
+
+    .filter(ee.Filter.eq('wrs_path', selectedpath))
+
+    .filter(ee.Filter.eq('wrs_row', selectedrow))
+
+    .filter(ee.Filter.calendarRange(startmonth, endmonth, 'month'))
+
+    .filter(ee.Filter.calendarRange(startyear, endyear, 'year'));
+
+
+
+// make a date property for each dataset
+
+var applydate = function (image) {
+
+  var mdate = ee.Date(image.get('system:time_start')).format('yyyy-MM-dd');
+
+  return image.set("MYDATE", mdate)
+
+};
+
+var selSR8v2 = selSR8.map(applydate)
+
+var selSR7v2 = selSR7.map(applydate)
+
+var selSR5v2 = selSR5.map(applydate)
+
+
+
+
+
+
+
+var mergedcollection = ee.ImageCollection(selSR8v2.merge(selSR7v2).merge(selSR5v2)) 
+
+
+
+// Compute total cloud and snow cover and add it as an image property
+
+var cloudcalc = function(img) {
+
+  var cfmask = img.select("cfmask")
+
+  var clouds = cfmask.gte(3) 
+
+  var per1 = clouds.reduceRegion({
+
+             reducer: ee.Reducer.mean(), 
+
+             geometry: img.geometry(), 
+
+             scale: 30,
+
+             maxPixels: 1e13}).get("cfmask")
+
+  var per = ee.Number(per1).multiply(100)
+
+  return img.set("COMPUTED_CLOUD_COVER", per)
+
+}
+
+
+
+// Apply function
+
+var col = mergedcollection.map(cloudcalc)
+
+
+
+var cloudfiltered = col.filterMetadata("COMPUTED_CLOUD_COVER","less_than", cloudpercentmask)
+
+print (cloudfiltered)
+
+
+
+
+
+// Classify function 
+
+  var classifxnall = function (image) {
+
+      var band5 = ee.Image(image).select(['B5']);
+
+      var classes = band5.lt(500); // band 5 threshold
+
+      var waterclass = classes.select(['B5'], ['waterclass']); 
+
+      var maskedwater = waterclass.updateMask(waterclass);
+
+      var band1 = ee.Image(image).select('B1');
+
+     return band1.updateMask(maskedwater); 
+
+  };
+
+
+
+var classedcollection = cloudfiltered.map(classifxnall);  
+
+print ('Classed collection', classedcollection)
+
+
+
+
+
+var temp = ee.FeatureCollection(ee.ImageCollection(cloudfiltered)).geometry();
+
+
+
+var namer = function(image) {
+
+  var indexname = image.get('system:index')
+
+  return image.set("NAME", indexname)
+
+}
+
+var namedcollection = classedcollection.map(namer)
+
+var countwet = classedcollection.reduce(ee.Reducer.count());
+
+var meanband = classedcollection.reduce(ee.Reducer.mean());
+
+
+
+//**********************************************************
+
+// normalize by total number of images
+
+var nimg = ee.Number(classedcollection.size());
+
+var normwetcount = countwet.divide(nimg).multiply(100)
+
+//mask to exclude low frequency events
+
+var low = normwetcount.gte(lowfrequencythreshold)
+
+var onlygtthresh = meanband.updateMask(low);
+
+
+
+
+
+var scenecount = cloudfiltered.reduce(ee.Reducer.count());
+
+
+
+var maxscenecount = scenecount.updateMask(scenecount.eq(nimg));
+
+
+
+var pr_extent = maxscenecount.select('B1_count');
+
+
+
+
+
+// create a vector region for exporting raster
+
+var bbox = pr_extent.reduceToVectors({geometry: temp, geometryType: "polygon", maxPixels: 1e8, scale: 500})  
+
+Map.addLayer(bbox.draw({color: '006600', strokeWidth: 5}), {}, 'BBOX');
+
+
+
+
+
+// mask outer edges to max scene: 
+
+var maskedmean = onlygtthresh.updateMask(maxscenecount.select('B1_count'));
+
+
+
+Map.addLayer(maskedmean, {min: 0, max: 500, palette: '0000FF, FFFF00, FF0000'}, 'Mean Band')
+
+
+
+//Export the final image, specifying scale and region.
+
+Export.image.toDrive({
+
+  image: maskedmean,
+
+  description: jobname + startyear + '-' + endyear + 'Months' + startmonth + '-' + endmonth,
+
+  fileNamePrefix: jobname +  startyear + '-' + endyear + ' Months ' + startmonth + '-' + endmonth,
+
+  folder: jobname,
+
+  scale: 30,
+
+  region: bbox.geometry().bounds(),
+
+  maxPixels: 9e10
+
+});
+
+
+
+
+
+// extract to csv file - images names and other metadata
+
+var ft = ee.FeatureCollection(ee.List([]))
+
+
+
+var fill = function(img, ini) {
+
+  // type cast
+
+  var inift = ee.FeatureCollection(ini)
+
+  // gets metadata properties
+
+  var name1 = img.get('NAME');
+
+  var ccc = img.get('COMPUTED_CLOUD_COVER');
+
+  // gets the values for the polygon areas in the current img
+
+  var ft2 = img.reduceRegions(geometry2, ee.Reducer.sum(),30)
+
+
+
+  // writes the filename in each feature
+
+   var ft3 = ft2.map(function (f){return f.set("filename", name1).set("ccc_1",ccc)})
+
+  // merges the FeatureCollections
+
+  return inift.merge(ft3)
+
+}
+
+
+
+// Iterates over the ImageCollection
+
+var newft = ee.FeatureCollection(namedcollection.iterate(fill, ft))
+
+
+
+// Export
+
+Export.table.toDrive(newft,
+
+"EXPORT1",
+
+"Export_metadata",
+
+"Scene_metadata")
+

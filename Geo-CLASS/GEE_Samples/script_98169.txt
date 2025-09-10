@@ -1,0 +1,386 @@
+
+
+
+//                      ##### NDVI (MEAN AND STDEV) USING LANDSAT8  #####
+
+
+
+// Updated May 29, 2022
+// Author Lauren Young
+
+
+
+//##### ADD IN ROI,  TRANSECT LOCATIONS, AND BUFFERS  #####
+
+
+
+// Define a mask to clip the entire dataset by
+var Wisconsin = ee.FeatureCollection("users/elaurenyoung/usa_states")
+  .filter(ee.Filter.eq('NAME', 'Wisconsin'));
+
+// create a 5km buffer around the state since some of the points are near the border
+var state = Wisconsin.map(function(f) {
+  return f.buffer(5000); 
+});
+
+// add all 137 transect points
+var geometry = ee.FeatureCollection("users/elaurenyoung/Site_summary_12_Apr_2022-point");
+
+
+// Create buffers around central transect points at .1km and 1km
+var buffered100m = geometry.map(function(f) {
+  return f.buffer(100); 
+});
+var buffered1km = geometry.map(function(f) {
+  return f.buffer(1000); 
+});
+
+
+
+//##### DATES #####
+
+
+// Start and end date to filter collections
+var startDateL8 = '2019-07-01'; //YYYY-MM-DD
+var endDateL8 = '2019-08-30'; // YYYY-MM-DD
+
+
+
+//##### LANDSAT8 L2 IMAGE COMPOSITE #####
+
+// ##### LANDSAT8 C02_T1_L2 ####
+// Surface reflection data
+// use Landsat 8 Surface Reflectance products to create a composite.
+// These datasets have already been atmospherically corrected.
+
+var l8_l2 = ee.ImageCollection("LANDSAT/LC08/C02/T1_L2")
+                .filterBounds(state)
+                .filterDate(startDateL8,endDateL8);
+                
+                
+// Bands for visualization
+var vis_l8_l2 = {
+  bands: ['SR_B4','SR_B3','SR_B2'], // R, G, B
+  min: 0, // minimum spectral value
+  max: 0.3 // maximum spectral value
+  };
+
+// Applies scaling factors. for C02_T1_L2
+function applyScaleFactors(image) {
+  var opticalBands = image.select('SR_B.').multiply(0.0000275).add(-0.2);
+  var thermalBands = image.select('ST_B.*').multiply(0.00341802).add(149.0);
+  return image.addBands(opticalBands, null, true)
+              .addBands(thermalBands, null, true);
+}
+
+l8_l2 = l8_l2.map(applyScaleFactors);
+
+
+
+//##### MASK CLOUDS AND WATER #####
+// based on openmrv.org
+
+// Function to mask clouds and water
+function maskL8L2CloudsWater(image) {
+  // Bits 4, 3 and 7 are cloud shadow, cloud, and water, respectively.
+  var cloudShadowBitMask = (1 << 4);
+  var cloudsBitMask = (1 << 3);
+  var waterBitMask = (1 << 7);
+  // Get the pixel QA band.
+  var qa = image.select('QA_PIXEL');
+  // Both flags should be set to zero, indicating clear conditions and no water.
+  var mask = qa.bitwiseAnd(cloudShadowBitMask).eq(0)
+                 .and(qa.bitwiseAnd(cloudsBitMask).eq(0))
+                 .and(qa.bitwiseAnd(waterBitMask).eq(0)) ;
+  return image.updateMask(mask);
+}
+
+// Filter and mask clouds and water
+var l8_l2Filt = l8_l2.filterMetadata('CLOUD_COVER','less_than',50)
+                .sort('system:time_start')
+                .map(maskL8L2CloudsWater);
+
+print('l8_l2 Filtered collection',l8_l2Filt);
+
+
+//##### CREATE IMAGE COMPOSITE #####
+// Composite images
+var l8_l2composite = l8_l2Filt.median().clip(state); // can be changed to mean, min, etc
+
+// Add composite to map
+Map.addLayer(l8_l2composite, vis_l8_l2,'Landsat 8 L2 composite');
+
+
+
+
+
+//##### LANDSAT8 SR IMAGE COMPOSITE #####
+
+
+var l8_sr = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR")
+                .filterBounds(state)
+                .filterDate(startDateL8,endDateL8);
+
+var vis_l8_sr = {
+  bands: ['B4', 'B3', 'B2'],
+  min: 0,
+  max: 3000,
+  gamma: 1.4,
+};
+
+
+
+//##### MASK CLOUDS AND WATER #####
+// based on openmrv.org
+
+function maskL8srCloudsWater(image) {
+  // Bits 3 and 5 are cloud shadow and cloud, respectively. Bit 2 is water
+  var cloudShadowBitMask = (1 << 3);
+  var cloudsBitMask = (1 << 5);
+  var waterBitMask = (1 << 2);
+  // Get the pixel QA band.
+  var qa = image.select('pixel_qa');
+  // Both flags should be set to zero, indicating clear conditions.
+  var mask = qa.bitwiseAnd(cloudShadowBitMask).eq(0)
+                 .and(qa.bitwiseAnd(cloudsBitMask).eq(0))
+                 .and(qa.bitwiseAnd(waterBitMask).eq(0));
+  return image.updateMask(mask);
+}
+
+var l8_srFilt = l8_sr.filterMetadata('CLOUD_COVER','less_than',50)
+                .sort('system:time_start')
+                .map(maskL8srCloudsWater);
+
+print('l8_sr Filtered collection',l8_srFilt);
+
+
+
+//##### CREATE IMAGE COMPOSITE #####
+// Composite images
+var l8_srcomposite = l8_srFilt.median().clip(state); // can be changed to mean, min, etc
+
+// Add composite to map
+Map.addLayer(l8_srcomposite, vis_l8_sr,'Landsat 8 SR composite');
+
+
+
+//##### CALCULATE NDVI #####
+
+// Code based on https://www.geo.fu-berlin.de/en/v/geo-it/gee/2-monitoring-ndvi-nbr/2-2-calculating-indices/ndvi-ls8/index.html
+
+// Compute Normalized Difference Vegetation Index over LS8 product.
+
+
+
+// this can be achieved using either simple band operations, .expression or .normalizedDifference
+
+// Let's use .normalizedDifference(NIR, RED)
+
+
+
+//##### LANDSAT8 L2 #####
+var ndvi_l8_l2 = l8_l2composite.normalizedDifference(['SR_B5', 'SR_B4'])
+                      .rename('NDVI');
+print(ndvi_l8_l2, 'L8 L2 NDVI');
+
+//##### LANDSAT8 SR #####
+var ndvi_l8_sr = l8_srcomposite.normalizedDifference(['B5', 'B4'])
+                      .rename('NDVI');
+print(ndvi_l8_l2, 'L8 SR NDVI');
+
+
+//this color combination is taken from the Examples script Image -> Normalized Difference:
+var palette = ['FFFFFF', 'CE7E45', 'DF923D', 'F1B555', 'FCD163', '99B718',
+               '74A901', '66A000', '529400', '3E8601', '207401', '056201',
+               '004C00', '023B01', '012E01', '011D01', '011301'];
+
+
+
+// Display the input image and the NDVI derived from it.
+Map.addLayer(ndvi_l8_l2, {min: 0, max: 1, palette: palette}, 'L8 L2 NDVI')
+Map.addLayer(ndvi_l8_sr, {min: 0, max: 1, palette: palette}, 'L8 SR NDVI')
+
+Map.centerObject(geometry, 7)
+
+
+
+//##### NDVI STATISTICS #####
+
+
+
+//##### LANDSAT8 L2 #####
+
+//1km
+var mean_NDVI_l8l2_2019_1km = ndvi_l8_l2.reduceRegions({
+  reducer: ee.Reducer.mean(),
+  collection: buffered1km,
+  scale: 30, // spatial scale of Landsat product
+  });
+print(mean_NDVI_l8l2_2019_1km, 'mean ndvi l8_l2 1km');
+
+var sd_NDVI_l8l2_2019_1km = ndvi_l8_l2.reduceRegions({
+  reducer: ee.Reducer.stdDev(),
+  collection: buffered1km,
+  scale: 30,
+  });
+print(sd_NDVI_l8l2_2019_1km, 'sd ndvi l8_l2 1km');
+
+var var_NDVI_l8l2_2019_1km = ndvi_l8_l2.reduceRegions({
+  reducer: ee.Reducer.variance(),
+  collection: buffered1km,
+  scale: 30,
+  });
+print(var_NDVI_l8l2_2019_1km, 'var ndvi l8_l2 1km');
+
+//100m
+var mean_NDVI_l8l2_2019_100m = ndvi_l8_l2.reduceRegions({
+  reducer: ee.Reducer.mean(),
+  collection: buffered100m,
+  scale: 30, // spatial scale of Landsat product
+  });
+print(mean_NDVI_l8l2_2019_100m, 'mean ndvi l8_l2 100m');
+
+var sd_NDVI_l8l2_2019_100m = ndvi_l8_l2.reduceRegions({
+  reducer: ee.Reducer.stdDev(),
+  collection: buffered100m,
+  scale: 30,
+  });
+print(sd_NDVI_l8l2_2019_100m, 'sd ndvi l8_l2 100m');
+
+var var_NDVI_l8l2_2019_100m = ndvi_l8_l2.reduceRegions({
+  reducer: ee.Reducer.variance(),
+  collection: buffered100m,
+  scale: 30,
+  });
+print(var_NDVI_l8l2_2019_100m, 'var ndvi l8_l2 100m');
+
+
+//##### LANDSAT8 SR #####
+//1km
+var mean_NDVI_l8sr_2019_1km = ndvi_l8_sr.reduceRegions({
+  reducer: ee.Reducer.mean(),
+  collection: buffered1km,
+  scale: 30, // spatial scale of Landsat product
+  });
+print(mean_NDVI_l8sr_2019_1km, 'mean ndvi l8_sr 1km');
+
+var sd_NDVI_l8sr_2019_1km = ndvi_l8_sr.reduceRegions({
+  reducer: ee.Reducer.stdDev(),
+  collection: buffered1km,
+  scale: 30,
+  });
+print(sd_NDVI_l8sr_2019_1km, 'sd ndvi l8_sr 1km');
+
+var var_NDVI_l8sr_2019_1km = ndvi_l8_sr.reduceRegions({
+  reducer: ee.Reducer.variance(),
+  collection: buffered1km,
+  scale: 30,
+  });
+print(var_NDVI_l8sr_2019_1km, 'var ndvi l8_sr 1km');
+
+//100m
+var mean_NDVI_l8sr_2019_100m = ndvi_l8_sr.reduceRegions({
+  reducer: ee.Reducer.mean(),
+  collection: buffered100m,
+  scale: 30, // spatial scale of Landsat product
+  });
+print(mean_NDVI_l8sr_2019_100m, 'mean ndvi l8_sr 100m');
+
+var sd_NDVI_l8sr_2019_100m = ndvi_l8_sr.reduceRegions({
+  reducer: ee.Reducer.stdDev(),
+  collection: buffered100m,
+  scale: 30,
+  });
+print(sd_NDVI_l8sr_2019_100m, 'sd ndvi l8_sr 100m');
+
+var var_NDVI_l8sr_2019_100m = ndvi_l8_sr.reduceRegions({
+  reducer: ee.Reducer.variance(),
+  collection: buffered100m,
+  scale: 30,
+  });
+print(var_NDVI_l8sr_2019_100m, 'var ndvi l8_sr 100m');
+
+
+
+//##### EXPORT TO GOOGLE DRIVE #####
+
+
+//##### LANDSAT8 L2 #####
+//1km
+Export.table.toDrive({
+  collection: mean_NDVI_l8l2_2019_1km,
+  description:'mean_NDVI_l8l2_2019_1km',
+  fileFormat: 'CSV'
+});
+
+Export.table.toDrive({
+  collection: sd_NDVI_l8l2_2019_1km,
+  description:'sd_NDVI_l8l2_2019_1km',
+  fileFormat: 'CSV'
+});
+
+Export.table.toDrive({
+  collection: var_NDVI_l8l2_2019_1km,
+  description:'var_NDVI_l8l2_2019_1km',
+  fileFormat: 'CSV'
+});
+
+//100m
+Export.table.toDrive({
+  collection: mean_NDVI_l8l2_2019_100m,
+  description:'mean_NDVI_l8l2_2019_100m',
+  fileFormat: 'CSV'
+});
+
+Export.table.toDrive({
+  collection: sd_NDVI_l8l2_2019_100m,
+  description:'sd_NDVI_l8l2_2019_100m',
+  fileFormat: 'CSV'
+});
+
+Export.table.toDrive({
+  collection: var_NDVI_l8l2_2019_100m,
+  description:'var_NDVI_l8l2_2019_100m',
+  fileFormat: 'CSV'
+});
+
+
+//##### LANDSAT8 SR #####
+//1km
+Export.table.toDrive({
+  collection: mean_NDVI_l8sr_2019_1km,
+  description:'mean_NDVI_l8sr_2019_1km',
+  fileFormat: 'CSV'
+});
+
+Export.table.toDrive({
+  collection: sd_NDVI_l8sr_2019_1km,
+  description:'sd_NDVI_l8sr_2019_1km',
+  fileFormat: 'CSV'
+});
+
+Export.table.toDrive({
+  collection: var_NDVI_l8sr_2019_1km,
+  description:'var_NDVI_l8sr_2019_1km',
+  fileFormat: 'CSV'
+});
+
+//100m
+Export.table.toDrive({
+  collection: mean_NDVI_l8sr_2019_100m,
+  description:'mean_NDVI_l8sr_2019_100m',
+  fileFormat: 'CSV'
+});
+
+Export.table.toDrive({
+  collection: sd_NDVI_l8sr_2019_100m,
+  description:'sd_NDVI_l8sr_2019_100m',
+  fileFormat: 'CSV'
+});
+
+Export.table.toDrive({
+  collection: var_NDVI_l8sr_2019_100m,
+  description:'var_NDVI_l8sr_2019_100m',
+  fileFormat: 'CSV'
+});
+

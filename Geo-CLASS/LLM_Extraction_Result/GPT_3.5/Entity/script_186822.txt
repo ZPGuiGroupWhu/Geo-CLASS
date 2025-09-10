@@ -1,0 +1,6 @@
+{
+  "Summary": ["Buffering agricultural fields, filtering and processing Sentinel-1 satellite data for analysis."],
+  "Theme": ["Agricultural field monitoring", "Sentinel-1 satellite data processing"],
+  "DataSource": ["users/dgilad/SA", "users/dgilad/Fields", "COPERNICUS/S1_GRD"],
+  "Function": ["Buffering agricultural fields for analysis", "Filtering and processing Sentinel-1 satellite data"]
+}

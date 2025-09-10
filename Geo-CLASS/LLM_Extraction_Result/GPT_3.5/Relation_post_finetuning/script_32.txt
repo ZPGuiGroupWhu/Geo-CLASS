@@ -1,0 +1,21 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/ak_glaciers/NWCC_high_resolution_coordinates_2019_hucs",
+            "USGS/WBD/2017/HUC8"
+        ],
+        "Function": [
+            "Data Fusion And Mosaicking",
+            "Data Fusion And Mosaicking"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "CGIAR/SRTM90_V4"
+        ],
+        "Function": [
+            "Calculating terrain slope and aspect from DEMs",
+            "Cloud Masking And Quality Filtering"
+        ]
+    }
+}

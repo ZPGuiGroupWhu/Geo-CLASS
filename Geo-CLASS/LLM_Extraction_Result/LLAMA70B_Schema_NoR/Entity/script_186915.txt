@@ -1,0 +1,23 @@
+{
+    "Theme": [
+        "Flood area detection and population analysis"
+    ],
+    "DataSource": [
+        "COPERNICUS/S1_GRD",
+        "CIESIN/GPWv4/population-count"
+    ],
+    "Function": [
+        "Filtering Sentinel-1 C-band SAR images",
+        "Mosaicking images",
+        "Thresholding radar intensities",
+        "Topological intersection",
+        "Focal median smoothing",
+        "Image visualization",
+        "Vectorization of flooded areas",
+        "Population count analysis",
+        "Polygon geometry calculation",
+        "Feature area calculation",
+        "Sampling population data",
+        "Exporting flooded area to Drive"
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "Theme": [
+        "Land cover analysis using Landsat 5 imagery"
+    ],
+    "DataSource": [
+        "LANDSAT/LT05/C01/T1_SR"
+    ],
+    "Function": [
+        "Filtering image collection by cloud cover",
+        "Masking clouds and shadows",
+        "Calculating NDVI",
+        "Compositing images",
+        "Clipping images to geometry"
+    ]
+}

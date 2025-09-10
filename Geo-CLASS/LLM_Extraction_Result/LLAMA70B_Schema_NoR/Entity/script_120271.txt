@@ -1,0 +1,22 @@
+{
+    "Theme": [
+        "NDVI Analysis"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2_SR",
+        "users/gena/packages:colorbrewer",
+        "users/gena/packages:palettes",
+        "users/gena/packages:style",
+        "users/gena/packages:utils"
+    ],
+    "Function": [
+        "Filter image collection by date and cloud percentage",
+        "Calculate NDVI band",
+        "Apply median to image collection",
+        "Clip image to testing area",
+        "Reduce region to calculate percentile",
+        "Draw gradient bar",
+        "Draw frame",
+        "Draw scalebar"
+    ]
+}

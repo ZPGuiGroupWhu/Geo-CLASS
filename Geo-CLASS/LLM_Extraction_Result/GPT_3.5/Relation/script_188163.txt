@@ -1,0 +1,22 @@
+{
+    "relation_1": {
+        "DataSource": ["users/kindgard/Asia/Asia", "users/kindgard/Africa", "users/kindgard/SUD", "users/kindgard/AfricaS", "users/kindgard/AmericaN", "users/kindgard/Asia2"],
+        "Function": ["Image collection merging and clipping", "Landsat image compositing for wet and dry seasons"]
+    },
+    "relation_2": {
+        "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+        "Function": ["Applying masks for water and cities"]
+    },
+    "relation_3": {
+        "DataSource": ["ft:1tdSwUL7MVpOauSgRzqVTOwdfy17KDbw-1d9omPw"],
+        "Function": ["Training classifier for land cover classification"]
+    },
+    "relation_4": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Quality band calculation for Sentinel-2 images"]
+    },
+    "relation_5": {
+        "DataSource": ["users/ValeriaContessa/Map_1992_rast"],
+        "Function": ["None"]
+    }
+}

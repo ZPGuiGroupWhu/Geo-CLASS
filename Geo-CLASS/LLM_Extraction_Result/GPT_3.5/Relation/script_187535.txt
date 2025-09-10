@@ -1,0 +1,6 @@
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Data filtering based on polarization and date", "Image smoothing for noise reduction", "Histogram generation for visualization"]
+    }
+}

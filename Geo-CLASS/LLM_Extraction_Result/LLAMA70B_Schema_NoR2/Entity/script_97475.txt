@@ -1,0 +1,5 @@
+{
+  "Theme": ["Land cover classification and analysis using Sentinel-2 imagery"],
+  "DataSource": ["COPERNICUS/S2", "USGS/NED"],
+  "Function": ["Masking clouds from Sentinel-2 images", "Filtering image collection by date and bounds", "Calculating median of image collection", "Clipping image to bounds", "Renaming bands", "Generating slope and aspect from DEM", "Stacking DEM, slope, and aspect with imagery", "Developing training dataset", "Generating clusters using Weka XMeans", "Applying clusters to image", "Calculating means of each pixel for each cluster", "Generating scatter plots of cluster means", "Generating frequency histogram of clusters", "Generating signature plots for each spectral cluster"]
+}

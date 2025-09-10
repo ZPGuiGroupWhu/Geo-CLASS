@@ -1,0 +1,29 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Vegetation Index Analysis", "SAR Image Analysis"],
+  "DataSource": ["COPERNICUS/S2", "COPERNICUS/S1_GRD"],
+  "Function": ["Filter image collection by date and cloud coverage", "Compute Normalized Difference Vegetation Index", "Cluster image using k-means algorithm", "Filter SAR image by date and polarization", "Apply speckle filter to SAR image", "Cluster SAR image using k-means algorithm"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Filter image collection by date and cloud coverage", "Compute Normalized Difference Vegetation Index", "Cluster image using k-means algorithm"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Filter SAR image by date and polarization", "Apply speckle filter to SAR image", "Cluster SAR image using k-means algorithm"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4442, 'completion_tokens': 265, 'total_tokens': 4707}

@@ -1,0 +1,29 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land cover classification and time series analysis"],
+  "DataSource": ["LANDSAT/LC8_L1T_TOA_FMASK", "ft:1XPgyHDQHN4d5IF4x8u5ZkJxkVQ_xKWFFuUTi9ofT"],
+  "Function": ["Filtering Landsat 8 images by date and location", "Cloud masking using simpleCloudScore algorithm", "Calculating NDVI", "Reducing and exporting mean NDVI values for rich forest and no forest areas"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC8_L1T_TOA_FMASK"],
+        "Function": ["Filtering Landsat 8 images by date and location", "Cloud masking using simpleCloudScore algorithm", "Calculating NDVI"]
+    },
+    "relation_2": {
+        "DataSource": ["ft:1XPgyHDQHN4d5IF4x8u5ZkJxkVQ_xKWFFuUTi9ofT"],
+        "Function": ["Reducing and exporting mean NDVI values for rich forest and no forest areas"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 7685, 'completion_tokens': 296, 'total_tokens': 7981}

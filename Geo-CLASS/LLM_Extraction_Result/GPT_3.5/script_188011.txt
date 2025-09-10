@@ -1,0 +1,33 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Calculating seasonal temperatures from Landsat 8 TOA data and exporting results."],
+  "Theme": ["Temperature analysis"],
+  "DataSource": ["projects/ee-kimiachenaary/assets/msh", "LANDSAT/LC08/C01/T1_TOA"],
+  "Function": ["Temperature conversion from Kelvin to Celsius", "Clipping temperature data to specified geometry", "Calculating mean temperature for summer season", "Exporting temperature data as CSV files"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["projects/ee-kimiachenaary/assets/msh"],
+        "Function": [
+            "Temperature conversion from Kelvin to Celsius",
+            "Clipping temperature data to specified geometry",
+            "Calculating mean temperature for summer season",
+            "Exporting temperature data as CSV files"
+        ]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_TOA"],
+        "Function": [
+            "Temperature conversion from Kelvin to Celsius",
+            "Clipping temperature data to specified geometry",
+            "Calculating mean temperature for summer season",
+            "Exporting temperature data as CSV files"
+        ]
+    }
+}
+```

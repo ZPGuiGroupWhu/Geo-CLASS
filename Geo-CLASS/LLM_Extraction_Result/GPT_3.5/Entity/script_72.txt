@@ -1,0 +1,6 @@
+{
+  "Summary": ["LandTrendr geoprocessing workflow for Cambodia from 1990 to 2021."],
+  "Theme": ["Land cover change detection"],
+  "DataSource": ["USDOS/LSIB/2017"],
+  "Function": ["Temporal segmentation using LandTrendr", "Calculation of NBR index", "Change detection mapping"]
+}

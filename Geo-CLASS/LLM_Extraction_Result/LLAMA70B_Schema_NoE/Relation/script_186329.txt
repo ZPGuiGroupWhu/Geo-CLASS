@@ -1,0 +1,40 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LC8_SR",
+            "LANDSAT/LC8_L1T_TOA",
+            "LANDSAT/LC08/C01/T1_TOA"
+        ],
+        "Function": [
+            "Filtering and sorting image collections",
+            "Calculating NDVI and NBR indices",
+            "Mosaicking images"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LE7_L1T_TOA_FMASK",
+            "LANDSAT/LT5_L1T_TOA_FMASK"
+        ],
+        "Function": [
+            "Calculating NDVI and NBR indices",
+            "Mosaicking images"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "users/khoapv/xatong"
+        ],
+        "Function": [
+            "Visualizing and comparing images"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "ft:1Fp3oWwAiWxh1XyXIc1HYl_eWBP9Uh8froBiiC9CG"
+        ],
+        "Function": [
+            "Detecting forest loss and deforestation"
+        ]
+    }
+}

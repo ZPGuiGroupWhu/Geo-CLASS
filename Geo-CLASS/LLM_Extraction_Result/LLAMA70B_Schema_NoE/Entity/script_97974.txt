@@ -1,0 +1,23 @@
+{
+    "Theme": [
+        "Land cover classification and change detection"
+    ],
+    "DataSource": [
+        "users/EL/Grenada",
+        "LANDSAT/LE7_L1T",
+        "LANDSAT/LC08/C01/T1_RT",
+        "users/EL/G_forest"
+    ],
+    "Function": [
+        "Buffering country borders",
+        "Filtering Landsat imagery by date and cloud cover",
+        "Compositing Landsat imagery",
+        "Calculating spectral indices",
+        "Visualizing mosaics",
+        "Merging bands",
+        "Masking non-forest areas",
+        "Sampling regions for training",
+        "Training a classifier",
+        "Classifying land cover"
+    ]
+}

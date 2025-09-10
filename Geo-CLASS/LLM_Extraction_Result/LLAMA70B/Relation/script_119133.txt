@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2_SR_HARMONIZED/20200720T110619_20200720T111156_T29SPB"],
+        "Function": ["Calculate normalized burn ratio", "Perform clustering analysis", "Generate training dataset", "Visualize classification results", "Apply filter to classification results"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2_SR_HARMONIZED/20200908T110619_20200908T111404_T29SPB"],
+        "Function": ["Multiply binary classification with severity classification"]
+    }
+}

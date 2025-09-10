@@ -1,0 +1,25 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Lake surface area analysis"],
+  "DataSource": ["LANDSAT/LT05/C01/T1"],
+  "Function": ["Filter image collection by boundary", "Generate annual composite images", "Compute NDWI", "Segment with Otsu method", "Calculate area of segmented waterbody"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LT05/C01/T1"],
+        "Function": ["Filter image collection by boundary", "Generate annual composite images", "Compute NDWI", "Segment with Otsu method", "Calculate area of segmented waterbody"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 5649, 'completion_tokens': 174, 'total_tokens': 5823}

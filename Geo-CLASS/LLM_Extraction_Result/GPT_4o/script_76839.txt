@@ -1,0 +1,25 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["NDVI and LSWI analysis", "Landsat imagery processing", "Cloud masking"],
+  "DataSource": ["LANDSAT/LT05/C01/T1_SR", "LANDSAT/LC08/C01/T1_SR", "users/cxliu2015/PA_Qinghai_EnglishNames", "users/cxliu2015/PA_Qinghai_cdm_studiedRectangle"],
+  "Function": ["Add region outline to map", "Select bands from Landsat 5 and 8", "Merge image collections", "Filter images by date and location", "Mask clouds, shadows, snow, and fill pixels", "Compute median of images", "Calculate NDVI", "Calculate LSWI", "Add bands to image", "Visualize RGB composite", "Visualize NDVI", "Visualize LSWI", "Export NDVI to Google Drive", "Export LSWI to Google Drive"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["LANDSAT/LT05/C01/T1_SR", "LANDSAT/LC08/C01/T1_SR"],
+    "Function": ["Select bands from Landsat 5 and 8", "Merge image collections", "Filter images by date and location", "Mask clouds, shadows, snow, and fill pixels", "Compute median of images", "Calculate NDVI", "Calculate LSWI", "Add bands to image", "Visualize RGB composite", "Visualize NDVI", "Visualize LSWI", "Export NDVI to Google Drive", "Export LSWI to Google Drive"]
+  },
+  "relation_2": {
+    "DataSource": ["users/cxliu2015/PA_Qinghai_EnglishNames", "users/cxliu2015/PA_Qinghai_cdm_studiedRectangle"],
+    "Function": ["Add region outline to map", "Filter images by date and location", "Compute median of images", "Calculate NDVI", "Calculate LSWI", "Add bands to image", "Visualize RGB composite", "Visualize NDVI", "Visualize LSWI", "Export NDVI to Google Drive", "Export LSWI to Google Drive"]
+  }
+}
+```
+
+Total_Token_Usage:
+5966

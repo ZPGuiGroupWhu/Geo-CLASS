@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Calculate average spectral indices around marsh bird survey points along the ColRiver."],
+  "Theme": ["Spectral index calculation around marsh bird survey points"],
+  "DataSource": ["LANDSAT/LC8_L1T_TOA", "LANDSAT/LE7_L1T_TOA", "ft:1QKw5K7582CuFBKiqDcYEPADrvjHTLAkz3EIxL_TI", "ft:1iQ8RECwcWSVF3AkSPVdxgpnENRJc-su6G6c1CZiF"],
+  "Function": ["Buffer creation around survey points", "Cloud masking for Landsat 8 imagery", "Addition of variables to Landsat 8 imagery", "Cloud masking for Landsat 7 imagery", "Addition of variables to Landsat 7 imagery", "Monthly average calculation for Landsat 7 imagery"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC8_L1T_TOA", "LANDSAT/LE7_L1T_TOA"],
+        "Function": ["Buffer creation around survey points", "Cloud masking for Landsat 8 imagery", "Addition of variables to Landsat 8 imagery"]
+    },
+    "relation_2": {
+        "DataSource": ["ft:1QKw5K7582CuFBKiqDcYEPADrvjHTLAkz3EIxL_TI", "ft:1iQ8RECwcWSVF3AkSPVdxgpnENRJc-su6G6c1CZiF"],
+        "Function": ["Cloud masking for Landsat 7 imagery", "Addition of variables to Landsat 7 imagery", "Monthly average calculation for Landsat 7 imagery"]
+    }
+}
+```

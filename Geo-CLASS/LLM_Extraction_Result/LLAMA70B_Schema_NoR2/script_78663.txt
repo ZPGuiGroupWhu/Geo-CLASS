@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land Cover Classification and Correction"],
+  "DataSource": ["users/danielp/LC-SLIAC:LC-SLIAC_global"],
+  "Function": ["Apply Land Cover Classification Correction", "Create Time Series Chart", "Filter Image Collection", "Calculate Mean Value"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/danielp/LC-SLIAC:LC-SLIAC_global"],
+        "Function": ["Apply Land Cover Classification Correction", "Filter Image Collection", "Calculate Mean Value"]
+    },
+    "relation_2": {
+        "DataSource": ["users/danielp/LC-SLIAC:LC-SLIAC_global"],
+        "Function": ["Create Time Series Chart"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2069, 'completion_tokens': 192, 'total_tokens': 2261}

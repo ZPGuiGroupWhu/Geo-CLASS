@@ -1,0 +1,14 @@
+{
+    "relation_1": {
+        "DataSource": ["users/eijulio/valles_altos_estados"],
+        "Function": ["Filtering image collections by date", "Clipping images to area of interest", "Reducing regions to calculate mean values"]
+    },
+    "relation_2": {
+        "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2"],
+        "Function": ["Styling vectors for visualization"]
+    },
+    "relation_3": {
+        "DataSource": ["ECMWF/ERA5/DAILY", "UCSB-CHG/CHIRPS/PENTAD"],
+        "Function": ["Calculating monthly totals from image collections", "Computing average for each month across all years", "Calculating seasonal deviation from normal rainfall", "Exporting images and tables to Drive"]
+    }
+}

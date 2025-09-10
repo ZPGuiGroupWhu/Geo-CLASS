@@ -1,0 +1,22 @@
+{
+    "Theme": [
+        "Land cover classification and crop type identification in Maharashtra, India"
+    ],
+    "DataSource": [
+        "MODIS/006/MOD09Q1"
+    ],
+    "Function": [
+        "Buffer creation around sugar mills",
+        "Image collection filtering by date",
+        "NDVI calculation",
+        "Image classification using k-means clustering",
+        "Image masking and clipping",
+        "Image sampling for training",
+        "Clusterer training",
+        "Unsupervised classification",
+        "Class merging and remapping",
+        "Image visualization with random colors",
+        "Class refinement and masking",
+        "Image mosaicking"
+    ]
+}

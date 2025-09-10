@@ -1,0 +1,19 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Script extracts MODIS LAI and vegetation cover data for 2002, calculates LAI/vegetation cover ratio, and exports results."],
+  "Theme": ["MODIS LAI and vegetation cover analysis"],
+  "DataSource": ["MODIS/006/MOD15A2H", "MODIS/006/MOD44B"],
+  "Function": ["Data filtering based on date", "Data selection by field", "Data reduction by mean", "Data quality control", "Data visualization and export"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["MODIS/006/MOD15A2H", "MODIS/006/MOD44B"],
+        "Function": ["Data filtering based on date", "Data selection by field", "Data reduction by mean", "Data quality control", "Data visualization and export"]
+    }
+}
+```

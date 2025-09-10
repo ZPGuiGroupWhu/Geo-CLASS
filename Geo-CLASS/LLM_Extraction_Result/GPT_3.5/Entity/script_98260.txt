@@ -1,0 +1,6 @@
+{
+  "Summary": ["Script filters Landsat images for flood detection and calculates NDWI, then applies Otsu thresholding for classification."],
+  "Theme": ["Flood detection", "NDWI calculation", "Image classification"],
+  "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2", "LANDSAT/LT05/C01/T1_SR"],
+  "Function": ["Filtering image collection by region and date", "Creating mosaic images and clipping to boundary", "Calculating NDWI for flood detection", "Generating histogram and applying Otsu thresholding for classification"]
+}

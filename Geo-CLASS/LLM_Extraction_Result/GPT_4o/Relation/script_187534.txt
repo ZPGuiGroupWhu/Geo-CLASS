@@ -1,0 +1,17 @@
+{
+  "relation_1": {
+    "DataSource": ["COPERNICUS/S1_GRD"],
+    "Function": [
+      "Filter image collection by region",
+      "Sort image collection by date",
+      "Select most recent image",
+      "Filter image collection by date",
+      "Select VV polarization",
+      "Apply smoothing filter",
+      "Calculate band ratio",
+      "Threshold backscatter values",
+      "Generate histograms",
+      "Display images on map"
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+    "Summary": [
+        "The script processes Landsat imagery data for multiple years to analyze land cover changes."
+    ],
+    "Theme": [
+        "LAND USE/LAND COVER"
+    ],
+    "DataSource": [
+        "users/kiniklihakan/milanshp",
+        "LANDSAT/LC08/C02/T1_L2",
+        "LANDSAT/LT05/C02/T1_L2",
+        "LANDSAT/LE07/C02/T1_L2"
+    ],
+    "Function": [
+        "Cloud And Cloud Shadow Masking",
+        "Cloud And Water Masking",
+        "Mosaic Landsat Images",
+        "Addition Of Spectral Indices",
+        "Image Normalization",
+        "Generating Histograms",
+        "Urban Area Calculation",
+        "Aggregate Land Cover",
+        "Image Gap Filling",
+        "Remapping Land Cover Classes",
+        "Built-up Area Classification",
+        "Link Maps For Synchronized Viewing",
+        "Buffering Points For Sample Expansion"
+    ]
+}

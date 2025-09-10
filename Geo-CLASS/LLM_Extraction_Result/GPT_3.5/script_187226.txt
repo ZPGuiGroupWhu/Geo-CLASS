@@ -1,0 +1,19 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["The script processes Sentinel-2 images to mask clouds, shadows, and water, focusing on a specific study area."],
+  "Theme": ["Cloud and shadow detection", "Water body identification"],
+  "DataSource": ["COPERNICUS/S2", "COPERNICUS/S2"],
+  "Function": ["Calculating cloud scores for Sentinel-2 images", "Generating shadow masks based on solar geometry"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Calculating cloud scores for Sentinel-2 images", "Generating shadow masks based on solar geometry"]
+    }
+}
+```

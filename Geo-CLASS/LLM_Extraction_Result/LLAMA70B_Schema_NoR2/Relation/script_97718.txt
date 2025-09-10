@@ -1,0 +1,6 @@
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Filtering image collection by date and geometry", "Masking cloud from image", "Calculating NDVI", "Creating NDVI median composite image", "Calculating MSI", "Creating MSI median composite image", "Exporting images to Drive"]
+    }
+}

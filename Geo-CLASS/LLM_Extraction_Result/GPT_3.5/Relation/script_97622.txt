@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["users/eikhaingzinthan72019/gadm36_MMR_1"],
+        "Function": ["Cloud masking for removing cloud cover", "NDVI calculation for vegetation analysis", "Training image creation for classification", "Land cover classification using Random Forest algorithm"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_TOA"],
+        "Function": ["Cloud masking for removing cloud cover", "NDVI calculation for vegetation analysis", "Training image creation for classification", "Land cover classification using Random Forest algorithm"]
+    }
+}

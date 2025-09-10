@@ -1,0 +1,18 @@
+{
+    "Theme": [
+        "Land cover classification and analysis using Sentinel-1, Landsat 8, and Sentinel-2 data"
+    ],
+    "DataSource": [
+        "users/khoapv/xatong",
+        "COPERNICUS/S1_GRD",
+        "LANDSAT/LC08/C01/T1_SR",
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "Add NDVI and time to images",
+        "Filter images by date and bounds",
+        "Map functions to image collections",
+        "Join image collections by date",
+        "Reduce regions for each station"
+    ]
+}

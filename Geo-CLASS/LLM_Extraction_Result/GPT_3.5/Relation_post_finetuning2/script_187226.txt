@@ -1,0 +1,11 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Calculates And Displays Area For Each Land Cover Category",
+            "Generate ColumnChart For Precipitation"
+        ]
+    }
+}

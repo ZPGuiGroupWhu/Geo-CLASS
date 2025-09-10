@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Script extracts MODIS LST data for Mexico, calculates mean temperature, and tests trend significance."],
+  "Theme": ["Land Surface Temperature Analysis"],
+  "DataSource": ["users/juanjoseromeroacm21/MORELIA", "users/juanjoseromeroacm21/michoacan_state", "USDOS/LSIB_SIMPLE/2017", "MODIS/MOD11A2"],
+  "Function": ["Filtering country boundaries", "Calculating mean temperature", "Testing trend significance"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/juanjoseromeroacm21/MORELIA", "users/juanjoseromeroacm21/michoacan_state"],
+        "Function": ["Filtering country boundaries"]
+    },
+    "relation_2": {
+        "DataSource": ["USDOS/LSIB_SIMPLE/2017"],
+        "Function": ["Filtering country boundaries"]
+    },
+    "relation_3": {
+        "DataSource": ["MODIS/MOD11A2"],
+        "Function": ["Calculating mean temperature", "Testing trend significance"]
+    }
+}
+```

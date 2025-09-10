@@ -1,0 +1,20 @@
+{
+    "Theme": [
+        "Flood Impact Analysis"
+    ],
+    "DataSource": [
+        "COPERNICUS/S1_GRD",
+        "JRC/GSW1_0/GlobalSurfaceWater",
+        "WWF/HydroSHEDS/03VFDEM",
+        "MODIS/006/MCD12Q1",
+        "JRC/GHSL/P2016/POP_GPW_GLOBE_V1/2015"
+    ],
+    "Function": [
+        "Filtering and selecting SAR images based on polarization and pass direction",
+        "Calculating the difference between before and after flood images",
+        "Applying a threshold to identify flooded areas",
+        "Calculating the area of flooded land",
+        "Calculating the population affected by the flood",
+        "Calculating the area of affected cropland and urban areas"
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S1_GRD"
+        ],
+        "Function": [
+            "Visualize NDVI And Date Information",
+            "Radar Image Noise Reduction",
+            "Generate And Display a Histogram"
+        ]
+    }
+}

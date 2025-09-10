@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Landsat 8 Surface Reflectance Analysis"],
+  "DataSource": ["LANDSAT/LC08/C02/T1_L2"],
+  "Function": ["Filtering image collection by date", "Filtering image collection by geography", "Removing cloud cover from images", "Masking cloud shadows and clouds", "Flattening image collection into single image", "Assigning colors and intensities to spectral bands"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C02/T1_L2"],
+        "Function": ["Filtering image collection by date", "Filtering image collection by geography", "Removing cloud cover from images", "Masking cloud shadows and clouds", "Flattening image collection into single image", "Assigning colors and intensities to spectral bands"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3229, 'completion_tokens': 211, 'total_tokens': 3440}

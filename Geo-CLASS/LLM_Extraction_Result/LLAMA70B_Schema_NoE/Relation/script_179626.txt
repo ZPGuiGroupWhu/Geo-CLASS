@@ -1,0 +1,25 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/KARTIKA_EAA/Semarang"
+        ],
+        "Function": [
+            "Cloud masking using Landsat 8 imagery",
+            "NDVI calculation and visualization",
+            "Thermal band selection and visualization"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "Cloud masking using Landsat 8 imagery",
+            "NDVI calculation and visualization",
+            "Thermal band selection and visualization",
+            "Fractional Vegetation Cover (FV) calculation",
+            "Emissivity (EM) calculation",
+            "Land Surface Temperature (LST) calculation and visualization"
+        ]
+    }
+}

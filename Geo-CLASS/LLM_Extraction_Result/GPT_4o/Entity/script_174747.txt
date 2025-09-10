@@ -1,0 +1,5 @@
+{
+  "Theme": ["Temperature analysis in Mexico"],
+  "DataSource": ["users/juanjoseromeroacm21/MORELIA", "users/juanjoseromeroacm21/michoacan_state", "USDOS/LSIB_SIMPLE/2017", "MODIS/MOD11A2"],
+  "Function": ["Filter country boundaries", "Filter image collection by date", "Select specific data band", "Convert temperature units", "Generate time series chart", "Calculate mean temperature", "Clip image to region", "Export image to Drive"]
+}

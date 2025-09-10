@@ -1,0 +1,43 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Water detection and river boundary extraction using Sentinel-2 and JRC data"],
+  "DataSource": ["COPERNICUS/S2", "JRC/GSW1_0/MonthlyHistory", "users/christinacorbane/MT_comp_proj"],
+  "Function": [
+    "Process Sentinel-2 image by filtering, resampling, and normalizing bands",
+    "Compute NDWI and MNDWI indices for water detection",
+    "Apply Otsu thresholding method for automatic threshold selection",
+    "Detect water bodies using Canny edge detection and thresholding",
+    "Compute JRC monthly water occurrence for a few months"
+  ]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": [
+            "Process Sentinel-2 image by filtering, resampling, and normalizing bands",
+            "Compute NDWI and MNDWI indices for water detection",
+            "Detect water bodies using Canny edge detection and thresholding"
+        ]
+    },
+    "relation_2": {
+        "DataSource": ["JRC/GSW1_0/MonthlyHistory"],
+        "Function": ["Compute JRC monthly water occurrence for a few months"]
+    },
+    "relation_3": {
+        "DataSource": ["users/christinacorbane/MT_comp_proj"],
+        "Function": ["None"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3367, 'completion_tokens': 357, 'total_tokens': 3724}

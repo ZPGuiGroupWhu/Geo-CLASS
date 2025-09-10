@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Mask clouds and cirrus", "Filter image collection by date and location", "Select specific bands", "Calculate median composite", "Clip image to region", "Rename bands", "Add terrain data to image", "Sample image for training data", "Train clustering algorithm", "Apply clustering to image", "Visualize clusters", "Generate cluster means", "Create scatter plots", "Generate signature plots"]
+    },
+    "relation_2": {
+        "DataSource": ["USGS/NED"],
+        "Function": ["Generate slope and aspect", "Add terrain data to image"]
+    }
+}

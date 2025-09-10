@@ -1,0 +1,6 @@
+{
+  "Summary": ["The script processes Landsat 5 imagery from 1985 to 1990, focusing on cloud masking and NDVI calculation."],
+  "Theme": ["Landsat 5 imagery processing"],
+  "DataSource": ["LANDSAT/LT05/C01/T1_SR"],
+  "Function": ["Cloud masking operation", "NDVI calculation operation"]
+}

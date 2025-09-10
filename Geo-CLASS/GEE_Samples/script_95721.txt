@@ -1,0 +1,177 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var coplacanah2copla = ee.FeatureCollection("users/eduardosperanza-Embrapa/Projeto-Coplacana/Piracicaba-H2Copla-UTM");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+// Function to remove cloud and snow pixels
+function maskCloudAndShadows(image) {
+  var cloudProb = image.select('MSK_CLDPRB');
+  var snowProb = image.select('MSK_SNWPRB');
+  var cloud = cloudProb.lt(5);
+  var snow = snowProb.lt(5);
+  var scl = image.select('SCL'); 
+  var shadow = scl.eq(3); // 3 = cloud shadow
+  var cirrus = scl.eq(10); // 10 = cirrus
+  // Cloud probability less than 5% or cloud shadow classification
+  var mask = (cloud.and(snow)).and(cirrus.neq(1)).and(shadow.neq(1));
+  return image.updateMask(mask);
+}
+
+// Function to calculate and add an NDVI band
+var addNDVI = function(image) {
+return image.addBands(image.normalizedDifference(['B8', 'B4']).rename('ndvi'));
+};
+
+var addVARI = function(image) {
+  var vari=image.expression(
+    '(GREEN/10000-RED/10000)/(GREEN/10000 + RED/10000 - BLUE/10000)', {
+      'GREEN': image.select('B3'),
+      'RED': image.select('B4'),
+      'BLUE': image.select('B2')
+});
+  return image.addBands(vari.rename('vari'));
+}
+
+// Add EVI using an expression.
+var addEVI=function(image){
+var EVI = image.expression(
+      '2.5 * ((NIR - RED) / (NIR + 6 * RED - 7.5 * BLUE + 1))', {
+      'NIR' : image.select('B8').divide(10000),
+      'RED' : image.select('B4').divide(10000),
+      'BLUE': image.select('B2').divide(10000)}).rename('EVI');
+      return image.addBands(EVI);
+}
+
+
+
+//Function to create Buffer
+var bufferBy = function(size) {
+  return function(feature) {
+    return feature.buffer(size);   
+  };
+};
+
+var bufferedGeom = coplacanah2copla.map(bufferBy(-30));
+
+// Create image collection of S-2 imagery for the perdiod 2020-2021
+var S2 = ee.ImageCollection('COPERNICUS/S2_SR')
+
+//filter start and end date
+.filterDate('2022-03-01', '2022-03-20')
+.filterMetadata('CLOUDY_PIXEL_PERCENTAGE','less_than',20)
+.map(maskCloudAndShadows)
+.map(addNDVI)
+.map(addVARI)
+.map(addEVI)
+
+//filter according to drawn boundary
+.filterBounds(bufferedGeom);
+
+// Extract NDVI band and create NDVI median composite image
+// Pico de biomassa
+var S2_pico = ee.ImageCollection('COPERNICUS/S2_SR')
+
+//filter start and end date
+.filterDate('2022-03-01', '2022-03-20')
+// .filterDate('2019-04-01', '2020-06-01')
+.map(maskCloudAndShadows)
+.map(addNDVI)
+.map(addVARI)
+.map(addEVI)
+
+var NDVI = S2_pico.select(['ndvi']);
+var NDVIMaxPico = NDVI.max(); 
+
+var VARI = S2_pico.select(['vari']);
+var VARIMaxPico = VARI.max(); 
+
+var EVI = S2_pico.select(['EVI']);
+var EVIMaxPico = EVI.max(); 
+
+// Create palettes for display of NDVI
+var ndvi_pal = ['#d73027', '#f46d43', '#fdae61', '#fee08b', '#d9ef8b',
+'#a6d96a'];
+
+var empty = ee.Image().byte();
+
+var outline = empty.paint({
+  featureCollection: bufferedGeom,
+  color: 1,
+  width: 1
+});
+
+var palettes = require('users/gena/packages:palettes');
+var palette = palettes.colorbrewer.RdYlGn[10];
+
+
+var NDVITalhao = NDVIMaxPico.reduceRegions({
+    collection:bufferedGeom, 
+    reducer:ee.Reducer.mean().setOutputs(['NDVI']), 
+    scale: 10
+  });
+  
+var VARITalhao = VARIMaxPico.reduceRegions({
+    collection:bufferedGeom, 
+    reducer:ee.Reducer.mean().setOutputs(['VARI']), 
+    scale: 10
+  });
+
+var EVITalhao = EVIMaxPico.reduceRegions({
+    collection:bufferedGeom, 
+    reducer:ee.Reducer.mean().setOutputs(['EVI']), 
+    scale: 10
+  });
+
+var spatialFilter = ee.Filter.intersects({
+  leftField: '.geo',
+  rightField: '.geo',
+  maxError: 10
+});
+
+// Define a save all join.
+var saveAllJoin = ee.Join.saveAll({
+  matchesKey: 'HUC',
+});
+
+// Apply the join.
+var intersectJoined = saveAllJoin.apply(NDVITalhao, VARITalhao, spatialFilter);
+
+/// adding id property of HUC feature to root feature
+intersectJoined = intersectJoined.map(function(feature){
+  var VARI = ee.Feature(ee.List(feature.get("HUC")).get(0)).get("VARI");
+  var featureVARI = feature.set('VARI',VARI);
+  return featureVARI
+})
+
+intersectJoined = intersectJoined.map(function(feature){
+  var EVI = ee.Feature(ee.List(feature.get("HUC")).get(0)).get("EVI");
+  var featureEVI = feature.set('EVI',EVI);
+  return featureEVI
+})
+
+// Generic Function to remove a property from a feature
+var removeProperty = function(feat, property) {
+  var properties = feat.propertyNames()
+  var selectProperties = properties.filter(ee.Filter.neq('item', property))
+  return feat.select(selectProperties)
+}
+
+// remove property color in each feature
+intersectJoined = intersectJoined.map(function(feat) {
+  return removeProperty(feat, 'HUC')
+})
+
+print(intersectJoined)
+
+// Display NDVI and VARI results on map
+Map.addLayer(NDVIMaxPico.clip(bufferedGeom), {min:-0.5, max:0.9, palette: ndvi_pal}, 'NDVI');
+Map.addLayer(VARIMaxPico.clip(bufferedGeom), {min:-0.5, max:0.9, palette: ndvi_pal}, 'VARI');
+Map.addLayer(outline, {palette: '000000'});
+
+Map.centerObject(coplacanah2copla,15);
+
+// Export the FeatureCollection to a CSV file.
+Export.table.toDrive({
+  collection: intersectJoined,
+  description:'csvcoplacanah2copla',
+  folder: 'DadosSchiavon',
+  fileFormat: 'CSV'
+});

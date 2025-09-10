@@ -1,0 +1,22 @@
+{
+    "relation_1": {
+        "DataSource": ["UCSB-CHG/CHIRPS/PENTAD"],
+        "Function": [
+            "Image collection filtering based on date and region",
+            "Mosaicking daily cloud probability images",
+            "Summing cloud probability images",
+            "Calculating percentage of cloud cover",
+            "Cross-correlation analysis between precipitation and cloud cover"
+        ]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2_CLOUD_PROBABILITY"],
+        "Function": [
+            "Image collection filtering based on date and region",
+            "Mosaicking daily cloud probability images",
+            "Summing cloud probability images",
+            "Calculating percentage of cloud cover",
+            "Cross-correlation analysis between precipitation and cloud cover"
+        ]
+    }
+}

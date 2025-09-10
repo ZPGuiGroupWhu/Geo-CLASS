@@ -1,0 +1,13 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "MODIS/006/MOD09Q1"
+        ],
+        "Function": [
+            "NDWI (Normalized Difference Water Index calculation)",
+            "Time Series Clustering And Prediction",
+            "Classification",
+            "Watershed Delineation"
+        ]
+    }
+}

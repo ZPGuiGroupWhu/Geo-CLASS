@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Wildfire severity analysis using satellite imagery"],
+  "DataSource": ["COPERNICUS/S2_SR_HARMONIZED/20200720T110619_20200720T111156_T29SPB", "COPERNICUS/S2_SR_HARMONIZED/20200908T110619_20200908T111404_T29SPB"],
+  "Function": ["Calculating normalized burn ratio", "Generating training dataset", "Clustering for severity classification", "Clustering for binary classification", "Calculating statistics and visualization", "Applying filter for visualization", "Masking for binary classification", "Multiplying binary and severity classifications"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2_SR_HARMONIZED/20200720T110619_20200720T111156_T29SPB"],
+        "Function": ["Calculating normalized burn ratio", "Generating training dataset", "Clustering for severity classification", "Calculating statistics and visualization", "Applying filter for visualization", "Multiplying binary and severity classifications"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2_SR_HARMONIZED/20200908T110619_20200908T111404_T29SPB"],
+        "Function": ["Clustering for binary classification", "Masking for binary classification"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4856, 'completion_tokens': 416, 'total_tokens': 5272}

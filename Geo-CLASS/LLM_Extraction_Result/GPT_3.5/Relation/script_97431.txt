@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["users/eggenm/chad_rivers"],
+        "Function": ["Calculate MNDWI index", "Assess cloud cover", "Apply cloud cover mask", "Filter images by date and location", "Generate quality mosaic", "Calculate median values"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_TOA"],
+        "Function": ["Calculate MNDWI index", "Assess cloud cover", "Apply cloud cover mask", "Filter images by date and location", "Generate quality mosaic", "Calculate median values"]
+    }
+}

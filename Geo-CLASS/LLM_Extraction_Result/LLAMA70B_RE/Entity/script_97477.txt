@@ -1,0 +1,16 @@
+{
+    "Theme": [
+        "Landsat 8 image analysis for vegetation health"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C01/T1_SR"
+    ],
+    "Function": [
+        "Filter cloud cover",
+        "Clip image to ROI",
+        "Compute NDVI",
+        "Compute EVI",
+        "Compute SABI",
+        "Create color bar for legend"
+    ]
+}

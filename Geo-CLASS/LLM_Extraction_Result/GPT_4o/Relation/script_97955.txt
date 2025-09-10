@@ -1,0 +1,10 @@
+{
+  "relation_1": {
+    "DataSource": ["users/EL/Bahamas"],
+    "Function": ["Center map on country", "Filter Landsat 7 images by date and cloud cover", "Create composite image", "Calculate band ratios", "Add bands to image", "Filter Landsat 8 images by date and cloud cover", "Create composite image", "Calculate band ratios", "Add bands to image", "Combine images", "Sample regions for training", "Train classifier", "Classify image"]
+  },
+  "relation_2": {
+    "DataSource": ["users/lw/Bah_Class_2017"],
+    "Function": ["Mask non-forest areas", "Classify image"]
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "Theme": ["Precipitation analysis", "Cloud probability analysis", "Correlation analysis"],
+  "DataSource": ["users/kitmyfaceplease2/eastsouth_asia", "projects/ee-kitmyfaceplease2/assets/EAST_SOUTH_SPLIT2", "COPERNICUS/S2_CLOUD_PROBABILITY", "UCSB-CHG/CHIRPS/PENTAD"],
+  "Function": ["Filter image collection by date", "Filter image collection by region", "Reduce image collection to sum", "Clip image to region", "Add layer to map", "Filter image collection by summer dates", "Create daily mosaics", "Count images in collection", "Reduce feature collection to image", "Mask clouds in image", "Sum images in collection", "Convert collection to bands", "Calculate percentage image", "Compute cross-correlation", "Export image to drive"]
+}

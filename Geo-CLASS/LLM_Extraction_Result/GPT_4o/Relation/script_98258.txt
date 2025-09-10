@@ -1,0 +1,19 @@
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": [
+            "Filter images by date and location",
+            "Filter images by metadata",
+            "Count and print image collections",
+            "Create and clip mosaic images",
+            "Set visualization parameters",
+            "Display images on the map",
+            "Merge image collections",
+            "Calculate mean and minimum images",
+            "Calculate Normalized Difference Flood Index (NDFI)",
+            "Calculate mean and standard deviation",
+            "Determine flood threshold",
+            "Mask flood areas"
+        ]
+    }
+}

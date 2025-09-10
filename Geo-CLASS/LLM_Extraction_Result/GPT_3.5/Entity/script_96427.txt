@@ -1,0 +1,6 @@
+{
+  "Summary": ["Script analyzes changes in lake areas using Landsat images and water occurrence maps."],
+  "Theme": ["Lake area change monitoring"],
+  "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater", "users/sntopp/Lakes_ply_20171106", "users/sntopp/NCSC_Horsepen_Lake", "users/sarinarinab/CitSci_Washington_Lakes"],
+  "Function": ["Calculate water surface area", "Generate lake area change chart"]
+}

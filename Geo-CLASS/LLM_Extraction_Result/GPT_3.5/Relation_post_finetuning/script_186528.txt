@@ -1,0 +1,22 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S1_GRD"
+        ],
+        "Function": [
+            "Cloud Masking And Quality Filtering",
+            "Image Band Manipulation",
+            "Classification"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "urban",
+            "forest",
+            "water"
+        ],
+        "Function": [
+            "Classification"
+        ]
+    }
+}

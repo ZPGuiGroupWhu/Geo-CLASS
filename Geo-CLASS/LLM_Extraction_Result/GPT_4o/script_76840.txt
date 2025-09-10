@@ -1,0 +1,25 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["NDVI and LSWI calculation", "Cloud masking", "Landsat imagery analysis"],
+  "DataSource": ["LANDSAT/LT05/C01/T1_SR", "LANDSAT/LC08/C01/T1_SR", "users/cxliu2015/QHPA_Yege"],
+  "Function": ["Draw region outline", "Load and filter image collection", "Mask clouds and shadows", "Compute median of bands", "Calculate NDVI", "Calculate LSWI", "Export images to Drive"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LT05/C01/T1_SR", "LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Load and filter image collection", "Mask clouds and shadows", "Compute median of bands", "Calculate NDVI", "Calculate LSWI", "Export images to Drive"]
+    },
+    "relation_2": {
+        "DataSource": ["users/cxliu2015/QHPA_Yege"],
+        "Function": ["Draw region outline", "Load and filter image collection", "Compute median of bands", "Calculate NDVI", "Calculate LSWI", "Export images to Drive"]
+    }
+}
+```
+
+Total_Token_Usage:
+5533

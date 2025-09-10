@@ -1,0 +1,22 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S1_GRD"
+        ],
+        "Function": [
+            "Data Fusion And Mosaicking",
+            "Vegetation And Water Indices Calculation",
+            "Change Detection",
+            "NDVI (Normalized Difference Vegetation Index calculation)",
+            "NDVI (Normalized Difference Vegetation Index calculation)"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "CIESIN/GPWv4/population-count"
+        ],
+        "Function": [
+            "Data Fusion And Mosaicking"
+        ]
+    }
+}

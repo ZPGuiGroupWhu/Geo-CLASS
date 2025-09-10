@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["users/hifengxu/TibetanPlateau", "users/KingDr/TPPoints", "CGIAR/SRTM90_V4"],
+        "Function": ["Creation of Landsat image collection", "Calculation of spectral indices like NDVI, NDWI, EVI", "Extraction of water bodies using spectral indices"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LT05/C02/T1_L2", "LANDSAT/LE07/C02/T1_L2", "LANDSAT/LC08/C02/T1_L2"],
+        "Function": ["Exporting processed images to Google Drive", "Exporting zonal statistics to CSV"]
+    }
+}

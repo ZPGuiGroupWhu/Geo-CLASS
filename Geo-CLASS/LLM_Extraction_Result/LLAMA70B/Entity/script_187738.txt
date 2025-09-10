@@ -1,0 +1,5 @@
+{
+  "Theme": ["Crop land classification and object-based analysis"],
+  "DataSource": ["USDA/NAIP/DOQQ", "USDA/NASS/CDL/2016", "users/saicheems/classification", "users/saicheems/classification_snic"],
+  "Function": ["Image collection filtering", "Image clipping", "Image normalization", "Image segmentation", "Object-based classification", "Random forest classification", "Image convolution", "Cluster analysis", "Standard deviation calculation", "Area calculation", "Perimeter calculation", "Width and height calculation", "Confusion matrix calculation"]
+}

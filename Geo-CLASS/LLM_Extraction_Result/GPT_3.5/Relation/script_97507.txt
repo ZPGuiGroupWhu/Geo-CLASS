@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["TIGER/2018/Counties"],
+        "Function": ["Filtering Landsat 8 imagery based on cloud cover, location, and date", "Mapping image dates and displaying them on the map"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C02/T1_L2"],
+        "Function": ["Filtering Landsat 8 imagery based on cloud cover, location, and date", "Mapping image dates and displaying them on the map"]
+    }
+}

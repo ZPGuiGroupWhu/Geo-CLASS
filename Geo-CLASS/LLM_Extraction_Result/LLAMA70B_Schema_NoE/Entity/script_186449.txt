@@ -1,0 +1,81 @@
+{
+    "Theme": [
+        "Land cover classification"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C01/T1_SR/LC08_118062_20150819"
+    ],
+    "Function": [
+        "sampleRegions",
+        "select",
+        "merge",
+        "addLayer",
+        "setCenter",
+        "sampleRegions",
+        "feature.groups",
+        "setChartType",
+        "setOptions"
+    ],
+    "Entities": [
+        {
+            "Name": "BareLand",
+            "Type": "ee.Feature",
+            "Geometry": "MultiPolygon",
+            "Properties": {
+                "class": 2,
+                "name": "bare",
+                "system:index": "0"
+            }
+        },
+        {
+            "Name": "Water",
+            "Type": "ee.Feature",
+            "Geometry": "MultiPolygon",
+            "Properties": {
+                "class": 4,
+                "name": "water",
+                "system:index": "0"
+            }
+        },
+        {
+            "Name": "Vegetation",
+            "Type": "ee.Feature",
+            "Geometry": "MultiPolygon",
+            "Properties": {
+                "class": 3,
+                "name": "veg",
+                "system:index": "0"
+            }
+        },
+        {
+            "Name": "Cloud",
+            "Type": "ee.Feature",
+            "Geometry": "MultiPolygon",
+            "Properties": {
+                "class": 5,
+                "name": "cloud",
+                "system:index": "0"
+            }
+        },
+        {
+            "Name": "Burn",
+            "Type": "ee.Feature",
+            "Geometry": "MultiPolygon",
+            "Properties": {
+                "class": 1,
+                "name": "burn",
+                "system:index": "0"
+            }
+        },
+        {
+            "Name": "Shadow",
+            "Type": "ee.Feature",
+            "Geometry": "MultiPolygon",
+            "Properties": {
+                "class": 6,
+                "name": "shadow",
+                "system:index": "0"
+            }
+        }
+    ]
+}

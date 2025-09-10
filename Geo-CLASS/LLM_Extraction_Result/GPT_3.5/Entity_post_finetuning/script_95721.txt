@@ -1,0 +1,16 @@
+{
+    "Summary": [
+        "Script processes Sentinel-2 imagery for NDVI, VARI, and EVI analysis."
+    ],
+    "Theme": [
+        "VEGETATION INDEX"
+    ],
+    "DataSource": [
+        "users/eduardosperanza-Embrapa/Projeto-Coplacana/Piracicaba-H2Copla-UTM",
+        "COPERNICUS/S2_SR"
+    ],
+    "Function": [
+        "Vegetation And Water Indices Calculation",
+        "NDVI (Normalized Difference Vegetation Index calculation)"
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "Theme": [
+        "Land cover analysis and vegetation monitoring"
+    ],
+    "DataSource": [
+        "projects/ee-kimiachenaary/assets/Tehran",
+        "LANDSAT/LC08/C01/T1_TOA"
+    ],
+    "Function": [
+        "Cloud masking",
+        "Image collection filtering",
+        "NDVI calculation",
+        "Image clipping",
+        "Mean value calculation",
+        "Max value calculation",
+        "Min value calculation",
+        "Standard deviation calculation",
+        "Region-based statistics calculation",
+        "Data export"
+    ]
+}

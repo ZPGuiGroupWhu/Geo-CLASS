@@ -1,0 +1,16 @@
+{
+    "Summary": [
+        "Script analyzes fire impact using Sentinel-2 images before and after the event."
+    ],
+    "Theme": [
+        "WEIGHTED ANOMALY STANDARDIZED PRECIPITATION INDEX"
+    ],
+    "DataSource": [
+        "users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016",
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "Load and Display Pre- And Post-Fire Satellite Image",
+        "Addition Of Spectral Indices"
+    ]
+}

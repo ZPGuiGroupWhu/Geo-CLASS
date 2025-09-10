@@ -1,0 +1,33 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Cloud and Shadow Masking for Sentinel-2 Imagery"],
+  "DataSource": ["COPERNICUS/S2"],
+  "Function": ["Compute cloud score for Sentinel-2 images", "Mask clouds using Sentinel-2 QA band", "Find dark outliers in time series", "Project cloud shadows", "Bust clouds from Sentinel-2 image", "Wrap entire cloud masking process", "Find unique values of a field in a collection", "Simplify data into daily mosaics", "Get Sentinel-2 data"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Get Sentinel-2 data"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Compute cloud score for Sentinel-2 images", "Mask clouds using Sentinel-2 QA band", "Project cloud shadows", "Bust clouds from Sentinel-2 image", "Wrap entire cloud masking process"]
+    },
+    "relation_3": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Find dark outliers in time series", "Find unique values of a field in a collection", "Simplify data into daily mosaics"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 5762, 'completion_tokens': 327, 'total_tokens': 6089}

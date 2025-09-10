@@ -1,0 +1,5 @@
+{
+  "Theme": ["Land Surface Temperature Retrieval", "NDVI Analysis", "Atmospheric Data Integration"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_32DAY_NDVI", "LANDSAT/LC08/C01/T1", "LANDSAT/LC08/C01/T1_TOA", "LANDSAT/LC8_SR", "NCEP_RE/surface_temp", "NCEP_RE/surface_wv"],
+  "Function": ["Filter image collection by date and location", "Retrieve Landsat 8 calibrated radiance", "Retrieve Landsat 8 TOA brightness temperature", "Retrieve Landsat 8 surface reflectance", "Get NCEP atmospheric data", "Add atmospheric data as bands", "Join image collections by time", "Compute NDVI", "Compute emissivity from NDVI", "Compute psi functions", "Compute surface temperature"]
+}

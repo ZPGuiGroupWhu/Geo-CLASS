@@ -1,0 +1,6 @@
+{
+  "Summary": ["Displaying KP boundary and loading Landsat images for different months in 2018."],
+  "Theme": ["Land cover change detection"],
+  "DataSource": ["users/avaise99/KP_Boundary", "LANDSAT/LC08/C02/T1_TOA"],
+  "Function": ["Filtering images by date and location", "Masking clouds in images", "Mosaicking images", "Clipping images to KP boundary", "Adding layers to the map"]
+}

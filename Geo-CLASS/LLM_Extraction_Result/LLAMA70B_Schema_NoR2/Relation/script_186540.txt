@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC8_L1T_TOA_FMASK"],
+        "Function": ["Filtering image collection by date and location", "Cloud masking and scoring", "Calculating NDVI"]
+    },
+    "relation_2": {
+        "DataSource": ["ft:1XPgyHDQHN4d5IF4x8u5ZkJxkVQ_xKWFFuUTi9ofT"],
+        "Function": ["Reducing and exporting results"]
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "Summary": [
+        "The script collects and combines Sentinel-1 images for geoprocessing modeling."
+    ],
+    "Theme": [
+        "PERMAFROST/METHANE RELEASE"
+    ],
+    "DataSource": [
+        "COPERNICUS/S1_GRD",
+        "ft:10RV_TKg9w5SMTutAz-XZpGcd2ejYgbQs6IVy2TF7"
+    ],
+    "Function": [
+        "Cloud Masking And Quality Filtering",
+        "Calculating terrain slope and aspect from DEMs"
+    ]
+}

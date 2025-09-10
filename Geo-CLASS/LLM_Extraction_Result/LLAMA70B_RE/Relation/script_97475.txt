@@ -1,0 +1,23 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Mask clouds from Sentinel-2 images",
+            "Perform unsupervised classification",
+            "Generate cluster means",
+            "Create scatter plots",
+            "Create signature plots"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "USGS/NED"
+        ],
+        "Function": [
+            "Generate terrain data",
+            "Add terrain data to input image"
+        ]
+    }
+}

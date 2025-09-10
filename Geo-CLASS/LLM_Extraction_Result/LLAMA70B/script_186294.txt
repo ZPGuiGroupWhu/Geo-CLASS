@@ -1,0 +1,29 @@
+Entity Recognition:
+Here is the JSON response:
+
+```
+{
+  "Theme": ["Land cover classification and vegetation analysis"],
+  "DataSource": ["COPERNICUS/S2", "ft:1XPgyHDQHN4d5IF4x8u5ZkJxkVQ_xKWFFuUTi9ofT"],
+  "Function": ["Filtering image collection by date and bounds", "Applying NDVI function to image collection", "Masking image with QA60 band", "Clipping image to CaBasin bounds", "Exporting image to Drive"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Filtering image collection by date and bounds", "Applying NDVI function to image collection", "Masking image with QA60 band", "Clipping image to CaBasin bounds"]
+    },
+    "relation_2": {
+        "DataSource": ["ft:1XPgyHDQHN4d5IF4x8u5ZkJxkVQ_xKWFFuUTi9ofT"],
+        "Function": ["Exporting image to Drive"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 8019, 'completion_tokens': 278, 'total_tokens': 8297}

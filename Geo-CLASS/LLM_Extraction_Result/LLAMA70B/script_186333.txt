@@ -1,0 +1,25 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Crop classification and land use analysis"],
+  "DataSource": ["MODIS/006/MOD09Q1"],
+  "Function": ["Clip image collection to region of interest", "Calculate NDVI", "Create multiband image", "Unsupervised classification", "Cluster image", "Merge classes", "Refine crop classes"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["MODIS/006/MOD09Q1"],
+        "Function": ["Clip image collection to region of interest", "Calculate NDVI", "Create multiband image", "Unsupervised classification", "Cluster image", "Merge classes", "Refine crop classes"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4483, 'completion_tokens': 188, 'total_tokens': 4671}

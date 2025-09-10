@@ -1,0 +1,20 @@
+{
+    "Theme": [
+        "Land cover classification and water frequency analysis"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C01/T1_SR",
+        "LANDSAT/LE07/C01/T1_SR",
+        "LANDSAT/LT05/C01/T1_SR",
+        "users/1915303017/CNBBW_SL_10kmBuffer",
+        "USGS/SRTMGL1_003"
+    ],
+    "Function": [
+        "Image collection filtering",
+        "Image renaming and band selection",
+        "Image masking and quality control",
+        "Vegetation index calculation",
+        "Water frequency analysis",
+        "Land cover classification"
+    ]
+}

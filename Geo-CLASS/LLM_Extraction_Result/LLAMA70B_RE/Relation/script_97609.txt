@@ -1,0 +1,39 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/eijulio/valles_altos_estados"
+        ],
+        "Function": [
+            "Clipping images to AOI",
+            "Reducing regions to mean",
+            "Painting vectors"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "FAO/GAUL_SIMPLIFIED_500m/2015/level2"
+        ],
+        "Function": [
+            "Filtering image collections by date"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "ECMWF/ERA5/DAILY"
+        ],
+        "Function": [
+            "Filtering image collections by date"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "UCSB-CHG/CHIRPS/PENTAD"
+        ],
+        "Function": [
+            "Calculating monthly totals",
+            "Computing average for each month",
+            "Calculating seasonal deviation",
+            "Exporting images and tables"
+        ]
+    }
+}

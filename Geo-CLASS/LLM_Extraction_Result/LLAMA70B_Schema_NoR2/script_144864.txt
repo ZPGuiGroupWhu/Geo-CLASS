@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover classification in Hai Phong, Vietnam"],
+  "DataSource": ["users/thao226355/share/VietNam_Ranh_gioi_tinh", "COPERNICUS/S2_SR"],
+  "Function": ["Filtering image collection by cloud cover", "Applying cloud mask to images", "Calculating NDVI index", "Classifying land cover based on NDVI", "Calculating area of classified land cover"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/thao226355/share/VietNam_Ranh_gioi_tinh"],
+        "Function": ["Filtering image collection by cloud cover", "Applying cloud mask to images"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["Calculating NDVI index", "Classifying land cover based on NDVI", "Calculating area of classified land cover"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2713, 'completion_tokens': 247, 'total_tokens': 2960}

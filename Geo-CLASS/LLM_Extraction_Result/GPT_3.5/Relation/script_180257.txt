@@ -1,0 +1,14 @@
+{
+    "relation_1": {
+        "DataSource": ["users/Katemiller125/Illilouette"],
+        "Function": ["Buffering points for analysis", "Calculating zonal statistics for Landsat images"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LE07/C02/T1_L2"],
+        "Function": ["Calculating zonal statistics for Landsat images"]
+    },
+    "relation_3": {
+        "DataSource": ["LANDSAT/LE07/C01/T1_SR"],
+        "Function": ["Calculating zonal statistics for Landsat images"]
+    }
+}

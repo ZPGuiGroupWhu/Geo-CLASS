@@ -1,0 +1,21 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2_SR_HARMONIZED"
+        ],
+        "Function": [
+            "Filtering image collection by date and bounds",
+            "Creating mosaic of images",
+            "Reducing image to a single value",
+            "Calculating sum of images"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2_CLOUD_PROBABILITY"
+        ],
+        "Function": [
+            "Masking clouds in images"
+        ]
+    }
+}

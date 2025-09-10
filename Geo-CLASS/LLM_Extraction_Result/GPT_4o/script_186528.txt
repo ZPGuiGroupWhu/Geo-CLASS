@@ -1,0 +1,32 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Sentinel-1 SAR data processing", "Land cover classification"],
+  "DataSource": ["COPERNICUS/S1_GRD"],
+  "Function": ["Define region of interest", "Create feature collections", "Apply Refined Lee filter", "Convert image to natural units", "Convert image to dB", "Filter image collection", "Create composite image", "Visualize results", "Sample training data", "Train classifier", "Classify image"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["COPERNICUS/S1_GRD"],
+    "Function": [
+      "Define region of interest",
+      "Filter image collection",
+      "Create composite image",
+      "Apply Refined Lee filter",
+      "Convert image to natural units",
+      "Convert image to dB",
+      "Visualize results",
+      "Sample training data",
+      "Train classifier",
+      "Classify image"
+    ]
+  }
+}
+```
+
+Total_Token_Usage:
+9093

@@ -1,0 +1,21 @@
+{
+    "Summary": [
+        "The script utilizes Landsat 8 imagery to classify land cover types in a specified region."
+    ],
+    "Theme": [
+        "LAND USE/LAND COVER CLASSIFICATION"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C01/T1_SR",
+        "Mangrove",
+        "BadanAir",
+        "LahanTerbuka",
+        "LahanTerbangun"
+    ],
+    "Function": [
+        "Cloud Masking And Quality Filtering",
+        "Classification And Machine Learning",
+        "NDWI (Normalized Difference Water Index calculation)",
+        "Cloud Masking And Quality Filtering"
+    ]
+}

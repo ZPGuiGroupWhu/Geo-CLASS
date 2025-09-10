@@ -1,0 +1,14 @@
+{
+  "relation_1": {
+    "DataSource": ["users/wangweihappy0/training01/l8ClassifySample"],
+    "Function": ["Add layer to map"]
+  },
+  "relation_2": {
+    "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+    "Function": ["Filter image collection by date", "Filter image collection by region", "Remove clouds from images", "Scale image values", "Calculate NDVI", "Calculate NDWI", "Calculate NDBI", "Compute median image", "Clip image to region"]
+  },
+  "relation_3": {
+    "DataSource": ["USGS/SRTMGL1_003"],
+    "Function": ["Add elevation band", "Add slope band"]
+  }
+}

@@ -1,0 +1,25 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Entity Recognition": {
+    "Theme": ["Land Use Land Cover (LULC) classification"],
+    "DataSource": ["GOOGLE/DYNAMICWORLD/V1", "COPERNICUS/S2"],
+    "Function": ["Filter image collection by date", "Join image collections by system:index", "Extract label and probability from image", "Create visualization with hillshade"]
+  },
+  "Relation Extraction": {
+    "relation_1": {
+      "DataSource": ["GOOGLE/DYNAMICWORLD/V1"],
+      "Function": ["Filter image collection by date", "Extract label and probability from image", "Create visualization with hillshade"]
+    },
+    "relation_2": {
+      "DataSource": ["COPERNICUS/S2"],
+      "Function": ["Filter image collection by bounds and date", "Join image collections by system:index"]
+    }
+  }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3038, 'completion_tokens': 214, 'total_tokens': 3252}

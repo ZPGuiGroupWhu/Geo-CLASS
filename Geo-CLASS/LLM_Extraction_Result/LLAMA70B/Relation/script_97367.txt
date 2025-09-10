@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LT4_L1T_TOA", "LANDSAT/LT5_L1T_TOA", "LANDSAT/LC8_L1T_TOA", "LANDSAT/LE7_L1T_TOA"],
+        "Function": ["Acquiring Landsat TOA image collection", "Computing cloud score and masking clouds", "Finding and masking dark outliers", "Projecting cloud and shadow masking", "Calculating NDVI"]
+    },
+    "relation_2": {
+        "DataSource": ["FAO/GAUL/2015/level0"],
+        "Function": ["None"]
+    }
+}

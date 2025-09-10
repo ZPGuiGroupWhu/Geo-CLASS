@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LE07/C01/T1_TOA", "COPERNICUS/S2", "users/eeranyartrodrigo/ferrocarriles/coahuilaPols"],
+        "Function": ["Image collection filtering by date and cloud cover", "Image band selection and creation of vegetation indices", "Spectral unmixing for land cover classification", "Histogram analysis for threshold determination", "Binary classification based on threshold values"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LE07/C01/T1_TOA", "COPERNICUS/S2", "users/eeranyartrodrigo/ferrocarriles/coahuilaPols"],
+        "Function": ["Feature collection creation for soil, vegetation, and urban classes"]
+    }
+}

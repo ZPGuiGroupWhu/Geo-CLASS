@@ -1,0 +1,25 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Vegetation indices analysis", "Cloud and snow masking", "Buffer creation"],
+  "DataSource": ["users/eduardosperanza-Embrapa/Projeto-Coplacana/Piracicaba-H2Copla-UTM", "COPERNICUS/S2_SR"],
+  "Function": ["Remove cloud and snow pixels", "Calculate NDVI", "Calculate VARI", "Calculate EVI", "Create buffer around features", "Filter image collection by date", "Filter image collection by cloud cover", "Filter image collection by geometry", "Calculate median composite", "Reduce regions to mean values", "Join feature collections", "Remove property from features", "Display layers on map", "Export data to CSV"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["users/eduardosperanza-Embrapa/Projeto-Coplacana/Piracicaba-H2Copla-UTM"],
+    "Function": ["Create buffer around features", "Filter image collection by geometry", "Reduce regions to mean values", "Join feature collections", "Remove property from features", "Display layers on map", "Export data to CSV"]
+  },
+  "relation_2": {
+    "DataSource": ["COPERNICUS/S2_SR"],
+    "Function": ["Remove cloud and snow pixels", "Calculate NDVI", "Calculate VARI", "Calculate EVI", "Filter image collection by date", "Filter image collection by cloud cover", "Calculate median composite", "Display layers on map"]
+  }
+}
+```
+
+Total_Token_Usage:
+6125

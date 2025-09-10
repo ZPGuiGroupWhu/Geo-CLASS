@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["users/b20203080616/HB-data/Zhangjiakou"],
+        "Function": ["Filtering image collection by bounds and date", "Clipping image to region of interest", "Selecting specific bands from image"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["Sorting images by cloud cover", "Mosaicking images", "Exporting image to drive"]
+    }
+}

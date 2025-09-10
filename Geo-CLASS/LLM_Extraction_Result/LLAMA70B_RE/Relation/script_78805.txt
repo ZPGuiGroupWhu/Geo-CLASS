@@ -1,0 +1,23 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/philipegeo/pol_jeremoabo"
+        ],
+        "Function": [
+            "Image clipping",
+            "Image masking"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LT05/C01/T1_TOA"
+        ],
+        "Function": [
+            "Image collection filtering",
+            "Image reduction",
+            "NDVI calculation",
+            "SAVI calculation",
+            "Image visualization"
+        ]
+    }
+}

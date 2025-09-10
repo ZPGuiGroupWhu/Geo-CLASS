@@ -1,0 +1,6 @@
+{
+  "relation_1": {
+    "DataSource": ["COPERNICUS/S1_GRD"],
+    "Function": ["Define region of interest", "Set flood and dry periods", "Filter image collection by region", "Sort and select latest image", "Filter images by polarization and mode", "Apply smoothing filter", "Calculate band ratio", "Threshold backscatter values", "Generate histograms", "Display results on map"]
+  }
+}

@@ -1,0 +1,25 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Lake area analysis", "Water surface reconstruction"],
+  "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater", "users/sarinarinab/CitSci_Washington_Lakes", "users/sntopp/Lakes_ply_20171106", "users/sntopp/NCSC_Horsepen_Lake"],
+  "Function": ["Merge lake polygons", "Filter Landsat images by date", "Select lake by name", "Center map on lake", "Filter images by lake area", "Classify water in images", "Buffer lake area", "Mask water areas", "Reconstruct water surface", "Calculate lake area", "Generate lake area chart", "Export lake area data"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+        "Function": ["Classify water in images", "Reconstruct water surface", "Mask water areas"]
+    },
+    "relation_2": {
+        "DataSource": ["users/sarinarinab/CitSci_Washington_Lakes", "users/sntopp/Lakes_ply_20171106", "users/sntopp/NCSC_Horsepen_Lake"],
+        "Function": ["Merge lake polygons", "Select lake by name", "Center map on lake", "Filter images by lake area", "Buffer lake area", "Calculate lake area", "Generate lake area chart", "Export lake area data"]
+    }
+}
+```
+
+Total_Token_Usage:
+7259

@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["users/EL/Bahamas", "LANDSAT/LT5_L1T", "LANDSAT/LE7_L1T", "LANDSAT/LC08/C01/T1_RT"],
+        "Function": ["Filtering image collections by date and cloud cover", "Compositing images", "Calculating spectral indices"]
+    },
+    "relation_2": {
+        "DataSource": ["users/EL/Bahamas_class"],
+        "Function": ["Training a classifier", "Classifying land cover"]
+    }
+}

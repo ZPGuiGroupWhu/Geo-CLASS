@@ -1,0 +1,5 @@
+{
+  "Theme": ["Land cover classification", "Area calculation", "Accuracy assessment"],
+  "DataSource": ["LANDSAT/LT05/C02/T1_L2"],
+  "Function": ["Define study area", "Merge feature collections", "Select image bands", "Sample regions for training", "Train classifier", "Classify image", "Calculate area", "Reduce region statistics", "Merge validation data", "Sample regions for validation", "Compute error matrix", "Compute overall accuracy"]
+}

@@ -1,0 +1,55 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/EL/TrinidadandTobago"
+        ],
+        "Function": [
+            "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover",
+            "Create Image Composites To Minimize Cloud Cover",
+            "Training CART Classifier",
+            "Identify Water And Flood Surfaces Using Indices"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "users/EL/trinidad_forest_type_landcover_28july2011",
+            "users/EL/tobago_forest_type_landcover_06may2011"
+        ],
+        "Function": [
+            "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover",
+            "Create Image Composites To Minimize Cloud Cover",
+            "Training CART Classifier",
+            "Identify Water And Flood Surfaces Using Indices"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "LANDSAT/LC8_L1T"
+        ],
+        "Function": [
+            "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover",
+            "Create Image Composites To Minimize Cloud Cover",
+            "Training CART Classifier",
+            "Identify Water And Flood Surfaces Using Indices"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover",
+            "Create Image Composites To Minimize Cloud Cover",
+            "Training CART Classifier",
+            "Identify Water And Flood Surfaces Using Indices"
+        ]
+    },
+    "relation_5": {
+        "DataSource": [
+            "JRC/GSW1_0/GlobalSurfaceWater"
+        ],
+        "Function": [
+            "Identify Water And Flood Surfaces Using Indices"
+        ]
+    }
+}

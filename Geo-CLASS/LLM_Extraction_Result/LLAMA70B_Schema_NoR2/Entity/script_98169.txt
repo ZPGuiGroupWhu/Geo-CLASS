@@ -1,0 +1,5 @@
+{
+  "Theme": ["Vegetation health analysis using NDVI"],
+  "DataSource": ["users/elaurenyoung/usa_states", "users/elaurenyoung/Site_summary_12_Apr_2022-point", "LANDSAT/LC08/C02/T1_L2", "LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Buffer creation around state and transect points", "Image collection filtering by date and cloud cover", "Cloud and water masking", "Image compositing", "NDVI calculation", "Statistical analysis of NDVI values", "Data export to Google Drive"]
+}

@@ -1,0 +1,361 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var area_studio = 
+    /* color: #ffb246 */
+    /* shown: false */
+    /* displayProperties: [
+      {
+        "type": "rectangle"
+      }
+    ] */
+    ee.Geometry.Polygon(
+        [[[-6.926729680195236, 37.8612333063755],
+          [-6.926729680195236, 37.60273933084233],
+          [-6.630098820820236, 37.60273933084233],
+          [-6.630098820820236, 37.8612333063755]]], null, false),
+    imagenS2_pre_Incendio = ee.Image("COPERNICUS/S2_SR_HARMONIZED/20200720T110619_20200720T111156_T29SPB"),
+    imagenS2_post_Incendio = ee.Image("COPERNICUS/S2_SR_HARMONIZED/20200908T110619_20200908T111404_T29SPB");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+// 1º y 2º Mostramos y centramos las imágenes.
+
+Map.centerObject(area_studio,10);
+
+var rgbVis = {min: 0.0, max: 3000, bands: ['B4','B3','B2']};
+
+Map.addLayer(imagenS2_pre_Incendio,rgbVis, 'Imagen Pre_Incendio');
+
+Map.addLayer(imagenS2_post_Incendio,rgbVis, 'Imagen Post_Incendio');
+
+
+
+// 3º Calculamos el dNBR y hacemos el substract (que es la diferencia) =la resta del pre menos el post. 
+
+// y a partir de ahí empezamos a trabajar con los puntos que se piden:
+
+// la fórmula para calcular el índice NBR es = (NIR-SWIR)/(NIR+SWIR)
+
+
+
+// Cálculo del NBR ANTES del Incendio (se nombra el resultado como "Pre_NBR")
+
+print(imagenS2_pre_Incendio);
+
+var Pre_NBR= imagenS2_pre_Incendio.normalizedDifference(['B8','B12']).rename(['Pre_NBR']);
+
+print(Pre_NBR);
+
+
+
+// Cálculo del NBR DESPUÉS del Incendio (se nombra el resultado como "Post_NBR")
+
+print(imagenS2_post_Incendio);
+
+var Post_NBR= imagenS2_post_Incendio.normalizedDifference(['B8','B12']).rename(['Post_NBR']);
+
+print(Post_NBR);
+
+
+
+// Cálculo del dNBR. Mostramos a partir de "Map.addLayer" (ya no necesitamos volver
+
+// a definir la paleta de colore, pues lo hemos hecho anteriormente)
+
+
+
+var dNBR= Pre_NBR.subtract(Post_NBR).rename(['dNBR'])
+
+print(dNBR)
+
+//Map.addLayer(dNBR);
+
+
+
+
+
+// 4º Construir el DATASET de entrada(entrenamiento): tendríamos que generar el DATASET
+
+// para la clasificación, generando un ráster multibanda. Haremos un Layerstack, 
+
+// que es que distintos rasters MONOBANDA los estamos uniendo en un mismo raster. 
+
+// Todas las bandas que queramos usar para mi clasificación, hacemos un layerstack. 
+
+// Osea, la banda B4, el dNBR, el postNBR...¿qué tengo que hacer? pues hacer un 
+
+// Layerstack con todos
+
+
+
+// Generamos el dataset de entrenamiento solo con una variable, podría ser con más
+
+// haciendo un layerstack con addBands, y todas las bandas las usaría el algoritmo
+
+// para encontrar las clases con características similares.
+
+
+
+var stackedImage =dNBR.addBands(Post_NBR);
+
+//(al dNBR le he agredado el post_NBR. Con esto ya me he generado un ráster
+
+// con 2 bandas, en una banda estará el dNBR y en la otra el Post_NBR)
+
+print (stackedImage); 
+
+
+
+// Generamos el dataset de entreamiento ¿cómo se genera?
+
+// es como generar los "rois". Con la .sample le estamos diciendo 
+
+//que te coja 1000 píxeles con una escala-resolcuión de 20 dentro de la 
+
+// región. Y él genera el training con esos 1000 píxeles (son aleatorios)
+
+//= el dataset de entrada (En el DATASET de entrada tendríamos que meter
+
+// la máxima variabilidad posible y con un nº de píxeles que me permita a mí
+
+// poder generar un modelo robusto pero sin sobreENTREMANIENTO)
+
+var training = dNBR.sample ({
+
+  region: area_studio,
+
+  scale: 20,
+
+  numPixels:1000
+
+});
+
+print (training.first())
+
+// si ponemos por ejemplo 4000 pixeles...es sobreENTRENAMIENTO...que no es 
+
+// adecuado porque quita precisión. 
+
+
+
+// 5º Entrenamiento del Dataset con el algoritmo:
+
+
+
+
+
+// Se entrena con el algoritmo wekaCascadeKMeans. Este genera una clasificación
+
+// teniendo en cuenta la SEVERIDAD. Para ello lo hacemos con las clases USDA 
+
+// (que son 7), por lo tanto le metemos un mínimo de 2 y un máximo de 7 el algortimo
+
+// encuentra automáticamente el nº de clases (cluster) mas adecuado. Él va a buscar 
+
+// en el training clases hasta que no encuente más desagregacion posible. 
+
+// También lo hacemos para la clasificación binaria INCENDIO/NO INCENDIO
+
+
+
+var cluster_def_auto = ee.Clusterer.wekaCascadeKMeans(3,7).train(training)
+
+var clusterer=ee.Clusterer.wekaKMeans(2).train(training);
+
+
+
+//Map.addLayer(cluster_def_auto,RamdonForest, 'clasif_usda')
+
+// (le pido que de la clase Clusterer, que me active el algoritmo weKaCascadeKMeans
+
+// entre 2 y 7 clases y que me detecte en cuantas clases me puede desagregar )
+
+// limita desde 2...para que él vaya subiendo y encuentre la severidad
+
+// pq si hbuera puesto 1, que es quemado, podría haber parado en 2 
+
+//y ya no busca más. Si pone entre 1 y 3...se hubiera quedado segur
+
+// en 2. Si pone desde 2, ya no hace la desagregación de Incendio/No Incendio
+
+// si no que le fuerzas a que te busque más clases, de las que tú poder
+
+// deducir la SEVERIDAD. LE PONGO FINALMENTE DESDE 3, POR QUE ME SIGUE DANDO
+
+// PROBLEMAS CON 2, COMO PASABA EN CLASE.
+
+
+
+// justo al acabar hay que hacer un cluster y unirlo a los datos iniciales:
+
+// todo eso pq lo que sale de cluster_def_auto pierde el sistema de referencia
+
+// y hay que unirlo con lo datos iniciales para que vuelva al SISTEMA DE 
+
+// REFERENCIA de los datos iniciales.
+
+
+
+var cluster_def_auto_weka = stackedImage.cluster(cluster_def_auto);
+
+var clustered = stackedImage.cluster(clusterer);
+
+
+
+Map.addLayer(cluster_def_auto_weka.randomVisualizer (), {}, 'Clases Auto Weka_Severidad');
+
+Map.addLayer(clustered.randomVisualizer (), {}, 'Clases_Binaria');
+
+// 6º Cálculo de las Estadísticas y visualización:
+
+
+
+var estadisticas_clas_weka_severidad=dNBR.addBands(cluster_def_auto_weka).reduceRegion({
+
+  reducer: ee.Reducer.mean().group({
+
+    groupField:1,
+
+    groupName: 'cluster',
+
+  }),
+
+  geometry: area_studio,
+
+  scale : 100,
+
+  maxPixels:1e8
+
+});
+
+print('Estadísticas weka cascade_severidad')
+
+print(estadisticas_clas_weka_severidad);
+
+
+
+var chart=
+
+    ui.Chart.image.histogram({image: cluster_def_auto_weka, region:area_studio, scale:20})
+
+      .setOptions({
+
+      title: 'Pixeles por clase_Severidad',
+
+      hAxis: {
+
+        title:'Clases',
+
+        titleTextStyle: {italic : false, bold:true}},
+
+      vAxis:
+
+          {title: 'Frecuencia',  titleTextStyle:{italic: false, bold: true}},
+
+      });
+
+print (chart);
+
+
+
+var estadisticas_binario=dNBR.addBands(clustered).reduceRegion({
+
+  reducer: ee.Reducer.mean().group({
+
+    groupField:1,
+
+    groupName: 'cluster',
+
+  }),
+
+  geometry: area_studio,
+
+  scale : 100,
+
+  maxPixels:1e8
+
+});
+
+print('Estadísticas_binario')
+
+print(estadisticas_binario);
+
+
+
+var chart=
+
+    ui.Chart.image.histogram({image: clustered, region:area_studio, scale:20})
+
+      .setOptions({
+
+      title: 'Pixeles por clase_Binario',
+
+      hAxis: {
+
+        title:'Clases',
+
+        titleTextStyle: {italic : false, bold:true}},
+
+      vAxis:
+
+          {title: 'Frecuencia',  titleTextStyle:{italic: false, bold: true}},
+
+      });
+
+print (chart);
+
+
+
+// 7º Recorte para que solo calcule en la geometría que hemos diseñado 
+
+cluster_def_auto_weka =cluster_def_auto_weka.clip(area_studio);
+
+clustered =clustered.clip(area_studio);
+
+
+
+// 8º y 9º Aplicación de FILTRO de Visualización de los resultados:
+
+
+
+// Con la MODA y 5 de radio
+
+var filtro_severidad_moda_5=cluster_def_auto_weka.reduceNeighborhood(ee.Reducer.mode(), ee.Kernel.circle(5));
+
+Map.addLayer(filtro_severidad_moda_5.randomVisualizer (), {}, 'Clases Auto Weka_Filtro_Severidad_con_moda_5');
+
+
+
+var filtro_binario_moda_5=clustered.reduceNeighborhood(ee.Reducer.mode(), ee.Kernel.circle(5));
+
+Map.addLayer(filtro_binario_moda_5.randomVisualizer (), {}, 'Clases Binario_con_moda_5');
+
+
+
+//10º Aplicación MÁSCARA para convertir clases 0 a 1 y viceversa en clasif. Binaria
+
+var Mascara_incendio_reclasificada = filtro_binario_moda_5
+
+          .where (filtro_binario_moda_5.lte(0),1)
+
+          .where (filtro_binario_moda_5.gt(0.1),0);
+
+print ('Zona Binaria - reclasificada')          
+
+Map.addLayer (Mascara_incendio_reclasificada.randomVisualizer(),{}, 'Zona Binaria - reclasificada');
+
+
+
+// 11º Multiplicación de imagen de Clasif. binaria x Clasif. No binaria 
+
+// esto se hace para eliminar de la imagen de clasificación no binaria todo el ruido que 
+
+// queda fuera del área de la zona realmente incendiada. Para eso nos valemos
+
+// de la imagen binaria reclasificada. 
+
+var Multiply = Mascara_incendio_reclasificada.multiply(filtro_severidad_moda_5);
+
+Map.addLayer(Multiply.randomVisualizer(), {}, 'Multiply binario_x_severidad');
+
+
+
+
+

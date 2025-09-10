@@ -1,0 +1,40 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Flood monitoring and analysis"],
+  "DataSource": ["regions", "COPERNICUS/S1_GRD"],
+  "Function": [
+    "Filtering area of interest (AOI) from feature collection 'regions'",
+    "Filtering flood images in the flood period",
+    "Creating flood images over time",
+    "Calculating NDFI (Normalized Difference Flood Index)",
+    "Thresholding for masking flood areas"
+  ]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["regions"],
+        "Function": ["Filtering area of interest (AOI) from feature collection 'regions'"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": [
+            "Filtering flood images in the flood period",
+            "Creating flood images over time",
+            "Calculating NDFI (Normalized Difference Flood Index)",
+            "Thresholding for masking flood areas"
+        ]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4498, 'completion_tokens': 265, 'total_tokens': 4763}

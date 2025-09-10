@@ -1,0 +1,26 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2_CLOUD_PROBABILITY"
+        ],
+        "Function": [
+            "Filtering image collection by cloud probability",
+            "Adding cloud probability and cloud mask bands",
+            "Identifying cloud shadow pixels",
+            "Adding cloud shadow bands",
+            "Combining cloud and shadow mask"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Applying cloud-shadow mask to image",
+            "Calculating soil water index",
+            "Calculating modified normalized difference water index",
+            "Calculating normalized difference vegetation index",
+            "Calculating soil adjusted vegetation index"
+        ]
+    }
+}

@@ -1,0 +1,20 @@
+{
+  "Theme": ["Forest cover mapping in Cambodia"],
+  "DataSource": [
+    "USDOS/LSIB/2017",
+    "UMD/hansen/global_forest_change_2020_v1_8",
+    "users/ak_glaciers/NDVI_fitted_image_stack_from_LTOP_1990_start",
+    "users/ak_glaciers/NBR_fitted_image_stack_from_LTOP_1990_start"
+  ],
+  "Function": [
+    "Filter feature collection by country name",
+    "Select specific bands from an image",
+    "Add image layer to map",
+    "Create random points within a region",
+    "Reduce regions to extract values",
+    "Filter feature collection by random column",
+    "Sample image regions",
+    "Train random forest classifier",
+    "Classify image using trained model"
+  ]
+}

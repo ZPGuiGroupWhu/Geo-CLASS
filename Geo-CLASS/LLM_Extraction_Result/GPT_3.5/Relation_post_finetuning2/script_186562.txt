@@ -1,0 +1,11 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LC8_L1T_TOA"
+        ],
+        "Function": [
+            "Calculates Normalized Difference Water Index (NDWI)",
+            "Calculate dNBR For Fire Severity"
+        ]
+    }
+}

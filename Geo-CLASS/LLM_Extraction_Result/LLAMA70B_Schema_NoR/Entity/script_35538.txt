@@ -1,0 +1,18 @@
+{
+    "Theme": [
+        "Land cover classification and waterbody extraction"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C01/T1_TOA",
+        "COPERNICUS/S2",
+        "users/chaitanyaks/Maharashtra/Pune_District"
+    ],
+    "Function": [
+        "Filtering image collection by date and spatial bounds",
+        "Calculating median image",
+        "Clipping image to feature collection",
+        "Calculating normalized difference index",
+        "Masking image based on threshold value",
+        "Generating histogram for threshold value"
+    ]
+}

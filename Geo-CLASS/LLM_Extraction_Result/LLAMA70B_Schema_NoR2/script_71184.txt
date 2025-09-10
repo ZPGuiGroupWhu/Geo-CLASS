@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Lake water quality monitoring"],
+  "DataSource": ["LANDSAT/LE7_L1T_32DAY_TOA"],
+  "Function": ["Cloud scoring", "Image filtering", "MNDWI calculation", "Gap filling using flooding frequency"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LE7_L1T_32DAY_TOA"],
+        "Function": ["Cloud scoring", "Image filtering"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LE7_L1T_32DAY_TOA"],
+        "Function": ["MNDWI calculation", "Gap filling using flooding frequency"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2879, 'completion_tokens': 178, 'total_tokens': 3057}

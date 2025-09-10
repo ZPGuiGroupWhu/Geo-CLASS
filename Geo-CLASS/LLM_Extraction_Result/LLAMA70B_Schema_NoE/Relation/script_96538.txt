@@ -1,0 +1,30 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/eeranyartrodrigo/panteones/polygonsData/polsPanteon"
+        ],
+        "Function": [
+            "Buffering panteones features",
+            "Characterizing panteones using Sentinel-2 data"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "projects/ee-vulnerability-gee4geo/assets/ranyartRodrigo/mexicoContorno"
+        ],
+        "Function": [
+            "None"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Masking clouds in Sentinel-2 images",
+            "Adding bands to Sentinel-2 images",
+            "Calculating median values of bands and indices",
+            "Characterizing panteones using Sentinel-2 data"
+        ]
+    }
+}

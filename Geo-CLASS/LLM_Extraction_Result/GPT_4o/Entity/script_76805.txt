@@ -1,0 +1,5 @@
+{
+  "Theme": ["Arctic greening patterns", "NDVI/EVI trends"],
+  "DataSource": ["users/liuchongwhu/Arctic/Arctic_greeness/treeline_country", "MODIS/006/MOD13Q1", "MODIS/006/MOD44W"],
+  "Function": ["Center map on region", "Add layer to map", "Load image collection", "Set time range", "Create year sequence", "Mask pixels by quality", "Mask water pixels", "Filter by year and month", "Select max value", "Add year property", "Calculate time difference", "Add bands to image", "Calculate regression slope", "Clip image to region", "Calculate mean in region", "Export image to Drive"]
+}

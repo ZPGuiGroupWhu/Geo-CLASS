@@ -1,0 +1,33 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Water surface interpolation and lake area estimation"],
+  "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater", "users/sntopp/Lakes_ply_20171106", "users/sntopp/NCSC_Horsepen_Lake", "users/sarinarinab/CitSci_Washington_Lakes"],
+  "Function": ["calcAreaImage", "Outline", "OutlinePoly", "createParagraphPanel", "ls_fun.merge_collections_std_bandnames_collection1tier1_sr", "ls_fun.filterContained", "ls_fun.CalculateWaterAddFlagsSR", "ls_fun.fillWater", "ls_fun.ExtractChannel"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+        "Function": ["calcAreaImage", "ls_fun.merge_collections_std_bandnames_collection1tier1_sr", "ls_fun.filterContained", "ls_fun.CalculateWaterAddFlagsSR", "ls_fun.fillWater"]
+    },
+    "relation_2": {
+        "DataSource": ["users/sntopp/Lakes_ply_20171106", "users/sntopp/NCSC_Horsepen_Lake"],
+        "Function": ["Outline", "OutlinePoly", "ls_fun.ExtractChannel"]
+    },
+    "relation_3": {
+        "DataSource": ["users/sarinarinab/CitSci_Washington_Lakes"],
+        "Function": ["createParagraphPanel"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3967, 'completion_tokens': 401, 'total_tokens': 4368}

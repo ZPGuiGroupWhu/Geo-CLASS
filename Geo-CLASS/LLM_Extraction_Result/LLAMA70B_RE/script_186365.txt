@@ -1,0 +1,40 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover classification", "Vegetation analysis", "Burn area detection", "Snow cover analysis"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_TOA", "LANDSAT/LT5_L1T_TOA"],
+  "Function": ["Image filtering", "NDVI calculation", "EVI calculation", "NDWI calculation", "NDWBI calculation", "NDBI calculation", "BAI calculation", "NBRT calculation", "NDSI calculation", "Linear transformation", "Principal component analysis", "Spectral unmixing", "HSV transformation"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_TOA"],
+        "Function": ["Image filtering", "NDVI calculation", "EVI calculation", "NDWI calculation", "NDWBI calculation", "NDBI calculation"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LT5_L1T_TOA"],
+        "Function": ["Linear transformation", "Principal component analysis"]
+    },
+    "relation_3": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_TOA"],
+        "Function": ["BAI calculation", "NBRT calculation"]
+    },
+    "relation_4": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_TOA"],
+        "Function": ["NDSI calculation"]
+    },
+    "relation_5": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_TOA"],
+        "Function": ["Spectral unmixing", "HSV transformation"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 5770, 'completion_tokens': 429, 'total_tokens': 6199}

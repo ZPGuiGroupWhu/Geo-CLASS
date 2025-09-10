@@ -1,0 +1,29 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["LandTrendr temporal segmentation", "Change detection", "Vegetation index analysis"],
+  "DataSource": ["USDOS/LSIB/2017", "users/emaprlab/public:Modules/LandTrendr.js", "users/emaprlab/broberts:LTOP_mekong/06lt_Transfer_FTV_modules.js"],
+  "Function": ["Define area of interest", "Filter country by name", "Buffer geometry", "Set temporal parameters", "Set LandTrendr parameters", "Run LandTrendr", "Select years and mask", "Build image collection", "Calculate vegetation index", "Fit temporal segmentation", "Convert LandTrendr fit output", "Detect changes", "Visualize change maps", "Export image"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["USDOS/LSIB/2017"],
+    "Function": ["Define area of interest", "Filter country by name", "Buffer geometry", "Export image"]
+  },
+  "relation_2": {
+    "DataSource": ["users/emaprlab/public:Modules/LandTrendr.js"],
+    "Function": ["Set LandTrendr parameters", "Run LandTrendr", "Select years and mask", "Build image collection", "Calculate vegetation index", "Fit temporal segmentation", "Detect changes", "Visualize change maps", "Export image"]
+  },
+  "relation_3": {
+    "DataSource": ["users/emaprlab/broberts:LTOP_mekong/06lt_Transfer_FTV_modules.js"],
+    "Function": ["Convert LandTrendr fit output", "Detect changes", "Visualize change maps", "Export image"]
+  }
+}
+```
+
+Total_Token_Usage:
+5769

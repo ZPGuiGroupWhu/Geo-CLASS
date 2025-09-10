@@ -1,0 +1,6 @@
+{
+  "Summary": ["The script utilizes Landsat 8 imagery to classify land cover types in a specified region."],
+  "Theme": ["Land cover classification"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR", "Mangrove", "BadanAir", "LahanTerbuka", "LahanTerbangun"],
+  "Function": ["Image collection filtering based on date and location", "Building training samples for classification", "Training a Random Forest classifier", "Classifying land cover using the trained classifier"]
+}

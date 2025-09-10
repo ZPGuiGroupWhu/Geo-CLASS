@@ -1,0 +1,19 @@
+{
+    "Summary": [
+        "The script processes Sentinel-2 satellite imagery to generate NDVI mosaics for Cordoba, Argentina."
+    ],
+    "Theme": [
+        "NORMALIZED DIFFERENCE VEGETATION INDEX (NDVI)"
+    ],
+    "DataSource": [
+        "users/cesarnon/datos_cba_2017/Cordoba_limite",
+        "COPERNICUS/S2_SR"
+    ],
+    "Function": [
+        "Filter Image Collection",
+        "Band Correction",
+        "Image Index Calculation",
+        "Image Band Addition",
+        "Image Mosaicking"
+    ]
+}

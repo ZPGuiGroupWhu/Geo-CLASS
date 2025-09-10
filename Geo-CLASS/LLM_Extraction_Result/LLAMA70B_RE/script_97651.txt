@@ -1,0 +1,28 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Landsat 7 image processing and cloud masking"],
+  "DataSource": ["LANDSAT/LE07/C01/T1_SR"],
+  "Function": ["Image collection filtering", "Cloud masking", "Image exporting"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LE07/C01/T1_SR"],
+        "Function": ["Image collection filtering", "Cloud masking"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LE07/C01/T1_SR"],
+        "Function": ["Image exporting"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4548, 'completion_tokens': 187, 'total_tokens': 4735}

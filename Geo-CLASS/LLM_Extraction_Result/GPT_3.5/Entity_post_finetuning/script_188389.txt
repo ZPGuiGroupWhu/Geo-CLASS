@@ -1,0 +1,14 @@
+{
+    "Summary": [
+        "The script processes USDA/NASS/CDL image collections with specified geometries."
+    ],
+    "Theme": [
+        "LAND USE/LAND COVER CLASSIFICATION"
+    ],
+    "DataSource": [
+        "USDA/NASS/CDL"
+    ],
+    "Function": [
+        "Cloud Masking And Quality Filtering"
+    ]
+}

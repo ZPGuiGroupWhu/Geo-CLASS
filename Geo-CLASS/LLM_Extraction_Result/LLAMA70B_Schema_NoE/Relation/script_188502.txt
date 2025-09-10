@@ -1,0 +1,13 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S1_GRD"
+        ],
+        "Function": [
+            "Filtering Sentinel-1 data by date, transmitter receiver polarization, instrument mode, and relative orbit number",
+            "Applying OTSU thresholding to extract water bodies",
+            "Calculating water body area and generating a time series chart",
+            "Visualizing water body extraction results as an animation"
+        ]
+    }
+}

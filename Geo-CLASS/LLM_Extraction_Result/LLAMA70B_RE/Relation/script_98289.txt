@@ -1,0 +1,21 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LC08/C02/T1_L2"
+        ],
+        "Function": [
+            "Filtering image collection by date",
+            "Filtering image collection by bounds",
+            "Masking clouds",
+            "Calculating median image"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LC08/C02/T1_L2"
+        ],
+        "Function": [
+            "Applying spectral signatures"
+        ]
+    }
+}

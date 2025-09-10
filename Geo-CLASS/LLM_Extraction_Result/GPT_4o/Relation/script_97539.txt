@@ -1,0 +1,22 @@
+{
+  "relation_1": {
+    "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+    "Function": [
+      "Filter image collection by bounds",
+      "Filter image collection by date",
+      "Filter image collection by path",
+      "Filter image collection by row",
+      "Filter image collection by cloud cover",
+      "Calculate median image",
+      "Clip image to geometry",
+      "Calculate NDVI",
+      "Calculate SAVI",
+      "Select and scale thermal band B10",
+      "Select and scale thermal band B11",
+      "Export NDVI to Drive",
+      "Export SAVI to Drive",
+      "Export B10 to Drive",
+      "Export B11 to Drive"
+    ]
+  }
+}

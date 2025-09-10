@@ -1,0 +1,23 @@
+{
+  "Theme": ["Plague detection using remote sensing data"],
+  "DataSource": [
+    "MODIS/006/MOD11A2",
+    "MODIS/006/MOD13A1",
+    "USGS/SRTMGL1_003",
+    "MODIS/006/MOD09A1",
+    "MODIS/MOD09GA_006_BAI",
+    "LC8_L1T"
+  ],
+  "Function": [
+    "Filter image collection by date",
+    "Convert temperature from Kelvin to Celsius",
+    "Calculate mean temperature",
+    "Mask NDVI by cloud",
+    "Calculate NMDI",
+    "Clip image to region",
+    "Sample regions for training",
+    "Train classifier",
+    "Classify image using classifier",
+    "Visualize results on map"
+  ]
+}

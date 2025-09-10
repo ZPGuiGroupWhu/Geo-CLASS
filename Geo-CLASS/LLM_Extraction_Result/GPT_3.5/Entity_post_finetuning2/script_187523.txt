@@ -1,0 +1,16 @@
+{
+    "Summary": [
+        "Script for Sentinel-1 flood mapping using backscatter values and image processing."
+    ],
+    "Theme": [
+        "WATER-LEAVING RADIANCE"
+    ],
+    "DataSource": [
+        "COPERNICUS/S1_GRD"
+    ],
+    "Function": [
+        "Convert Flood Detection Results To Vector Polygons",
+        "Radar Image Noise Reduction",
+        "Generate And Display a Histogram"
+    ]
+}

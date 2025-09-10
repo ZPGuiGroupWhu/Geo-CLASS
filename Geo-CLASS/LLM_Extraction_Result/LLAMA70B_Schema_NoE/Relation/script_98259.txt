@@ -1,0 +1,21 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "FAO/GAUL_SIMPLIFIED_500m/2015/level2"
+        ],
+        "Function": [
+            "Filtering and sorting of Landsat 5 images based on cloud cover and date"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LT05/C01/T1_SR"
+        ],
+        "Function": [
+            "Calculation of NDWI for reference and flood images",
+            "Subtraction of NDWI images to detect changes",
+            "Thresholding and masking to identify flooded areas",
+            "Application of Canny Edge detector for boundary detection"
+        ]
+    }
+}

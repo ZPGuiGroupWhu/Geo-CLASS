@@ -1,0 +1,73 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/cxliu2015/Arctic_treeline_Project_Russia"
+        ],
+        "Function": [
+            "MNDWI (Modified Normalized Difference Water Index calculation)",
+            "Cloud Masking And Quality Filtering",
+            "MNDWI (Modified Normalized Difference Water Index calculation)",
+            "Data Acquisition And Preprocessing",
+            "Image Band Manipulation",
+            "MNDWI (Modified Normalized Difference Water Index calculation)",
+            "Exporting And Data Conversion"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LT04/C01/T1_TOA"
+        ],
+        "Function": [
+            "MNDWI (Modified Normalized Difference Water Index calculation)",
+            "Data Acquisition And Preprocessing",
+            "Image Band Manipulation"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "LANDSAT/LT05/C01/T1_TOA"
+        ],
+        "Function": [
+            "MNDWI (Modified Normalized Difference Water Index calculation)",
+            "Data Acquisition And Preprocessing",
+            "Image Band Manipulation"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "LANDSAT/LE07/C01/T1_TOA"
+        ],
+        "Function": [
+            "MNDWI (Modified Normalized Difference Water Index calculation)",
+            "Data Acquisition And Preprocessing",
+            "Image Band Manipulation"
+        ]
+    },
+    "relation_5": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_TOA"
+        ],
+        "Function": [
+            "MNDWI (Modified Normalized Difference Water Index calculation)",
+            "Cloud Masking And Quality Filtering",
+            "Data Acquisition And Preprocessing",
+            "Image Band Manipulation",
+            "MNDWI (Modified Normalized Difference Water Index calculation)",
+            "Exporting And Data Conversion"
+        ]
+    },
+    "relation_6": {
+        "DataSource": [
+            "ft:1XXheLy1fnGiQKRtkcP9iD9s3gqdcx2PqtkKJP7Ig"
+        ],
+        "Function": [
+            "MNDWI (Modified Normalized Difference Water Index calculation)",
+            "Cloud Masking And Quality Filtering",
+            "MNDWI (Modified Normalized Difference Water Index calculation)",
+            "Data Acquisition And Preprocessing",
+            "Image Band Manipulation",
+            "MNDWI (Modified Normalized Difference Water Index calculation)",
+            "Exporting And Data Conversion"
+        ]
+    }
+}

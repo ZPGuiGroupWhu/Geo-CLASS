@@ -1,0 +1,22 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LC09/C02/T1_L2"
+        ],
+        "Function": [
+            "Filtering Landsat 9 imagery to Los Angeles county and a specific time window",
+            "Applying clear pixel mask to the imagery",
+            "Applying cloud and cloud shadow mask to the imagery",
+            "Converting digital numbers to surface reflectance",
+            "Creating a median composite image from the filtered and masked imagery"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "FAO/GAUL_SIMPLIFIED_500m/2015/level2"
+        ],
+        "Function": [
+            "Filtering Landsat 9 imagery to Los Angeles county and a specific time window"
+        ]
+    }
+}

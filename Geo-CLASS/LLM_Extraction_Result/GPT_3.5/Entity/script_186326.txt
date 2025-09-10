@@ -1,0 +1,6 @@
+{
+  "Summary": ["The script collects and processes Sentinel-2 image data for geoprocessing modeling."],
+  "Theme": ["NDVI and NBR calculation for vegetation analysis"],
+  "DataSource": ["COPERNICUS/S2", "ft:1TFcNAU6zr_9svAb610dlsyqNiiXMLYlFrfP23ZuH"],
+  "Function": ["NDVI calculation for vegetation health assessment", "NBR calculation for burn severity mapping"]
+}

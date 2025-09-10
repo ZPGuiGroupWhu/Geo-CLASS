@@ -1,0 +1,26 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "projects/ee-kimiachenaary/assets/Tehran"
+        ],
+        "Function": [
+            "Image clipping",
+            "Region-based statistics calculation"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_TOA"
+        ],
+        "Function": [
+            "Cloud masking",
+            "Image collection filtering",
+            "NDVI calculation",
+            "Mean value calculation",
+            "Max value calculation",
+            "Min value calculation",
+            "Standard deviation calculation",
+            "Data export"
+        ]
+    }
+}

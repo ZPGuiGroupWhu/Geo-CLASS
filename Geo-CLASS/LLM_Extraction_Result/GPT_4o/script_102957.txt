@@ -1,0 +1,25 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Landsat imagery analysis for Los Angeles"],
+  "DataSource": ["LANDSAT/LC09/C02/T1_L2", "FAO/GAUL_SIMPLIFIED_500m/2015/level2"],
+  "Function": ["Filter images by location", "Filter images by date", "Mask clear pixels", "Mask clouds and shadows", "Convert DN to SR", "Create median composite", "Add layer to map"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2"],
+    "Function": ["Filter images by location"]
+  },
+  "relation_2": {
+    "DataSource": ["LANDSAT/LC09/C02/T1_L2"],
+    "Function": ["Filter images by location", "Filter images by date", "Mask clear pixels", "Mask clouds and shadows", "Convert DN to SR", "Create median composite", "Add layer to map"]
+  }
+}
+```
+
+Total_Token_Usage:
+4331

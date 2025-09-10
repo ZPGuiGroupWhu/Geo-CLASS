@@ -1,0 +1,29 @@
+{
+    "Summary": [
+        "The script processes Landsat imagery data for multiple years to analyze land cover changes."
+    ],
+    "Theme": [
+        "LAND USE/LAND COVER"
+    ],
+    "DataSource": [
+        "users/kiniklihakan/milanshp",
+        "LANDSAT/LC08/C02/T1_L2",
+        "LANDSAT/LT05/C02/T1_L2",
+        "LANDSAT/LE07/C02/T1_L2"
+    ],
+    "Function": [
+        "Cloud Masking And Quality Filtering",
+        "Cloud Masking And Quality Filtering",
+        "Renaming image bands",
+        "Vegetation And Water Indices Calculation",
+        "Visualization And Output Generation",
+        "Terrain And Hydrological Analysis",
+        "Vegetation And Water Indices Calculation",
+        "Vegetation And Water Indices Calculation",
+        "Merging (Combining multiple bands into one dataset)",
+        "Vegetation And Water Indices Calculation",
+        "MNDWI (Modified Normalized Difference Water Index calculation)",
+        "Data Fusion And Mosaicking",
+        "MNDWI (Modified Normalized Difference Water Index calculation)"
+    ]
+}

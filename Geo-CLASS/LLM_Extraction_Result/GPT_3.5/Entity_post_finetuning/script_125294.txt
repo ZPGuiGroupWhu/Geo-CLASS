@@ -1,0 +1,17 @@
+{
+    "Summary": [
+        "Script processes Landsat imagery for Ecorregion Alto Parana analysis."
+    ],
+    "Theme": [
+        "STRATOSPHERIC CLOUDS (OBSERVED/ANALYZED)"
+    ],
+    "DataSource": [
+        "users/GeoForPy/Tesis/EcorregionAltoParana"
+    ],
+    "Function": [
+        "Cloud Masking And Quality Filtering",
+        "Cloud Masking And Quality Filtering",
+        "Visualization And Output Generation",
+        "Exporting And Data Conversion"
+    ]
+}

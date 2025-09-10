@@ -1,0 +1,18 @@
+{
+    "relation_1": {
+        "DataSource": ["USDA/NAIP/DOQQ"],
+        "Function": ["Load image collection", "Create image mosaic", "Normalize image", "Add image layer to map", "Sample training points", "Apply Gaussian filter", "Segment image", "Visualize clusters", "Compute cluster statistics", "Export classified image"]
+    },
+    "relation_2": {
+        "DataSource": ["USDA/NASS/CDL/2016"],
+        "Function": ["Select and clip image", "Sample training points", "Train classifier", "Export classified image"]
+    },
+    "relation_3": {
+        "DataSource": ["users/saicheems/classification"],
+        "Function": ["Add classification layer to map"]
+    },
+    "relation_4": {
+        "DataSource": ["users/saicheems/classification_snic"],
+        "Function": ["Export classified image"]
+    }
+}

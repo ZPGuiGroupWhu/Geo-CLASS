@@ -1,0 +1,29 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "USDOS/LSIB/2017"
+        ],
+        "Function": [
+            "Create random points"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "UMD/hansen/global_forest_change_2020_v1_8"
+        ],
+        "Function": [
+            "Get spectral information"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "users/ak_glaciers/NDVI_fitted_image_stack_from_LTOP_1990_start",
+            "users/ak_glaciers/NBR_fitted_image_stack_from_LTOP_1990_start"
+        ],
+        "Function": [
+            "Train a model",
+            "Classify images",
+            "Create image collection"
+        ]
+    }
+}

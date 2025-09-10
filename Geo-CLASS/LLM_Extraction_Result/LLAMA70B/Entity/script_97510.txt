@@ -1,0 +1,5 @@
+{
+  "Theme": ["Burn Severity Analysis of Mendocino Complex Fire"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR/LC08_045033_20170925", "LANDSAT/LC08/C01/T1_SR/LC08_045033_20180928"],
+  "Function": ["Compute True Color Image", "Compute Normalized Burn Ratio", "Display Image Layers", "Clip to Fire Burn Area"]
+}

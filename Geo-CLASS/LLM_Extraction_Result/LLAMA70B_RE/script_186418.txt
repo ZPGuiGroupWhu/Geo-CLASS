@@ -1,0 +1,40 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Land Surface Temperature Retrieval"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_32DAY_NDVI", "LANDSAT/LC08/C01/T1", "LANDSAT/LC8_SR", "NCEP_RE/surface_temp", "NCEP_RE/surface_wv"],
+  "Function": ["Filter image collection by date and polygon", "Compute Landsat 8 calibrated radiance", "Compute Landsat 8 TOA collection", "Compute Landsat 8 SR collection", "Get NCEP atmospheric data", "Join Landsat collections", "Compute NDVI", "Compute emissivity", "Compute surface temperature"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_32DAY_NDVI"],
+        "Function": ["Filter image collection by date and polygon", "Compute NDVI"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1"],
+        "Function": ["Compute Landsat 8 calibrated radiance", "Join Landsat collections"]
+    },
+    "relation_3": {
+        "DataSource": ["LANDSAT/LC8_SR"],
+        "Function": ["Compute Landsat 8 SR collection", "Join Landsat collections"]
+    },
+    "relation_4": {
+        "DataSource": ["NCEP_RE/surface_temp", "NCEP_RE/surface_wv"],
+        "Function": ["Get NCEP atmospheric data", "Compute surface temperature"]
+    },
+    "relation_5": {
+        "DataSource": ["LANDSAT/LC08/C01/T1", "LANDSAT/LC8_SR"],
+        "Function": ["Compute emissivity", "Compute surface temperature"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 6294, 'completion_tokens': 465, 'total_tokens': 6759}

@@ -1,0 +1,22 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "FAO/GAUL_SIMPLIFIED_500m/2015/level2"
+        ],
+        "Function": [
+            "Filtering image collections by bounds and date",
+            "Filtering image collections by cloud percentage",
+            "Calculating NDWI"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Sorting image collections by cloud percentage",
+            "Visualizing true color images",
+            "Visualizing NDWI images"
+        ]
+    }
+}

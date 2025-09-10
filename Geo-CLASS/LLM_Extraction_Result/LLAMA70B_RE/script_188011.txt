@@ -1,0 +1,28 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Land Surface Temperature Analysis"],
+  "DataSource": ["projects/ee-kimiachenaary/assets/msh", "LANDSAT/LC08/C01/T1_TOA"],
+  "Function": ["Filtering image collection by bounds", "Converting Kelvin to Celsius", "Clipping images to geometry", "Calculating seasonal temperatures", "Reducing image collection to mean", "Exporting to CSV", "Calculating NDVI", "Filtering by count range", "Reducing columns to max", "Charting image series"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["projects/ee-kimiachenaary/assets/msh"],
+        "Function": ["Filtering image collection by bounds", "Clipping images to geometry"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_TOA"],
+        "Function": ["Converting Kelvin to Celsius", "Calculating seasonal temperatures", "Reducing image collection to mean", "Calculating NDVI", "Filtering by count range", "Reducing columns to max", "Charting image series"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4207, 'completion_tokens': 302, 'total_tokens': 4509}

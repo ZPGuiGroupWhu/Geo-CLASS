@@ -1,0 +1,69 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["NDVI calculation", "Landsat 8 analysis", "Cloud masking", "Vegetation index statistics"],
+  "DataSource": [
+    "users/elaurenyoung/usa_states",
+    "users/elaurenyoung/Site_summary_12_Apr_2022-point",
+    "LANDSAT/LC08/C02/T1_L2",
+    "LANDSAT/LC08/C01/T1_SR"
+  ],
+  "Function": [
+    "Clip dataset by region",
+    "Create buffer around points",
+    "Filter image collection by date",
+    "Apply scaling factors to images",
+    "Mask clouds and water",
+    "Create image composite",
+    "Calculate NDVI",
+    "Compute mean NDVI",
+    "Compute standard deviation of NDVI",
+    "Compute variance of NDVI",
+    "Export data to Google Drive"
+  ]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["users/elaurenyoung/usa_states"],
+    "Function": ["Clip dataset by region"]
+  },
+  "relation_2": {
+    "DataSource": ["users/elaurenyoung/Site_summary_12_Apr_2022-point"],
+    "Function": ["Create buffer around points"]
+  },
+  "relation_3": {
+    "DataSource": ["LANDSAT/LC08/C02/T1_L2"],
+    "Function": [
+      "Filter image collection by date",
+      "Apply scaling factors to images",
+      "Mask clouds and water",
+      "Create image composite",
+      "Calculate NDVI",
+      "Compute mean NDVI",
+      "Compute standard deviation of NDVI",
+      "Compute variance of NDVI",
+      "Export data to Google Drive"
+    ]
+  },
+  "relation_4": {
+    "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+    "Function": [
+      "Filter image collection by date",
+      "Mask clouds and water",
+      "Create image composite",
+      "Calculate NDVI",
+      "Compute mean NDVI",
+      "Compute standard deviation of NDVI",
+      "Compute variance of NDVI",
+      "Export data to Google Drive"
+    ]
+  }
+}
+```
+
+Total_Token_Usage:
+9935

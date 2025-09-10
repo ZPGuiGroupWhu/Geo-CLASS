@@ -1,0 +1,35 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover classification and vegetation monitoring"],
+  "DataSource": ["users/khoapv/xatong", "COPERNICUS/S1_GRD", "LANDSAT/LC08/C01/T1_SR", "COPERNICUS/S2"],
+  "Function": ["Filtering image collections by date and bounds", "Adding NDVI and time bands to images", "Clipping images to area of interest", "Joining image collections by date", "Reducing regions for each station"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/khoapv/xatong"],
+        "Function": ["Filtering image collections by date and bounds", "Clipping images to area of interest"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Filtering image collections by date and bounds", "Joining image collections by date"]
+    },
+    "relation_3": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Adding NDVI and time bands to images"]
+    },
+    "relation_4": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Adding NDVI and time bands to images", "Reducing regions for each station"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4023, 'completion_tokens': 336, 'total_tokens': 4359}

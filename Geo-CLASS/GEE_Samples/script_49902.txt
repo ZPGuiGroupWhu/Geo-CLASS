@@ -1,0 +1,109 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var imageCollection = ee.ImageCollection("COPERNICUS/S2_SR"),
+    geometry = 
+    /* color: #0b4a8b */
+    /* shown: false */
+    ee.Geometry.Polygon(
+        [[[-62.44832346780004, -36.71887875994756],
+          [-62.43759463174047, -36.7279254337785],
+          [-62.419141033718006, -36.71887875994756],
+          [-62.4255327764796, -36.71372057992841],
+          [-62.40902343128335, -36.70101654448831],
+          [-62.41682681043746, -36.69449728938456]]]);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+
+var image= ee.ImageCollection("COPERNICUS/S2_SR").filterDate('2020-09-10','2020-10-03').filterBounds(geometry);
+//print (image);
+Map.addLayer (image,{min:0, max:5000, bands:['B11','B8','B4']});
+
+// Cálculo de índices satélite desde Google Earth Engine
+// http://www.gisandbeers.com/calculo-de-indices-satelite-en-google-earth-engine/
+// Declaramos una nueva variable llamando a la imagen deseada con su ID
+var Sentinel = ee.Image ('COPERNICUS/S2_SR/20200928T140101_20200928T140058_T20HNE').clip(geometry);
+
+// Declaramos una segunda variable para componer la fórmula del índicador a partir de sus bandas
+var NDVI = Sentinel.expression ('float (NIR-Red) / float (NIR+Red)',{
+    'NIR': Sentinel.select ('B8'),
+    'Red': Sentinel.select ('B4')});
+    
+// Representamos el índice a través de una paleta de colores
+Map.addLayer (NDVI,{
+    max: 1.0,
+    min: -1.0,
+    'palette': ['CE7E45', 'DF923D', 'F1B555', 'FCD163', '99B718', '74A901',
+    '66A000', '529400', '3E8601', '207401', '056201', '004C00', '023B01',
+    '012E01', '011D01', '011301']},
+    'Índice NDVI');
+
+//Centramos la imagen con un nivel de zoom e imprimimos el índice en la consola
+Map.centerObject (NDVI, 11);
+print (NDVI, 'valores NDVI');
+
+//Podemos replicar el proceso con un nuevo índice empleando la funcion "normalizedDifference()"
+var NDMI = Sentinel.normalizedDifference (['B8','B11']) ; 
+Map.addLayer (NDMI,{
+    max: 1.0,
+    min: -0.5,
+    'palette': [ 'AB0000','FF0000', 'CA531A','FF7C1F','FFA12D','FFC969','FFE6A2',	
+    'FDFFB4','E5F9FF','CAEBFF','ACD1FF','8DBAE9','5699FF','2955BC','1A3678'
+]},
+    'Índice NDMI');
+print (NDMI, 'valores NDMI');
+
+// INCORPORACION DE LEYENDAS EN GEE
+// http://www.gisandbeers.com/incorporacion-leyenda-en-google-earth-engine/
+
+// Representacion del SRTM a 30 metros en el visor
+//var SRTM90 = ee.Image('CGIAR/SRTM90_V4').select('elevation');
+//var RampaColor = {min: 0.0, max: 7000.0,
+//  palette: ['0030F5', '36886A', '82B513', 'EDC823', 'F68E19', 'F45A44', 'FD92FA'],};
+//Map.addLayer(SRTM90, RampaColor, 'DEM SRTM');
+
+var NDMI = Sentinel.normalizedDifference (['B8','B11']) ; 
+var RampaColor= {
+    max: 1.0,
+    min: -0.5,
+    'palette': [ 'AB0000','FF0000', 'CA531A','FF7C1F','FFA12D','FFC969','FFE6A2',	
+    'FDFFB4','E5F9FF','CAEBFF','ACD1FF','8DBAE9','5699FF','2955BC','1A3678'
+],};
+   //Map.addLayer(NDMI,RampaColor, 'Índice NDMI');
+print (NDMI, 'valores NDMI');
+
+
+// Descripcion del etiquetado de elementos de la leyenda
+var Etiquetas = [
+  '-1 a -0.8 muy bajo',
+  '-0.6 a -0.4 bajo',
+  '-0.2 a 0.2 medio bajo' ,
+  '0.2 a 0.4 moderado',
+  '0.6 a 0.8 alto',
+  '0.8 a 1.00 muy alto',
+  ];
+
+// Configuracion del titulo y posicion de la leyenda
+var Titulo = ui.Label({
+  value: 'Niveles de NDMI', // Titulo de la leyenda
+  style: {fontWeight: 'bold', fontSize: '20px', margin: '0px 0px 15px 0px',}}); // Estilo y dimensiones
+var Leyenda = ui.Panel({
+  style: {position: 'bottom-left', padding: '10px 20px'}}); // Posicion, altura y anchura
+Leyenda.add(Titulo);
+
+// Configuracion de la simbologia
+var Simbologia = ['AB0000','FF0000', 'CA531A','FF7C1F','FFA12D','FFC969','FFE6A2',	
+    'FDFFB4','E5F9FF','CAEBFF','ACD1FF','8DBAE9','5699FF','2955BC','1A3678'];
+var Simbolos = function(simbolo, texto) {
+var TextoLeyenda = ui.Label({
+  value: texto,
+  style: {margin: '6px 0px 10px 15px'}}); // Posicion en la separacion de los textos
+var CajaLeyenda = ui.Label({
+  style: {backgroundColor: '#' + simbolo,
+  padding: '15px', // TamaÃ±o del simbolo
+  margin: '0px 0px 6px 0px'}}); // Posicion en la separacion de los simbolos
+
+//Representacion de leyenda en el visor
+return ui.Panel({
+  widgets: [CajaLeyenda, TextoLeyenda],
+  layout: ui.Panel.Layout.Flow('horizontal')});};
+for (var i = 0; i < 7; i++) {Leyenda.add(Simbolos(Simbologia[i], Etiquetas[i]));} 
+Map.centerObject (NDMI, 10);
+Map.add(Leyenda);

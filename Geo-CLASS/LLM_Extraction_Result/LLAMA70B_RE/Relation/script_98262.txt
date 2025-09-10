@@ -1,0 +1,37 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "FAO/GAUL_SIMPLIFIED_500m/2015/level2"
+        ],
+        "Function": [
+            "Filter image collection by bounds"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "MODIS/006/MOD09GA"
+        ],
+        "Function": [
+            "Filter image collection by bounds and date",
+            "Create mosaic image",
+            "Clip image to boundary",
+            "Calculate NDWI"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "JRC/GSW1_0/GlobalSurfaceWater"
+        ],
+        "Function": [
+            "Mask out areas with permanent water"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "WWF/HydroSHEDS/03VFDEM"
+        ],
+        "Function": [
+            "Mask out areas with high slope"
+        ]
+    }
+}

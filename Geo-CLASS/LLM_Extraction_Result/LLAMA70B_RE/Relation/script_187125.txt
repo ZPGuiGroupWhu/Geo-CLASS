@@ -1,0 +1,29 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Image filtering and resampling",
+            "Image normalization and difference calculation",
+            "Thresholding and water body detection"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "JRC/GSW1_0/MonthlyHistory"
+        ],
+        "Function": [
+            "Image masking and clipping"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "users/christinacorbane/MT_comp_proj"
+        ],
+        "Function": [
+            "Image masking and clipping",
+            "Thresholding and water body detection"
+        ]
+    }
+}

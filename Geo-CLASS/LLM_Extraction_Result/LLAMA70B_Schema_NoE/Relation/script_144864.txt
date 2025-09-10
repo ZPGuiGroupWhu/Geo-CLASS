@@ -1,0 +1,21 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/thao226355/share/VietNam_Ranh_gioi_tinh"
+        ],
+        "Function": [
+            "Filtering and selecting administrative boundaries",
+            "Area calculation and statistics"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2_SR"
+        ],
+        "Function": [
+            "Cloud masking and image filtering",
+            "Image collection and mosaicking",
+            "NDVI calculation and land cover classification"
+        ]
+    }
+}

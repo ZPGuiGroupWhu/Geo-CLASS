@@ -1,0 +1,25 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Temperature analysis"],
+  "DataSource": ["NOAA/GFS0P25"],
+  "Function": ["Filtering image collection by date", "Selecting temperature component", "Clipping image to boundary"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["NOAA/GFS0P25"],
+        "Function": ["Filtering image collection by date", "Selecting temperature component", "Clipping image to boundary"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 8843, 'completion_tokens': 136, 'total_tokens': 8979}

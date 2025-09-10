@@ -1,0 +1,25 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Lake water surface analysis"],
+  "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+  "Function": ["Clip image to area of interest", "Select image band", "Create water mask", "Calculate occurrence stats", "Reconstruct lake extent"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+        "Function": ["Clip image to area of interest", "Select image band", "Create water mask", "Calculate occurrence stats", "Reconstruct lake extent"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3886, 'completion_tokens': 160, 'total_tokens': 4046}

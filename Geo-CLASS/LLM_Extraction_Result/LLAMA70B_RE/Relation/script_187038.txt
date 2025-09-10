@@ -1,0 +1,49 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LC8_SR"
+        ],
+        "Function": [
+            "Image collection filtering",
+            "Cloud cover calculation",
+            "Image classification"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LE7_SR"
+        ],
+        "Function": [
+            "Image collection filtering",
+            "Cloud cover calculation",
+            "Image classification"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "LANDSAT/LT5_SR"
+        ],
+        "Function": [
+            "Image collection filtering",
+            "Cloud cover calculation",
+            "Image classification"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "USGS/NED"
+        ],
+        "Function": [
+            "Elevation data usage"
+        ]
+    },
+    "relation_5": {
+        "DataSource": [
+            "ft:1_RZgjlcqixp-L9hyS6NYGqLaKOlnhSC35AB5M5Ll"
+        ],
+        "Function": [
+            "Feature collection creation",
+            "Geometry filtering"
+        ]
+    }
+}

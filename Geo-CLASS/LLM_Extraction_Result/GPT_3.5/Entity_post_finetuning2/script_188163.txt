@@ -1,0 +1,28 @@
+{
+    "Summary": [
+        "Geoprocessing modeling for land cover classification in Zimbabwe."
+    ],
+    "Theme": [
+        "LAND USE/LAND COVER CLASSIFICATION"
+    ],
+    "DataSource": [
+        "users/kindgard/Asia/Asia",
+        "users/kindgard/Africa",
+        "users/kindgard/SUD",
+        "users/kindgard/AfricaS",
+        "users/kindgard/AmericaN",
+        "users/kindgard/Asia2",
+        "JRC/GSW1_0/GlobalSurfaceWater",
+        "ft:1tdSwUL7MVpOauSgRzqVTOwdfy17KDbw-1d9omPw",
+        "COPERNICUS/S2",
+        "users/ValeriaContessa/Map_1992_rast"
+    ],
+    "Function": [
+        "Image Stacking",
+        "Calculate NBR for Post-Fire Image",
+        "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover",
+        "Image Index Calculation",
+        "Training And Sampling For Land Cover Classification",
+        "Identify Water And Flood Surfaces Using Indices"
+    ]
+}

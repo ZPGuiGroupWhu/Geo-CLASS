@@ -1,0 +1,19 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Massive extraction of global DEM files for various regions."],
+  "Theme": ["Global elevation data extraction"],
+  "DataSource": ["NOAA/NGDC/ETOPO1", "NASA/ASTER_GED/AG100_003", "OSU/GIMP/DEM", "CPOM/CryoSat2/ANTARCTICA_DEM", "JAXA/ALOS/AW3D30_V1_1", "USGS/GMTED2010", "USGS/SRTMGL1_003", "USGS/GTOPO30", "WWF/HydroSHEDS/03CONDEM", "WWF/HydroSHEDS/30CONDEM", "WWF/HydroSHEDS/15CONDEM"],
+  "Function": ["Exporting Elevation data to Drive", "Adding layers to the map", "Generating histogram for ALOS DSM"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["NOAA/NGDC/ETOPO1", "NASA/ASTER_GED/AG100_003", "OSU/GIMP/DEM", "CPOM/CryoSat2/ANTARCTICA_DEM", "JAXA/ALOS/AW3D30_V1_1", "USGS/GMTED2010", "USGS/SRTMGL1_003", "USGS/GTOPO30", "WWF/HydroSHEDS/03CONDEM", "WWF/HydroSHEDS/30CONDEM", "WWF/HydroSHEDS/15CONDEM"],
+        "Function": ["Exporting Elevation data to Drive", "Adding layers to the map", "Generating histogram for ALOS DSM"]
+    }
+}
+```

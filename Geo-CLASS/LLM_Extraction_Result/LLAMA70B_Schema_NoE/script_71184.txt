@@ -1,0 +1,33 @@
+Entity Recognition:
+```
+{
+  "Theme": ["Cloud scoring and filtering of Landsat 7 images"],
+  "DataSource": ["LANDSAT/LE7_L1T_32DAY_TOA"],
+  "Function": [
+    "Cloud scoring function using blue, red, green, nir, swir1, swir2, and temp bands",
+    "Add MNDWI function using normalized difference of green and swir1 bands",
+    "Filter function using cloudscore and MNDWI thresholds",
+    "FillClouds function using flooding frequency for gap filling"
+  ]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LE7_L1T_32DAY_TOA"],
+        "Function": [
+            "Cloud scoring function using blue, red, green, nir, swir1, swir2, and temp bands",
+            "Add MNDWI function using normalized difference of green and swir1 bands",
+            "Filter function using cloudscore and MNDWI thresholds",
+            "FillClouds function using flooding frequency for gap filling"
+        ]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2770, 'completion_tokens': 265, 'total_tokens': 3035}

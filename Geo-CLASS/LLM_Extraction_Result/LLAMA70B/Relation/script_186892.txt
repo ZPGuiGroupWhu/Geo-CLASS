@@ -1,0 +1,26 @@
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Filtering image collection by cloud percentage", "Calculating NDVI and NBR indices", "Mosaicking images"]
+    },
+    "relation_2": {
+        "DataSource": ["ft:1Oaa3b2LdFGrAXL4jqFJzA-3iBeiNq6AQZkyFLVvp"],
+        "Function": ["Exporting image properties to CSV", "Exporting individual scenes to Drive"]
+    },
+    "relation_3": {
+        "DataSource": ["ft:1tAjm5bGsh0TWPSawKIsX-iWXd7vocIoG_98QjhU1"],
+        "Function": ["Exporting mosaic to Drive"]
+    },
+    "relation_4": {
+        "DataSource": ["ft:1iovW6_vHSX3JOx5OvcFr-ljJdx5mGmqK6Q_ETiSO"],
+        "Function": ["None"]
+    },
+    "relation_5": {
+        "DataSource": ["ft:1zmsdCSa-do_XXh6-w6bpfXpz_kN7nGBGmKAcBRFQ"],
+        "Function": ["None"]
+    },
+    "relation_6": {
+        "DataSource": ["ft:1gGjM2T5JEgKFoxbWORCn3WPqB98p2adAz42eqycf"],
+        "Function": ["None"]
+    }
+}

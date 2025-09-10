@@ -1,0 +1,291 @@
+ID,Script_ID,Entity_Type,Value,Value_BAAI,Top1_Similarity_BAAI
+1,script_102957.txt,Theme,Surface reflectance mapping in urban areas,APPARENT SURFACE REFLECTIVITY,0.730573177
+2,script_10376.txt,Theme,Remote sensing of land cover,LAND USE/LAND COVER,0.668048978
+3,script_103827.txt,Theme,Flood monitoring using Sentinel-1 imagery,FLOOD FREQUENCY,0.68432647
+4,script_106121.txt,Theme,Satellite image processing and reprojection,PHOTOSYNTHESIS,0.633933663
+5,script_10828.txt,Theme,Vegetation Index Analysis and Interpolation,VEGETATION INDEX,0.721455216
+6,script_110133.txt,Theme,Flood extent analysis and impact assessment,INUNDATION AMOUNT,0.668870568
+7,script_115907.txt,Theme,Vegetation monitoring and analysis using NDVI indices,NORMALIZED DIFFERENCE VEGETATION INDEX (NDVI),0.77268219
+8,script_118175.txt,Theme,Environmental monitoring and change detection,MARINE ENVIRONMENT MONITORING,0.692322969
+9,script_119133.txt,Theme,Wildfire impact assessment on vegetation,FOREST MENSURATION,0.649683595
+10,script_11983.txt,Theme,Vegetation monitoring using NDVI indices,NORMALIZED DIFFERENCE VEGETATION INDEX (NDVI),0.771190405
+11,script_120271.txt,Theme,Vegetation analysis using NDVI,NORMALIZED DIFFERENCE VEGETATION INDEX (NDVI),0.762412071
+12,script_120557.txt,Theme,Water and vegetation frequency analysis,FLOOD FREQUENCY,0.719438076
+13,script_125294.txt,Theme,Landsat imagery analysis for environmental monitoring,RADAR IMAGERY,0.612320364
+14,script_131942.txt,Theme,Land cover classification using satellite imagery,LAND USE/LAND COVER CLASSIFICATION,0.738997102
+15,script_144864.txt,Theme,Land cover classification using NDVI,LAND USE/LAND COVER CLASSIFICATION,0.71004951
+16,script_146128.txt,Theme,Fire impact analysis on land cover,LAND USE/LAND COVER CLASSIFICATION,0.62028265
+17,script_15043.txt,Theme,Land cover classification and accuracy assessment,LAND USE/LAND COVER CLASSIFICATION,0.739264905
+18,script_155017.txt,Theme,Land surface temperature analysis for settlements,LAND SURFACE TEMPERATURE,0.736633241
+19,script_159299.txt,Theme,Land cover classification,LAND USE/LAND COVER CLASSIFICATION,0.805195093
+20,script_159299.txt,Theme,Urban and rural land analysis,LAND USE/LAND COVER CLASSIFICATION,0.654799044
+21,script_165234.txt,Theme,Vegetation analysis using MODIS satellite imagery,VEGETATION OPTICAL DEPTH,0.643847466
+22,script_173652.txt,Theme,Land cover change detection and analysis,LAND USE/LAND COVER CLASSIFICATION,0.688638747
+23,script_174376.txt,Theme,Land cover classification using multispectral imagery,LAND USE/LAND COVER CLASSIFICATION,0.699599624
+24,script_174474.txt,Theme,Vegetation change analysis using NDVI,NORMALIZED DIFFERENCE VEGETATION INDEX (NDVI),0.760643125
+25,script_174747.txt,Theme,Land Surface Temperature Analysis,LAND SURFACE TEMPERATURE,0.790771842
+26,script_176914.txt,Theme,Land cover classification and area calculation,LAND USE/LAND COVER CLASSIFICATION,0.744144678
+27,script_179626.txt,Theme,Land surface temperature analysis,LAND SURFACE TEMPERATURE,0.799205124
+28,script_179626.txt,Theme,Vegetation index calculation,VEGETATION INDEX,0.77828902
+29,script_180257.txt,Theme,Vegetation analysis using remote sensing data,FOREST MENSURATION,0.668636441
+30,script_186294.txt,Theme,Vegetation health monitoring using NDVI,NORMALIZED DIFFERENCE VEGETATION INDEX (NDVI),0.749244928
+31,script_186319.txt,Theme,Forest monitoring and change detection,FOREST MENSURATION,0.795195699
+32,script_186320.txt,Theme,Forest degradation and fire detection monitoring,FOREST MENSURATION,0.748160005
+33,script_186321.txt,Theme,Forest degradation and fire detection,FOREST MENSURATION,0.715172887
+34,script_186323.txt,Theme,Forest monitoring and deforestation detection,FOREST MENSURATION,0.779240429
+35,script_186325.txt,Theme,Forest monitoring and deforestation detection,FOREST MENSURATION,0.779240429
+36,script_186326.txt,Theme,Forest degradation monitoring,FOREST MENSURATION,0.786416471
+37,script_186326.txt,Theme,Fire detection using satellite imagery,SOLAR IMAGERY,0.636595368
+38,script_186329.txt,Theme,Forest degradation monitoring,FOREST MENSURATION,0.786416471
+39,script_186329.txt,Theme,Deforestation detection,DEFORESTATION,0.764129758
+40,script_186329.txt,Theme,Forest fire early detection,FOREST MENSURATION,0.690665841
+41,script_186332.txt,Theme,Agricultural land use classification,LAND USE/LAND COVER CLASSIFICATION,0.7997244
+42,script_186332.txt,Theme,Crop cycle analysis,NUTRIENT CYCLING,0.609675407
+43,script_186333.txt,Theme,Vegetation dynamics and classification near sugar mills,FOREST COMPOSITION/VEGETATION STRUCTURE,0.591382742
+44,script_186334.txt,Theme,Vegetation classification and crop cycle analysis around sugar mills.,SOIL CLASSIFICATION,0.625436664
+45,script_186338.txt,Theme,Terrain and seasonal change detection using SAR data,CLIMATE ADAPTATION,0.61605525
+46,script_186356.txt,Theme,Land cover classification using radar imagery,LAND USE/LAND COVER CLASSIFICATION,0.723172724
+47,script_186365.txt,Theme,Vegetation Index Analysis,VEGETATION INDEX,0.792009592
+48,script_186365.txt,Theme,Water Index Analysis,WATER QUALITY INDEXES,0.763138592
+49,script_186365.txt,Theme,Burn Index Analysis,HEAT INDEX,0.653346419
+50,script_186365.txt,Theme,Spectral Transformations,SPECTRAL IRRADIANCE,0.760985613
+51,script_186365.txt,Theme,Principal Component Analysis,SENSOR CHARACTERISTICS,0.633380651
+52,script_186365.txt,Theme,Spectral Unmixing,SPECTRAL IRRADIANCE,0.690250397
+53,script_186378.txt,Theme,Vegetation health analysis using multi-sensor data,FOREST MENSURATION,0.631542861
+54,script_186380.txt,Theme,Environmental monitoring of marsh bird habitats,MARINE ENVIRONMENT MONITORING,0.647395253
+55,script_186411.txt,Theme,Land cover change detection,LAND USE/LAND COVER,0.671150208
+56,script_186411.txt,Theme,Fire impact assessment,FIRE WEATHER INDEX,0.694350481
+57,script_186418.txt,Theme,Surface temperature estimation using remote sensing data,SURFACE THERMAL PROPERTIES,0.691357017
+58,script_186442.txt,Theme,Agricultural pest risk assessment,AGRICULTURAL ENGINEERING,0.605907202
+59,script_186449.txt,Theme,Land cover classification and visualization,LAND USE/LAND COVER CLASSIFICATION,0.74027729
+60,script_186466.txt,Theme,Forest degradation detection using SAR imagery,FOREST MENSURATION,0.657801151
+61,script_186503.txt,Theme,Land cover classification using radar imagery,LAND USE/LAND COVER CLASSIFICATION,0.723172724
+62,script_186507.txt,Theme,Vegetation analysis and change detection in Brazilian Amazon,FOREST MENSURATION,0.614903331
+63,script_186521.txt,Theme,Land cover change detection,LAND USE/LAND COVER,0.671150208
+64,script_186521.txt,Theme,Fire impact assessment on vegetation,FOREST MENSURATION,0.658088803
+65,script_186528.txt,Theme,Land cover classification using radar imagery,LAND USE/LAND COVER CLASSIFICATION,0.723172724
+66,script_186540.txt,Theme,Vegetation dynamics monitoring using NDVI,NORMALIZED DIFFERENCE VEGETATION INDEX (NDVI),0.749327421
+67,script_186548.txt,Theme,Surface water detection and characterization,SURFACE WATER FEATURES,0.778806925
+68,script_186562.txt,Theme,Forest loss detection,FOREST MENSURATION,0.741072893
+69,script_186562.txt,Theme,Forest degradation monitoring,FOREST MENSURATION,0.786416471
+70,script_186562.txt,Theme,Forest fire detection,FOREST MENSURATION,0.743600547
+71,script_186570.txt,Theme,Forest degradation monitoring,FOREST MENSURATION,0.786416471
+72,script_186570.txt,Theme,Deforestation detection,DEFORESTATION,0.764129758
+73,script_186570.txt,Theme,Forest fire detection,FOREST MENSURATION,0.743600547
+74,script_186601.txt,Theme,Forest degradation monitoring using SAR imagery,FOREST MENSURATION,0.691280186
+75,script_186605.txt,Theme,Forest degradation monitoring,FOREST MENSURATION,0.786416471
+76,script_186605.txt,Theme,Deforestation detection,DEFORESTATION,0.764129758
+77,script_186605.txt,Theme,Forest fire early detection,FOREST MENSURATION,0.690665841
+78,script_186607.txt,Theme,Early detection of forest loss and degradation,FOREST MENSURATION,0.713801384
+79,script_186815.txt,Theme,Forest degradation and deforestation detection,FOREST MENSURATION,0.720320404
+80,script_186822.txt,Theme,Agricultural field analysis using satellite imagery,LAND SURFACE/AGRICULTURE INDICATORS,0.694483221
+81,script_186829.txt,Theme,Forest loss monitoring,FOREST MENSURATION,0.79110837
+82,script_186829.txt,Theme,Surface temperature analysis,SURFACE THERMAL PROPERTIES,0.751210451
+83,script_186856.txt,Theme,Cloud and shadow detection and masking in satellite imagery,RADAR IMAGERY,0.617719531
+84,script_186886.txt,Theme,Forest degradation monitoring,FOREST MENSURATION,0.786416471
+85,script_186886.txt,Theme,Deforestation detection,DEFORESTATION,0.764129758
+86,script_186886.txt,Theme,Forest fire detection,FOREST MENSURATION,0.743600547
+87,script_186888.txt,Theme,Vegetation and surface temperature analysis using remote sensing,SOIL TEMPERATURE,0.679557562
+88,script_186892.txt,Theme,Forest degradation and fire detection analysis,FOREST MENSURATION,0.690119743
+89,script_186914.txt,Theme,Flood impact analysis and population estimation,POPULATION ESTIMATES,0.66908288
+90,script_186915.txt,Theme,Flood impact analysis using remote sensing data,FLOOD FREQUENCY,0.65493089
+91,script_186940.txt,Theme,Landsat data processing for vegetation monitoring,FOREST MENSURATION,0.648300946
+92,script_186974.txt,Theme,Water body analysis using NDWI and MNDWI indices,WATER CHARACTERISTICS,0.631774545
+93,script_187038.txt,Theme,Water body detection and analysis over time,WATER CHARACTERISTICS,0.691061616
+94,script_187125.txt,Theme,Water surface detection and analysis,SURFACE WATER FEATURES,0.73810482
+95,script_187131.txt,Theme,Fire damage assessment and monitoring,FIRE MANAGEMENT,0.691286087
+96,script_187137.txt,Theme,Temperature analysis over time and space,AMBIENT TEMPERATURE,0.641937733
+97,script_187138.txt,Theme,Forest change analysis,FOREST MENSURATION,0.745732427
+98,script_187138.txt,Theme,Regional climate analysis,REGIONAL CLIMATE LEVELS,0.72995764
+99,script_187138.txt,Theme,Land cover monitoring,LAND USE/LAND COVER,0.716855228
+100,script_187226.txt,Theme,"Cloud, shadow, and water masking for satellite imagery",SOLAR IMAGERY,0.640483141
+101,script_187248.txt,Theme,Land surface temperature analysis,LAND SURFACE TEMPERATURE,0.799205124
+102,script_187248.txt,Theme,Vegetation index calculation,VEGETATION INDEX,0.77828902
+103,script_187481.txt,Theme,Flood mapping and river detection using radar imagery,RADAR IMAGERY,0.694834828
+104,script_187523.txt,Theme,Flood mapping using radar imagery,RADAR IMAGERY,0.715920031
+105,script_187528.txt,Theme,Flood mapping and river detection using radar imagery,RADAR IMAGERY,0.694834828
+106,script_187530.txt,Theme,Flood mapping using radar imagery,RADAR IMAGERY,0.715920031
+107,script_187532.txt,Theme,Flood mapping using radar backscatter analysis,RADAR BACKSCATTER,0.724505603
+108,script_187533.txt,Theme,Flood mapping and analysis using radar imagery,RADAR IMAGERY,0.705540299
+109,script_187534.txt,Theme,Flood mapping using radar imagery,RADAR IMAGERY,0.715920031
+110,script_187535.txt,Theme,Flood mapping using radar backscatter analysis,RADAR BACKSCATTER,0.724505603
+111,script_187582.txt,Theme,Land cover classification and vegetation index analysis,LAND USE/LAND COVER CLASSIFICATION,0.729021311
+112,script_187585.txt,Theme,Vegetation analysis using MODIS EVI and PCA,VEGETATION INDEX,0.607326984
+113,script_187586.txt,Theme,Vegetation analysis using MODIS EVI in Mongolia,NORMALIZED DIFFERENCE VEGETATION INDEX (NDVI),0.588444412
+114,script_187587.txt,Theme,Vegetation analysis using MODIS EVI data,VEGETATION INDEX,0.641652882
+115,script_187738.txt,Theme,Agricultural land classification and analysis,SOIL CLASSIFICATION,0.744440675
+116,script_187749.txt,Theme,NDVI trend analysis over two decades,NORMALIZED DIFFERENCE VEGETATION INDEX (NDVI),0.632839024
+117,script_187821.txt,Theme,Fire monitoring and burn severity assessment,FIRE MANAGEMENT,0.635095
+118,script_187822.txt,Theme,Fire severity assessment using satellite imagery,FIRE WEATHER INDEX,0.588233352
+119,script_187825.txt,Theme,Fire monitoring and burn severity assessment,FIRE MANAGEMENT,0.635095
+120,script_187888.txt,Theme,NDVI analysis for vegetation monitoring,NORMALIZED DIFFERENCE VEGETATION INDEX (NDVI),0.746863544
+121,script_187895.txt,Theme,Land cover change analysis using Bare Soil Index,SOIL TEXTURE,0.621296763
+122,script_188011.txt,Theme,Seasonal surface temperature analysis,SURFACE THERMAL PROPERTIES,0.730659127
+123,script_188030.txt,Theme,Vegetation Index Analysis,VEGETATION INDEX,0.792009592
+124,script_188052.txt,Theme,Water body detection and analysis,WATER CHARACTERISTICS,0.722114086
+125,script_188068.txt,Theme,Flood impact analysis on urban and agricultural areas,INUNDATION AMOUNT,0.603646219
+126,script_188068.txt,Theme,Population exposure to flooding,FLOODING,0.722487867
+127,script_188073.txt,Theme,Flood impact analysis on population and agriculture,INUNDATION AMOUNT,0.58914566
+128,script_188116.txt,Theme,Land cover classification and correction,LAND USE/LAND COVER CLASSIFICATION,0.762124181
+129,script_188147.txt,Theme,Land cover classification,LAND USE/LAND COVER CLASSIFICATION,0.805195093
+130,script_188147.txt,Theme,Forest and non-forest differentiation,FOREST COMPOSITION/VEGETATION STRUCTURE,0.684690714
+131,script_188147.txt,Theme,Water and urban masking,WATER MASSES,0.67249608
+132,script_188163.txt,Theme,Environmental monitoring,MARINE ENVIRONMENT MONITORING,0.774618864
+133,script_188163.txt,Theme,Agricultural analysis,AGRICULTURE PRODUCTION,0.71900624
+134,script_188163.txt,Theme,Seasonal change detection,CLIMATE ADAPTATION,0.687303066
+135,script_188163.txt,Theme,Land cover classification,LAND USE/LAND COVER CLASSIFICATION,0.805195093
+136,script_188182.txt,Theme,Land cover change detection,LAND USE/LAND COVER,0.671150208
+137,script_188190.txt,Theme,Land cover classification and change detection,LAND USE/LAND COVER CLASSIFICATION,0.718016148
+138,script_188200.txt,Theme,Land cover classification and analysis in Zimbabwe,LAND USE/LAND COVER CLASSIFICATION,0.690386653
+139,script_188211.txt,Theme,Water body analysis and sediment concentration monitoring,WATER CHARACTERISTICS,0.688372135
+140,script_188217.txt,Theme,Land cover change analysis over time,LAND USE/LAND COVER,0.653716207
+141,script_188221.txt,Theme,Climate data analysis for a specific region,AMBIENT TEMPERATURE,0.638153017
+142,script_188378.txt,Theme,Agricultural land analysis,LAND PRODUCTIVITY,0.696351707
+143,script_188386.txt,Theme,Agricultural land cover analysis,LAND USE/LAND COVER,0.688362241
+144,script_188389.txt,Theme,Agricultural land cover analysis,LAND USE/LAND COVER,0.688362241
+145,script_188397.txt,Theme,Wildfire analysis and visualization,FIRE MODELS,0.656963646
+146,script_188400.txt,Theme,Atmospheric NO2 concentration visualization,AEROSOL CONCENTRATION,0.644735694
+147,script_188401.txt,Theme,Temperature visualization over a geographic region,VIRTUAL TEMPERATURE,0.704977095
+148,script_188412.txt,Theme,Land Surface Temperature and Vegetation Analysis,LAND SURFACE TEMPERATURE,0.719579816
+149,script_188413.txt,Theme,Land surface temperature and vegetation analysis,SOIL TEMPERATURE,0.744226336
+150,script_188414.txt,Theme,Land Surface Temperature and Vegetation Analysis,LAND SURFACE TEMPERATURE,0.719579816
+151,script_188419.txt,Theme,Land Surface Temperature mapping and analysis,LAND SURFACE TEMPERATURE,0.775029898
+152,script_188454.txt,Theme,Cloud cover analysis over East and South Asia,CLOUD VERTICAL DISTRIBUTION,0.594881296
+153,script_188455.txt,Theme,Cloud coverage analysis over East and South Asia,CLOUD VERTICAL DISTRIBUTION,0.578905106
+154,script_188458.txt,Theme,Cloud coverage analysis over East and South Asia,CLOUD VERTICAL DISTRIBUTION,0.578905106
+155,script_188465.txt,Theme,Cloud probability analysis and visualization over a region.,VIEWING GEOMETRY,0.615357757
+156,script_188502.txt,Theme,Water body detection and area change analysis,WATER CHARACTERISTICS,0.671688437
+157,script_188506.txt,Theme,Cloud cover analysis over East and South Asia,CLOUD VERTICAL DISTRIBUTION,0.594881296
+158,script_188509.txt,Theme,Cloud probability and precipitation analysis,CLOUD EMISSIVITY,0.640907228
+159,script_188511.txt,Theme,Cloud probability analysis,CLOUD DYNAMICS,0.608694553
+160,script_188511.txt,Theme,Precipitation analysis,SURFACE PRECIPITATION,0.681350827
+161,script_188511.txt,Theme,Correlation between cloud cover and rainfall,RAIN TYPE,0.618711591
+162,script_19155.txt,Theme,Land cover classification using multispectral satellite imagery,LAND USE/LAND COVER CLASSIFICATION,0.693141341
+163,script_23533.txt,Theme,Land cover change detection,LAND USE/LAND COVER,0.671150208
+164,script_28.txt,Theme,Snowpack analysis and distribution mapping,SNOW STRATIGRAPHY,0.629516006
+165,script_3043.txt,Theme,Vegetation and water feature analysis using satellite imagery,SOIL MOISTURE/WATER CONTENT,0.657402277
+166,script_32.txt,Theme,Snow cover analysis using optical and SAR imagery,SNOW COVER,0.677246749
+167,script_35538.txt,Theme,Vegetation and water body analysis,VEGETATION WATER CONTENT,0.698414445
+168,script_37873.txt,Theme,Land cover classification,LAND USE/LAND COVER CLASSIFICATION,0.805195093
+169,script_41838.txt,Theme,Land cover classification,LAND USE/LAND COVER CLASSIFICATION,0.805195093
+170,script_42.txt,Theme,Forest cover mapping and change detection,FOREST MENSURATION,0.713473737
+171,script_43.txt,Theme,Community forest analog identification,FOREST MENSURATION,0.639091134
+172,script_43803.txt,Theme,Satellite image processing for regional analysis,RADAR IMAGERY,0.647642136
+173,script_45435.txt,Theme,Global vegetation and LAI analysis,LEAF AREA INDEX (LAI),0.68290627
+174,script_48.txt,Theme,Land cover change detection,LAND USE/LAND COVER,0.671150208
+175,script_49902.txt,Theme,Vegetation analysis using NDVI,NORMALIZED DIFFERENCE VEGETATION INDEX (NDVI),0.762412071
+176,script_49902.txt,Theme,Moisture content analysis using NDMI,SOIL MOISTURE/WATER CONTENT,0.685581028
+177,script_50.txt,Theme,Forest cover analysis and classification,FOREST COMPOSITION/VEGETATION STRUCTURE,0.71656543
+178,script_51624.txt,Theme,Flooding analysis using radar imagery,RADAR IMAGERY,0.705230355
+179,script_52026.txt,Theme,Monthly ozone density analysis for Andhra Pradesh,ATMOSPHERIC OZONE,0.558734238
+180,script_54980.txt,Theme,Urban infrastructure expansion visualization,URBANIZATION/URBAN SPRAWL,0.612759829
+181,script_59099.txt,Theme,Landslide assessment using NDVI,NORMALIZED DIFFERENCE VEGETATION INDEX (NDVI),0.641813695
+182,script_62526.txt,Theme,Cirrus cloud coverage analysis over Ahmedabad,CIRRUS CLOUD SYSTEMS,0.580346107
+183,script_65671.txt,Theme,Landsat data analysis for temperature monitoring,LAND SURFACE TEMPERATURE,0.61462605
+184,script_67562.txt,Theme,Vegetation analysis,VEGETATION,0.712356329
+185,script_67562.txt,Theme,Water body analysis,WATER CHARACTERISTICS,0.713577986
+186,script_67562.txt,Theme,Urban area analysis,URBAN AREAS,0.723485708
+187,script_67562.txt,Theme,Terrain analysis,TERRAIN ELEVATION,0.710345984
+188,script_71184.txt,Theme,Cloud coverage and water index analysis using satellite imagery.,CLOUD OPTICAL DEPTH/THICKNESS,0.640094161
+189,script_72.txt,Theme,Vegetation change detection in Cambodia,FOREST MENSURATION,0.599916577
+190,script_7366.txt,Theme,Land cover classification using satellite imagery,LAND USE/LAND COVER CLASSIFICATION,0.738997102
+191,script_75448.txt,Theme,Surface area analysis of Great Salt Lake over time,SURFACE SALINITY,0.569697678
+192,script_76696.txt,Theme,Vegetation trend analysis using NDVI,NORMALIZED DIFFERENCE VEGETATION INDEX (NDVI),0.759004951
+193,script_76709.txt,Theme,Vegetation and water body analysis using satellite imagery,BATHYMETRY/SEAFLOOR TOPOGRAPHY,0.650276601
+194,script_76805.txt,Theme,Arctic vegetation greening trends analysis,GRAZING DYNAMICS/PLANT HERBIVORY,0.56121099
+195,script_76839.txt,Theme,Vegetation and water index analysis,VEGETATION INDEX,0.709697485
+196,script_76840.txt,Theme,Vegetation and water index analysis for Yege region,VEGETATION WATER POTENTIAL,0.576313078
+197,script_76841.txt,Theme,Vegetation and water index analysis,VEGETATION INDEX,0.709697485
+198,script_78663.txt,Theme,Land cover change detection,LAND USE/LAND COVER,0.671150208
+199,script_78805.txt,Theme,Vegetation index analysis using satellite imagery,VEGETATION INDEX,0.710116982
+200,script_85061.txt,Theme,Vegetation and soil analysis using satellite imagery,SATELLITE SOIL MOISTURE INDEX,0.676169872
+201,script_85217.txt,Theme,Land cover classification using satellite imagery,LAND USE/LAND COVER CLASSIFICATION,0.738997102
+202,script_85219.txt,Theme,Fire impact analysis on vegetation,FOREST MENSURATION,0.62910223
+203,script_89887.txt,Theme,Satellite imagery processing and visualization,SOLAR IMAGERY,0.654842556
+204,script_95721.txt,Theme,Vegetation index analysis for agricultural management,VEGETATION INDEX,0.74635458
+205,script_95950.txt,Theme,Temporal NDVI analysis for vegetation monitoring,NORMALIZED DIFFERENCE VEGETATION INDEX (NDVI),0.699628353
+206,script_96316.txt,Theme,Vegetation index analysis and monitoring,VEGETATION INDEX,0.784378946
+207,script_96317.txt,Theme,Vegetation and water index analysis using Sentinel-2 imagery,VEGETATION WATER POTENTIAL,0.638603926
+208,script_96322.txt,Theme,Vegetation index analysis for agricultural yield prediction,VEGETATION INDEX,0.721433461
+209,script_96332.txt,Theme,Water and vegetation index analysis,VEGETATION WATER POTENTIAL,0.690799117
+210,script_96361.txt,Theme,Landsat imagery processing and enhancement,LANDSCAPE PROCESSES,0.643976927
+211,script_96424.txt,Theme,Water body monitoring and analysis,WATER CHARACTERISTICS,0.710227609
+212,script_96426.txt,Theme,Lake area dynamics analysis using remote sensing data,LAKE LEVELS,0.606197774
+213,script_96427.txt,Theme,Lake area dynamics analysis using remote sensing data,LAKE LEVELS,0.606197774
+214,script_96458.txt,Theme,Land cover classification,LAND USE/LAND COVER CLASSIFICATION,0.805195093
+215,script_96458.txt,Theme,Water body detection,WATER DEPTH,0.71968019
+216,script_96458.txt,Theme,Vegetation analysis,VEGETATION,0.712356329
+217,script_96458.txt,Theme,Rice paddy identification,LAND SURFACE/AGRICULTURE INDICATORS,0.5087834
+218,script_96459.txt,Theme,Urban expansion analysis,URBAN AREAS,0.618810654
+219,script_96459.txt,Theme,Vegetation and soil change detection,SOIL COMPACTION,0.679228902
+220,script_96519.txt,Theme,Flood analysis and visualization,FLOODING,0.677677274
+221,script_96519.txt,Theme,Earthquake impact assessment,EARTHQUAKE MAGNITUDE/INTENSITY,0.671161473
+222,script_96519.txt,Theme,Urban development monitoring,URBAN AREAS,0.647638083
+223,script_96519.txt,Theme,Fire impact analysis,FIRE WEATHER INDEX,0.655711174
+224,script_96537.txt,Theme,Land cover classification and change detection,LAND USE/LAND COVER CLASSIFICATION,0.718016148
+225,script_96538.txt,Theme,Environmental characterization of cemetery surroundings,ENVIRONMENTAL ASSESSMENTS,0.61659658
+226,script_96558.txt,Theme,Spatial and temporal analysis of vegetation and precipitation,FOREST COMPOSITION/VEGETATION STRUCTURE,0.657013357
+227,script_96578.txt,Theme,Fire impact and vegetation recovery analysis,FOREST COMPOSITION/VEGETATION STRUCTURE,0.597086072
+228,script_96593.txt,Theme,Vegetation monitoring and land cover analysis,LAND USE/LAND COVER,0.721248686
+229,script_96611.txt,Theme,Vegetation health analysis using NDVI,NORMALIZED DIFFERENCE VEGETATION INDEX (NDVI),0.739644468
+230,script_97207.txt,Theme,Fire impact analysis on vegetation using NDVI,NORMALIZED DIFFERENCE VEGETATION INDEX (NDVI),0.660588026
+231,script_97208.txt,Theme,Fire impact analysis using remote sensing data,FIRE WEATHER INDEX,0.638159215
+232,script_97209.txt,Theme,Fire impact analysis using remote sensing data,FIRE WEATHER INDEX,0.638159215
+233,script_97210.txt,Theme,Fire impact analysis using remote sensing data,FIRE WEATHER INDEX,0.638159215
+234,script_97211.txt,Theme,Wildfire impact assessment on vegetation,FOREST MENSURATION,0.649683595
+235,script_97212.txt,Theme,Fire impact analysis using remote sensing data,FIRE WEATHER INDEX,0.638159215
+236,script_97250.txt,Theme,Nighttime light distribution by land cover type,LAND USE/LAND COVER CLASSIFICATION,0.647356689
+237,script_97292.txt,Theme,Agricultural land analysis and classification,SOIL CLASSIFICATION,0.729299307
+238,script_97295.txt,Theme,Land Use and Land Cover (LULC) Analysis,LAND USE/LAND COVER CLASSIFICATION,0.751320601
+239,script_97367.txt,Theme,Cloud-free satellite imagery composite creation,PHOTOSYNTHESIS,0.604104042
+240,script_97371.txt,Theme,Agricultural monitoring and analysis of crop health,AGRICULTURE PRODUCTION,0.694068432
+241,script_97430.txt,Theme,Vegetation monitoring and water index analysis,VEGETATION INDEX,0.719701946
+242,script_97431.txt,Theme,Water body monitoring and analysis using satellite imagery,SURFACE WATER PROCESSES/MEASUREMENTS,0.66538626
+243,script_97446.txt,Theme,Cloud filtering and reflectance calculation in satellite imagery,RADAR REFLECTIVITY,0.623898149
+244,script_97475.txt,Theme,Land cover classification using multispectral and terrain data,LAND USE/LAND COVER CLASSIFICATION,0.695866346
+245,script_97477.txt,Theme,Vegetation and water quality analysis using satellite imagery,VEGETATION WATER CONTENT,0.665194511
+246,script_97479.txt,Theme,"Landsat 8 surface reflectance analysis for Flagstaff, AZ",APPARENT SURFACE REFLECTIVITY,0.621455669
+247,script_97507.txt,Theme,Crop greenness monitoring in Merced County,LAND SURFACE/AGRICULTURE INDICATORS,0.595065355
+248,script_97508.txt,Theme,NDVI time series analysis for land cover classification,LAND USE/LAND COVER CLASSIFICATION,0.653066397
+249,script_97509.txt,Theme,Burn severity analysis using satellite imagery,SOLAR IMAGERY,0.612492323
+250,script_97510.txt,Theme,Burn severity analysis using NBR,BRIGHTNESS TEMPERATURE,0.586293221
+251,script_97512.txt,Theme,Burn severity analysis of Mendocino Complex Fire,TOXICITY LEVELS,0.538227916
+252,script_97538.txt,Theme,Vegetation and surface temperature analysis,SOIL TEMPERATURE,0.702447414
+253,script_97539.txt,Theme,Vegetation and thermal analysis using satellite imagery,SOIL TEMPERATURE,0.652392149
+254,script_97582.txt,Theme,Fire event analysis using satellite imagery,FIRE MODELS,0.619508386
+255,script_97609.txt,Theme,Seasonal rainfall analysis and deviation mapping,SURFACE PRECIPITATION,0.626933157
+256,script_97610.txt,Theme,Climate analysis for Sinaloa region,TORNADO CLIMATOLOGY,0.597676873
+257,script_97622.txt,Theme,Land cover classification and vegetation monitoring,LAND USE/LAND COVER CLASSIFICATION,0.735698462
+258,script_97651.txt,Theme,Landsat image processing for cloud and occlusion removal,CLOUD OPTICAL DEPTH/THICKNESS,0.577831626
+259,script_97683.txt,Theme,Satellite imagery analysis for land surface observation,LAND SURFACE,0.674442887
+260,script_97700.txt,Theme,Vegetation Index Analysis,VEGETATION INDEX,0.792009592
+261,script_97700.txt,Theme,Water Detection,WATER CHARACTERISTICS,0.729344249
+262,script_97700.txt,Theme,Surface Clustering,SURFACE CONDUCTIVITY,0.704756379
+263,script_97704.txt,Theme,Digital Elevation Model (DEM) extraction and visualization,DIGITAL ELEVATION/TERRAIN MODEL (DEM),0.799998403
+264,script_97718.txt,Theme,Vegetation health monitoring,VEGETATION INDEX,0.70969367
+265,script_97718.txt,Theme,Moisture stress analysis,SURFACE SOIL MOISTURE,0.68709743
+266,script_97724.txt,Theme,NDVI time series analysis for invasive species monitoring,INVASIVE SPECIES,0.650933921
+267,script_97954.txt,Theme,Land cover change detection,LAND USE/LAND COVER,0.671150208
+268,script_97954.txt,Theme,Forest area analysis,FOREST MENSURATION,0.755852818
+269,script_97955.txt,Theme,Land cover change detection,LAND USE/LAND COVER,0.671150208
+270,script_97974.txt,Theme,Land cover change detection,LAND USE/LAND COVER,0.671150208
+271,script_97988.txt,Theme,Land cover classification using multispectral imagery,LAND USE/LAND COVER CLASSIFICATION,0.699599624
+272,script_97991.txt,Theme,Land cover classification and analysis,LAND USE/LAND COVER CLASSIFICATION,0.780998707
+273,script_97991.txt,Theme,Satellite image processing,PHOTOSYNTHESIS,0.689454675
+274,script_98003.txt,Theme,Environmental monitoring and change detection,MARINE ENVIRONMENT MONITORING,0.692322969
+275,script_98005.txt,Theme,Satellite imagery processing for cloud-free mosaics,SOLAR IMAGERY,0.612187207
+276,script_98169.txt,Theme,Vegetation health analysis using NDVI,NORMALIZED DIFFERENCE VEGETATION INDEX (NDVI),0.739644468
+277,script_98257.txt,Theme,Flood monitoring and analysis,FLOOD FREQUENCY,0.703985333
+278,script_98258.txt,Theme,Flood monitoring and analysis,FLOOD FREQUENCY,0.703985333
+279,script_98259.txt,Theme,Flood impact analysis using satellite imagery,INUNDATION FREQUENCY,0.616991341
+280,script_98260.txt,Theme,Flood analysis using satellite imagery,FLOODING,0.65224731
+281,script_98261.txt,Theme,Flood extent analysis using remote sensing data,FLOOD FREQUENCY,0.661449134
+282,script_98262.txt,Theme,Flood extent analysis and mapping,HYDROGRAPHY,0.634059429
+283,script_98263.txt,Theme,Flood monitoring and vegetation analysis,FOREST MENSURATION,0.684013128
+284,script_98266.txt,Theme,Flood detection and analysis using radar imagery,RADAR IMAGERY,0.70263195
+285,script_98267.txt,Theme,Flood impact analysis using satellite imagery,INUNDATION FREQUENCY,0.616991341
+286,script_98275.txt,Theme,Flood monitoring and progression analysis,FLOOD FREQUENCY,0.686671019
+287,script_98281.txt,Theme,Water body analysis and terrain characterization,WATER CHARACTERISTICS,0.752099514
+288,script_98287.txt,Theme,Vegetation and Water Index Analysis,VEGETATION WATER POTENTIAL,0.704522669
+289,script_98289.txt,Theme,Landsat 8 data analysis for environmental monitoring,ENVIRONMENTAL ASSESSMENTS,0.578379035
+290,script_98290.txt,Theme,Land cover classification and accuracy assessment,LAND USE/LAND COVER CLASSIFICATION,0.739264905

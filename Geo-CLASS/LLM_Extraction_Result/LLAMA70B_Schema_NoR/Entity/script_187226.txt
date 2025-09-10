@@ -1,0 +1,18 @@
+{
+    "Theme": [
+        "Forest monitoring and analysis"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "Cloud and shadow masking",
+        "Water masking",
+        "Image collection filtering",
+        "Image normalization",
+        "Cloud score calculation",
+        "Shadow detection",
+        "Image mosaicking",
+        "Image masking"
+    ]
+}

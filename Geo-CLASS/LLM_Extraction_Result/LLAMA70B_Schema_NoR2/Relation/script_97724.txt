@@ -1,0 +1,14 @@
+{
+    "relation_1": {
+        "DataSource": ["TIGER/2018/States"],
+        "Function": ["Filtering state boundaries"]
+    },
+    "relation_2": {
+        "DataSource": ["users/eisen520/chinesePrivet"],
+        "Function": ["Loading Chinese Privet plots"]
+    },
+    "relation_3": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["Masking cloud and snow pixels", "Adding NDVI band", "Filtering image collection by date", "Reducing regions to first NDVI value", "Merging observations for each day", "Joining tables by ID"]
+    }
+}

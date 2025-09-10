@@ -1,0 +1,177 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var regions = ee.FeatureCollection("FAO/GAUL_SIMPLIFIED_500m/2015/level2"),
+    l5 = ee.ImageCollection("LANDSAT/LT05/C01/T1_SR");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+var hue = regions.filter(
+
+            ee.Filter.eq
+
+            ('ADM1_NAME', 'Thua Thien - Hue')
+
+            );
+
+            
+
+Map.addLayer(hue, {color: 'yellow'}, 'Administrative boundaries Hue', 0);
+
+
+
+
+
+// Filter the image collection using filterBounds() and filterDate() method.
+
+// Sort the collection by cloud cover metadata
+
+// Create the mosaic image and clip it to boundary
+
+
+
+var Ref = l5
+
+                  .filterBounds(hue)
+
+                  .filterDate('1999-02-01', '1999-09-01')
+
+                  .filterMetadata ('CLOUD_COVER_LAND', 'less_than', 30) //is 10 reasonable?
+
+                  .sort('CLOUDY_PIXEL_PERCENTAGE', false)
+
+                  ;
+
+                  
+
+    print (Ref.size(),'size of Reference Collection');
+
+    
+
+    print(Ref,'Reference Image Collection');
+
+                  
+
+var RGB = {
+
+       bands: ['B3', 'B2', 'B1'],
+
+       min: 200,
+
+       max: 3000,
+
+       };
+
+
+
+var Ref = Ref.mosaic().clip(hue);
+
+
+
+Map.centerObject(hue, 10)
+
+.addLayer(Ref,RGB, 'Reference RGB', 0, 1);
+
+
+
+var Flood = l5
+
+                  .filterBounds(hue)
+
+                  .filterDate('1999-11-06', '1999-11-15')
+
+                  .filterMetadata ('CLOUD_COVER_LAND', 'less_than', 50) 
+
+                  //FELIX: NO IMAGES IN THE TIMEFRANME OF THE FLOODING AVAILABLE EXCEPTFOR ONE ON THE EDGE OF THE STUDY AREA 
+
+                  //I COULD TAKE E.G. A DIFFERENT AREA OF CENTRAL VIETNAM THAT WAS FLOODED TO FIGURE OUT HOW GOOD THE L8 NDWI METHOD PERFORMS?
+
+                  .sort('CLOUDY_PIXEL_PERCENTAGE', false)
+
+                  ;
+
+
+
+  print (Flood.size(), 'size of flood collection');
+
+  print (Flood, 'Flood Image Collection');
+
+  
+
+  var Flood = Flood.mosaic().clip(hue);
+
+
+
+  Map.centerObject(hue, 10)
+
+  .addLayer(Flood, RGB, 'Flood RGB');
+
+  
+
+
+
+
+
+//Calculate NDWI                  
+
+var ndwi_Ref = Ref.normalizedDifference(['B3', 'B5'])
+
+              .rename ('ndwi');
+
+var ndwi_Flood = Flood.normalizedDifference(['B3', 'B5'])
+
+.rename('ndwi');
+
+
+
+print (ndwi_Ref,'ndwi Ref');
+
+print (ndwi_Flood,'ndwi Flood');
+
+
+
+
+
+
+
+var waterPalette = ['red', 'yellow', 'green', 'blue'];
+
+Map.addLayer(ndwi_Ref, {min: -1, max: 0.5, palette: waterPalette}, '2020 Ref NDWI');
+
+Map.addLayer(ndwi_Flood, {min: -1, max: 0.5, palette: waterPalette}, '2020 Flood NDWI');
+
+Map.centerObject(hue, 10);
+
+
+
+
+
+// Get difference image of ndwi                                             -->FELIX: here I tried to make a meaningful comparison but it didnt quite suceed- 
+
+                                                                                      //what do you think would make sense after creating the two ndwi images?
+
+
+
+var diffNDWI = ndwi_Flood.subtract(ndwi_Ref);
+
+Map.addLayer(diffNDWI, {min:-1, max:0.5, gamma:0.8}, 'Difference NDWI', 0, 1);
+
+
+
+// set the threshold
+
+var THRES = 0.3;
+
+
+
+// select pixels greater than threshold
+
+var Refmask = diffNDWI.gt(THRES);
+
+
+
+Map.addLayer (Refmask.updateMask(Refmask),{palette:"0000FF"}, 'flooded areas - blue', 1);
+
+
+
+
+
+// Use Canny Edge detector to only consider areas of boundaries between water and land for histogram and thresholding
+
+

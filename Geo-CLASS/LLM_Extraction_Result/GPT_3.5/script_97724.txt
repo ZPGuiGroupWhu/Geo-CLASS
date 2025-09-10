@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["The script focuses on analyzing NDVI over time at Chinese Privet plots in North Carolina."],
+  "Theme": ["NDVI analysis at Chinese Privet plots"],
+  "DataSource": ["TIGER/2018/States", "users/eisen520/chinesePrivet", "COPERNICUS/S2_SR"],
+  "Function": ["Cloud and shadow masking", "NDVI band addition", "Image collection filtering", "Chart generation", "Region reduction", "Data formatting and merging"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["TIGER/2018/States"],
+        "Function": ["Cloud and shadow masking", "NDVI band addition", "Image collection filtering", "Chart generation", "Region reduction", "Data formatting and merging"]
+    },
+    "relation_2": {
+        "DataSource": ["users/eisen520/chinesePrivet"],
+        "Function": ["Cloud and shadow masking", "NDVI band addition", "Image collection filtering", "Chart generation", "Region reduction", "Data formatting and merging"]
+    },
+    "relation_3": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["Cloud and shadow masking", "NDVI band addition", "Image collection filtering", "Chart generation", "Region reduction", "Data formatting and merging"]
+    }
+}
+```

@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Script focuses on analyzing fire areas using Sentinel-2 images before and after fires."],
+  "Theme": ["Fire area analysis using Sentinel-2 images"],
+  "DataSource": ["users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016", "COPERNICUS/S2"],
+  "Function": ["Filtering fires in the general area", "Calculating indices for image analysis"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016"],
+        "Function": ["Filtering fires in the general area", "Calculating indices for image analysis"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Filtering fires in the general area", "Calculating indices for image analysis"]
+    }
+}
+```

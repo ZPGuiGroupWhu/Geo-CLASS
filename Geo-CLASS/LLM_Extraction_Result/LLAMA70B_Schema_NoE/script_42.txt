@@ -1,0 +1,33 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land cover classification using random forest algorithm"],
+  "DataSource": ["USDOS/LSIB/2017", "UMD/hansen/global_forest_change_2020_v1_8", "users/ak_glaciers/NDVI_fitted_image_stack_from_LTOP_1990_start", "users/ak_glaciers/NBR_fitted_image_stack_from_LTOP_1990_start"],
+  "Function": ["Filtering feature collection by country", "Selecting bands from images", "Applying reducer to image", "Creating random points", "Reducing regions", "Allocating points to training and validation", "Sampling regions", "Training random forest classifier", "Classifying image"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["USDOS/LSIB/2017"],
+        "Function": ["Filtering feature collection by country", "Reducing regions", "Sampling regions"]
+    },
+    "relation_2": {
+        "DataSource": ["UMD/hansen/global_forest_change_2020_v1_8"],
+        "Function": ["Selecting bands from images", "Applying reducer to image", "Classifying image"]
+    },
+    "relation_3": {
+        "DataSource": ["users/ak_glaciers/NDVI_fitted_image_stack_from_LTOP_1990_start", "users/ak_glaciers/NBR_fitted_image_stack_from_LTOP_1990_start"],
+        "Function": ["Creating random points", "Allocating points to training and validation", "Training random forest classifier"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2408, 'completion_tokens': 431, 'total_tokens': 2839}

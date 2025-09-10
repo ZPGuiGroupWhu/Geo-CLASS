@@ -1,0 +1,25 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Cloud-free Landsat composites", "Colombia", "NDVI calculation"],
+  "DataSource": ["FAO/GAUL/2015/level0", "LANDSAT/LT4_L1T_TOA", "LANDSAT/LT5_L1T_TOA", "LANDSAT/LC8_L1T_TOA", "LANDSAT/LE7_L1T_TOA"],
+  "Function": ["Filter image collection by date", "Filter image collection by location", "Select specific bands", "Merge image collections", "Compute cloud score", "Mask clouds", "Calculate NDVI", "Export image to Drive"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["FAO/GAUL/2015/level0"],
+        "Function": ["Filter image collection by location"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LT4_L1T_TOA", "LANDSAT/LT5_L1T_TOA", "LANDSAT/LC8_L1T_TOA", "LANDSAT/LE7_L1T_TOA"],
+        "Function": ["Filter image collection by date", "Filter image collection by location", "Select specific bands", "Merge image collections", "Compute cloud score", "Mask clouds", "Calculate NDVI", "Export image to Drive"]
+    }
+}
+```
+
+Total_Token_Usage:
+9900

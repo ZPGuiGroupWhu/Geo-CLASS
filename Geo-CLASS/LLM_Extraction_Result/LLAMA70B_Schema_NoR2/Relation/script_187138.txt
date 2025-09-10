@@ -1,0 +1,22 @@
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T2_SR", "UMD/hansen/global_forest_change_2017_v1_5"],
+        "Function": ["Filter image collection by region", "Create binary mask for forested areas"]
+    },
+    "relation_2": {
+        "DataSource": ["Oxford/MAP/LST_Day_5km_Monthly"],
+        "Function": ["Map and filter image collection"]
+    },
+    "relation_3": {
+        "DataSource": ["NCEP_RE/surface_temp"],
+        "Function": ["Reduce regions to mean temperature"]
+    },
+    "relation_4": {
+        "DataSource": ["UMD/hansen/global_forest_change_2017_v1_5"],
+        "Function": ["Update composite mask with water mask"]
+    },
+    "relation_5": {
+        "DataSource": ["LANDSAT/LC08/C01/T2_SR"],
+        "Function": ["Export feature collection to CSV"]
+    }
+}

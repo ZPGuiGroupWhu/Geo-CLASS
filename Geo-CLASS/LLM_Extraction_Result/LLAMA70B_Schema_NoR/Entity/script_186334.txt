@@ -1,0 +1,19 @@
+{
+    "Theme": [
+        "Land cover classification and crop type identification"
+    ],
+    "DataSource": [
+        "MODIS/006/MOD09Q1",
+        "users/khoapv/Ranhgioi_DL"
+    ],
+    "Function": [
+        "Filtering image collection by date",
+        "Clipping images to a specific region",
+        "Calculating NDVI",
+        "Creating a multiband image",
+        "Training a clusterer",
+        "Clustering input data",
+        "Merging classes",
+        "Creating a refined classification"
+    ]
+}

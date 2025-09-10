@@ -1,0 +1,5 @@
+{
+  "Theme": ["Land cover classification using Sentinel-2 data"],
+  "DataSource": ["COPERNICUS/S2_SR_HARMONIZED", "COPERNICUS/S2_CLOUD_PROBABILITY"],
+  "Function": ["Filtering image collection by date and cloud probability", "Creating mosaic of images", "Reducing image to ROI", "Masking clouds in images", "Calculating sum of images"]
+}

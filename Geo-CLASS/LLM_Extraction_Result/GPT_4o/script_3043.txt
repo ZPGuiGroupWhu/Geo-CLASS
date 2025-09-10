@@ -1,0 +1,33 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Water frequency analysis", "Vegetation frequency analysis", "Tidal flats detection", "Deciduous vegetation detection", "Evergreen vegetation detection"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR", "LANDSAT/LE07/C01/T1_SR", "users/1915303017/CNBBW_SL_10kmBuffer", "USGS/SRTMGL1_003"],
+  "Function": ["Rename bands", "Apply cloud mask", "Calculate NDVI", "Calculate mNDWI", "Calculate LSWI", "Calculate EVI", "Calculate AWEInsh", "Prepare OLI images", "Prepare ETM+ images", "Filter image collection", "Merge image collections", "Create greenest pixel composite", "Create median composite", "Calculate water frequency", "Calculate vegetation frequency", "Calculate EVI max", "Calculate EVI min", "Calculate elevation", "Calculate slope", "Detect tidal flats", "Detect deciduous vegetation", "Detect evergreen vegetation", "Generate time series chart"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+    "Function": ["Rename bands", "Apply cloud mask", "Calculate NDVI", "Calculate mNDWI", "Calculate LSWI", "Calculate EVI", "Calculate AWEInsh", "Prepare OLI images", "Filter image collection", "Merge image collections", "Create greenest pixel composite", "Create median composite", "Calculate water frequency", "Calculate vegetation frequency", "Calculate EVI max", "Calculate EVI min", "Detect tidal flats", "Detect deciduous vegetation", "Detect evergreen vegetation", "Generate time series chart"]
+  },
+  "relation_2": {
+    "DataSource": ["LANDSAT/LE07/C01/T1_SR"],
+    "Function": ["Rename bands", "Apply cloud mask", "Calculate NDVI", "Calculate mNDWI", "Calculate LSWI", "Calculate EVI", "Calculate AWEInsh", "Prepare ETM+ images", "Filter image collection", "Merge image collections", "Create greenest pixel composite", "Create median composite", "Calculate water frequency", "Calculate vegetation frequency", "Calculate EVI max", "Calculate EVI min", "Detect tidal flats", "Detect deciduous vegetation", "Detect evergreen vegetation", "Generate time series chart"]
+  },
+  "relation_3": {
+    "DataSource": ["users/1915303017/CNBBW_SL_10kmBuffer"],
+    "Function": ["Filter image collection", "Calculate water frequency", "Calculate vegetation frequency", "Calculate EVI max", "Calculate EVI min", "Calculate elevation", "Calculate slope", "Detect tidal flats", "Detect deciduous vegetation", "Detect evergreen vegetation", "Generate time series chart"]
+  },
+  "relation_4": {
+    "DataSource": ["USGS/SRTMGL1_003"],
+    "Function": ["Calculate elevation", "Calculate slope", "Detect tidal flats", "Detect deciduous vegetation", "Detect evergreen vegetation"]
+  }
+}
+```
+
+Total_Token_Usage:
+8142

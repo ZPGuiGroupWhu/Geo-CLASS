@@ -1,0 +1,6 @@
+{
+  "Summary": ["Supervised classification of land cover using Landsat 8 imagery within a defined region of interest (ROI)."],
+  "Theme": ["Land cover classification"],
+  "DataSource": ["users/wangweihappy0/training01/l8ClassifySample", "LANDSAT/LC08/C01/T1_SR", "USGS/SRTMGL1_003"],
+  "Function": ["Cloud removal from Landsat 8 imagery", "Image scaling for Landsat 8 data", "Calculation of NDVI (Normalized Difference Vegetation Index)", "Calculation of NDWI (Normalized Difference Water Index)", "Calculation of NDBI (Normalized Difference Built-up Index)", "Filtering Landsat 8 image collection by date and location", "Generation of Digital Elevation Model (DEM) from SRTM data", "Addition of elevation and slope bands to the Landsat 8 image", "Visualization of Landsat 8 image with RGB bands"]
+}

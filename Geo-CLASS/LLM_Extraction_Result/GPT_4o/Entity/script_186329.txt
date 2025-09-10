@@ -1,0 +1,5 @@
+{
+  "Theme": ["Forest loss detection", "Forest degradation", "Forest fire detection"],
+  "DataSource": ["LANDSAT/LC8_SR", "LANDSAT/LC8_L1T_TOA", "LANDSAT/LC08/C01/T1_TOA", "LANDSAT/LT5_L1T_TOA_FMASK", "LANDSAT/LE7_L1T_TOA_FMASK", "LANDSAT/LE7_L1T_TOA", "users/khoapv/xatong"],
+  "Function": ["Filter image collection by date", "Filter image collection by cloud cover", "Filter image collection by location", "Calculate NDVI", "Calculate NBR", "Create mosaic image", "Export image properties to CSV", "Export mosaic image to Drive", "Export individual images to Drive", "Create map visualizations", "Link multiple maps", "Add marker point on map click"]
+}

@@ -1,0 +1,18 @@
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Filtering Sentinel-1 images by polarization and date"]
+    },
+    "relation_2": {
+        "DataSource": ["ft:12Ca5CZlFISuiE7Nf-3fpuTcvFgYNobv-4EJdCkGh"],
+        "Function": ["Creating a composite image from means at different polarizations and look angles"]
+    },
+    "relation_3": {
+        "DataSource": ["ft:1-uk71GdY0SUx0Gf4oX2C0LWSvdns18hkRVz7D8C4"],
+        "Function": ["Detecting water bodies using SAR data"]
+    },
+    "relation_4": {
+        "DataSource": ["ft:1NzCJgmYE2fzkwPn9dlO-u1W-CbjOshmaqauD2rza"],
+        "Function": ["Exporting images to Google Drive"]
+    }
+}

@@ -1,0 +1,46 @@
+{
+  "relation_1": {
+    "DataSource": ["NOAA/NGDC/ETOPO1"],
+    "Function": ["Select specific DEM band", "Clip DEM to geometry", "Export DEM to Google Drive"]
+  },
+  "relation_2": {
+    "DataSource": ["NASA/ASTER_GED/AG100_003"],
+    "Function": ["Select specific DEM band", "Clip DEM to geometry", "Export DEM to Google Drive"]
+  },
+  "relation_3": {
+    "DataSource": ["OSU/GIMP/DEM"],
+    "Function": ["Select specific DEM band", "Clip DEM to geometry", "Export DEM to Google Drive"]
+  },
+  "relation_4": {
+    "DataSource": ["CPOM/CryoSat2/ANTARCTICA_DEM"],
+    "Function": ["Select specific DEM band", "Clip DEM to geometry", "Export DEM to Google Drive"]
+  },
+  "relation_5": {
+    "DataSource": ["JAXA/ALOS/AW3D30_V1_1"],
+    "Function": ["Select specific DEM band", "Clip DEM to geometry", "Export DEM to Google Drive", "Visualize DEM on map", "Generate histogram of DEM"]
+  },
+  "relation_6": {
+    "DataSource": ["USGS/GMTED2010"],
+    "Function": ["Select specific DEM band", "Clip DEM to geometry", "Export DEM to Google Drive"]
+  },
+  "relation_7": {
+    "DataSource": ["USGS/SRTMGL1_003"],
+    "Function": ["Select specific DEM band", "Clip DEM to geometry", "Export DEM to Google Drive"]
+  },
+  "relation_8": {
+    "DataSource": ["USGS/GTOPO30"],
+    "Function": ["Select specific DEM band", "Clip DEM to geometry", "Export DEM to Google Drive"]
+  },
+  "relation_9": {
+    "DataSource": ["WWF/HydroSHEDS/03CONDEM"],
+    "Function": ["Select specific DEM band", "Clip DEM to geometry", "Export DEM to Google Drive"]
+  },
+  "relation_10": {
+    "DataSource": ["WWF/HydroSHEDS/30CONDEM"],
+    "Function": ["Select specific DEM band", "Clip DEM to geometry", "Export DEM to Google Drive"]
+  },
+  "relation_11": {
+    "DataSource": ["WWF/HydroSHEDS/15CONDEM"],
+    "Function": ["Select specific DEM band", "Clip DEM to geometry", "Export DEM to Google Drive"]
+  }
+}

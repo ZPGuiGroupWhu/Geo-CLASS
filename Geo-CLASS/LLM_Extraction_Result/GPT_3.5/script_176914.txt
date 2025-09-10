@@ -1,0 +1,24 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Land cover classification using Landsat imagery and machine learning algorithms."],
+  "Theme": ["Land cover classification"],
+  "DataSource": ["LANDSAT/LT05/C02/T1_L2"],
+  "Function": ["Training a classifier for land cover classification", "Classifying the image based on trained classifier", "Calculating area for each land cover class", "Assessing classification accuracy"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LT05/C02/T1_L2"],
+        "Function": [
+            "Training a classifier for land cover classification",
+            "Classifying the image based on trained classifier",
+            "Calculating area for each land cover class",
+            "Assessing classification accuracy"
+        ]
+    }
+}
+```

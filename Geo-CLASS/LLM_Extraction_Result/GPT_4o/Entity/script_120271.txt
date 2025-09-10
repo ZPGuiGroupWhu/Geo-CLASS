@@ -1,0 +1,5 @@
+{
+  "Theme": ["NDVI calculation", "Gradient bar creation", "Map styling"],
+  "DataSource": ["COPERNICUS/S2_SR", "users/gena/packages:colorbrewer", "users/gena/packages:palettes", "users/gena/packages:style", "users/gena/packages:utils"],
+  "Function": ["Calculate NDVI", "Filter image collection by date", "Filter image collection by cloud percentage", "Filter image collection by bounds", "Map NDVI calculation over image collection", "Compute median of image collection", "Clip image to area", "Select NDVI band", "Add layer to map", "Reduce region to percentiles", "Draw gradient bar", "Set map options", "Draw frame", "Draw scalebar"]
+}

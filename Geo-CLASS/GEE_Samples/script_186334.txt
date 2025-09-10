@@ -1,0 +1,162 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var MODIS_terra = ee.ImageCollection("MODIS/006/MOD09Q1"),
+    ubb = ee.FeatureCollection("users/khoapv/Ranhgioi_DL"),
+    sugarmills = /* color: #d63000 */ee.Geometry.MultiPoint(
+        [[107.76096909560147, 12.49772047515631],
+         [107.91203110732022, 12.537939853418571],
+         [107.87495224989834, 12.631760623889596],
+         [108.16334336317959, 12.73358419836862],
+         [108.02601426161709, 12.763051828349282],
+         [108.13587754286709, 12.59557667672622],
+         [108.30341904677334, 12.658560247241647],
+         [108.40092270888272, 12.773766479503974],
+         [108.30891221083584, 12.805907706068691],
+         [108.47370713271084, 12.658560247241647],
+         [108.21140854872647, 12.481630970339786]]);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+///// Dates of interest
+var start = ee.Date('2016-06-01');
+var finish = ee.Date('2017-04-26');
+
+///// Sugar mills in Maharashtra (their exact location or taluka centroid? with buffers created in GEE?)
+var sugarmillsBuffer = sugarmills.buffer(100); //unit here is in meters; 25km
+
+//convert the feature to image
+var sugarmillsBuffer_addClass = ee.FeatureCollection([ee.Feature(ee.Feature(sugarmillsBuffer).geometry(), {class: 1})]);
+var sugarmillsBuffer_toImage = sugarmillsBuffer_addClass.reduceToImage(['class'], 'first').unmask().clip(ubb);
+
+
+
+
+
+
+///// Create image collection
+var ubbMODIS = MODIS_terra
+.filterDate(start,finish)
+.map(function(img) {return img.clip(ubb);});
+print('All MODIS images clipped to UBB',ubbMODIS);
+
+///// Calculate NDVI ('sur_refl_b01' is red and 'sur_refl_b02' is NIR)
+// Function to calculate and add an NDVI band
+var addNDVI = function(ubbMODIS) {return ubbMODIS.addBands(ubbMODIS.normalizedDifference(['sur_refl_b02', 'sur_refl_b01']).rename('NDVI'));};
+// Add NDVI band to image collection
+var NDVIcollection = ubbMODIS.map(addNDVI);// the name band is 'NDVI'
+print("NDVI collection", NDVIcollection);
+
+///// Create a multiband image that has all time-series NDVIs as different bands in one image (needed for unsupervised classification)
+var empty = ee.Image().select();
+var multiband = NDVIcollection.iterate(function(image, result) {
+   return ee.Image(result).addBands(image.select('NDVI'))}, empty);
+var multiband = ee.Image(multiband);
+
+
+
+
+///// Make the trainning dataset
+var training = multiband.sample({
+  region: ubb,
+  scale: 250,
+  numPixels: 50
+});
+print('training',training);
+
+///// Instantiate the clusterer and train it
+var clusterer = ee.Clusterer.wekaKMeans(30).train(training);
+print('clusterer',clusterer);
+
+///// Cluster the input using the trained clusterer
+var classes = multiband.cluster(clusterer);
+print('Unsupervised classes',classes);
+
+///// Display the clusters with random colors
+Map.addLayer(classes.randomVisualizer(), {}, 'Unsupervised');
+
+
+
+
+///// Merge single
+var oldclass1 = ee.List([13,14,15,17,18,21,24,25,28]);
+var newclass1 = ee.List.repeat(1, oldclass1.length());
+///// Merge double
+var oldclass2 = ee.List([2,3,4,5,7,12,16,20]);
+var newclass2 = ee.List.repeat(2, oldclass2.length());
+///// Merge perennial 
+var oldclass3 = ee.List([0,9]); // class 10 is mostly forest in the nortehast.  
+var newclass3 = ee.List.repeat(3, oldclass3.length());
+///// Merge barren/shrub/rangelands 
+var oldclass4 = ee.List([1,6,8,11,19,22,23,26,27,29]);
+var newclass4 = ee.List.repeat(4, oldclass4.length());
+
+var oldclass = oldclass1.cat(oldclass2).cat(oldclass3).cat(oldclass4);
+
+var newclass = newclass1.cat(newclass2).cat(newclass3).cat(newclass4);
+
+var classesMerged = classes.remap(oldclass,newclass).toInt();
+
+var classesMerged = classesMerged.rename("class");
+
+
+Map.addLayer(classesMerged,{min:1,max:4,palette:['green','yellow','red','brown']},'Classes merged');
+
+
+
+
+
+var visPalette = [
+  'white', // no class
+  'green', // single crop
+  'yellow', // double crop
+  'orange', 'red' // perennial crop
+];
+
+
+///// Single crop
+var single = (classesMerged.select('class').eq(1));
+var single = single.mask(single);
+var single_final = single.eq(1).multiply(ee.Image(1));
+
+var single_final = single_final.rename("class").toByte(); 
+
+print('single_final',single_final);
+Map.addLayer(single_final, {min:0,max:5,palette:visPalette}, 'Refined single');
+
+///// Double crop
+var double = (classesMerged.select('class').eq(2));
+var double = double.mask(double);
+var double_final=(double.eq(1).and(sugarmillsBuffer_toImage.eq(1))).multiply(ee.Image(2)) 
+.add((double.eq(1).and(sugarmillsBuffer_toImage.eq(0))).multiply(ee.Image(3)));
+
+var double_final = double_final.rename("class").toByte();
+
+print('double_final',double_final);
+Map.addLayer(double_final, {min:0,max:5,palette:visPalette}, 'Refined double');
+
+///// Perennial crop
+var perennial = (classesMerged.select('class').eq(3)); 
+var perennial = perennial.mask(perennial);
+var perennial_final=(perennial.eq(1).and(sugarmillsBuffer_toImage.eq(1))).multiply(ee.Image(4)) 
+.add((perennial.eq(1).and(sugarmillsBuffer_toImage.eq(0))).multiply(ee.Image(5)));
+
+var perennial_final = perennial_final.rename("class").toByte(); 
+
+print('perennial_final',perennial_final); 
+Map.addLayer(perennial_final, {min:0,max:5,palette:visPalette}, 'Refined perennial');
+
+
+
+
+
+var test = ee.ImageCollection([single_final, double_final,perennial_final]); 
+print('test',test);
+var test_mosaic = test.qualityMosaic('class');
+print('test mosaic',test_mosaic);
+Map.addLayer(test_mosaic,{bands: ['class'], min:0, max: 5, palette:visPalette},'test');
+
+Map.centerObject(ubb,10)
+
+var empty = ee.Image().byte();
+var outline = empty.paint({featureCollection: ubb, color: 1, width: 3});
+Map.addLayer(outline, {palette: 'FF0000'}, 'Myarea');
+
+
+

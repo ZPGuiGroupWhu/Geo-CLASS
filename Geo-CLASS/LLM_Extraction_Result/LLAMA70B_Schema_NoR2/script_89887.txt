@@ -1,0 +1,31 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover classification", "Water body detection", "Topographic analysis"],
+  "DataSource": ["MODIS/006/MOD09GA", "USGS/GMTED2010", "TIGER/2018/States"],
+  "Function": ["Cloud masking", "Water body masking", "Image collection filtering", "Hillshade generation", "Image visualization", "Percentile calculation", "Image clipping"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["MODIS/006/MOD09GA"],
+        "Function": ["Cloud masking", "Image collection filtering", "Percentile calculation"]
+    },
+    "relation_2": {
+        "DataSource": ["USGS/GMTED2010"],
+        "Function": ["Hillshade generation", "Topographic analysis"]
+    },
+    "relation_3": {
+        "DataSource": ["TIGER/2018/States"],
+        "Function": ["Image visualization", "Image clipping"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2875, 'completion_tokens': 253, 'total_tokens': 3128}

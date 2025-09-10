@@ -1,0 +1,19 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Collects satellite images and calculates NDVI and NBR, exports images, detects forest loss, degradation, and fires in Bha Le, Tay Giang, Quang Nam using Landsat 8."],
+  "Theme": ["Satellite image processing for forest monitoring in Bha Le, Tay Giang, Quang Nam"],
+  "DataSource": ["LANDSAT/LC8_L1T_TOA", "LANDSAT/LC8_L1T_TOA", "LANDSAT/LC8_L1T_TOA", "LANDSAT/LC8_L1T_TOA"],
+  "Function": ["Calculates NDVI for vegetation health assessment", "Calculates NBR for burn severity mapping"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC8_L1T_TOA"],
+        "Function": ["Calculates NDVI for vegetation health assessment", "Calculates NBR for burn severity mapping"]
+    }
+}
+```

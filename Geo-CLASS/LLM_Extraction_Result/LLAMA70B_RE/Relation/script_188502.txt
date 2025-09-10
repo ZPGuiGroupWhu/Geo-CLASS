@@ -1,0 +1,13 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S1_GRD"
+        ],
+        "Function": [
+            "Filtering image collection",
+            "Applying OTSU thresholding",
+            "Calculating water body area",
+            "Generating chart"
+        ]
+    }
+}

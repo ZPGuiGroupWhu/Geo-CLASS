@@ -1,0 +1,15 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2",
+            "ft:1ovvyN_dzo01mRw8uSNMIYNg-HKyGTrqLErfg26X0"
+        ],
+        "Function": [
+            "Calculates Mean Of Image Collection",
+            "Calculates Median Of Image Collection",
+            "Creates And Exports Image Mosaics",
+            "Creates And Exports Image Mosaics",
+            "Filter And Mosaic Landsat Images"
+        ]
+    }
+}

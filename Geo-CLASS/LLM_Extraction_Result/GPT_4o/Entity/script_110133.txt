@@ -1,0 +1,5 @@
+{
+  "Theme": ["Flood mapping", "Damage assessment", "Population exposure"],
+  "DataSource": ["users/felixgeooperations/Drin/20210112_Drin_flood", "COPERNICUS/S1_GRD", "JRC/GSW1_0/GlobalSurfaceWater", "WWF/HydroSHEDS/03VFDEM", "JRC/GHSL/P2016/POP_GPW_GLOBE_V1/2015"],
+  "Function": ["Filter image collection by parameters", "Select images by date", "Create mosaic and clip to area", "Smooth radar images", "Calculate image difference", "Apply threshold to difference image", "Mask permanent water areas", "Eliminate noise from flood extent", "Mask areas with high slope", "Calculate flood extent area", "Calculate exposed population", "Export images and vectors", "Display results on map"]
+}

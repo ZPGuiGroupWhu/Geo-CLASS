@@ -1,0 +1,33 @@
+{
+  "relation_1": {
+    "DataSource": [
+      "users/kindgard/Africa",
+      "users/kindgard/Asia/Asia",
+      "users/kindgard/SUD",
+      "users/kindgard/AfricaS",
+      "users/kindgard/AmericaN",
+      "users/kindgard/Asia2"
+    ],
+    "Function": [
+      "Filter image collection by date and cloud cover",
+      "Create image mosaic"
+    ]
+  },
+  "relation_2": {
+    "DataSource": [
+      "users/ValeriaContessa/ZWEsettlements",
+      "users/ValeriaContessa/zim_waterbody"
+    ],
+    "Function": [
+      "Apply masks to classified image"
+    ]
+  },
+  "relation_3": {
+    "DataSource": [
+      "users/ValeriaContessa/Zimbabwe_Anderson"
+    ],
+    "Function": [
+      "Correct classification using feature collections"
+    ]
+  }
+}

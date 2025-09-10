@@ -1,0 +1,40 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LT05/C01/T1_TOA",
+            "LANDSAT/LE07/C01/T1_RT_TOA",
+            "LANDSAT/LC08/C01/T1_RT_TOA"
+        ],
+        "Function": [
+            "Merging Landsat image collections",
+            "Standardizing band names"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LT05/C01/T1_TOA"
+        ],
+        "Function": [
+            "Unpacking bit bands",
+            "Adding Fmask band"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "LANDSAT/LT05/C01/T1_SR",
+            "LANDSAT/LE07/C01/T1_SR",
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "Merging Landsat image collections",
+            "Standardizing band names",
+            "Unpacking bit bands",
+            "Adding Fmask band",
+            "Calculating MNDWI",
+            "Adding texture",
+            "Adding Landsat number",
+            "Adding HSV",
+            "Masking land area"
+        ]
+    }
+}

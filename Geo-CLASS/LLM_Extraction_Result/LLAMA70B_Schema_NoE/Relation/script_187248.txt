@@ -1,0 +1,21 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "Masking cloud shadows and clouds from Landsat 8 images",
+            "Calculating NDVI and thermal bands",
+            "Calculating Land Surface Temperature (LST)"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "users/khoirurrizqi/Jawa"
+        ],
+        "Function": [
+            "Calculating fractional vegetation and emissivity",
+            "Calculating Land Surface Temperature (LST)"
+        ]
+    }
+}

@@ -1,0 +1,5 @@
+{
+  "Theme": ["Cirrus cloud area analysis", "Time series analysis"],
+  "DataSource": ["users/ce15btech11022/Final_Cities/Ahmedabad", "COPERNICUS/S2"],
+  "Function": ["Filter image collection by date and region", "Calculate date difference", "Create date sequence", "Iterate over dates to create mosaics", "Reproject image", "Add bands to image", "Filter collection by bounds and date", "Calculate sum over region", "Export data to Google Drive"]
+}

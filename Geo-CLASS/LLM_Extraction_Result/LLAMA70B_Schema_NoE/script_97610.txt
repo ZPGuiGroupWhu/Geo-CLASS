@@ -1,0 +1,43 @@
+Entity Recognition:
+```
+{
+  "Theme": ["Climate Analysis"],
+  "DataSource": ["ECMWF/ERA5/DAILY", "FAO/GAUL_SIMPLIFIED_500m/2015/level2"],
+  "Function": [
+    "Extract Tmin, Tmax, and Tavg from ERA5Re dataset",
+    "Filter data by date and administrative boundary",
+    "Clip data to administrative boundary",
+    "Visualize data on the map",
+    "Export images to Google Drive"
+  ]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["ECMWF/ERA5/DAILY"],
+        "Function": [
+            "Extract Tmin, Tmax, and Tavg from ERA5Re dataset",
+            "Filter data by date and administrative boundary",
+            "Clip data to administrative boundary",
+            "Visualize data on the map"
+        ]
+    },
+    "relation_2": {
+        "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2"],
+        "Function": [
+            "Filter data by date and administrative boundary",
+            "Clip data to administrative boundary",
+            "Visualize data on the map",
+            "Export images to Google Drive"
+        ]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2297, 'completion_tokens': 316, 'total_tokens': 2613}

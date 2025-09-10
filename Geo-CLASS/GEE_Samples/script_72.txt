@@ -1,0 +1,316 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var geometry = 
+    /* color: #d63000 */
+    /* shown: false */
+    ee.Geometry.Polygon(
+        [[[104.36877210213483, 13.044168684293904],
+          [104.36877210213483, 12.999346481237097],
+          [104.63313062264264, 12.999346481237097],
+          [104.63313062264264, 13.044168684293904]]], null, false);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+
+
+//#                                                                                                    #\\
+
+//#                                         LANDTRENDR                                                #\\
+
+//#                                                                                                    #\\
+
+
+
+
+
+
+
+// date: 2022-01-04
+
+
+
+// website: https://github.com/eMapR/LT-GEE 
+
+
+
+// Spatial parameters
+
+var place = 'Cambodia'; 
+
+var aoi = ee.FeatureCollection("USDOS/LSIB/2017")
+
+            .filter(ee.Filter.eq('COUNTRY_NA',place)); 
+
+//make sure you spelled the country name right 
+
+print(aoi);             
+
+aoi = aoi.geometry().buffer(5000); 
+
+
+
+// Temporal parameters
+
+var startYear = 1990;
+
+var endYear = 2021;
+
+var startDay = '11-20'; 
+
+var endDay =   '03-10'; 
+
+var maskThese = ['cloud','shadow'];
+
+var index = "NBR" ;
+
+var ftvList = ['NBR'];
+
+var exclude = {};
+
+
+
+// LandTrendr parameters
+
+var runParams = { 
+
+  maxSegments: 8,
+
+  spikeThreshold: 0.9,
+
+  vertexCountOvershoot: 3,
+
+  preventOneYearRecovery: true,
+
+  recoveryThreshold: 0.75,
+
+  pvalThreshold: 0.05,
+
+  bestModelProportion: 0.75,
+
+  minObservationsNeeded: 8
+
+};
+
+
+
+// LandTrendr module
+
+var ltgee = require('users/emaprlab/public:Modules/LandTrendr.js'); 
+
+var ftv_prep = require('users/emaprlab/broberts:LTOP_mekong/06lt_Transfer_FTV_modules.js'); 
+
+
+
+// LandTrendr temporal segmentation
+
+var lt = ltgee.runLT(startYear, endYear, startDay, endDay, aoi, index, ftvList, runParams, maskThese, exclude)
+
+var years = lt.select('LandTrendr').arraySlice(0, 0, 1).arrayProject([1]);
+
+var mask = lt.select('LandTrendr').arraySlice(0, 3).arrayProject([1]);
+
+var vertices = years.arrayMask(mask); 
+
+
+
+//now we run LT fit - not sure if this is exactly what we want to be doing but I guess it will produce the same thing as the LTOP outputs
+
+var annualSRcollection = ltgee.buildSRcollection(startYear, endYear, startDay, endDay, aoi, maskThese);  
+
+
+
+
+
+//add an nbr band 
+
+annualSRcollection = annualSRcollection.map(function(img){
+
+var nbr = ltgee.calcIndex(img, 'NBR', 0);
+
+return nbr.addBands(img)
+
+         .set('system:time_start', img.get('system:time_start'));
+
+}); 
+
+
+
+
+
+
+
+
+
+var ltFit = ee.Algorithms.TemporalSegmentation.LandTrendrFit(annualSRcollection,vertices);
+
+
+
+
+
+var fitted = ltFit.select('NBR_fit')
+
+
+
+//convert the lt fit output back to the 4xn array 
+
+var lt_like_output = ftv_prep.convertLTfitToLTprem(ltFit,'NBR_fit',startYear,endYear); 
+
+
+
+
+
+//now add in the change detection part 
+
+//this is an optional featureCollection for which you want to export disturbance stats 
+
+
+
+
+
+
+
+var export_index = 'NBR'; 
+
+//change detection params 
+
+var changeParams = {
+
+  delta:  'loss',
+
+  sort:   'greatest',
+
+  year:   {checked:false, start:startYear, end:endYear},
+
+  mag:    {checked:false, value:150,  operator:'>'},
+
+  dur:    {checked:true, value:4,    operator:'<'},
+
+  preval: {checked:false, value:300,  operator:'>'},
+
+  mmu:    {checked:false, value:1},
+
+};
+
+
+
+
+
+
+
+//make a change detection map using the LandTrendr modules 
+
+
+
+//this is an issue because we used different fitting indices and so the changeParams are adjusted according to that...
+
+
+
+
+
+// add index to changeParams object
+
+changeParams.index = 'NBR';
+
+
+
+// get the change map layers
+
+var changeImg = ltgee.getChangeMap(lt_like_output, changeParams);
+
+
+
+// set visualization dictionaries
+
+var palette = ['#9400D3', '#4B0082', '#0000FF', '#00FF00', '#FFFF00', '#FF7F00', '#FF0000'];
+
+var yodVizParms = {
+
+  min: startYear,
+
+  max: endYear,
+
+  palette: palette
+
+};
+
+
+
+var magVizParms = {
+
+  min: 1,
+
+  max: 400,
+
+  palette: ['#ffaa99', '#550000']
+
+};
+
+
+
+var durVizParms = {
+
+  min: 1,
+
+  max: 10,
+
+  palette: ['#ff0000', '#999900', '#0044ee']
+
+};
+
+
+
+//add the vectors 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Export the image outputs 
+
+var exportIndex = 'NBR'
+
+var exportImg = changeImg
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   scale:30 
+
+
+
+
+
+
+
+Export.image.toAsset({
+
+  image: exportImg, 
+
+  description:exportIndex+'_change_detection_img_all_bands_duration_4', 
+
+  assetId:'reem_cf_outputs/'+exportIndex+'_change_detection_img_all_bands_duration_4', 
+
+  region:aoi,
+
+  scale:30, 
+
+  maxPixels:1e13
+
+}); 
+

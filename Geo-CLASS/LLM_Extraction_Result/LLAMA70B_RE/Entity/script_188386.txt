@@ -1,0 +1,13 @@
+{
+    "Theme": [
+        "Land cover classification"
+    ],
+    "DataSource": [
+        "USDA/NASS/CDL"
+    ],
+    "Function": [
+        "Image collection creation",
+        "Geometry definition",
+        "Image filtering"
+    ]
+}

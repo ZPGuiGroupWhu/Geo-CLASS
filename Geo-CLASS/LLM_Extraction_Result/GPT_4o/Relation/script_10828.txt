@@ -1,0 +1,14 @@
+{
+    "relation_1": {
+        "DataSource": ["MODIS/006/MOD09A1"],
+        "Function": ["Mask clouds and shadows", "Calculate NIRv", "Filter image collection by date", "Reduce regions to points", "Export data to Drive"]
+    },
+    "relation_2": {
+        "DataSource": ["users/kongdd/public:Math/pkg_smooth.js"],
+        "Function": ["Apply linear interpolation"]
+    },
+    "relation_3": {
+        "DataSource": ["users/kongdd/public:pkg_vis.js"],
+        "Function": ["Visualize data"]
+    }
+}

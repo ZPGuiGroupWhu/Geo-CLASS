@@ -1,0 +1,22 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/edimilsonrodriguessantos/MAPBIOMAS/INFRAURBANA6-FT-v6/"
+        ],
+        "Function": [
+            "Image collection creation",
+            "Image masking",
+            "Image renaming",
+            "Image filtering",
+            "Image remapping"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "users/edimilsonrodriguessantos/MAPBIOMAS/INFRAURBANA6-FT-v6/"
+        ],
+        "Function": [
+            "Video generation"
+        ]
+    }
+}

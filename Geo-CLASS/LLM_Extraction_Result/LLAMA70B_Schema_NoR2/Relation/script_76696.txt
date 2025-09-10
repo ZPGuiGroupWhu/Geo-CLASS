@@ -1,0 +1,14 @@
+{
+    "relation_1": {
+        "DataSource": ["users/cxliu2015/Arctic_treeline_Project_Russia"],
+        "Function": ["Image collection filtering", "Image exporting"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LT04/C01/T1_TOA", "LANDSAT/LT05/C01/T1_TOA", "LANDSAT/LE07/C01/T1_TOA"],
+        "Function": ["Cloud removal for Landsat images", "Cloud masking for Landsat 4/5/7 images", "NDVI calculation", "Image harmonization"]
+    },
+    "relation_3": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_TOA"],
+        "Function": ["Cloud masking for Landsat 8 images", "NDVI calculation", "Image harmonization"]
+    }
+}

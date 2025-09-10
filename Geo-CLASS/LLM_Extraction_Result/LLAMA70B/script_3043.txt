@@ -1,0 +1,41 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land cover classification and water body detection"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR", "LANDSAT/LE07/C01/T1_SR", "LANDSAT/LT05/C01/T1_SR", "users/1915303017/CNBBW_SL_10kmBuffer", "USGS/SRTMGL1_003"],
+  "Function": ["Image collection filtering", "Image renaming and band selection", "Cloud and shadow masking", "NDVI calculation", "mNDWI calculation", "LSWI calculation", "EVI calculation", "AWEInsh calculation", "Image compositing", "Water body detection", "Vegetation classification", "Elevation and slope calculation", "Land cover classification"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR", "LANDSAT/LE07/C01/T1_SR", "LANDSAT/LT05/C01/T1_SR"],
+        "Function": ["Image collection filtering", "Image renaming and band selection", "Cloud and shadow masking", "Image compositing"]
+    },
+    "relation_2": {
+        "DataSource": ["users/1915303017/CNBBW_SL_10kmBuffer"],
+        "Function": ["Land cover classification", "Vegetation classification"]
+    },
+    "relation_3": {
+        "DataSource": ["USGS/SRTMGL1_003"],
+        "Function": ["Elevation and slope calculation"]
+    },
+    "relation_4": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR", "LANDSAT/LE07/C01/T1_SR", "LANDSAT/LT05/C01/T1_SR"],
+        "Function": ["NDVI calculation", "mNDWI calculation", "LSWI calculation", "EVI calculation", "AWEInsh calculation"]
+    },
+    "relation_5": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR", "LANDSAT/LE07/C01/T1_SR", "LANDSAT/LT05/C01/T1_SR"],
+        "Function": ["Water body detection"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 5285, 'completion_tokens': 597, 'total_tokens': 5882}

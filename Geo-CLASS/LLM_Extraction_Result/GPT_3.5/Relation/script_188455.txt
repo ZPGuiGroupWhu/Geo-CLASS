@@ -1,0 +1,6 @@
+{
+    "relation_1": {
+        "DataSource": ["users/kitmyfaceplease2/eastsouth_asia", "projects/ee-kitmyfaceplease2/assets/EAST_SOUTH_SPLIT2"],
+        "Function": ["Mosaicking cloud probability images", "Masking clouds in the region", "Calculating percentage of cloud cover"]
+    }
+}

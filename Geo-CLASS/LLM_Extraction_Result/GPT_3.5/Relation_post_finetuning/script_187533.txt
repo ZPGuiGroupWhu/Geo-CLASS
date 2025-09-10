@@ -1,0 +1,12 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S1_GRD"
+        ],
+        "Function": [
+            "Cloud Masking And Quality Filtering",
+            "Image Band Manipulation",
+            "Data Acquisition And Preprocessing"
+        ]
+    }
+}

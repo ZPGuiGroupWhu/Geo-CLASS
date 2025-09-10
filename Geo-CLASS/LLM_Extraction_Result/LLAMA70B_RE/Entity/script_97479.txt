@@ -1,0 +1,15 @@
+{
+    "Theme": [
+        "Landsat 8 Surface Reflectance Analysis"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C01/T1_SR"
+    ],
+    "Function": [
+        "Filter image collection by date",
+        "Filter image collection by bounds",
+        "Apply cloud mask",
+        "Calculate image statistics",
+        "Visualize images"
+    ]
+}

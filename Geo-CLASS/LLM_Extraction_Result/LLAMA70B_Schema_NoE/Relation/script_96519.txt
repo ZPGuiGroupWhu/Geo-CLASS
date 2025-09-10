@@ -1,0 +1,51 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "USGS/GMTED2010"
+        ],
+        "Function": [
+            "Selecting elevation data from USGS/GMTED2010"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "JRC/GHSL/P2016/BUILT_LDSMT_GLOBE_V1"
+        ],
+        "Function": [
+            "Visualizing built-up areas using JRC/GHSL/P2016/BUILT_LDSMT_GLOBE_V1"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "GLOBAL_FLOOD_DB/MODIS_EVENTS/V1"
+        ],
+        "Function": [
+            "Filtering flood events from GLOBAL_FLOOD_DB/MODIS_EVENTS/V1"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "users/eeranyartrodrigo/A_Hist",
+            "users/eeranyartrodrigo/A_Conc"
+        ],
+        "Function": [
+            "Buffering sismos features based on magnitude"
+        ]
+    },
+    "relation_5": {
+        "DataSource": [
+            "JRC/GWIS/GlobFire/v2/DailyPerimeters"
+        ],
+        "Function": [
+            "Computing area of fire perimeters from JRC/GWIS/GlobFire/v2/DailyPerimeters"
+        ]
+    },
+    "relation_6": {
+        "DataSource": [
+            "users/eeranyartrodrigo/SSNMX_catalogo_20220801_20220810"
+        ],
+        "Function": [
+            "None"
+        ]
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "Cloud Masking And Quality Filtering",
+            "Cloud Masking And Quality Filtering"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "Mangrove"
+        ],
+        "Function": [
+            "Classification And Machine Learning"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "BadanAir"
+        ],
+        "Function": [
+            "Classification And Machine Learning"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "LahanTerbuka"
+        ],
+        "Function": [
+            "Classification And Machine Learning"
+        ]
+    },
+    "relation_5": {
+        "DataSource": [
+            "LahanTerbangun"
+        ],
+        "Function": [
+            "Classification And Machine Learning"
+        ]
+    }
+}

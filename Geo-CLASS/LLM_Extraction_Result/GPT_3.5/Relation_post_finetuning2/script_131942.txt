@@ -1,0 +1,18 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2_SR"
+        ],
+        "Function": [
+            "Image Cloud Masking",
+            "Select And Clip Image",
+            "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover",
+            "Data Preparation For Training",
+            "Train And Apply Random Forest Classifier",
+            "Evaluate Classifier Performance Using Confusion Matrix",
+            "Image Reprojection",
+            "Converts Joined Data To Image Collection",
+            "Exporting Classified Images"
+        ]
+    }
+}

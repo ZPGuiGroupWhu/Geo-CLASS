@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover classification and vegetation monitoring"],
+  "DataSource": ["LANDSAT/LT4_L1T_TOA", "LANDSAT/LT5_L1T_TOA", "LANDSAT/LC8_L1T_TOA", "LANDSAT/LE7_L1T_TOA", "FAO/GAUL/2015/level0"],
+  "Function": ["Cloud masking and shadow detection", "Image collection filtering", "NDVI calculation", "Image compositing", "Cloud and shadow masking"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LT4_L1T_TOA", "LANDSAT/LT5_L1T_TOA", "LANDSAT/LC8_L1T_TOA", "LANDSAT/LE7_L1T_TOA"],
+        "Function": ["Cloud masking and shadow detection", "Image collection filtering", "NDVI calculation", "Image compositing"]
+    },
+    "relation_2": {
+        "DataSource": ["FAO/GAUL/2015/level0"],
+        "Function": ["Cloud and shadow masking"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 6356, 'completion_tokens': 286, 'total_tokens': 6642}

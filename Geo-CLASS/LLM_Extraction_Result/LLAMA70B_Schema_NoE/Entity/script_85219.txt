@@ -1,0 +1,19 @@
+{
+    "Theme": [
+        "Land cover change analysis",
+        "Fire severity analysis",
+        "Vegetation health analysis"
+    ],
+    "DataSource": [
+        "users/diegogmzd/CHACO",
+        "COPERNICUS/S2",
+        "COPERNICUS/S3/OLCI"
+    ],
+    "Function": [
+        "MascaraNubesS function to mask clouds in Sentinel-2 images",
+        "Calculation of median image for pre-fire and fire periods",
+        "Calculation of NBR index for fire severity analysis",
+        "Calculation of NDVI index for vegetation health analysis",
+        "Mosaicking and clipping of Sentinel-2 and Sentinel-3 images"
+    ]
+}

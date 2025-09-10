@@ -1,0 +1,29 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Water area analysis using Sentinel-2 data in Ahmedabad"],
+  "DataSource": ["users/ce15btech11022/Final_Cities/Ahmedabad", "COPERNICUS/S2"],
+  "Function": ["Filtering image collection by date and bounds", "Creating daily mosaics from image collection", "Calculating water area using NDWI index", "Creating time series chart of water area", "Exporting feature collection to Drive"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/ce15btech11022/Final_Cities/Ahmedabad"],
+        "Function": ["Filtering image collection by date and bounds", "Creating daily mosaics from image collection", "Calculating water area using NDWI index"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Filtering image collection by date and bounds", "Creating daily mosaics from image collection", "Calculating water area using NDWI index", "Creating time series chart of water area", "Exporting feature collection to Drive"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3184, 'completion_tokens': 291, 'total_tokens': 3475}

@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Generate Land Surface Temperature (LST) map for Java and Bali"],
+  "Theme": ["LST mapping"],
+  "DataSource": ["users/khoirurrizqi/Jawa", "LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Cloud mask creation", "Image collection filtering", "NDVI calculation", "Thermal band selection", "NDVI min-max extraction", "Fractional vegetation calculation", "Emissivity calculation", "LST calculation", "Legend creation", "Map interaction setup"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/khoirurrizqi/Jawa"],
+        "Function": ["Cloud mask creation", "Image collection filtering", "NDVI calculation", "Thermal band selection", "NDVI min-max extraction", "Fractional vegetation calculation", "Emissivity calculation", "LST calculation", "Legend creation", "Map interaction setup"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Cloud mask creation", "Image collection filtering", "NDVI calculation", "Thermal band selection", "NDVI min-max extraction", "Fractional vegetation calculation", "Emissivity calculation", "LST calculation", "Legend creation", "Map interaction setup"]
+    }
+}
+```

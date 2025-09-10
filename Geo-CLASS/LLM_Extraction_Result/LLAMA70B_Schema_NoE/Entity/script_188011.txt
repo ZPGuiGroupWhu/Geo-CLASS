@@ -1,0 +1,20 @@
+{
+    "Theme": [
+        "Land Surface Temperature Analysis"
+    ],
+    "DataSource": [
+        "projects/ee-kimiachenaary/assets/msh",
+        "LANDSAT/LC08/C01/T1_TOA"
+    ],
+    "Function": [
+        "Filtering Landsat 8 TOA images by geometry and selecting B10 band",
+        "Converting Kelvin to Celsius",
+        "Clipping images to geometry",
+        "Calculating seasonal temperatures and elevations",
+        "Reducing images to mean, max, and min values",
+        "Exporting results to CSV files",
+        "Calculating NDVI values and filtering by count",
+        "Reducing regions to mean, max, and min values",
+        "Exporting results to CSV files"
+    ]
+}

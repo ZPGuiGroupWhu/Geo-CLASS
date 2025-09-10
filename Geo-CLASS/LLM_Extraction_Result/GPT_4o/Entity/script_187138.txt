@@ -1,0 +1,5 @@
+{
+  "Theme": ["Forest change", "Surface temperature", "Deforestation analysis"],
+  "DataSource": ["LANDSAT/LC08/C01/T2_SR", "UMD/hansen/global_forest_change_2017_v1_5", "Oxford/MAP/LST_Day_5km_Monthly", "NCEP_RE/surface_temp"],
+  "Function": ["Create binary mask for forested areas", "Create binary mask for deforested areas", "Filter image collection by date and region", "Map function to mask forested areas", "Reduce regions to mean temperature", "Export data to CSV"]
+}

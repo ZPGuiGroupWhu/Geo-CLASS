@@ -1,0 +1,22 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S1_GRD"
+        ],
+        "Function": [
+            "Refined Lee Speckle Filtering",
+            "Binary Image Creation",
+            "Vegetation Cover Classification"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "urban",
+            "forest",
+            "water"
+        ],
+        "Function": [
+            "Vegetation Cover Classification"
+        ]
+    }
+}

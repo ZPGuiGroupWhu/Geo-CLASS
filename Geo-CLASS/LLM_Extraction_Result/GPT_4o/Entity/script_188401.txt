@@ -1,0 +1,5 @@
+{
+  "Theme": ["Temperature analysis over specific region"],
+  "DataSource": ["NOAA/GFS0P25"],
+  "Function": ["Define region boundaries", "Load temperature data", "Filter data by date", "Clip data to region", "Visualize data", "Create animation"]
+}

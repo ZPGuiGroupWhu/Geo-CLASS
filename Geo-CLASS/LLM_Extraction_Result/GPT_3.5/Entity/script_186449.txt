@@ -1,0 +1,6 @@
+{
+  "Summary": ["Generates a scatter plot chart from Landsat SR image data based on different land cover classes."],
+  "Theme": ["Land cover classification"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR/LC08_118062_20150819"],
+  "Function": ["Sample regions from the image for training data", "Create a scatter plot chart for visualization"]
+}

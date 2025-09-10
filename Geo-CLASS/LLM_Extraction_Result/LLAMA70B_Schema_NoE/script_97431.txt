@@ -1,0 +1,27 @@
+Entity Recognition:
+```
+{
+  "Theme": ["Water body analysis using Landsat 8 imagery"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_TOA", "users/eggenm/chad_rivers"],
+  "Function": ["Add MNDWI band to Landsat 8 image", "Simple cloud score calculation", "Masking of cloudy pixels", "Quality mosaic calculation", "Median calculation", "Filtering by month and cloud cover"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_TOA"],
+        "Function": ["Add MNDWI band to Landsat 8 image", "Simple cloud score calculation", "Masking of cloudy pixels", "Quality mosaic calculation", "Median calculation", "Filtering by month and cloud cover"]
+    },
+    "relation_2": {
+        "DataSource": ["users/eggenm/chad_rivers"],
+        "Function": ["Add MNDWI band to Landsat 8 image", "Simple cloud score calculation", "Masking of cloudy pixels", "Quality mosaic calculation", "Median calculation", "Filtering by month and cloud cover"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2578, 'completion_tokens': 295, 'total_tokens': 2873}

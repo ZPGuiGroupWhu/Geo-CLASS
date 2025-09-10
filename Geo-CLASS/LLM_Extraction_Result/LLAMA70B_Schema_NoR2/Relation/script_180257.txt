@@ -1,0 +1,14 @@
+{
+    "relation_1": {
+        "DataSource": ["users/Katemiller125/Illilouette"],
+        "Function": ["Filtering image collection by date", "Image preprocessing"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LE07/C02/T1_L2"],
+        "Function": ["Painting feature collection onto an image", "Image masking"]
+    },
+    "relation_3": {
+        "DataSource": ["LANDSAT/LE07/C01/T1_SR"],
+        "Function": ["Buffering points", "Zonal statistics calculation", "Image renaming"]
+    }
+}

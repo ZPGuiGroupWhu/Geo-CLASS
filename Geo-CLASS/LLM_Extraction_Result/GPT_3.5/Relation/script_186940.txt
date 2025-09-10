@@ -1,0 +1,18 @@
+{
+    "relation_1": {
+        "DataSource": ["users/juandb/bloco_TIs_Kayapo"],
+        "Function": ["Harmonization of Landsat 8 to Landsat 7 reflectance values", "Building annual Landsat image mosaics using medoid compositing"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LT05/C01/T1_SR"],
+        "Function": ["Building annual Landsat image mosaics using medoid compositing"]
+    },
+    "relation_3": {
+        "DataSource": ["LANDSAT/LE07/C01/T1_SR"],
+        "Function": ["Building annual Landsat image mosaics using medoid compositing"]
+    },
+    "relation_4": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Harmonization of Landsat 8 to Landsat 7 reflectance values", "Building annual Landsat image mosaics using medoid compositing"]
+    }
+}

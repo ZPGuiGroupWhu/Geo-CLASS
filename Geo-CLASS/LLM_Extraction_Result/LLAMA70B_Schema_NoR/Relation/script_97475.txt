@@ -1,0 +1,23 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Masking clouds from Sentinel-2 images",
+            "Filtering image collection by date and bounds",
+            "Calculating median of image collection",
+            "Clipping image to bounds",
+            "Renaming bands"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "USGS/NED"
+        ],
+        "Function": [
+            "Generating slope and aspect from DEM",
+            "Stacking DEM, slope, and aspect with imagery"
+        ]
+    }
+}

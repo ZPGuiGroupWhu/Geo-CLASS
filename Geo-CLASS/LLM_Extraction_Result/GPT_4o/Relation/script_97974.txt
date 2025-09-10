@@ -1,0 +1,18 @@
+{
+  "relation_1": {
+    "DataSource": ["users/EL/Grenada"],
+    "Function": ["Center map on country", "Buffer country borders"]
+  },
+  "relation_2": {
+    "DataSource": ["LANDSAT/LE7_L1T"],
+    "Function": ["Filter Landsat images by date and cloud cover", "Create image mosaic", "Calculate band ratios", "Add bands to image", "Visualize image mosaic"]
+  },
+  "relation_3": {
+    "DataSource": ["LANDSAT/LC08/C01/T1_RT"],
+    "Function": ["Filter Landsat images by date and cloud cover", "Create image mosaic", "Calculate band ratios", "Add bands to image", "Visualize image mosaic"]
+  },
+  "relation_4": {
+    "DataSource": ["users/EL/G_forest"],
+    "Function": ["Mask non-forest areas"]
+  }
+}

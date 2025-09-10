@@ -1,0 +1,197 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var terra = ee.ImageCollection("MODIS/006/MOD10A1"),
+    geometry = 
+    /* color: #d63000 */
+    /* shown: false */
+    ee.Geometry.Polygon(
+        [[[-125.346484375, 49.02684599715732],
+          [-125.346484375, 41.88976351870895],
+          [-110.932421875, 41.88976351870895],
+          [-110.932421875, 49.02684599715732]]], null, false),
+    snotel_or = ee.FeatureCollection("users/ak_glaciers/points_w_ids_OR"),
+    geometry2 = 
+    /* color: #98ff00 */
+    /* shown: false */
+    ee.Geometry.Polygon(
+        [[[-124.19451928131004, 45.91936690702736],
+          [-124.19451928131004, 43.975742196243225],
+          [-120.37127709381004, 43.975742196243225],
+          [-120.37127709381004, 45.91936690702736]]], null, false),
+    or_snotel = ee.FeatureCollection("users/ak_glaciers/or_snotel_sites"),
+    pnw_snotel = ee.FeatureCollection("users/ak_glaciers/NWCC_high_resolution_coordinates_2019_edited_updated_fields_final");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+var featureValues = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29];
+
+var featureCol = 'users/ak_glaciers/gee_tiles_2_15_clipped';
+var featureKey = 'eetile2x15';
+//note that the start and end year should be adjusted depending on whether we want to do pre or post 1999
+var first_year = 1984; // what year do you want to start the time series 
+var last_year = 2020; // what year do you want to end the time series
+var startDay = ['12-01']; 
+var endDay =   ['03-01']; 
+var fil_year = 2020
+
+
+// ###### ANNUAL SR TIME SERIES STACK BUILDING FUNCTIONS #################################
+
+
+// ------ DEFINE L8 to L7 ALIGN FUNCTION ---------
+
+// slope and intercept citation: Roy, D.P., Kovalskyy, V., Zhang, H.K., Vermote, E.F., Yan, L., Kumar, S.S, Egorov, A., 2016, Characterization of Landsat-7 to Landsat-8 reflective wavelength and normalized difference vegetation index continuity, Remote Sensing of Environment, 185, 57-70.(http://dx.doi.org/10.1016/j.rse.2015.12.024); Table 2 - reduced major axis (RMA) regression coefficients
+var harmonizationRoy = function(oli) {
+  var slopes = ee.Image.constant([0.9785, 0.9542, 0.9825, 1.0073, 1.0171, 0.9949]); // create an image of slopes per band for L8 TO L7 regression line - David Roy
+  var itcp = ee.Image.constant([-0.0095, -0.0016, -0.0022, -0.0021, -0.0030, 0.0029]); // create an image of y-intercepts per band for L8 TO L7 regression line - David Roy
+  var y = oli.select(['B2','B3','B4','B5','B6','B7'],['B1', 'B2', 'B3', 'B4', 'B5', 'B7']) // select OLI bands 2-7 and rename them to match L7 band names
+             .resample('bicubic') // ...resample the L8 bands using bicubic
+             .subtract(itcp.multiply(10000)).divide(slopes) // ...multiply the y-intercept bands by 10000 to match the scale of the L7 bands then apply the line equation - subtract the intercept and divide by the slope
+             .set('system:time_start', oli.get('system:time_start')); // ...set the output system:time_start metadata to the input image time_start otherwise it is null
+  return y.toShort(); // set image to signed 16-bit integer 
+};
+
+
+// harmonize tm and etm+ to oli
+var harmonizationRoy2OLI = function(tm) {
+  var slopes = ee.Image.constant([0.9785, 0.9542, 0.9825, 1.0073, 1.0171, 0.9949]);        // RMA - create an image of slopes per band for L7 TO L8 regression line - David Roy
+  var itcp = ee.Image.constant([-0.0095, -0.0016, -0.0022, -0.0021, -0.0030, 0.0029]);     // RMA - create an image of y-intercepts per band for L7 TO L8 regression line - David Roy
+   var y = tm.select(['B1','B2','B3','B4','B5','B7'])                                  // select TM bands 1-5,7 
+             .resample('bicubic')                                                          // ...resample the TM bands using bicubic
+             .multiply(slopes).add(itcp.multiply(10000))                                  // ...multiply the y-intercept bands by 10000 to match the scale of the L8 bands then apply the line equation - scale by the slope and add the intercept 
+             .set('system:time_start', tm.get('system:time_start'));                      // ...set the output system:time_start metadata to the input image time_start otherwise it is null
+  return y.toShort();                                                                    
+};
+
+
+// ------ DEFINE FUNCTION TO RETRIEVE A SENSOR SR COLLECTION -----------------------------
+ 
+var getSRcollection = function(firstYear,lastYear, startDay, endDay, sensor, box) {
+  var srCollection = ee.ImageCollection('LANDSAT/'+ sensor + '/C01/T1_SR') // get surface reflectance images
+                       .filterBounds(box) // filter them by a bounding box
+                       //need to use the calendarRange because filtering between the dates was just getting all of the dates
+                       .filter(ee.Filter.calendarRange(ee.Number.parse(ee.String(startDay[0]).slice(3,5)),ee.Number.parse(ee.String(endDay[0]).slice(3,5)),'day_of_month'))
+                       .filter(ee.Filter.calendarRange(ee.Number.parse(ee.String(startDay[0]).slice(0,2)),ee.Number.parse(ee.String(endDay[0]).slice(0,2)),'month'))
+                       .filter(ee.Filter.calendarRange(firstYear,lastYear,'year'))
+                       
+             
+  srCollection = srCollection.map(function(img) {
+    var dat = ee.Image(
+      ee.Algorithms.If(
+        sensor != 'LC08',
+        harmonizationRoy2OLI(img.unmask()),
+        img.select(['B2','B3','B4','B5','B6','B7'],['B1', 'B2', 'B3', 'B4', 'B5', 'B7'])
+        
+        
+        
+           .unmask() // false - else select out the reflectance bands from the non-OLI image and unmask any previous pixels 
+           .resample('bicubic') // ...resample by bicubic 
+           .set('system:time_start', img.get('system:time_start')) // ...set the output system:time_start metadata to the input image time_start otherwise it is null
+      )
+    );
+
+    
+    
+    var qa = img.select('pixel_qa');
+    var mask = qa.bitwiseAnd(8).eq(0).and( // Shadow
+               
+               qa.bitwiseAnd(32).eq(0)); // Clouds
+    var datMasked = dat.mask(mask); 
+    
+
+    return datMasked; 
+  });
+
+  return srCollection; 
+};
+
+
+
+
+
+var getCombinedSRcollection = function(firstYear,lastYear, startDay, endDay, box) {
+    
+    var lt4 = getSRcollection(firstYear,lastYear, startDay, endDay, 'LT04', box); // get TM collection for a given year and bounding area
+    var lt5 = getSRcollection(firstYear,lastYear, startDay, endDay, 'LT05', box); // get TM collection for a given year and bounding area
+    var le7 = getSRcollection(firstYear,lastYear, startDay, endDay, 'LE07', box); // get ETM+ collection for a given year and bounding area
+    var lc8 = getSRcollection(firstYear,lastYear, startDay, endDay, 'LC08', box); // get OLI collection for a given year and bounding area
+    return  ee.ImageCollection(lt4.merge(lt5).merge(le7).merge(lc8)); // merge the individual sensor collections into one imageCollection object
+};
+
+
+
+
+
+
+// ############################EXPORT SOME DATA############################################
+
+//get list of huc ids
+
+
+
+
+
+var hucs = ee.FeatureCollection("USGS/WBD/2017/HUC08").filterBounds(pnw_snotel)
+
+
+
+//make a test dataset
+
+
+
+
+
+
+
+
+
+
+
+
+var test = getCombinedSRcollection(fil_year-1,fil_year,startDay,endDay,geometry) //subtract from first year instead of adding to last year
+print(test)
+Map.addLayer(test.min(),{},'test')
+
+
+
+
+
+var get_stats = hucs.map(function(x){
+  
+  var yearly_ic = getCombinedSRcollection(fil_year-1,fil_year,startDay,endDay,x.geometry()) //subtract from first year instead of adding to last year
+  var count_ic = yearly_ic.select('B1').count(); 
+  //calculate sp for the yearly image collection
+  var sp_ic = yearly_ic.map(function(img){
+  var nd = img.addBands(img.normalizedDifference(['B4','B5']))
+  var masked = (nd.select('nd').where(nd.select('nd').gte(0.4),1).where(nd.select('nd').lt(0.4),0))
+  return masked.select('nd')
+  }); 
+  //calculate the yearly sp value for the huc
+  var sp = (sp_ic.sum()).divide(count_ic)
+  //get the stats for export
+  var pixel_ct_dict = sp.reduceRegion({ 
+          reducer: ee.Reducer.mean(),
+          geometry: x.geometry(),
+          scale: 30,
+          
+          tileScale:6,
+          maxPixels: 1e13
+        });
+  
+  var dict_out = pixel_ct_dict.set('huc8',x.get('huc8'));
+  var dict_feat = ee.Feature(null, dict_out);
+  return dict_feat; 
+  
+}); 
+
+
+
+// ###### GENERATE OUTPUTS################################################################
+
+
+
+
+Export.table.toDrive({
+    collection:ee.FeatureCollection(get_stats),
+    description:'wy_'+fil_year.toString()+("_march_1_winter_PNW_huc08"),
+    folder:"optical_sar_outputs",
+    fileNamePrefix: 'wy_'+fil_year.toString()+("_march_1_winter_PNW_huc08"),
+    fileFormat: 'csv'
+}); 

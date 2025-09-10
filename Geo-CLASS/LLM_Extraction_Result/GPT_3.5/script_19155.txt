@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Script classifies land cover using Sentinel-2 imagery."],
+  "Theme": ["Land cover classification"],
+  "DataSource": ["COPERNICUS/S2", "cultivado", "nocultivado", "urbano", "suelo_desnudo"],
+  "Function": ["Image collection filtering", "Image sampling", "Random forest classification"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Image collection filtering", "Image sampling", "Random forest classification"]
+    },
+    "relation_2": {
+        "DataSource": ["cultivado", "nocultivado", "urbano", "suelo_desnudo"],
+        "Function": ["Image collection filtering", "Image sampling", "Random forest classification"]
+    }
+}
+```

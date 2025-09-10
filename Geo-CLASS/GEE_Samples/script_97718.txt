@@ -1,0 +1,243 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var geometry = 
+    /* color: #d63000 */
+    /* shown: false */
+    ee.Geometry.Polygon(
+        [[[-57.81631016420556, -37.932536556305514],
+          [-57.81605267214013, -37.93206267102743],
+          [-57.80678295778466, -37.92492017295598],
+          [-57.812705275289545, -37.92034996424086],
+          [-57.81573885368539, -37.913107338932036],
+          [-57.81865709709359, -37.91398763603479],
+          [-57.82745474266244, -37.915409632179085],
+          [-57.83243292259408, -37.917542574854195],
+          [-57.827798065416346, -37.92207910438073],
+          [-57.82938593315316, -37.922451493630156],
+          [-57.827068504564295, -37.92397488455992],
+          [-57.82672518181039, -37.92461808458835],
+          [-57.82689684318734, -37.92776629830025],
+          [-57.828570541612635, -37.928612569321345],
+          [-57.82938593315316, -37.92915417766298],
+          [-57.82814138817025, -37.92986503255661],
+          [-57.8259527056141, -37.930508181061825],
+          [-57.82410734581185, -37.93115132394078],
+          [-57.82213323997689, -37.933013021611025],
+          [-57.81887167381478, -37.93348690076294],
+          [-57.81724089073373, -37.9334530523534]]]);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+// --------- NDVI --------------
+
+
+
+// Create image collection of S-2 imagery for the perdiod 2016-2018
+
+var S2 = ee.ImageCollection('COPERNICUS/S2')
+
+
+
+//filter start and end date
+
+.filterDate('2019-03-01', '2019-05-15')
+
+
+
+//filter according to drawn boundary
+
+.filterBounds(geometry);
+
+
+
+// Function to mask cloud from built-in quality band
+
+// information on cloud
+
+var maskcloud1 = function(image) {
+
+var QA60 = image.select(['QA60']);
+
+return image.updateMask(QA60.lt(1));
+
+};
+
+
+
+// Function to calculate and add an NDVI band
+
+var addNDVI = function(image) {
+
+return image.addBands(image.normalizedDifference(['B8', 'B4']));
+
+};
+
+
+
+// Add NDVI band to image collection
+
+var S2 = S2.map(addNDVI);
+
+// Extract NDVI band and create NDVI median composite image
+
+var NDVI = S2.select(['nd']);
+
+var NDVImed = NDVI.median(); //I just changed the name of this variable ;)
+
+
+
+
+
+var ndvi_pal = ['FFFFFF', 'CE7E45', 'DF923D', 'F1B555', 'FCD163', '99B718',
+
+              '74A901', '66A000', '529400', '3E8601', '207401', '056201',
+
+              '004C00', '023B01', '012E01', '011D01', '011301'];
+
+
+
+// Create a time series chart.
+
+var plotNDVI = ui.Chart.image.seriesByRegion(S2, geometry,ee.Reducer.mean(),
+
+'nd',500,'system:time_start', 'system:index')
+
+              .setChartType('LineChart').setOptions({
+
+                title: 'NDVI short-term time series',
+
+                hAxis: {title: 'Date'},
+
+                vAxis: {title: 'NDVI'}
+
+});
+
+
+
+// Display.
+
+print(plotNDVI);
+
+
+
+// Display NDVI results on map
+
+Map.addLayer(NDVImed.clip(geometry), {min:-0.023, max:0.6, palette: ndvi_pal}, 'NDVI');
+
+
+
+// Exportar
+
+var SentinelClip = NDVImed.clip (geometry);
+
+
+
+Export.image.toDrive({
+
+  image: SentinelClip.select("nd"),
+
+  description: 'S2_NDVI_10m',
+
+  scale: 10,
+
+  region: geometry});
+
+  
+
+// MSI  B11 / B08
+
+// Simple Ratio 1600/820 Moisture Stress Index (abbrv. MSI)
+
+
+
+
+
+//Imagen para SENTINEL 2
+
+
+
+var IMGSentinel= ee.ImageCollection ('COPERNICUS/S2') 
+
+  .filterDate ('2019-01-01', '2019-05-15') //fechas disponibles ('2015-07-01' - actualidad)
+
+  .filterBounds (geometry) 
+
+  .filterMetadata ('CLOUDY_PIXEL_PERCENTAGE', 'Less_Than', 30);
+
+var SentinelFiltro = ee.Image(IMGSentinel.median());
+
+var SentinelClip = SentinelFiltro.clip (geometry);
+
+//Compute the Normalized Difference Vegetation Index (NDVI).
+
+var nir = SentinelClip.select('B8');
+
+var SWIR1 = SentinelClip.select('B11');
+
+
+
+var addGCI = function(image) {
+
+return image.addBands(((nir.divide(SWIR1))).rename('MSI'))};
+
+var IMGSentinel = IMGSentinel.map(addGCI);
+
+// Extract NDVI band and create NDVI median composite image
+
+var MSI = IMGSentinel.select(['MSI']);
+
+var MSImed = MSI.median(); //I just changed the name of this variable ;)
+
+
+
+var MSI_pal = ['FFFFFF', 'CE7E45', 'DF923D', 'F1B555', 'FCD163', '99B718',
+
+              '74A901', '66A000', '529400', '3E8601', '207401', '056201',
+
+              '004C00', '023B01', '012E01', '011D01', '011301'];
+
+
+
+
+
+// Display NDVI results on map
+
+Map.addLayer(MSImed, {min: 0, max:2, palette: MSI_pal}, 'MSI');
+
+
+
+// Exportar
+
+var SentinelClip = MSImed.clip (geometry);
+
+
+
+Export.image.toDrive({
+
+  image: SentinelClip.select("MSI"),
+
+  description: 'S2_MSI_10m',
+
+  scale: 10,
+
+  region: geometry});
+
+
+
+var plotMSI = ui.Chart.image.seriesByRegion(IMGSentinel, geometry,ee.Reducer.mean(),
+
+'MSI',500,'system:time_start', 'system:index')
+
+              .setChartType('LineChart').setOptions({
+
+                title: 'MSI short-term time series',
+
+                hAxis: {title: 'Date'},
+
+                vAxis: {title: 'MSI'}
+
+});
+
+
+
+// Display.
+
+print(plotMSI);
+

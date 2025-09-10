@@ -1,0 +1,6 @@
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Composite Sentinel-1 images", "Filter image collection by date and polarization", "Visualize image with custom palette", "Create layer selection widget", "Update map with selected image"]
+    }
+}

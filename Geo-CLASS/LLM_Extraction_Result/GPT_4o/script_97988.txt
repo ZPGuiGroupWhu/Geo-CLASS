@@ -1,0 +1,33 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Forest classification", "Water masking", "Landsat mosaic creation", "Sentinel mosaic creation"],
+  "DataSource": ["users/EL/mapa_forest_hybrid_Belize", "LANDSAT/LT5_L1T", "LANDSAT/LE7_L1T", "LANDSAT/LC08/C01/T1_RT", "COPERNICUS/S2", "JRC/GSW1_0/GlobalSurfaceWater"],
+  "Function": ["Define study area", "Create forest and non-forest points", "Upload raster image", "Upload Landsat imagery", "Upload Sentinel imagery", "Apply water mask", "Filter Landsat 8 images", "Create Landsat 8 mosaic", "Calculate band ratios for Landsat 8", "Filter Landsat 7 images", "Create Landsat 7 mosaic", "Calculate band ratios for Landsat 7", "Visualize Landsat mosaics", "Filter Sentinel 2 images", "Add quality bands to Sentinel 2", "Create Sentinel mosaic", "Visualize Sentinel mosaic", "Sample points for classification", "Train classifier", "Classify Sentinel mosaic", "Apply water mask to classification", "Calculate forest area", "Export classified image"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["users/EL/mapa_forest_hybrid_Belize"],
+    "Function": ["Upload raster image"]
+  },
+  "relation_2": {
+    "DataSource": ["LANDSAT/LT5_L1T", "LANDSAT/LE7_L1T", "LANDSAT/LC08/C01/T1_RT"],
+    "Function": ["Upload Landsat imagery", "Filter Landsat 8 images", "Create Landsat 8 mosaic", "Calculate band ratios for Landsat 8", "Filter Landsat 7 images", "Create Landsat 7 mosaic", "Calculate band ratios for Landsat 7", "Visualize Landsat mosaics"]
+  },
+  "relation_3": {
+    "DataSource": ["COPERNICUS/S2"],
+    "Function": ["Upload Sentinel imagery", "Filter Sentinel 2 images", "Add quality bands to Sentinel 2", "Create Sentinel mosaic", "Visualize Sentinel mosaic", "Sample points for classification", "Train classifier", "Classify Sentinel mosaic"]
+  },
+  "relation_4": {
+    "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+    "Function": ["Apply water mask", "Apply water mask to classification"]
+  }
+}
+```
+
+Total_Token_Usage:
+9384

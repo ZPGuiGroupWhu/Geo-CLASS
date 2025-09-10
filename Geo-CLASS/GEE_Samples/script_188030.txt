@@ -1,0 +1,549 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var geometry = 
+    /* color: #d63000 */
+    ee.Geometry.Polygon(
+        [[[-120.2136750936508, 38.07464606532457],
+          [-120.2136750936508, 37.79737006774439],
+          [-119.8621125936508, 37.79737006774439],
+          [-119.8621125936508, 38.07464606532457]]], null, false);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+var geometry = ee.FeatureCollection("projects/ee-kimiachenaary/assets/Tehran");
+
+
+
+//cloud mask
+
+var maskL8 = function(image) {
+
+  var qa = image.select('BQA');
+
+  /// Check that the cloud bit is off.
+
+  // See https://www.usgs.gov/land-resources/nli/landsat/landsat-collection-1-level-1-quality-assessment-band
+
+  var mask = qa.bitwiseAnd(1 << 4).eq(0);
+
+  return image.updateMask(mask);
+
+}
+
+
+
+//Create  dataset
+
+
+
+var dataset = ee.ImageCollection('LANDSAT/LC08/C01/T1_TOA')
+
+                  .filterDate('2021-01-01', '2021-12-30')
+
+                  .select('B1','B2','B3','B4','BQA')
+
+                  .filterBounds(geometry)
+
+                  .map(maskL8);
+
+
+
+
+
+
+
+
+
+//RGB visualization
+
+
+
+var visParams = {
+
+  bands: ['B3', 'B2', 'B1'],
+
+  min: 0,
+
+  max: 1,
+
+  gamma: 1.4,
+
+};
+
+
+
+
+
+//clip the dataset according to the geometry
+
+var clippedCol=dataset.map(function(im){ 
+
+  return im.clip(geometry);
+
+});
+
+
+
+// Get the number of images.
+
+var count = dataset.size();
+
+print('Count: ',count);
+
+
+
+print(dataset,'dataset');
+
+
+
+//function to calculate NDVI in LANDSAT7
+
+var addNDVI = function(image) {
+
+  var NDVI = image.normalizedDifference(['B4', 'B3'])
+
+  .rename('NDVI')
+
+  .copyProperties(image,['system:time_start']);
+
+  return image.addBands(NDVI);
+
+
+
+};
+
+
+
+//NDVI to the clipped image collection
+
+var withNDVI = clippedCol.map(addNDVI).select('NDVI');
+
+
+
+var NDVIcolor = {
+
+  min: -1,
+
+  max:1,
+
+  palette: ['FFFFFF', 'CE7E45', 'DF923D', 'F1B555', 'FCD163', '99B718', '74A901',
+
+    '66A000', '529400', '3E8601', '207401', '056201', '004C00', '023B01',
+
+    '012E01', '011D01', '011301'],
+
+
+
+
+
+
+
+
+
+};
+
+
+
+
+
+var ndviWithCount = withNDVI.map(function(image){
+
+  var countpixels = ee.Number(image.reduceRegion({
+
+  reducer: ee.Reducer.count(),
+
+  geometry: geometry,
+
+  crs: 'EPSG:4326',
+
+  scale: 30,
+
+  }).get('NDVI'));
+
+
+
+  return image.set('count', countpixels);
+
+});
+
+
+
+print(ndviWithCount, 'ndviWithCount');
+
+
+
+
+
+
+
+
+
+//filter between a range
+
+var filter = ndviWithCount.filter(ee.Filter.rangeContains(
+
+          'count', 220000, 446224))
+
+print(filter, 'filtered');
+
+
+
+var max = ndviWithCount.reduceColumns(ee.Reducer.max(),  ["count"])
+
+print(max)
+
+print(max.get('max'));
+
+
+
+
+
+var OrderList=[0,1,2,3,4,5,6,7,8,9,10]
+
+
+
+filter = filter.toList(filter.size()); // convert ImageCollection to List
+
+for (var i in OrderList) {
+
+  var image = ee.Image(filter.get(OrderList[i]));
+
+  var toexport=image.visualize(NDVIcolor).addBands(image);
+
+
+
+
+
+  // do what ever you need with image
+
+  Map.addLayer(image, NDVIcolor, i);
+
+
+
+
+
+
+
+ }
+
+
+
+
+
+print(ui.Chart.image.series(filter, geometry, ee.Reducer.mean(), 30));
+
+print(ui.Chart.image.series(withNDVI, geometry, ee.Reducer.max(), 30));
+
+print(ui.Chart.image.series(withNDVI, geometry, ee.Reducer.min(), 30));
+
+print(ui.Chart.image.series(withNDVI, geometry, ee.Reducer.minMax(), 30));
+
+print(ui.Chart.image.series(withNDVI, geometry, ee.Reducer.stdDev(), 30));
+
+
+
+
+
+var chart = ui.Chart.image.series({
+
+    imageCollection: clippedCol.map(addNDVI).select('NDVI'),
+
+    region:geometry,
+
+    reducer: ee.Reducer.mean(),
+
+    scale: 30,
+
+});
+
+
+
+
+
+var startdate = '2021-01-01'  
+
+var enddate = '2021-12-30' 
+
+
+
+var EVI = clippedCol.map(addNDVI).select('NDVI');
+
+print(EVI, 'EVI')
+
+
+
+//create function to calculate mean values for each polygon
+
+var pointsmean = function(image) {
+
+  var means = image.reduceRegions({
+
+    collection: geometry, 
+
+    reducer: ee.Reducer.mean(),
+
+    scale: 30
+
+  })
+
+  
+
+  // assign time for every feature
+
+  means = means.map(function(f) { return f.set({date: image.date().format("YYYY-MM-dd")}) })
+
+  
+
+  return means.copyProperties(image)
+
+  
+
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var pointsmax = function(image) {
+
+  var maxs = image.reduceRegions({
+
+    collection: geometry, 
+
+    reducer: ee.Reducer.max(),
+
+    scale: 30
+
+  })
+
+  
+
+  // assign time for every feature
+
+  maxs = maxs.map(function(f) { return f.set({date: image.date().format("YYYY-MM-dd")}) })
+
+  
+
+  return maxs.copyProperties(image)
+
+  
+
+};
+
+var finalEVIi = EVI.map(pointsmax).flatten()
+
+.sort('date', false)
+
+.select(['date', 'max' ])
+
+print(finalEVIi.limit(100), 'final EVI2')
+
+
+
+
+
+Export.table.toDrive({
+
+collection: finalEVIi,
+
+  description: 'EVImax_'+startdate+'TO'+enddate,
+
+fileFormat: 'CSV'
+
+});
+
+
+
+
+
+
+
+var finalEVI = EVI.map(pointsmean).flatten()
+
+.sort('date', false)
+
+.select(['date', 'mean' ])
+
+print(finalEVI.limit(100), 'final EVI')
+
+
+
+Export.table.toDrive({
+
+collection: finalEVI,
+
+  description: 'EVImean_'+startdate+'TO'+enddate,
+
+fileFormat: 'CSV'
+
+});
+
+
+
+
+
+var pointsmax = function(image) {
+
+  var maxs = image.reduceRegions({
+
+    collection: geometry, 
+
+    reducer: ee.Reducer.min(),
+
+    scale: 30
+
+  })
+
+  
+
+  // assign time for every feature
+
+  maxs = maxs.map(function(f) { return f.set({date: image.date().format("YYYY-MM-dd")}) })
+
+  
+
+  return maxs.copyProperties(image)
+
+  
+
+};
+
+var finalEVIii = EVI.map(pointsmax).flatten()
+
+.sort('date', false)
+
+.select(['date', 'min' ])
+
+print(finalEVIi.limit(100), 'final EVI2')
+
+
+
+
+
+Export.table.toDrive({
+
+collection: finalEVIii,
+
+  description: 'EVImin_'+startdate+'TO'+enddate,
+
+fileFormat: 'CSV'
+
+});
+
+
+
+
+
+
+
+
+
+// get the information using getRegion()
+
+var data = dataset.getRegion(geometry,30);
+
+// keys of the variables are in the first list
+
+var keys = ee.List(data.get(0));
+
+
+
+// make a feature collection from all the values from row 1 till end
+
+var featureCollection = ee.FeatureCollection(data.slice(1).map(function(singleData){
+
+  singleData = ee.List(singleData);
+
+  var dict = ee.Dictionary.fromLists(keys, singleData);
+
+  var point = ee.Geometry.Point([dict.get('longitude'), dict.get('latitude')]);
+
+  var timeFormat = ee.Date(dict.get('time')).format('YYYY-MM-dd');
+
+  return ee.Feature(point, dict).set('timeFormat', timeFormat);
+
+}));
+
+var featureCollection = ndviWithCount.map(function(image){
+
+  var data = image.reduceRegions(geometry,'max',30).map(function(feat){
+
+    return ee.Feature(feat).set('time', image.get('system:time_start'), 'id', image.get('system:index'),
+
+          'timeFormat', ee.Date(image.get('system:time_start')).format('YYYY-MM-dd'),
+
+          'latitude', feat.geometry().coordinates().get(0), 'longitude', feat.geometry().coordinates().get(0));
+
+  });
+
+  return data;
+
+}).flatten();
+
+
+
+
+
+print(featureCollection)
+
+Map.addLayer(featureCollection, {color: 'green'})
+
+
+
+Export.table.toDrive(ndviWithCount, 'exportAsCSV', 'GEE', 'CSVexport', 'CSV');
+
+
+
+
+
+// get the mean value for the region from each image
+
+var meanEVI = withNDVI.map(function(image){
+
+  var date = image.get('system:time_start');
+
+  var mean = image.reduceRegion({
+
+    reducer: ee.Reducer.mean(),
+
+    geometry: geometry,
+
+    scale: 30
+
+  });
+
+  
+
+  return ee.Feature(null, {'mean': mean.get('NDVI'),
+
+                            'date': date})
+
+});
+
+
+
+// Export a .csv table of date, mean NDVI for watershed
+
+Export.table.toDrive({
+
+  collection: meanEVI,
+
+  description: 'EVI_Timeseries',
+
+  folder: 'Genus_Exchange_GEE_Data',
+
+  fileFormat: 'CSV',
+
+})
+
+
+
+
+

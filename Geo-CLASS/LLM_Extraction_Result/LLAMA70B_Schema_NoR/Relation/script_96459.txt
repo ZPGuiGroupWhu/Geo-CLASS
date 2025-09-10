@@ -1,0 +1,29 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LE07/C01/T1_TOA"
+        ],
+        "Function": [
+            "Filtering image collections by date and cloud cover",
+            "Calculating spectral indices"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Unmixing images for land cover classification",
+            "Applying Otsu thresholding for binary classification"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "users/eeranyartrodrigo/ferrocarriles/coahuilaPols"
+        ],
+        "Function": [
+            "Unmixing images for land cover classification",
+            "Applying Otsu thresholding for binary classification"
+        ]
+    }
+}

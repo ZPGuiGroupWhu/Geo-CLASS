@@ -1,0 +1,457 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var roi = ee.FeatureCollection("users/bkkumarbittu371/Andhra_Pradesht");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+//JANUARY
+
+var collection = ee.ImageCollection('COPERNICUS/S5P/OFFL/L3_O3')
+
+  .select('O3_column_number_density')
+
+  .filterBounds(roi)
+
+  .filterDate('2019-01-01', '2019-01-31');
+
+
+
+// This automatically pans the map to the middle of our area of interest
+
+Map.centerObject(roi);
+
+
+
+var datasets=collection.mean();
+
+var clipped=datasets.clip(roi);
+
+
+
+var Mean_jan_2019 = clipped.reduceRegion({
+
+  reducer:ee.Reducer.mean(),
+
+  geometry:roi,
+
+  scale:500,
+
+})
+
+print ("Mean_jan_2019",Mean_jan_2019)
+
+
+
+//FEBRUARY
+
+var collection = ee.ImageCollection('COPERNICUS/S5P/OFFL/L3_O3')
+
+  .select('O3_column_number_density')
+
+  .filterBounds(roi)
+
+  .filterDate('2019-02-01', '2019-02-28');
+
+
+
+// This automatically pans the map to the middle of our area of interest
+
+Map.centerObject(roi);
+
+
+
+var datasets=collection.mean();
+
+var clipped=datasets.clip(roi);
+
+
+
+var Mean_feb_2019 = clipped.reduceRegion({
+
+  reducer:ee.Reducer.mean(),
+
+  geometry:roi,
+
+  scale:500,
+
+})
+
+print ("Mean_feb_2019",Mean_feb_2019)
+
+ 
+
+ //March
+
+ var collection = ee.ImageCollection('COPERNICUS/S5P/OFFL/L3_O3')
+
+  .select('O3_column_number_density')
+
+  .filterBounds(roi)
+
+  .filterDate('2019-03-01', '2019-03-31');
+
+
+
+// This automatically pans the map to the middle of our area of interest
+
+Map.centerObject(roi);
+
+
+
+var datasets=collection.mean();
+
+var clipped=datasets.clip(roi);
+
+
+
+var Mean_mar_2019 = clipped.reduceRegion({
+
+  reducer:ee.Reducer.mean(),
+
+  geometry:roi,
+
+  scale:500,
+
+})
+
+print ("Mean_mar_2019",Mean_mar_2019)
+
+
+
+//April
+
+var collection = ee.ImageCollection('COPERNICUS/S5P/OFFL/L3_O3')
+
+  .select('O3_column_number_density')
+
+  .filterBounds(roi)
+
+  .filterDate('2019-04-01', '2019-04-30');
+
+
+
+// This automatically pans the map to the middle of our area of interest
+
+Map.centerObject(roi);
+
+
+
+var datasets=collection.mean();
+
+var clipped=datasets.clip(roi);
+
+
+
+var Mean_apr_2019 = clipped.reduceRegion({
+
+  reducer:ee.Reducer.mean(),
+
+  geometry:roi,
+
+  scale:500,
+
+})
+
+print ("Mean_apr_2019",Mean_apr_2019)
+
+
+
+//May
+
+var collection = ee.ImageCollection('COPERNICUS/S5P/OFFL/L3_O3')
+
+  .select('O3_column_number_density')
+
+  .filterBounds(roi)
+
+  .filterDate('2019-05-01', '2019-05-31');
+
+
+
+// This automatically pans the map to the middle of our area of interest
+
+Map.centerObject(roi);
+
+
+
+var datasets=collection.mean();
+
+var clipped=datasets.clip(roi);
+
+
+
+var Mean_may_2019 = clipped.reduceRegion({
+
+  reducer:ee.Reducer.mean(),
+
+  geometry:roi,
+
+  scale:500,
+
+})
+
+print ("Mean_may_2019",Mean_may_2019)
+
+
+
+//June
+
+var collection = ee.ImageCollection('COPERNICUS/S5P/OFFL/L3_O3')
+
+  .select('O3_column_number_density')
+
+  .filterBounds(roi)
+
+  .filterDate('2019-06-01', '2019-06-30');
+
+
+
+// This automatically pans the map to the middle of our area of interest
+
+Map.centerObject(roi);
+
+
+
+var datasets=collection.mean();
+
+var clipped=datasets.clip(roi);
+
+
+
+var Mean_june_2019 = clipped.reduceRegion({
+
+  reducer:ee.Reducer.mean(),
+
+  geometry:roi,
+
+  scale:500,
+
+})
+
+print ("Mean_june_2019",Mean_june_2019)
+
+
+
+//July
+
+var collection = ee.ImageCollection('COPERNICUS/S5P/OFFL/L3_O3')
+
+  .select('O3_column_number_density')
+
+  .filterBounds(roi)
+
+  .filterDate('2019-07-01', '2019-07-31');
+
+
+
+// This automatically pans the map to the middle of our area of interest
+
+Map.centerObject(roi);
+
+
+
+var datasets=collection.mean();
+
+var clipped=datasets.clip(roi);
+
+
+
+var Mean_july_2019 = clipped.reduceRegion({
+
+  reducer:ee.Reducer.mean(),
+
+  geometry:roi,
+
+  scale:500,
+
+})
+
+print ("Mean_july_2019",Mean_july_2019)
+
+
+
+//August
+
+var collection = ee.ImageCollection('COPERNICUS/S5P/OFFL/L3_O3')
+
+  .select('O3_column_number_density')
+
+  .filterBounds(roi)
+
+  .filterDate('2019-08-01', '2019-08-31');
+
+
+
+// This automatically pans the map to the middle of our area of interest
+
+Map.centerObject(roi);
+
+
+
+var datasets=collection.mean();
+
+var clipped=datasets.clip(roi);
+
+
+
+var Mean_aug_2019 = clipped.reduceRegion({
+
+  reducer:ee.Reducer.mean(),
+
+  geometry:roi,
+
+  scale:500,
+
+})
+
+print ("Mean_aug_2019",Mean_aug_2019)
+
+
+
+//Sept
+
+var collection = ee.ImageCollection('COPERNICUS/S5P/OFFL/L3_O3')
+
+  .select('O3_column_number_density')
+
+  .filterBounds(roi)
+
+  .filterDate('2019-09-01', '2019-09-30');
+
+
+
+// This automatically pans the map to the middle of our area of interest
+
+Map.centerObject(roi);
+
+
+
+var datasets=collection.mean();
+
+var clipped=datasets.clip(roi);
+
+
+
+var Mean_sept_2019 = clipped.reduceRegion({
+
+  reducer:ee.Reducer.mean(),
+
+  geometry:roi,
+
+  scale:500,
+
+})
+
+print ("Mean_sept_2019",Mean_sept_2019)
+
+
+
+//Oct
+
+var collection = ee.ImageCollection('COPERNICUS/S5P/OFFL/L3_O3')
+
+  .select('O3_column_number_density')
+
+  .filterBounds(roi)
+
+  .filterDate('2019-10-01', '2019-10-31');
+
+
+
+// This automatically pans the map to the middle of our area of interest
+
+Map.centerObject(roi);
+
+
+
+var datasets=collection.mean();
+
+var clipped=datasets.clip(roi);
+
+
+
+var Mean_oct_2019 = clipped.reduceRegion({
+
+  reducer:ee.Reducer.mean(),
+
+  geometry:roi,
+
+  scale:500,
+
+})
+
+print ("Mean_oct_2019",Mean_oct_2019)
+
+
+
+//Nov
+
+var collection = ee.ImageCollection('COPERNICUS/S5P/OFFL/L3_O3')
+
+  .select('O3_column_number_density')
+
+  .filterBounds(roi)
+
+  .filterDate('2019-11-01', '2019-11-30');
+
+
+
+// This automatically pans the map to the middle of our area of interest
+
+Map.centerObject(roi);
+
+
+
+var datasets=collection.mean();
+
+var clipped=datasets.clip(roi);
+
+
+
+var Mean_nov_2019 = clipped.reduceRegion({
+
+  reducer:ee.Reducer.mean(),
+
+  geometry:roi,
+
+  scale:500,
+
+})
+
+print ("Mean_nov_2019",Mean_nov_2019)
+
+
+
+//Dec
+
+var collection = ee.ImageCollection('COPERNICUS/S5P/OFFL/L3_O3')
+
+  .select('O3_column_number_density')
+
+  .filterBounds(roi)
+
+  .filterDate('2019-12-01', '2019-12-31');
+
+
+
+// This automatically pans the map to the middle of our area of interest
+
+Map.centerObject(roi);
+
+
+
+var datasets=collection.mean();
+
+var clipped=datasets.clip(roi);
+
+
+
+var Mean_dec_2019 = clipped.reduceRegion({
+
+  reducer:ee.Reducer.mean(),
+
+  geometry:roi,
+
+  scale:500,
+
+})
+
+print ("Mean_dec_2019",Mean_dec_2019)
+

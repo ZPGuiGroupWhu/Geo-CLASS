@@ -1,0 +1,27 @@
+Entity Recognition:
+```
+{
+  "Theme": ["Land cover change analysis using Landsat 8 imagery and LandTrendr algorithm"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR", "users/jrmancerafGEE/POL_SUB_AE_1055", "users/jrmancerafGEE/PTS_SUB_AE_1055"],
+  "Function": ["maskL8sr", "filterDate", "map", "clip", "median", "reduceRegions", "Export.table.toDrive"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["maskL8sr", "clip", "median", "reduceRegions"]
+    },
+    "relation_2": {
+        "DataSource": ["users/jrmancerafGEE/POL_SUB_AE_1055", "users/jrmancerafGEE/PTS_SUB_AE_1055"],
+        "Function": ["filterDate", "map", "Export.table.toDrive"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3617, 'completion_tokens': 279, 'total_tokens': 3896}

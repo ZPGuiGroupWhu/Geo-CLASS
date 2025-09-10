@@ -1,0 +1,35 @@
+Entity Recognition:
+```json
+{
+"Theme": ["Land cover classification and urbanization analysis"],
+"DataSource": ["LANDSAT/LC08/C02/T1_L2", "LANDSAT/LT05/C02/T1_L2", "LANDSAT/LE07/C02/T1_L2", "users/kiniklihakan/milanshp"],
+"Function": ["Masking Landsat 8 images", "Masking Landsat 7 images", "Renaming Landsat 8 bands", "Calculating indices", "Normalizing image values", "Printing histograms", "Calculating class areas", "Creating land cover charts", "Filling gaps in images", "Reclassifying images", "Buffering polygons"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response that organizes the extracted information into a structured format:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C02/T1_L2"],
+        "Function": ["Masking Landsat 8 images", "Renaming Landsat 8 bands", "Normalizing image values", "Filling gaps in images", "Reclassifying images"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LT05/C02/T1_L2"],
+        "Function": ["Masking Landsat 7 images"]
+    },
+    "relation_3": {
+        "DataSource": ["LANDSAT/LE07/C02/T1_L2"],
+        "Function": []
+    },
+    "relation_4": {
+        "DataSource": ["users/kiniklihakan/milanshp"],
+        "Function": ["Calculating indices", "Printing histograms", "Calculating class areas", "Creating land cover charts", "Buffering polygons"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 6340, 'completion_tokens': 419, 'total_tokens': 6759}

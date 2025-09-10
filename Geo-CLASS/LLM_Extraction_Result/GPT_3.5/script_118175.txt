@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["The script processes Landsat and Sentinel-2 satellite imagery for geoprocessing modeling."],
+  "Theme": ["Land cover classification", "Vegetation health assessment"],
+  "DataSource": ["LANDSAT/LC09/C02/T1_L2", "LANDSAT/LC08/C02/T1_L2", "COPERNICUS/S2_SR"],
+  "Function": ["Apply scale factors to Landsat imagery", "Mask clouds in Sentinel-2 imagery", "Calculate NDVI, NDWI, MNDWI, NDSI, EWI indices", "Identify ICE pixels in Sentinel-2 imagery", "Quality mosaic and max composite creation"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC09/C02/T1_L2", "LANDSAT/LC08/C02/T1_L2"],
+        "Function": ["Apply scale factors to Landsat imagery"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["Mask clouds in Sentinel-2 imagery", "Calculate NDVI, NDWI, MNDWI, NDSI, EWI indices", "Identify ICE pixels in Sentinel-2 imagery", "Quality mosaic and max composite creation"]
+    }
+}
+```

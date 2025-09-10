@@ -1,0 +1,5 @@
+{
+  "Theme": ["Flood analysis and water detection"],
+  "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2", "LANDSAT/LT05/C01/T1_SR"],
+  "Function": ["Filtering image collection by bounds and date", "Sorting image collection by cloud cover", "Creating mosaic images and clipping to boundary", "Calculating normalized difference water index", "Computing histogram of NIR band", "Charting histogram", "Otsu thresholding for water detection"]
+}

@@ -1,0 +1,28 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/ak_glaciers/All_CF_Cambodia_July_2016"
+        ],
+        "Function": [
+            "Filter by country boundary",
+            "Filter by non-overlapping with existing CF",
+            "Filter by similar canopy cover"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "users/ak_glaciers/reem_cf_outputs/reem_canopy_cover_2000_pts_rma_nbr_timeseries_remapped_full"
+        ],
+        "Function": [
+            "Calculate mean canopy cover"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "USDOS/LSIB/2017"
+        ],
+        "Function": [
+            "Move polygons randomly"
+        ]
+    }
+}

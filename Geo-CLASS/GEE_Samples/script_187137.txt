@@ -1,0 +1,261 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var table = ee.FeatureCollection("users/khoapv_vnuf/Thanhhoa_t");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+
+//Choose area
+var AMZ = table;
+//Add region outline to layer
+
+// Collect bands and scale
+var modisLSTday = ee.ImageCollection('MODIS/MOD11A2').select('LST_Day_1km');
+var modisLSTnight = ee.ImageCollection('MODIS/MOD11A2').select('LST_Night_1km');
+// transform kelvin to celsius
+var modLSTday = modisLSTday.map(function(img) {return img.multiply(0.02).subtract(273.15).copyProperties(img,['system:time_start','system:time_end']);  
+});
+var modLSTnight = modisLSTnight.map(function(img) {return img.multiply(0.02).subtract(273.15).copyProperties(img,['system:time_start','system:time_end']);  
+});
+// define list of years
+var years = ee.List.sequence(2000, 2017)
+// aggregate images by year
+var annual = years.map(function(year) {
+  var start = ee.Date.fromYMD(year, 1, 1)
+  var stop = start.advance(1, 'year')
+  return modLSTday
+    .filter(ee.Filter.date(start, stop))
+    .reduce(ee.Reducer.percentile([10, 90]))
+    .set('year', year)
+})
+
+// /convert to image collection
+annual = ee.ImageCollection(annual)
+
+//Temperature Annual Range
+// show annual percentiles for 2000
+
+
+
+
+// show annual percentiles for 2001
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// generate dates by months for all years
+var months = years.map(function(year) {
+  return ee.List.sequence(1, 12).map(function(month) {
+    return ee.Date.fromYMD(year, month, 1)
+  })
+}).flatten() // flatten is required to make it 1d array
+
+
+
+//max temperature
+var month_list = ee.List.sequence(1,12);
+var year_list = ee.List.sequence(2000, 2016)
+
+var date_list = year_list.map(function (year) { 
+  return month_list.map(function(month) {
+    return ee.Date.fromYMD(year, month, 1)
+  }) 
+}).flatten().slice(2) // skip first 2 months
+
+// monthly max and min
+var monthly_minmaxmean = date_list.map(function(t) {
+  t = ee.Date(t)
+
+  var images = modLSTday.filterDate(t, t.advance(1, 'month'))
+  
+  var max = images.max().rename('max')
+  var min = images.min().rename('min')
+  var mean = images.mean().rename('mean')
+  
+  return max.addBands(min).addBands(mean)
+})
+
+monthly_minmaxmean = ee.ImageCollection.fromImages(monthly_minmaxmean)
+
+var monthly_minmaxmean_mean = monthly_minmaxmean.mean()
+
+var vis = {min:10, max:40, palette: ['deebf7', '9ecae1', '3182bd', 'f03b20', 'feb24c', 'ffeda0']}
+Map.addLayer(monthly_minmaxmean_mean.select('min'), vis, 'min')
+Map.addLayer(monthly_minmaxmean_mean.select('max'), vis, 'max')
+Map.addLayer(monthly_minmaxmean_mean.select('mean'), vis, 'mean')
+
+
+
+
+
+
+
+var result_max =  ee.ImageCollection.fromImages(
+  year_list.map(function (year) {
+  return month_list.map(function(month){
+  var w = modLSTday.filter(ee.Filter.calendarRange(year, year, 'year'))
+                        .filter(ee.Filter.calendarRange(month, month, 'month'))
+                        .max()
+  return w.set('year', year)
+                        .set('month', month)
+                        .set('date', ee.Date.fromYMD(year,month,1))
+                        .set('system:time_start',ee.Date.fromYMD(year,month,1)) 
+                        
+})
+}).flatten())
+print(Chart.image.series(result_max, AMZ, ee.Reducer.mean(), 1000)
+.setOptions({
+  title: "temperature max by month of the year for the period of interest",
+  pointSize: 3}));
+  
+
+
+  
+//min temperature
+var result_min =  ee.ImageCollection.fromImages(
+  year_list.map(function (year) {
+  return month_list.map(function(month){
+  var w = modLSTday.filter(ee.Filter.calendarRange(year, year, 'year'))
+                        .filter(ee.Filter.calendarRange(month,month, 'month'))
+                        .min();
+  return w.set('year', year)
+                        .set('month',month)
+                        .set('date', ee.Date.fromYMD(year,month,1))
+                        .set('system:time_start',ee.Date.fromYMD(year,month,1)) 
+                        
+})
+}).flatten())
+print(Chart.image.series(result_min, AMZ, ee.Reducer.mean(), 1000)
+.setOptions({
+  title: "temperature min by month of the year for the period of interest",
+  pointSize: 3}));
+
+
+//mean temperature
+var result_mean =  ee.ImageCollection.fromImages(
+  year_list.map(function (year) {
+  return month_list.map(function(month){
+  var w = modLSTday.filter(ee.Filter.calendarRange(year, year, 'year'))
+                        .filter(ee.Filter.calendarRange(month,month, 'month'))
+                        .mean();
+  return w.set('year', year)
+                        .set('month',month)
+                        .set('date', ee.Date.fromYMD(year,month,1))
+                        .set('system:time_start',ee.Date.fromYMD(year,month,1)) 
+                        
+})
+}).flatten())
+print(Chart.image.series(result_mean, AMZ, ee.Reducer.mean(), 1000)
+.setOptions({
+  title: "temperature mean by month of the year for the period of interest",
+  pointSize: 3}));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Check the reduceRegion documentation for extra parameters like scale
+
+
+
+
+//Amplitude
+
+//Clip to Specified Region
+
+
+
+

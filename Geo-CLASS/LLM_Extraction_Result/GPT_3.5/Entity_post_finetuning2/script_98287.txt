@@ -1,0 +1,15 @@
+{
+    "Summary": [
+        "The script processes Sentinel-2 imagery to calculate NDVI and NDWI, then visualizes the results."
+    ],
+    "Theme": [
+        "VEGETATION WATER POTENTIAL"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2_SR"
+    ],
+    "Function": [
+        "Image Cloud Removal",
+        "Add NDVI Band To Images"
+    ]
+}

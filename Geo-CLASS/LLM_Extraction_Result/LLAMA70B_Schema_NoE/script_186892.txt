@@ -1,0 +1,38 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land cover classification and change detection using Sentinel-2 images"],
+  "DataSource": ["COPERNICUS/S2", "ft:1Oaa3b2LdFGrAXL4jqFJzA-3iBeiNq6AQZkyFLVvp", "ft:1tAjm5bGsh0TWPSawKIsX-iWXd7vocIoG_98QjhU1", "ft:1iovW6_vHSX3JOx5OvcFr-ljJdx5mGmqK6Q_ETiSO", "ft:1zmsdCSa-do_XXh6-w6bpfXpz_kN7nGBGmKAcBRFQ", "ft:1gGjM2T5JEgKFoxbWORCn3WPqB98p2adAz42eqycf"],
+  "Function": ["Filtering Sentinel-2 images by cloud cover and date", "Calculating NDVI and NBR indices", "Mosaicking images", "Exporting image properties to a CSV file", "Creating a mosaic and exporting it to Drive", "Exporting individual scenes to Drive", "Visualizing images using different visualization options"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Filtering Sentinel-2 images by cloud cover and date", "Calculating NDVI and NBR indices", "Mosaicking images", "Exporting image properties to a CSV file", "Creating a mosaic and exporting it to Drive", "Exporting individual scenes to Drive", "Visualizing images using different visualization options"]
+    },
+    "relation_2": {
+        "DataSource": ["ft:1Oaa3b2LdFGrAXL4jqFJzA-3iBeiNq6AQZkyFLVvp"],
+        "Function": ["Filtering Sentinel-2 images by cloud cover and date", "Calculating NDVI and NBR indices", "Mosaicking images", "Exporting image properties to a CSV file", "Creating a mosaic and exporting it to Drive", "Exporting individual scenes to Drive", "Visualizing images using different visualization options"]
+    },
+    "relation_3": {
+        "DataSource": ["ft:1tAjm5bGsh0TWPSawKIsX-iWXd7vocIoG_98QjhU1"],
+        "Function": ["Filtering Sentinel-2 images by cloud cover and date", "Calculating NDVI and NBR indices", "Mosaicking images", "Exporting image properties to a CSV file", "Creating a mosaic and exporting it to Drive", "Exporting individual scenes to Drive", "Visualizing images using different visualization options"]
+    },
+    "relation_4": {
+        "DataSource": ["ft:1iovW6_vHSX3JOx5OvcFr-ljJdx5mGmqK6Q_ETiSO"],
+        "Function": ["Filtering Sentinel-2 images by cloud cover and date", "Calculating NDVI and NBR indices", "Mosaicking images", "Exporting image properties to a CSV file", "Creating a mosaic and exporting it to Drive", "Exporting individual scenes to Drive", "Visualizing images using different visualization options"]
+    },
+    "relation_5": {
+        "DataSource": ["ft:1zmsdCSa-do_XXh6-w6bpfXpz_kN7nGBGmKAcBRFQ"],
+        "Function": ["
+
+Total_Usage:
+{'prompt_tokens': 5063, 'completion_tokens': 837, 'total_tokens': 5900}

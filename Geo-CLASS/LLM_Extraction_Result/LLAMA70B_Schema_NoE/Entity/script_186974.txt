@@ -1,0 +1,18 @@
+{
+    "Theme": [
+        "Landsat satellite imagery analysis for water body detection"
+    ],
+    "DataSource": [
+        "LANDSAT/LT05/C01/T1_SR",
+        "LANDSAT/LE07/C01/T1_SR",
+        "LANDSAT/LC08/C01/T1_SR"
+    ],
+    "Function": [
+        "Cloud masking and band selection for Landsat 5",
+        "Cloud masking and band selection for Landsat 7",
+        "Cloud masking and band selection for Landsat 8",
+        "Merging and renaming of satellite collections",
+        "Calculation of NDWI and MNDWI indices",
+        "Generation of annual means for NDWI and MNDWI"
+    ]
+}

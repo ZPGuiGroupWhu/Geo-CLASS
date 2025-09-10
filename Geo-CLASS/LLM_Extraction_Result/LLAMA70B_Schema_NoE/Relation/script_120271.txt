@@ -1,0 +1,15 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2_SR"
+        ],
+        "Function": [
+            "addNDVI function to calculate NDVI band",
+            "median function to calculate median image",
+            "clip function to clip image to testing area",
+            "select function to select NDVI band",
+            "reduceRegion function to calculate percentile",
+            "Map.addLayer function to add layers to the map"
+        ]
+    }
+}

@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Crop classification and land use analysis in Maharashtra, India"],
+  "DataSource": ["MODIS/006/MOD09Q1"],
+  "Function": ["Buffer creation around sugar mills", "Image collection filtering by date", "NDVI calculation", "Image classification using k-means clustering", "Image masking and clipping", "Image visualization with random colors", "Class merging and remapping", "Image refinement using conditional statements"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["MODIS/006/MOD09Q1"],
+        "Function": ["Buffer creation around sugar mills", "Image collection filtering by date", "NDVI calculation", "Image classification using k-means clustering", "Image masking and clipping", "Image visualization with random colors", "Class merging and remapping", "Image refinement using conditional statements"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4033, 'completion_tokens': 211, 'total_tokens': 4244}

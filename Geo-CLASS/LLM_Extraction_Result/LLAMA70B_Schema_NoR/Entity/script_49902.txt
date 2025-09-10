@@ -1,0 +1,14 @@
+{
+    "Theme": [
+        "Vegetation health analysis using satellite indices"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2_SR"
+    ],
+    "Function": [
+        "Filtering image collection by date and geometry",
+        "Calculating NDVI index",
+        "Calculating NDMI index",
+        "Creating legend for NDMI index"
+    ]
+}

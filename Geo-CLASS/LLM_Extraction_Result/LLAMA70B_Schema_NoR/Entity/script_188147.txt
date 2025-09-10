@@ -1,0 +1,36 @@
+{
+    "Theme": [
+        "Land cover classification and forest monitoring in Zimbabwe"
+    ],
+    "DataSource": [
+        "users/kindgard/Asia/Asia",
+        "users/kindgard/Africa",
+        "users/kindgard/SUD",
+        "users/kindgard/AfricaS",
+        "users/kindgard/AmericaN",
+        "users/kindgard/Asia2",
+        "ft:1tdSwUL7MVpOauSgRzqVTOwdfy17KDbw-1d9omPw",
+        "ft:1gvizfsdJL2f4cr0OSI5744HnaAeWU39w4cDO9aLh",
+        "ft:1VyLhtXjayg1nD2auTSF73e-94uuuqEe0dLXkqk-y",
+        "JRC/GSW1_0/GlobalSurfaceWater",
+        "users/kindgard/ESACCI-LC-L4-LC10-Map-20m-P1Y-2016-v10",
+        "users/ValeriaContessa/Map_1992_rast",
+        "LANDSAT/LT5_L1T",
+        "LANDSAT/LE7_L1T",
+        "LANDSAT/LC08/C01/T1_RT",
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "Image collection filtering",
+        "Mosaicking",
+        "Clipping",
+        "Image classification",
+        "Ratio calculation",
+        "Quality band calculation",
+        "Sample region creation",
+        "Training classifier",
+        "Classifying images",
+        "Masking",
+        "Adding bands"
+    ]
+}

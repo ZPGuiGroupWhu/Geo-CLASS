@@ -1,0 +1,38 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "ft:1QKw5K7582CuFBKiqDcYEPADrvjHTLAkz3EIxL_TI"
+        ],
+        "Function": [
+            "buffer function to clip images to marshbird points",
+            "calculate mean values around each marshbird survey point"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "ft:1iQ8RECwcWSVF3AkSPVdxgpnENRJc-su6G6c1CZiF"
+        ],
+        "Function": [
+            "map over image collection",
+            "generate monthly averages"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "LANDSAT/LC8_L1T_TOA"
+        ],
+        "Function": [
+            "create cloud mask using the BQA band in LS 8 TOA imagery",
+            "add variables of interest to landsat 8 imagery"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "LANDSAT/LE7_L1T_TOA"
+        ],
+        "Function": [
+            "create cloud score function for LS 7 imagery",
+            "add variables of interest to landsat 7 imagery"
+        ]
+    }
+}

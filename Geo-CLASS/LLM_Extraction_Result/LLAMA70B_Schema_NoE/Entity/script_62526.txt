@@ -1,0 +1,19 @@
+{
+    "Theme": [
+        "Precipitation data analysis and water area calculation using Sentinel-2 imagery"
+    ],
+    "DataSource": [
+        "users/ce15btech11022/Final_Cities/Ahmedabad",
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "Filtering Sentinel-2 images by date and ROI",
+        "Calculating difference in days between start and finish dates",
+        "Creating a list of dates",
+        "Iterating over dates to create daily mosaics",
+        "Adding NDWI band to images",
+        "Calculating water area using pixel area method",
+        "Creating a time series chart of water area",
+        "Exporting results to Google Drive"
+    ]
+}

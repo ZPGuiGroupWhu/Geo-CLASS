@@ -1,0 +1,36 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/juandb/bloco_TIs_Kayapo"
+        ],
+        "Function": [
+            "NDVI (Normalized Difference Vegetation Index calculation)",
+            "Calculating terrain slope and aspect from DEMs"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LT05/C01/T1_SR"
+        ],
+        "Function": [
+            "Calculating terrain slope and aspect from DEMs"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "LANDSAT/LE07/C01/T1_SR"
+        ],
+        "Function": [
+            "Calculating terrain slope and aspect from DEMs"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "NDVI (Normalized Difference Vegetation Index calculation)",
+            "Calculating terrain slope and aspect from DEMs"
+        ]
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["users/eduardosperanza-Embrapa/Projeto-Coplacana/Piracicaba-H2Copla-UTM"],
+        "Function": ["Cloud and shadow removal", "NDVI, VARI, and EVI calculation"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["Cloud and shadow removal", "NDVI, VARI, and EVI calculation"]
+    }
+}

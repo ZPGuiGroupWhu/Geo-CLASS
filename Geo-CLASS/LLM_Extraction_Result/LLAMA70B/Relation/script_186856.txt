@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Compute cloud score for Sentinel-2 images", "Mask clouds using Sentinel-2 QA band", "Project cloud shadows", "Bust clouds from Sentinel-2 image", "Wrap entire cloud masking process"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Find dark outliers in time series", "Find unique values of a field in a collection", "Simplify data into daily mosaics"]
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "NOAA/GFS0P25"
+        ],
+        "Function": [
+            "clipBorder",
+            "filterDate",
+            "select",
+            "limit",
+            "map"
+        ]
+    }
+}

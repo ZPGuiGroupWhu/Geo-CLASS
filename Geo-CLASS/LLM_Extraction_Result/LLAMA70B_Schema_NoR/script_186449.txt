@@ -1,0 +1,29 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land cover classification using Landsat imagery"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR/LC08_118062_20150819"],
+  "Function": ["Image selection and filtering", "Feature collection creation", "Image sampling", "Scatter plot generation"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR/LC08_118062_20150819"],
+        "Function": ["Image selection and filtering", "Feature collection creation", "Image sampling"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR/LC08_118062_20150819"],
+        "Function": ["Scatter plot generation"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 5460, 'completion_tokens': 252, 'total_tokens': 5712}

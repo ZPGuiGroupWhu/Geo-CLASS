@@ -1,0 +1,25 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Entity Recognition": {
+    "Theme": ["Climate analysis of temperature in Sinaloa"],
+    "DataSource": ["ECMWF/ERA5/DAILY", "FAO/GAUL_SIMPLIFIED_500m/2015/level2"],
+    "Function": ["Filtering image collection by date", "Converting temperature units", "Clipping images to AOI", "Calculating minimum temperature", "Calculating maximum temperature", "Calculating mean temperature", "Visualizing data", "Exporting images to drive"]
+  },
+  "Relation Extraction": {
+    "relation_1": {
+      "DataSource": ["ECMWF/ERA5/DAILY"],
+      "Function": ["Filtering image collection by date", "Converting temperature units", "Calculating minimum temperature", "Calculating maximum temperature", "Calculating mean temperature"]
+    },
+    "relation_2": {
+      "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2"],
+      "Function": ["Clipping images to AOI", "Visualizing data"]
+    }
+  }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2508, 'completion_tokens': 276, 'total_tokens': 2784}

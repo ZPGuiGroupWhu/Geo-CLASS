@@ -1,0 +1,16 @@
+{
+    "Theme": [
+        "Land cover analysis in the Alto Paraná ecoregion"
+    ],
+    "DataSource": [
+        "users/GeoForPy/Tesis/EcorregionAltoParana",
+        "LANDSAT/LT05/C01/T1_SR"
+    ],
+    "Function": [
+        "Cloud masking for Landsat 5 images",
+        "Image collection filtering",
+        "Percentile calculation",
+        "Image compositing",
+        "Map visualization"
+    ]
+}

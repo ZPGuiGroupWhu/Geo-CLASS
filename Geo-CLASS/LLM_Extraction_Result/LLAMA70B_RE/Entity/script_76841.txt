@@ -1,0 +1,20 @@
+{
+    "Theme": [
+        "Land surface reflectance analysis and vegetation index calculation"
+    ],
+    "DataSource": [
+        "LANDSAT/LT05/C01/T1_SR",
+        "LANDSAT/LC08/C01/T1_SR",
+        "users/cxliu2015/PA_Qinghai_EnglishNames",
+        "users/cxliu2015/PA_Qinghai_cdm_studiedRectangle"
+    ],
+    "Function": [
+        "Image collection filtering",
+        "Image masking",
+        "Band selection and renaming",
+        "Median calculation",
+        "Vegetation index calculation",
+        "Image clipping",
+        "Image exporting"
+    ]
+}

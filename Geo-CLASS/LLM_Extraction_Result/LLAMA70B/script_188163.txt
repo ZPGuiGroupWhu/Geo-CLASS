@@ -1,0 +1,61 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land cover classification and analysis in Zimbabwe"],
+  "DataSource": ["users/kindgard/Asia/Asia", "users/kindgard/Africa", "users/kindgard/SUD", "users/kindgard/AfricaS", "users/kindgard/AmericaN", "users/kindgard/Asia2", "LANDSAT/LT5_L1T", "LANDSAT/LE7_L1T", "LANDSAT/LC08/C01/T1_RT", "COPERNICUS/S2", "JRC/GSW1_0/GlobalSurfaceWater", "ft:1tdSwUL7MVpOauSgRzqVTOwdfy17KDbw-1d9omPw", "users/ValeriaContessa/Map_1992_rast", "users/kindgard/ESACCI-LC-L4-LC10-Map-20m-P1Y-2016-v10"],
+  "Function": ["Filtering image collections by date and cloud cover", "Mosaicking images", "Calculating spectral indices", "Classifying land cover using Cart algorithm", "Applying masks to classified image", "Clipping images to country boundary"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/kindgard/Asia/Asia", "users/kindgard/Asia2"],
+        "Function": ["Filtering image collections by date and cloud cover", "Mosaicking images"]
+    },
+    "relation_2": {
+        "DataSource": ["users/kindgard/Africa", "users/kindgard/AfricaS"],
+        "Function": ["Filtering image collections by date and cloud cover", "Classifying land cover using Cart algorithm"]
+    },
+    "relation_3": {
+        "DataSource": ["users/kindgard/SUD"],
+        "Function": ["Filtering image collections by date and cloud cover"]
+    },
+    "relation_4": {
+        "DataSource": ["users/kindgard/AmericaN"],
+        "Function": ["Filtering image collections by date and cloud cover"]
+    },
+    "relation_5": {
+        "DataSource": ["LANDSAT/LT5_L1T", "LANDSAT/LE7_L1T", "LANDSAT/LC08/C01/T1_RT"],
+        "Function": ["Calculating spectral indices", "Classifying land cover using Cart algorithm"]
+    },
+    "relation_6": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Calculating spectral indices", "Classifying land cover using Cart algorithm"]
+    },
+    "relation_7": {
+        "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+        "Function": ["Applying masks to classified image"]
+    },
+    "relation_8": {
+        "DataSource": ["ft:1tdSwUL7MVpOauSgRzqVTOwdfy17KDbw-1d9omPw"],
+        "Function": ["None"]
+    },
+    "relation_9": {
+        "DataSource": ["users/ValeriaContessa/Map_1992_rast"],
+        "Function": ["None"]
+    },
+    "relation_10": {
+        "DataSource": ["users/kindgard/ESACCI-LC-L4-LC10-Map-20m-P1Y-2016-v10"],
+        "Function": ["Classifying land cover using Cart algorithm"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 6314, 'completion_tokens': 839, 'total_tokens': 7153}

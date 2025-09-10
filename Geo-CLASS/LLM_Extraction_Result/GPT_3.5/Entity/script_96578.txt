@@ -1,0 +1,6 @@
+{
+  "Summary": ["Geoprocessing workflow analyzing thermal data and fire probability in Tasmania."],
+  "Theme": ["Thermal data analysis", "Fire probability assessment", "NDVI change detection"],
+  "DataSource": ["COPERNICUS/S2_SR", "MODIS/006/MOD14A1", "MODIS/006/MOD11A1"],
+  "Function": ["Temperature conversion from Kelvin to Celsius", "Image collection filtering by date and bands", "Chart generation for temperature and radiative power", "Unmasking fire probability image collection", "NDVI calculation and change detection", "Fire mask creation based on NDVI change"]
+}

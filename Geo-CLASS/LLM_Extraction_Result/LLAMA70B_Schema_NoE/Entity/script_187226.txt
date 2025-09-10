@@ -1,0 +1,17 @@
+{
+    "Theme": [
+        "Land cover classification",
+        "Cloud and shadow detection",
+        "Water detection"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "sentinel2toa: converts Sentinel-2 image to top-of-atmosphere reflectance",
+        "sentinelCloudScore: computes cloud score based on several indicators of cloudiness",
+        "shadowMask: detects cloud shadows based on solar geometry and dark pixel detection",
+        "waterMask: detects water based on NDWI",
+        "cloud_and_shadow_mask: combines cloud, shadow, and water masks to filter out unwanted features"
+    ]
+}

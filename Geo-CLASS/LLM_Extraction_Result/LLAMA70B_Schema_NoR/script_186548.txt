@@ -1,0 +1,31 @@
+Entity Recognition:
+```json
+{
+"Theme": ["Surface water detection and analysis"],
+"DataSource": ["COPERNICUS/S1_GRD", "NOAA/CFSV2/FOR6H", "users/gena/GlobalHAND/30m/hand-5000"],
+"Function": ["Filtering image collection by bounds and date", "Masking out image edges using angle", "Filtering out windy days using climate forecasts", "Converting to/from dB", "Applying Refined Lee filter", "Performing angle correction", "Computing surface water mask using Canny Edge detector and Otsu thresholding"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response that organizes the extracted information into a structured format:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Filtering image collection by bounds and date", "Applying Refined Lee filter", "Performing angle correction", "Computing surface water mask using Canny Edge detector and Otsu thresholding"]
+    },
+    "relation_2": {
+        "DataSource": ["NOAA/CFSV2/FOR6H"],
+        "Function": ["Filtering out windy days using climate forecasts"]
+    },
+    "relation_3": {
+        "DataSource": ["users/gena/GlobalHAND/30m/hand-5000"],
+        "Function": []
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 7128, 'completion_tokens': 325, 'total_tokens': 7453}

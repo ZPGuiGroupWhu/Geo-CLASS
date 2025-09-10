@@ -1,0 +1,141 @@
+var a = [];
+
+/*Khởi tạo các hàm*/
+
+var ranh_gioi_cat_anh = function(){
+
+  //Lọc ranh giới
+
+  a[0] = ee.FeatureCollection('users/thao226355/share/VietNam_Ranh_gioi_tinh')
+
+  .filterMetadata('tinh','equals','Hải Phòng').first().geometry();
+
+  // Hiển thị ranh giới
+
+  Map.addLayer(a[0],{color: 'yellow'},'Ranh giới cắt ảnh');
+
+};  // ranh giới: a[0]
+
+var loc_may = function(image){
+
+  var qa = image.select('QA60');
+
+  var cloudBitMask = 1 << 10;
+
+  var cirrusBitMask = 1 << 11;
+
+  var mask = qa.bitwiseAnd(cloudBitMask).eq(0)
+
+      .and(qa.bitwiseAnd(cirrusBitMask).eq(0));
+
+  return image.updateMask(mask);
+
+};
+
+var anh_ve_tinh = function(ds_bands, ngay_bat_dau, ngay_ket_thuc, ty_le_may){
+
+  a[1] = ee.ImageCollection("COPERNICUS/S2_SR")
+
+  .filterBounds(a[0]) // lọc ảnh theo ranh giới
+
+  .filterDate(ngay_bat_dau,ngay_ket_thuc)  // lọc theo ngày
+
+  .filterMetadata('CLOUDY_PIXEL_PERCENTAGE','less_than',ty_le_may) // lọc theo tỷ lệ % mây
+
+  .map(loc_may).median() // áp dụng hàm lọc mây và ghép ảnh
+
+  .select(ds_bands)  // lọc bands
+
+  .clip(a[0]);  // cắt ảnh đã ghép theo ranh giới
+
+  Map.addLayer(a[1],{max:3500, min:0, gamma:1.2},'Ảnh vệ tinh');
+
+};  // ảnh vệ tinh: a[1]
+
+var phan_loai_ndvi = function (ds_gia_tri){
+
+  var NDVI = a[1].normalizedDifference(['B8', 'B4']);
+
+  var so_luong_mau = ds_gia_tri.length;
+
+  // var palette = ['FFFFFF', 'CE7E45', 'DF923D', 'F1B555', 'FCD163', '99B718',
+
+  // '74A901', '66A000', '529400', '3E8601', '207401', '056201',
+
+  // '004C00', '023B01', '012E01', '011D01', '011301'];
+
+  // Map.addLayer(NDVI, {min: 0, max: 1, palette: palette}, 'NDVI');
+
+  a[2] = [NDVI.updateMask(NDVI.lt(ds_gia_tri[0])).where(NDVI,1)];
+
+  for(var i=0;i<ds_gia_tri.length;i++){
+
+    var y1 = NDVI.updateMask(NDVI.gte(ds_gia_tri[i]));
+
+    a[2].push(y1.where(y1,2+i));
+
+  }
+
+}; // danh sách ảnh phân loại a[2]
+
+var dien_tich_anh = function (image){
+
+  var y1 = image.reduceRegion({
+
+    reducer: ee.Reducer.count(),
+
+    geometry: a[0],
+
+    scale: 10,
+
+    maxPixels: 10e15}).get('nd').getInfo()/100 + ' ha';
+
+  return y1.replace('.',',');
+
+  // return y1.get('nd').getInfo().map(function(x){return ee.Number(x.sum).round().getInfo()+' ha'});
+
+  };
+
+/*Chạy các hàm*/
+
+ranh_gioi_cat_anh()
+
+Map.centerObject(a[0]);
+
+var ds_bands = ['B4','B3','B2','B8'];
+
+var ngay_bat_dau = '2018-08-01';
+
+var ngay_ket_thuc = '2019-04-01';
+
+var ty_le_may = 50;
+
+anh_ve_tinh(ds_bands,ngay_bat_dau, ngay_ket_thuc, ty_le_may);
+
+var mau_phan_loai = ['Mặt nước','Đất và công trình xây dựng','Thảm thực vật mật độ thấp (bãi cỏ, cây bụi)','Rừng'];
+
+var nguong_phan_loai = [-0.1,0.2,0.4];  // nhỏ hơn -0.1, -0.1-0.2, 0.2-0.4, lớn hơn 0.4
+
+var ds_ma_mau = ['#00FFFF','#FF00FF','#00FF00','#008000'];
+
+phan_loai_ndvi(nguong_phan_loai);
+
+for(var i=0;i<mau_phan_loai.length;i++){
+
+  Map.addLayer(a[2][i],{palette:ds_ma_mau[i]},mau_phan_loai[i]);
+
+  print(mau_phan_loai[i] + ':' + dien_tich_anh(a[2][i]));
+
+}
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  

@@ -1,0 +1,36 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Forest change and surface temperature analysis in the Amazon region"],
+  "DataSource": ["LANDSAT/LC08/C01/T2_SR", "UMD/hansen/global_forest_change_2017_v1_5", "Oxford/MAP/LST_Day_5km_Monthly", "NCEP_RE/surface_temp"],
+  "Function": ["Image collection filtering", "Binary mask creation", "Image masking", "Temperature data collection", "Feature collection creation", "Data export"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T2_SR"],
+        "Function": ["Image collection filtering", "Image masking"]
+    },
+    "relation_2": {
+        "DataSource": ["UMD/hansen/global_forest_change_2017_v1_5"],
+        "Function": ["Binary mask creation", "Image masking"]
+    },
+    "relation_3": {
+        "DataSource": ["Oxford/MAP/LST_Day_5km_Monthly"],
+        "Function": ["Temperature data collection"]
+    },
+    "relation_4": {
+        "DataSource": ["NCEP_RE/surface_temp"],
+        "Function": ["Temperature data collection", "Feature collection creation", "Data export"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 6137, 'completion_tokens': 351, 'total_tokens': 6488}

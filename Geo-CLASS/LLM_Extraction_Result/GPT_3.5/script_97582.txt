@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Displaying KP boundary and loading Landsat images for different months in 2018."],
+  "Theme": ["Land cover change detection"],
+  "DataSource": ["users/avaise99/KP_Boundary", "LANDSAT/LC08/C02/T1_TOA"],
+  "Function": ["Filtering images by date and location", "Masking clouds in images", "Mosaicking images", "Clipping images to KP boundary", "Adding layers to the map"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/avaise99/KP_Boundary"],
+        "Function": ["Filtering images by date and location", "Masking clouds in images", "Mosaicking images", "Clipping images to KP boundary", "Adding layers to the map"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C02/T1_TOA"],
+        "Function": ["Filtering images by date and location", "Masking clouds in images", "Mosaicking images", "Clipping images to KP boundary", "Adding layers to the map"]
+    }
+}
+```

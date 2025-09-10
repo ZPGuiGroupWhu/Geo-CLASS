@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2_CLOUD_PROBABILITY"],
+        "Function": ["Filter image collection by region", "Filter image collection by date", "Calculate date difference", "Create date sequence", "Iterate over date range", "Filter collection by date", "Create mosaic image", "Count images in collection", "Clip image to region", "Mask clouds in image", "Sum images in collection", "Convert collection to bands", "Calculate percentage image", "Advance date by years"]
+    },
+    "relation_2": {
+        "DataSource": ["users/kitmyfaceplease2/eastsouth_asia"],
+        "Function": ["Paint feature collection"]
+    }
+}

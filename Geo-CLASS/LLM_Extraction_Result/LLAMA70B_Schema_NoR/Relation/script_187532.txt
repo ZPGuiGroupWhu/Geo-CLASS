@@ -1,0 +1,22 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S1_GRD"
+        ],
+        "Function": [
+            "Filtering Sentinel-1 images by date and polarisation",
+            "Applying smoothing filter to images",
+            "Calculating band ratio images",
+            "Generating histograms of backscatter values"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S1_GRD"
+        ],
+        "Function": [
+            "Classifying flood and water areas",
+            "Visualizing results as RGB images"
+        ]
+    }
+}

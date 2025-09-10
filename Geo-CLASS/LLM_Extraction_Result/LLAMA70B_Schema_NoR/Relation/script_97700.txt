@@ -1,0 +1,23 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Filtering Image Collection by Date",
+            "Clipping Image to Geometry",
+            "Computing Normalized Difference Vegetation Index"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S1_GRD"
+        ],
+        "Function": [
+            "Filtering SAR Image by Date",
+            "Applying Speckle Reduction Filter",
+            "Mosaicking SAR Images",
+            "Applying K-Means Clustering"
+        ]
+    }
+}

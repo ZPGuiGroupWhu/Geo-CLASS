@@ -1,0 +1,19 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Script for Sentinel-1 flood mapping with backscatter analysis and image processing."],
+  "Theme": ["Flood mapping using Sentinel-1 data"],
+  "DataSource": ["COPERNICUS/S1_GRD"],
+  "Function": ["Backscatter value filtering", "Image smoothing for flood detection"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Backscatter value filtering", "Image smoothing for flood detection"]
+    }
+}
+```

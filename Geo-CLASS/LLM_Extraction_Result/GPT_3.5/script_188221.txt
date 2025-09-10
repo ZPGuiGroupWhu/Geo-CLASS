@@ -1,0 +1,19 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Extracts monthly climate data for a specified area in India."],
+  "Theme": ["Climate analysis"],
+  "DataSource": ["ECMWF/ERA5_LAND/MONTHLY"],
+  "Function": ["Filtering image collection by date and variables", "Calculating mean values for various climate parameters", "Mapping and exporting data to Google Drive"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["ECMWF/ERA5_LAND/MONTHLY"],
+        "Function": ["Filtering image collection by date and variables", "Calculating mean values for various climate parameters", "Mapping and exporting data to Google Drive"]
+    }
+}
+```

@@ -1,0 +1,29 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land surface reflectance analysis", "Water index calculation"],
+  "DataSource": ["LANDSAT/LT05/C01/T1_SR", "LANDSAT/LE07/C01/T1_SR", "LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Filtering image collection by date and bounds", "Applying cloud mask to images", "Selecting and renaming bands", "Calculating normalized difference water indices", "Merging image collections", "Generating animation"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LT05/C01/T1_SR", "LANDSAT/LE07/C01/T1_SR", "LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Filtering image collection by date and bounds", "Applying cloud mask to images", "Selecting and renaming bands", "Merging image collections"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LT05/C01/T1_SR", "LANDSAT/LE07/C01/T1_SR", "LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Calculating normalized difference water indices", "Generating animation"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4742, 'completion_tokens': 344, 'total_tokens': 5086}

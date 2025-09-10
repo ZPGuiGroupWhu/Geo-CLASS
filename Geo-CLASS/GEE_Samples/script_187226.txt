@@ -1,0 +1,314 @@
+//Zone d'étude
+
+
+
+var zone=ee.Geometry.Point([117.17886686390557,6.021664551])
+
+Map.centerObject(zone,15)
+
+
+
+
+
+//////////////////Variables//////////////////////////
+
+var irSumThresh =0.35;//Sum of IR bands to include as shadows within TDOM and the shadow shift method (lower number masks out less)
+
+var dilatePixels = 2; //Pixels to dilate around clouds
+
+var contractPixels = 1;//Pixels to reduce cloud mask and dark shadows by to reduce inclusion of single-pixel comission errors
+
+
+
+var S2_CL_P=99
+
+var cloudScoreThreshold_T2=0.1
+
+var cloudScoreThreshold_ref=0.3
+
+
+
+
+
+/////Dates T2 - mois à analyser
+
+var startD = ee.Date('2017-11-01')
+
+var stopD = ee.Date('2017-12-01')
+
+
+
+////Dates référence forêt
+
+var startDateRef = ee.Date('2017-05-01')
+
+var stopDateRef = ee.Date('2017-10-30')
+
+
+
+
+
+////////Fonction de filtrage de nuage////////////
+
+//////////////////Cloud Score///////////////////
+
+function sentinel2toa(img) {
+
+  var toa = img.divide(10000)
+
+               .set('solar_azimuth',img.get('MEAN_SOLAR_AZIMUTH_ANGLE'))
+
+               .set('solar_zenith',img.get('MEAN_SOLAR_ZENITH_ANGLE'))
+
+               .set('system:time_start',img.get('system:time_start'))
+
+    return toa
+
+}
+
+
+
+function sentinelCloudScore(toa, thr) {
+
+  // authors: Matt Hancher, Chris Hewig and Ian Housman
+
+  
+
+  function rescale(img, thresholds) {
+
+    return img.subtract(thresholds[0]).divide(thresholds[1] - thresholds[0])
+
+  }
+
+  
+
+  // Compute several indicators of cloudyness and take the minimum of them.
+
+  var score = ee.Image(1);
+
+  
+
+  //Clouds are reasonably bright
+
+  score = score.min(rescale(toa.select(['B2']), [0.1, 0.5]))
+
+  score = score.min(rescale(toa.select(['B1']), [0.1, 0.3]))
+
+  score = score.min(rescale(toa.select(['B1']).add(toa.select(['B10'])), [0.15, 0.2]))
+
+  score = score.min(rescale(toa.select(['B4']).add(toa.select(['B3'])).add(toa.select('B2')), [0.2, 0.8]));
+
+
+
+  //Clouds are moist
+
+  var ndmi = toa.normalizedDifference(['B8A','B11']);
+
+  score=score.min(rescale(ndmi, [-0.1, 0.1]));
+
+  
+
+  // However, clouds are not snow.
+
+  var ndsi = toa.normalizedDifference(['B3', 'B11']);
+
+  score=score.min(rescale(ndsi, [0.8, 0.6]));
+
+  
+
+  // a (somewhat arbitrary) threshold 
+
+  var cloud = score.gt(thr);
+
+  
+
+  return cloud;
+
+}
+
+
+
+
+
+function shadowMask(toa,cloud){
+
+  // Author: Gennadii Donchyts
+
+  // License: Apache 2.0
+
+  
+
+  // solar geometry (radians)
+
+  var azimuth =ee.Number(toa.get('solar_azimuth')).multiply(Math.PI).divide(180.0).add(ee.Number(0.5).multiply(Math.PI));
+
+  var zenith  =ee.Number(0.5).multiply(Math.PI ).subtract(ee.Number(toa.get('solar_zenith')).multiply(Math.PI).divide(180.0));
+
+
+
+  // find where cloud shadows should be based on solar geometry
+
+  var nominalScale = cloud.projection().nominalScale();
+
+  var cloudHeights = ee.List.sequence(200,10000,500);
+
+  var shadows = cloudHeights.map(function(cloudHeight){
+
+    cloudHeight = ee.Number(cloudHeight);
+
+    var shadowVector = zenith.tan().multiply(cloudHeight);
+
+    var x = azimuth.cos().multiply(shadowVector).divide(nominalScale).round();
+
+    var y = azimuth.sin().multiply(shadowVector).divide(nominalScale).round();
+
+    return cloud.changeProj(cloud.projection(), cloud.projection().translate(x, y));
+
+  });
+
+  var potentialShadow = ee.ImageCollection.fromImages(shadows).max();
+
+  
+
+  // shadows are not clouds
+
+  var potentialShadow1 = potentialShadow.and(cloud.not());
+
+  
+
+  // (modified by Sam Murphy) dark pixel detection 
+
+  var darkPixels = toa.select(['B8','B11','B12']).reduce(ee.Reducer.sum()).lt(irSumThresh)
+
+    .focal_min(contractPixels).focal_max(dilatePixels)
+
+
+
+  // shadows are dark
+
+  var shadow = potentialShadow1.and(darkPixels).rename('shadows');
+
+  
+
+  return shadow
+
+}
+
+
+
+///////Fonction masque eau à partir du NDWI///////
+
+function waterMask(img_masked){
+
+  var ndwi = img_masked.normalizedDifference(['B3', 'B8A']).lte(0).rename(['ndwi']);
+
+  var maskWater = ndwi.eq(0); 
+
+  return maskWater
+
+}
+
+
+
+
+
+function cloud_and_shadow_mask(thr) {
+
+  return function(img) {
+
+    var toa = sentinel2toa(img)
+
+    
+
+    var cloud = sentinelCloudScore(toa, thr)
+
+    
+
+    var shadow = shadowMask(toa,cloud)
+
+    
+
+    var water = waterMask(img)
+
+    
+
+    var mask = cloud.or(shadow).or(water).eq(0)
+
+    
+
+    return toa.updateMask(mask)
+
+  }
+
+}
+
+
+
+
+
+
+
+//////////////IMAGES T2 à analyser/////////////////  
+
+
+
+var S2_t2 = ee.ImageCollection('COPERNICUS/S2')
+
+  .filterBounds(zone)
+
+  .filterDate(startD, stopD)
+
+  
+
+  
+
+
+
+var masked_images = S2_t2.map(cloud_and_shadow_mask(cloudScoreThreshold_T2))
+
+var mosaic_t2= masked_images.mosaic();    
+
+
+
+
+
+Map.addLayer(mosaic_t2, {bands:['B4','B3','B2'],min:0, max:0.3}, "mosaic_t2")
+
+
+
+
+
+
+
+////////////// REFERENCE FORET/////////////////////////////////////////////////                 
+
+
+
+
+
+var images = ee.ImageCollection('COPERNICUS/S2')
+
+  .filterBounds(zone)
+
+  .filterDate(startDateRef, stopDateRef)
+
+  
+
+
+
+var masked_ref = images.map(cloud_and_shadow_mask(cloudScoreThreshold_ref))
+
+
+
+var mean_ref= masked_ref.mean();
+
+
+
+Map.addLayer(mean_ref, {bands:['B4','B3','B2'],min:0, max:0.3}, "Reference")
+
+print(mean_ref,'Reference')
+
+
+
+var tmean = mean_ref
+

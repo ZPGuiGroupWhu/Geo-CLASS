@@ -1,0 +1,14 @@
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LE07/C01/T1_TOA"],
+        "Function": ["Filtering image collections by date and cloud cover", "Calculating spectral indices", "Unmixing images for land cover classification"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Calculating spectral indices", "Unmixing images for land cover classification", "Generating histograms for thresholding", "Applying Otsu's thresholding method"]
+    },
+    "relation_3": {
+        "DataSource": ["users/eeranyartrodrigo/ferrocarriles/coahuilaPols"],
+        "Function": ["Creating binary urban masks"]
+    }
+}

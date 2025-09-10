@@ -1,0 +1,148 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var geometry = 
+    /* color: #d63000 */
+    /* shown: false */
+    ee.Geometry.Polygon(
+        [[[18.38029378558077, 12.653430079523208],
+          [18.38029378558077, 9.20211496077075],
+          [20.66545003558077, 9.20211496077075],
+          [20.66545003558077, 12.653430079523208]]], null, false),
+    table = ee.FeatureCollection("users/eggenm/chad_rivers");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+var addMNDWI_L8 = function(image) {
+
+  var mndwi = image.normalizedDifference(['B3', 'B6']).rename('MNDWI');
+
+  return image.addBands(mndwi);
+
+};
+
+var scs = function(image){
+
+  return ee.Algorithms.Landsat.simpleCloudScore(image)
+
+}
+
+var doMask = function(image){
+
+  var mask = image.select(['cloud']).lte(33);
+
+  return image.updateMask(mask);
+
+}
+
+
+
+var year = 2017;
+
+Map.centerObject(geometry, 8)
+
+var date_start = ee.Date.fromYMD(year, 5, 1)
+
+var date_end = ee.Date.fromYMD(year, 8, 31)
+
+  
+
+var img_col_L8=ee.ImageCollection('LANDSAT/LC08/C01/T1_TOA')
+
+                        .filterBounds(geometry)
+
+                        .filter(ee.Filter.lt('CLOUD_COVER', 80))
+
+                        .filterDate(date_start, date_end)
+
+                        .map(scs)
+
+                        .map(addMNDWI_L8)
+
+                        .select(['B2', 'B4','B3','B5', 'B7', 'B6', 'MNDWI', 'cloud'])
+
+print(img_col_L8)
+
+var may = img_col_L8.filter(ee.Filter.calendarRange(5, 5, 'month'))
+
+may = may.map(doMask)
+
+var mayMos = may.qualityMosaic('MNDWI')
+
+var mayMed = may.median()
+
+
+
+
+
+Map.addLayer(mayMos, {bands: ['MNDWI'], min:-1, max: 1}, 'mayMaxMNDWI')
+
+Map.addLayer(mayMed, {bands: ['MNDWI'], min:-1, max: 1}, 'mayMedianMNDWI')
+
+
+
+var june = img_col_L8.filter(ee.Filter.calendarRange(6, 6, 'month'))
+
+june  = june.map(doMask)
+
+var juneMos = june.qualityMosaic('MNDWI')
+
+var juneMed = june.median()
+
+
+
+
+
+var july = img_col_L8.filter(ee.Filter.calendarRange(7, 7, 'month'))
+
+july  = july.map(doMask)
+
+var julyMos = july.qualityMosaic('MNDWI')
+
+var julyMed = july.median()
+
+
+
+var aug = img_col_L8.filter(ee.Filter.calendarRange(8, 8, 'month'))
+
+aug  = aug.map(doMask)
+
+var augMos = aug.qualityMosaic('MNDWI')
+
+var augMed = aug.median()
+
+
+
+
+
+print(may)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Map.addLayer(juneMos, {bands: ['MNDWI'], min:-1, max: 1}, 'juneMaxMNDWI')
+
+Map.addLayer(juneMed, {bands: ['MNDWI'], min:-1, max: 1}, 'juneMedianMNDWI')
+
+Map.addLayer(julyMos, {bands: ['MNDWI'], min:-1, max: 1}, 'julyMaxMNDWI')
+
+Map.addLayer(julyMed, {bands: ['MNDWI'], min:-1, max: 1}, 'julyMedianMNDWI')
+
+
+
+Map.addLayer(augMos, {bands: ['MNDWI'], min:-1, max: 1}, 'augMaxMNDWI')
+
+Map.addLayer(augMed, {bands: ['MNDWI'], min:-1, max: 1}, 'augMedianMNDWI')
+
+Map.addLayer(table)
+
+
+
+print(aug)

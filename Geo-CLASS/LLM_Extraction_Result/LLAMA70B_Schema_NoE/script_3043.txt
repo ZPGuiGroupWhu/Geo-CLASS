@@ -1,0 +1,33 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land cover classification and change detection using Landsat imagery"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR", "LANDSAT/LE07/C01/T1_SR", "LANDSAT/LT05/C01/T1_SR", "users/1915303017/CNBBW_SL_10kmBuffer", "USGS/SRTMGL1_003"],
+  "Function": ["renameOli", "renameEtm", "etmToOli", "fmask", "calNDVI", "calmNDWI", "calLSWI", "calEVI", "calAWEInsh", "prepOli", "prepEtm", "colWF", "colVF"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR", "LANDSAT/LE07/C01/T1_SR", "LANDSAT/LT05/C01/T1_SR"],
+        "Function": ["renameOli", "renameEtm", "etmToOli", "prepOli", "prepEtm"]
+    },
+    "relation_2": {
+        "DataSource": ["users/1915303017/CNBBW_SL_10kmBuffer"],
+        "Function": ["colWF", "colVF"]
+    },
+    "relation_3": {
+        "DataSource": ["USGS/SRTMGL1_003"],
+        "Function": ["fmask", "calNDVI", "calmNDWI", "calLSWI", "calEVI", "calAWEInsh"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4643, 'completion_tokens': 433, 'total_tokens': 5076}

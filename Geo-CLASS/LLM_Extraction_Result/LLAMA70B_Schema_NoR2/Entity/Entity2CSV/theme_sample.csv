@@ -1,0 +1,236 @@
+ID,Script_ID,Entity_Type,Value
+1,script_102957.txt,Theme,Land cover analysis in Los Angeles County
+2,script_10376.txt,Theme,Land surface analysis using Landsat 8 imagery
+3,script_103827.txt,Theme,Flood monitoring and analysis
+4,script_106121.txt,Theme,Sentinel-2 Image Reprojection and Export
+5,script_10828.txt,Theme,Vegetation Index Analysis
+6,script_118175.txt,Theme,Land cover classification and vegetation index analysis
+7,script_119133.txt,Theme,Wildfire severity analysis using satellite imagery
+8,script_11983.txt,Theme,Vegetation Index Analysis
+9,script_120271.txt,Theme,NDVI analysis of Sentinel-2 imagery
+10,script_120557.txt,Theme,Land cover classification in Florida
+11,script_125294.txt,Theme,Ecorregion Alto Parana land cover analysis
+12,script_144864.txt,Theme,"Land cover classification in Hai Phong, Vietnam"
+13,script_146128.txt,Theme,Land cover classification using Sentinel-2 imagery
+14,script_15043.txt,Theme,Land Use Land Cover Classification
+15,script_155017.txt,Theme,Land Surface Temperature Analysis in Himachal Pradesh
+16,script_165234.txt,Theme,MODIS vegetation analysis
+17,script_165234.txt,Theme,Country boundary analysis
+18,script_173652.txt,Theme,Land cover change detection and analysis
+19,script_174474.txt,Theme,Land cover analysis using Landsat 5 imagery
+20,script_174747.txt,Theme,"Land Surface Temperature Analysis in Michoacan, Mexico"
+21,script_179626.txt,Theme,Land Surface Temperature Analysis
+22,script_180257.txt,Theme,Land cover analysis using Landsat imagery
+23,script_186294.txt,Theme,Land cover classification and vegetation analysis
+24,script_186319.txt,Theme,Forest monitoring and land cover change detection
+25,script_186320.txt,Theme,Forest monitoring and early detection of forest loss and fire using Sentinel-2 images
+26,script_186321.txt,Theme,Forest monitoring and early detection of forest loss and fire using Sentinel-2 images
+27,script_186323.txt,Theme,Forest monitoring and land cover change detection
+28,script_186325.txt,Theme,Forest monitoring and land cover change detection
+29,script_186326.txt,Theme,Forest monitoring and early detection of forest loss and fire using Sentinel-2 images
+30,script_186329.txt,Theme,Forest monitoring and land cover change detection
+31,script_186332.txt,Theme,"Land cover classification and crop type identification in Maharashtra, India"
+32,script_186333.txt,Theme,"Crop classification and land use analysis in Maharashtra, India"
+33,script_186334.txt,Theme,Land cover classification and crop type identification
+34,script_186356.txt,Theme,Land cover classification using Sentinel-1 data
+35,script_186365.txt,Theme,Land cover classification
+36,script_186365.txt,Theme,Vegetation analysis
+37,script_186365.txt,Theme,Burn area detection
+38,script_186365.txt,Theme,Snow detection
+39,script_186365.txt,Theme,Linear transformation
+40,script_186365.txt,Theme,Principal component analysis
+41,script_186365.txt,Theme,Spectral unmixing
+42,script_186365.txt,Theme,Pan-sharpening
+43,script_186378.txt,Theme,Land cover classification and vegetation monitoring
+44,script_186380.txt,Theme,Marsh bird survey points analysis along the ColRiver
+45,script_186418.txt,Theme,Land Surface Temperature Retrieval
+46,script_186418.txt,Theme,Atmospheric Correction
+47,script_186418.txt,Theme,Vegetation Index Analysis
+48,script_186449.txt,Theme,Land cover classification using Landsat 8 imagery
+49,script_186466.txt,Theme,Forest monitoring and land cover classification
+50,script_186503.txt,Theme,Land cover classification using Sentinel-1 data
+51,script_186528.txt,Theme,Land cover classification using Sentinel-1 data
+52,script_186540.txt,Theme,Land cover classification and vegetation analysis
+53,script_186548.txt,Theme,Surface water detection and analysis
+54,script_186562.txt,Theme,Forest monitoring and deforestation detection
+55,script_186570.txt,Theme,Forest monitoring and land cover change detection
+56,script_186601.txt,Theme,Forest monitoring and land cover classification
+57,script_186605.txt,Theme,Forest monitoring and land cover change detection
+58,script_186607.txt,Theme,Forest fire detection and monitoring
+59,script_186815.txt,Theme,Forest monitoring and land cover change detection
+60,script_186822.txt,Theme,Agricultural field analysis using Sentinel-1 data
+61,script_186829.txt,Theme,Amazon Forest Temperature Analysis
+62,script_186856.txt,Theme,Cloud and Shadow Masking for Sentinel-2 Imagery
+63,script_186886.txt,Theme,Forest monitoring and land cover change detection
+64,script_186888.txt,Theme,Land Surface Temperature and Vegetation Index Analysis
+65,script_186892.txt,Theme,"Forest monitoring and early detection of forest loss and fire in Dak Nong, Vietnam"
+66,script_186914.txt,Theme,Flood area detection and population analysis
+67,script_186915.txt,Theme,Flood area detection and population analysis
+68,script_186940.txt,Theme,Landsat Time Series Analysis for Land Cover Change Detection
+69,script_186974.txt,Theme,Land surface reflectance analysis
+70,script_186974.txt,Theme,Water index calculation
+71,script_187038.txt,Theme,Land cover classification and cloud cover analysis
+72,script_187125.txt,Theme,Water detection and river boundary analysis
+73,script_187131.txt,Theme,Wildfire analysis and burned area detection
+74,script_187137.txt,Theme,Land Surface Temperature Analysis
+75,script_187138.txt,Theme,Amazon Forest Temperature Analysis
+76,script_187226.txt,Theme,Forest analysis using Sentinel-2 images
+77,script_187248.txt,Theme,Land Surface Temperature Analysis
+78,script_187481.txt,Theme,Flood Mapping using Sentinel-1 Data
+79,script_187523.txt,Theme,Flood Mapping using Sentinel-1 Data
+80,script_187528.txt,Theme,Flood Mapping using Sentinel-1 Data
+81,script_187530.txt,Theme,Flood Mapping and Monitoring
+82,script_187532.txt,Theme,Flood Mapping and Monitoring
+83,script_187533.txt,Theme,Flood Mapping and Monitoring
+84,script_187534.txt,Theme,Flood Mapping and Monitoring
+85,script_187535.txt,Theme,Flood Mapping and Monitoring
+86,script_187582.txt,Theme,Land cover classification and vegetation index analysis
+87,script_187585.txt,Theme,Vegetation monitoring using MODIS EVI
+88,script_187586.txt,Theme,Vegetation monitoring using MODIS EVI
+89,script_187587.txt,Theme,Vegetation monitoring and analysis
+90,script_187738.txt,Theme,Crop classification and object-based image analysis
+91,script_187749.txt,Theme,NDVI trend analysis in Beijing
+92,script_187888.txt,Theme,Land cover classification and vegetation monitoring
+93,script_187895.txt,Theme,Land cover classification and BSI analysis for Harvested land cover type
+94,script_188011.txt,Theme,Land Surface Temperature Analysis
+95,script_188030.txt,Theme,Land cover classification and vegetation health analysis in Tehran
+96,script_188052.txt,Theme,Water body extraction and analysis using Landsat and Sentinel-2 data
+97,script_188147.txt,Theme,Land cover classification and forest monitoring in Zimbabwe
+98,script_188163.txt,Theme,Land cover classification and land use analysis in Zimbabwe
+99,script_188190.txt,Theme,Land cover classification and forest change analysis in Zimbabwe
+100,script_188217.txt,Theme,Land cover classification and urbanization analysis
+101,script_188221.txt,Theme,Climate data analysis for precipitation and evaporation in India
+102,script_188386.txt,Theme,Land cover classification
+103,script_188397.txt,Theme,Wildfire analysis
+104,script_188400.txt,Theme,Air quality analysis using NO2 column number density
+105,script_188401.txt,Theme,Temperature analysis
+106,script_188412.txt,Theme,Land Surface Temperature (LST) analysis
+107,script_188413.txt,Theme,Land Surface Temperature (LST) analysis
+108,script_188414.txt,Theme,Land Surface Temperature (LST) analysis
+109,script_188419.txt,Theme,Land Surface Temperature (LST) analysis
+110,script_188454.txt,Theme,Cloud probability analysis in East Asia
+111,script_188455.txt,Theme,Cloud probability analysis in East South Asia
+112,script_188458.txt,Theme,Cloud probability analysis in East South Asia
+113,script_188465.txt,Theme,Land cover classification and cloud probability analysis
+114,script_188502.txt,Theme,Water body area change analysis
+115,script_188506.txt,Theme,Land cover classification and cloud probability analysis
+116,script_188509.txt,Theme,Climate and precipitation analysis in East South Asia
+117,script_188511.txt,Theme,Climate and precipitation analysis in East South Asia
+118,script_23533.txt,Theme,Land cover classification and change detection
+119,script_28.txt,Theme,Snow cover analysis in Pacific Northwest region
+120,script_3043.txt,Theme,Land cover classification and water body detection
+121,script_32.txt,Theme,Snow cover analysis and bias determination in MODIS/VIIRS snow product
+122,script_35538.txt,Theme,Land cover classification and waterbody extraction
+123,script_41838.txt,Theme,Land cover classification using Landsat 8 imagery
+124,script_42.txt,Theme,Forest cover classification in Cambodia
+125,script_43.txt,Theme,Community forest analogue regions identification
+126,script_43803.txt,Theme,Land cover classification in Zhangjiakou region
+127,script_45435.txt,Theme,Vegetation Cover and Leaf Area Index Analysis
+128,script_48.txt,Theme,Land cover change detection and analysis in Cambodia
+129,script_49902.txt,Theme,Vegetation health monitoring using satellite indices
+130,script_50.txt,Theme,Forest canopy cover mapping and analysis
+131,script_51624.txt,Theme,Flood monitoring and analysis
+132,script_52026.txt,Theme,Ozone concentration analysis
+133,script_54980.txt,Theme,Land use and land cover change analysis
+134,script_59099.txt,Theme,"Landslide zone evaluation in Aldea Las Minas, Casillas, Santa Rosa"
+135,script_62526.txt,Theme,Water Area Analysis using Sentinel-2 Imagery
+136,script_65671.txt,Theme,Landsat 5 and 8 median temperature analysis
+137,script_67562.txt,Theme,Land cover classification
+138,script_71184.txt,Theme,Lake water quality monitoring
+139,script_72.txt,Theme,Land cover change detection and trend analysis in Cambodia
+140,script_75448.txt,Theme,Lake surface area analysis over time
+141,script_76696.txt,Theme,Arctic treeline project Russia
+142,script_76709.txt,Theme,Water quality analysis using Sentinel-2 imagery
+143,script_76805.txt,Theme,Arctic greening patterns
+144,script_76839.txt,Theme,Land surface water index and vegetation index analysis
+145,script_76840.txt,Theme,Land surface water index and vegetation index analysis
+146,script_76841.txt,Theme,Land surface water index and vegetation index analysis
+147,script_78663.txt,Theme,Land Cover Classification and Correction
+148,script_78805.txt,Theme,Land cover analysis using Landsat 5 images
+149,script_85061.txt,Theme,Land cover classification and land use analysis in Suriname
+150,script_85217.txt,Theme,Land cover classification using Landsat 8 imagery
+151,script_85219.txt,Theme,Wildfire severity analysis in Chaco region
+152,script_89887.txt,Theme,Land cover classification
+153,script_89887.txt,Theme,Water body detection
+154,script_89887.txt,Theme,Topographic analysis
+155,script_95721.txt,Theme,Crop monitoring and vegetation analysis
+156,script_95950.txt,Theme,Vegetation monitoring using NDVI
+157,script_96316.txt,Theme,Land cover classification and vegetation monitoring
+158,script_96317.txt,Theme,Land cover classification and vegetation index analysis
+159,script_96322.txt,Theme,Land Use Land Cover Classification
+160,script_96332.txt,Theme,Land cover classification and water quality analysis
+161,script_96361.txt,Theme,"Landsat 5, 7, 8 image processing and analysis"
+162,script_96424.txt,Theme,Water surface analysis and lake extent estimation
+163,script_96426.txt,Theme,Lake water surface area analysis
+164,script_96427.txt,Theme,Lake water surface analysis and monitoring
+165,script_96458.txt,Theme,Rice paddy monitoring
+166,script_96458.txt,Theme,Urban area detection
+167,script_96458.txt,Theme,Water body detection
+168,script_96458.txt,Theme,Vegetation monitoring
+169,script_96459.txt,Theme,Land use classification and urbanization analysis
+170,script_96519.txt,Theme,Flood Analysis
+171,script_96519.txt,Theme,Earthquake Analysis
+172,script_96519.txt,Theme,Land Use
+173,script_96519.txt,Theme,Fire Analysis
+174,script_96537.txt,Theme,Land cover classification and geomedian analysis
+175,script_96538.txt,Theme,Panteon characterization using Sentinel-2 data
+176,script_96558.txt,Theme,Climate and vegetation analysis in Hungary
+177,script_96578.txt,Theme,Wildfire analysis and monitoring in Tasmania
+178,script_96593.txt,Theme,Locust damage assessment using remote sensing
+179,script_96611.txt,Theme,Landsat 8 Image Composite and NDVI Analysis
+180,script_97207.txt,Theme,Wildfire analysis and classification
+181,script_97208.txt,Theme,Wildfire analysis and classification
+182,script_97209.txt,Theme,Wildfire analysis and classification
+183,script_97210.txt,Theme,Wildfire analysis and classification
+184,script_97211.txt,Theme,Wildfire analysis and classification
+185,script_97212.txt,Theme,Wildfire analysis and classification
+186,script_97250.txt,Theme,Night Light Statistics by Landcover in India
+187,script_97292.txt,Theme,Land cover classification and object-based image analysis
+188,script_97295.txt,Theme,Land Use Land Cover classification
+189,script_97367.txt,Theme,Land cover classification and vegetation monitoring
+190,script_97371.txt,Theme,"Crop monitoring and analysis in Piura, Peru"
+191,script_97430.txt,Theme,Land cover classification and vegetation analysis
+192,script_97431.txt,Theme,Water body analysis in Chad
+193,script_97446.txt,Theme,Land cover analysis in Kalimantan region
+194,script_97475.txt,Theme,Land cover classification and analysis using Sentinel-2 imagery
+195,script_97477.txt,Theme,Water quality analysis of Oneida Lake
+196,script_97479.txt,Theme,Landsat 8 Surface Reflectance Analysis
+197,script_97479.txt,Theme,Cloud Masking
+198,script_97479.txt,Theme,Image Filtering
+199,script_97479.txt,Theme,Geographic Analysis
+200,script_97507.txt,Theme,Tracking Crop Greenness in Merced County
+201,script_97508.txt,Theme,Tracking Crop Greenness in Merced County
+202,script_97509.txt,Theme,Burn Severity of Mendocino Complex Fire
+203,script_97510.txt,Theme,Burn Severity of Mendocino Complex Fire
+204,script_97512.txt,Theme,Burn Severity Analysis of Medocino Complex Fire
+205,script_97538.txt,Theme,Land cover analysis using Landsat 8 imagery
+206,script_97539.txt,Theme,Land cover analysis using Landsat 8 imagery
+207,script_97582.txt,Theme,Wildfire monitoring and analysis
+208,script_97609.txt,Theme,Drought monitoring and seasonal rainfall analysis
+209,script_97610.txt,Theme,Climate Analysis
+210,script_97651.txt,Theme,Landsat 7 image processing and cloud masking
+211,script_97683.txt,Theme,Satellite Imagery Analysis
+212,script_97683.txt,Theme,Remote Sensing
+213,script_97683.txt,Theme,Earth Observation
+214,script_97700.txt,Theme,Land cover classification using Sentinel-2 and Sentinel-1 data
+215,script_97704.txt,Theme,Topographic analysis of global DEMs
+216,script_97718.txt,Theme,Vegetation health monitoring using NDVI and MSI
+217,script_97724.txt,Theme,Chinese Privet monitoring and NDVI analysis
+218,script_97954.txt,Theme,Land cover classification and land change detection in the Bahamas
+219,script_97974.txt,Theme,Land cover classification and change detection in Grenada
+220,script_97988.txt,Theme,Land cover classification and forest area analysis in Belize
+221,script_97991.txt,Theme,Land cover classification and forest type analysis in Trinidad and Tobago
+222,script_98169.txt,Theme,Vegetation health analysis using NDVI
+223,script_98257.txt,Theme,Flood monitoring and analysis
+224,script_98258.txt,Theme,Flood monitoring and analysis
+225,script_98259.txt,Theme,"Flood monitoring and water detection in Hue, Vietnam"
+226,script_98260.txt,Theme,Flood analysis and water detection
+227,script_98261.txt,Theme,Flood extent analysis and mapping
+228,script_98262.txt,Theme,Flood extent analysis and mapping
+229,script_98263.txt,Theme,Flood monitoring and analysis
+230,script_98266.txt,Theme,Flood extent analysis and mapping
+231,script_98267.txt,Theme,Flood extent analysis using Sentinel-1 data
+232,script_98275.txt,Theme,Flood monitoring and analysis
+233,script_98287.txt,Theme,Vegetation health monitoring using Sentinel-2 imagery
+234,script_98289.txt,Theme,Landsat 8 Surface Reflectance Analysis
+235,script_98290.txt,Theme,Land cover classification

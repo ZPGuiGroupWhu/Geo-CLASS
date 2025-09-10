@@ -1,0 +1,28 @@
+{
+    "Theme": [
+        "Land cover classification and vegetation index analysis"
+    ],
+    "DataSource": [
+        "LANDSAT/LC09/C02/T1_L2",
+        "LANDSAT/LC08/C02/T1_L2",
+        "COPERNICUS/S2_SR",
+        "users/gena/packages:utils",
+        "users/gena/packages:text",
+        "users/gena/packages:palettes"
+    ],
+    "Function": [
+        "Apply scale factors to image",
+        "Mask clouds in Sentinel-2 image",
+        "Calculate NDVI",
+        "Calculate NDWI",
+        "Calculate MNDWI",
+        "Calculate NDSI",
+        "Calculate EWI",
+        "Calculate ICE",
+        "Filter image collection by date and cloud cover",
+        "Join image collections",
+        "Clip image to region of interest",
+        "Quality mosaic of image collection",
+        "Maximum value composite of image collection"
+    ]
+}

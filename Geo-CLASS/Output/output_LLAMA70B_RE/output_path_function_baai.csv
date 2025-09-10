@@ -1,0 +1,1307 @@
+Script_ID,Concept_4,Concept_35,Similarity
+script_102957.txt,Clear Pixel Masking,Clear Pixel Masking,1.0
+script_102957.txt,Cloud And Cloud Shadow Masking,Cloud And Cloud Shadow Masking,1.0
+script_102957.txt,Create Median Composite Of Images,Create Median Composite Of Images,1.0
+script_102957.txt,Filter Image Collection By Bounds,Filter Image Collection By Bounds,1.0
+script_102957.txt,Filter Image Collection By Time,Unit Conversion For Daily Averages,0.21913810292961647
+script_102957.txt,Filter Image Collection By Date And Region,Spatial Analysis,0.0
+script_102957.txt,Surface Reflectance Correction,Spatial Analysis,0.0
+script_10376.txt,Surface Reflectance Correction,Surface Reflectance Correction,1.0
+script_10376.txt,Filter Image Collection By Date And Boundaries,Filter Image Collection,0.8084138416281831
+script_10376.txt,Export Processed Images To Drive,Export Selected Image,0.6077271581200774
+script_10376.txt,Visualize Images In Different Band Combinations,Enhancing Image Visualization,0.38536259942904805
+script_103827.txt,Clip Images To A Specific Region,Clip Images To A Specific Region,1.0
+script_103827.txt,Generate Image Composites,Create RGB Composite Image,0.8193758975576227
+script_103827.txt,Enhancing Image Visualization,Visualize Satellite Images,0.44924685722875973
+script_103827.txt,Filter Images By Date,Filter Image Collection By Date,0.3509321584410048
+script_106121.txt,Export Processed Images To Google Drive,Export Processed Images To Google Drive,1.0
+script_106121.txt,Image Reprojection,Image Reprojection,1.0
+script_106121.txt,Select Specific Bands From Images,Select Specific Bands From Images,1.0
+script_106121.txt,Filter Image Collection By Cloud Coverage,Filter Image Collection,0.8084138416281831
+script_106121.txt,Display Interactive Map,Visualize Satellite Images,0.44924685722875973
+script_10828.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_10828.txt,Export Results,Export Results,1.0
+script_10828.txt,Filter Image Collection,Filter Image Collection,1.0
+script_10828.txt,Image Cloud Masking,Image Cloud Masking,1.0
+script_10828.txt,Interpolate Missing Values,Interpolation,0.8174710689652901
+script_10828.txt,Cloud And Shade Masking,Add A Feature Collection,0.0
+script_10828.txt,Computes Normalized Difference Vegetation Index (NDVI),Spatial Analysis,0.0
+script_10828.txt,Filter Feature Collection,Spatial Analysis,0.0
+script_10828.txt,Performs Linear Interpolation,Spatial Analysis,0.0
+script_10828.txt,Reduction Of Image Regions,Spatial Analysis,0.0
+script_118175.txt,Apply Scale Factors To Image,Apply Scale Factors To Image,1.0
+script_118175.txt,Calculates Modified Normalized Difference Water Index (MNDWI),Calculates Modified Normalized Difference Water Index (MNDWI),1.0
+script_118175.txt,Calculates Normalized Difference Water Index (NDWI),Calculates Normalized Difference Water Index (NDWI),1.0
+script_118175.txt,Clip Images To A Specific Region,Clip Images To A Specific Region,1.0
+script_118175.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_118175.txt,Filter Images By Cloud Cover,Filter Images By Cloud Cover,1.0
+script_118175.txt,Image Cloud Masking,Image Cloud Masking,1.0
+script_118175.txt,Quality Mosaic Generation,Quality Mosaic Generation,1.0
+script_118175.txt,Compute Maximum Values,Calculates Mean Of Image Collection,0.6099634931036131
+script_118175.txt,Geometric Index Calculation,Topographic Wetness Index (TWI) Computation,0.1961758501855679
+script_118175.txt,Filter Image Collection By Time,Temperature Calculation,0.0
+script_118175.txt,Image Mosaicking,Converts Joined Data To Image Collection,0.0
+script_119133.txt,Cluster Analysis,Image Clustering,0.8233713144401191
+script_119133.txt,Generate Visualizations And Statistical Charts For Classification Results,Generating Histograms,0.7167750951302904
+script_119133.txt,Calculate Difference Normalized Burn Ratio (dNBR),Image Differencing,0.5910107538379412
+script_119133.txt,Apply Mask To Classification Results,Calculate Normalized Difference And Other Indices,0.0
+script_119133.txt,Compute Difference Between Pre- And Post-Fire NBR,Image Stacking,0.0
+script_119133.txt,Severity Classification,Data Filtering,0.0
+script_119133.txt,Training Data Creation,Mask Application,0.0
+script_11983.txt,Anomaly Calculation,Anomaly Calculation,1.0
+script_11983.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_11983.txt,Filter Image Collection,Filter Image Collection,1.0
+script_11983.txt,Image Differencing,Image Differencing,1.0
+script_11983.txt,Cloud And Shade Masking,Image Cloud Masking,0.821964979616698
+script_11983.txt,Computes Normalized Difference Vegetation Index (NDVI),Spatial Analysis,0.0
+script_11983.txt,Creates Animation Of NDVI Over Time,Spatial Analysis,0.0
+script_11983.txt,Filter Image Collection By Date And Boundaries,Spatial Analysis,0.0
+script_11983.txt,Generate Image Composites,Spatial Analysis,0.0
+script_11983.txt,Generate Time Series Charts,Spatial Analysis,0.0
+script_11983.txt,Generate Time Series Charts For NDVI,Spatial Analysis,0.0
+script_120271.txt,Gradient Calculation,Gradient Calculation,1.0
+script_120271.txt,Calculates Median Of Image Collection,Calculates Median Values,0.8769691252067208
+script_120271.txt,Filter Image Collection By Cloud Coverage,Filter Image Collection,0.8084138416281831
+script_120271.txt,Clip Images To A Specific Region,Clip Images,0.7524467025979407
+script_120271.txt,Image Scaling,Reduction Of Image Regions,0.46544425978441595
+script_120271.txt,Visualize NDVI Results,Render,0.42480765933254194
+script_120271.txt,Add NDVI Band To Images,Compute Median Of NDVI,0.0
+script_120271.txt,Create Median Composite Of Images,Computes Percentage Of Cloud Cover,0.0
+script_120557.txt,Filter Image Collection By Region,Filter Image Collection By Region,1.0
+script_120557.txt,Cloud And Shade Masking,Image Cloud Masking,0.821964979616698
+script_120557.txt,Decision Tree Classification,Calculate Environmental And Vegetation Indices,0.0
+script_125294.txt,Image Cloud Masking,Image Cloud Masking,1.0
+script_125294.txt,Filter Image Collection By Cloud Coverage,Filter Image Collection,0.8084138416281831
+script_125294.txt,Visualize Images In Different Band Combinations,Data Visualization,0.5317733083190554
+script_125294.txt,Clip Images To A Specific Region,Statistics Calculation,0.2743833090522186
+script_125294.txt,Reduce Image Collection To Minimum Value,Generate Image Composites,0.23969151302371655
+script_125294.txt,Export Processed Images To Drive,Spatial Analysis,0.0
+script_125294.txt,Export Processed Images To Google Drive,Spatial Analysis,0.0
+script_125294.txt,Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover,Spatial Analysis,0.0
+script_144864.txt,Image Cloud Masking,Image Cloud Masking,1.0
+script_144864.txt,Land Cover Classification And Mapping,Land Cover Classification And Mapping,1.0
+script_144864.txt,Filter Image Collection By Cloud Coverage,Filter Image Collection By Date And Boundaries,0.6784350724019818
+script_144864.txt,Area Calculation,Spatial Clipping,0.27010328250291066
+script_144864.txt,Compute Median Of NDVI,Spatial Analysis,0.0
+script_144864.txt,Computes Normalized Difference Vegetation Index (NDVI),Spatial Analysis,0.0
+script_155017.txt,Filter Image Collection By Bounds,Filter Image Collection By Bounds,1.0
+script_155017.txt,Filter Image Collection By Date,Filter Image Collection By Date,1.0
+script_155017.txt,Reduction Of Image Regions,Reduction Of Image Regions,1.0
+script_155017.txt,Clip Images To A Specific Region,Clip Images To Specific Geographic Boundaries,0.7817204997538865
+script_155017.txt,Convert And Format Spatial Data For Export,Layer Addition To Map,0.2820107618632349
+script_155017.txt,Export Time Series Data,Remapping Values,0.25582495482622625
+script_155017.txt,Derive Land Surface Temperature Using Thermal Properties,Scaling Image Values,0.0
+script_165234.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_165234.txt,Creating Monthly Composite,Creating Monthly Composite,1.0
+script_165234.txt,Image Cloud Masking,Image Cloud Masking,1.0
+script_165234.txt,Quality Mosaic Generation,Quality Mosaic Generation,1.0
+script_165234.txt,Filter Image Collection By Year,Filter Image Collection,0.7636987770243056
+script_165234.txt,Add Date Information To Images,Image Scaling,0.2320617451681777
+script_165234.txt,Scaling Image Values,Burn Date Extraction,0.1757427044267457
+script_165234.txt,Add Date Bands To Images,Spatial Analysis,0.0
+script_165234.txt,Cloud And Shade Masking,Spatial Analysis,0.0
+script_165234.txt,Computes Normalized Difference Vegetation Index (NDVI),Spatial Analysis,0.0
+script_165234.txt,Filter Images By Month,Spatial Analysis,0.0
+script_165234.txt,Filtering Pixels,Spatial Analysis,0.0
+script_165234.txt,Vegetation Indices/Index Calculation,Spatial Analysis,0.0
+script_165234.txt,Visualize NDVI Results,Spatial Analysis,0.0
+script_173652.txt,Clip Images To A Specific Region,Clip Images To A Specific Region,1.0
+script_173652.txt,Cloud And Cloud Shadow Masking,Cloud And Cloud Shadow Masking,1.0
+script_173652.txt,Export Processed Data To Google Drive,Export Processed Data To Google Drive,1.0
+script_173652.txt,Layer Addition To Map,Layer Addition To Map,1.0
+script_173652.txt,Filter Image Collection By Date,Filter Images By Date,0.3509321584410048
+script_173652.txt,Calculates Median Of Image Collection,Terrain Flattening,0.1757427044267457
+script_173652.txt,Cloud And Shade Masking,Spatial Analysis,0.0
+script_173652.txt,Image Cloud Masking,Spatial Analysis,0.0
+script_174474.txt,Cloud And Shade Masking,Cloud And Shade Masking,1.0
+script_174474.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_174474.txt,Filter Image Collection By Cloud Coverage,Filter Image Collection By Cloud Coverage,1.0
+script_174474.txt,Generate Image Composites,Generate Image Composites,1.0
+script_174474.txt,Clip Images To A Specific Region,Spatial Analysis,0.0
+script_174474.txt,Computes Normalized Difference Vegetation Index (NDVI),Spatial Analysis,0.0
+script_174747.txt,Filtering Administrative Boundaries,Filtering Administrative Boundaries,1.0
+script_174747.txt,Temperature Calculation,Temperature Calculation,1.0
+script_174747.txt,Export Processed Images To Drive,Export Composite Image,0.6077271581200774
+script_174747.txt,Slope calculation,Scaling index/indices values,0.39847181998854403
+script_174747.txt,Filter Image Collection By Date,Detect Trends In Time Series Data,0.0
+script_174747.txt,Generate Time Series Charts Of Temperature Data,Spatial Analysis,0.0
+script_179626.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_179626.txt,Filter Image Collection,Filter Image Collection,1.0
+script_179626.txt,Image Cloud Masking,Image Cloud Masking,1.0
+script_179626.txt,Selects Temperature Data,Selects Temperature Data,1.0
+script_179626.txt,Surface Temperature Calculation,Surface Temperature Calculation,1.0
+script_179626.txt,Calculates Median Of Image Collection,Spatial Analysis,0.0
+script_179626.txt,Cloud And Shade Masking,Spatial Analysis,0.0
+script_179626.txt,Computes Normalized Difference Vegetation Index (NDVI),Spatial Analysis,0.0
+script_179626.txt,Enhancing Image Visualization,Spatial Analysis,0.0
+script_179626.txt,Temperature Calculation,Spatial Analysis,0.0
+script_180257.txt,Area Statistics Calculation,Area Statistics Calculation,1.0
+script_180257.txt,Buffering Points,Buffering Points,1.0
+script_180257.txt,Image Masking,Image Masking,1.0
+script_180257.txt,Image Preprocessing,Image Preprocessing,1.0
+script_180257.txt,Rename Image Bands,Rename Image Bands,1.0
+script_180257.txt,Buffering Points To Create Zones For Analysis,Spatial Analysis,0.0
+script_180257.txt,Filter Image Collection By Date,Spatial Analysis,0.0
+script_180257.txt,Image Mapping,Spatial Analysis,0.0
+script_186294.txt,Add NDVI Band To Images,Add NDVI Band To Images,1.0
+script_186294.txt,Filter Image Collection By Date And Boundaries,Filter Image Collection By Date And Boundaries,1.0
+script_186294.txt,Image Masking,Update Masks,0.6835543953966721
+script_186294.txt,Export Processed Images To Google Drive,Export Processed Images To Drive,0.6077271581200774
+script_186294.txt,Image Cloud Masking,Spatial Analysis,0.0
+script_186294.txt,Visualize NDVI Results,Spatial Analysis,0.0
+script_186319.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_186319.txt,Export Selected Image,Export Selected Image,1.0
+script_186319.txt,Filter Image Collection,Filter Image Collection,1.0
+script_186319.txt,Image Mosaicking,Image Mosaicking,1.0
+script_186319.txt,Export Composite Image,Image Normalization,0.0
+script_186319.txt,Export Processed Images To Google Drive,Calculate NBR for Post-Fire Image,0.0
+script_186320.txt,Image Mosaicking,Image Mosaicking,1.0
+script_186320.txt,Filter Image Collection By Date And Boundaries,Filter Image Collection,0.8084138416281831
+script_186320.txt,Calculate dNBR For Fire Severity,Calculate NBR for Post-Fire Image,0.6828373393145643
+script_186320.txt,Export Processed Images To Drive,Export Selected Image,0.6077271581200774
+script_186320.txt,Computes Normalized Difference Vegetation Index (NDVI),Compute Median Of NDVI,0.0
+script_186321.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_186321.txt,Image Mosaicking,Image Mosaicking,1.0
+script_186321.txt,Filter Image Collection By Date And Boundaries,Filter Image Collection,0.8084138416281831
+script_186321.txt,Export Composite Image,Export Selected Image,0.6077271581200774
+script_186321.txt,Creates And Exports Image Mosaics,Calculate NBR for Post-Fire Image,0.0
+script_186321.txt,Export Processed Images To Drive,Spatial Analysis,0.0
+script_186321.txt,Exporting Classified Images,Spatial Analysis,0.0
+script_186323.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_186323.txt,Export Selected Image,Export Selected Image,1.0
+script_186323.txt,Image Mosaicking,Image Mosaicking,1.0
+script_186323.txt,Filter Image Collection By Date,Filter Image Collection,0.7636987770243056
+script_186323.txt,Creates And Exports Image Mosaics,Calculate NBR for Post-Fire Image,0.0
+script_186323.txt,Export Processed Images To Drive,Spatial Analysis,0.0
+script_186325.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_186325.txt,Image Mosaicking,Image Mosaicking,1.0
+script_186325.txt,Filter Image Collection By Date,Filter Image Collection,0.7636987770243056
+script_186325.txt,Export Composite Image,Export Selected Image,0.6077271581200774
+script_186325.txt,Detects Forest Loss,Calculate NBR for Post-Fire Image,0.44595490343732436
+script_186325.txt,Export Processed Images To Drive,Image Masking,0.0
+script_186325.txt,Exporting Classified Images,Spatial Analysis,0.0
+script_186326.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_186326.txt,Image Mosaicking,Image Mosaicking,1.0
+script_186326.txt,Filter Image Collection By Date And Boundaries,Filter Image Collection,0.8084138416281831
+script_186326.txt,Export Processed Images To Drive,Export Selected Image,0.6077271581200774
+script_186329.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_186329.txt,Export Selected Image,Export Selected Image,1.0
+script_186329.txt,Filter Image Collection,Filter Image Collection,1.0
+script_186329.txt,Image Mosaicking,Image Mosaicking,1.0
+script_186329.txt,Detects Forest Loss,Calculate NBR for Post-Fire Image,0.44595490343732436
+script_186329.txt,Export Processed Images To Drive,Enhancing Image Visualization,0.2733133357207549
+script_186332.txt,Train A Clusterer,Image Clustering,0.6775033229415263
+script_186332.txt,Filter And Merge,Filter Image Collection,0.49471166134169203
+script_186332.txt,Visualize Images In Different Band Combinations,Enhancing Image Visualization,0.38536259942904805
+script_186332.txt,Unsupervised Clustering,Buffer Creation,0.2252881498517126
+script_186332.txt,Clip Images To A Specific Region,Image Differencing,0.19677431649981106
+script_186332.txt,Add NDVI Band To Images,Compute Median Of NDVI,0.0
+script_186333.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_186333.txt,Image Clustering,Image Clustering,1.0
+script_186333.txt,Unsupervised Clustering,Unsupervised Clustering,1.0
+script_186333.txt,Cluster Image Data,Train A Clusterer,0.6145944780298462
+script_186333.txt,Clip Images To A Specific Region,Sampling Image,0.22232742894347418
+script_186333.txt,Computes Normalized Difference Vegetation Index (NDVI),Filter Image Collection,0.0
+script_186334.txt,Buffer Creation,Buffer Creation,1.0
+script_186334.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_186334.txt,Image Clustering,Image Clustering,1.0
+script_186334.txt,Image Masking,Image Masking,1.0
+script_186334.txt,Train A Clusterer,Train A Clusterer,1.0
+script_186334.txt,Filter Image Collection By Date,Filter Image Collection,0.7636987770243056
+script_186334.txt,Computes Normalized Difference Vegetation Index (NDVI),Merging (Combining Multiple Bands),0.32319285578167406
+script_186334.txt,Filter Images By Date And Region,Unsupervised Clustering,0.0
+script_186356.txt,Filter Image Collection,Filter Image Collection,1.0
+script_186356.txt,Refined Lee Speckle Filtering,Refined Lee Speckle Filtering,1.0
+script_186356.txt,Training CART Classifier,Training Data Creation,0.369452591643446
+script_186356.txt,Generate Image Composites,Image Differencing,0.0
+script_186356.txt,Unit Conversion,Spatial Analysis,0.0
+script_186365.txt,Burn Area Index Calculation,Burn Area Index Calculation,1.0
+script_186365.txt,Calculate Difference Normalized Burn Ratio (dNBR),Calculate Difference Normalized Burn Ratio (dNBR),1.0
+script_186365.txt,Calculate Normalized Difference Water Body Index (NDWBI),Calculate Normalized Difference Water Body Index (NDWBI),1.0
+script_186365.txt,"Calculate Other Vegetation Indices/index (SAVI, EVI)","Calculate Other Vegetation Indices/index (SAVI, EVI)",1.0
+script_186365.txt,Calculates Normalized Difference Water Index (NDWI),Calculates Normalized Difference Water Index (NDWI),1.0
+script_186365.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_186365.txt,Principal Component Analysis (PCA),Principal Component Analysis (PCA),1.0
+script_186365.txt,Spectral Unmixing,Spectral Unmixing,1.0
+script_186365.txt,Filter Image Collection By Date And Boundaries,Filter Images,0.4631513627771738
+script_186365.txt,Performs Linear Interpolation,Harmonization Transformation,0.1961758501855679
+script_186365.txt,Calculate NBR For Pre-Fire Image,Distance Transformation,0.0
+script_186365.txt,Computes Normalized Difference Vegetation Index (NDVI),Spatial Analysis,0.0
+script_186365.txt,Create RGB Composite Image,Spatial Analysis,0.0
+script_186365.txt,Image Band Manipulation,Spatial Analysis,0.0
+script_186378.txt,Add NDVI Band To Images,Add NDVI Band To Images,1.0
+script_186378.txt,Clip Images To A Specific Region,Clip Images To A Specific Region,1.0
+script_186378.txt,Filter Image Collection By Date,Filter Image Collection By Date,1.0
+script_186378.txt,Filter Image Collection By Date And Boundaries,Filter Image Collection By Date And Boundaries,1.0
+script_186378.txt,Reduction Of Image Regions,Reduction Of Image Regions,1.0
+script_186378.txt,Computes Normalized Difference Vegetation Index (NDVI),Spatial Analysis,0.0
+script_186380.txt,Buffering Points,Buffering Points,1.0
+script_186380.txt,Image Cloud Masking,Image Cloud Masking,1.0
+script_186380.txt,Add Variables To Imagery,Select And Clip Image,0.21810589842220002
+script_186380.txt,Clip Images To A Specific Region,Calculates Median Values,0.20547653976002453
+script_186380.txt,Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover,Addition Of Spectral Indices,0.0
+script_186380.txt,Filter Images By Date And Region,Spatial Analysis,0.0
+script_186418.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_186418.txt,Emissivity Calculation,Emissivity Calculation,1.0
+script_186418.txt,Filter Image Collection By Date,Filter Image Collection By Date,1.0
+script_186418.txt,"Merge, Harmonize, And Standardize Landsat Image Collections","Merge, Harmonize, And Standardize Landsat Image Collections",1.0
+script_186418.txt,Radiance calculation,Radiance calculation,1.0
+script_186418.txt,Surface Temperature Calculation,Surface Temperature Calculation,1.0
+script_186418.txt,Filter Image Collection By Date And Region,Selects Air Temperature Data,0.20789082168507475
+script_186418.txt,Brightness Temperature Calculation,Spatial Analysis,0.0
+script_186418.txt,Derive Land Surface Temperature Using Thermal Properties,Spatial Analysis,0.0
+script_186418.txt,Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover,Spatial Analysis,0.0
+script_186418.txt,Surface Reflectance Correction,Spatial Analysis,0.0
+script_186449.txt,Add A Feature Collection,Add A Feature Collection,1.0
+script_186449.txt,Generate And Display A Scatter Plot,Generate And Display A Scatter Plot,1.0
+script_186449.txt,Sampling Image,Sampling Image,1.0
+script_186466.txt,Generate Image Composites,Generate Image Composites,1.0
+script_186466.txt,Export Processed Images To Google Drive,Export Processed Images To Drive,0.6077271581200774
+script_186466.txt,Filter Images By Date,Filter Image Collection By Date,0.3509321584410048
+script_186503.txt,Filter Image Collection,Filter Image Collection,1.0
+script_186503.txt,Refined Lee Speckle Filtering,Refined Lee Speckle Filtering,1.0
+script_186503.txt,Remapping Land Cover Classes,Remapping Land Cover Classes,1.0
+script_186503.txt,Image Preprocessing,Unit Conversion,0.6755566980934811
+script_186503.txt,Training CART Classifier,Spatial Analysis,0.0
+script_186528.txt,Refined Lee Speckle Filtering,Refined Lee Speckle Filtering,1.0
+script_186528.txt,Generate Image Composites,Filter Image Collection,0.29113326576582993
+script_186528.txt,Select Specific Polarization From Images,Image Differencing,0.0
+script_186540.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_186540.txt,Filter Image Collection By Date And Region,Filter Image Collection By Date And Region,1.0
+script_186562.txt,Filter Image Collection By Date And Boundaries,Filter Image Collection,0.8084138416281831
+script_186562.txt,Calculate dNBR For Fire Severity,Calculate NBR for Post-Fire Image,0.6828373393145643
+script_186562.txt,Export Processed Images To Google Drive,Export Selected Image,0.6077271581200774
+script_186562.txt,Detects Forest Loss,Compute Median Of NDVI,0.1864291782965528
+script_186562.txt,Computes Normalized Difference Vegetation Index (NDVI),Data Visualization,0.0
+script_186570.txt,Export Selected Image,Export Selected Image,1.0
+script_186570.txt,Image Mosaicking,Image Mosaicking,1.0
+script_186570.txt,Filter Image Collection By Date,Filter Image Collection,0.7636987770243056
+script_186570.txt,Creates And Exports Image Mosaics,Image Masking,0.3263806396908859
+script_186570.txt,Export Composite Image,Compute Median Of NDVI,0.0
+script_186570.txt,Export Processed Images,Calculate NBR for Post-Fire Image,0.0
+script_186570.txt,Export Processed Images To Drive,Spatial Analysis,0.0
+script_186601.txt,Generate Image Composites,Generate Image Composites,1.0
+script_186601.txt,Export Processed Images To Google Drive,Export Processed Images To Drive,0.6077271581200774
+script_186601.txt,Filter Images By Date,Filter Image Collection By Date,0.3509321584410048
+script_186601.txt,Select Specific Polarization From Images,Identifying Water Body,0.0
+script_186605.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_186605.txt,Image Mosaicking,Image Mosaicking,1.0
+script_186605.txt,Filter Image Collection By Date,Filter Image Collection,0.7636987770243056
+script_186605.txt,Export Processed Images To Drive,Export Selected Image,0.6077271581200774
+script_186605.txt,Creates And Exports Image Mosaics,Calculate NBR for Post-Fire Image,0.0
+script_186607.txt,Filter Image Collection By Bounds,Filter Image Collection,0.8084138416281831
+script_186607.txt,Calculate NBR For Pre-Fire Image,Calculate NBR for Post-Fire Image,0.6828373393145643
+script_186607.txt,Filter Image Collection By Date,Filter Feature Collection,0.36736820603959175
+script_186607.txt,Computes Normalized Difference Vegetation Index (NDVI),Compute Median Of NDVI,0.0
+script_186607.txt,Image Mosaicking,Enhancing Image Visualization,0.0
+script_186607.txt,Sort Image Collection By Time,Create A Thematic Map,0.0
+script_186815.txt,Calculate NBR for Post-Fire Image,Calculate NBR for Post-Fire Image,1.0
+script_186815.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_186815.txt,Export Selected Image,Export Selected Image,1.0
+script_186815.txt,Filter Image Collection,Filter Image Collection,1.0
+script_186815.txt,Image Mosaicking,Image Mosaicking,1.0
+script_186815.txt,Calculate NBR For Pre-Fire Image,Spatial Analysis,0.0
+script_186815.txt,Creates And Exports Image Mosaics,Spatial Analysis,0.0
+script_186815.txt,Enhancing Image Visualization,Spatial Analysis,0.0
+script_186815.txt,Export Processed Images To Drive,Spatial Analysis,0.0
+script_186822.txt,Buffering Features,Buffering Features,1.0
+script_186829.txt,Filter Image Collection By Region,Filter Image Collection,0.8084138416281831
+script_186829.txt,Update Masks,Image Masking,0.6835543953966721
+script_186829.txt,Vegetation Masking,Selects Temperature Data,0.22519933824358504
+script_186856.txt,Cloud Score Computation,Cloud Score Computation,1.0
+script_186856.txt,Image Cloud Masking,Image Cloud Masking,1.0
+script_186856.txt,Shadow Projection,Shadow Projection,1.0
+script_186856.txt,Time Series Anomaly Detection,Shadow Detection,0.46926979524136864
+script_186856.txt,Cloud Filtering,Filter Image Collection,0.45926051890695496
+script_186856.txt,Image Cloud Removal,Image Mosaicking,0.2716374887365352
+script_186856.txt,Cloud And Shade Masking,Image Scaling,0.2205321420798927
+script_186856.txt,Cloud Probability Masking,Filtering Pixels,0.20789082168507475
+script_186856.txt,Identify Outlier Areas,Spatial Analysis,0.0
+script_186886.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_186886.txt,Image Mosaicking,Image Mosaicking,1.0
+script_186886.txt,Filter Image Collection By Date And Boundaries,Filter Image Collection,0.8084138416281831
+script_186886.txt,Export Composite Image,Export Selected Image,0.6077271581200774
+script_186886.txt,Export Processed Images To Drive,Data Visualization,0.3872099201385448
+script_186886.txt,Creates And Exports Image Mosaics,Image Masking,0.3263806396908859
+script_186888.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_186888.txt,Generate And Display A Scatter Plot,Generate And Display A Scatter Plot,1.0
+script_186888.txt,Image Cloud Masking,Image Cloud Masking,1.0
+script_186888.txt,Radiance calculation,Radiance calculation,1.0
+script_186888.txt,Surface Temperature Calculation,Surface Temperature Calculation,1.0
+script_186888.txt,Calculates Normalized Difference Water Index (NDWI),Spatial Analysis,0.0
+script_186888.txt,Cloud Probability Masking,Spatial Analysis,0.0
+script_186892.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_186892.txt,Image Mosaicking,Image Mosaicking,1.0
+script_186892.txt,Filter Image Collection By Cloud Coverage,Filter Image Collection,0.8084138416281831
+script_186892.txt,Export Processed Images To Drive,Export Selected Image,0.6077271581200774
+script_186892.txt,Detects Forest Loss,Calculate NBR for Post-Fire Image,0.44595490343732436
+script_186914.txt,Enhancing Image Visualization,Enhancing Image Visualization,1.0
+script_186914.txt,Focal Median Smoothing,Focal Median Smoothing,1.0
+script_186914.txt,Image Mosaicking,Image Mosaicking,1.0
+script_186914.txt,Intersection Of Geometries,Intersection Of Geometries,1.0
+script_186914.txt,Feature Calculation,Vectorization,0.6341773194443242
+script_186914.txt,Apply Threshold To Identify Flood Extent,Thresholding For Classification,0.5840593702859977
+script_186914.txt,Filtering Polygons,Filter Image Collection,0.45926051890695496
+script_186914.txt,Species count analysis,Statistics Calculation,0.28659835768709974
+script_186914.txt,Export Processed Data To Drive,Spatial Analysis,0.0
+script_186914.txt,Generates Visual Comparisons Of Pre- And Post-Event Images,Spatial Analysis,0.0
+script_186915.txt,Enhancing Image Visualization,Enhancing Image Visualization,1.0
+script_186915.txt,Focal Median Smoothing,Focal Median Smoothing,1.0
+script_186915.txt,Image Mosaicking,Image Mosaicking,1.0
+script_186915.txt,Intersection Of Geometries,Intersection Of Geometries,1.0
+script_186915.txt,Apply Threshold To Identify Flood Extent,Thresholding For Classification,0.5840593702859977
+script_186915.txt,Flood Area Calculation,Statistics Calculation,0.28659835768709974
+script_186915.txt,Clip Population Data To Flood-Affected Regions,Vectorization,0.19168777555528835
+script_186915.txt,Export Processed Data To Drive,Filter Image Collection,0.0
+script_186940.txt,Building Annual Mosaic Collection,Building Annual Mosaic Collection,1.0
+script_186940.txt,Harmonization,Harmonization,1.0
+script_186940.txt,Sample Collection,Sample Collection,1.0
+script_186940.txt,Image Mosaicking,Reduction To Single Image,0.2680288873311685
+script_186974.txt,Image Cloud Masking,Image Cloud Masking,1.0
+script_186974.txt,Merge And Sort Image Collections,Merge And Sort Image Collections,1.0
+script_186974.txt,Rename Image Bands,Rename Image Bands,1.0
+script_186974.txt,Filter Image Collection By Date And Boundaries,Filter Image Collection,0.8084138416281831
+script_186974.txt,Calculates Normalized Difference Water Index (NDWI),Calculates Modified Normalized Difference Water Index (MNDWI),0.7570974819182416
+script_186974.txt,Rename Spectral Bands,Time Series Analysis,0.3285605203026451
+script_187038.txt,Computes Percentage Of Cloud Cover,Computes Percentage Of Cloud Cover,1.0
+script_187038.txt,Filter Image Collection By Date And Region,Filter Image Collection,0.8084138416281831
+script_187038.txt,Mapping Cloud Cover,Add A Feature Collection,0.36218746827864734
+script_187038.txt,Add Date Information To Images,Image Masking,0.2994336520312282
+script_187038.txt,Land Cover Classification And Mapping,Image Differencing,0.19037464192620718
+script_187038.txt,Export Processed Images To Drive,Spatial Analysis,0.0
+script_187038.txt,Rename Image Bands,Spatial Analysis,0.0
+script_187125.txt,Apply Threshold To Identify Water Surface,Apply Threshold To Identify Water Surface,1.0
+script_187125.txt,Otsu Thresholding,Otsu Thresholding,1.0
+script_187125.txt,Calculates Normalized Difference Water Index (NDWI),Calculate Normalized Difference And Other Indices,0.5004429137317534
+script_187125.txt,Filter And Process Images For Water Detection,Image Masking,0.2994336520312282
+script_187125.txt,Threshold Application,Edge Detection,0.2530308896876976
+script_187125.txt,Buffering Edges,Image Resampling,0.0
+script_187131.txt,Create Image Composites To Minimize Cloud Cover,Create Image Composites To Minimize Cloud Cover,1.0
+script_187131.txt,Filter Image Collection By Date And Region,Filter Image Collection By Date And Region,1.0
+script_187131.txt,Calculate Normalized Burn Ratio (NBR) For Images,Calculate NBR for Post-Fire Image,0.6828373393145643
+script_187131.txt,Burn Masking,Buffering Geometries,0.0
+script_187131.txt,Export Processed Data To Drive,Vectorization,0.0
+script_187131.txt,Image Cloud Removal,Spatial Analysis,0.0
+script_187137.txt,Temperature Calculation,Temperature Calculation,1.0
+script_187137.txt,Unit Conversion For Temperature Data,Unit Conversion For Temperature Data,1.0
+script_187137.txt,Generate Time Series Charts Of Temperature Data,Generate Time Series Charts,0.8457305775031829
+script_187137.txt,Filter Image Collection By Date,Filter Image Collection,0.7636987770243056
+script_187137.txt,Creating Monthly Composite,Image Aggregation,0.6315589816488529
+script_187137.txt,Calculating Annual Average,Spatial Analysis,0.0
+script_187137.txt,Filter Images By Date,Spatial Analysis,0.0
+script_187138.txt,Filter Image Collection By Region,Filter Image Collection,0.8084138416281831
+script_187138.txt,Update Masks,Image Masking,0.6835543953966721
+script_187138.txt,Vegetation Masking,Binary Image Creation,0.21810589842220002
+script_187226.txt,Cloud Score Computation,Cloud Score Computation,1.0
+script_187226.txt,Filter Image Collection,Filter Image Collection,1.0
+script_187226.txt,Flood Mask Generation,Flood Mask Generation,1.0
+script_187226.txt,Image Masking,Image Masking,1.0
+script_187226.txt,Image Mosaicking,Image Mosaicking,1.0
+script_187226.txt,Shadow Masking,Shadow Masking,1.0
+script_187226.txt,Compute Mean Values,Spatial Analysis,0.0
+script_187248.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_187248.txt,Emissivity Calculation,Emissivity Calculation,1.0
+script_187248.txt,Filter Image Collection,Filter Image Collection,1.0
+script_187248.txt,Image Cloud Masking,Image Cloud Masking,1.0
+script_187248.txt,Surface Temperature Calculation,Surface Temperature Calculation,1.0
+script_187248.txt,Computes Normalized Difference Vegetation Index (NDVI),Spatial Analysis,0.0
+script_187248.txt,Display Interactive Map,Spatial Analysis,0.0
+script_187248.txt,Enhancing Image Visualization,Spatial Analysis,0.0
+script_187248.txt,Fractional Vegetation Calculation,Spatial Analysis,0.0
+script_187248.txt,Image Band Manipulation,Spatial Analysis,0.0
+script_187248.txt,Legend Creation,Spatial Analysis,0.0
+script_187481.txt,Calculate Spectral Indices And Ratios From Satellite Bands,Calculate Spectral Indices And Ratios From Satellite Bands,1.0
+script_187481.txt,Flood Mask Generation,Flood Mask Generation,1.0
+script_187481.txt,Smoothing,Smoothing,1.0
+script_187481.txt,Filter Image Collection By Date And Boundaries,Filter Image Collection,0.8084138416281831
+script_187481.txt,Generating Histograms,Scaling Image Values,0.0
+script_187523.txt,Calculate Spectral Indices And Ratios From Satellite Bands,Calculate Spectral Indices And Ratios From Satellite Bands,1.0
+script_187523.txt,Generating Histograms,Generating Histograms,1.0
+script_187523.txt,Focal Median Smoothing,Smoothing,0.8318221146061119
+script_187523.txt,Create RGB Composite Image,Filter Image Collection,0.23454799596043346
+script_187528.txt,Calculate Spectral Indices And Ratios From Satellite Bands,Calculate Spectral Indices And Ratios From Satellite Bands,1.0
+script_187528.txt,Focal Median Smoothing,Focal Median Smoothing,1.0
+script_187528.txt,Generating Histograms,Generating Histograms,1.0
+script_187528.txt,Filter Image Collection By Date And Boundaries,Filter Image Collection By Bounds,0.6784350724019818
+script_187530.txt,Calculate Spectral Indices And Ratios From Satellite Bands,Calculate Spectral Indices And Ratios From Satellite Bands,1.0
+script_187530.txt,Generating Histograms,Generating Histograms,1.0
+script_187530.txt,Focal Median Smoothing,Filter Image Collection By Date And Boundaries,0.21810589842220002
+script_187530.txt,Generate Histograms For Image Data Analysis,Scaling Image Values,0.0
+script_187532.txt,Calculate Spectral Indices And Ratios From Satellite Bands,Calculate Spectral Indices And Ratios From Satellite Bands,1.0
+script_187532.txt,Flood Area Calculation,Flood Area Calculation,1.0
+script_187532.txt,Generating Histograms,Generating Histograms,1.0
+script_187532.txt,Focal Median Smoothing,Smoothing,0.8318221146061119
+script_187532.txt,Filter Image Collection By Date And Boundaries,Filter Image Collection,0.8084138416281831
+script_187532.txt,Export Processed Images To Drive,Scaling Image Values,0.0
+script_187533.txt,Applying Mean Filter To Image,Applying Mean Filter To Image,1.0
+script_187533.txt,Calculate Spectral Indices And Ratios From Satellite Bands,Calculate Spectral Indices And Ratios From Satellite Bands,1.0
+script_187533.txt,Filter Image Collection By Date And Boundaries,Filter Image Collection By Date And Boundaries,1.0
+script_187533.txt,Generating Histograms,Generating Histograms,1.0
+script_187533.txt,Focal Median Smoothing,Scaling Image Values,0.0
+script_187533.txt,Generate Histograms For Image Data Analysis,Spatial Analysis,0.0
+script_187534.txt,Applying Mean Filter To Image,Applying Mean Filter To Image,1.0
+script_187534.txt,Calculate Spectral Indices And Ratios From Satellite Bands,Calculate Spectral Indices And Ratios From Satellite Bands,1.0
+script_187534.txt,Generating Histograms,Generating Histograms,1.0
+script_187534.txt,Filter Image Collection By Date,Filter Image Collection By Date And Boundaries,0.6466602952140302
+script_187534.txt,Focal Median Smoothing,Spatial Analysis,0.0
+script_187534.txt,Generate Histograms For Image Data Analysis,Spatial Analysis,0.0
+script_187535.txt,Calculate Spectral Indices And Ratios From Satellite Bands,Calculate Spectral Indices And Ratios From Satellite Bands,1.0
+script_187535.txt,Focal Median Smoothing,Focal Median Smoothing,1.0
+script_187535.txt,Generating Histograms,Generating Histograms,1.0
+script_187535.txt,Generate Histograms For Image Data Analysis,Filter Image Collection By Date And Boundaries,0.0
+script_187582.txt,Accuracy Assessment,Accuracy Assessment,1.0
+script_187582.txt,Image Cloud Masking,Image Cloud Masking,1.0
+script_187582.txt,SVM Classification,SVM Classification,1.0
+script_187582.txt,Vegetation Indices/Index Calculation,Vegetation Indices/Index Calculation,1.0
+script_187582.txt,Cloud Probability Masking,Spatial Analysis,0.0
+script_187582.txt,Filter Image Collection,Spatial Analysis,0.0
+script_187585.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_187585.txt,Filter Image Collection By Date,Filter Image Collection By Date,1.0
+script_187585.txt,Principal Component Analysis (PCA),Principal Component Analysis (PCA),1.0
+script_187585.txt,Clip Images To A Specific Region,Spatial Analysis,0.0
+script_187586.txt,Principal Component Analysis (PCA),Principal Component Analysis (PCA),1.0
+script_187586.txt,Filter Image Collection By Month,Filter Image Collection By Date,0.8124624337726941
+script_187586.txt,Clip Images To A Specific Region,Compute Median Of NDVI,0.1811823883310224
+script_187587.txt,Principal Component Analysis (PCA),Principal Component Analysis (PCA),1.0
+script_187587.txt,Export Processed Images To Drive,Filter Image Collection By Date,0.0
+script_187587.txt,Export Processed Images To Google Drive,Compute Median Of NDVI,0.0
+script_187738.txt,Filter Image Collection,Filter Image Collection,1.0
+script_187738.txt,Image Normalization,Image Normalization,1.0
+script_187738.txt,Image Segmentation,Image Segmentation,1.0
+script_187738.txt,Random Forest Classification,Random Forest Classification,1.0
+script_187738.txt,Select And Clip Image,Select And Clip Image,1.0
+script_187738.txt,Classification,Supervised Classification,0.4953299647440948
+script_187738.txt,Clip Images,Image Convolution,0.21113958857197546
+script_187738.txt,Area Calculation,Spatial Analysis,0.0
+script_187738.txt,Cluster Analysis,Spatial Analysis,0.0
+script_187738.txt,Generating Confusion Matrix,Spatial Analysis,0.0
+script_187738.txt,Standard Deviation Calculation,Spatial Analysis,0.0
+script_187749.txt,Generate Time Series Charts For NDVI,Generate Time Series Charts For NDVI,1.0
+script_187749.txt,Visualize NDVI And Date Information,Visualize NDVI Results,0.9043859459422203
+script_187749.txt,Temporal Analysis,Trend Analysis,0.8481756433306765
+script_187749.txt,Clip Images To A Specific Region,Creates Animation Of NDVI Over Time,0.0
+script_187749.txt,Compute Median Of NDVI,Area Of Interest Selection,0.0
+script_187749.txt,Generate Time Series Data For NDVI Changes,Spatial Analysis,0.0
+script_187888.txt,Aggregate Multiple Images,Aggregate Multiple Images,1.0
+script_187888.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_187888.txt,Image Cloud Masking,Image Cloud Masking,1.0
+script_187888.txt,Rename Image Bands,Rename Image Bands,1.0
+script_187888.txt,Sampling Regions,Sampling Regions,1.0
+script_187888.txt,Filter Image Collection By Date And Region,Filter Image Collection,0.8084138416281831
+script_187888.txt,Computes Normalized Difference Vegetation Index (NDVI),Addition Of Time Band,0.2963088614385436
+script_187888.txt,Image Aggregation,Spatial Analysis,0.0
+script_187888.txt,Merge And Sort Image Collections,Spatial Analysis,0.0
+script_187895.txt,Filter Image Collection By Date And Region,Filter Image Collection By Date And Region,1.0
+script_187895.txt,Image Cloud Masking,Image Cloud Masking,1.0
+script_187895.txt,Image Index Calculation,Image Index Calculation,1.0
+script_187895.txt,Sampling Regions For Training Data,Sampling Regions For Training Data,1.0
+script_187895.txt,Rename Image Bands,Rename Spectral Bands,0.9360134372938298
+script_187895.txt,Export Processed Data,Spatial Analysis,0.0
+script_187895.txt,Export Results,Spatial Analysis,0.0
+script_187895.txt,Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover,Spatial Analysis,0.0
+script_188011.txt,Filter Image Collection By Bounds,Filter Image Collection By Bounds,1.0
+script_188011.txt,Reduce Image Collection To Minimum Value,Reduce Image Collection To Minimum Value,1.0
+script_188011.txt,Temperature Calculation,Temperature Calculation,1.0
+script_188011.txt,Clip Images To A Specific Region,Clip Images To Specific Geographic Boundaries,0.7817204997538865
+script_188011.txt,Compute Mean Values,Compute Median Of NDVI,0.6288434153539002
+script_188011.txt,Export Time Series Data,Export Sampled Data,0.5346535570884718
+script_188011.txt,Visualize Temperature Data,Image Mapping,0.41225654467758216
+script_188011.txt,Clip Temperature Data To Area Of Interest,Filter And Sort,0.0
+script_188011.txt,Compute Maximum Values,Spatial Analysis,0.0
+script_188011.txt,Compute Minimum Values,Spatial Analysis,0.0
+script_188030.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_188030.txt,Image Cloud Masking,Image Cloud Masking,1.0
+script_188030.txt,Export Results,Export Processed Data,0.8384630149944787
+script_188030.txt,Computes Normalized Difference Vegetation Index (NDVI),Filter Image Collection,0.0
+script_188030.txt,Export Time Series Data,Select And Clip Image,0.0
+script_188052.txt,Calculates Modified Normalized Difference Water Index (MNDWI),Calculates Modified Normalized Difference Water Index (MNDWI),1.0
+script_188052.txt,Image Cloud Masking,Image Cloud Masking,1.0
+script_188052.txt,Otsu Thresholding,Otsu Thresholding,1.0
+script_188052.txt,Water body Area Calculation,Area Calculation,0.8174710689652901
+script_188052.txt,Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover,Filter Image Collection,0.24551679985690406
+script_188052.txt,Water Indices/Index Calculation,Identifying Water Body,0.0
+script_188163.txt,Image Mosaicking,Image Mosaicking,1.0
+script_188163.txt,Mask Application,Image Masking,0.9099736761771631
+script_188163.txt,Spectral Index Computation,Calculate Normalized Difference And Other Indices,0.5747081408561735
+script_188163.txt,Filter Images By Cloud Cover,Filter Image Collection,0.45926051890695496
+script_188163.txt,Training And Sampling For Land Cover Classification,Trains And Applies Classifier,0.42939533919546546
+script_188163.txt,Apply Masks To Classified Images,Image Reduction,0.2547864872107798
+script_188163.txt,Clip Images To Specific Geographic Boundaries,Calculate Data For Specific Spectral Bands,0.1961758501855679
+script_188217.txt,Area Calculation,Area Calculation,1.0
+script_188217.txt,Buffering Geometries,Buffering Geometries,1.0
+script_188217.txt,Generating Histograms,Generating Histograms,1.0
+script_188217.txt,Image Gap Filling,Image Gap Filling,1.0
+script_188217.txt,Image Masking,Image Masking,1.0
+script_188217.txt,Image Normalization,Image Normalization,1.0
+script_188217.txt,Mapping Land Cover,Mapping Land Cover,1.0
+script_188217.txt,Reclassify,Reclassify,1.0
+script_188217.txt,Rename Image Bands,Rename Image Bands,1.0
+script_188217.txt,Spectral Index Computation,Image Index Calculation,0.766384177788043
+script_188217.txt,Cloud And Shade Masking,Spatial Analysis,0.0
+script_188221.txt,Compute Mean Values,Compute Mean Values,1.0
+script_188221.txt,Filter Image Collection By Date,Filter Image Collection By Date,1.0
+script_188221.txt,Export Processed Data To Google Drive,Map Visualization Of Feature Collection,0.3114391385131152
+script_188386.txt,Define And Utilize Multiple Polygon Geometries For Analysis,Define And Utilize Multiple Polygon Geometries For Analysis,1.0
+script_188386.txt,Temporal Collection Creation,Temporal Collection Creation,1.0
+script_188397.txt,Filter Image Collection By Date,Filter Image Collection By Date,1.0
+script_188397.txt,Select Specific Bands From Images,Select Specific Bands From Images,1.0
+script_188397.txt,Generate Image Composites,Binary Image Creation,0.23969151302371655
+script_188397.txt,Converts Joined Data To Image Collection,Spatial Analysis,0.0
+script_188397.txt,Layer Addition To Map,Spatial Analysis,0.0
+script_188400.txt,Filter Image Collection By Date,Filter Image Collection,0.7636987770243056
+script_188400.txt,Animal Density Visualization,Visualize Data With Specific Color Palettes,0.41170626838776514
+script_188400.txt,Clip Images To A Specific Region,Select And Clip Image,0.0
+script_188400.txt,Clip Images To Specific Geographic Boundaries,Spatial Analysis,0.0
+script_188401.txt,Filter Image Collection By Date,Filter Image Collection By Date,1.0
+script_188401.txt,Selects Temperature Data,Selects Temperature Data,1.0
+script_188401.txt,Filter Image Collection By Date And Region,Select And Clip Image,0.21810589842220002
+script_188401.txt,Clip Images To A Specific Region,Spatial Analysis,0.0
+script_188412.txt,Enhancing Image Visualization,Enhancing Image Visualization,1.0
+script_188412.txt,Filter Image Collection,Filter Image Collection,1.0
+script_188412.txt,Image Cloud Masking,Image Cloud Masking,1.0
+script_188412.txt,Cloud And Shade Masking,Compute Median Of NDVI,0.0
+script_188412.txt,Computes Normalized Difference Vegetation Index (NDVI),Slope calculation,0.0
+script_188412.txt,Emissivity Calculation,Spatial Analysis,0.0
+script_188412.txt,Export Processed Data,Spatial Analysis,0.0
+script_188412.txt,Fractional Vegetation Calculation,Spatial Analysis,0.0
+script_188412.txt,Image Reduction,Spatial Analysis,0.0
+script_188413.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_188413.txt,Enhancing Image Visualization,Enhancing Image Visualization,1.0
+script_188413.txt,Filter Image Collection,Filter Image Collection,1.0
+script_188413.txt,Image Cloud Masking,Image Cloud Masking,1.0
+script_188413.txt,Slope calculation,Slope calculation,1.0
+script_188413.txt,Chlorophyll-a Calculation,Spatial Analysis,0.0
+script_188413.txt,Cloud And Shade Masking,Spatial Analysis,0.0
+script_188413.txt,Computes Normalized Difference Vegetation Index (NDVI),Spatial Analysis,0.0
+script_188413.txt,Export Processed Data,Spatial Analysis,0.0
+script_188414.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_188414.txt,Enhancing Image Visualization,Enhancing Image Visualization,1.0
+script_188414.txt,Image Cloud Masking,Image Cloud Masking,1.0
+script_188414.txt,Filter Images,Filter Image Collection,0.574066293131311
+script_188414.txt,Surface Temperature Calculation,Slope calculation,0.39847181998854403
+script_188414.txt,Cloud And Shade Masking,Spatial Analysis,0.0
+script_188414.txt,Computes Normalized Difference Vegetation Index (NDVI),Spatial Analysis,0.0
+script_188414.txt,Emissivity Calculation,Spatial Analysis,0.0
+script_188414.txt,Export Processed Data,Spatial Analysis,0.0
+script_188414.txt,Fractional Vegetation Calculation,Spatial Analysis,0.0
+script_188414.txt,Image Reduction,Spatial Analysis,0.0
+script_188419.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_188419.txt,Enhancing Image Visualization,Enhancing Image Visualization,1.0
+script_188419.txt,Filter Image Collection,Filter Image Collection,1.0
+script_188419.txt,Image Cloud Masking,Image Cloud Masking,1.0
+script_188419.txt,Slope calculation,Slope calculation,1.0
+script_188419.txt,Chlorophyll-a Calculation,Spatial Analysis,0.0
+script_188419.txt,Cloud And Shade Masking,Spatial Analysis,0.0
+script_188419.txt,Computes Normalized Difference Vegetation Index (NDVI),Spatial Analysis,0.0
+script_188419.txt,Export Processed Data,Spatial Analysis,0.0
+script_188454.txt,Calculates Mean Of Image Collection,Calculates Mean Of Image Collection,1.0
+script_188454.txt,Image Cloud Masking,Image Cloud Masking,1.0
+script_188454.txt,Filter Image Collection By Cloud Coverage,Filter Image Collection By Date And Boundaries,0.6784350724019818
+script_188454.txt,Image Mosaicking,Generate Image Composites,0.3013825953942841
+script_188454.txt,Cloud Probability Masking,Reduce Image Collection To Minimum Value,0.20789082168507475
+script_188454.txt,Computes Percentage Of Cloud Cover,Spatial Analysis,0.0
+script_188455.txt,Calculates Mean Of Image Collection,Calculates Mean Of Image Collection,1.0
+script_188455.txt,Computes Percentage Of Cloud Cover,Computes Percentage Of Cloud Cover,1.0
+script_188455.txt,Filter Image Collection By Date And Boundaries,Filter Image Collection By Date And Boundaries,1.0
+script_188455.txt,Image Cloud Masking,Image Cloud Masking,1.0
+script_188455.txt,Image Mosaicking,Image Mosaicking,1.0
+script_188455.txt,Count Cloud Probability Occurrences,Spatial Analysis,0.0
+script_188458.txt,Calculates Mean Of Image Collection,Calculates Mean Of Image Collection,1.0
+script_188458.txt,Computes Percentage Of Cloud Cover,Computes Percentage Of Cloud Cover,1.0
+script_188458.txt,Image Cloud Masking,Image Cloud Masking,1.0
+script_188458.txt,Filter Image Collection By Cloud Coverage,Filter Image Collection By Date,0.6466602952140302
+script_188458.txt,Image Mosaicking,Generate Image Composites,0.3013825953942841
+script_188458.txt,Export Processed Images,Spatial Analysis,0.0
+script_188465.txt,Calculates Mean Of Image Collection,Calculates Mean Of Image Collection,1.0
+script_188465.txt,Image Cloud Masking,Image Cloud Masking,1.0
+script_188465.txt,Reduction To Single Image,Reduce Image Collection To Minimum Value,0.7120680206385149
+script_188465.txt,Image Mosaicking,Generate Image Composites,0.3013825953942841
+script_188502.txt,Water body Area Calculation,Water body Area Calculation,1.0
+script_188502.txt,Filter Image Collection By Date And Boundaries,Filter Image Collection,0.8084138416281831
+script_188502.txt,Apply Threshold To Identify Water Surface,Otsu Thresholding,0.577633684082129
+script_188502.txt,Generate Time Series Charts Of Water Area,Generating Histograms,0.24825983486123238
+script_188506.txt,Calculates Mean Of Image Collection,Calculates Mean Of Image Collection,1.0
+script_188506.txt,Filter Image Collection By Date And Boundaries,Filter Image Collection By Date And Boundaries,1.0
+script_188506.txt,Image Cloud Masking,Image Cloud Masking,1.0
+script_188506.txt,Image Mosaicking,Generate Image Composites,0.3013825953942841
+script_188506.txt,Image Fraction Calculation,Computes Percentage Of Cloud Cover,0.20958657468929595
+script_188506.txt,Cloud Probability Masking,Spatial Analysis,0.0
+script_188506.txt,Filter Image Collection By Date,Spatial Analysis,0.0
+script_188509.txt,Calculate Total Precipitation,Calculate Total Precipitation,1.0
+script_188509.txt,Cross-correlation Calculation,Cross-correlation Calculation,1.0
+script_188509.txt,Image Cloud Masking,Cloud And Snow Masking,0.821964979616698
+script_188509.txt,Filter Image Collection By Date And Region,Filter Image Collection By Date,0.6466602952140302
+script_188509.txt,Generate Image Composites,Select And Clip Image,0.23969151302371655
+script_188509.txt,Cloud Probability Masking,Image Fraction Calculation,0.0
+script_188511.txt,Calculate Total Precipitation,Calculate Total Precipitation,1.0
+script_188511.txt,Image Cloud Masking,Image Cloud Masking,1.0
+script_188511.txt,Correlation Analysis,Calculates Spatial Correlation,0.8348676468760615
+script_188511.txt,Filter Image Collection By Date And Boundaries,Filter Image Collection By Date,0.6466602952140302
+script_188511.txt,Filter Image Collection By Date And Region,Select And Clip Image,0.21810589842220002
+script_188511.txt,Clip Images To A Specific Region,Spatial Analysis,0.0
+script_188511.txt,Computes Percentage Of Cloud Cover,Spatial Analysis,0.0
+script_188511.txt,Cross-correlation Calculation,Spatial Analysis,0.0
+script_23533.txt,Remapping Land Cover Classes,Remapping,0.9043859459422203
+script_23533.txt,Layer Addition To Map,Temporal Collection Creation,0.0
+script_23533.txt,Merge And Sort Image Collections,Land Cover Classification And Mapping,0.0
+script_28.txt,Filter Image Collection,Filter Image Collection,1.0
+script_28.txt,Surface Reflectance Correction,Surface Reflectance Correction,1.0
+script_28.txt,Harmonization Of Reflectance,Harmonization,0.832642075905275
+script_28.txt,Vegetation Indices/Index Calculation,Calculate Normalized Difference And Other Indices,0.6190169031942004
+script_28.txt,Cloud And Shade Masking,Image Masking,0.5874868083914289
+script_28.txt,Calculate And Export Statistics,Area Statistics Calculation,0.43298149881635795
+script_28.txt,Filter Image Collection By Date And Boundaries,Spatial Analysis,0.0
+script_28.txt,"Merge, Harmonize, And Standardize Landsat Image Collections",Spatial Analysis,0.0
+script_3043.txt,Filter Image Collection,Filter Image Collection,1.0
+script_3043.txt,Land Cover Classification And Mapping,Land Cover Classification And Mapping,1.0
+script_3043.txt,Rename Image Bands,Rename Image Bands,1.0
+script_3043.txt,Vegetation Indices/Index Calculation,Vegetation Indices/Index Calculation,1.0
+script_3043.txt,Cloud And Shade Masking,Image Masking,0.5874868083914289
+script_3043.txt,Identifying Water Body,Hydrological Analysis,0.23617332218074402
+script_3043.txt,"Calculate Other Vegetation Indices/index (SAVI, EVI)",Spatial Analysis,0.0
+script_3043.txt,Calculates Modified Normalized Difference Water Index (MNDWI),Spatial Analysis,0.0
+script_3043.txt,Cloud And Cloud Shadow Masking,Spatial Analysis,0.0
+script_3043.txt,Elevation slope calculation,Spatial Analysis,0.0
+script_3043.txt,Generate Image Composites,Spatial Analysis,0.0
+script_3043.txt,Topographic Wetness Index (TWI) Computation,Spatial Analysis,0.0
+script_3043.txt,Vegetation Cover Classification,Spatial Analysis,0.0
+script_3043.txt,Water Indices/Index Calculation,Spatial Analysis,0.0
+script_32.txt,Generate Image Composites,Generate Image Composites,1.0
+script_32.txt,Update Masks,Update Masks,1.0
+script_32.txt,Cloud And Snow Masking,Creating Seasonal Composite,0.1854948794262614
+script_35538.txt,Calculates Median Of Image Collection,Calculates Median Of Image Collection,1.0
+script_35538.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_35538.txt,Filter Image Collection By Date And Boundaries,Filter Image Collection By Date And Boundaries,1.0
+script_35538.txt,Image Masking,Image Masking,1.0
+script_35538.txt,Create Median Composite Of Images,Select And Clip Image,0.19997217060077382
+script_35538.txt,Clip Images To A Specific Region,Display Interactive Map,0.0
+script_35538.txt,Computes Normalized Difference Vegetation Index (NDVI),Spatial Analysis,0.0
+script_41838.txt,Filter Image Collection By Date And Region,Filter Image Collection,0.8084138416281831
+script_41838.txt,Select Specific Bands From Images,Select And Clip Image,0.7326977229231029
+script_41838.txt,Training And Sampling For Land Cover Classification,Random Forest Classification,0.538578753509965
+script_41838.txt,Generate Visualizations And Statistical Charts For Classification Results,Add A Feature Collection,0.36218746827864734
+script_41838.txt,Train And Apply Random Forest Classifier,Feature Sampling For Training,0.34005980646361933
+script_41838.txt,Clip Images To A Specific Region,Image Differencing,0.19677431649981106
+script_41838.txt,Mapping Land Cover,Spatial Analysis,0.0
+script_41838.txt,Merge Feature Collections,Spatial Analysis,0.0
+script_42.txt,Import/Load Data,Import/Load Data,1.0
+script_42.txt,Training Data Creation,Training Data Creation,1.0
+script_42.txt,Visualize Changes In Forest Cover Over Time,Visualize Changes In Forest Cover Over Time,1.0
+script_42.txt,Random Forest Regression Training,Training Model,0.7447249837071024
+script_42.txt,Classify Images Based On Trained Model,Slope Classification,0.565042756352879
+script_42.txt,Train And Apply Random Forest Classifier,Geometric Index Calculation,0.1864291782965528
+script_42.txt,Random Point Generation,Performs Linear Fits,0.16364892203619394
+script_42.txt,Visualize Forest Cover,Spatial Analysis,0.0
+script_43.txt,Filter Images By Cloud Cover,Filter Images By Cloud Cover,1.0
+script_43.txt,Filtering Features,Filtering Features,1.0
+script_43.txt,Filtering Polygons,Filtering Polygons,1.0
+script_43.txt,Forest Canopy Density Calculation,Forest Canopy Density Calculation,1.0
+script_43.txt,Random Point Generation,Add A Feature Collection,0.0
+script_43803.txt,Clip Images To A Specific Region,Clip Images To A Specific Region,1.0
+script_43803.txt,Export Processed Images To Drive,Export Processed Images To Drive,1.0
+script_43803.txt,Filter Image Collection By Date And Boundaries,Filter Image Collection By Date And Boundaries,1.0
+script_43803.txt,Image Mosaicking,Image Mosaicking,1.0
+script_43803.txt,Select Specific Bands From Images,Select Specific Bands From Images,1.0
+script_43803.txt,Sort Image Collections By Cloud Cover,Sort Image Collections By Cloud Cover,1.0
+script_43803.txt,Export Processed Images To Google Drive,Spatial Analysis,0.0
+script_45435.txt,Mean Reduction,Mean Reduction,1.0
+script_45435.txt,Quality Control,Quality Control,1.0
+script_45435.txt,Select Specific Bands From Images,Select Image,0.8457305775031829
+script_45435.txt,Filter Image Collection By Date,Filter Image Collection,0.7636987770243056
+script_45435.txt,Export Processed Images To Drive,Enhancing Image Visualization,0.2733133357207549
+script_45435.txt,Quality Filtering,Spatial Analysis,0.0
+script_45435.txt,Reduce Image Collection To Minimum Value,Spatial Analysis,0.0
+script_45435.txt,Vegetation Indices/Index Calculation,Spatial Analysis,0.0
+script_48.txt,Calculate Ratio Between Recent And Historical Images,Calculate Ratio Between Recent And Historical Images,1.0
+script_48.txt,Image Index Calculation,Image Index Calculation,1.0
+script_48.txt,Terrain Data Generation and Analysis,Terrain Flattening,0.8617592247548046
+script_48.txt,Temporal Analysis,Fractional Vegetation Calculation,0.33510119474727906
+script_48.txt,Data Preparation,Filter Image Collection,0.32808205693589026
+script_48.txt,Distance Calculation,Change Detection,0.24896481130700077
+script_48.txt,Clip Images To A Specific Region,Data Preparation For Training,0.23969520831374105
+script_48.txt,Convert And Format Spatial Data For Export,Spatial Analysis,0.0
+script_48.txt,Performs Linear Fits,Spatial Analysis,0.0
+script_49902.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_49902.txt,Legend Creation,Legend Creation,1.0
+script_49902.txt,Filter Image Collection By Date And Boundaries,Filter Image Collection,0.8084138416281831
+script_49902.txt,Computes Normalized Difference Vegetation Index (NDVI),Calculate Normalized Difference And Other Indices,0.4755792372154432
+script_50.txt,Random Point Generation,Random Point Generation,1.0
+script_50.txt,Train And Apply Random Forest Classifier,Training Model,0.7447249837071024
+script_50.txt,Classify Images Based On Trained Model,Classify Images Based On Training Data,0.565042756352879
+script_51624.txt,Displays Composite Image,Displays Composite Image,1.0
+script_51624.txt,Visualize Data With Specific Color Palettes,Visualize Satellite Images,0.44924685722875973
+script_52026.txt,Clip Images To A Specific Region,Clip Images To A Specific Region,1.0
+script_52026.txt,Compute Mean Values,Compute Mean Values,1.0
+script_52026.txt,Filter Image Collection By Date And Boundaries,Filter Image Collection,0.8084138416281831
+script_52026.txt,Mean Reduction,Image Reduction,0.5110230807621923
+script_52026.txt,Calculate Urban Green Density,Spatial Analysis,0.0
+script_52026.txt,Clip Temperature Data To Area Of Interest,Spatial Analysis,0.0
+script_54980.txt,Image Masking,Image Masking,1.0
+script_54980.txt,Remapping,Remapping,1.0
+script_54980.txt,Temporal Collection Creation,Temporal Collection Creation,1.0
+script_54980.txt,Visualization And Output Generation,Visualization And Output Generation,1.0
+script_54980.txt,Image Band Addition,Rename Image Bands,0.6833304797242005
+script_59099.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_59099.txt,Generate Time Series Charts For NDVI,Generate Time Series Charts For NDVI,1.0
+script_59099.txt,Filter Image Collection By Cloud Coverage,Filter Image Collection By Date,0.6466602952140302
+script_59099.txt,Computes Normalized Difference Vegetation Index (NDVI),Visualize NDVI Results,0.0
+script_62526.txt,Calculates Normalized Difference Water Index (NDWI),Calculates Normalized Difference Water Index (NDWI),1.0
+script_62526.txt,Filter Image Collection By Date And Boundaries,Filter Image Collection By Date And Boundaries,1.0
+script_62526.txt,Generate Time Series Charts Of Water Area,Generate Time Series Charts Of Water Area,1.0
+script_62526.txt,Image Mosaicking,Image Mosaicking,1.0
+script_65671.txt,Calculates Median Values,Calculates Median Values,1.0
+script_65671.txt,Export Processed Data,Export Processed Data,1.0
+script_65671.txt,Filter Image Collection,Filter Image Collection,1.0
+script_65671.txt,Image Cloud Masking,Image Cloud Masking,1.0
+script_65671.txt,Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover,Export Selected Image,0.0
+script_67562.txt,Calculate Normalized Difference Water Body Index (NDWBI),Calculate Normalized Difference Water Body Index (NDWBI),1.0
+script_67562.txt,Calculates Normalized Difference Water Index (NDWI),Calculates Normalized Difference Water Index (NDWI),1.0
+script_67562.txt,Image Cloud Removal,Image Cloud Removal,1.0
+script_67562.txt,Select DEM,Select DEM,1.0
+script_67562.txt,Clip Images To A Specific Region,Compute Median Of NDVI,0.1811823883310224
+script_67562.txt,Computes Normalized Difference Vegetation Index (NDVI),Image Scaling,0.0
+script_67562.txt,Scaling Image Values,Select And Clip Image,0.0
+script_67562.txt,Vegetation Indices/Index Calculation,Spatial Analysis,0.0
+script_67562.txt,Visualize Elevation Data (DEM),Spatial Analysis,0.0
+script_71184.txt,Calculates Modified Normalized Difference Water Index (MNDWI),Calculates Modified Normalized Difference Water Index (MNDWI),1.0
+script_71184.txt,Cloud Score Computation,Cloud Score Computation,1.0
+script_71184.txt,Filter Images,Filter Images,1.0
+script_71184.txt,Image Gap Filling,Mapping Cloud Cover,0.0
+script_72.txt,Filter Feature Collection,Filter Feature Collection,1.0
+script_72.txt,Temporal Data Filtering,Temporal Data Filtering,1.0
+script_72.txt,Terrain Flattening,Terrain Flattening,1.0
+script_72.txt,Buffering Features,Buffering Geometries,0.7817204997538865
+script_72.txt,Export Processed Images,Export Selected Image,0.7560078276350019
+script_72.txt,Change Detection,Calculate NBR for Post-Fire Image,0.7076920579246497
+script_72.txt,Data Conversion,Layer Addition To Map,0.3458070063061213
+script_72.txt,Land Cover Change Detection,Performs Linear Fits,0.1757427044267457
+script_72.txt,Filter And Buffer A Feature Collection,Sample Collection,0.0
+script_72.txt,Spectral Index Computation,Spatial Analysis,0.0
+script_75448.txt,Calculates Normalized Difference Water Index (NDWI),Calculates Normalized Difference Water Index (NDWI),1.0
+script_75448.txt,Creating Annual Composite,Creating Annual Composite,1.0
+script_75448.txt,Filter Image Collection By Bounds,Filter Image Collection By Bounds,1.0
+script_75448.txt,Otsu Thresholding,Otsu Thresholding,1.0
+script_75448.txt,Water body Area Calculation,Water body Area Calculation,1.0
+script_75448.txt,Filter Image Collection By Date,Spatial Analysis,0.0
+script_76696.txt,Image Cloud Removal,Image Cloud Removal,1.0
+script_76696.txt,Image Masking,Image Masking,1.0
+script_76696.txt,"Merge, Harmonize, And Standardize Landsat Image Collections","Merge, Harmonize, And Standardize Landsat Image Collections",1.0
+script_76696.txt,Filter Image Collection By Date And Boundaries,Filter Image Collection,0.8084138416281831
+script_76696.txt,Pixel Count Calculation,Compute Median Of NDVI,0.41146953086013355
+script_76696.txt,Computes Normalized Difference Vegetation Index (NDVI),Count Cloud Probability Occurrences,0.0
+script_76709.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_76709.txt,Image Cloud Masking,Image Cloud Masking,1.0
+script_76709.txt,Filter Image Collection By Cloud Coverage,Filter Image Collection,0.8084138416281831
+script_76709.txt,Export Processed Images To Google Drive,Export Selected Image,0.6077271581200774
+script_76709.txt,Calculates Modified Normalized Difference Water Index (MNDWI),Generate Image Composites,0.0
+script_76709.txt,Computes Normalized Difference Vegetation Index (NDVI),Statistics Calculation,0.0
+script_76709.txt,Vegetation Indices/Index Calculation,Spatial Analysis,0.0
+script_76805.txt,Cloud And Water Masking,Cloud And Water Masking,1.0
+script_76805.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_76805.txt,Quality Masking,Clear Pixel Masking,0.547172495394074
+script_76839.txt,Filter Image Collection By Date,Filter Image Collection,0.7636987770243056
+script_76839.txt,Export Processed Images,Export Selected Image,0.7560078276350019
+script_76839.txt,Computes Normalized Difference Vegetation Index (NDVI),Vegetation Indices/Index Calculation,0.7363156700282654
+script_76839.txt,Clip Images To A Specific Region,Calculates Median Values,0.20547653976002453
+script_76839.txt,Export Processed Images To Drive,Image Masking,0.0
+script_76840.txt,Filter Image Collection By Date,Filter Image Collection,0.7636987770243056
+script_76840.txt,Computes Normalized Difference Vegetation Index (NDVI),Vegetation Indices/Index Calculation,0.7363156700282654
+script_76840.txt,Clear Pixel Masking,Image Masking,0.6271180458788079
+script_76840.txt,Export Processed Images To Drive,Export Selected Image,0.6077271581200774
+script_76840.txt,Surface water area computation,Calculates Median Values,0.21225101779091238
+script_76840.txt,Clip Images To A Specific Region,Display Selected Band,0.0
+script_76841.txt,Filter Image Collection By Date And Region,Filter Image Collection,0.8084138416281831
+script_76841.txt,Computes Normalized Difference Vegetation Index (NDVI),Vegetation Indices/Index Calculation,0.7363156700282654
+script_76841.txt,Export Processed Images To Drive,Export Selected Image,0.6077271581200774
+script_76841.txt,Surface water area computation,Calculates Median Values,0.21225101779091238
+script_76841.txt,Clip Images To A Specific Region,Image Masking,0.0
+script_78663.txt,Generate Time Series Charts,Generate Time Series Charts,1.0
+script_78663.txt,Compute Mean Values,Terrain Correction,0.19037464192620718
+script_78663.txt,Filter Image Collection,Spatial Analysis,0.0
+script_78805.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_78805.txt,Filter Image Collection By Cloud Coverage,Filter Image Collection,0.8084138416281831
+script_78805.txt,Filter Images By Cloud Cover,Image Masking,0.2994336520312282
+script_78805.txt,Calculates Median Of Image Collection,Select And Clip Image,0.0
+script_78805.txt,Clip Images To A Specific Region,Image Reduction,0.0
+script_85061.txt,Cloud Score Computation,Cloud Score Computation,1.0
+script_85061.txt,Spectral Unmixing,Unmixing Analysis,0.9043859459422203
+script_85061.txt,Filter Images By Cloud Cover,Filter Image Collection,0.45926051890695496
+script_85061.txt,Apply Scale Factors To Image,Image Scaling,0.0
+script_85061.txt,Remapping Land Cover Classes,Image Masking,0.0
+script_85217.txt,Accuracy Assessment,Accuracy Assessment,1.0
+script_85217.txt,Create Image Composites To Minimize Cloud Cover,Create Image Composites To Minimize Cloud Cover,1.0
+script_85217.txt,Displays Composite Image,Displays Composite Image,1.0
+script_85217.txt,Mosaic Landsat Images,Mosaic Landsat Images,1.0
+script_85217.txt,Sampling Regions For Training Data,Sampling Regions For Training Data,1.0
+script_85217.txt,Training CART Classifier,Training CART Classifier,1.0
+script_85217.txt,Classification,Spatial Analysis,0.0
+script_85217.txt,Training Data Sampling,Spatial Analysis,0.0
+script_85219.txt,Image Cloud Masking,Image Cloud Masking,1.0
+script_85219.txt,Filter Image Collection By Date And Boundaries,Filter Image Collection,0.8084138416281831
+script_85219.txt,Calculate Normalized Difference And Other Indices,Image Index Calculation,0.6967742714555208
+script_85219.txt,Visualize Data With Specific Color Palettes,Enhancing Image Visualization,0.41170626838776514
+script_85219.txt,Image Mosaicking,Generate Image Composites,0.3013825953942841
+script_85219.txt,Calculates Median Of Image Collection,Spatial Analysis,0.0
+script_85219.txt,Clip Images To A Specific Region,Spatial Analysis,0.0
+script_89887.txt,Cloud And Water Masking,Cloud And Water Masking,1.0
+script_89887.txt,Enhancing Image Visualization,Enhancing Image Visualization,1.0
+script_89887.txt,Filter Image Collection,Filter Image Collection,1.0
+script_89887.txt,Hillshade Generation,Hillshade Generation,1.0
+script_89887.txt,Image Cloud Masking,Image Cloud Masking,1.0
+script_89887.txt,Cloud And Shade Masking,Spatial Analysis,0.0
+script_89887.txt,Statistics Calculation,Spatial Analysis,0.0
+script_89887.txt,Visualize True Color Images,Spatial Analysis,0.0
+script_95721.txt,Buffer Creation,Buffer Creation,1.0
+script_95721.txt,"Calculate Other Vegetation Indices/index (SAVI, EVI)","Calculate Other Vegetation Indices/index (SAVI, EVI)",1.0
+script_95721.txt,Cloud And Shadow Removal,Cloud And Shadow Removal,1.0
+script_95721.txt,Filter Image Collection,Filter Image Collection,1.0
+script_95721.txt,Image Masking,Image Masking,1.0
+script_95721.txt,Cloud Cover Removal,Remove Invalid Value,0.5016795620317694
+script_95721.txt,Image Mosaicking,Reduction Of Image Regions,0.2680288873311685
+script_95721.txt,Addition Of NDVI,Compute Median Of NDVI,0.0
+script_95721.txt,Create Median Composite Of Images,Add A Feature Collection,0.0
+script_95721.txt,Vegetation Indices/Index Calculation,Spatial Analysis,0.0
+script_95950.txt,Add Date Information To Images,Add Date Information To Images,1.0
+script_95950.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_95950.txt,Image Cloud Masking,Image Cloud Masking,1.0
+script_95950.txt,Sort Images By Quality,Sort Images By Quality,1.0
+script_95950.txt,Add Date Bands To Images,Spatial Analysis,0.0
+script_95950.txt,Clip Images To A Specific Region,Spatial Analysis,0.0
+script_95950.txt,Filter Image Collection By Cloud Coverage,Spatial Analysis,0.0
+script_95950.txt,Visualize NDVI And Date Information,Spatial Analysis,0.0
+script_96316.txt,Clip Images To A Specific Region,Clip Images To A Specific Region,1.0
+script_96316.txt,Filter Image Collection By Cloud Coverage,Filter Image Collection By Cloud Coverage,1.0
+script_96316.txt,Image Mosaicking,Image Mosaicking,1.0
+script_96316.txt,Rename Image Bands,Rename Image Bands,1.0
+script_96316.txt,Vegetation Indices/Index Calculation,Vegetation Indices/Index Calculation,1.0
+script_96316.txt,Add NDVI Band To Images,Spatial Analysis,0.0
+script_96316.txt,Filter Image Collection By Date And Region,Spatial Analysis,0.0
+script_96316.txt,Quality Mosaic Generation,Spatial Analysis,0.0
+script_96317.txt,Image Mosaicking,Image Mosaicking,1.0
+script_96317.txt,Vegetation Indices/Index Calculation,Vegetation Indices/Index Calculation,1.0
+script_96317.txt,Clip Images To A Specific Region,Clip Images To Specific Geographic Boundaries,0.7817204997538865
+script_96317.txt,Filter Image Collection By Cloud Coverage,Filter Images By Cloud Cover,0.3854194811514833
+script_96317.txt,Quality Mosaic Generation,Spatial Analysis,0.0
+script_96317.txt,Rename Image Bands,Spatial Analysis,0.0
+script_96322.txt,Clip Images To A Specific Region,Clip Images To A Specific Region,1.0
+script_96322.txt,Rename Image Bands,Rename Image Bands,1.0
+script_96322.txt,Sampling Regions For Training Data,Sampling Regions For Training Data,1.0
+script_96322.txt,Vegetation Indices/Index Calculation,Vegetation Indices/Index Calculation,1.0
+script_96322.txt,Quality Mosaic Generation,Image Mosaicking,0.832642075905275
+script_96332.txt,Calculates Normalized Difference Water Index (NDWI),Calculates Normalized Difference Water Index (NDWI),1.0
+script_96332.txt,Rename Image Bands,Rename Image Bands,1.0
+script_96332.txt,Filter Image Collection By Cloud Coverage,Filter Image Collection By Date And Boundaries,0.6784350724019818
+script_96332.txt,Image Mosaicking,Generate Image Composites,0.3013825953942841
+script_96332.txt,Filter Image Collection By Date And Region,Spatial Analysis,0.0
+script_96332.txt,Layer Addition To Map,Spatial Analysis,0.0
+script_96361.txt,Add Land Use Layer,Add Land Use Layer,1.0
+script_96361.txt,Calculates Modified Normalized Difference Water Index (MNDWI),Calculates Modified Normalized Difference Water Index (MNDWI),1.0
+script_96361.txt,Image Addition,Image Addition,1.0
+script_96361.txt,"Merge, Harmonize, And Standardize Landsat Image Collections","Merge, Harmonize, And Standardize Landsat Image Collections",1.0
+script_96361.txt,Rename Image Bands,Rename Image Bands,1.0
+script_96361.txt,Spectral Values Extraction,Image Band Addition,0.6833304797242005
+script_96424.txt,Clip Images To A Specific Region,Clip Images To A Specific Region,1.0
+script_96424.txt,Cloud And Water Masking,Cloud And Water Masking,1.0
+script_96424.txt,Select Specific Bands From Images,Select Specific Bands From Images,1.0
+script_96424.txt,Statistics Calculation,Statistics Calculation,1.0
+script_96424.txt,Boundary Statistics Calculation,Estimating Watersheds Area,0.1961758501855679
+script_96426.txt,Filtering Polygons,Filtering Polygons,1.0
+script_96426.txt,Surface water area computation,Surface water area computation,1.0
+script_96426.txt,Filter And Mosaic Landsat Images,Mosaic Landsat Images,0.9360134372938298
+script_96426.txt,Generate Time Series Charts,Export Masked Image,0.29823484979250536
+script_96426.txt,Water body Area Calculation,Calculate Area Statistics,0.22125153693534247
+script_96426.txt,Export Processed Data To Drive,Calculates Area,0.0
+script_96426.txt,Generate Time Series Charts Of Water Area,Spatial Analysis,0.0
+script_96427.txt,Water body Area Calculation,Water body Area Calculation,1.0
+script_96427.txt,Surface water area computation,Classification,0.25523601786126
+script_96427.txt,Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover,Filter Image Collection,0.24551679985690406
+script_96427.txt,Generate Time Series Charts Of Water Area,Interpolation,0.0
+script_96458.txt,Calculate Normalized Difference And Other Indices,Calculate Normalized Difference And Other Indices,1.0
+script_96458.txt,Image Cloud Removal,Image Cloud Removal,1.0
+script_96458.txt,Calculates Median Of Image Collection,Calculates Median Values,0.8769691252067208
+script_96458.txt,Filter Image Collection By Date And Boundaries,Filter Image Collection,0.8084138416281831
+script_96458.txt,Update Masks,Image Masking,0.6835543953966721
+script_96458.txt,Clip Images To A Specific Region,Terrain Analysis,0.23570478292663494
+script_96458.txt,Reduce Image Collection To Minimum Value,Thresholding For Classification,0.0
+script_96459.txt,Generating Histograms,Generating Histograms,1.0
+script_96459.txt,Unmixing Analysis,Unmixing Analysis,1.0
+script_96459.txt,Filter Image Collection By Cloud Coverage,Filter Image Collection,0.8084138416281831
+script_96459.txt,Spectral Unmixing,Texture Feature Extraction,0.38327685656470784
+script_96459.txt,Land Cover Classification And Mapping,Thresholding For Classification,0.1961758501855679
+script_96459.txt,Spectral Index Computation,Image Normalization,0.0
+script_96519.txt,Buffering Geometries,Buffering Geometries,1.0
+script_96519.txt,Built-up Area Classification,Built-up Area Classification,1.0
+script_96519.txt,Estimating Fire Accumulation,Estimating Fire Accumulation,1.0
+script_96519.txt,Buffer Creation,Calculate Features To Refine Flood Analysis,0.2252881498517126
+script_96519.txt,Detect Water,Flood Area Calculation,0.20958657468929595
+script_96519.txt,Identifying Water Body,Elevation Data Extraction,0.1961758501855679
+script_96519.txt,Identify Water And Flood Surfaces Using Indices,Spatial Analysis,0.0
+script_96519.txt,Visualize Elevation Data (DEM),Spatial Analysis,0.0
+script_96537.txt,Accuracy Assessment,Accuracy Assessment,1.0
+script_96537.txt,Image Cloud Masking,Image Cloud Masking,1.0
+script_96537.txt,Image Reprojection,Image Reprojection,1.0
+script_96537.txt,Land Cover Classification And Mapping,Land Cover Classification And Mapping,1.0
+script_96537.txt,Random Forest Classification,Random Forest Classification,1.0
+script_96537.txt,Calculates Median Of Image Collection,Calculates Median Values,0.8769691252067208
+script_96537.txt,Data Visualization,Filter Image Collection,0.0
+script_96537.txt,Visualize Precipitation Data,Compute Median Of NDVI,0.0
+script_96538.txt,Buffering Features,Buffering Features,1.0
+script_96538.txt,Image Cloud Masking,Image Cloud Masking,1.0
+script_96538.txt,Vegetation Indices/Index Calculation,Vegetation Indices/Index Calculation,1.0
+script_96538.txt,Clip Images To A Specific Region,Spectral Values Extraction,0.0
+script_96538.txt,Cloud And Shade Masking,Spatial Analysis,0.0
+script_96538.txt,Reduction Of Image Regions,Spatial Analysis,0.0
+script_96558.txt,Calculates Spatial Correlation,Calculates Spatial Correlation,1.0
+script_96558.txt,Filter Image Collection By Date,Filter Image Collection By Date,1.0
+script_96558.txt,Generate And Display A Scatter Plot,Generate And Display A Scatter Plot,1.0
+script_96558.txt,Image Resampling,Image Resampling,1.0
+script_96558.txt,Temporal Aggregation,Merge And Sort Image Collections,0.6352375503640054
+script_96558.txt,Area Statistics Calculation,Creating Monthly Composite,0.0
+script_96558.txt,Converts Joined Data To Image Collection,Spatial Analysis,0.0
+script_96558.txt,Generate Time Series Data For NDVI Changes,Spatial Analysis,0.0
+script_96578.txt,Filter Image Collection By Date,Filter Image Collection By Date,1.0
+script_96578.txt,Temperature Calculation,Temperature Calculation,1.0
+script_96578.txt,Burn Masking,Image Masking,0.6271180458788079
+script_96578.txt,Filter Image Collection By Cloud Coverage,Addition Of NDVI,0.20789082168507475
+script_96578.txt,Computes Normalized Difference Vegetation Index (NDVI),Compute Median Of NDVI,0.0
+script_96578.txt,Generate Time Series Charts Of Temperature Data,Spatial Analysis,0.0
+script_96578.txt,Unit Conversion For Temperature Data,Spatial Analysis,0.0
+script_96593.txt,Buffer Creation,Buffer Creation,1.0
+script_96593.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_96593.txt,Filter Image Collection By Date And Region,Filter Image Collection By Date And Region,1.0
+script_96593.txt,Add NDVI Band To Images,Visualize NDVI And Date Information,0.0
+script_96593.txt,Create RGB Composite Image,Spatial Analysis,0.0
+script_96593.txt,Filter Images By Date And Region,Spatial Analysis,0.0
+script_96611.txt,Addition Of NDVI,Addition Of NDVI,1.0
+script_96611.txt,Calculates Median Of Image Collection,Calculates Median Of Image Collection,1.0
+script_96611.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_96611.txt,Export Processed Images To Drive,Export Processed Images To Drive,1.0
+script_96611.txt,Filter Image Collection By Date,Filter Image Collection By Date,1.0
+script_96611.txt,Generate Image Composites,Generate Image Composites,1.0
+script_96611.txt,Generating Histograms,Generating Histograms,1.0
+script_96611.txt,Pixel Area Calculation,Pixel Area Calculation,1.0
+script_96611.txt,Reduction Of Image Regions,Reduction Of Image Regions,1.0
+script_96611.txt,Computes Normalized Difference Vegetation Index (NDVI),Spatial Analysis,0.0
+script_97207.txt,Classify And Evaluate Burned Areas,Classify And Evaluate Burned Areas,1.0
+script_97207.txt,Filter Image Collection By Date And Boundaries,Filter Image Collection,0.8084138416281831
+script_97207.txt,Burned Area Classification,Accuracy Assessment,0.19487137214025446
+script_97207.txt,Filter Image Collection By Date And Region,Compute Median Of NDVI,0.0
+script_97208.txt,Classify And Evaluate Burned Areas,Classify And Evaluate Burned Areas,1.0
+script_97208.txt,Vegetation Indices/Index Calculation,Vegetation Indices/Index Calculation,1.0
+script_97208.txt,Filter Image Collection By Date And Boundaries,Filter Image Collection,0.8084138416281831
+script_97208.txt,Burned Area Classification,Accuracy Assessment,0.19487137214025446
+script_97209.txt,Vegetation Indices/Index Calculation,Vegetation Indices/Index Calculation,1.0
+script_97209.txt,Filter Image Collection By Date And Boundaries,Filter Image Collection By Date And Region,0.6784350724019818
+script_97209.txt,Classify Images Based On Pre And Post Fire Data,Image Clustering,0.19168777555528835
+script_97250.txt,Filter Image Collection By Date,Filter Image Collection By Date,1.0
+script_97250.txt,Land Cover Classification And Mapping,Land Cover Classification And Mapping,1.0
+script_97250.txt,Nighttime light data analysis,Nighttime light data analysis,1.0
+script_97250.txt,Select Specific Bands From Images,Select Specific Bands From Images,1.0
+script_97250.txt,Calculate Statistical Indicators Of Image Collection,Calculate Area Statistics,0.48832627454943955
+script_97250.txt,Classify Images Based On Training Data,Select And Clip Image,0.0
+script_97250.txt,Clip Images To A Specific Region,Spatial Analysis,0.0
+script_97250.txt,Visualizing Land Cover,Spatial Analysis,0.0
+script_97292.txt,Image Segmentation,Image Segmentation,1.0
+script_97292.txt,Filter Image Collection By Date And Boundaries,Filter Image Collection,0.8084138416281831
+script_97292.txt,Classify Images Based On Trained Model,Supervised Classification,0.3876062866636363
+script_97292.txt,Area Calculation,Spectral Distance Calculation,0.0
+script_97292.txt,Clip Images To A Specific Region,Image Masking,0.0
+script_97292.txt,Cluster Analysis,Spatial Analysis,0.0
+script_97292.txt,Compute Metric Within Clusters,Spatial Analysis,0.0
+script_97292.txt,Quantifying Pixels,Spatial Analysis,0.0
+script_97295.txt,Filter Image Collection By Date,Filter Image Collection By Date,1.0
+script_97295.txt,Create RGB Composite Image,Merge And Sort Image Collections,0.6120841706177397
+script_97295.txt,Visualize Classified Data And Indices,Enhancing Image Visualization,0.41170626838776514
+script_97295.txt,Filter Image Collection By Date And Region,Calculate Statistical Indicators Of Image Collection,0.0
+script_97295.txt,Filter Image Collection By Region,Spatial Analysis,0.0
+script_97295.txt,Generate Image Composites For Indices/Index,Spatial Analysis,0.0
+script_97367.txt,Cloud And Cloud Shadow Masking,Cloud And Cloud Shadow Masking,1.0
+script_97367.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_97367.txt,Cloud And Shade Masking,Filter Image Collection,0.24551679985690406
+script_97367.txt,Cloud Score Computation,Generate Image Composites,0.0
+script_97367.txt,Computes Normalized Difference Vegetation Index (NDVI),Spatial Analysis,0.0
+script_97367.txt,Identify And Display Outlier Areas,Spatial Analysis,0.0
+script_97371.txt,Add NDVI Band To Images,Add NDVI Band To Images,1.0
+script_97371.txt,Generate Time Series Data For NDVI Changes,Generate Time Series Data For NDVI Changes,1.0
+script_97371.txt,Random Point Generation,Random Point Generation,1.0
+script_97371.txt,Select Land Cover Types,Select Land Cover Types,1.0
+script_97371.txt,Filter Image Collection By Date,Filter Image Collection,0.7636987770243056
+script_97371.txt,Cloud And Shade Masking,Cloud And Snow Masking,0.6977423976319923
+script_97371.txt,Addition Of NDVI,Spatial Analysis,0.0
+script_97371.txt,Export Time Series Data,Spatial Analysis,0.0
+script_97371.txt,Generate Time Series Charts For NDVI,Spatial Analysis,0.0
+script_97430.txt,Add Cloud Probability And Mask As Image Bands,Add Cloud Probability And Mask As Image Bands,1.0
+script_97430.txt,Cloud And Cloud Shadow Masking,Cloud And Cloud Shadow Masking,1.0
+script_97430.txt,Filter Image Collection By Cloud Coverage,Filter Image Collection By Cloud Coverage,1.0
+script_97430.txt,Shadow Detection,Shadow Detection,1.0
+script_97430.txt,Vegetation Indices/Index Calculation,Calculate Environmental And Vegetation Indices,0.9400097057114022
+script_97430.txt,Cloud And Shade Masking,Spatial Analysis,0.0
+script_97430.txt,Image Index Calculation,Spatial Analysis,0.0
+script_97431.txt,Calculates Modified Normalized Difference Water Index (MNDWI),Calculates Modified Normalized Difference Water Index (MNDWI),1.0
+script_97431.txt,Cloud Score Computation,Cloud Score Computation,1.0
+script_97431.txt,Image Cloud Masking,Image Cloud Masking,1.0
+script_97431.txt,Quality Mosaic Generation,Quality Mosaic Generation,1.0
+script_97431.txt,Calculates Median Of Image Collection,Calculates Median Values,0.8769691252067208
+script_97431.txt,Filter Image Collection By Cloud Coverage,Filter Image Collection,0.8084138416281831
+script_97431.txt,Cloud And Water Masking,Spatial Analysis,0.0
+script_97431.txt,Computes Percentage Of Cloud Cover,Spatial Analysis,0.0
+script_97431.txt,Create Median Composite Of Images,Spatial Analysis,0.0
+script_97431.txt,Geometric Index Calculation,Spatial Analysis,0.0
+script_97446.txt,Calculates Median Of Image Collection,Calculates Median Of Image Collection,1.0
+script_97446.txt,Filter Image Collection By Cloud Coverage,Filter Image Collection By Cloud Coverage,1.0
+script_97446.txt,Image Cloud Masking,Image Cloud Masking,1.0
+script_97446.txt,Filter Image Collection By Date And Region,Export Geospatial Data,0.0
+script_97475.txt,Generate And Display A Scatter Plot,Generate And Display A Scatter Plot,1.0
+script_97475.txt,Generate Spectral Signature Chart,Generate Spectral Signature Chart,1.0
+script_97475.txt,Image Cloud Masking,Image Cloud Masking,1.0
+script_97475.txt,Cluster Analysis,Unsupervised Clustering,0.7927142276989537
+script_97475.txt,Segment Image Into Clusters,Train A Clusterer,0.6145944780298462
+script_97475.txt,Calculates Median Of Image Collection,Spatial Analysis,0.0
+script_97475.txt,Filter Image Collection By Date And Boundaries,Spatial Analysis,0.0
+script_97475.txt,Generating Histograms,Spatial Analysis,0.0
+script_97475.txt,Visualize Elevation Data (DEM),Spatial Analysis,0.0
+script_97477.txt,"Calculate Other Vegetation Indices/index (SAVI, EVI)","Calculate Other Vegetation Indices/index (SAVI, EVI)",1.0
+script_97477.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_97477.txt,Filter Images By Cloud Cover,Filter Images By Cloud Cover,1.0
+script_97477.txt,Filter Image Collection,Select And Clip Image,0.25989196961914307
+script_97477.txt,Cloud Filtering,Add A Legend,0.21810589842220002
+script_97477.txt,Accumulating EVI Anomalies,Spatial Analysis,0.0
+script_97477.txt,Calculates Median Of Image Collection,Spatial Analysis,0.0
+script_97477.txt,Clip Images To A Specific Region,Spatial Analysis,0.0
+script_97477.txt,Computes Normalized Difference Vegetation Index (NDVI),Spatial Analysis,0.0
+script_97477.txt,Legend Creation,Spatial Analysis,0.0
+script_97477.txt,Spectral Index Computation,Spatial Analysis,0.0
+script_97479.txt,Calculate Statistical Indicators Of Image Collection,Calculate Statistical Indicators Of Image Collection,1.0
+script_97479.txt,Cloud And Water Masking,Cloud And Water Masking,1.0
+script_97479.txt,Filter Image Collection By Date,Filter Image Collection By Date,1.0
+script_97479.txt,Filter Image Collection By Region,Filter Image Collection By Bounds,0.6784350724019818
+script_97479.txt,Visualize True Color Images,Visualize Satellite Images,0.44924685722875973
+script_97479.txt,Clip Images To A Specific Region,Spatial Analysis,0.0
+script_97479.txt,Cloud And Cloud Shadow Masking,Spatial Analysis,0.0
+script_97479.txt,Statistics Calculation,Spatial Analysis,0.0
+script_97507.txt,Add Date Information To Images,Add Date Information To Images,1.0
+script_97507.txt,Filter Image Collection By Date,Filter Image Collection By Date,1.0
+script_97507.txt,Filtering Administrative Boundaries,Filtering Administrative Boundaries,1.0
+script_97507.txt,Mosaic Landsat Images,Mosaic Landsat Images,1.0
+script_97507.txt,Visualization Setup,Visualization Setup,1.0
+script_97507.txt,Filter Image Collection By Cloud Coverage,Filter Image Collection By Date And Region,0.6784350724019818
+script_97507.txt,Visualize Radar Images With Specific Visualization Parameters,Spatial Analysis,0.0
+script_97508.txt,Filter Image Collection,Filter Image Collection,1.0
+script_97508.txt,Generate Time Series Charts,Generate Time Series Charts,1.0
+script_97508.txt,Generate Time Series Charts For NDVI,Generate Time Series Charts For NDVI,1.0
+script_97508.txt,Layer Addition To Map,Layer Addition To Map,1.0
+script_97508.txt,Display Interactive Map,Load and Display Pre- And Post-Fire Satellite Image,0.38536259942904805
+script_97508.txt,Add A Feature Collection,Addition Of NDVI,0.0
+script_97509.txt,Load and Display Pre- And Post-Fire Satellite Image,Load and Display Pre- And Post-Fire Satellite Image,1.0
+script_97509.txt,Visualize True Color Images,Visualize True Color Images,1.0
+script_97510.txt,Visualize True Color Images,Visualize True Color Images,1.0
+script_97510.txt,Calculate Difference Normalized Burn Ratio (dNBR),Calculate Normalized Burn Ratio (NBR) For Images,0.6828373393145643
+script_97512.txt,Calculate NBR for Post-Fire Image,Calculate NBR for Post-Fire Image,1.0
+script_97512.txt,Classify And Visualize Burn Severity,Reclassify,0.5180640564401554
+script_97512.txt,Clip Images To A Specific Region,Compute Averages,0.1876485576112926
+script_97512.txt,Calculate Difference Normalized Burn Ratio (dNBR),Spatial Analysis,0.0
+script_97538.txt,Calculates Median Of Image Collection,Calculates Median Of Image Collection,1.0
+script_97538.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_97538.txt,Export Processed Images To Drive,Export Processed Images To Drive,1.0
+script_97538.txt,Filter Image Collection By Date And Boundaries,Filter Image Collection By Date And Boundaries,1.0
+script_97538.txt,Clip Images To A Specific Region,Clip Images To Specific Geographic Boundaries,0.7817204997538865
+script_97538.txt,"Calculate Other Vegetation Indices/index (SAVI, EVI)",Spatial Analysis,0.0
+script_97538.txt,Export Processed Images,Spatial Analysis,0.0
+script_97538.txt,Export Processed Images To Google Drive,Spatial Analysis,0.0
+script_97539.txt,Calculates Median Of Image Collection,Calculates Median Of Image Collection,1.0
+script_97539.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_97539.txt,Export Processed Images To Drive,Export Processed Images To Drive,1.0
+script_97539.txt,Filter Image Collection By Date And Boundaries,Filter Image Collection By Date And Boundaries,1.0
+script_97539.txt,Clip Images To A Specific Region,Clip Images To Specific Geographic Boundaries,0.7817204997538865
+script_97539.txt,"Calculate Other Vegetation Indices/index (SAVI, EVI)",Spatial Analysis,0.0
+script_97539.txt,Export Processed Images To Google Drive,Spatial Analysis,0.0
+script_97539.txt,Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover,Spatial Analysis,0.0
+script_97582.txt,Clip Images To Specific Geographic Boundaries,Clip Images To Specific Geographic Boundaries,1.0
+script_97582.txt,Image Cloud Masking,Image Cloud Masking,1.0
+script_97582.txt,Image Mosaicking,Image Mosaicking,1.0
+script_97582.txt,Filter Images By Date And Region,Filter Images By Cloud Cover,0.6643348681537271
+script_97582.txt,Layer Addition To Map,Enhancing Image Visualization,0.42480765933254194
+script_97582.txt,Clip Images To A Specific Region,Spatial Analysis,0.0
+script_97609.txt,Calculate Seasonal And Temporal Spectral Indices,Calculate Seasonal And Temporal Spectral Indices,1.0
+script_97609.txt,Filter Image Collection By Date,Filter Image Collection By Date,1.0
+script_97609.txt,Calculate Long-Term Averages,Calculating Annual Average,0.8703001866279007
+script_97609.txt,Export Processed Images To Drive,Exporting Classified Images,0.6077271581200774
+script_97609.txt,Calculate Annual Precipitation,Vectorization,0.41992351064738176
+script_97609.txt,Calculates Mean Of Image Collection,Creating Monthly Composite,0.0
+script_97609.txt,Clip Images To A Specific Region,Select And Clip Image,0.0
+script_97610.txt,Filter Image Collection By Date,Filter Image Collection By Date,1.0
+script_97610.txt,Temperature Calculation,Temperature Calculation,1.0
+script_97610.txt,Unit Conversion For Temperature Data,Unit Conversion For Temperature Data,1.0
+script_97610.txt,Selects Temperature Data,Select And Clip Image,0.7565271894456453
+script_97610.txt,Export Processed Images To Google Drive,Export Processed Images To Drive,0.6077271581200774
+script_97610.txt,Visualize Temperature Data,Data Visualization,0.5317733083190554
+script_97610.txt,Clip Images To A Specific Region,Spatial Analysis,0.0
+script_97610.txt,Clip Temperature Data To Area Of Interest,Spatial Analysis,0.0
+script_97610.txt,Export Processed Data To Google Drive,Spatial Analysis,0.0
+script_97610.txt,Filter And Process,Spatial Analysis,0.0
+script_97610.txt,Selects Air Temperature Data,Spatial Analysis,0.0
+script_97651.txt,Image Cloud Masking,Image Cloud Masking,1.0
+script_97651.txt,Filter Image Collection By Date,Filter Image Collection,0.7636987770243056
+script_97651.txt,Export Processed Images To Google Drive,Export Selected Image,0.6077271581200774
+script_97651.txt,Cloud And Shade Masking,Spatial Analysis,0.0
+script_97683.txt,Calculates Median Of Image Collection,Calculates Median Of Image Collection,1.0
+script_97683.txt,Clip Images To A Specific Region,Spatial Clipping,0.8938046873955124
+script_97683.txt,Filter Image Collection By Time,Filter Image Collection,0.8638407819509812
+script_97683.txt,Export Processed Images To Drive,Export Selected Image,0.6077271581200774
+script_97683.txt,Export Processed Images To Google Drive,Spatial Analysis,0.0
+script_97683.txt,Filter Image Collection By Bounds,Spatial Analysis,0.0
+script_97683.txt,Filter Image Collection By Date,Spatial Analysis,0.0
+script_97700.txt,Image Clustering,Image Clustering,1.0
+script_97700.txt,Filter Image Collection By Date,Filter Image Collection,0.7636987770243056
+script_97700.txt,Speckle Filtering,Spatial Filtering,0.5090751063851834
+script_97700.txt,Cluster Analysis,Geometric Index Calculation,0.2530308896876976
+script_97700.txt,Cluster Image Data,Compute Median Of NDVI,0.1757427044267457
+script_97700.txt,Computes Normalized Difference Vegetation Index (NDVI),Spatial Analysis,0.0
+script_97700.txt,Filter Images By Date,Spatial Analysis,0.0
+script_97704.txt,Generating Histograms,Generating Histograms,1.0
+script_97704.txt,Select DEM,Select DEM,1.0
+script_97704.txt,Layer Addition To Map,Enhancing Image Visualization,0.42480765933254194
+script_97704.txt,Export Processed Data To Drive,Export Processed Images To Drive,0.2733133357207549
+script_97704.txt,Spatial Clipping,Spatial Analysis,0.0
+script_97704.txt,Visualize Elevation Data (DEM),Spatial Analysis,0.0
+script_97718.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_97718.txt,Create Median Composite Of Images,Create Median Composite Of Images,1.0
+script_97718.txt,Generate Time Series Charts,Generate Time Series Charts,1.0
+script_97718.txt,Image Cloud Masking,Image Cloud Masking,1.0
+script_97718.txt,Filter Image Collection By Date And Boundaries,Filter Image Collection,0.8084138416281831
+script_97718.txt,Computes Normalized Difference Vegetation Index (NDVI),Export Selected Image,0.0
+script_97724.txt,Add NDVI Band To Images,Add NDVI Band To Images,1.0
+script_97724.txt,Filter Image Collection,Filter Image Collection,1.0
+script_97724.txt,Reduction Of Image Regions,Reduction Of Image Regions,1.0
+script_97724.txt,Cloud And Shade Masking,Cloud And Snow Masking,0.6977423976319923
+script_97724.txt,Generate Time Series Charts,Remapping Values,0.27753256781410107
+script_97724.txt,Converts Joined Data To Image Collection,Merging (Combining Multiple Bands),0.0
+script_97724.txt,Data Preparation,Spatial Analysis,0.0
+script_97724.txt,Filter Image Collection By Date,Spatial Analysis,0.0
+script_97724.txt,Merge Feature Collections For Training Data,Spatial Analysis,0.0
+script_97954.txt,Generate Image Composites,Generate Image Composites,1.0
+script_97954.txt,Vegetation Masking,Vegetation Masking,1.0
+script_97954.txt,Calculate Spectral Indices And Ratios From Satellite Bands,Spectral Distance Calculation,0.7570974819182416
+script_97954.txt,Filter Image Collection By Cloud Coverage,Filter Images By Cloud Cover,0.3854194811514833
+script_97954.txt,Training CART Classifier,Mapping Land Cover,0.0
+script_97974.txt,Vegetation Masking,Vegetation Masking,1.0
+script_97974.txt,Filter And Mosaic Landsat Images,Filter Image Collection,0.25989196961914307
+script_97974.txt,Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover,Generate Image Composites,0.22741136159311529
+script_97974.txt,Calculate Data For Specific Spectral Bands,Buffering Edges,0.1961758501855679
+script_97974.txt,Training And Sampling For Land Cover Classification,Spectral Distance Calculation,0.0
+script_97988.txt,Mask Areas To Refine Flood Detection,Image Differencing,0.48554224517767053
+script_97988.txt,Image Mosaicking,Image Masking,0.4023091918654263
+script_97988.txt,Mosaic Landsat Images,Filter Image Collection,0.27995349647222584
+script_97988.txt,Machine Learning Classification,Area Calculation,0.24576375404800804
+script_97988.txt,Filter And Mosaic Landsat Images,Generate Image Composites,0.23969151302371655
+script_97988.txt,Exporting Classified Images,Spatial Analysis,0.0
+script_97988.txt,Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover,Spatial Analysis,0.0
+script_97988.txt,Forest Area Calculation,Spatial Analysis,0.0
+script_97988.txt,Spectral Index Computation,Spatial Analysis,0.0
+script_97991.txt,Export Selected Image,Export Selected Image,1.0
+script_97991.txt,Filtering Polygons,Filtering Polygons,1.0
+script_97991.txt,Mosaic Landsat Images,Mosaic Landsat Images,1.0
+script_97991.txt,Cloud And Water Masking,Mask Application,0.6650750072971255
+script_97991.txt,Forest Area Calculation,Vectorization,0.43493313661984684
+script_97991.txt,Filter And Mosaic Landsat Images,Filter Image Collection,0.25989196961914307
+script_97991.txt,Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover,Filter And Classify,0.2205321420798927
+script_97991.txt,Classify Images Based On Training Data,Radiance calculation,0.1961758501855679
+script_98005.txt,Cloud Score Computation,Cloud Score Computation,1.0
+script_98169.txt,Cloud And Water Masking,Cloud And Water Masking,1.0
+script_98169.txt,Compute Median Of NDVI,Compute Median Of NDVI,1.0
+script_98169.txt,Generate Image Composites,Generate Image Composites,1.0
+script_98169.txt,Filter Image Collection By Cloud Coverage,Filter Image Collection,0.8084138416281831
+script_98169.txt,Buffer Creation,Regression Analysis,0.2388228225052257
+script_98169.txt,Export Processed Data To Google Drive,Spatial Analysis,0.0
+script_98257.txt,Apply Threshold To Identify Flood Extent,Apply Threshold To Identify Flood Extent,1.0
+script_98257.txt,Calculate Normalized Difference Flood Index (NDFI),Calculate Normalized Difference Flood Index (NDFI),1.0
+script_98257.txt,Image Mosaicking,Image Mosaicking,1.0
+script_98257.txt,Filter Image Collection By Date,Filter Image Collection,0.7636987770243056
+script_98257.txt,Clip Images To A Specific Region,Clip Images,0.7524467025979407
+script_98257.txt,Filter Images By Date And Region,Spatial Analysis,0.0
+script_98258.txt,Apply Threshold To Identify Flood Extent,Apply Threshold To Identify Flood Extent,1.0
+script_98258.txt,Calculate Normalized Difference Flood Index (NDFI),Calculate Normalized Difference Flood Index (NDFI),1.0
+script_98258.txt,Image Mosaicking,Image Mosaicking,1.0
+script_98258.txt,Filter Image Collection By Date,Filter Image Collection,0.7636987770243056
+script_98258.txt,Clip Images To A Specific Region,Clip Images,0.7524467025979407
+script_98258.txt,Creates And Exports Image Mosaics,Spatial Analysis,0.0
+script_98258.txt,Mask Areas To Refine Flood Detection,Spatial Analysis,0.0
+script_98259.txt,Calculates Normalized Difference Water Index (NDWI),Calculates Normalized Difference Water Index (NDWI),1.0
+script_98259.txt,Clip Images To Specific Geographic Boundaries,Clip Images To Specific Geographic Boundaries,1.0
+script_98259.txt,Edge Detection,Edge Detection,1.0
+script_98259.txt,Filter Image Collection By Date And Boundaries,Filter Image Collection By Date And Boundaries,1.0
+script_98259.txt,Image Mosaicking,Filtering Pixels,0.2680288873311685
+script_98259.txt,Clip Images To A Specific Region,Add NDWI Band To Images,0.0
+script_98259.txt,Image Differencing,Spatial Analysis,0.0
+script_98259.txt,Mask Areas To Refine Flood Detection,Spatial Analysis,0.0
+script_98259.txt,Sort Image Collections By Cloud Cover,Spatial Analysis,0.0
+script_98260.txt,Calculates Normalized Difference Water Index (NDWI),Calculates Normalized Difference Water Index (NDWI),1.0
+script_98260.txt,Clip Images To Specific Geographic Boundaries,Clip Images To Specific Geographic Boundaries,1.0
+script_98260.txt,Filter Image Collection By Date And Boundaries,Filter Image Collection By Date And Boundaries,1.0
+script_98260.txt,Generating Histograms,Generating Histograms,1.0
+script_98260.txt,Otsu Thresholding,Otsu Thresholding,1.0
+script_98260.txt,Clip Images To A Specific Region,Image Clustering,0.20922775787843584
+script_98260.txt,Sort Image Collections By Cloud Cover,Spatial Analysis,0.0
+script_98261.txt,Calculate Features To Refine Flood Analysis,Calculate Features To Refine Flood Analysis,1.0
+script_98261.txt,Calculates Normalized Difference Water Index (NDWI),Calculates Normalized Difference Water Index (NDWI),1.0
+script_98261.txt,Filter Image Collection By Date And Boundaries,Filter Image Collection By Date And Boundaries,1.0
+script_98261.txt,Sort Image Collections By Cloud Cover,Image Mosaicking,0.2680288873311685
+script_98261.txt,Clip Images To A Specific Region,Addition Of NDWI,0.0
+script_98261.txt,Image Differencing,Spatial Analysis,0.0
+script_98261.txt,Mask Areas To Refine Flood Detection,Spatial Analysis,0.0
+script_98262.txt,Calculates Normalized Difference Water Index (NDWI),Calculates Normalized Difference Water Index (NDWI),1.0
+script_98262.txt,Elevation Masking,Elevation Masking,1.0
+script_98262.txt,Filter Image Collection By Date And Boundaries,Filter Image Collection By Date And Boundaries,1.0
+script_98262.txt,Clip Images To A Specific Region,Clip Images To Specific Geographic Boundaries,0.7817204997538865
+script_98262.txt,Filtering Pixels,Filter Image Collection By Bounds,0.3854194811514833
+script_98262.txt,Calculate Features To Refine Flood Analysis,Image Mosaicking,0.0
+script_98262.txt,Flood Area Calculation,Spatial Analysis,0.0
+script_98263.txt,Calculates Normalized Difference Water Index (NDWI),Calculates Normalized Difference Water Index (NDWI),1.0
+script_98263.txt,Visualize True Color Images,Visualize True Color Images,1.0
+script_98263.txt,Filter Image Collection By Cloud Coverage,Filter Image Collection,0.8084138416281831
+script_98263.txt,Filter Image Collection By Date And Boundaries,Mean Reduction,0.21810589842220002
+script_98263.txt,Add NDWI Band To Images,Spatial Analysis,0.0
+script_98263.txt,Filter Images By Cloud Cover,Spatial Analysis,0.0
+script_98263.txt,Sort Image Collections By Cloud Cover,Spatial Analysis,0.0
+script_98266.txt,Calculate Features To Refine Flood Analysis,Calculate Features To Refine Flood Analysis,1.0
+script_98266.txt,Image Differencing,Image Differencing,1.0
+script_98266.txt,Image Mosaicking,Image Mosaicking,1.0
+script_98266.txt,Speckle Filtering,Speckle Filtering,1.0
+script_98266.txt,Filter Image Collection By Date And Region,Filter Image Collection,0.8084138416281831
+script_98266.txt,Otsu Thresholding,Thresholding For Classification,0.6145944780298462
+script_98266.txt,Filter Image Collection By Date,Spatial Analysis,0.0
+script_98266.txt,Speckle Noise Reduction,Spatial Analysis,0.0
+script_98267.txt,Image Mosaicking,Image Mosaicking,1.0
+script_98267.txt,Speckle Filtering,Speckle Filtering,1.0
+script_98267.txt,Threshold Application,Threshold Application,1.0
+script_98267.txt,Image Differencing,Difference Calculation,0.9207623817674213
+script_98267.txt,Filter Image Collection By Date And Region,Filter Image Collection By Date,0.6466602952140302
+script_98267.txt,Mask Areas To Refine Flood Detection,Calculate Features To Refine Flood Analysis,0.20958657468929595
+script_98267.txt,Create RGB Composite Image,Spatial Analysis,0.0
+script_98267.txt,Elevation Masking,Spatial Analysis,0.0
+script_98267.txt,Quantifying Pixels,Spatial Analysis,0.0
+script_98275.txt,Filter Image Collection By Date And Boundaries,Filter Image Collection By Date And Boundaries,1.0
+script_98275.txt,Visualize Disaster Impacts,Display Interactive Map,0.38536259942904805
+script_98287.txt,Add NDVI Band To Images,Add NDVI Band To Images,1.0
+script_98287.txt,Add NDWI Band To Images,Add NDWI Band To Images,1.0
+script_98287.txt,Filter Image Collection By Cloud Coverage,Filter Image Collection By Cloud Coverage,1.0
+script_98287.txt,Generate Time Series Charts For NDVI,Generate Time Series Charts For NDVI,1.0
+script_98287.txt,Image Cloud Masking,Spatial Analysis,0.0
+script_98289.txt,Calculates Median Of Image Collection,Calculates Median Of Image Collection,1.0
+script_98289.txt,Filter Image Collection By Date,Filter Image Collection By Date,1.0
+script_98289.txt,Image Cloud Masking,Image Cloud Masking,1.0
+script_98289.txt,Filter Image Collection By Cloud Coverage,Filter Image Collection By Bounds,0.6784350724019818
+script_98289.txt,Display Specific Spectral Bands And Colors,Addition Of Spectral Indices,0.0
+script_98289.txt,Filter Image Collection By Date And Region,Spatial Analysis,0.0
+script_98289.txt,Filter Image Collection By Region,Spatial Analysis,0.0
+script_98290.txt,Accuracy Assessment,Accuracy Assessment,1.0
+script_98290.txt,Area Calculation,Area Calculation,1.0
+script_98290.txt,Image Cloud Masking,Image Cloud Masking,1.0
+script_98290.txt,Filter Image Collection By Date,Filter Image Collection,0.7636987770243056
+script_98290.txt,Classification And Machine Learning,Image Differencing,0.27838869548055
+script_98290.txt,Create Median Composite Of Images,Spatial Analysis,0.0
+script_98290.txt,Evaluate Classifier Performance Using Confusion Matrix,Spatial Analysis,0.0
+script_98290.txt,Machine Learning Model Training,Spatial Analysis,0.0
+script_98290.txt,Random Forest Classification,Spatial Analysis,0.0
+script_98290.txt,SVM Classification,Spatial Analysis,0.0
+script_98290.txt,Training CART Classifier,Spatial Analysis,0.0

@@ -1,0 +1,36 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Snow cover analysis in the Pacific Northwest region"],
+  "DataSource": ["MODIS/006/MOD10A1", "users/ak_glaciers/points_w_ids_OR", "users/ak_glaciers/or_snotel_sites", "users/ak_glaciers/NWCC_high_resolution_coordinates_2019_edited_updated_fields_final", "users/ak_glaciers/gee_tiles_2_15_clipped", "USGS/WBD/2017/HUC08"],
+  "Function": ["Image collection filtering", "Sensor harmonization", "Surface reflectance collection retrieval", "Image masking", "Normalized difference calculation", "Regional statistics calculation"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["MODIS/006/MOD10A1"],
+        "Function": ["Image collection filtering", "Sensor harmonization"]
+    },
+    "relation_2": {
+        "DataSource": ["users/ak_glaciers/points_w_ids_OR", "users/ak_glaciers/or_snotel_sites", "users/ak_glaciers/NWCC_high_resolution_coordinates_2019_edited_updated_fields_final"],
+        "Function": ["Image masking", "Surface reflectance collection retrieval"]
+    },
+    "relation_3": {
+        "DataSource": ["users/ak_glaciers/gee_tiles_2_15_clipped"],
+        "Function": ["Image collection filtering", "Sensor harmonization"]
+    },
+    "relation_4": {
+        "DataSource": ["USGS/WBD/2017/HUC08"],
+        "Function": ["Regional statistics calculation", "Normalized difference calculation"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4754, 'completion_tokens': 457, 'total_tokens': 5211}

@@ -1,0 +1,6 @@
+{
+  "Summary": ["The script processes cloud probability data for specific regions in East Asia during summer months, generating and exporting percentage images."],
+  "Theme": ["Cloud cover analysis"],
+  "DataSource": ["users/kitmyfaceplease2/eastsouth_asia", "projects/ee-kitmyfaceplease2/assets/EAST_SOUTH_SPLIT2"],
+  "Function": ["Mosaic creation for daily cloud probability images", "Cloud masking operation to filter out clouds", "Summation of cloud-free images for each region", "Calculation of cloud cover percentage", "Exporting processed cloud cover images"]
+}

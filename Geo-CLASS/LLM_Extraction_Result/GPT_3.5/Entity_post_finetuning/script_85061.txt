@@ -1,0 +1,20 @@
+{
+    "Summary": [
+        "Geoprocessing modeling for land cover classification in Suriname."
+    ],
+    "Theme": [
+        "LAND USE/LAND COVER CLASSIFICATION"
+    ],
+    "DataSource": [
+        "LANDSAT/LT05/C02/T1_L2",
+        "LANDSAT/LE07/C02/T1_L2",
+        "LANDSAT/LC08/C02/T1_L2",
+        "projects/mapbiomas-raisg/PRODUCTOS/AGUA/DATOS_AUXILIARES/TEMP/bigGrids_Suriname"
+    ],
+    "Function": [
+        "Time Series Analysis",
+        "Spectral And Temporal Analysis",
+        "Metadata Filtering",
+        "Classification And Machine Learning"
+    ]
+}

@@ -1,0 +1,38 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land cover classification and change detection using Landsat and Sentinel-2 imagery"],
+  "DataSource": ["LANDSAT/LC09/C02/T1_L2", "LANDSAT/LC08/C02/T1_L2", "COPERNICUS/S2_SR"],
+  "Function": [
+    "applyScaleFactors: scales optical and thermal bands of Landsat imagery",
+    "maskS2Clouds: masks clouds in Sentinel-2 imagery",
+    "add_NDVI: calculates Normalized Difference Vegetation Index",
+    "add_NDWI: calculates Normalized Difference Water Index",
+    "add_MNDWI: calculates Modified Normalized Difference Water Index",
+    "add_NDSI: calculates Normalized Difference Snow Index",
+    "add_EWI: calculates Enhanced Wetness Index",
+    "add_ICE: extracts ice cover information from Sentinel-2 imagery"
+  ]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC09/C02/T1_L2", "LANDSAT/LC08/C02/T1_L2"],
+        "Function": ["applyScaleFactors: scales optical and thermal bands of Landsat imagery", "add_NDVI: calculates Normalized Difference Vegetation Index", "add_NDWI: calculates Normalized Difference Water Index", "add_MNDWI: calculates Modified Normalized Difference Water Index", "add_NDSI: calculates Normalized Difference Snow Index", "add_EWI: calculates Enhanced Wetness Index"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["maskS2Clouds: masks clouds in Sentinel-2 imagery", "add_ICE: extracts ice cover information from Sentinel-2 imagery"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4783, 'completion_tokens': 479, 'total_tokens': 5262}

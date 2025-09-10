@@ -1,0 +1,5 @@
+{
+  "Theme": ["Urban change detection", "Vegetation analysis", "Soil analysis"],
+  "DataSource": ["LANDSAT/LE07/C01/T1_TOA", "COPERNICUS/S2", "users/eeranyartrodrigo/ferrocarriles/coahuilaPols"],
+  "Function": ["Filter image collection by date", "Select specific bands", "Calculate median composite", "Add NDVI band", "Add NDBI band", "Add BSI band", "Reduce regions to median", "Aggregate array values", "Unmix image bands", "Create binary urban mask", "Compute histogram", "Apply Otsu threshold"]
+}

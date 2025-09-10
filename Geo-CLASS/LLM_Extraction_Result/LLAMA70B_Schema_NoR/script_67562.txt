@@ -1,0 +1,31 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover classification"],
+  "DataSource": ["users/wangweihappy0/training01/l8ClassifySample", "LANDSAT/LC08/C01/T1_SR", "USGS/SRTMGL1_003"],
+  "Function": ["Remove cloud from Landsat 8 image", "Scale image values", "Calculate NDVI", "Calculate NDWI", "Calculate NDBI", "Generate DEM", "Clip image to ROI"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response that organizes the extracted information into a structured format:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/wangweihappy0/training01/l8ClassifySample"],
+        "Function": ["Remove cloud from Landsat 8 image", "Scale image values", "Calculate NDVI", "Calculate NDWI", "Calculate NDBI"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Remove cloud from Landsat 8 image", "Scale image values", "Calculate NDVI", "Calculate NDWI", "Calculate NDBI"]
+    },
+    "relation_3": {
+        "DataSource": ["USGS/SRTMGL1_003"],
+        "Function": ["Generate DEM"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2573, 'completion_tokens': 322, 'total_tokens': 2895}

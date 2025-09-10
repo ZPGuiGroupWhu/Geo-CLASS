@@ -1,0 +1,34 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/wangweihappy0/training01/l8ClassifySample"
+        ],
+        "Function": [
+            "Remove cloud from Landsat 8 image",
+            "Scale image values",
+            "Calculate NDVI",
+            "Calculate NDWI",
+            "Calculate NDBI"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "Remove cloud from Landsat 8 image",
+            "Scale image values",
+            "Calculate NDVI",
+            "Calculate NDWI",
+            "Calculate NDBI"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "USGS/SRTMGL1_003"
+        ],
+        "Function": [
+            "Generate DEM"
+        ]
+    }
+}

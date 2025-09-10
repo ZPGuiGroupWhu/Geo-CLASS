@@ -1,0 +1,19 @@
+{
+    "Theme": [
+        "Forest monitoring and land cover change detection"
+    ],
+    "DataSource": [
+        "LANDSAT/LC8_SR",
+        "LANDSAT/LC8_L1T_TOA",
+        "LANDSAT/LE7_L1T_TOA_FMASK",
+        "LANDSAT/LE7_L1T_TOA",
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "Filtering image collection by date",
+        "Calculating NDVI and NBR indices",
+        "Mosaicking images",
+        "Exporting image properties to CSV",
+        "Exporting mosaic to Drive"
+    ]
+}

@@ -1,0 +1,89 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "FAO/GAUL/2015/level0"
+        ],
+        "Function": [
+            "Cloud Masking And Quality Filtering",
+            "Data Fusion And Mosaicking"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Cloud Masking And Quality Filtering",
+            "Data Fusion And Mosaicking"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "Cloud Masking And Quality Filtering",
+            "Data Fusion And Mosaicking"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "FAO/GAUL/2015/level0",
+            "COPERNICUS/S2",
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "Time Series Clustering And Prediction"
+        ]
+    },
+    "relation_5": {
+        "DataSource": [
+            "FAO/GAUL/2015/level0",
+            "COPERNICUS/S2",
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "Vegetation And Water Indices Calculation"
+        ]
+    },
+    "relation_6": {
+        "DataSource": [
+            "FAO/GAUL/2015/level0",
+            "COPERNICUS/S2",
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "Vegetation And Water Indices Calculation"
+        ]
+    },
+    "relation_7": {
+        "DataSource": [
+            "FAO/GAUL/2015/level0",
+            "COPERNICUS/S2",
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "Vegetation And Water Indices Calculation"
+        ]
+    },
+    "relation_8": {
+        "DataSource": [
+            "FAO/GAUL/2015/level0",
+            "COPERNICUS/S2",
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "Exporting And Data Conversion"
+        ]
+    },
+    "relation_9": {
+        "DataSource": [
+            "FAO/GAUL/2015/level0",
+            "COPERNICUS/S2",
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "Exporting And Data Conversion"
+        ]
+    }
+}

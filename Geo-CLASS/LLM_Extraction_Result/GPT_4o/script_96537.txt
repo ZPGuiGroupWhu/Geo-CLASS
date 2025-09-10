@@ -1,0 +1,41 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover classification", "NDVI calculation", "NDWI calculation", "BSI calculation", "Cloud masking", "Accuracy assessment"],
+  "DataSource": ["users/eeranyartrodrigo/geoMediana/gm_2018_MX_014009", "users/eeranyartrodrigo/geoMediana/gm_2019_MX_014009", "users/eeranyartrodrigo/Pabellon", "LANDSAT/LE07/C01/T1_SR", "MODIS/006/MCD12Q1", "MODIS/NTSG/MOD16A2/105"],
+  "Function": ["Mask clouds in images", "Filter image collection by date", "Select specific bands from images", "Calculate median of image collection", "Clip image to region", "Rename image bands", "Add bands to image", "Calculate normalized difference index", "Sample stratified points", "Train random forest classifier", "Classify image using classifier", "Calculate confusion matrix", "Reduce image resolution", "Reproject image", "Generate histogram chart"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/eeranyartrodrigo/geoMediana/gm_2018_MX_014009"],
+        "Function": ["Rename image bands", "Add bands to image", "Calculate normalized difference index", "Reduce image resolution", "Reproject image"]
+    },
+    "relation_2": {
+        "DataSource": ["users/eeranyartrodrigo/geoMediana/gm_2019_MX_014009"],
+        "Function": ["Rename image bands", "Add bands to image", "Calculate normalized difference index", "Reduce image resolution", "Reproject image"]
+    },
+    "relation_3": {
+        "DataSource": ["users/eeranyartrodrigo/Pabellon"],
+        "Function": ["Clip image to region", "Sample stratified points"]
+    },
+    "relation_4": {
+        "DataSource": ["LANDSAT/LE07/C01/T1_SR"],
+        "Function": ["Mask clouds in images", "Filter image collection by date", "Select specific bands from images", "Calculate median of image collection"]
+    },
+    "relation_5": {
+        "DataSource": ["MODIS/006/MCD12Q1"],
+        "Function": ["Clip image to region", "Reduce image resolution", "Reproject image"]
+    },
+    "relation_6": {
+        "DataSource": ["MODIS/NTSG/MOD16A2/105"],
+        "Function": ["Clip image to region"]
+    }
+}
+```
+
+Total_Token_Usage:
+7683

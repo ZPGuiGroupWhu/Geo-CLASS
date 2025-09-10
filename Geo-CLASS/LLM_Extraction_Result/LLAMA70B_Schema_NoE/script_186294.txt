@@ -1,0 +1,29 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land cover classification and NDVI analysis"],
+  "DataSource": ["ft:1XPgyHDQHN4d5IF4x8u5ZkJxkVQ_xKWFFuUTi9ofT", "COPERNICUS/S2"],
+  "Function": ["Filtering Sentinel-2 images by date and bounds", "Applying NDVI function to the image collection", "Masking images using QA60 band", "Clipping and visualizing NDVI results", "Exporting NDVI image to Google Drive"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["ft:1XPgyHDQHN4d5IF4x8u5ZkJxkVQ_xKWFFuUTi9ofT"],
+        "Function": ["Filtering Sentinel-2 images by date and bounds", "Applying NDVI function to the image collection", "Masking images using QA60 band", "Clipping and visualizing NDVI results"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Filtering Sentinel-2 images by date and bounds", "Applying NDVI function to the image collection", "Masking images using QA60 band", "Clipping and visualizing NDVI results", "Exporting NDVI image to Google Drive"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 7394, 'completion_tokens': 338, 'total_tokens': 7732}

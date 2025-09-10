@@ -1,0 +1,16 @@
+{
+    "Summary": [
+        "Extracts and processes Landsat imagery for NDVI and SAVI analysis."
+    ],
+    "Theme": [
+        "VEGETATION INDEX"
+    ],
+    "DataSource": [
+        "users/philipegeo/pol_jeremoabo",
+        "LANDSAT/LT05/C01/T1_TOA"
+    ],
+    "Function": [
+        "Cloud Masking And Quality Filtering",
+        "NDVI (Normalized Difference Vegetation Index calculation)"
+    ]
+}

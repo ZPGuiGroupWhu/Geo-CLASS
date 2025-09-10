@@ -1,0 +1,19 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Classifying land cover types using Sentinel-2 imagery."],
+  "Theme": ["Land cover classification"],
+  "DataSource": ["COPERNICUS/S2", "urban", "water", "forest", "agriculture"],
+  "Function": ["Image filtering based on date and location", "Sorting images by cloud coverage", "Training a classification model", "Running the classification process"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2", "urban", "water", "forest", "agriculture"],
+        "Function": ["Image filtering based on date and location", "Sorting images by cloud coverage", "Training a classification model", "Running the classification process"]
+    }
+}
+```

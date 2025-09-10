@@ -1,0 +1,20 @@
+{
+    "Summary": [
+        "Script filters Landsat images for flood detection and calculates NDWI, then applies Otsu thresholding for classification."
+    ],
+    "Theme": [
+        "FLOOD FREQUENCY",
+        "SUPERSATURATION",
+        "SNOW CLASSIFICATION"
+    ],
+    "DataSource": [
+        "FAO/GAUL_SIMPLIFIED_500m/2015/level2",
+        "LANDSAT/LT05/C01/T1_SR"
+    ],
+    "Function": [
+        "Cloud Masking And Quality Filtering",
+        "Exporting And Data Conversion",
+        "NDWI (Normalized Difference Water Index calculation)",
+        "MNDWI (Modified Normalized Difference Water Index calculation)"
+    ]
+}

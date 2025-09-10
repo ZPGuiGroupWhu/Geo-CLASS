@@ -1,0 +1,39 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Filtering Sentinel-2 data by date and geometry",
+            "Removing clouds from Sentinel-2 data",
+            "Calculating median of cloud-free Sentinel-2 data",
+            "Calculating normalized difference indices (NDVI, NDBI, NDWI)",
+            "Applying thresholds to classify land cover"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S1_GRD"
+        ],
+        "Function": [
+            "Filtering Sentinel-1 data by date, geometry, and polarization",
+            "Detecting rice paddies using Sentinel-1 data and terrain analysis"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "users/eeranyartrodrigo/ferrocarriles/estaciones_prospectadas_area"
+        ],
+        "Function": [
+            "None"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "WWF/HydroSHEDS/03VFDEM"
+        ],
+        "Function": [
+            "None"
+        ]
+    }
+}

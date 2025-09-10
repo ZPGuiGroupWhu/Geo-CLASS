@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Script compares false-color images and NBR index using Sentinel 2 data."],
+  "Theme": ["Wildfire severity assessment"],
+  "DataSource": ["users/diegogmzd/CHACO", "COPERNICUS/S2", "COPERNICUS/S3/OLCI"],
+  "Function": ["Cloud masking", "Image collection filtering", "Image mosaicking", "Normalized difference calculation", "Visualization setup"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/diegogmzd/CHACO"],
+        "Function": ["Cloud masking", "Image collection filtering", "Image mosaicking", "Normalized difference calculation", "Visualization setup"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Cloud masking", "Image collection filtering", "Image mosaicking", "Normalized difference calculation", "Visualization setup"]
+    },
+    "relation_3": {
+        "DataSource": ["COPERNICUS/S3/OLCI"],
+        "Function": ["Image collection filtering", "Image mosaicking", "Visualization setup"]
+    }
+}
+```

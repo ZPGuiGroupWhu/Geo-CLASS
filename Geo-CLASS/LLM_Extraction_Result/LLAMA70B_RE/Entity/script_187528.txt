@@ -1,0 +1,17 @@
+{
+    "Theme": [
+        "Flood Mapping using Sentinel-1"
+    ],
+    "DataSource": [
+        "COPERNICUS/S1_GRD",
+        "ft:1nWJr3XY3hcsRSvydLLyK47W-r6N1bB7JHhTYuLle"
+    ],
+    "Function": [
+        "Filtering image collection by bounds",
+        "Converting to natural scale",
+        "Focal median smoothing",
+        "Calculating band ratio",
+        "Creating RGB image",
+        "Histogram generation"
+    ]
+}

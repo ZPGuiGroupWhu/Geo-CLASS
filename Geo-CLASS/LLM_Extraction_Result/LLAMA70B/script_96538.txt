@@ -1,0 +1,33 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Panteon characterization using Sentinel-2 data"],
+  "DataSource": ["users/eeranyartrodrigo/panteones/polygonsData/polsPanteon", "projects/ee-vulnerability-gee4geo/assets/ranyartRodrigo/mexicoContorno", "COPERNICUS/S2"],
+  "Function": ["Buffering features", "Masking clouds and cirrus", "Calculating vegetation indices", "Clipping images to feature geometry", "Reducing image regions to median values"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/eeranyartrodrigo/panteones/polygonsData/polsPanteon"],
+        "Function": ["Buffering features", "Clipping images to feature geometry"]
+    },
+    "relation_2": {
+        "DataSource": ["projects/ee-vulnerability-gee4geo/assets/ranyartRodrigo/mexicoContorno"],
+        "Function": ["Masking clouds and cirrus"]
+    },
+    "relation_3": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Calculating vegetation indices", "Reducing image regions to median values"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4207, 'completion_tokens': 317, 'total_tokens': 4524}

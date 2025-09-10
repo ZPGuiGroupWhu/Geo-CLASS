@@ -1,0 +1,14 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Filtering image collection by cloud percentage and date",
+            "Selecting specific bands from an image",
+            "Reprojecting an image to a different CRS",
+            "Exporting an image to Google Drive",
+            "Visualizing images on a map"
+        ]
+    }
+}

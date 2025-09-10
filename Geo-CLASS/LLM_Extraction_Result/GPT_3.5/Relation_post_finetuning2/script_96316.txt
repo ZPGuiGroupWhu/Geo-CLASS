@@ -1,0 +1,24 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/cesarnon/datos_cba_2017/Cordoba_limite"
+        ],
+        "Function": [
+            "Filter Image Collection By Date And Region",
+            "Generate Time Series Charts For NDVI",
+            "Creates Animation Of NDVI Over Time",
+            "Generate Time Series Data For NDVI Changes"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2_SR"
+        ],
+        "Function": [
+            "Filter Image Collection By Date And Region",
+            "Generate Time Series Charts For NDVI",
+            "Creates Animation Of NDVI Over Time",
+            "Generate Time Series Data For NDVI Changes"
+        ]
+    }
+}

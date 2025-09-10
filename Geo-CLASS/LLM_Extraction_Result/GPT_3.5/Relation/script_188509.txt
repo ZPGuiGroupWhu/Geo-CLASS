@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["UCSB-CHG/CHIRPS/PENTAD"],
+        "Function": ["Image collection filtering based on date and location", "Calculation of correlation coefficient between two images"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2_CLOUD_PROBABILITY"],
+        "Function": ["Cloud masking operation for cloud probability images", "Summation of cloud-free images to create a composite image"]
+    }
+}

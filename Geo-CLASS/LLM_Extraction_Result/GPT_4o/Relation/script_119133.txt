@@ -1,0 +1,14 @@
+{
+  "relation_1": {
+    "DataSource": ["COPERNICUS/S2_SR_HARMONIZED/20200720T110619_20200720T111156_T29SPB"],
+    "Function": ["Display pre-fire image", "Calculate pre-fire NBR"]
+  },
+  "relation_2": {
+    "DataSource": ["COPERNICUS/S2_SR_HARMONIZED/20200908T110619_20200908T111404_T29SPB"],
+    "Function": ["Display post-fire image", "Calculate post-fire NBR"]
+  },
+  "relation_3": {
+    "DataSource": ["COPERNICUS/S2_SR_HARMONIZED/20200720T110619_20200720T111156_T29SPB", "COPERNICUS/S2_SR_HARMONIZED/20200908T110619_20200908T111404_T29SPB"],
+    "Function": ["Calculate dNBR", "Stack image bands", "Sample pixels for training", "Train cluster model", "Apply cluster model", "Calculate statistics", "Generate histogram", "Clip clusters to study area", "Apply mode filter", "Reclassify binary mask", "Multiply binary and severity classifications"]
+  }
+}

@@ -1,0 +1,16 @@
+{
+    "Theme": [
+        "Snow product bias determination using MODIS/VIIRS and Sentinel-1 data"
+    ],
+    "DataSource": [
+        "users/ak_glaciers/NWCC_high_resolution_coordinates_2019_hucs",
+        "USGS/WBD/2017/HUC8",
+        "CGIAR/SRTM90_V4"
+    ],
+    "Function": [
+        "Generate daily composites of optical data",
+        "Generate Sentinel-1 image collection for wet snow detection",
+        "Create test mask by updating Sentinel-1 image with optical composite",
+        "Generate stats for snow covered area/persistence"
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C02/T1_L2"],
+        "Function": ["Filtering image collection by date and location", "Masking clouds in images"]
+    },
+    "relation_2": {
+        "DataSource": ["ROI"],
+        "Function": ["Filtering image collection by date and location"]
+    }
+}

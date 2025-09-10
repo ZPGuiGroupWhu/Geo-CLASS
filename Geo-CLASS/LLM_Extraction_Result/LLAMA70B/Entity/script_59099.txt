@@ -1,0 +1,5 @@
+{
+  "Theme": ["Landslide zone evaluation in Aldea Las Minas, Santa Rosa"],
+  "DataSource": ["COPERNICUS/S2_HARMONIZED"],
+  "Function": ["Filtering image collection by date and cloud percentage", "Calculating NDVI index", "Mapping NDVI values to visualization", "Charting NDVI series by region"]
+}

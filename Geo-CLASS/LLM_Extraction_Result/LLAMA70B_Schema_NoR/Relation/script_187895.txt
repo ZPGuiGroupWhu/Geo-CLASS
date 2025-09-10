@@ -1,0 +1,31 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/kimambo/00_INPUT_TRAINING_VALIDATION/Tanzania_SouthernHighlands_reference_point_36LYR_13DEC2019_230_upto799_75PCTTRAINING"
+        ],
+        "Function": [
+            "Filtering image collection by date and location",
+            "Sampling BSI values at training points"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_SR",
+            "LANDSAT/LE07/C01/T1_SR",
+            "LANDSAT/LT05/C01/T1_SR",
+            "LANDSAT/LT04/C01/T1_SR"
+        ],
+        "Function": [
+            "Applying cloud mask to Landsat images",
+            "Calculating BSI index from Landsat images",
+            "Renaming BSI bands with image acquisition date"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [],
+        "Function": [
+            "Sorting image collection by time",
+            "Exporting results to CSV file"
+        ]
+    }
+}

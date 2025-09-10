@@ -1,0 +1,18 @@
+{
+    "Summary": [
+        "Script processes Landsat data to calculate NDVI and Land Surface Temperature (LST) for a specific region."
+    ],
+    "Theme": [
+        "VEGETATION WATER POTENTIAL",
+        "LAND SURFACE TEMPERATURE"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C01/T1_SR",
+        "LANDSAT/LC08/C01/T1_SR"
+    ],
+    "Function": [
+        "Image Cloud Masking",
+        "Seasonal NDVI Analysis",
+        "Area Calculation"
+    ]
+}

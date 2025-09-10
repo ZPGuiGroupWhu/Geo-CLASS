@@ -1,0 +1,19 @@
+{
+    "Theme": [
+        "Landsat Composite with cloud masking"
+    ],
+    "DataSource": [
+        "LANDSAT/LT4_L1T_TOA",
+        "LANDSAT/LT5_L1T_TOA",
+        "LANDSAT/LC8_L1T_TOA",
+        "LANDSAT/LE7_L1T_TOA",
+        "FAO/GAUL/2015/level0"
+    ],
+    "Function": [
+        "getImageCollection",
+        "landsatCloudScore",
+        "simpleTDOM2",
+        "cloudProject",
+        "ndvi_function"
+    ]
+}

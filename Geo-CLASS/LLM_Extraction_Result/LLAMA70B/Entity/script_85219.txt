@@ -1,0 +1,5 @@
+{
+  "Theme": ["Wildfire analysis and monitoring in Chaco region"],
+  "DataSource": ["users/diegogmzd/CHACO", "COPERNICUS/S2", "COPERNICUS/S3/OLCI"],
+  "Function": ["Filtering image collections by date and bounds", "Applying cloud mask to images", "Calculating median of image collection", "Computing normalized difference indices", "Clipping images to a specific region", "Mosaicking images", "Visualizing images with custom palettes"]
+}

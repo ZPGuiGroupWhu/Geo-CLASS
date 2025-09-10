@@ -1,0 +1,50 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "FAO/GAUL/2015/level0"
+        ],
+        "Function": [
+            "Cloud And Snow Masking",
+            "Image Mosaicking",
+            "Compute Difference Between Pre- And Post-Fire NBR",
+            "Calculate dNBR For Fire Severity",
+            "Layer Addition To Map",
+            "Calculate Burned Area",
+            "Add A Legend",
+            "Calculate dNBR For Fire Severity",
+            "Calculates Forest Structural Complexity Index (FSCI)"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "Cloud And Snow Masking",
+            "Image Mosaicking",
+            "Compute Difference Between Pre- And Post-Fire NBR",
+            "Calculate dNBR For Fire Severity",
+            "Layer Addition To Map",
+            "Calculate Burned Area",
+            "Add A Legend",
+            "Calculate dNBR For Fire Severity",
+            "Calculates Forest Structural Complexity Index (FSCI)"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Cloud And Snow Masking",
+            "Image Mosaicking",
+            "Compute Difference Between Pre- And Post-Fire NBR",
+            "Calculate dNBR For Fire Severity",
+            "Layer Addition To Map",
+            "Calculate Burned Area",
+            "Add A Legend",
+            "Calculate dNBR For Fire Severity",
+            "Calculates Forest Structural Complexity Index (FSCI)"
+        ]
+    }
+}

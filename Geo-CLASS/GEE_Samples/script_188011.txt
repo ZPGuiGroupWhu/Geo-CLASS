@@ -1,0 +1,498 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var geometry = ee.FeatureCollection("projects/ee-kimiachenaary/assets/msh");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+
+
+var landsat8Toa = ee.ImageCollection('LANDSAT/LC08/C01/T1_TOA');
+
+var temperature = landsat8Toa.filterBounds(geometry)
+
+    .select(['B10'], ['temp'])
+
+    .map(function(image) {
+
+      // Kelvin to Celsius.
+
+      return image.subtract(273.15)
+
+          .set('system:time_start', image.get('system:time_start'));
+
+    });
+
+var clippedCol=temperature.map(function(im){ 
+
+  return im.clip(geometry);
+
+});
+
+// Calculate bands for seasonal temperatures and elevations; composite into
+
+// a single image.
+
+var summer = clippedCol.filterDate('2016-03-21', '2016-09-23')
+
+    .reduce(ee.Reducer.mean())
+
+    .select([0], ['summer']);
+
+
+
+
+
+
+Map.addLayer(summer,{min: 25, max:45, palette: [
+
+'040274', '040281', '0502a3', '0502b8', '0502ce', '0502e6',
+
+'0602ff', '235cb1', '307ef3', '269db1', '30c8e2', '32d3ef',
+
+'3be285', '3ff38f', '86e26f', '3ae237', 'b5e22e', 'd6e21f',
+
+'fff705', 'ffd611', 'ffb613', 'ff8b13', 'ff6e08', 'ff500d',
+
+'ff0000', 'de0101', 'c21301', 'a71001', '911003'
+
+ ]},'LST');
+
+ 
+
+
+
+var reduced = summer.reduceRegions({
+
+  collection: temperature,
+
+  reducer: ee.Reducer.mean(),
+
+  scale: 100,
+
+});
+
+
+
+print(reduced,'kkkk');
+
+
+
+// the resulting mean is a FeatureCollection
+
+// so you can export it as a table
+
+Export.table.toDrive({
+
+    collection: reduced, 
+
+    description: 'NDVIpolygonsmean', 
+
+    fileFormat: 'CSV'
+
+})
+
+
+
+//_//
+
+var reduced = summer.reduceRegions({
+
+  collection: temperature,
+
+  reducer: ee.Reducer.max(),
+
+  scale: 100,
+
+});
+
+
+
+print(reduced,'kkkk');
+
+
+
+// the resulting mean is a FeatureCollection
+
+// so you can export it as a table
+
+Export.table.toDrive({
+
+    collection: reduced, 
+
+    description: 'NDVIpolygonsmax', 
+
+    fileFormat: 'CSV'
+
+})
+
+//_//
+
+var reduced = summer.reduceRegions({
+
+  collection: temperature,
+
+  reducer: ee.Reducer.min(),
+
+  scale: 100,
+
+});
+
+
+
+print(reduced,'kkkk');
+
+
+
+// the resulting mean is a FeatureCollection
+
+// so you can export it as a table
+
+Export.table.toDrive({
+
+    collection: reduced, 
+
+    description: 'NDVIpolygonsmin', 
+
+    fileFormat: 'CSV'
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var count = temperature.size();
+
+print('Count: ',count);
+
+
+
+print(temperature,'dataset');
+
+
+
+
+
+var withNDVI = temperature.select('temp');
+
+
+
+
+
+
+
+var ndviWithCount = withNDVI.map(function(image){
+
+  var countpixels = ee.Number(image.reduceRegion({
+
+  reducer: ee.Reducer.count(),
+
+  geometry: geometry,
+
+  crs: 'EPSG:4326',
+
+  scale: 30,
+
+  }).get('temp'));
+
+
+
+  return image.set('count', countpixels);
+
+});
+
+
+
+print(ndviWithCount, 'ndviWithCount');
+
+
+
+
+
+
+
+
+
+//filter between a range
+
+var filter = ndviWithCount.filter(ee.Filter.rangeContains(
+
+          'count', 220000, 446224))
+
+print(filter, 'filtered');
+
+
+
+var max = ndviWithCount.reduceColumns(ee.Reducer.max(),  ["count"])
+
+print(max)
+
+print(max.get('max'));
+
+
+
+
+
+var OrderList=[0,1,2,3,4,5,6,7,8,9,10]
+
+
+
+filter = filter.toList(filter.size()); // convert ImageCollection to List
+
+for (var i in OrderList) {
+
+  var image = ee.Image(filter.get(OrderList[i]));
+
+  var toexport=image.addBands(image);
+
+
+
+
+
+  // do what ever you need with image
+
+
+
+
+
+
+
+
+
+ }
+
+
+
+
+
+print(ui.Chart.image.series(filter, geometry, ee.Reducer.mean(), 30));
+
+print(ui.Chart.image.series(withNDVI, geometry, ee.Reducer.max(), 30));
+
+
+
+
+
+var startdate = '2016-03-21'  // insert
+
+var enddate = '2021-03-21' // insert
+
+
+
+var withNDVI = temperature.select('temp');
+
+print(withNDVI, 'EVI')
+
+
+
+//create function to calculate mean values for each polygon
+
+var pointsmean = function(image) {
+
+  var means = image.reduceRegions({
+
+    collection: withNDVI, 
+
+    reducer: ee.Reducer.mean(),
+
+    scale: 30
+
+  })
+
+  
+
+  // assign time for every feature
+
+  means = means.map(function(f) { return f.set({date: image.date().format("YYYY-MM-dd")}) })
+
+  
+
+  return means.copyProperties(image)
+
+  
+
+};
+
+
+
+Export.table.toDrive({
+
+    collection: withNDVI, 
+
+    description: 'NDVIpolygonsming', 
+
+    fileFormat: 'CSV'
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var pointsmax = function(image) {
+
+  var maxs = image.reduceRegions({
+
+    collection: temperature, 
+
+    reducer: ee.Reducer.max(),
+
+    scale: 30
+
+  })
+
+  
+
+  // assign time for every feature
+
+  maxs = maxs.map(function(f) { return f.set({date: image.date().format("YYYY-MM-dd")}) })
+
+  
+
+  return maxs.copyProperties(image)
+
+  
+
+};
+
+var finalEVIi = withNDVI.map(pointsmax).flatten()
+
+.sort('date', false)
+
+.select(['date', 'max' ])
+
+print(finalEVIi.limit(100), 'final EVI2')
+
+
+
+
+
+Export.table.toDrive({
+
+collection: finalEVIi,
+
+  description: 'EVImax_'+startdate+'TO'+enddate,
+
+fileFormat: 'CSV'
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var finalEVI = withNDVI.map(pointsmean).flatten()
+
+.sort('date', false)
+
+.select(['date', 'mean' ])
+
+print(finalEVI.limit(100), 'final EVI')
+
+
+
+Export.table.toDrive({
+
+collection: finalEVI,
+
+  description: 'EVImean_'+startdate+'TO'+enddate,
+
+fileFormat: 'CSV'
+
+});
+
+///me up
+
+
+
+
+
+
+
+/////gcg//////min
+
+var pointsmax = function(image) {
+
+  var maxs = image.reduceRegions({
+
+    collection: geometry, 
+
+    reducer: ee.Reducer.min(),
+
+    scale: 30
+
+  })
+
+  
+
+  // assign time for every feature
+
+  maxs = maxs.map(function(f) { return f.set({date: image.date().format("YYYY-MM-dd")}) })
+
+  
+
+  return maxs.copyProperties(image)
+
+  
+
+};
+
+var finalEVIii = withNDVI.map(pointsmax).flatten()
+
+.sort('date', false)
+
+.select(['date', 'min' ])
+
+print(finalEVIi.limit(100), 'final EVI2')
+
+
+
+
+
+Export.table.toDrive({
+
+collection: finalEVIii,
+
+  description: 'EVImin_'+startdate+'TO'+enddate,
+
+fileFormat: 'CSV'
+
+});
+

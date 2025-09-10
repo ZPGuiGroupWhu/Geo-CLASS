@@ -1,0 +1,28 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2_SR"
+        ],
+        "Function": [
+            "Filter image collection by cloud cover",
+            "Compute NDVI and add as new band",
+            "Compute NDWI and add as new band"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2_SR"
+        ],
+        "Function": [
+            "Plot NDVI time series"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "COPERNICUS/S2_SR"
+        ],
+        "Function": [
+            "Plot NDWI time series"
+        ]
+    }
+}

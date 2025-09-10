@@ -1,0 +1,29 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/dgilad/SA"
+        ],
+        "Function": [
+            "Filtering satellite images by date, polarization, resolution, and orbit",
+            "Converting satellite data to natural values and back to dB"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "users/dgilad/Fields"
+        ],
+        "Function": [
+            "Buffering features to reduce border effect",
+            "Calculating mean and standard deviation for buffered fields"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "COPERNICUS/S1_GRD"
+        ],
+        "Function": [
+            "Filtering satellite images by date, polarization, resolution, and orbit",
+            "Converting satellite data to natural values and back to dB"
+        ]
+    }
+}

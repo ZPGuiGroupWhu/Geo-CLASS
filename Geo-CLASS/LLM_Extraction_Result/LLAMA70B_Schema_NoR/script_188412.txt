@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land Surface Temperature (LST) analysis"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Cloud masking", "Image collection filtering", "NDVI calculation", "LST calculation", "Image visualization", "Fractional vegetation calculation", "Emissivity calculation", "Image reduction", "Image exporting"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response that organizes the extracted information into a structured format:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Cloud masking", "Image collection filtering", "NDVI calculation", "LST calculation", "Image visualization"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Fractional vegetation calculation", "Emissivity calculation", "Image reduction", "Image exporting"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4273, 'completion_tokens': 238, 'total_tokens': 4511}

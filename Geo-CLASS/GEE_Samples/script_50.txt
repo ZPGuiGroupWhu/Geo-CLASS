@@ -1,0 +1,122 @@
+
+// ########################    Take LT optimization outputs and make pct tree cover maps ###############
+
+
+//first get some user inputs and imports
+
+var num_pts = 500; 
+//note that the label is just dictated by the reducer below, this could be changed 
+var label = 'first'; 
+//from the imported images
+var bands = ['ndvi','nbr']; 
+var yr_band = 'yr_2000'
+var startYear = 1990; 
+var endYear = 2021; 
+
+
+/////////////////////////////////////Get inputs//////////////////////////////////////////////////////////
+
+
+var aoi = ee.FeatureCollection("USDOS/LSIB/2017").filter(ee.Filter.eq('COUNTRY_NA','Cambodia')).geometry();
+
+//Deprecated?
+//get the train data into a usable format because its weirdly formatted
+
+
+
+//try using Hansen to see what difference that makes
+var forest_cover = ee.Image("UMD/hansen/global_forest_change_2020_v1_8").select('treecover2000'); 
+
+//LTOP fitted outputs
+var ndvi = ee.Image('users/ak_glaciers/NDVI_fitted_image_stack_from_LTOP_1990_start'); 
+var nbr = ee.Image('users/ak_glaciers/NBR_fitted_image_stack_from_LTOP_1990_start');  
+
+//when we apply the model to the timeseries it expects the same band names as the training data so change these to be generic
+var band_names = ndvi.bandNames(); 
+var ndvi_train = ndvi.select([yr_band],['ndvi']);
+var nbr_train = nbr.select([yr_band],['nbr']);
+
+//this will be the image that we use to get spectral values for the random forest below 
+var sample_img = ndvi_train.addBands(nbr_train); 
+
+//visualize the inputs
+
+
+
+
+//////////////////////Create the training data and train a model/////////////////////////////////////////
+
+//create some random points 
+var train_pts = ee.FeatureCollection.randomPoints({
+  region: aoi, 
+  points:num_pts, 
+  seed: 10
+}); 
+
+//add prop with the canopy cover from class layer 
+train_pts = forest_cover.reduceRegions({
+  collection:train_pts, 
+  reducer:ee.Reducer.first(), 
+  scale:30
+}); 
+
+//allocate some pts to train and some to validation
+train_pts = train_pts.randomColumn();
+
+var split = 0.8;  // Roughly 80% training, 20% testing.
+train_pts = train_pts.filter(ee.Filter.lt('random', split));
+var validation_pts = train_pts.filter(ee.Filter.gte('random', split));
+
+//get the spectral information for the random pts 
+var training = sample_img.select(bands).sampleRegions({
+  collection: train_pts,
+  properties: [label],
+  scale: 30, 
+  
+});
+
+//train a model - currently set to default params except the number of trees
+var trained = ee.Classifier.smileRandomForest({
+  numberOfTrees:10,
+  minLeafPopulation:2,
+  bagFraction:0.5
+  }).train(training, label, bands); 
+  
+
+
+
+
+//run the classification - this will just produce one classification 
+
+var map_palette = {min: 0, max: 100, palette: ['ffffff', '004000']};
+
+
+
+
+
+var canopy_ts = band_names.map(function(bn){
+  bn = ee.String(bn); 
+  var ndvi_yr = ndvi.select([bn],['ndvi']); 
+  var nbr_yr = nbr.select([bn],['nbr']); 
+  var combined = ndvi_yr.addBands(nbr_yr); 
+  
+  var yr_classified = combined.select(bands).classify(trained); 
+  return yr_classified.set('year',bn); 
+}); 
+
+canopy_ts = ee.ImageCollection.fromImages(canopy_ts).sort('year'); 
+
+print(canopy_ts); 
+
+Map.addLayer(canopy_ts.filter(ee.Filter.eq('year','yr_1995')),map_palette,'1995')
+Map.addLayer(canopy_ts.filter(ee.Filter.eq('year','yr_2000')),map_palette,'2000')
+Map.addLayer(canopy_ts.filter(ee.Filter.eq('year','yr_2015')),map_palette,'2015')
+
+
+
+
+
+//   scale:30
+
+
+

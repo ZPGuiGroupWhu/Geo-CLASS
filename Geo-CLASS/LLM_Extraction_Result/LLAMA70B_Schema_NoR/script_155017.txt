@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land Surface Temperature Analysis in Himachal Pradesh"],
+  "DataSource": ["MODIS/006/MOD11A1"],
+  "Function": ["Filtering image collection by bounds", "Filtering image collection by date", "Clipping images to region", "Scaling land surface temperature", "Reducing regions to mean", "Joining tables by label", "Formatting table for export"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["MODIS/006/MOD11A1"],
+        "Function": ["Filtering image collection by bounds", "Filtering image collection by date", "Clipping images to region", "Scaling land surface temperature"]
+    },
+    "relation_2": {
+        "DataSource": ["MODIS/006/MOD11A1"],
+        "Function": ["Reducing regions to mean", "Joining tables by label", "Formatting table for export"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2457, 'completion_tokens': 228, 'total_tokens': 2685}

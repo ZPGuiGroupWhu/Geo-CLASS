@@ -1,0 +1,6 @@
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Cloud masking for image preprocessing", "NDVI calculation and band selection", "Date extraction and band addition", "Array sorting for NDVI values", "Region reduction for year data"]
+    }
+}

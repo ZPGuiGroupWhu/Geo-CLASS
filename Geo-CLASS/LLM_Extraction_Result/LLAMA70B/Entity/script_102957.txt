@@ -1,0 +1,5 @@
+{
+  "Theme": ["Land cover analysis in Los Angeles County"],
+  "DataSource": ["LANDSAT/LC09/C02/T1_L2", "FAO/GAUL_SIMPLIFIED_500m/2015/level2"],
+  "Function": ["Filter image collection by spatial bounds", "Mask clear pixels", "Mask cloud and cloud shadow", "Convert DN to SR", "Filter image collection by time window", "Median composite to convert IC to Image"]
+}

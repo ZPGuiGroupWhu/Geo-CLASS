@@ -1,0 +1,20 @@
+{
+    "Theme": [
+        "Wildfire analysis and burned area detection"
+    ],
+    "DataSource": [
+        "ft:1iovW6_vHSX3JOx5OvcFr-ljJdx5mGmqK6Q_ETiSO",
+        "LANDSAT/LT5_L1T",
+        "LANDSAT/LE7_L1T_TOA",
+        "LANDSAT/LC8_L1T_TOA",
+        "FIRMS"
+    ],
+    "Function": [
+        "Filtering image collection by date and region",
+        "Creating cloud-free composite",
+        "Removing clouds from images",
+        "Calculating Normalized Burn Ratio (NBR)",
+        "Creating burned area mask",
+        "Exporting results to Drive"
+    ]
+}

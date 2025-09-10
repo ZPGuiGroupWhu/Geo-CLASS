@@ -1,0 +1,25 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Water classification", "Cloud cover analysis", "Temporal filtering", "Spatial filtering"],
+  "DataSource": ["LANDSAT/LC8_SR", "LANDSAT/LE7_SR", "LANDSAT/LT5_SR", "USGS/NED"],
+  "Function": ["Rename bands for consistency", "Filter images by path and row", "Filter images by date range", "Calculate cloud cover percentage", "Classify water using band threshold", "Merge image collections", "Normalize image count", "Mask low frequency events", "Export image to Drive", "Export metadata to Drive"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC8_SR", "LANDSAT/LE7_SR", "LANDSAT/LT5_SR"],
+        "Function": ["Rename bands for consistency", "Filter images by path and row", "Filter images by date range", "Calculate cloud cover percentage", "Classify water using band threshold", "Merge image collections", "Normalize image count", "Mask low frequency events", "Export image to Drive", "Export metadata to Drive"]
+    },
+    "relation_2": {
+        "DataSource": ["USGS/NED"],
+        "Function": ["Export image to Drive"]
+    }
+}
+```
+
+Total_Token_Usage:
+7152

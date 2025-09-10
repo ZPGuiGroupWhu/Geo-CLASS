@@ -1,0 +1,19 @@
+{
+    "Theme": [
+        "Land and Water Masking",
+        "Hillshade Generation",
+        "True Color Image Generation"
+    ],
+    "DataSource": [
+        "MODIS/006/MOD09GA",
+        "USGS/GMTED2010",
+        "TIGER/2018/States"
+    ],
+    "Function": [
+        "maskCloud function to mask clouds from MOD09GA images",
+        "maskWater function to mask water from MOD09GA images",
+        "Generation of hillshade using ee.Terrain.hillshade",
+        "Generation of true color image using median of MOD09GA images",
+        "Calculation of percentile values for true color image bands"
+    ]
+}

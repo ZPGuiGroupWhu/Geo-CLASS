@@ -1,0 +1,17 @@
+{
+    "Theme": [
+        "Land cover classification and change detection"
+    ],
+    "DataSource": [
+        "LANDSAT/LE07/C01/T1_TOA",
+        "COPERNICUS/S2",
+        "users/eeranyartrodrigo/ferrocarriles/coahuilaPols"
+    ],
+    "Function": [
+        "Otsu thresholding for binary classification",
+        "Image filtering and masking",
+        "Image normalization and feature extraction",
+        "Unmixing and classification",
+        "Histogram analysis and thresholding"
+    ]
+}

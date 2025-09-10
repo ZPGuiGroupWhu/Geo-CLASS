@@ -1,0 +1,11 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2_HARMONIZED"
+        ],
+        "Function": [
+            "Calculate NBR For Pre-Fire Image",
+            "Calculate NBR for Post-Fire Image"
+        ]
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "Theme": [
+        "Land cover classification and change detection using Landsat imagery"
+    ],
+    "DataSource": [
+        "users/EL/Bahamas",
+        "LANDSAT/LT5_L1T",
+        "LANDSAT/LE7_L1T",
+        "LANDSAT/LC08/C01/T1_RT",
+        "users/EL/Bahamas_class"
+    ],
+    "Function": [
+        "Filtering and compositing Landsat imagery for 2000 and 2017",
+        "Calculating spectral ratios for 2000 and 2017",
+        "Masking non-forest areas",
+        "Land cover classification using CART algorithm"
+    ]
+}

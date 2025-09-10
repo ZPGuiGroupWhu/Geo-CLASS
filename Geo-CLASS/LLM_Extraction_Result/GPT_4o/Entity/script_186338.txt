@@ -1,0 +1,5 @@
+{
+  "Theme": ["Terrain analysis", "Seasonal signal removal", "Time series analysis"],
+  "DataSource": ["USGS/SRTMGL1_003", "COPERNICUS/S1_GRD"],
+  "Function": ["Calculate terrain slope and aspect", "Filter images by slope", "Add seasonal components", "Remove seasonal components", "Fit step function", "Fit trend line", "Find backscatter spike", "Filter image collection by date", "Filter image collection by polarization", "Filter image collection by orbit pass", "Create time series chart"]
+}

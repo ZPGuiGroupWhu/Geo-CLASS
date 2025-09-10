@@ -1,0 +1,13 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "MODIS/006/MOD09A1"
+        ],
+        "Function": [
+            "Cloud Masking And Quality Filtering",
+            "NDWI (Normalized Difference Water Index calculation)",
+            "NDVI (Normalized Difference Vegetation Index calculation)",
+            "Calculating terrain slope and aspect from DEMs"
+        ]
+    }
+}

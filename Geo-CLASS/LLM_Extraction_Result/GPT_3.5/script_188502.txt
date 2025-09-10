@@ -1,0 +1,19 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["The script processes Sentinel-1 SAR data to detect water bodies and analyze their area changes over time."],
+  "Theme": ["Water body detection and area change analysis"],
+  "DataSource": ["COPERNICUS/S1_GRD"],
+  "Function": ["Image filtering based on date, polarization, and orbit", "Thresholding using OTSU algorithm for water detection", "Area calculation for water bodies", "Time series chart generation for water area changes"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Image filtering based on date, polarization, and orbit", "Thresholding using OTSU algorithm for water detection", "Area calculation for water bodies", "Time series chart generation for water area changes"]
+    }
+}
+```

@@ -1,0 +1,16 @@
+{
+    "Summary": [
+        "Script processes Sentinel-1 SAR images for water detection."
+    ],
+    "Theme": [
+        "FOREST MENSURATION"
+    ],
+    "DataSource": [
+        "COPERNICUS/S1_GRD"
+    ],
+    "Function": [
+        "Filter Image Collection By Year",
+        "Otsu Thresholding",
+        "Apply Perona-Malik Anisotropic Diffusion Filter"
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "MODIS/006/MOD09GA"
+        ],
+        "Function": [
+            "maskCloud function to mask clouds from MOD09GA images",
+            "maskWater function to mask water from MOD09GA images",
+            "Generation of true color image using median of MOD09GA images",
+            "Calculation of percentile values for true color image bands"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "USGS/GMTED2010"
+        ],
+        "Function": [
+            "Generation of hillshade using ee.Terrain.hillshade"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "TIGER/2018/States"
+        ],
+        "Function": [
+            "None"
+        ]
+    }
+}

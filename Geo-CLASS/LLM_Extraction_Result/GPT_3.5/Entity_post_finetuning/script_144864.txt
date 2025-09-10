@@ -1,0 +1,18 @@
+{
+    "Summary": [
+        "Script processes satellite images to classify land cover based on NDVI values."
+    ],
+    "Theme": [
+        "NORMALIZED DIFFERENCE VEGETATION INDEX (NDVI)"
+    ],
+    "DataSource": [
+        "users/thao226355/share/VietNam_Ranh_gioi_tinh",
+        "COPERNICUS/S2_SR"
+    ],
+    "Function": [
+        "Cloud Masking And Quality Filtering",
+        "Visualization And Output Generation",
+        "NDVI (Normalized Difference Vegetation Index calculation)",
+        "Vegetation And Water Indices Calculation"
+    ]
+}

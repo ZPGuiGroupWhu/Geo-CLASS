@@ -1,0 +1,23 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/cesarnon/datos_cba_2017/Cordoba_limite"
+        ],
+        "Function": [
+            "Clipping mosaics to Cordoba region",
+            "Stacking NDVI bands from mosaics"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2_SR"
+        ],
+        "Function": [
+            "Filtering Sentinel-2 images by date and cloud coverage",
+            "Renaming bands of Sentinel-2 images",
+            "Calculating vegetation indices (EVI, MSAVI, MNDWI)",
+            "Calculating quality bands (NDVI, NDWI, NDWI1)",
+            "Creating mosaics of Sentinel-2 images"
+        ]
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "Theme": [
+        "Land cover analysis in Kalimantan region"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "Masking clouds and cirrus from Sentinel-2 images",
+        "Filtering image collection by date and cloud percentage",
+        "Calculating median of image collection",
+        "Downloading image as GeoTIFF"
+    ]
+}

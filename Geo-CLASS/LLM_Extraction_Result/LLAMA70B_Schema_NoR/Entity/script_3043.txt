@@ -1,0 +1,27 @@
+{
+    "Theme": [
+        "Land cover classification and water body detection"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C01/T1_SR",
+        "LANDSAT/LE07/C01/T1_SR",
+        "LANDSAT/LT05/C01/T1_SR",
+        "users/1915303017/CNBBW_SL_10kmBuffer",
+        "USGS/SRTMGL1_003"
+    ],
+    "Function": [
+        "Image collection filtering",
+        "Image renaming and band selection",
+        "Cloud and shadow masking",
+        "NDVI calculation",
+        "mNDWI calculation",
+        "LSWI calculation",
+        "EVI calculation",
+        "AWEInsh calculation",
+        "Image compositing",
+        "Water body detection",
+        "Vegetation classification",
+        "Elevation and slope calculation",
+        "Land cover classification"
+    ]
+}

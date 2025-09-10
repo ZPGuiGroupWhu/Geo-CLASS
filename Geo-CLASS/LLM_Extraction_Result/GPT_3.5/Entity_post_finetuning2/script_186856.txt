@@ -1,0 +1,19 @@
+{
+    "Summary": [
+        "The script processes Sentinel-2 data to detect clouds and shadows, enhancing image quality."
+    ],
+    "Theme": [
+        "ACOUSTIC ATTENUATION/TRANSMISSION"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "Buffering Points For Sample Expansion",
+        "Calculate Normalized Infrared Vegetation Index (NIRV)",
+        "Fractional Vegetation Cover (FVC) Classification",
+        "Cloud And Cloud Shadow Masking",
+        "Calculates Green Leaf Index (GLI)",
+        "Convert Flood Detection Results To Vector Polygons"
+    ]
+}

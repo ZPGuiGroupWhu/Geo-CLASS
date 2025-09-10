@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Landsat 8 Image Composite and NDVI Analysis"],
+  "DataSource": ["LANDSAT/LC08/C01/T1"],
+  "Function": ["Filtering image collection by date range", "Calculating median of image collection", "Creating simple composite image", "Applying cloud score threshold and percentile", "Calculating NDVI for a specific image", "Creating NDVI collection", "Taking max value to get better image", "Quality mosaic to get best pixel value", "Reducing region to get mean day of year", "Exporting image to Google Drive", "Calculating pixel area", "Creating histogram chart"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1"],
+        "Function": ["Filtering image collection by date range", "Calculating median of image collection", "Creating simple composite image", "Applying cloud score threshold and percentile", "Calculating NDVI for a specific image", "Creating NDVI collection", "Taking max value to get better image", "Quality mosaic to get best pixel value", "Reducing region to get mean day of year", "Exporting image to Google Drive", "Calculating pixel area", "Creating histogram chart"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3375, 'completion_tokens': 296, 'total_tokens': 3671}

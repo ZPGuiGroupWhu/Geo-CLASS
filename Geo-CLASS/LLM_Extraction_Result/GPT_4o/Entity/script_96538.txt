@@ -1,0 +1,5 @@
+{
+  "Theme": ["Cemetery characterization using Sentinel-2 imagery"],
+  "DataSource": ["users/eeranyartrodrigo/panteones/polygonsData/polsPanteon", "projects/ee-vulnerability-gee4geo/assets/ranyartRodrigo/mexicoContorno", "COPERNICUS/S2"],
+  "Function": ["Create bounding box around features", "Mask clouds and cirrus from images", "Add NDVI, NDWI, NDWI2, NDBI, NDBSI, BAEI, EVI bands", "Add BUI band", "Calculate median values for bands", "Export results to asset"]
+}

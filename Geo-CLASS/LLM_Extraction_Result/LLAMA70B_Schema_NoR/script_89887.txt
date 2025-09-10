@@ -1,0 +1,31 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land and water classification", "Hillshade generation", "True color image creation"],
+  "DataSource": ["MODIS/006/MOD09GA", "USGS/GMTED2010", "TIGER/2018/States"],
+  "Function": ["Cloud masking", "Water masking", "Image collection filtering", "Hillshade generation", "Image visualization", "Percentile calculation", "Image clipping"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response that organizes the extracted information into a structured format:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["MODIS/006/MOD09GA"],
+        "Function": ["Cloud masking", "Water masking", "Image collection filtering", "Percentile calculation"]
+    },
+    "relation_2": {
+        "DataSource": ["USGS/GMTED2010"],
+        "Function": ["Hillshade generation"]
+    },
+    "relation_3": {
+        "DataSource": ["TIGER/2018/States"],
+        "Function": ["Image visualization", "Image clipping"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2931, 'completion_tokens': 264, 'total_tokens': 3195}

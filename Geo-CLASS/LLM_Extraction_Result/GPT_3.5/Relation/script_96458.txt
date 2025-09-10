@@ -1,0 +1,14 @@
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Cloud removal from Sentinel-2 images", "Calculating NDVI, NDBI, and NDWI", "Identifying urban, water, and vegetation areas"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Detecting rice paddies using Sentinel-1 data"]
+    },
+    "relation_3": {
+        "DataSource": ["users/eeranyartrodrigo/ferrocarriles/estaciones_prospectadas_area"],
+        "Function": ["None"]
+    }
+}

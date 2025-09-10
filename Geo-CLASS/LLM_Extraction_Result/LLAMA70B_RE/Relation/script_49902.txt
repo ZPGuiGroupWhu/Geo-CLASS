@@ -1,0 +1,21 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2_SR"
+        ],
+        "Function": [
+            "Image collection filtering",
+            "Image clipping",
+            "NDVI calculation",
+            "Normalized difference calculation"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2_SR"
+        ],
+        "Function": [
+            "Legend creation"
+        ]
+    }
+}

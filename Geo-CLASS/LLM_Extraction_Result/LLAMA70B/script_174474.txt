@@ -1,0 +1,25 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land cover analysis using Landsat 5 imagery"],
+  "DataSource": ["LANDSAT/LT05/C01/T1_SR"],
+  "Function": ["Filtering image collection by cloud cover", "Masking clouds and shadows", "Calculating NDVI", "Compositing images", "Clipping images to geometry"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LT05/C01/T1_SR"],
+        "Function": ["Filtering image collection by cloud cover", "Masking clouds and shadows", "Calculating NDVI", "Compositing images", "Clipping images to geometry"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4423, 'completion_tokens': 184, 'total_tokens': 4607}

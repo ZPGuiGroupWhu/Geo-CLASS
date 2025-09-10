@@ -1,0 +1,19 @@
+{
+    "Theme": [
+        "Flood extent analysis and mapping"
+    ],
+    "DataSource": [
+        "FAO/GAUL_SIMPLIFIED_500m/2015/level2",
+        "MODIS/006/MOD09GA",
+        "JRC/GSW1_0/GlobalSurfaceWater",
+        "WWF/HydroSHEDS/03VFDEM"
+    ],
+    "Function": [
+        "Filtering and clipping of MODIS images",
+        "Calculation of NDWI",
+        "Difference image calculation",
+        "Thresholding and masking",
+        "Flood extent area calculation",
+        "Refining flood results using additional datasets"
+    ]
+}

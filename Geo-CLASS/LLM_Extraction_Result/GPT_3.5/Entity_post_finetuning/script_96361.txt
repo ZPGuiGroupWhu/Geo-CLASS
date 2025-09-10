@@ -1,0 +1,24 @@
+{
+    "Summary": [
+        "Merging Landsat 5, 7, 8 collections, standardizing band names, adding quality bands, and preparing predictors."
+    ],
+    "Theme": [
+        "DENITRIFICATION RATE",
+        "AGE AT ICE-THICKNESS-NORMALIZED DEPTHS",
+        "GEOMAGNETIC FORECASTS"
+    ],
+    "DataSource": [
+        "LANDSAT/LT05/C01/T1_TOA",
+        "LANDSAT/LE07/C01/T1_RT_TOA",
+        "LANDSAT/LC08/C01/T1_RT_TOA",
+        "LANDSAT/LT05/C01/T1_SR",
+        "LANDSAT/LE07/C01/T1_SR",
+        "LANDSAT/LC08/C01/T1_SR"
+    ],
+    "Function": [
+        "Cloud Masking And Quality Filtering",
+        "Vegetation And Water Indices Calculation",
+        "MNDWI (Modified Normalized Difference Water Index calculation)",
+        "Terrain And Hydrological Analysis"
+    ]
+}

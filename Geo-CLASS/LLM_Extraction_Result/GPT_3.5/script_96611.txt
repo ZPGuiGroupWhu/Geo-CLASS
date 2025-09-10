@@ -1,0 +1,19 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Creating Landsat composites, calculating NDVI, and exporting images."],
+  "Theme": ["Landsat composite creation", "NDVI calculation", "Image export"],
+  "DataSource": ["LANDSAT/LC08/C01/T1"],
+  "Function": ["Composite creation using Landsat data", "NDVI calculation for vegetation analysis", "Exporting images to Drive"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1"],
+        "Function": ["Composite creation using Landsat data", "NDVI calculation for vegetation analysis", "Exporting images to Drive"]
+    }
+}
+```

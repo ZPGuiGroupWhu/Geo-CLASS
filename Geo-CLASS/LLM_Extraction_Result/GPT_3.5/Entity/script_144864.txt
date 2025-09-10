@@ -1,0 +1,6 @@
+{
+  "Summary": ["Script processes satellite images to classify land cover based on NDVI values."],
+  "Theme": ["Land cover classification using NDVI values"],
+  "DataSource": ["users/thao226355/share/VietNam_Ranh_gioi_tinh", "COPERNICUS/S2_SR"],
+  "Function": ["Cloud and cirrus mask application", "Satellite image selection and processing", "NDVI calculation and land cover classification", "Area calculation of classified land cover"]
+}

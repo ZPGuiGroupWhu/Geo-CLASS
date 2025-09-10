@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Lake water quality monitoring"],
+  "DataSource": ["LANDSAT/LE7_L1T_32DAY_TOA"],
+  "Function": ["Cloud scoring", "MNDWI calculation", "Image filtering", "Cloud filling algorithm"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LE7_L1T_32DAY_TOA"],
+        "Function": ["Cloud scoring", "MNDWI calculation", "Image filtering", "Cloud filling algorithm"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2932, 'completion_tokens': 135, 'total_tokens': 3067}

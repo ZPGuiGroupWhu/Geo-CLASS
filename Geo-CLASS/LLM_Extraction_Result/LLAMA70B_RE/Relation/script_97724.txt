@@ -1,0 +1,29 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "TIGER/2018/States"
+        ],
+        "Function": [
+            "Filtering image collection"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "users/eisen520/chinesePrivet"
+        ],
+        "Function": [
+            "Reducing regions",
+            "Joining tables",
+            "Merging observations"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "COPERNICUS/S2_SR"
+        ],
+        "Function": [
+            "Masking cloud and snow pixels",
+            "Adding NDVI band"
+        ]
+    }
+}

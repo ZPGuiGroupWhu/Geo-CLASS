@@ -1,0 +1,336 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var geometry = 
+    /* color: #98ff00 */
+    /* shown: false */
+    ee.Geometry.Polygon(
+        [[[-54.183513406392805, -25.533328028804778],
+          [-54.183513406392805, -25.642634714866062],
+          [-54.07776999818968, -25.642634714866062],
+          [-54.07776999818968, -25.533328028804778]]], null, false);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+var IMGSentinel= ee.ImageCollection ('COPERNICUS/S2') 
+
+  .filterDate ('2020-05-05', '2020-06-26') //fechas disponibles ('2015-07-01' - actualidad)
+
+  .filterBounds (geometry) 
+
+  .filterMetadata ('CLOUDY_PIXEL_PERCENTAGE', 'Less_Than', 30);
+
+var SentinelFiltro = ee.Image(IMGSentinel.median());
+
+var SentinelClip = SentinelFiltro.clip (geometry);
+
+//Compute the Normalized Difference Vegetation Index (NDVI).
+
+var nir = SentinelClip.select('B8');
+
+var green = SentinelClip.select('B3');
+
+
+
+
+
+// >>>>>>>>>><<<<<<<<<<<<< 
+
+// >>>>>>> GCI  <<<<<<<<<<
+
+// >>>>>>>>>><<<<<<<<<<<<<
+
+var nir2 = SentinelClip.select('B9');
+
+var addGCI = function(image) {
+
+return image.addBands(((nir2.divide(green)).subtract(-1)).rename('GCI'))};
+
+var IMGSentinel = IMGSentinel.map(addGCI);
+
+
+
+// Extract NDVI band and create NDVI median composite image
+
+var GCI = IMGSentinel.select(['GCI']);
+
+var GCImed = GCI.median(); //I just changed the name of this variable ;)
+
+
+
+var pal = ['#ffcb0e','#fff810','#c4ff10','#4aff10','#34b20b'];
+
+
+
+
+
+
+
+// Make the training dataset.
+
+var training = GCImed.sample({
+
+  region: geometry,
+
+  scale: 10,
+
+  numPixels: 10000
+
+});
+
+
+
+// Instantiate the clusterer and train it.
+
+var clusterer = ee.Clusterer.wekaKMeans(5).train(training);
+
+
+
+// Cluster the input using the trained clusterer.
+
+var result1 = GCImed.cluster(clusterer);
+
+
+
+// Display the clusters with random colors.
+
+Map.addLayer(result1, {min: 1, max:5, palette: pal}, 'GCI');
+
+
+
+//####################################################333
+
+
+
+// Function to calculate and add an NDVI band
+
+var addNDWI = function(image) {
+
+return image.addBands(image.normalizedDifference(['B8', 'B3']).rename('NDWI'));
+
+};
+
+
+
+// Add NDVI band to image collection
+
+var IMGSentinel = IMGSentinel.map(addNDWI);
+
+
+
+// Extract NDVI band and create NDVI median composite image
+
+var NDWI = IMGSentinel.select(['NDWI']);
+
+var NDWImed = NDWI.median(); //I just chan
+
+
+
+
+
+
+
+// Make the training dataset.
+
+var training = NDWImed.sample({
+
+  region: geometry,
+
+  scale: 10,
+
+  numPixels: 10000
+
+});
+
+
+
+// Instantiate the clusterer and train it.
+
+var clusterer = ee.Clusterer.wekaKMeans(5).train(training);
+
+
+
+// Cluster the input using the trained clusterer.
+
+var result2 = NDWImed.cluster(clusterer);
+
+
+
+// Display the clusters with random colors.
+
+
+
+Map.addLayer(result2.clip(geometry), {min: 1, max:5, palette: pal}, 'NDWI');
+
+
+
+
+
+// ####################### SAR ###############################
+
+
+
+// Load Sentinel-1 C-band SAR Ground Range collection (log scale, VV, descending)
+
+var SARVV = ee.ImageCollection('COPERNICUS/S1_GRD') 
+
+.filter(ee.Filter.eq('instrumentMode', 'IW'))
+
+.filter(ee.Filter.listContains('transmitterReceiverPolarisation', 'VV')) .filter(ee.Filter.eq('orbitProperties_pass', 'DESCENDING'))
+
+.filterMetadata('resolution_meters', 'equals' , 10)
+
+.filterBounds(geometry)
+
+.select('VV');
+
+print(SARVV, 'Collection VV');
+
+
+
+// Load Sentinel-1 C-band SAR Ground Range collection (log scale, VH, descending)
+
+var SARVH = ee.ImageCollection('COPERNICUS/S1_GRD') 
+
+.filter(ee.Filter.eq('instrumentMode', 'IW')) 
+
+.filter(ee.Filter.listContains('transmitterReceiverPolarisation', 'VH')) .filter(ee.Filter.eq('orbitProperties_pass', 'DESCENDING')) 
+
+.filterMetadata('resolution_meters', 'equals' , 10)
+
+.filterBounds(geometry)
+
+.select('VH');
+
+print(SARVH, 'Collection VH');
+
+
+
+//Filter by date
+
+var SARDATEVV = SARVV.filterDate('2019-08-01', '2019-08-20').mosaic();
+
+var SARDATEVH = SARVH.filterDate('2020-01-01', '2020-02-01').mosaic();
+
+
+
+// Add the SAR images to "layers" in order to display them
+
+Map.centerObject(geometry, 10);
+
+
+
+
+
+//Apply filter to reduce speckle
+
+var SMOOTHING_RADIUS = 50;
+
+var SARVV_filtered = SARDATEVV.focal_mean(SMOOTHING_RADIUS, 'circle', 'meters');
+
+var SARVH_filtered = SARDATEVH.focal_mean(SMOOTHING_RADIUS, 'circle', 'meters');
+
+
+
+//Display the SAR filtered images
+
+Map.addLayer(SARVV_filtered.clip(geometry), {min:-15,max:0}, 'SAR VV Filtered',0);
+
+Map.addLayer(SARVH_filtered.clip(geometry), {min:-25,max:0}, 'SAR VH Filtered',0);
+
+Map.addLayer(SARDATEVV.clip(geometry), {min:-15,max:0}, 'SAR VV', 0);
+
+Map.addLayer(SARDATEVH.clip(geometry), {min:-25,max:0}, 'SAR VH', 0);
+
+
+
+//Define the SAR bands to train your data
+
+var final = ee.Image.cat(SARVV_filtered,SARVH_filtered);
+
+
+
+// Make the training dataset.
+
+var training = final.sample({
+
+  region: geometry,
+
+  scale: 10,
+
+  numPixels: 10000
+
+});
+
+var valuevh = -15;
+
+var vizWater = {min:-14, max:-7.25, palette:['40a4df']};
+
+// water is less than this value
+
+var water2 = SARVH_filtered.lt(valuevh);
+
+var water2 = water2.updateMask(water2);
+
+ 
+
+Map.addLayer(water2.clip(geometry),vizWater,"water VH");
+
+
+
+// Instantiate the clusterer and train it.
+
+var clusterer = ee.Clusterer.wekaKMeans(5).train(training);
+
+
+
+// Cluster the input using the trained clusterer.
+
+var result3 = final.cluster(clusterer);
+
+
+
+// Display the clusters with random colors.
+
+Map.addLayer(result3.clip(geometry), {min: 1, max:5, palette: pal}, 'SAR');
+
+
+
+
+
+
+
+
+
+Export.image.toDrive({
+
+  image: result2.clip(geometry),
+
+  description: 'NDWI',
+
+  scale: 10,
+
+  region: geometry});
+
+  
+
+Export.image.toDrive({
+
+  image: result1.clip(geometry),
+
+  description: 'GCI',
+
+  scale: 10,
+
+  region: geometry});
+
+  
+
+Export.image.toDrive({
+
+  image: SARVV_filtered.clip(geometry),
+
+  description: 'Filtered_SAR_VV_S1',
+
+  scale: 30,
+
+  region: geometry});
+
+
+

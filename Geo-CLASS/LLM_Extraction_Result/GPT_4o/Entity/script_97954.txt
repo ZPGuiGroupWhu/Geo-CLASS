@@ -1,0 +1,5 @@
+{
+  "Theme": ["Land cover change detection", "Forest classification", "Dry season analysis"],
+  "DataSource": ["users/EL/Bahamas", "LANDSAT/LT5_L1T", "LANDSAT/LE7_L1T", "LANDSAT/LC08/C01/T1_RT", "users/EL/Bahamas_class"],
+  "Function": ["Center map on country", "Filter Landsat 7 images by date and cloud cover", "Create composite image for 2000", "Calculate band ratios for 2000", "Add bands to composite image for 2000", "Display 2000 dry season image", "Filter Landsat 8 images by date and cloud cover", "Create composite image for 2017", "Calculate band ratios for 2017", "Add bands to composite image for 2017", "Display 2017 dry season image", "Combine images from 2000 and 2017", "Mask non-forest areas", "Train classifier with selected bands", "Classify combined image", "Display classified image"]
+}

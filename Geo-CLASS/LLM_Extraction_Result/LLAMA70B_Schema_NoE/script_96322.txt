@@ -1,0 +1,37 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land cover classification and vegetation index analysis"],
+  "DataSource": ["users/eemapascordoba/LCLU_2021/recetas_ago20_abr21_pstxcultivo_masLCollect_buffer2306", "users/eemapascordoba/var_ambientales_rindes/rindes_alf_rol_training_zona", "COPERNICUS/S2", "users/capas/provincia_wgs"],
+  "Function": ["Filtering Sentinel-2 images by date and cloud cover", "Renaming Sentinel-2 bands", "Calculating vegetation indices (NDVI, NDWI, NDWI1)", "Creating mosaics from Sentinel-2 images", "Sampling regions for training data"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/eemapascordoba/LCLU_2021/recetas_ago20_abr21_pstxcultivo_masLCollect_buffer2306"],
+        "Function": ["Filtering Sentinel-2 images by date and cloud cover", "Renaming Sentinel-2 bands", "Calculating vegetation indices (NDVI, NDWI, NDWI1)"]
+    },
+    "relation_2": {
+        "DataSource": ["users/eemapascordoba/var_ambientales_rindes/rindes_alf_rol_training_zona"],
+        "Function": ["Sampling regions for training data"]
+    },
+    "relation_3": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Filtering Sentinel-2 images by date and cloud cover", "Renaming Sentinel-2 bands", "Calculating vegetation indices (NDVI, NDWI, NDWI1)", "Creating mosaics from Sentinel-2 images"]
+    },
+    "relation_4": {
+        "DataSource": ["users/capas/provincia_wgs"],
+        "Function": ["None"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4324, 'completion_tokens': 489, 'total_tokens': 4813}

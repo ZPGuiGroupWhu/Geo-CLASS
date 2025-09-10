@@ -1,0 +1,6 @@
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Cloud score calculation", "Shadow mask creation", "Water mask creation", "Image collection filtering", "Image masking", "Mosaicking", "Mean calculation"]
+    }
+}

@@ -1,0 +1,21 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Crop classification"],
+  "DataSource": ["USDA/NASS/CDL"],
+  "Function": ["Load image collection", "Define geometry"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["USDA/NASS/CDL"],
+        "Function": ["Load image collection", "Define geometry"]
+    }
+}
+```
+
+Total_Token_Usage:
+17427

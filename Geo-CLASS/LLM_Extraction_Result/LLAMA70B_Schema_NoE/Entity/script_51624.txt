@@ -1,0 +1,13 @@
+{
+    "Theme": [
+        "Imagery comparison with a variety of dates"
+    ],
+    "DataSource": [
+        "COPERNICUS/S1_GRD"
+    ],
+    "Function": [
+        "getWeeklySentinelComposite function composites Sentinel-1 ImageCollection for 7 days after a given date",
+        "addLayerSelector function adds a layer selection widget to a map",
+        "updateMap function updates a map to show a selected image"
+    ]
+}

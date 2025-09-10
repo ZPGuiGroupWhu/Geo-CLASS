@@ -1,0 +1,14 @@
+{
+    "relation_1": {
+        "DataSource": ["FAO/GAUL/2015/level0"],
+        "Function": ["Cloud and snow masking", "Mosaicking and clipping images", "Calculating NBR for pre- and post-fire images", "Calculating dNBR", "Adding layers to the map", "Calculating burned area", "Adding a legend", "Exporting dNBR file", "Exporting burned area stats as a CSV"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Cloud and snow masking", "Mosaicking and clipping images", "Calculating NBR for pre- and post-fire images", "Calculating dNBR", "Adding layers to the map", "Calculating burned area", "Adding a legend", "Exporting dNBR file", "Exporting burned area stats as a CSV"]
+    },
+    "relation_3": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Cloud and snow masking", "Mosaicking and clipping images", "Calculating NBR for pre- and post-fire images", "Calculating dNBR", "Adding layers to the map", "Calculating burned area", "Adding a legend", "Exporting dNBR file", "Exporting burned area stats as a CSV"]
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/bkkumarbittu371/Andhra_Pradesht"
+        ],
+        "Function": [
+            "Region clipping"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S5P/OFFL/L3_O3"
+        ],
+        "Function": [
+            "Image collection filtering",
+            "Mean calculation",
+            "Image reduction"
+        ]
+    }
+}

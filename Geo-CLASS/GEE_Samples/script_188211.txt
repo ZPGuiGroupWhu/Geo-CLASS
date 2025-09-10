@@ -1,0 +1,1223 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var table = ee.FeatureCollection("users/hifengxu/TibetanPlateau"),
+    sscVis = {"min":1,"max":5,"palette":["040274","040281","0502a3","0502b8","0502ce","0502e6","0602ff","235cb1","307ef3","269db1","30c8e2","32d3ef","3be285","3ff38f","86e26f","3ae237","b5e22e","d6e21f","fff705","ffd611","ffb613","ff8b13","ff6e08","ff500d","ff0000","de0101","c21301","a71001","911003"]},
+    geometry2 = /* color: #98ff00 */ee.Geometry.MultiPoint(
+        [[85.67162090028951, 30.934416038788278],
+         [85.52330547060201, 30.92027960597276],
+         [87.55028300966451, 31.895425931423738],
+         [87.47337871278951, 31.867439044640538],
+         [90.59315836451307, 31.264248702256214],
+         [90.57667887232557, 31.184392098949026],
+         [90.98317301295057, 31.48936138398055],
+         [90.95021402857557, 31.447193859439814],
+         [91.19740641138807, 31.19848934266828],
+         [91.13148844263807, 31.231374743046203]]),
+    table2 = ee.FeatureCollection("users/KingDr/TPPoints");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+
+
+/****************************************************************************************************************************
+
+ * 
+
+ *                                              function of data collection
+
+ * 
+
+ * **************************************************************************************************************************/
+
+{{{ //preprocess dataset
+
+  var createLandsatCollection=function createLandsatCollection(params) {
+
+    var defaultParams = {
+
+      region: Map.getBounds(true), 
+
+      start: '1982-01-01', 
+
+      end: formatDate(new Date()), 
+
+      mapImage: function (image) { return image }
+
+    }
+
+    params = mergeObjects([defaultParams, params])
+
+    
+
+    var filter = ee.Filter.and(
+
+        ee.Filter.bounds(params.region),
+
+        ee.Filter.date(params.start, params.end),
+
+        ee.Filter.lt('CLOUD_COVER',50)
+
+    )
+
+   
+
+  var bands_list=['blue', 'green', 'red', 'nir', 'swir1', 'swir2', 'pixel_qa',"brightness"]
+
+    var l5 = ee.ImageCollection('LANDSAT/LT05/C02/T1_L2')
+
+                .filter(filter)
+
+                .map(maskL457sr)
+
+                .select(
+
+                  ['SR_B1', 'SR_B2', 'SR_B3', 'SR_B4', 'SR_B5', 'SR_B7', 'QA_PIXEL',"ST_B6"], 
+
+                  bands_list
+
+                )
+
+                
+
+      
+
+    var l7 = ee.ImageCollection("LANDSAT/LE07/C02/T1_L2")
+
+              .filter(filter)
+
+              .map(maskL457sr)
+
+                .select(
+
+                  ['SR_B1', 'SR_B2', 'SR_B3', 'SR_B4', 'SR_B5', 'SR_B7', 'QA_PIXEL',"ST_B6"], 
+
+                  bands_list
+
+                )
+
+              
+
+      
+
+    var l8 = ee.ImageCollection('LANDSAT/LC08/C02/T1_L2')
+
+              .filter(filter)
+
+              .map(maskL8sr)
+
+              .select(
+
+                ['SR_B2', 'SR_B3', 'SR_B4', 'SR_B5', 'SR_B6', 'SR_B7','QA_PIXEL','ST_B10'], 
+
+                bands_list
+
+              )
+
+            
+
+      
+
+    
+
+    return l8.sort('system:time_start')
+
+    
+
+    
+
+    function maskL457sr(image) {
+
+      // Bit 0 - Fill
+
+      // Bit 1 - Dilated Cloud
+
+      // Bit 2 - Unused
+
+      // Bit 3 - Cloud
+
+      // Bit 4 - Cloud Shadow
+
+      // 这里这里则6个1，去冰川
+
+      var qaMask = image.select('QA_PIXEL').bitwiseAnd(parseInt('111111', 2)).eq(0);
+
+      var saturationMask = image.select('QA_RADSAT').eq(0);
+
+    
+
+      // Apply the scaling factors to the appropriate bands.
+
+      var opticalBands = image.select('SR_B.').multiply(0.0000275).add(-0.2);
+
+      var thermalBand = image.select('ST_B6').multiply(0.00341802).add(149.0);
+
+    
+
+      // Replace the original bands with the scaled ones and apply the masks.
+
+      return image.addBands(opticalBands, null, true)
+
+          .addBands(thermalBand, null, true)
+
+          .updateMask(qaMask)
+
+          .updateMask(saturationMask);
+
+    }
+
+        
+
+    
+
+    //Landsat8 SR数据去云
+
+    function maskL8sr(image) {
+
+      // Develop masks for unwanted pixels (fill, cloud, cloud shadow).去冰川去冰川
+
+      // 5个1，戴冰川
+
+      var qaMask = image.select('QA_PIXEL').bitwiseAnd(parseInt('111111', 2)).eq(0);
+
+      var saturationMask = image.select('QA_RADSAT').eq(0);
+
+    
+
+      // Apply the scaling factors to the appropriate bands.
+
+      var opticalBands = image.select('SR_B.').multiply(0.0000275).add(-0.2);
+
+      var thermalBands = image.select('ST_B.*').multiply(0.00341802).add(149.0);
+
+    
+
+      // Calculate NDVI.
+
+      
+
+      
+
+    
+
+      // Replace original bands with scaled bands, add NDVI band, and apply masks.
+
+      return image.addBands(opticalBands, null, true)
+
+          .addBands(thermalBands, null, true)
+
+          
+
+          .updateMask(qaMask)
+
+          .updateMask(saturationMask);
+
+    }
+
+    
+
+
+
+    
+
+    function excludeBand(bandName, image) {
+
+      var bandNames = image.bandNames()
+
+      var bandIndexes = ee.List.sequence(0, bandNames.size().subtract(1))
+
+        .filter(
+
+          ee.Filter.neq('item', bandNames.indexOf(bandName))
+
+        )
+
+      return image.select(bandIndexes)
+
+    }
+
+    
+
+    function formatDate(date) {
+
+      var d = new Date(date),
+
+          month = '' + (d.getMonth() + 1),
+
+          day = '' + d.getDate(),
+
+          year = d.getFullYear()
+
+    
+
+      if (month.length < 2) 
+
+          month = '0' + month
+
+      if (day.length < 2) 
+
+          day = '0' + day
+
+    
+
+      return [year, month, day].join('-')
+
+    }
+
+  
+
+    function mergeObjects(objects) {
+
+      return objects.reduce(function (acc, o) {
+
+        for (var a in o) { acc[a] = o[a] }
+
+        return acc
+
+        }, {})
+
+    }
+
+  } 
+
+}}}
+
+
+
+/****************************************************************************************************************************
+
+* 
+
+*                                              function of computer index
+
+* 
+
+* **************************************************************************************************************************/
+
+{{{
+
+  //计算归一化指数 通用方程
+
+  var Norm_ID=function Norm_ID(B1,B2,name) {
+
+    var norm_id= function(img){
+
+      var temp_id= img.normalizedDifference([B1,B2]);
+
+      return img.addBands(temp_id.rename(name));
+
+    }
+
+    return norm_id;
+
+  }
+
+  
+
+  //计算归比例指数 通用方程
+
+  var Two_Divide=function Two_Divide(B1,B2,name) {
+
+    var two_divide= function(img){
+
+      var temp_td=img.expression(
+
+        'b1/b2',
+
+        {b1:img.select(B1),
+
+        b2:img.select(B2)
+
+        });
+
+      return img.addBands(temp_td.rename(name));
+
+    }
+
+    return two_divide;
+
+  }
+
+  
+
+  
+
+}}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+//     )
+
+
+
+
+
+
+
+
+
+
+
+
+
+//       )
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+//       )
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+//       )
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+//       )
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+    
+
+
+
+
+
+
+
+
+
+
+
+//         )
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+    
+
+//       if (month.length < 2) 
+
+
+
+//       if (day.length < 2) 
+
+
+
+    
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Date.isLeapYear = function (year) { 
+
+    return (((year % 4 === 0) && (year % 100 !== 0)) || (year % 400 === 0)); 
+
+};
+
+
+
+Date.getDaysInMonth = function (year, month) {
+
+    return [31, (Date.isLeapYear(year) ? 29 : 28), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][month];
+
+};
+
+
+
+Date.prototype.isLeapYear = function () { 
+
+    return Date.isLeapYear(this.getFullYear()); 
+
+};
+
+
+
+Date.prototype.getDaysInMonth = function () { 
+
+    return Date.getDaysInMonth(this.getFullYear(), this.getMonth());
+
+};
+
+
+
+Date.prototype.addMonths = function (value) {
+
+    var n = this.getDate();
+
+    this.setDate(1);
+
+    this.setMonth(this.getMonth() + value);
+
+    this.setDate(Math.min(n, this.getDaysInMonth()));
+
+    return this.toISOString().substr(0, 10);
+
+};
+
+
+
+Date.prototype.addDays = function (value) {
+
+    var n = this.getDate();
+
+    this.setDate(n+value);
+
+    return this.toISOString().substr(0, 10);
+
+};
+
+
+
+
+
+function cal_index(img){
+
+  var evi=img.expression(
+
+                '2.5 * (nir - red) / (nir + 6 * red - 7.5 * blue + 1)',
+
+                {
+
+                  red: img.select('red'),    // 620-670nm, RED
+
+                  nir: img.select('nir'),    // 841-876nm, NIR
+
+                  blue: img.select('blue')    // 459-479nm, BLUE
+
+              });
+
+  var AWEI_nsh=img.expression(
+
+                '4*(green-swir1)-(0.25*nir+2.75*swir2)',
+
+                {
+
+                  swir1: img.select('swir1'),
+
+                  swir2: img.select('swir2'),  
+
+                  nir: img.select('nir'),    
+
+                  green: img.select('green')    
+
+              });
+
+  var AWEI_sh=img.expression(
+
+                'blue+2.5*green-1.5*(nir+swir1)-0.25*swir2',
+
+                {
+
+                  swir1: img.select('swir1'),
+
+                  swir2: img.select('swir2'),  
+
+                  nir: img.select('nir'),
+
+                  green: img.select('green'),    
+
+                  blue: img.select('blue')    
+
+              });
+
+  
+
+  
+
+   var ndwi=img.expression(
+
+                '(green-nir)/(green+nir)',
+
+                {
+
+                  
+
+                  
+
+                  nir: img.select('nir'),    
+
+                  green: img.select('green')    
+
+              });
+
+  
+
+  var mndwi=img.expression(
+
+                '(green-swir1)/(green+swir1)',
+
+                {
+
+                  swir1: img.select('swir1'),
+
+                  
+
+                  
+
+                  green: img.select('green')    
+
+              });
+
+  
+
+  var ndvi=img.expression(
+
+                '(nir-red)/(nir+red)',
+
+                {
+
+                  
+
+                  
+
+                  nir: img.select('nir'),    
+
+                  red: img.select('red')    
+
+              });
+
+  
+
+  return img.addBands(evi.rename("EVI")).addBands(AWEI_nsh.rename("AWEI_nsh")).addBands(AWEI_sh.rename("AWEI_sh"))
+
+            .addBands(ndwi.rename("NDWI")).addBands(mndwi.rename("MDNWI")).addBands(ndvi.rename("NDVI"))
+
+}
+
+
+
+
+
+function get_water(img){
+
+  var mask1=img.select("AWEI_nsh").gt(0.88)
+
+               .or(img.select("AWEI_sh").gt(-0.27))
+
+               
+
+  var mask2=img.select("AWEI_nsh")
+
+               .subtract(img.select("AWEI_sh"))
+
+               .gt(-0.2)
+
+               
+
+  var mask3=img.select("MDNWI").gt(img.select("EVI"))
+
+               .or(img.select("MDNWI").gt(img.select("NDVI")))
+
+  
+
+  var dataset = ee.Image('CGIAR/SRTM90_V4')
+
+  var elevation = dataset.select('elevation')
+
+  var mask4=elevation.gt(5)
+
+  
+
+  var mask_all=mask1.and(mask2).and(mask3)
+
+  return mask_all
+
+}
+
+
+
+function get_water_2(img){
+
+  var dataset = ee.Image('CGIAR/SRTM90_V4')
+
+  var elevation = dataset.select('elevation')
+
+  
+
+  
+
+  var mask1=elevation.gt(665)
+
+               .and(img.select("NDVI").lt(-0.2))
+
+               
+
+  var mask2=elevation.lt(665)
+
+               .and(img.select("MDNWI").gt(-0.25))
+
+               
+
+ 
+
+  
+
+  var mask_all=mask1.or(mask2)
+
+  return mask_all
+
+}
+
+
+
+
+
+function get_area(img_mask){
+
+  var area = ee.Image.pixelArea().divide(1000000);
+
+  var ndwi_mask=img_mask.eq(1).multiply(area)
+
+  var area_res = ndwi_mask.reduceRegion({
+
+    reducer: ee.Reducer.sum(),
+
+    geometry: roi,
+
+    scale: 120,
+
+    maxPixels: 1e13,
+
+    tileScale :16
+
+  });
+
+  var area_lt_water=area_res.values().get(0);
+
+  return area_lt_water
+
+}
+
+
+
+function processSSC(image) {
+
+  // Calculate SSC edit functions of extract SSC
+
+  var SSC = image.expression('4.9 * exp(38.0 * band4)',
+
+                { band4: image.select('nir')});
+
+
+
+  
+
+  image = image.addBands(SSC.rename('SSC'));
+
+  
+
+  // Return the updated image.
+
+  return image;
+
+}
+
+  
+
+
+
+/****************************************************************************************************************************
+
+ * 
+
+ *                                             main
+
+ * 
+
+ * **************************************************************************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+var date_start='1985-01-01'
+
+var date_end='2021-12-31'
+
+
+
+
+
+var roi=table
+
+Map.centerObject(roi,6)
+
+Map.addLayer(roi,{},'')
+
+
+
+var date_interval=12
+
+var all_days=ee.Date(date_end).difference(date_start,'month')
+
+var data_range=all_days.divide(date_interval).ceil();
+
+var data_range_list=ee.List.sequence(1,ee.Number(data_range).add(1)).getInfo()
+
+
+
+var img_cols=ee.ImageCollection([])
+
+var img_ssc_all=ee.Image([])
+
+var day_st=new Date(date_start)
+
+var col=data_range_list.map(function(day_item){
+
+  
+
+   var item_day_ed=day_st.addMonths(date_interval)
+
+   var format_day=new Date(item_day_ed)
+
+   var item_day_st=format_day.addMonths(date_interval*-1)
+
+   print(item_day_st)
+
+   print(item_day_ed)
+
+   
+
+   var collection_landsat = createLandsatCollection({
+
+                            region: roi,
+
+                            start:item_day_st,
+
+                            end:item_day_ed, 
+
+                          })
+
+                          
+
+
+
+   
+
+   var item_img=collection_landsat.median().clip(roi)
+
+   
+
+   var item_img=ee.ImageCollection(item_img)
+
+                  .map(cal_index)
+
+                  .map(processSSC)
+
+                  .first()
+
+                  .set('item_date',item_day_st)
+
+                          
+
+   Map.addLayer(item_img,{min:0,max:0.3,bands:['red','green','blue']},'rgb_'+item_day_st,false)
+
+  
+
+   var water_mask=get_water(item_img)
+
+   
+
+  
+
+   Map.addLayer(water_mask,{min:0,max:1,palette:['E7BF80','29C9C9']},'water_'+item_day_st,false)
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   // edit: remove .updateMask
+
+   var ssc=item_img.select('SSC').updateMask(water_mask)
+
+   Map.addLayer(ssc,sscVis,'ssc_'+item_day_st,false)
+
+   
+
+   
+
+   
+
+   
+
+   // ssc
+
+   Export.image.toDrive({
+
+              image:ssc.clip(roi),
+
+              folder:'SSC',
+
+              fileNamePrefix :'ssc_'+item_day_st,
+
+              description:'ssc_'+item_day_st,
+
+              region:roi.geometry().bounds(),
+
+              scale:30,
+
+              crs:"EPSG:4326",
+
+              maxPixels:1e13
+
+    })
+
+   
+
+   // nir
+
+   Export.image.toDrive({
+
+              image:item_img.select('nir').updateMask(water_mask),
+
+              folder:'NIR',
+
+              fileNamePrefix :'nir_'+item_day_st,
+
+              description:'nir_'+item_day_st,
+
+              region:roi.geometry().bounds(),
+
+              scale:30,
+
+              crs:"EPSG:4326",
+
+              maxPixels:1e13
+
+    })
+
+    
+
+    img_cols=img_cols.merge(item_img.select(['SSC','nir']))
+
+    img_ssc_all=ee.Image.cat([img_ssc_all,item_img.select('SSC').rename('D_'+item_day_st)])
+
+})
+
+
+
+print('img_ssc_all',img_ssc_all)
+
+print('img_cols',img_cols)
+
+Export.image.toDrive({
+
+            image:img_ssc_all,
+
+            folder:'ssc_all',
+
+            fileNamePrefix :'ssc_all',
+
+            description:'ssc_all',
+
+            region:roi.geometry().bounds(),
+
+            scale:30,
+
+            crs:"EPSG:4326",
+
+            maxPixels:1e13
+
+  })
+
+
+
+/****************************************************************************************************************************
+
+ * 
+
+ *                                             export csv
+
+ * 
+
+ * **************************************************************************************************************************/
+
+
+
+// FUNCTION 2 - PROCESS SSC  
+
+
+
+
+
+
+
+var csv_point=table2
+
+
+
+Map.addLayer(csv_point,{},'csv_point')
+
+csv_point=csv_point.map(function(ds){
+
+    var fea=ee.Feature(ds)
+
+    
+
+     var new_fea=fea.buffer(50)
+
+     return ee.Feature(new_fea)
+
+})
+
+
+
+// Get Zonal Statistics
+
+var reduced = img_ssc_all.reduceRegions({
+
+  collection: csv_point,
+
+  reducer: ee.Reducer.mean()
+
+             .combine(ee.Reducer.stdDev(),null,true)
+
+             .combine(ee.Reducer.median(),null,true),
+
+  scale: 30,
+
+});
+
+
+
+var ssc_mean=reduced.select('.*_mean')
+
+var ssc_stdDev=reduced.select('.*_stdDev')
+
+var ssc_median=reduced.select('.*_median')
+
+print('ssc_mean',ssc_mean)
+
+print('ssc_stdDev',ssc_stdDev)
+
+
+
+Export.table.toDrive({
+
+    collection:ssc_mean,
+
+    folder: 'csv_folder',
+
+    description: 'ssc_mean',
+
+    fileNamePrefix: 'ssc_mean',
+
+    fileFormat: 'CSV'
+
+})
+
+
+
+Export.table.toDrive({
+
+    collection:ssc_stdDev,
+
+    folder: 'csv_folder',
+
+    description: 'ssc_stdDev',
+
+    fileNamePrefix: 'ssc_stdDev',
+
+    fileFormat: 'CSV'
+
+})
+
+
+
+
+
+Export.table.toDrive({
+
+    collection:ssc_median,
+
+    folder: 'csv_folder',
+
+    description: 'ssc_median',
+
+    fileNamePrefix: 'ssc_median',
+
+    fileFormat: 'CSV'
+
+})
+

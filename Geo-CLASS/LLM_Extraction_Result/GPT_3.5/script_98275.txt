@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Script extracts and displays flood images over time in Thua Thien - Hue region."],
+  "Theme": ["Flood monitoring"],
+  "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2", "COPERNICUS/S1_GRD"],
+  "Function": ["Filter flood images by date and location", "Visualize flood images on the map"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2"],
+        "Function": ["Filter flood images by date and location", "Visualize flood images on the map"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Filter flood images by date and location", "Visualize flood images on the map"]
+    }
+}
+```

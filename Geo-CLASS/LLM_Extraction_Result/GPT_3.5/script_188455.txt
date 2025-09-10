@@ -1,0 +1,19 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["The script processes cloud probability data for specific regions in East Asia."],
+  "Theme": ["Cloud cover analysis"],
+  "DataSource": ["users/kitmyfaceplease2/eastsouth_asia", "projects/ee-kitmyfaceplease2/assets/EAST_SOUTH_SPLIT2"],
+  "Function": ["Mosaicking cloud probability images", "Masking clouds in the region", "Calculating percentage of cloud cover"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/kitmyfaceplease2/eastsouth_asia", "projects/ee-kitmyfaceplease2/assets/EAST_SOUTH_SPLIT2"],
+        "Function": ["Mosaicking cloud probability images", "Masking clouds in the region", "Calculating percentage of cloud cover"]
+    }
+}
+```

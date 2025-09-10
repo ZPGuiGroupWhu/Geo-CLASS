@@ -1,0 +1,5 @@
+{
+  "Theme": ["Land use and land cover classification"],
+  "DataSource": ["GOOGLE/DYNAMICWORLD/V1", "COPERNICUS/S2"],
+  "Function": ["Filter image collection by date", "Filter image collection by region", "Join image collections", "Extract first image from collection", "Visualize image with color palette", "Calculate maximum probability", "Apply hillshade effect", "Multiply images", "Center map on geometry", "Add layer to map", "Create legend panel", "Add legend to map"]
+}

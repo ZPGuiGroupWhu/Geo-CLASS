@@ -1,0 +1,21 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LC08/C02/T1_L2"
+        ],
+        "Function": [
+            "Filter image collection",
+            "Apply NDVI function",
+            "Create chart series by region"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LC08/C02/T1_L2/LC08_043034_20190715"
+        ],
+        "Function": [
+            "Load landsat image for reference",
+            "Add map layer"
+        ]
+    }
+}

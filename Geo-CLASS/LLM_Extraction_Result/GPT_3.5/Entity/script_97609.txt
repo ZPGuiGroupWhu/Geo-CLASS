@@ -1,0 +1,6 @@
+{
+  "Summary": ["Calculate seasonal precipitation deviation and export results."],
+  "Theme": ["Precipitation deviation analysis"],
+  "DataSource": ["users/eijulio/valles_altos_estados", "FAO/GAUL_SIMPLIFIED_500m/2015/level2", "ECMWF/ERA5/DAILY", "UCSB-CHG/CHIRPS/PENTAD"],
+  "Function": ["Filter and sum monthly precipitation data", "Compute long-term monthly averages", "Calculate seasonal deviation", "Export image and table data"]
+}

@@ -1,0 +1,5 @@
+{
+  "Theme": ["Landsat 8 composite creation", "NDVI calculation", "Cloud-free composite generation"],
+  "DataSource": ["LANDSAT/LC08/C01/T1"],
+  "Function": ["Filter image collection by date", "Calculate median image", "Create simple composite", "Calculate NDVI", "Map function over collection", "Calculate max NDVI", "Create quality mosaic", "Update mask", "Reduce region", "Export image to Drive", "Calculate pixel area", "Generate histogram"]
+}

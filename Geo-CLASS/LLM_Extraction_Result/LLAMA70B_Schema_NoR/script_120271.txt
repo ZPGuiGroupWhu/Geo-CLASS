@@ -1,0 +1,39 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["NDVI Analysis"],
+  "DataSource": ["COPERNICUS/S2_SR", "users/gena/packages:colorbrewer", "users/gena/packages:palettes", "users/gena/packages:style", "users/gena/packages:utils"],
+  "Function": ["Filter image collection by date and cloud percentage", "Calculate NDVI band", "Apply median to image collection", "Clip image to testing area", "Reduce region to calculate percentile", "Draw gradient bar", "Draw frame", "Draw scalebar"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response that organizes the extracted information into a structured format:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["Filter image collection by date and cloud percentage", "Calculate NDVI band", "Apply median to image collection", "Clip image to testing area"]
+    },
+    "relation_2": {
+        "DataSource": ["users/gena/packages:colorbrewer"],
+        "Function": ["Draw gradient bar"]
+    },
+    "relation_3": {
+        "DataSource": ["users/gena/packages:palettes"],
+        "Function": ["Draw gradient bar"]
+    },
+    "relation_4": {
+        "DataSource": ["users/gena/packages:style"],
+        "Function": ["Draw frame", "Draw scalebar"]
+    },
+    "relation_5": {
+        "DataSource": ["users/gena/packages:utils"],
+        "Function": ["Reduce region to calculate percentile"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3046, 'completion_tokens': 371, 'total_tokens': 3417}

@@ -1,0 +1,48 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LC8_SR",
+            "LANDSAT/LC8_L1T_TOA",
+            "LANDSAT/LT5_L1T_TOA_FMASK",
+            "LANDSAT/LE7_L1T_TOA_FMASK",
+            "LANDSAT/LE7_L1T_TOA"
+        ],
+        "Function": [
+            "Visualize NDVI And Date Information",
+            "Calculate NBR for Post-Fire Image",
+            "Exporting Classified Images",
+            "Export Processed Images To Google Drive",
+            "Export Processed Images To Google Drive"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Visualize NDVI And Date Information",
+            "Calculate NBR for Post-Fire Image",
+            "Exporting Classified Images",
+            "Export Processed Images To Google Drive",
+            "Export Processed Images To Google Drive"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "ft:1Oaa3b2LdFGrAXL4jqFJzA-3iBeiNq6AQZkyFLVvp",
+            "ft:1tAjm5bGsh0TWPSawKIsX-iWXd7vocIoG_98QjhU1",
+            "ft:1iovW6_vHSX3JOx5OvcFr-ljJdx5mGmqK6Q_ETiSO",
+            "ft:1zmsdCSa-do_XXh6-w6bpfXpz_kN7nGBGmKAcBRFQ",
+            "ft:12Ca5CZlFISuiE7Nf-3fpuTcvFgYNobv-4EJdCkGh",
+            "ft:1-uk71GdY0SUx0Gf4oX2C0LWSvdns18hkRVz7D8C4",
+            "ft:1ovvyN_dzo01mRw8uSNMIYNg-HKyGTrqLErfg26X0"
+        ],
+        "Function": [
+            "Visualize NDVI And Date Information",
+            "Calculate NBR for Post-Fire Image",
+            "Exporting Classified Images",
+            "Export Processed Images To Google Drive",
+            "Export Processed Images To Google Drive"
+        ]
+    }
+}

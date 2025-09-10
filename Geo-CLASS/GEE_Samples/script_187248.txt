@@ -1,0 +1,543 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var geometry = 
+    /* color: #d63000 */
+    /* shown: false */
+    ee.Geometry.Polygon(
+        [[[109.62254118175026, -6.393154394988582],
+          [104.33262418956276, -6.070973441481673],
+          [106.19480680675026, -7.418363084996977],
+          [110.57285856456276, -8.038892136440634],
+          [114.05003141612526, -8.51725257961275],
+          [115.61009000987526, -8.457489524897921],
+          [114.03904508800026, -7.951855878345806]]], null, false),
+    Jawa = ee.FeatureCollection("users/khoirurrizqi/Jawa");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+Map.centerObject(geometry, 6.5)
+
+
+
+//cloud mask
+
+function maskL8sr(col) {
+
+  // Bits 3 and 5 are cloud shadow and cloud, respectively.
+
+  var cloudShadowBitMask = (1 << 3);
+
+  var cloudsBitMask = (1 << 5);
+
+  // Get the pixel QA band.
+
+  var qa = col.select('pixel_qa');
+
+  // Both flags should be set to zero, indicating clear conditions.
+
+  var mask = qa.bitwiseAnd(cloudShadowBitMask).eq(0)
+
+                 .and(qa.bitwiseAnd(cloudsBitMask).eq(0));
+
+  return col.updateMask(mask);
+
+}
+
+
+
+//vis params
+
+var vizParams = {
+
+bands: ['B5', 'B6', 'B4'],
+
+min: 0,
+
+max: 4000,
+
+gamma: [1, 0.9, 1.1]
+
+};
+
+
+
+var vizParams2 = {
+
+bands: ['B4', 'B3', 'B2'],
+
+min: 0,
+
+max: 3000,
+
+gamma: 1.4,
+
+};
+
+
+
+//load the collection:
+
+ {
+
+var col = ee.ImageCollection('LANDSAT/LC08/C01/T1_SR')
+
+.map(maskL8sr)
+
+.filterDate('2018-01-01','2018-12-31')
+
+.filterBounds(geometry);
+
+}
+
+print(col, 'coleccion');
+
+
+
+//imagen reduction
+
+{
+
+var image = col.median();
+
+print(image, 'image');
+
+Map.addLayer(image.clip(Jawa), vizParams2, 'Landsat-8 Image', 0);
+
+}
+
+
+
+//median
+
+{
+
+var ndvi = image.normalizedDifference(['B5', 
+
+'B4']).rename('NDVI');
+
+var ndviParams = {min: -1, max: 1, palette: ['blue', 'white', 
+
+'green']};
+
+print(ndvi,'ndvi');
+
+Map.addLayer(ndvi.clip(Jawa), ndviParams, 'NDVI', 0);
+
+}
+
+
+
+//select thermal band 10(with brightness tempereature), no calculation 
+
+var thermal= image.select('B10').multiply(0.1);
+
+var b10Params = {min: 291.918, max: 302.382, palette: ['blue', 
+
+'white', 'green']};
+
+Map.addLayer(thermal.clip(Jawa), b10Params, 'thermal', 0);
+
+
+
+// find the min and max of NDVI
+
+{
+
+var min = ee.Number(ndvi.reduceRegion({
+
+reducer: ee.Reducer.min(),
+
+geometry: geometry,
+
+scale: 30,
+
+maxPixels: 1e9
+
+}).values().get(0));
+
+print(min, 'min');
+
+var max = ee.Number(ndvi.reduceRegion({
+
+reducer: ee.Reducer.max(),
+
+geometry: geometry,
+
+scale: 30,
+
+maxPixels: 1e9
+
+}).values().get(0));
+
+print(max, 'max')
+
+}
+
+
+
+//fractional vegetation
+
+{var fv =(ndvi.subtract(min).divide(max.subtract(min))).pow(ee.Number(2)).rename('FV'); 
+
+print(fv, 'fv');}
+
+
+
+
+
+//Emissivity
+
+
+
+var a= ee.Number(0.004);
+
+var b= ee.Number(0.986);
+
+var EM=fv.multiply(a).add(b).rename('EMM');
+
+var imageVisParam3 = {min: 0.9865619146722164, max:0.989699971371314};
+
+Map.addLayer(EM.clip(Jawa), imageVisParam3,'EMM', 0);
+
+
+
+//LST in Celsius Degree bring -273.15
+
+var LST = thermal.expression(
+
+'(Tb/(1 + (0.00115* (Tb / 1.438))*log(Ep)))-273.15', {
+
+ 'Tb': thermal.select('B10'),
+
+'Ep': EM.select('EMM')
+
+}).rename('LST');
+
+print(LST, 'LST')
+
+
+
+var viz = {min: 20.569706944223423, max:29.328077233404645, palette: [
+
+'040274', '040281', '0502a3', '0502b8', '0502ce', '0502e6',
+
+'0602ff', '235cb1', '307ef3', '269db1', '30c8e2', '32d3ef',
+
+'3be285', '3ff38f', '86e26f', '3ae237', 'b5e22e', 'd6e21f',
+
+'fff705', 'ffd611', 'ffb613', 'ff8b13', 'ff6e08', 'ff500d',
+
+'ff0000', 'de0101', 'c21301', 'a71001', '911003'
+
+ ]};
+
+ 
+
+ Map.addLayer(LST.clip(Jawa), viz, 'LST', 1)
+
+
+
+
+
+
+
+// set position of panel
+
+var legend = ui.Panel({
+
+style: {
+
+position: 'bottom-left',
+
+padding: '8px 15px'
+
+}
+
+});
+
+ 
+
+// Create legend title
+
+var legendTitle = ui.Label({
+
+value: 'Land Surface Temperature (C)',
+
+style: {
+
+fontWeight: 'bold',
+
+fontSize: '18px',
+
+margin: '0 0 4px 0',
+
+padding: '0'
+
+}
+
+});
+
+ 
+
+// Add the title to the panel
+
+legend.add(legendTitle);
+
+ 
+
+// create the legend image
+
+var lon = ee.Image.pixelLonLat().select('latitude');
+
+var gradient = lon.multiply((viz.max-viz.min)/100.0).add(viz.min);
+
+var legendImage = gradient.visualize(viz);
+
+ 
+
+// create text on top of legend
+
+var panel = ui.Panel({
+
+widgets: [
+
+ui.Label(viz['max'])
+
+],
+
+});
+
+ 
+
+legend.add(panel);
+
+ 
+
+// create thumbnail from the image
+
+var thumbnail = ui.Thumbnail({
+
+image: legendImage,
+
+params: {bbox:'0,0,10,100', dimensions:'10x200'},
+
+style: {padding: '1px', position: 'bottom-center'}
+
+});
+
+ 
+
+// add the thumbnail to the legend
+
+legend.add(thumbnail);
+
+ 
+
+// create text on top of legend
+
+var panel = ui.Panel({
+
+widgets: [
+
+ui.Label(viz['min'])
+
+],
+
+});
+
+ 
+
+legend.add(panel);
+
+ 
+
+Map.add(legend);
+
+
+
+var title = ui.Label({
+
+  value: 'Web Map Land Surface Temperature Pulau Jawa dan Bali',
+
+  style:{
+
+    fontSize:'22px',
+
+    fontWeight: 'bold'
+
+  }})
+
+  
+
+var keterangan = ui.Label({
+
+  value: 'Click on the map to get value',
+
+  style: {
+
+    fontSize: '18px',
+
+    fontWeight: 'bold',
+
+    textDecoration: 'underline'
+
+  }}) 
+
+
+
+var lonlat = ui.Label()
+
+var temp = ui.Label()
+
+    
+
+var buat = ui.Label({
+
+  value: 'Dibuat oleh: ',
+
+  style: {
+
+    fontWeight: 'bold',
+
+    fontSize: '12px',
+
+    margin: '4px'
+
+  }})
+
+var odi = ui.Label({
+
+  value: 'Devandra Budi Mahendra P. P',
+
+  style: {
+
+    fontWeight: 'normal',
+
+    fontSize: '10px',
+
+    margin: '3px'
+
+  }})
+
+var fitria = ui.Label({
+
+  value: 'Fitria Khojanni',
+
+  style: {
+
+    fontWeight: 'normal',
+
+    fontSize: '10px',
+
+    margin: '3px'
+
+  }})
+
+var gantang = ui.Label({
+
+  value: 'Gantang Akbar',
+
+  style: {
+
+    fontWeight: 'normal',
+
+    fontSize: '10px',
+
+    margin: '3px'
+
+  }})
+
+var lalak = ui.Label({
+
+  value: 'Nur Laila Eka Utami',
+
+  style: {
+
+    fontWeight: 'normal',
+
+    fontSize: '10px',
+
+    margin: '3px'
+
+  }})
+
+var pijar = ui.Label({
+
+  value: 'Pijar Satrio Bagaskoro',
+
+  style: {
+
+    fontWeight: 'normal',
+
+    fontSize: '10px',
+
+    margin: '3px'
+
+  }})
+
+var yusri = ui.Label({
+
+  value: 'Yusri Khoirurrizqi',
+
+  style: {
+
+    fontWeight: 'normal',
+
+    fontSize: '10px',
+
+    margin: '3px'
+
+  }})
+
+
+
+var sidebar = ui.Panel({
+
+  widgets:[title, keterangan, lonlat, temp, buat, odi, fitria, gantang, lalak, pijar, yusri], 
+
+  style: {
+
+    width: '250px',
+
+    position: 'bottom-right',
+
+    padding: '8px 15px'
+
+  }})
+
+
+
+ui.root.add(sidebar)
+
+
+
+Map.onClick(function(coords) {
+
+  var location = 'Longitude: ' + coords.lon.toFixed(4) + '; ' +
+
+                'Latitude: ' + coords.lat.toFixed(4);
+
+  var click_point = ee.Geometry.Point(coords.lon, coords.lat);
+
+  
+
+  var LSTValue = LST.reduceRegion(ee.Reducer.first(), click_point, 90).evaluate(function(val){
+
+    var LSTText = 'Temperature (C): ' + val.LST.toFixed(4);
+
+    sidebar.widgets().set(3, ui.Label(LSTText));
+
+  });
+
+  sidebar.widgets().set(2, ui.Label(location));
+
+  sidebar.widgets().set(3, ui.Label("loading..."));
+
+  
+
+  var dot = ui.Map.Layer(click_point, {color: 'FFFFFF'}, 'Click Point');
+
+  Map.layers().set(5,dot)
+
+});
+
+
+
+Map.style().set('cursor', 'crosshair')

@@ -1,0 +1,25 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Satellite imagery analysis for Zhangjiakou region"],
+  "DataSource": ["users/b20203080616/HB-data/Zhangjiakou", "COPERNICUS/S2_SR"],
+  "Function": ["Filter image collection by region", "Filter image collection by date", "Sort images by cloud cover", "Select first image from collection", "Create mosaic from images", "Clip image to region", "Select specific bands", "Export image to Drive", "Center map on region", "Add layer to map"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["users/b20203080616/HB-data/Zhangjiakou"],
+    "Function": ["Filter image collection by region", "Clip image to region", "Center map on region", "Add layer to map"]
+  },
+  "relation_2": {
+    "DataSource": ["COPERNICUS/S2_SR"],
+    "Function": ["Filter image collection by region", "Filter image collection by date", "Sort images by cloud cover", "Select first image from collection", "Create mosaic from images", "Clip image to region", "Select specific bands", "Export image to Drive", "Add layer to map"]
+  }
+}
+```
+
+Total_Token_Usage:
+6419

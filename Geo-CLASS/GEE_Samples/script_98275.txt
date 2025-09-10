@@ -1,0 +1,249 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var regions = ee.FeatureCollection("FAO/GAUL_SIMPLIFIED_500m/2015/level2"),
+    imageCollection = ee.ImageCollection("COPERNICUS/S1_GRD");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+// Define area of interest (AOI) from feature collection 'regions'
+
+
+
+var regions = ee.FeatureCollection(
+
+  'FAO/GAUL_SIMPLIFIED_500m/2015/level2');
+
+var AOI = regions.filter(
+
+  ee.Filter.eq('ADM1_NAME', 'Thua Thien - Hue'));
+
+Map.addLayer(AOI, {color: 'yellow'}, 'Hue AdmBoundaries',0, 1);
+
+
+
+//Find flood images in the flood period
+
+
+
+var FloodA = ee.ImageCollection("COPERNICUS/S1_GRD")
+
+.filterBounds(AOI)
+
+.filterDate ('2020-10-08', '2020-11-15')
+
+.filterMetadata('instrumentMode', 'equals', 'IW')
+
+.filterMetadata ('orbitProperties_pass', 'equals', 'ASCENDING');
+
+
+
+print (FloodA.size(), 'Flood Image Count Total ASC');
+
+print (FloodA, 'Flood Image Collection ASC');
+
+
+
+
+
+//Create Flood Images over time
+
+
+
+var Flood1 = ee.ImageCollection("COPERNICUS/S1_GRD")
+
+.filterBounds(AOI)
+
+.filterDate ('2020-10-10', '2020-10-14')
+
+.filterMetadata('instrumentMode', 'equals', 'IW')
+
+.filterMetadata ('orbitProperties_pass', 'equals', 'ASCENDING');
+
+
+
+print (Flood1.size(), 'Flood Image 1 Count');
+
+print (Flood1, 'Flood Image 13.10.2020');
+
+
+
+//set visualisation parameters
+
+var vis_param = {min:-32, max:0, bands:['VH'], opacity:1.0
+
+};
+
+
+
+//display Flood image on the map
+
+Map.centerObject (Flood1, 10);
+
+Map.addLayer (Flood1,
+
+{min:-32, max:0, bands:['VH'], opacity:1.0
+
+},'Flood 13.10.2020', 0, 1 );
+
+
+
+//Flood progress over the days with a second flood image
+
+var Flood2 = ee.ImageCollection("COPERNICUS/S1_GRD")
+
+.filterBounds(AOI)
+
+.filterDate ('2020-10-15', '2020-10-19')
+
+.filterMetadata('instrumentMode', 'equals', 'IW')
+
+.filterMetadata ('orbitProperties_pass', 'equals', 'ASCENDING');
+
+
+
+print (Flood2.size(), 'Flood Image 2 Count');
+
+print (Flood2, 'Flood 18.10.2020');
+
+
+
+//display Flood Image 2 on the map
+
+Map.centerObject (Flood2, 10);
+
+Map.addLayer (Flood2,
+
+{min:-23, max:25, bands:['VH'], opacity:1.0
+
+},'Flood Image 18.10.2020', 0, 1 );
+
+
+
+//Flood progress over the days with a third flood image
+
+var Flood3 = ee.ImageCollection("COPERNICUS/S1_GRD")
+
+.filterBounds(AOI)
+
+.filterDate ('2020-10-24', '2020-10-26')
+
+.filterMetadata('instrumentMode', 'equals', 'IW')
+
+.filterMetadata ('orbitProperties_pass', 'equals', 'ASCENDING');
+
+
+
+print (Flood3.size(), 'Flood Image 3 Count');
+
+print (Flood3, 'Flood Image 25.10.2020');
+
+
+
+//display Flood Image 3 on the map
+
+Map.centerObject (Flood3, 10);
+
+Map.addLayer (Flood3,
+
+{min:-23, max:25, bands:['VH'], opacity:1.0
+
+},'Flood Image 25.10.2020',0, 1 );
+
+
+
+//Flood progress over the days with a fourth flood image
+
+var Flood4 = ee.ImageCollection("COPERNICUS/S1_GRD")
+
+.filterBounds(AOI)
+
+.filterDate ('2020-10-29', '2020-10-31')
+
+.filterMetadata('instrumentMode', 'equals', 'IW')
+
+.filterMetadata ('orbitProperties_pass', 'equals', 'ASCENDING');
+
+
+
+print (Flood4.size(), 'Flood Image 4 Count');
+
+print (Flood4, 'Flood Image 30.10.2020');
+
+
+
+//display Flood Image 3 on the map
+
+Map.centerObject (Flood4, 10);
+
+Map.addLayer (Flood4,
+
+{min:-23, max:25, bands:['VH'], opacity:1.0
+
+},'Flood Image 30.10.2020',0, 1 );
+
+
+
+//Flood progress over the days with a fifth flood image
+
+var Flood5 = ee.ImageCollection("COPERNICUS/S1_GRD")
+
+.filterBounds(AOI)
+
+.filterDate ('2020-11-05', '2020-11-06')
+
+.filterMetadata('instrumentMode', 'equals', 'IW')
+
+.filterMetadata ('orbitProperties_pass', 'equals', 'ASCENDING');
+
+
+
+print (Flood5.size(), 'Flood Image 5 Count');
+
+print (Flood5, 'Flood Image 05.11.2020');
+
+
+
+//display Flood Image 3 on the map
+
+Map.centerObject (Flood5, 10);
+
+Map.addLayer (Flood5,
+
+{min:-23, max:25, bands:['VH'], opacity:1.0
+
+},'Flood Image 05.11.2020',0, 1 );
+
+
+
+
+
+//Flood progress over the days with a sixth flood image
+
+var Flood6 = ee.ImageCollection("COPERNICUS/S1_GRD")
+
+.filterBounds(AOI)
+
+.filterDate ('2020-11-11', '2020-11-12')
+
+.filterMetadata('instrumentMode', 'equals', 'IW')
+
+.filterMetadata ('orbitProperties_pass', 'equals', 'ASCENDING');
+
+
+
+print (Flood6.size(), 'Flood Image 5 Count');
+
+print (Flood6, 'Flood Image 11.11.2020');
+
+
+
+//display Flood Image 3 on the map
+
+Map.centerObject (Flood6, 10);
+
+Map.addLayer (Flood6,
+
+{min:-23, max:25, bands:['VH'], opacity:1.0
+
+},'Flood Image 11.11.2020',0, 1 );
+
+
+
+

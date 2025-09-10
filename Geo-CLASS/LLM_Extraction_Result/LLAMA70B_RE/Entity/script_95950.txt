@@ -1,0 +1,15 @@
+{
+    "Theme": [
+        "Vegetation Index Analysis"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "Masking clouds and cirrus from Sentinel-2 images",
+        "Calculating NDVI from Sentinel-2 images",
+        "Adding date information to images",
+        "Sorting images by NDVI value",
+        "Extracting maximum NDVI value"
+    ]
+}

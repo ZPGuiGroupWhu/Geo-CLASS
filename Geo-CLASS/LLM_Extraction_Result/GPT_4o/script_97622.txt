@@ -1,0 +1,25 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover classification", "NDVI analysis", "Cloud masking", "Monthly NDVI calculation"],
+  "DataSource": ["users/eikhaingzinthan72019/gadm36_MMR_1", "LANDSAT/LC08/C01/T1_TOA"],
+  "Function": ["Center map on region", "Filter image collection by date and region", "Calculate median composite", "Apply cloud mask", "Calculate NDVI", "Create monthly NDVI images", "Merge training samples", "Train classifier", "Classify land cover", "Export classified map"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/eikhaingzinthan72019/gadm36_MMR_1"],
+        "Function": ["Center map on region", "Filter image collection by date and region", "Classify land cover", "Export classified map"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_TOA"],
+        "Function": ["Filter image collection by date and region", "Calculate median composite", "Apply cloud mask", "Calculate NDVI", "Create monthly NDVI images", "Merge training samples", "Train classifier", "Classify land cover", "Export classified map"]
+    }
+}
+```
+
+Total_Token_Usage:
+13685

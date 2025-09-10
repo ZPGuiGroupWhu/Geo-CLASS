@@ -1,0 +1,11 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S1_GRD"
+        ],
+        "Function": [
+            "Exporting And Data Conversion",
+            "Data Visualization And Mapping"
+        ]
+    }
+}

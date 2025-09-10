@@ -1,0 +1,36 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Water body analysis", "Vegetation index calculation"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Filter image collection by date", "Filter image collection by location", "Filter image collection by cloud cover", "Clip images to region of interest", "Compute median image", "Visualize image in natural color", "Calculate NDVI", "Visualize NDVI", "Calculate EVI", "Visualize EVI", "Calculate SABI", "Visualize SABI", "Create color bar for legend", "Add legend to map"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+    "Function": [
+      "Filter image collection by date",
+      "Filter image collection by location",
+      "Filter image collection by cloud cover",
+      "Clip images to region of interest",
+      "Compute median image",
+      "Visualize image in natural color",
+      "Calculate NDVI",
+      "Visualize NDVI",
+      "Calculate EVI",
+      "Visualize EVI",
+      "Calculate SABI",
+      "Visualize SABI",
+      "Create color bar for legend",
+      "Add legend to map"
+    ]
+  }
+}
+```
+
+Total_Token_Usage:
+5373

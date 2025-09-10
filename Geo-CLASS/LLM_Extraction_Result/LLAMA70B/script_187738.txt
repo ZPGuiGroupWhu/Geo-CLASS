@@ -1,0 +1,33 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Crop land classification and object-based analysis"],
+  "DataSource": ["USDA/NAIP/DOQQ", "USDA/NASS/CDL/2016", "users/saicheems/classification", "users/saicheems/classification_snic"],
+  "Function": ["Image collection filtering", "Image clipping", "Image normalization", "Image segmentation", "Object-based classification", "Random forest classification", "Image convolution", "Cluster analysis", "Standard deviation calculation", "Area calculation", "Perimeter calculation", "Width and height calculation", "Confusion matrix calculation"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["USDA/NAIP/DOQQ"],
+        "Function": ["Image collection filtering", "Image clipping", "Image normalization"]
+    },
+    "relation_2": {
+        "DataSource": ["USDA/NASS/CDL/2016"],
+        "Function": ["Image segmentation", "Object-based classification", "Random forest classification"]
+    },
+    "relation_3": {
+        "DataSource": ["users/saicheems/classification", "users/saicheems/classification_snic"],
+        "Function": ["Image convolution", "Cluster analysis", "Standard deviation calculation", "Area calculation", "Perimeter calculation", "Width and height calculation", "Confusion matrix calculation"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3924, 'completion_tokens': 338, 'total_tokens': 4262}

@@ -1,0 +1,5 @@
+{
+  "Theme": ["Sentinel-2 imagery processing for Cordoba region"],
+  "DataSource": ["users/cesarnon/datos_cba_2017/Cordoba_limite", "COPERNICUS/S2"],
+  "Function": ["Filter images by date", "Filter images by location", "Filter images by cloud coverage", "Rename image bands", "Calculate NDWI", "Calculate NDWI1", "Create image mosaics", "Display image layers"]
+}

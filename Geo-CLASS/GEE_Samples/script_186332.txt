@@ -1,0 +1,162 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var ubb = /* color: #d63000 */ee.Geometry.Polygon(
+        [[[73.66098929117811, 19.17466125245584],
+          [73.23252249430311, 18.405007150666147],
+          [73.97959280680311, 17.673773392380912],
+          [75.35288382242811, 17.023612383862776],
+          [76.03403616617811, 16.90802229180926],
+          [76.59433890055311, 17.747032901190636],
+          [76.46250296305311, 18.488381810244377],
+          [75.46274710367811, 19.06047670002787],
+          [74.46299124430311, 19.42351616146088]]]),
+    MODIS_terra = ee.ImageCollection("MODIS/006/MOD09Q1"),
+    sugarmills = /* color: #d63000 */ee.Geometry.MultiPoint(
+        [[74.09618874113949, 18.509163779499215],
+         [74.33788795988949, 18.488326437253924],
+         [74.52465553801449, 18.415375798662325],
+         [74.62353249113949, 18.352822051110817],
+         [74.86523170988949, 18.17546357430939],
+         [75.03002663176449, 18.112823308535035],
+         [75.22778053801449, 18.039714680977916],
+         [75.30468483488949, 17.799287189414567],
+         [75.52441139738949, 17.589956027012544],
+         [76.08471413176449, 17.48519926058322],
+         [76.29345436613949, 17.42231620281604]]);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+///// Dates of interest
+var start = ee.Date('2016-06-01');
+var finish = ee.Date('2017-05-31');
+
+///// Sugar mills in Maharashtra (their exact location or taluka centroid? with buffers created in GEE?)
+var sugarmillsBuffer = sugarmills.buffer(25000); //unit here is in meters; 25km
+
+//convert the feature to image
+var sugarmillsBuffer_addClass = ee.FeatureCollection([ee.Feature(ee.Feature(sugarmillsBuffer).geometry(), {class: 1})]);
+var sugarmillsBuffer_toImage = sugarmillsBuffer_addClass.reduceToImage(['class'], 'first').unmask().clip(ubb);
+
+
+
+
+
+
+///// Create image collection
+var ubbMODIS = MODIS_terra
+.filterDate(start,finish)
+.map(function(img) {return img.clip(ubb);});
+print('All MODIS images clipped to UBB',ubbMODIS);
+
+///// Calculate NDVI ('sur_refl_b01' is red and 'sur_refl_b02' is NIR)
+// Function to calculate and add an NDVI band
+var addNDVI = function(ubbMODIS) {return ubbMODIS.addBands(ubbMODIS.normalizedDifference(['sur_refl_b02', 'sur_refl_b01']).rename('NDVI'));};
+// Add NDVI band to image collection
+var NDVIcollection = ubbMODIS.map(addNDVI);// the name band is 'NDVI'
+print("NDVI collection", NDVIcollection);
+
+///// Create a multiband image that has all time-series NDVIs as different bands in one image (needed for unsupervised classification)
+var empty = ee.Image().select();
+var multiband = NDVIcollection.iterate(function(image, result) {
+   return ee.Image(result).addBands(image.select('NDVI'))}, empty);
+var multiband = ee.Image(multiband);
+
+
+
+
+///// Make the trainning dataset
+var training = multiband.sample({
+  region: ubb,
+  scale: 250,
+  numPixels: 50
+});
+print('training',training);
+
+///// Instantiate the clusterer and train it
+var clusterer = ee.Clusterer.wekaKMeans(30).train(training);
+print('clusterer',clusterer);
+
+///// Cluster the input using the trained clusterer
+var classes = multiband.cluster(clusterer);
+print('Unsupervised classes',classes);
+
+///// Display the clusters with random colors
+Map.addLayer(classes.randomVisualizer(), {}, 'Unsupervised');
+
+
+
+
+///// Merge single
+var oldclass1 = ee.List([13,14,15,17,18,21,24,25,28]);
+var newclass1 = ee.List.repeat(1, oldclass1.length());
+///// Merge double
+var oldclass2 = ee.List([2,3,4,5,7,12,16,20]);
+var newclass2 = ee.List.repeat(2, oldclass2.length());
+///// Merge perennial 
+var oldclass3 = ee.List([0,9]); // class 10 is mostly forest in the nortehast.  
+var newclass3 = ee.List.repeat(3, oldclass3.length());
+///// Merge barren/shrub/rangelands 
+var oldclass4 = ee.List([1,6,8,11,19,22,23,26,27,29]);
+var newclass4 = ee.List.repeat(4, oldclass4.length());
+
+var oldclass = oldclass1.cat(oldclass2).cat(oldclass3).cat(oldclass4);
+
+var newclass = newclass1.cat(newclass2).cat(newclass3).cat(newclass4);
+
+var classesMerged = classes.remap(oldclass,newclass).toInt();
+
+var classesMerged = classesMerged.rename("class");
+
+
+Map.addLayer(classesMerged,{min:1,max:4,palette:['green','yellow','red','brown']},'Classes merged');
+
+
+
+
+
+var visPalette = [
+  'white', // no class
+  'green', // single crop
+  'yellow', // double crop
+  'orange', 'red' // perennial crop
+];
+
+
+///// Single crop
+var single = (classesMerged.select('class').eq(1));
+var single = single.mask(single);
+var single_final = single.eq(1).multiply(ee.Image(1));
+
+var single_final = single_final.rename("class").toByte(); 
+
+print('single_final',single_final);
+Map.addLayer(single_final, {min:0,max:5,palette:visPalette}, 'Refined single');
+
+///// Double crop
+var double = (classesMerged.select('class').eq(2));
+var double = double.mask(double);
+var double_final=(double.eq(1).and(sugarmillsBuffer_toImage.eq(1))).multiply(ee.Image(2)) 
+.add((double.eq(1).and(sugarmillsBuffer_toImage.eq(0))).multiply(ee.Image(3)));
+
+var double_final = double_final.rename("class").toByte();
+
+print('double_final',double_final);
+Map.addLayer(double_final, {min:0,max:5,palette:visPalette}, 'Refined double');
+
+///// Perennial crop
+var perennial = (classesMerged.select('class').eq(3)); 
+var perennial = perennial.mask(perennial);
+var perennial_final=(perennial.eq(1).and(sugarmillsBuffer_toImage.eq(1))).multiply(ee.Image(4)) 
+.add((perennial.eq(1).and(sugarmillsBuffer_toImage.eq(0))).multiply(ee.Image(5)));
+
+var perennial_final = perennial_final.rename("class").toByte(); 
+
+print('perennial_final',perennial_final); 
+Map.addLayer(perennial_final, {min:0,max:5,palette:visPalette}, 'Refined perennial');
+
+
+
+
+
+var test = ee.ImageCollection([single_final, double_final,perennial_final]); 
+print('test',test);
+var test_mosaic = test.qualityMosaic('class');
+print('test mosaic',test_mosaic);
+Map.addLayer(test_mosaic,{bands: ['class'], min:0, max: 5, palette:visPalette},'test'); 

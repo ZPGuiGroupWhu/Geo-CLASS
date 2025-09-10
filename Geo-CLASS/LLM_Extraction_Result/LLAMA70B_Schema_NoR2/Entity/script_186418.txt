@@ -1,0 +1,5 @@
+{
+  "Theme": ["Land Surface Temperature Retrieval", "Atmospheric Correction", "Vegetation Index Analysis"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_32DAY_NDVI", "LANDSAT/LC08/C01/T1", "LANDSAT/LC8_SR", "NCEP_RE/surface_temp", "NCEP_RE/surface_wv"],
+  "Function": ["Filter image collection by date and polygon", "Compute calibrated radiance from Landsat images", "Compute top of atmosphere brightness temperature", "Compute surface reflectance from Landsat images", "Get NCEP atmospheric data for Landsat image dates", "Join Landsat collections based on system:time_start", "Compute NDVI from Landsat image", "Compute emissivity from NDVI", "Compute surface temperature from Landsat image"]
+}

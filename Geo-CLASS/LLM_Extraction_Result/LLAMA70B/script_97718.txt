@@ -1,0 +1,25 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Vegetation health monitoring using NDVI and MSI indices"],
+  "DataSource": ["COPERNICUS/S2"],
+  "Function": ["Filtering image collection by date and geometry", "Masking cloud from image", "Calculating NDVI index", "Calculating MSI index", "Creating median composite image", "Exporting image to Drive", "Creating time series chart"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Filtering image collection by date and geometry", "Masking cloud from image", "Calculating NDVI index", "Calculating MSI index", "Creating median composite image", "Exporting image to Drive", "Creating time series chart"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4433, 'completion_tokens': 197, 'total_tokens': 4630}

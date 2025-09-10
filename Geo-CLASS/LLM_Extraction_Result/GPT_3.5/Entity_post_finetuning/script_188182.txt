@@ -1,0 +1,31 @@
+{
+    "Summary": [
+        "Script processes Landsat and other image collections for change detection in Zimbabwe."
+    ],
+    "Theme": [
+        "LAND USE/LAND COVER"
+    ],
+    "DataSource": [
+        "users/kindgard/Africa",
+        "users/kindgard/SUD",
+        "users/kindgard/AfricaS",
+        "users/kindgard/AmericaN",
+        "users/kindgard/Asia2",
+        "LANDSAT/LT5_L1T",
+        "LANDSAT/LE7_L1T",
+        "LANDSAT/LC08/C01/T1_RT",
+        "JRC/GSW1_0/GlobalSurfaceWater",
+        "users/ValeriaContessa/zim_waterbody",
+        "users/ValeriaContessa/Zimbabwe_Anderson"
+    ],
+    "Function": [
+        "Cloud Masking And Quality Filtering",
+        "Calculating terrain slope and aspect from DEMs",
+        "NDVI (Normalized Difference Vegetation Index calculation)",
+        "Change Detection",
+        "Vegetation And Water Indices Calculation",
+        "Vegetation And Water Indices Calculation",
+        "MNDWI (Modified Normalized Difference Water Index calculation)",
+        "Cloud Masking And Quality Filtering"
+    ]
+}

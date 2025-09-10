@@ -1,0 +1,125 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var imageCollection = ee.ImageCollection("USDA/NAIP/DOQQ"),
+    geometry = /* color: #0b4a8b */ee.Geometry.Polygon(
+        [[[-121.89511299133301, 38.98496606984683],
+          [-121.89511299133301, 38.909335196675435],
+          [-121.69358253479004, 38.909335196675435],
+          [-121.69358253479004, 38.98496606984683]]], null, false);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+// Step 1: Define an area of interest polygon.  Name it 'geometry'.
+// Step 2: Import NAIP.
+
+var img = imageCollection
+    .filterDate('2015-01-01', '2017-01-01')
+    .filterBounds(geometry)
+    .mosaic();
+
+var bands = ['R', 'G', 'B', 'N'];
+
+img = ee.Image(img).clip(geometry).divide(255).select(bands);
+
+Map.centerObject(geometry, 13);
+Map.addLayer(img, {gamma: 0.8}, 'RGBN', false);
+
+var seeds = ee.Algorithms.Image.Segmentation.seedGrid(36);
+Map.addLayer(seeds.mask(seeds), {}, 'seeds');
+
+// Run SNIC on the regular square grid.
+var snic = ee.Algorithms.Image.Segmentation.SNIC({
+  image: img,
+  compactness: 5,
+  connectivity: 8,
+  neighborhoodSize: 256,
+  seeds: seeds
+});
+
+var clusters = snic.select('clusters');
+Map.addLayer(clusters.randomVisualizer(), {}, 'clusters');
+var clusterVis = {bands: ['R_mean', 'G_mean', 'B_mean'], min: 0, max: 1};
+Map.addLayer(snic, clusterVis, 'means', false);
+
+// Compute per-cluster standard deviation and other properties.
+var stdDev = img.addBands(clusters)
+    .reduceConnectedComponents({
+      reducer: ee.Reducer.stdDev(), 
+      labelBand: 'clusters', 
+      maxSize: 256
+    });
+Map.addLayer(stdDev, {min:0, max:0.1}, 'StdDev', false);
+
+// Area.
+var area = ee.Image.pixelArea().addBands(clusters)
+    .reduceConnectedComponents(ee.Reducer.sum(), 'clusters', 256);
+Map.addLayer(area, {min: 50000, max: 500000}, 'Cluster Area', false);
+
+// Perimeter.
+var minMax = clusters.reduceNeighborhood({
+  reducer: ee.Reducer.minMax(), 
+  kernel: ee.Kernel.square(1)
+});
+var perimeterPixels = minMax.select(0).neq(minMax.select(1));
+Map.addLayer(perimeterPixels, {min: 0, max: 1}, 'perimeterPixels', false);
+var perimeter = perimeterPixels.addBands(clusters)
+    .reduceConnectedComponents(ee.Reducer.sum(), 'clusters', 256);
+Map.addLayer(perimeter, {min: 100, max: 400}, 'Perimeter size', false);
+
+// Width and height.
+var sizes = ee.Image.pixelLonLat().addBands(clusters)
+    .reduceConnectedComponents(ee.Reducer.minMax(), 'clusters', 256);
+var width = sizes.select('longitude_max')
+    .subtract(sizes.select('longitude_min')).rename('width');
+var height = sizes.select('latitude_max')
+    .subtract(sizes.select('latitude_min')).rename('height');
+Map.addLayer(width, {min: 0, max: 0.02}, 'Cluster width', false);
+Map.addLayer(height, {min: 0, max: 0.02}, 'Cluster height', false);
+
+var objectPropertiesImage = ee.Image.cat([
+  snic.select(['R_mean', 'G_mean', 'B_mean', 'N_mean']),
+  stdDev,
+  area,
+  perimeter,
+  width,
+  height
+]).float();
+
+// Import CDL 2016 image and train a classifier.
+var cdl2016 = ee.Image('USDA/NASS/CDL/2016');
+var training = objectPropertiesImage.addBands(cdl2016.select('cropland'))
+    .updateMask(seeds)
+    .sample({
+      region: geometry, 
+      scale: 1,
+      numPixels: 10000
+    });
+var classifier = ee.Classifier.randomForest(10).train(training, 'cropland');
+var classified = objectPropertiesImage.classify(classifier);
+Map.addLayer(classified, {min: 0, max: 254}, 'Classified objects');
+
+
+
+// Display outliers.
+var outliers = stdDev.reduce('sum').gt(0.25);
+Map.addLayer(outliers.updateMask(outliers), {}, 'outliers', false);
+
+// Compute spectral angle between each pixel and cluster mean.
+var distance = img.select(bands).spectralDistance({
+  image2: snic.select('R_mean', 'G_mean', 'B_mean', 'N_mean'), 
+  metric: 'sam'
+});
+Map.addLayer(distance, {min: 0, max: 0.3}, 'distance', false);
+
+// Compute maximum angle.  There should be one pixel that has this value.
+var maxDistance = distance.addBands(clusters)
+    .reduceConnectedComponents(ee.Reducer.max(), 'clusters', 256);
+Map.addLayer(maxDistance, {min: 0, max: 0.3}, 'maxDistance', false);
+
+// Find the max pixels (some of them, anyway).
+var maxDistancePixels = maxDistance.float().eq(distance.float());
+// Only care about these in the outlier clusters.
+maxDistancePixels = maxDistancePixels.and(outliers);
+Map.addLayer(maxDistancePixels, {min: 0, max: 1}, 'maxDistancePixels', false);
+
+var augmentedSeeds = seeds.unmask(0).or(maxDistancePixels);
+Map.addLayer(augmentedSeeds.mask(augmentedSeeds), {}, 'seeds', false);
+
+// Recompute SNIC.

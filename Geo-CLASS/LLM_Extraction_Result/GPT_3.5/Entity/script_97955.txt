@@ -1,0 +1,6 @@
+{
+  "Summary": ["Script generates land change classification using Landsat imagery."],
+  "Theme": ["Land change classification"],
+  "DataSource": ["LANDSAT/LT5_L1T", "LANDSAT/LE7_L1T", "LANDSAT/LC08/C01/T1_RT", "users/EL/Bahamas", "users/lw/Bah_Class_2017"],
+  "Function": ["Image composite creation", "Image ratio calculation", "Image masking", "Land change classification"]
+}

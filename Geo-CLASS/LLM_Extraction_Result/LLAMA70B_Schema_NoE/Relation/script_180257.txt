@@ -1,0 +1,30 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/Katemiller125/Illilouette"
+        ],
+        "Function": [
+            "Filtering Landsat 7 imagery by date",
+            "Preparing Landsat 7 imagery for analysis"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LE07/C02/T1_L2"
+        ],
+        "Function": [
+            "Painting a feature collection onto an image",
+            "Masking clouds and shadows in Landsat 7 imagery",
+            "Renaming bands in Landsat 7 imagery"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "LANDSAT/LE07/C01/T1_SR"
+        ],
+        "Function": [
+            "Buffering points",
+            "Calculating zonal statistics"
+        ]
+    }
+}

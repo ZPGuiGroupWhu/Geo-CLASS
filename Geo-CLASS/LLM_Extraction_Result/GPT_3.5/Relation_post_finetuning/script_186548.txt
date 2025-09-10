@@ -1,0 +1,12 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S1_GRD"
+        ],
+        "Function": [
+            "NDVI (Normalized Difference Vegetation Index calculation)",
+            "Calculating terrain slope and aspect from DEMs",
+            "Cloud Masking And Quality Filtering"
+        ]
+    }
+}

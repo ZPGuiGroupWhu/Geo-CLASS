@@ -1,0 +1,29 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover change analysis"],
+  "DataSource": ["USGS/NLCD/NLCD1992", "USGS/NLCD/NLCD2001", "USGS/NLCD/NLCD2006", "users/alemlakes/r-2900-BULC-Dev:BULC/2020/3-BULC-Minimal/BULC-Minimal-ModInDev-44-assembleTables"],
+  "Function": ["Add layer to map", "Remap land cover classes", "Create image collection", "Merge image collections", "Print image collection size", "Apply BULC function"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["USGS/NLCD/NLCD1992"],
+        "Function": ["Add layer to map", "Remap land cover classes", "Apply BULC function"]
+    },
+    "relation_2": {
+        "DataSource": ["USGS/NLCD/NLCD2001", "USGS/NLCD/NLCD2006"],
+        "Function": ["Remap land cover classes", "Create image collection", "Merge image collections", "Print image collection size", "Apply BULC function"]
+    },
+    "relation_3": {
+        "DataSource": ["users/alemlakes/r-2900-BULC-Dev:BULC/2020/3-BULC-Minimal/BULC-Minimal-ModInDev-44-assembleTables"],
+        "Function": ["Apply BULC function"]
+    }
+}
+```
+
+Total_Token_Usage:
+5312

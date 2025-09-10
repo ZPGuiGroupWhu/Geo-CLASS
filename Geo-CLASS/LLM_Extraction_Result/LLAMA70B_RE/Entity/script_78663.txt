@@ -1,0 +1,12 @@
+{
+    "Theme": [
+        "Land cover classification and correction"
+    ],
+    "DataSource": [
+        "users/danielp/LC-SLIAC:LC-SLIAC_global"
+    ],
+    "Function": [
+        "Apply land cover correction",
+        "Create time series chart"
+    ]
+}

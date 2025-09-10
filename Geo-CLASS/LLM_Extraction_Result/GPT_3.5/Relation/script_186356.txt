@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Refined Lee speckle filtering for noise reduction", "Composite creation for SAR image visualization", "Classification training and application using CART algorithm"]
+    },
+    "relation_2": {
+        "DataSource": ["urban", "forest", "water"],
+        "Function": ["Classification training and application using CART algorithm"]
+    }
+}

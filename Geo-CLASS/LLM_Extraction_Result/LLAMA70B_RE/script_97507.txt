@@ -1,0 +1,25 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Entity Recognition": {
+    "Theme": ["Tracking Crop Greenness in Merced County"],
+    "DataSource": ["TIGER/2018/Counties", "LANDSAT/LC08/C02/T1_L2"],
+    "Function": ["Filtering county data", "Loading Landsat 8 image collection", "Filtering image collection by location and date", "Extracting dates from image collection", "Creating visualization parameters", "Displaying images with dates"]
+  },
+  "Relation Extraction": {
+    "relation_1": {
+      "DataSource": ["TIGER/2018/Counties"],
+      "Function": ["Filtering county data"]
+    },
+    "relation_2": {
+      "DataSource": ["LANDSAT/LC08/C02/T1_L2"],
+      "Function": ["Loading Landsat 8 image collection", "Filtering image collection by location and date", "Extracting dates from image collection", "Creating visualization parameters", "Displaying images with dates"]
+    }
+  }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2147, 'completion_tokens': 258, 'total_tokens': 2405}

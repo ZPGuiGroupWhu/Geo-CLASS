@@ -1,0 +1,22 @@
+{
+    "Theme": [
+        "Water surface interpolation and lake area estimation"
+    ],
+    "DataSource": [
+        "JRC/GSW1_0/GlobalSurfaceWater",
+        "users/sntopp/Lakes_ply_20171106",
+        "users/sntopp/NCSC_Horsepen_Lake",
+        "users/sarinarinab/CitSci_Washington_Lakes"
+    ],
+    "Function": [
+        "calcAreaImage",
+        "Outline",
+        "OutlinePoly",
+        "createParagraphPanel",
+        "ls_fun.merge_collections_std_bandnames_collection1tier1_sr",
+        "ls_fun.filterContained",
+        "ls_fun.CalculateWaterAddFlagsSR",
+        "ls_fun.fillWater",
+        "ls_fun.ExtractChannel"
+    ]
+}

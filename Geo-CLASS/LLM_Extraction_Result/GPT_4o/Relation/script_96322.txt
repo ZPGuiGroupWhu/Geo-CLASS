@@ -1,0 +1,28 @@
+{
+  "relation_1": {
+    "DataSource": ["users/eemapascordoba/LCLU_2021/recetas_ago20_abr21_pstxcultivo_masLCollect_buffer2306"],
+    "Function": ["Display images on map"]
+  },
+  "relation_2": {
+    "DataSource": ["users/eemapascordoba/var_ambientales_rindes/rindes_alf_rol_training_zona"],
+    "Function": ["Sample regions for training data", "Export data to Drive"]
+  },
+  "relation_3": {
+    "DataSource": ["users/capas/provincia_wgs"],
+    "Function": ["Filter images by location", "Clip images to region"]
+  },
+  "relation_4": {
+    "DataSource": ["COPERNICUS/S2"],
+    "Function": [
+      "Filter images by date",
+      "Filter images by cloud cover",
+      "Rename image bands",
+      "Calculate NDVI",
+      "Calculate NDWI",
+      "Calculate NDWI1",
+      "Add bands to image",
+      "Create quality mosaics",
+      "Display images on map"
+    ]
+  }
+}

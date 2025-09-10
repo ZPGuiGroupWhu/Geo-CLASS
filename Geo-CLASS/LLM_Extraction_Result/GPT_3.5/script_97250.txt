@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Night Light Statistics by Landcover"],
+  "Theme": ["Urban vs. agricultural night light distribution"],
+  "DataSource": ["users/ujavalgandhi/public/soi_india_boundary", "NOAA/DMSP-OLS/NIGHTTIME_LIGHTS", "MODIS/006/MCD12Q1"],
+  "Function": ["Filtering and selecting night light data", "Extracting landcover classification data", "Creating agriculture and urban zones", "Classifying nightlights image into categorical values", "Computing statistics on classified image in each zone"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/ujavalgandhi/public/soi_india_boundary"],
+        "Function": ["Filtering and selecting night light data", "Computing statistics on classified image in each zone"]
+    },
+    "relation_2": {
+        "DataSource": ["NOAA/DMSP-OLS/NIGHTTIME_LIGHTS"],
+        "Function": ["Filtering and selecting night light data", "Classifying nightlights image into categorical values", "Computing statistics on classified image in each zone"]
+    },
+    "relation_3": {
+        "DataSource": ["MODIS/006/MCD12Q1"],
+        "Function": ["Extracting landcover classification data", "Creating agriculture and urban zones"]
+    }
+}
+```

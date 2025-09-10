@@ -1,0 +1,19 @@
+{
+    "Theme": [
+        "Land Surface Temperature Analysis"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C01/T1_SR",
+        "users/khoirurrizqi/Jawa"
+    ],
+    "Function": [
+        "Cloud mask application",
+        "Image collection filtering",
+        "NDVI calculation",
+        "Thermal band extraction",
+        "Fractional vegetation calculation",
+        "Emissivity calculation",
+        "Land Surface Temperature calculation",
+        "Image visualization"
+    ]
+}

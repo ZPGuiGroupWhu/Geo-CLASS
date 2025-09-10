@@ -1,0 +1,12 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover classification and change detection in Central America"],
+  "DataSource": ["ft:1uRKhdFB2QPg6_om0fGjUs_wI8UZAi7ZIqdSKtbxI", "LANDSAT/LT05/C01/T1", "LANDSAT/LE07/C01/T1", "LANDSAT/LC08/C01/T1_RT", "COPERNICUS/S2", "users/EL/L5_2000_BelizeCubaCRP", "users/EL/L7_2010_BelizeCubaCRP", "users/EL/L8_2017_BelizeCubaCRPv2", "users/ValeriaContessa/dggrid_CA_1", "users/ValeriaContessa/dggrid_CA_2", "users/ValeriaContessa/dggrid_CA_3", "users/ValeriaContessa/dggrid_CA_4", "users/ValeriaContessa/dggrid_CA_5", "users/ValeriaContessa/dggrid_CA_6", "users/ValeriaContessa/dggrid_CA_7", "users/ValeriaContessa/dggrid_CA_8", "users/ValeriaContessa/dggrid_CA_9", "users/ValeriaContessa/dggrid_CA_10", "users/ValeriaContessa/dggrid_CA_11", "users/ValeriaContessa/dggrid_CA_12", "users/ValeriaContessa/dggrid_CA_13", "users/ValeriaContessa/dggrid_CA_14", "users/ValeriaContessa/dggrid_Carib_1", "users/ValeriaContessa/dggrid_Carib_2", "users/ValeriaContessa/dggrid_Carib_3", "users/ValeriaContessa/dggrid_Carib_4", "users/ValeriaContessa/dggrid_Carib_5", "users/ValeriaContessa/dggrid_Carib_6"],
+  "Function": ["Filtering image collections by date and cloud cover", "Mosaicking images", "Clipping images to a region", "Applying cloud score algorithm", "Masking clouds", "Computing median of image collection",
+
+Total_Usage:
+{'prompt_tokens': 6550, 'completion_tokens': 550, 'total_tokens': 7100}

@@ -1,0 +1,6 @@
+{
+  "Summary": ["Extracts and processes Sentinel-2 data for Ahmedabad precipitation analysis."],
+  "Theme": ["Precipitation monitoring"],
+  "DataSource": ["users/ce15btech11022/Final_Cities/Ahmedabad", "COPERNICUS/S2"],
+  "Function": ["Mosaicking daily images for precipitation analysis", "Calculating water area using NDWI index", "Generating time series chart for water area analysis"]
+}

@@ -1,0 +1,18 @@
+{
+    "Theme": [
+        "Land cover change analysis using Landsat 8 and LandTrendr"
+    ],
+    "DataSource": [
+        "users/jrmancerafGEE/POL_SUB_AE_1055",
+        "users/jrmancerafGEE/PTS_SUB_AE_1055",
+        "LANDSAT/LC08/C01/T1_SR"
+    ],
+    "Function": [
+        "Masking cloud shadows and clouds in Landsat 8 images",
+        "Filtering Landsat 8 images by date",
+        "Clipping images to area of interest",
+        "Running LandTrendr algorithm",
+        "Getting change map layers",
+        "Exporting change data to Google Drive"
+    ]
+}

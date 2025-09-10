@@ -1,0 +1,6 @@
+{
+  "Summary": ["Extracts GFS temperature data for a specific date range and region, visualizing it through an animation."],
+  "Theme": ["Weather analysis"],
+  "DataSource": ["NOAA/GFS0P25"],
+  "Function": ["Filtering image collection by date range and region", "Clipping images to a specific geometry", "Creating a visualization animation"]
+}

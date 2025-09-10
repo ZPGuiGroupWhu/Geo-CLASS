@@ -1,0 +1,440 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var landsat8 = ee.ImageCollection("LANDSAT/LC08/C01/T1_TOA"),
+    landsat5 = ee.ImageCollection("LANDSAT/LT5_L1T_TOA"),
+    point = /* color: #0b4a8b */ee.Geometry.Point([-121.12085850161048, 38.287109056749166]),
+    bare = /* color: #00ffff */ee.Geometry.Polygon(
+        [[[-121.12512362371194, 38.27218393526935],
+          [-121.12602484594095, 38.27363267066883],
+          [-121.13014471898782, 38.273767435283204],
+          [-121.13096011052835, 38.272790386162846],
+          [-121.13126051793802, 38.27060040072678],
+          [-121.12920058141458, 38.2694548435767],
+          [-121.12576735387552, 38.26989285285591]]]),
+    water = /* color: #bf04c2 */ee.Geometry.Polygon(
+        [[[-121.1409803126943, 38.28894954580657],
+          [-121.14003617512105, 38.285446317219915],
+          [-121.13771874653219, 38.285446317219915],
+          [-121.13351304279684, 38.287736908892015],
+          [-121.13274056660055, 38.29157685628301],
+          [-121.13651711689351, 38.291711587589724],
+          [-121.14037949787496, 38.29009479540024]]]),
+    veg = /* color: #ff0000 */ee.Geometry.Polygon(
+        [[[-120.94300926937035, 38.22534042249515],
+          [-120.94730080379418, 38.229116245253564],
+          [-120.9509056927102, 38.22722835837441],
+          [-120.95348061336449, 38.22372215274202],
+          [-120.96601189388207, 38.22237356711509],
+          [-120.97631157649926, 38.22223870717746],
+          [-120.97751320613793, 38.21994604998927],
+          [-120.96875847591332, 38.21954145592705],
+          [-120.96137703670433, 38.21954145592705],
+          [-120.9538239361184, 38.2215644037394]]]);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+var image = ee.Image(landsat8
+
+    .filterBounds(point)
+
+    .filterDate('2015-06-01', '2015-09-01')
+
+    .sort('CLOUD_COVER')
+
+    .first());
+
+    
+
+
+
+var trueColor = {bands: ['B4', 'B3', 'B2'], min: 0, max: 0.3};
+
+Map.addLayer(image, trueColor, 'image');
+
+
+
+// NDVI
+
+var ndvi = image.normalizedDifference(['B5', 'B4']);
+
+var vegPalette = ['red', 'blue', 'yellow', 'green'];
+
+Map.addLayer(ndvi, {min: -1, max: 1, palette: vegPalette}, 'NDVI');
+
+
+
+// EVI
+
+
+
+var evi = image.expression(
+
+    '2.5 * ((NIR - RED) / (NIR + 6 * RED - 7.5 * BLUE + 1))', {
+
+      'NIR': image.select('B5'),
+
+      'RED': image.select('B4'),
+
+      'BLUE': image.select('B2')
+
+});
+
+
+
+Map.addLayer(evi, {min: -1, max: 1, palette: vegPalette}, 'EVI');
+
+
+
+//NDWI
+
+
+
+var ndwi = image.normalizedDifference(['B5', 'B6']);
+
+var waterPalette = ['red', 'yellow', 'green', 'blue'];
+
+Map.addLayer(ndwi, {min: -0.5, max: 1, palette: waterPalette}, 'NDWI');
+
+
+
+
+
+// NDWBI
+
+var ndwi = image.normalizedDifference(['B3', 'B5']);
+
+Map.addLayer(ndwi, {min: -1, max: 0.5, palette: waterPalette}, 'NDWBI');
+
+
+
+// NDBI
+
+
+
+var ndbi = image.normalizedDifference(['B6', 'B5']);
+
+var barePalette = waterPalette.slice().reverse();
+
+Map.addLayer(ndbi, {min: -1, max: 0.5, palette: barePalette}, 'NDBI');
+
+
+
+// BAI
+
+
+
+var burnImage = ee.Image(landsat8
+
+    .filterBounds(ee.Geometry.Point(-120.083, 37.850))
+
+    .filterDate('2013-08-17', '2013-09-27')
+
+    .sort('CLOUD_COVER')
+
+    .first());
+
+
+
+Map.addLayer(burnImage, trueColor, 'burn image');
+
+
+
+var bai = burnImage.expression(
+
+    '1.0 / ((0.1 - RED)**2 + (0.06 - NIR)**2)', {
+
+      'NIR': burnImage.select('B5'),
+
+      'RED': burnImage.select('B4'),
+
+});
+
+
+
+var burnPalette = ['green', 'blue', 'yellow', 'red'];
+
+Map.addLayer(bai, {min: 0, max: 400, palette: burnPalette}, 'BAI');
+
+
+
+// NBRT
+
+var nbrt = burnImage.expression(
+
+  '(NIR - 0.0001 * SWIR * Temp) / (NIR + 0.0001 * SWIR * Temp)', {
+
+    'NIR': burnImage.select('B5'),
+
+    'SWIR': burnImage.select('B7'),
+
+    'Temp': burnImage.select('B11')
+
+});
+
+Map.addLayer(nbrt, {min: 1, max: 0.9, palette: burnPalette}, 'NBRT');
+
+
+
+// NDSI
+
+var snowImage = ee.Image(landsat8
+
+    .filterBounds(ee.Geometry.Point(-120.0421, 39.1002))
+
+    .filterDate('2013-11-01', '2014-05-01')
+
+    .sort('CLOUD_COVER')
+
+    .first());
+
+    
+
+Map.addLayer(snowImage, trueColor, 'snow image');
+
+
+
+var ndsi = snowImage.normalizedDifference(['B3', 'B6']);
+
+
+
+var snowPalette = ['red', 'green', 'blue', 'white'];
+
+Map.addLayer(ndsi, {min: -0.5, max: 0.5, palette: snowPalette}, 'NDSI');
+
+
+
+// 2. Linear Transforms
+
+
+
+var coefficients = ee.Array([
+
+  [0.3037, 0.2793, 0.4743, 0.5585, 0.5082, 0.1863],
+
+  [-0.2848, -0.2435, -0.5436, 0.7243, 0.0840, -0.1800],
+
+  [0.1509, 0.1973, 0.3279, 0.3406, -0.7112, -0.4572],
+
+  [-0.8242, 0.0849, 0.4392, -0.0580, 0.2012, -0.2768],
+
+  [-0.3280, 0.0549, 0.1075, 0.1855, -0.4357, 0.8085],
+
+  [0.1084, -0.9022, 0.4120, 0.0573, -0.0251, 0.0238]
+
+]);
+
+
+
+var tcImage = ee.Image(landsat5
+
+    .filterBounds(point)
+
+    .filterDate('2008-06-01', '2008-09-01')
+
+    .sort('CLOUD_COVER')
+
+    .first());
+
+
+
+var bands = ['B1', 'B2', 'B3', 'B4', 'B5', 'B7'];
+
+
+
+// Make an Array Image, with a 1-D Array per pixel.
+
+var arrayImage1D = tcImage.select(bands).toArray();
+
+
+
+// Make an Array Image with a 2-D Array per pixel, 6x1.
+
+var arrayImage2D = arrayImage1D.toArray(1);
+
+
+
+
+
+
+
+var componentsImage = ee.Image(coefficients)
+
+  .matrixMultiply(arrayImage2D)
+
+  // Get rid of the extra dimensions.
+
+  .arrayProject([0])
+
+  // Get a multi-band image with TC-named bands.
+
+  .arrayFlatten(
+
+    [['brightness', 'greenness', 'wetness', 'fourth', 'fifth', 'sixth']]);
+
+    
+
+    
+
+var vizParams = {
+
+  bands: ['brightness', 'greenness', 'wetness'],
+
+  min: -0.1, max: [0.5, 0.1, 0.1]
+
+};
+
+Map.addLayer(componentsImage, vizParams, 'TC components');
+
+
+
+
+
+//2.b.Principal Component Analysis (PCA).  
+
+
+
+var bands = ['B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B10', 'B11'];
+
+
+
+var arrayImage = image.select(bands).toArray();
+
+
+
+var covar = arrayImage.reduceRegion({
+
+  reducer: ee.Reducer.covariance(),
+
+  maxPixels: 1e9
+
+});
+
+
+
+var covarArray = ee.Array(covar.get('array'));
+
+
+
+var eigens = covarArray.eigen();
+
+
+
+var eigenVectors = eigens.slice(1, 1);
+
+
+
+var principalComponents = ee.Image(eigenVectors)
+
+.matrixMultiply(arrayImage.toArray(1));
+
+
+
+var pcImage = principalComponents
+
+  // Throw out an an unneeded dimension, [[]] -> [].
+
+  .arrayProject([0])
+
+  // Make the one band array image a multi-band image, [] -> image.
+
+  .arrayFlatten([['pc1', 'pc2', 'pc3', 'pc4', 'pc5', 'pc6', 'pc7', 'pc8']]);
+
+
+
+Map.addLayer(pcImage.select('pc1'), {}, 'PC');  // it must be streched using Layer Manager
+
+
+
+// 2.c.  c.	Spectral unmixing
+
+var unmixImage = image.select(['B2', 'B3', 'B4', 'B5', 'B6', 'B7']);
+
+Map.addLayer(image, {bands: ['B5', 'B4', 'B3'], max: 0.4}, 'false color');
+
+
+
+
+
+print(Chart.image.regions(unmixImage, ee.FeatureCollection([
+
+    ee.Feature(bare, {label: 'bare'}), 
+
+    ee.Feature(water, {label: 'water'}),
+
+    ee.Feature(veg, {label: 'vegetation'})]), 
+
+  ee.Reducer.mean(), 30, 'label', [0.48, 0.56, 0.65, 0.86, 1.61, 2.2]));
+
+  
+
+var bareMean = unmixImage
+
+.reduceRegion(ee.Reducer.mean(), bare, 30).values();
+
+var waterMean = unmixImage
+
+.reduceRegion(ee.Reducer.mean(), water, 30).values();
+
+var vegMean = unmixImage
+
+.reduceRegion(ee.Reducer.mean(), veg, 30).values();
+
+
+
+var endmembers = ee.Array.cat([bareMean, vegMean, waterMean], 1);
+
+
+
+var arrayImage = unmixImage.toArray().toArray(1);
+
+
+
+var unmixed = ee.Image(endmembers).matrixSolve(arrayImage);
+
+
+
+var unmixedImage = unmixed
+
+.arrayProject([0])
+
+.arrayFlatten([['bare', 'veg', 'water']]);
+
+
+
+Map.addLayer(unmixedImage, {}, 'Unmixed');
+
+
+
+
+
+// 3. The HSV transform
+
+
+
+// Convert Landsat RGB bands to HSV
+
+var hsv = image.select(['B4', 'B3', 'B2']).rgbToHsv();
+
+
+
+// Convert back to RGB, swapping the image panchromatic band for the value.
+
+var rgb = ee.Image.cat([
+
+  hsv.select('hue'), 
+
+  hsv.select('saturation'),
+
+  image.select(['B8'])
+
+]).hsvToRgb();
+
+
+
+Map.addLayer(rgb, {max: 0.4}, 'Pan-sharpened');
+
+
+
+
+
+
+
+
+

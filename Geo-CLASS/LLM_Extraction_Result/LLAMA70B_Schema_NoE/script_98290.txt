@@ -1,0 +1,29 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land cover classification and accuracy assessment"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR", "LANDSAT/LC08/C01/T1", "users/nclinton/demo_landcover_labels"],
+  "Function": ["maskL8sr: cloud masking function for Landsat 8 SR data", "composite: median composite of cloud-masked images", "classify: land cover classification using CART classifier", "train: training of CART classifier", "errorMatrix: accuracy assessment using confusion matrix", "byClass: area calculation by class", "reduceRegion: area calculation by class using reducer", "classify: land cover classification using Random Forest classifier", "classify: land cover classification using Naive Bayes classifier", "classify: land cover classification using SVM classifier", "mode: mode calculation of classified images"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR", "LANDSAT/LC08/C01/T1"],
+        "Function": ["maskL8sr: cloud masking function for Landsat 8 SR data", "composite: median composite of cloud-masked images", "classify: land cover classification using CART classifier", "classify: land cover classification using Random Forest classifier", "classify: land cover classification using Naive Bayes classifier", "classify: land cover classification using SVM classifier", "mode: mode calculation of classified images"]
+    },
+    "relation_2": {
+        "DataSource": ["users/nclinton/demo_landcover_labels"],
+        "Function": ["train: training of CART classifier", "errorMatrix: accuracy assessment using confusion matrix", "byClass: area calculation by class", "reduceRegion: area calculation by class using reducer"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3329, 'completion_tokens': 445, 'total_tokens': 3774}

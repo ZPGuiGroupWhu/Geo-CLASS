@@ -1,0 +1,27 @@
+{
+    "Summary": [
+        "The script collects satellite images, calculates NDVI and NBR, exports image properties, creates mosaics, and detects forest loss using Sentinel-2 imagery."
+    ],
+    "Theme": [
+        "ORBIT TYPE",
+        "NORMALIZED DIFFERENCE VEGETATION INDEX (NDVI)",
+        "ISOTOPIC ANALYSIS",
+        "FOREST FIRE SCIENCE"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2",
+        "ft:1Oaa3b2LdFGrAXL4jqFJzA-3iBeiNq6AQZkyFLVvp",
+        "ft:1tAjm5bGsh0TWPSawKIsX-iWXd7vocIoG_98QjhU1",
+        "ft:1iovW6_vHSX3JOx5OvcFr-ljJdx5mGmqK6Q_ETiSO",
+        "ft:1zmsdCSa-do_XXh6-w6bpfXpz_kN7nGBGmKAcBRFQ",
+        "ft:1gGjM2T5JEgKFoxbWORCn3WPqB98p2adAz42eqycf"
+    ],
+    "Function": [
+        "NDVI (Normalized Difference Vegetation Index calculation)",
+        "Vegetation And Water Indices Calculation",
+        "Exporting And Data Conversion",
+        "Exporting And Data Conversion",
+        "Exporting And Data Conversion",
+        "Time Series Anomaly Detection"
+    ]
+}

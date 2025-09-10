@@ -1,0 +1,19 @@
+{
+    "Theme": [
+        "Land cover classification"
+    ],
+    "DataSource": [
+        "users/wangweihappy0/training01/l8ClassifySample",
+        "LANDSAT/LC08/C01/T1_SR",
+        "USGS/SRTMGL1_003"
+    ],
+    "Function": [
+        "Remove cloud from image",
+        "Scale image",
+        "Calculate NDVI",
+        "Calculate NDWI",
+        "Calculate NDBI",
+        "Generate DEM",
+        "Clip image to ROI"
+    ]
+}

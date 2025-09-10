@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["users/cesarnon/datos_cba_2017/Cordoba_limite"],
+        "Function": ["Filtering image collections by date and cloud cover", "Renaming image bands", "Clipping images to a specific geometry"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["Calculating vegetation indices", "Creating quality mosaics"]
+    }
+}

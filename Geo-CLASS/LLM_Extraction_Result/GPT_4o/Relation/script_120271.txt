@@ -1,0 +1,10 @@
+{
+  "relation_1": {
+    "DataSource": ["COPERNICUS/S2_SR"],
+    "Function": ["Filter image collection by date", "Filter image collection by cloud percentage", "Filter image collection by bounds", "Map NDVI calculation over image collection", "Compute median of image collection", "Clip image to area", "Select NDVI band", "Add layer to map"]
+  },
+  "relation_2": {
+    "DataSource": ["users/gena/packages:colorbrewer", "users/gena/packages:palettes", "users/gena/packages:style", "users/gena/packages:utils"],
+    "Function": ["Draw gradient bar", "Set map options", "Draw frame", "Draw scalebar"]
+  }
+}

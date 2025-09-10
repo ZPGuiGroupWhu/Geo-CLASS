@@ -1,0 +1,15 @@
+{
+    "Theme": [
+        "Fire area analysis using Sentinel-2 imagery and NDVI index"
+    ],
+    "DataSource": [
+        "users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016",
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "Filtering fires with valid dates and within the general fire area",
+        "Calculating NDVI index from Sentinel-2 imagery",
+        "Classifying burned and unburned areas based on NDVI threshold",
+        "Evaluating classification accuracy using confusion matrix"
+    ]
+}

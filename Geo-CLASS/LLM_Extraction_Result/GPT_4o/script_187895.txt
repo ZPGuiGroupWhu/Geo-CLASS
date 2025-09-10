@@ -1,0 +1,25 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover classification", "Cloud masking", "BSI calculation", "Temporal analysis"],
+  "DataSource": ["users/kimambo/00_INPUT_TRAINING_VALIDATION/Tanzania_SouthernHighlands_reference_point_36LYR_13DEC2019_230_upto799_75PCTTRAINING", "LANDSAT/LC08/C01/T1_SR", "LANDSAT/LE07/C01/T1_SR", "LANDSAT/LT05/C01/T1_SR", "LANDSAT/LT04/C01/T1_SR"],
+  "Function": ["Filter training data by land cover type", "Center map on location", "Set map to satellite view", "Filter image collection by date", "Filter image collection by location", "Filter image collection by month", "Apply cloud mask to images", "Calculate BSI for images", "Merge image collections", "Rename bands by date", "Sort image collection by time", "Sample BSI values at training points", "Export data to Google Drive"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["users/kimambo/00_INPUT_TRAINING_VALIDATION/Tanzania_SouthernHighlands_reference_point_36LYR_13DEC2019_230_upto799_75PCTTRAINING"],
+    "Function": ["Filter training data by land cover type", "Sample BSI values at training points"]
+  },
+  "relation_2": {
+    "DataSource": ["LANDSAT/LC08/C01/T1_SR", "LANDSAT/LE07/C01/T1_SR", "LANDSAT/LT05/C01/T1_SR", "LANDSAT/LT04/C01/T1_SR"],
+    "Function": ["Filter image collection by date", "Filter image collection by location", "Filter image collection by month", "Apply cloud mask to images", "Calculate BSI for images", "Merge image collections", "Rename bands by date", "Sort image collection by time", "Sample BSI values at training points", "Export data to Google Drive"]
+  }
+}
+```
+
+Total_Token_Usage:
+6353

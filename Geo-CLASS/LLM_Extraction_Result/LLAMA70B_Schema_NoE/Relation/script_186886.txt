@@ -1,0 +1,32 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LC8_SR",
+            "LANDSAT/LC8_L1T_TOA",
+            "LANDSAT/LE7_L1T_TOA_FMASK",
+            "LANDSAT/LT5_L1T_TOA_FMASK"
+        ],
+        "Function": [
+            "Filtering and sorting image collections",
+            "Calculating NDVI and NBR indices",
+            "Mosaicking and exporting images"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Visualizing and comparing images",
+            "Detecting forest fires and monitoring land cover changes"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "ft:1zmsdCSa-do_XXh6-w6bpfXpz_kN7nGBGmKAcBRFQ"
+        ],
+        "Function": [
+            "None"
+        ]
+    }
+}

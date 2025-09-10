@@ -1,0 +1,29 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land cover classification and vegetation monitoring"],
+  "DataSource": ["users/kimambo/00_INPUT_TRAINING_VALIDATION/Tanzania_SouthernHighlands_reference_point_36LYR_13DEC2019_230_upto799_75PCTTRAINING", "LANDSAT/LC08/C01/T1_SR", "LANDSAT/LE07/C01/T1_SR", "LANDSAT/LT05/C01/T1_SR", "LANDSAT/LT04/C01/T1_SR"],
+  "Function": ["Filtering image collection by date and location", "Masking clouds and shadows in Landsat images", "Calculating NDVI from Landsat images", "Merging image collections", "Renaming bands with timestamps", "Sampling regions of interest", "Merging images into a single image", "Iterating over image collection for sampling"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/kimambo/00_INPUT_TRAINING_VALIDATION/Tanzania_SouthernHighlands_reference_point_36LYR_13DEC2019_230_upto799_75PCTTRAINING"],
+        "Function": ["Sampling regions of interest", "Iterating over image collection for sampling"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR", "LANDSAT/LE07/C01/T1_SR", "LANDSAT/LT05/C01/T1_SR", "LANDSAT/LT04/C01/T1_SR"],
+        "Function": ["Filtering image collection by date and location", "Masking clouds and shadows in Landsat images", "Calculating NDVI from Landsat images", "Merging image collections", "Renaming bands with timestamps", "Merging images into a single image"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4128, 'completion_tokens': 497, 'total_tokens': 4625}

@@ -1,0 +1,14 @@
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LT05/C01/T1_SR", "LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Filtering image collection by date and quality", "Masking bad QA pixels", "Computing normalized difference vegetation index", "Computing land surface water index", "Clipping images to region of interest"]
+    },
+    "relation_2": {
+        "DataSource": ["users/cxliu2015/PA_Qinghai_EnglishNames"],
+        "Function": ["Exporting images to drive"]
+    },
+    "relation_3": {
+        "DataSource": ["users/cxliu2015/PA_Qinghai_cdm_studiedRectangle"],
+        "Function": ["Clipping images to region of interest"]
+    }
+}

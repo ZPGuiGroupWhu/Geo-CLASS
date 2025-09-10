@@ -1,0 +1,33 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Precipitation analysis", "Cloud probability analysis", "Correlation analysis"],
+  "DataSource": ["users/kitmyfaceplease2/eastsouth_asia", "projects/ee-kitmyfaceplease2/assets/EAST_SOUTH_SPLIT2", "COPERNICUS/S2_CLOUD_PROBABILITY", "UCSB-CHG/CHIRPS/PENTAD"],
+  "Function": ["Filter image collection by date", "Filter image collection by region", "Reduce image collection to sum", "Clip image to region", "Add layer to map", "Filter image collection by summer dates", "Create daily mosaics", "Count images in collection", "Reduce feature collection to image", "Mask clouds in image", "Sum images in collection", "Convert collection to bands", "Calculate percentage image", "Compute cross-correlation", "Export image to drive"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/kitmyfaceplease2/eastsouth_asia"],
+        "Function": ["Add layer to map"]
+    },
+    "relation_2": {
+        "DataSource": ["projects/ee-kitmyfaceplease2/assets/EAST_SOUTH_SPLIT2"],
+        "Function": ["Filter image collection by region"]
+    },
+    "relation_3": {
+        "DataSource": ["COPERNICUS/S2_CLOUD_PROBABILITY"],
+        "Function": ["Filter image collection by date", "Filter image collection by region", "Create daily mosaics", "Count images in collection", "Mask clouds in image", "Sum images in collection", "Convert collection to bands", "Calculate percentage image"]
+    },
+    "relation_4": {
+        "DataSource": ["UCSB-CHG/CHIRPS/PENTAD"],
+        "Function": ["Filter image collection by date", "Filter image collection by region", "Reduce image collection to sum", "Clip image to region", "Compute cross-correlation"]
+    }
+}
+```
+
+Total_Token_Usage:
+8212

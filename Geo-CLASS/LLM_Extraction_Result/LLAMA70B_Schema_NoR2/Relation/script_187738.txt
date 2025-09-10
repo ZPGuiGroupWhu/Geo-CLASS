@@ -1,0 +1,18 @@
+{
+    "relation_1": {
+        "DataSource": ["USDA/NAIP/DOQQ"],
+        "Function": ["Image collection filtering", "Image clipping", "Image normalization"]
+    },
+    "relation_2": {
+        "DataSource": ["USDA/NASS/CDL/2016"],
+        "Function": ["Object-based classification", "Random forest classification"]
+    },
+    "relation_3": {
+        "DataSource": ["users/saicheems/classification"],
+        "Function": ["Image segmentation", "Image convolution", "Cluster analysis"]
+    },
+    "relation_4": {
+        "DataSource": ["users/saicheems/classification_snic"],
+        "Function": ["Standard deviation calculation", "Area calculation", "Perimeter calculation", "Width and height calculation", "Confusion matrix calculation"]
+    }
+}

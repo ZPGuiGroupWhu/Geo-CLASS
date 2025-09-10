@@ -1,0 +1,42 @@
+{
+    "relation_1": {
+        "DataSource": ["users/kindgard/Asia/Asia", "users/kindgard/Asia2"],
+        "Function": ["Filtering image collections by date and cloud cover", "Mosaicking images"]
+    },
+    "relation_2": {
+        "DataSource": ["users/kindgard/Africa", "users/kindgard/AfricaS"],
+        "Function": ["Filtering image collections by date and cloud cover", "Classifying land cover using Cart algorithm"]
+    },
+    "relation_3": {
+        "DataSource": ["users/kindgard/SUD"],
+        "Function": ["Filtering image collections by date and cloud cover"]
+    },
+    "relation_4": {
+        "DataSource": ["users/kindgard/AmericaN"],
+        "Function": ["Filtering image collections by date and cloud cover"]
+    },
+    "relation_5": {
+        "DataSource": ["LANDSAT/LT5_L1T", "LANDSAT/LE7_L1T", "LANDSAT/LC08/C01/T1_RT"],
+        "Function": ["Calculating spectral indices", "Classifying land cover using Cart algorithm"]
+    },
+    "relation_6": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Calculating spectral indices", "Classifying land cover using Cart algorithm"]
+    },
+    "relation_7": {
+        "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+        "Function": ["Applying masks to classified image"]
+    },
+    "relation_8": {
+        "DataSource": ["ft:1tdSwUL7MVpOauSgRzqVTOwdfy17KDbw-1d9omPw"],
+        "Function": ["None"]
+    },
+    "relation_9": {
+        "DataSource": ["users/ValeriaContessa/Map_1992_rast"],
+        "Function": ["None"]
+    },
+    "relation_10": {
+        "DataSource": ["users/kindgard/ESACCI-LC-L4-LC10-Map-20m-P1Y-2016-v10"],
+        "Function": ["Classifying land cover using Cart algorithm"]
+    }
+}

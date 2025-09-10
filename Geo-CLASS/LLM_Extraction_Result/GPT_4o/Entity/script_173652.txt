@@ -1,0 +1,19 @@
+{
+  "Theme": ["Land cover change detection", "Cloud masking", "Landsat imagery analysis"],
+  "DataSource": [
+    "users/jrmancerafGEE/POL_SUB_AE_1055",
+    "users/jrmancerafGEE/PTS_SUB_AE_1055",
+    "LANDSAT/LC08/C01/T1_SR",
+    "users/emaprlab/public:Modules/LandTrendr.js"
+  ],
+  "Function": [
+    "Define area of interest",
+    "Add layers to map",
+    "Mask clouds and shadows",
+    "Filter image collection by date",
+    "Clip images to area of interest",
+    "Run LandTrendr algorithm",
+    "Generate change detection map",
+    "Export data to Google Drive"
+  ]
+}

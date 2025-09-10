@@ -1,0 +1,21 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Flood mapping using Sentinel-1 imagery"],
+  "DataSource": ["COPERNICUS/S1_GRD"],
+  "Function": ["Define region of interest", "Set flood and dry periods", "Filter Sentinel-1 images", "Select VV polarization", "Apply smoothing filter", "Calculate band ratio", "Threshold backscatter values", "Generate histograms", "Visualize results on map"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Filter Sentinel-1 images", "Select VV polarization", "Apply smoothing filter", "Calculate band ratio", "Threshold backscatter values", "Generate histograms", "Visualize results on map"]
+    }
+}
+```
+
+Total_Token_Usage:
+6157

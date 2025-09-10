@@ -1,0 +1,31 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Landsat 5 and 8 median temperature analysis"],
+  "DataSource": ["LANDSAT/LT05/C01/T1_SR", "LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Cloud masking", "Image collection filtering", "Median computation", "Image exporting", "Table exporting", "Counting image collections", "Date range calculation"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response that organizes the extracted information into a structured format:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LT05/C01/T1_SR", "LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Cloud masking", "Image collection filtering", "Median computation"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LT05/C01/T1_SR"],
+        "Function": ["Image exporting"]
+    },
+    "relation_3": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Table exporting", "Counting image collections", "Date range calculation"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2830, 'completion_tokens': 294, 'total_tokens': 3124}

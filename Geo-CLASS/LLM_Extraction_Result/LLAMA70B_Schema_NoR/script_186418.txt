@@ -1,0 +1,39 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land Surface Temperature Retrieval", "Atmospheric Correction", "Vegetation Index Analysis"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_32DAY_NDVI", "LANDSAT/LC08/C01/T1", "LANDSAT/LC8_SR", "NCEP_RE/surface_temp", "NCEP_RE/surface_wv"],
+  "Function": ["Filter image collection by date and polygon", "Compute calibrated radiance from Landsat image", "Compute top of atmosphere brightness temperature", "Compute surface reflectance from Landsat image", "Get NCEP atmospheric data for Landsat image", "Join Landsat collections based on system:time_start", "Compute NDVI from Landsat image", "Compute emissivity from NDVI", "Compute surface temperature from Landsat image"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response that organizes the extracted information into a structured format according to the JSON format of the Relation reply example:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_32DAY_NDVI"],
+        "Function": ["Compute NDVI from Landsat image", "Filter image collection by date and polygon"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1"],
+        "Function": ["Compute calibrated radiance from Landsat image", "Compute top of atmosphere brightness temperature", "Compute surface reflectance from Landsat image"]
+    },
+    "relation_3": {
+        "DataSource": ["LANDSAT/LC8_SR"],
+        "Function": ["Compute surface temperature from Landsat image", "Compute emissivity from NDVI"]
+    },
+    "relation_4": {
+        "DataSource": ["NCEP_RE/surface_temp", "NCEP_RE/surface_wv"],
+        "Function": ["Get NCEP atmospheric data for Landsat image"]
+    },
+    "relation_5": {
+        "DataSource": ["LANDSAT/LC08/C01/T1", "LANDSAT/LC08/C01/T1_32DAY_NDVI"],
+        "Function": ["Join Landsat collections based on system:time_start"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 6388, 'completion_tokens': 536, 'total_tokens': 6924}

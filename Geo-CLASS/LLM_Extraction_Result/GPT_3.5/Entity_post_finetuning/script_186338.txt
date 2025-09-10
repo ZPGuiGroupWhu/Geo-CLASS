@@ -1,0 +1,19 @@
+{
+    "Summary": [
+        "The script processes Sentinel-1 SAR backscatter data to create composite images for trend analysis."
+    ],
+    "Theme": [
+        "RADAR BACKSCATTER"
+    ],
+    "DataSource": [
+        "USGS/SRTMGL1_003",
+        "COPERNICUS/S1_GRD"
+    ],
+    "Function": [
+        "Calculating terrain slope and aspect from DEMs",
+        "Visualization And Output Generation",
+        "Time Series Clustering And Prediction",
+        "Time Series Analysis",
+        "Time Series Clustering And Prediction"
+    ]
+}

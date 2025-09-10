@@ -1,0 +1,35 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Satellite Imagery Analysis", "Remote Sensing", "Earth Observation"],
+  "DataSource": ["NOAA/VIIRS/DNB/MONTHLY_V1/VCMCFG", "VITO/PROBAV/C1/S1_TOC_100M", "NOAA/VIIRS/001/VNP09GA", "MODIS/006/MCD43A1", "ASTER/AST_L1T_003", "LANDSAT/LT04/C01/T1_TOA", "LANDSAT/LT05/C01/T1_TOA", "LANDSAT/LE07/C01/T1_TOA", "LANDSAT/LC08/C01/T1_TOA", "COPERNICUS/S3/OLCI", "COPERNICUS/S2"],
+  "Function": ["Filtering Image Collection by Date", "Filtering Image Collection by Bounds", "Filtering Image Collection by Metadata", "Calculating Median of Image Collection", "Clipping Image to Geometry", "Exporting Image to Drive", "Visualizing Image on Map"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response that organizes the extracted information into a structured format:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["NOAA/VIIRS/DNB/MONTHLY_V1/VCMCFG", "VITO/PROBAV/C1/S1_TOC_100M"],
+        "Function": ["Filtering Image Collection by Date", "Filtering Image Collection by Bounds"]
+    },
+    "relation_2": {
+        "DataSource": ["NOAA/VIIRS/001/VNP09GA", "MODIS/006/MCD43A1"],
+        "Function": ["Filtering Image Collection by Metadata", "Calculating Median of Image Collection"]
+    },
+    "relation_3": {
+        "DataSource": ["ASTER/AST_L1T_003", "LANDSAT/LT04/C01/T1_TOA", "LANDSAT/LT05/C01/T1_TOA", "LANDSAT/LE07/C01/T1_TOA", "LANDSAT/LC08/C01/T1_TOA"],
+        "Function": ["Clipping Image to Geometry", "Exporting Image to Drive", "Visualizing Image on Map"]
+    },
+    "relation_4": {
+        "DataSource": ["COPERNICUS/S3/OLCI", "COPERNICUS/S2"],
+        "Function": ["Filtering Image Collection by Date", "Filtering Image Collection by Bounds"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 5501, 'completion_tokens': 639, 'total_tokens': 6140}

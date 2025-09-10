@@ -1,0 +1,5 @@
+{
+  "Theme": ["Landsat imagery analysis", "Cloud masking", "NDVI calculation"],
+  "DataSource": ["LANDSAT/LT05/C01/T1_SR"],
+  "Function": ["Filter images by cloud cover", "Filter images by date", "Clip images to geometry", "Mask clouds in images", "Calculate median composite", "Add NDVI band to images", "Display images on map"]
+}

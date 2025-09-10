@@ -1,0 +1,384 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var roiBox = /* color: #ffc82d */ee.Geometry.Polygon(
+        [[[94.88204956054688, 21.24180910008188],
+          [94.91912841796875, 21.182917846857112],
+          [95.10452270507812, 21.281483420933117],
+          [95.04135131835938, 21.33649782883083]]]);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+/*---------------------------------------------
+
+Script :  Sentilen-1 Flood Mapping-Moddle Ayeyarwaddy.js 
+
+
+
+Source : Khun San Aung,
+
+      
+
+        GEE Guide, 
+
+        https://developers.google.com/earth-engine/sentinel1
+
+----------------------------------------------*/
+
+  
+
+// ေရ၏ အျမင့္ဆုံး Back scatter တန္ဖိုး
+
+
+
+var flood_value = -17   // backscatter range from -30 to 0 
+
+var water_value = -17
+
+
+
+var lastweek= 11,  // 10 days back
+
+    lastmonth = 30;
+
+
+
+var today = new Date();
+
+var flood_End = today;
+
+var flood_Start = ee.Date(today - (1000*3600*24*lastweek));  // in miliseconds
+
+print('Most recent, From:', flood_Start,'To: ', today);
+
+
+
+var lastmstart = ee.Date(today - (1000*3600*24*(lastmonth+lastweek))),
+
+    lastmend= ee.Date(today - (1000*3600*24*lastmonth));
+
+
+
+var dry_Start = '2017-04-01';
+
+var dry_End = '2017-04-10';
+
+
+
+// Smoothing ျပဳလုပ္ရန္ အက်ယ္အဝန္း 
+
+
+
+var SMOOTHING_RADIUS = 50; // meter 
+
+var DIFF_UPPER_THRESHOLD = -3;  // back scatter value ()
+
+
+
+// histogram ပုံဆြဲရန္ ျပင္ဆင္ျခင္း
+
+
+
+var options = {
+
+  title: 'Sentinel-1 C band - Flood Image histogram',
+
+  fontSize: 20,
+
+  hAxis: {title: 'Back scatter'},
+
+  vAxis: {title: 'count of DN'},
+
+  series: {
+
+    0: {color: 'blue'},
+
+    1: {color: 'green'}}
+
+};
+
+var options2 = {
+
+  title: 'Sentinel-1 C band - River Image histogram',
+
+  fontSize: 20,
+
+  hAxis: {title: 'Back scatter'},
+
+  vAxis: {title: 'count of DN'},
+
+  series: {
+
+    0: {color: 'blue'},
+
+    1: {color: 'green'}}
+
+};
+
+var options3 = {
+
+  title: ' Wet/Dry Band Ratio Image histogram',
+
+  fontSize: 20,
+
+  hAxis: {title: 'Band Ratio Values'},
+
+  vAxis: {title: 'Count of Pixels'},
+
+  series: {
+
+    0: {color: 'blue'},
+
+    1: {color: 'green'}}
+
+};
+
+
+
+// Functions to convert from/to dB
+
+function toNatural(img) {
+
+  return ee.Image(10.0).pow(img.select(0).divide(10.0));
+
+}
+
+
+
+function toDB(img) {
+
+  return ee.Image(img).log10().multiply(10.0);
+
+}
+
+  
+
+// Fusion table မွ တိုင္းႏွင့္ ျပည္နယ္ ေျမပုံ
+
+
+
+var st = ee.FeatureCollection('ft:1nWJr3XY3hcsRSvydLLyK47W-r6N1bB7JHhTYuLle');
+
+var mySt = st.filter(ee.Filter.eq('St', 'Sagaing'));
+
+
+
+
+
+// ေလ့လာခ်င္သည့္ တည္ေနရာ
+
+
+
+
+
+
+
+//-----------------------------------------------------------------
+
+
+
+
+
+var sentinel1 = ee.ImageCollection('COPERNICUS/S1_GRD').filterBounds(roiBox);
+
+print('All images:',sentinel1.sort('system:time_start', false));
+
+
+
+
+
+var latestImage = ee.Image(sentinel1.sort('system:time_start', false).first());
+
+print('Most Recent images in ROI: ', latestImage);
+
+
+
+
+
+
+
+var lastmonth = ee.Image(sentinel1.filterDate(lastmstart, lastmend).sort('system:time_start', false).limit(4).sort('system:time_start', true).first());
+
+print('last month, From:', lastmstart,'To: ', lastmend);
+
+print(lastmonth);
+
+
+
+var array = sentinel1.toList(sentinel1.size()).map(function(image){
+
+  image = ee.Image(image);
+
+  var id = image.id();
+
+  var date = ee.Date(image.get('system:time_start'));
+
+  return [date,id];
+
+});
+
+
+
+// Get the timestamp and convert it to a date.
+
+var date = ee.Date(latestImage.get('system:time_start'));
+
+print('Acquistion Date: ', date); 
+
+// Get a specific metadata property.
+
+var id = latestImage.get('system:id');
+
+print('ImageID : ', id); 
+
+
+
+var properties = latestImage.propertyNames();
+
+
+
+
+
+// ေရဒါ ပုံအစုအေဝးႀကီးထဲမွ ၊ စီစစ္ ေရြးခ်ယ္ယူ
+
+
+
+var flvv = sentinel1
+
+  .filter(ee.Filter.listContains('transmitterReceiverPolarisation', 'VV'))
+
+  
+
+  .select('VV')
+
+  .filterDate(flood_Start, flood_End)
+
+  .min()   ;
+
+  
+
+// ျမစ္ေခ်ာင္းပုံ
+
+
+
+// last month image
+
+var lmvv = lastmonth.select('VV');
+
+print(lmvv);
+
+
+
+var w = sentinel1
+
+  .filter(ee.Filter.listContains('transmitterReceiverPolarisation', 'VV'))
+
+  .select('VV')
+
+  // ေရမႀကီးမွီ ပုံမွန္ကာလ Radar ပုံ
+
+  .filterDate(dry_Start, dry_End)
+
+  .min()   ;
+
+  
+
+//  ေသးငယ္ေသာ အစက္အေပ်ာက္မ်ား ဖယ္ရွားၿပီး ၊ မ်က္ႏွာျပင္ ေခ်ာေမြ႕သြားေအာင္ Smoothing filter ျဖင့္ ျခယ္သ ျခယ္သ
+
+
+
+var vh_smoothed = flvv.focal_median(SMOOTHING_RADIUS, 'circle', 'meters');
+
+var lmsmooth = lmvv.focal_median(SMOOTHING_RADIUS, 'circle', 'meters');
+
+var w_s = w.focal_median(SMOOTHING_RADIUS, 'circle', 'meters');
+
+var bratio = vh_smoothed.divide(w_s);
+
+var rgb = ee.Image.cat(vh_smoothed, w_s, bratio);
+
+
+
+var bratio2 = vh_smoothed.divide(w_s).multiply(10);
+
+var RGB = ee.Image.cat(vh_smoothed, w_s, bratio2);
+
+
+
+var latestRatio = latestImage.select('VV').rename('latestRatio');
+
+
+
+
+
+
+//  Back scatter နဲေသာ တန္ဖိုးမ်ားကိုသာ ေရျပင္အျဖစ္ သတ္မွတ္
+
+
+
+var flood_img = vh_smoothed.lt(flood_value);
+
+var wet_img = lmvv.lt(flood_value);
+
+var River = w_s.lt(flood_value-2);
+
+
+
+
+
+// Histogram ေရးဆြဲေစျခင္း
+
+
+
+var histogram = ui.Chart.image.histogram(vh_smoothed, roiBox, 30)
+
+    .setSeriesNames(['VH'])
+
+    .setOptions(options);
+
+var histogram2 = ui.Chart.image.histogram(w_s, roiBox, 30)
+
+    .setSeriesNames(['VH'])
+
+    .setOptions(options2);
+
+var histogram3 = ui.Chart.image.histogram(bratio, roiBox, 30)
+
+    .setSeriesNames(['VH'])
+
+    .setOptions(options3);
+
+
+
+// Display the histogram.
+
+print(histogram);
+
+print(histogram2);
+
+print(histogram3);
+
+
+
+var imageVisParam = {"opacity":1,"bands":["VV","VH","VV"],"min":-30,"max":0,"gamma":1};
+
+
+
+Map.centerObject(roiBox, 12); 
+
+
+
+
+
+
+
+
+
+Map.addLayer(RGB, {min:-30,max:0},'စုေပါင္း RGB');
+
+
+
+
+
+Map.addLayer(flood_img.updateMask(flood_img), {palette:"FF9999"},'ယခုေရပုံ',1);
+
+Map.addLayer(wet_img.updateMask(wet_img), {palette:"1111FF"}, 'ယခင္လေရပုံ',1);
+
+Map.addLayer(River.updateMask(River), {palette:"11FFFF"},'ေႏြရာသီေရ',1);
+

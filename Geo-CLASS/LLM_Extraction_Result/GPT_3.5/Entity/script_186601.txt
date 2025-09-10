@@ -1,0 +1,6 @@
+{
+  "Summary": ["The script collects and combines Sentinel-1 images for geoprocessing modeling."],
+  "Theme": ["Forest loss detection using Sentinel-1 satellite imagery"],
+  "DataSource": ["COPERNICUS/S1_GRD", "ft:12Ca5CZlFISuiE7Nf-3fpuTcvFgYNobv-4EJdCkGh", "ft:1-uk71GdY0SUx0Gf4oX2C0LWSvdns18hkRVz7D8C4", "ft:1NzCJgmYE2fzkwPn9dlO-u1W-CbjOshmaqauD2rza"],
+  "Function": ["Filtering images by polarization and date", "Creating composites from different look angles"]
+}

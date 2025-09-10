@@ -1,0 +1,6 @@
+{
+  "Summary": ["Script processes MODIS data for NDVI analysis and visualization."],
+  "Theme": ["NDVI analysis", "Greenest pixel identification", "Temporal analysis"],
+  "DataSource": ["MODIS/006/MOD09GA", "users/giswqs/public/countries"],
+  "Function": ["Cloud masking", "NDVI calculation", "Date extraction", "Month extraction", "DOY extraction", "Quality mosaic"]
+}

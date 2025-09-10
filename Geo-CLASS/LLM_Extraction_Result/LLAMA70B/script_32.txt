@@ -1,0 +1,29 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Snow cover analysis using MODIS/VIIRS and Sentinel-1 data"],
+  "DataSource": ["users/ak_glaciers/NWCC_high_resolution_coordinates_2019_hucs", "USGS/WBD/2017/HUC8", "CGIAR/SRTM90_V4"],
+  "Function": ["Generate daily composites of optical data", "Create image collection of Sentinel-1 data", "Apply wet snow mask to Sentinel-1 data", "Update mask with optical data", "Export data to asset"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/ak_glaciers/NWCC_high_resolution_coordinates_2019_hucs", "USGS/WBD/2017/HUC8"],
+        "Function": ["Generate daily composites of optical data", "Create image collection of Sentinel-1 data"]
+    },
+    "relation_2": {
+        "DataSource": ["CGIAR/SRTM90_V4"],
+        "Function": ["Apply wet snow mask to Sentinel-1 data", "Update mask with optical data", "Export data to asset"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3634, 'completion_tokens': 311, 'total_tokens': 3945}

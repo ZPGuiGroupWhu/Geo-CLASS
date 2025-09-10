@@ -1,0 +1,6 @@
+{
+  "Summary": ["Script retrieves and processes Sentinel-2 images for flood monitoring."],
+  "Theme": ["Flood monitoring"],
+  "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2", "COPERNICUS/S2"],
+  "Function": ["Image collection filtering based on date and cloud cover", "Calculating NDWI for flood detection"]
+}

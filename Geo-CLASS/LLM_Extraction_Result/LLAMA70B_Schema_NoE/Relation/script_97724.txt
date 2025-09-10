@@ -1,0 +1,30 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "TIGER/2018/States"
+        ],
+        "Function": [
+            "Filtering and mapping of feature collections",
+            "Region-based reduction",
+            "Joining and merging of tables"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "users/eisen520/chinesePrivet"
+        ],
+        "Function": [
+            "Cloud and snow pixel masking",
+            "NDVI calculation"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "COPERNICUS/S2_SR"
+        ],
+        "Function": [
+            "Image collection filtering and mapping",
+            "Chart creation"
+        ]
+    }
+}

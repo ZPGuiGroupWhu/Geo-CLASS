@@ -1,0 +1,5 @@
+{
+  "Theme": ["Land Surface Temperature Analysis in Michoacan, Mexico"],
+  "DataSource": ["users/juanjoseromeroacm21/MORELIA", "users/juanjoseromeroacm21/michoacan_state", "USDOS/LSIB_SIMPLE/2017", "MODIS/MOD11A2"],
+  "Function": ["Filter feature collection by country name", "Import and filter image collection by date range", "Scale and convert image data to Celsius", "Calculate mean temperature", "Chart time series of LST", "Calculate Sen's slope for trend analysis", "Export images to Drive"]
+}

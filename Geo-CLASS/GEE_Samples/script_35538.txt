@@ -1,0 +1,158 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var L8 = ee.ImageCollection("LANDSAT/LC08/C01/T1_TOA"),
+    S2 = ee.ImageCollection("COPERNICUS/S2"),
+    puneDistrict = ee.FeatureCollection("users/chaitanyaks/Maharashtra/Pune_District");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+
+
+var L8 = ee.ImageCollection("LANDSAT/LC08/C01/T1_TOA");
+
+
+
+//Filter images from 01-01-2020 to 31-12-2020 for roi and create median image
+
+var L8filtered = L8.filterDate('2020-01-01', '2021-01-01')
+
+                   .filterBounds(puneDistrict)
+
+                   .median()
+
+                   .clip(puneDistrict);
+
+
+
+var TCCbands = ['B4', 'B3', 'B2'];
+
+
+
+// display the image in Map canvas area                   
+
+var L8VizParams = {min:0, max:0.25, bands:TCCbands};
+
+Map.addLayer(L8filtered, L8VizParams, 'L8 cloudfree');   
+
+
+
+// // /*--------------------------------------------------------------------------------------*/
+
+
+
+// //calculating the NDVI using (NIR-RED)/(NIR + RED) using image.nomailisedDifference() function
+
+
+
+var NDVI = L8filtered.normalizedDifference(['B5', 'B4']);
+
+
+
+// setting the threshold value for waterbody extraction
+
+var NDVIThreshold = -0.05;
+
+
+
+/* Masking the image such that the pixel value which are less than or equal to threshold value 
+
+will be displayed in the map view and other pixels(masked pixels) will not visible */
+
+
+
+// var mask = NDVI.lte(NDVIThreshold).rename('mask');
+
+// Map.addLayer(mask,{},'watermask');
+
+// var NDVIWatermasked = NDVI.updateMask(mask);
+
+// Map.addLayer(NDVIWatermasked,{palette:'blue'},'L8 NDVI water masked');
+
+/*-----------------------------------------------------------------------------------------*/
+
+
+
+// var NDWI = L8filtered.normalizedDifference(['B3', 'B5']);
+
+
+
+// var NDWIThreshold = 0.15;
+
+
+
+// var NDWImasked = NDWI.updateMask(NDWI.gte(NDWIThreshold));
+
+
+
+// Map.addLayer(NDWImasked, {min: 0.5, max: 1, palette: ['00FFFF', '0000FF']}, 'L8 NDWI masked');
+
+
+
+/*---------------------------------------------------------------------------------------*/
+
+//Using Histogram to know threshold value
+
+//Printing the Histogram for NDVI image 
+
+
+
+// print(ui.Chart.image.histogram({
+
+//   image:NDVI,
+
+//   scale:30,
+
+//   region: puneDistrict,
+
+//   maxPixels:1e9
+
+//   }));
+
+
+
+// var NDVIThreshold= 0.008;  //setting based on the Histogram (value between two peaks )
+
+
+
+// var NDVIWatermasked = NDVI.updateMask(NDVI.lte(NDVIThreshold));
+
+
+
+// Map.addLayer(NDVIWatermasked,{palette:'blue'},'L8 NDVI water masked');
+
+
+
+/*---------------------------------------------------------------------------------------------*/
+
+//using Histogram to know threshold value
+
+//printing the Histogram for NDWI image 
+
+
+
+// var NDWI = L8filtered.normalizedDifference(['B3', 'B5']);
+
+
+
+// print(ui.Chart.image.histogram({
+
+//   image:NDWI,
+
+//   region:puneDistrict,
+
+//   scale:30,
+
+//   maxPixels:1e9
+
+//   }));
+
+
+
+// var NDWIThreshold = 0.1;
+
+
+
+// var NDWImasked = NDWI.updateMask(NDWI.gte(NDWIThreshold));
+
+
+
+// Map.addLayer(NDWImasked, {min: 0.5, max: 1, palette: ['00FFFF', '0000FF']}, 'L8 NDWI masked');
+
+// /*--------------------------------------------------------------------------------------------*/

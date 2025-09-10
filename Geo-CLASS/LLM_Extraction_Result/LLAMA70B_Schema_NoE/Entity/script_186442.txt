@@ -1,0 +1,24 @@
+{
+    "Theme": [
+        "Land cover classification and risk assessment using remote sensing data"
+    ],
+    "DataSource": [
+        "MODIS/006/MOD11A2",
+        "MODIS/006/MOD13A1",
+        "USGS/SRTMGL1_003",
+        "MODIS/006/MOD09A1",
+        "MODIS/MOD09GA_006_BAI",
+        "LC8_L1T",
+        "ft:1rpd6kIewFWHrgX84jKwW30jeazmuiQJgXg-Pv759"
+    ],
+    "Function": [
+        "Filtering and compositing of Landsat 8 images",
+        "Calculation of land surface temperature",
+        "Calculation of NDVI",
+        "Calculation of NMDI",
+        "Clipping of elevation data",
+        "Calculation of BAI",
+        "Training of classifiers",
+        "Classification of images using different classifiers"
+    ]
+}

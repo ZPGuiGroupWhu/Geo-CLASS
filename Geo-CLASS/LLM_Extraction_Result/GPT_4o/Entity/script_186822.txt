@@ -1,0 +1,5 @@
+{
+  "Theme": ["Agricultural field analysis", "Buffer effect reduction", "Satellite data filtering", "Rainy day exclusion", "Value conversion", "Statistical analysis"],
+  "DataSource": ["users/dgilad/SA", "users/dgilad/Fields", "COPERNICUS/S1_GRD"],
+  "Function": ["Buffer features by distance", "Filter image collection by date", "Filter image collection by polarization", "Filter image collection by resolution", "Filter image collection by orbit", "Exclude specific dates", "Convert values to natural", "Convert values to dB", "Calculate mean and standard deviation", "Export data to CSV"]
+}

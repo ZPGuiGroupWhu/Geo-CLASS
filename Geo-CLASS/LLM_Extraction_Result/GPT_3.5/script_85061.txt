@@ -1,0 +1,19 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Geoprocessing modeling for land cover classification in Suriname."],
+  "Theme": ["Land cover classification"],
+  "DataSource": ["LANDSAT/LT05/C02/T1_L2", "LANDSAT/LE07/C02/T1_L2", "LANDSAT/LC08/C02/T1_L2", "projects/mapbiomas-raisg/PRODUCTOS/AGUA/DATOS_AUXILIARES/TEMP/bigGrids_Suriname"],
+  "Function": ["Image scale factor adjustment", "Spectral unmixing analysis", "Cloud filtering", "Classification probability calculation"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LT05/C02/T1_L2", "LANDSAT/LE07/C02/T1_L2", "LANDSAT/LC08/C02/T1_L2"],
+        "Function": ["Image scale factor adjustment", "Spectral unmixing analysis", "Cloud filtering", "Classification probability calculation"]
+    }
+}
+```

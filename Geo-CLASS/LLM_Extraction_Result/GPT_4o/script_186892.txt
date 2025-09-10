@@ -1,0 +1,34 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Forest loss detection", "Forest degradation detection", "Forest fire detection"],
+  "DataSource": ["COPERNICUS/S2"],
+  "Function": ["Filter image collection by cloud coverage", "Filter image collection by date", "Filter image collection by location", "Select specific bands from images", "Calculate NDVI", "Calculate NBR", "Create image mosaic", "Export image properties to CSV", "Export mosaic image to Drive", "Export individual images to Drive", "Create and link multiple maps", "Add point markers on map click"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["COPERNICUS/S2"],
+    "Function": [
+      "Filter image collection by cloud coverage",
+      "Filter image collection by date",
+      "Filter image collection by location",
+      "Select specific bands from images",
+      "Calculate NDVI",
+      "Calculate NBR",
+      "Create image mosaic",
+      "Export image properties to CSV",
+      "Export mosaic image to Drive",
+      "Export individual images to Drive",
+      "Create and link multiple maps",
+      "Add point markers on map click"
+    ]
+  }
+}
+```
+
+Total_Token_Usage:
+7729

@@ -1,0 +1,5 @@
+{
+  "Theme": ["Flood mapping using Sentinel-1 data"],
+  "DataSource": ["COPERNICUS/S1_GRD"],
+  "Function": ["Define region of interest", "Set flood and water backscatter values", "Set flood and dry periods", "Set smoothing radius", "Set histogram options", "Convert image to natural units", "Convert image to decibels", "Filter Sentinel-1 image collection", "Get latest image in ROI", "Filter images by polarization and mode", "Filter images by date", "Apply smoothing filter", "Calculate band ratio", "Create flood and river masks", "Generate histograms", "Display histograms", "Visualize images on map"]
+}

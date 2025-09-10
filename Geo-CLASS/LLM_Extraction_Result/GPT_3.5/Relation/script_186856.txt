@@ -1,0 +1,13 @@
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": [
+            "Cloud masking algorithm for Sentinel-2 data",
+            "Function to mask clouds using the Sentinel-2 QA band",
+            "Function for finding dark outliers in time series",
+            "Implementation of Basic cloud shadow shift",
+            "Function to bust clouds from S2 image",
+            "Function for simplifying data into daily mosaics"
+        ]
+    }
+}

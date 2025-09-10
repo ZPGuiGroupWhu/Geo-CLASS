@@ -1,0 +1,22 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Image Collection Filtering",
+            "NDVI Calculation",
+            "GCI Calculation",
+            "Image Clustering"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S1_GRD"
+        ],
+        "Function": [
+            "SAR Image Filtering",
+            "SAR Image Clustering"
+        ]
+    }
+}

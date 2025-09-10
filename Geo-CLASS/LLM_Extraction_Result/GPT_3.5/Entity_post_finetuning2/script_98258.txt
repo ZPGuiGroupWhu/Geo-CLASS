@@ -1,0 +1,17 @@
+{
+    "Summary": [
+        "Script extracts and visualizes flood images over time in Thua Thien - Hue, Vietnam."
+    ],
+    "Theme": [
+        "FLOOD FREQUENCY"
+    ],
+    "DataSource": [
+        "COPERNICUS/S1_GRD"
+    ],
+    "Function": [
+        "Filter Images By Date And Region",
+        "Creates And Exports Image Mosaics",
+        "Calculate Normalized Difference Flood Index (NDFI)",
+        "Detects Forest Loss"
+    ]
+}

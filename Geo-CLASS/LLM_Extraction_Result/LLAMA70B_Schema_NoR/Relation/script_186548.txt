@@ -1,0 +1,27 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S1_GRD"
+        ],
+        "Function": [
+            "Filtering image collection by bounds and date",
+            "Applying Refined Lee filter",
+            "Performing angle correction",
+            "Computing surface water mask using Canny Edge detector and Otsu thresholding"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "NOAA/CFSV2/FOR6H"
+        ],
+        "Function": [
+            "Filtering out windy days using climate forecasts"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "users/gena/GlobalHAND/30m/hand-5000"
+        ],
+        "Function": []
+    }
+}

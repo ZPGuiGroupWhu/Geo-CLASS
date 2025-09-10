@@ -1,0 +1,48 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/kindgard/Asia/Asia",
+            "users/kindgard/Africa",
+            "users/kindgard/SUD",
+            "users/kindgard/AfricaS",
+            "users/kindgard/AmericaN",
+            "users/kindgard/Asia2"
+        ],
+        "Function": [
+            "Image Stacking",
+            "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "JRC/GSW1_0/GlobalSurfaceWater"
+        ],
+        "Function": [
+            "Identify Water And Flood Surfaces Using Indices"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "ft:1tdSwUL7MVpOauSgRzqVTOwdfy17KDbw-1d9omPw"
+        ],
+        "Function": [
+            "Training And Sampling For Land Cover Classification"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Calculate NBR for Post-Fire Image"
+        ]
+    },
+    "relation_5": {
+        "DataSource": [
+            "users/ValeriaContessa/Map_1992_rast"
+        ],
+        "Function": [
+            "Detection"
+        ]
+    }
+}

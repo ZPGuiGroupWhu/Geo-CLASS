@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["MODIS/006/MOD13Q1"],
+        "Function": ["Filter and calculate average EVI for each year"]
+    },
+    "relation_2": {
+        "DataSource": ["MODIS/006/MOD13Q1"],
+        "Function": ["Perform Principal Component Analysis (PCA)"]
+    }
+}

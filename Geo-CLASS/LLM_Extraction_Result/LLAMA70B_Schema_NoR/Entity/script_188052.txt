@@ -1,0 +1,20 @@
+{
+    "Theme": [
+        "Water Detection and Extraction"
+    ],
+    "DataSource": [
+        "projects/ee-kimmmydanny/assets/tingxialiuyu",
+        "LANDSAT/LC08/C01/T1_RT_TOA",
+        "COPERNICUS/S2_SR"
+    ],
+    "Function": [
+        "Cloud Masking",
+        "Image Collection Filtering",
+        "MNDWI Index Calculation",
+        "Image Clipping",
+        "Otsu Thresholding",
+        "Water Extraction",
+        "Area Calculation",
+        "Image Exporting"
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_SR/LC08_045033_20170925"
+        ],
+        "Function": [
+            "Load pre-fire image",
+            "Compute NDBR for pre image",
+            "Display true color images",
+            "Display NBR images"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_SR/LC08_045033_20180928"
+        ],
+        "Function": [
+            "Load post-fire image",
+            "Compute NDBR for post image",
+            "Display true color images",
+            "Display NBR images"
+        ]
+    }
+}

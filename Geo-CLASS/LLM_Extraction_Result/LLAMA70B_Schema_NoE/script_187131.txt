@@ -1,0 +1,33 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Fire detection and burned area analysis"],
+  "DataSource": ["ft:1iovW6_vHSX3JOx5OvcFr-ljJdx5mGmqK6Q_ETiSO", "LANDSAT/LT5_L1T", "LANDSAT/LE7_L1T_TOA", "LANDSAT/LC8_L1T_TOA", "FIRMS"],
+  "Function": ["Filtering regions by metadata", "Filtering hotspots by year and region", "Creating cloud-free composites", "Removing clouds from composites", "Calculating NBR indices", "Creating burned area masks", "Reducing to vectors", "Exporting to Drive"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["ft:1iovW6_vHSX3JOx5OvcFr-ljJdx5mGmqK6Q_ETiSO"],
+        "Function": ["Filtering regions by metadata", "Filtering hotspots by year and region"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LT5_L1T", "LANDSAT/LE7_L1T_TOA", "LANDSAT/LC8_L1T_TOA"],
+        "Function": ["Creating cloud-free composites", "Removing clouds from composites", "Calculating NBR indices", "Creating burned area masks"]
+    },
+    "relation_3": {
+        "DataSource": ["FIRMS"],
+        "Function": ["Filtering hotspots by year and region", "Reducing to vectors", "Exporting to Drive"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4549, 'completion_tokens': 401, 'total_tokens': 4950}

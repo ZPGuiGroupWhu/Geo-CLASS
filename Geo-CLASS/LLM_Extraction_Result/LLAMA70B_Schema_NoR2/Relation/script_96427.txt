@@ -1,0 +1,22 @@
+{
+    "relation_1": {
+        "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+        "Function": ["Load and merge lake polygons"]
+    },
+    "relation_2": {
+        "DataSource": ["users/sntopp/Lakes_ply_20171106"],
+        "Function": ["Load and merge lake polygons"]
+    },
+    "relation_3": {
+        "DataSource": ["users/sntopp/NCSC_Horsepen_Lake"],
+        "Function": ["Filter Landsat images by date and cloud cover", "Reconstruct water surface from Landsat images", "Extract lake mask from reconstructed water surface"]
+    },
+    "relation_4": {
+        "DataSource": ["users/sarinarinab/CitSci_Washington_Lakes"],
+        "Function": ["Filter Landsat images by date and cloud cover", "Reconstruct water surface from Landsat images", "Extract lake mask from reconstructed water surface"]
+    },
+    "relation_5": {
+        "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater", "users/sntopp/Lakes_ply_20171106", "users/sntopp/NCSC_Horsepen_Lake", "users/sarinarinab/CitSci_Washington_Lakes"],
+        "Function": ["Calculate lake area from water occurrence map", "Calculate total lake area", "Generate scatter chart of lake area over time", "Display lake polygons and outlines on the map"]
+    }
+}

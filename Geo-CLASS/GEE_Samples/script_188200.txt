@@ -1,0 +1,873 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var Forest = /* color: #078a11 */ee.FeatureCollection(
+        [ee.Feature(
+            ee.Geometry.Point([32.94572353363037, -19.930064407689954]),
+            {
+              "class": 1,
+              "system:index": "0"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([32.89306640625, -18.3336694457713]),
+            {
+              "class": 1,
+              "system:index": "1"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([31.5297532081604, -21.139698004433782]),
+            {
+              "class": 1,
+              "system:index": "2"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([31.082704067230225, -20.153256645018747]),
+            {
+              "class": 1,
+              "system:index": "3"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([31.02242410182953, -21.865297389929637]),
+            {
+              "class": 1,
+              "system:index": "4"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([30.918381214141846, -16.492386141572418]),
+            {
+              "class": 1,
+              "system:index": "5"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([29.79719638824463, -16.335254181880465]),
+            {
+              "class": 1,
+              "system:index": "6"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([30.594820976257324, -19.38030404532654]),
+            {
+              "class": 1,
+              "system:index": "7"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([30.010346174240112, -19.709293682577314]),
+            {
+              "class": 1,
+              "system:index": "8"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([29.89607334136963, -21.70307029688145]),
+            {
+              "class": 1,
+              "system:index": "9"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([25.70925235748291, -18.315764609501766]),
+            {
+              "class": 1,
+              "system:index": "10"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([30.772072076797485, -21.836971824163033]),
+            {
+              "class": 1,
+              "system:index": "11"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([32.532867193222046, -20.29649454637389]),
+            {
+              "class": 1,
+              "system:index": "12"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([27.743901014328003, -18.836216450564574]),
+            {
+              "class": 1,
+              "system:index": "13"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([31.60313844680786, -22.081524025424702]),
+            {
+              "class": 1,
+              "system:index": "14"
+            })]),
+    Crops_Soil = /* color: #e7e125 */ee.FeatureCollection(
+        [ee.Feature(
+            ee.Geometry.Point([31.168416738510132, -18.288007434456723]),
+            {
+              "class": 2,
+              "system:index": "0"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([31.487610340118408, -19.611179671034666]),
+            {
+              "class": 2,
+              "system:index": "1"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([29.419798851013184, -19.215736230338553]),
+            {
+              "class": 2,
+              "system:index": "2"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([27.713913917541504, -20.338953251005652]),
+            {
+              "class": 2,
+              "system:index": "3"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([28.09656858444214, -18.489743673678895]),
+            {
+              "class": 2,
+              "system:index": "4"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([26.42889976501465, -18.90266290190395]),
+            {
+              "class": 2,
+              "system:index": "5"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([30.935912132263184, -16.27841345074115]),
+            {
+              "class": 2,
+              "system:index": "6"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([30.392984747886658, -20.260742737895193]),
+            {
+              "class": 2,
+              "system:index": "7"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([30.1190185546875, -22.117727690344502]),
+            {
+              "class": 2,
+              "system:index": "8"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([32.71822929382324, -17.041880706159358]),
+            {
+              "class": 2,
+              "system:index": "9"
+            })]),
+    Shrubland = /* color: #a56313 */ee.FeatureCollection(
+        [ee.Feature(
+            ee.Geometry.Point([28.271384239196777, -17.895931084389797]),
+            {
+              "class": 3,
+              "system:index": "0"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([27.892924547195435, -17.75191556539024]),
+            {
+              "class": 3,
+              "system:index": "1"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([26.604713201522827, -19.0335445054864]),
+            {
+              "class": 3,
+              "system:index": "2"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([31.340389251708984, -16.231826782161285]),
+            {
+              "class": 3,
+              "system:index": "3"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([28.548080921173096, -20.75560221605491]),
+            {
+              "class": 3,
+              "system:index": "4"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([27.958134412765503, -19.44653189049017]),
+            {
+              "class": 3,
+              "system:index": "5"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([30.694727897644043, -18.78986603140175]),
+            {
+              "class": 3,
+              "system:index": "6"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([29.356842041015625, -19.734471738582762]),
+            {
+              "class": 3,
+              "system:index": "7"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([30.93125581741333, -21.41228208944433]),
+            {
+              "class": 3,
+              "system:index": "8"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([31.783447265625, -21.881889807629257]),
+            {
+              "class": 3,
+              "system:index": "9"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([26.595776081085205, -19.200559157399976]),
+            {
+              "class": 3,
+              "system:index": "10"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([26.112930178642273, -19.19374016340459]),
+            {
+              "class": 3,
+              "system:index": "11"
+            })]),
+    c3t2 = /* color: #0b2dd6 */ee.FeatureCollection(
+        [ee.Feature(
+            ee.Geometry.Polygon(
+                [[[29.691925048828125, -20.519804972461348],
+                  [29.693641662597656, -20.520488241940335],
+                  [29.694972038269043, -20.518679580789033],
+                  [29.693470001220703, -20.51807668899005],
+                  [29.691452980041504, -20.51916189251877]]]),
+            {
+              "class": 3,
+              "system:index": "0"
+            })]),
+    c3t1 = /* color: #98ff00 */ee.FeatureCollection(
+        [ee.Feature(
+            ee.Geometry.Polygon(
+                [[[29.70528244972229, -20.519403047813803],
+                  [29.705958366394043, -20.518970977640773],
+                  [29.70600128173828, -20.51862933989646],
+                  [29.706237316131592, -20.518136978276782],
+                  [29.706838130950928, -20.517584325593038],
+                  [29.706612825393677, -20.51688094656484],
+                  [29.70624804496765, -20.517313022636408],
+                  [29.70580816268921, -20.51750393958193],
+                  [29.70531463623047, -20.517805386905923],
+                  [29.704971313476562, -20.518167122911237],
+                  [29.704692363739014, -20.51863938807629],
+                  [29.704864025115967, -20.51879011069463],
+                  [29.704831838607788, -20.519342759025662]]]),
+            {
+              "class": 1,
+              "system:index": "0"
+            }),
+        ee.Feature(
+            ee.Geometry.Polygon(
+                [[[26.0650634765625, -18.35452552912664],
+                  [25.9222412109375, -18.344097802101548],
+                  [25.9002685546875, -18.521283325496263],
+                  [26.1419677734375, -18.604601388455254],
+                  [26.2408447265625, -18.437924653474393]]]),
+            {
+              "class": 1,
+              "system:index": "1"
+            }),
+        ee.Feature(
+            ee.Geometry.Polygon(
+                [[[25.8233642578125, -18.192825197733164],
+                  [25.675048828125, -18.161510984517324],
+                  [25.59814453125, -18.30759580375384],
+                  [25.762939453125, -18.30759580375384]]]),
+            {
+              "class": 1,
+              "system:index": "2"
+            })]),
+    Forest_Plantation = ee.FeatureCollection("users/kindgard/ZWE_Forest_Plantations"),
+    Forest_plantations_mask = /* color: #6ad64f */ee.FeatureCollection(
+        [ee.Feature(
+            ee.Geometry.Polygon(
+                [[[32.66510009765625, -18.43206197287049],
+                  [32.669219970703125, -18.45551149512605],
+                  [32.6513671875, -18.469840182428335],
+                  [32.671966552734375, -18.481562763728085],
+                  [32.662353515625, -18.491982163072823],
+                  [32.663726806640625, -18.505005521137843],
+                  [32.64312744140625, -18.531049264611212],
+                  [32.65411376953125, -18.550579468790442],
+                  [32.674713134765625, -18.524538700511595],
+                  [32.6898193359375, -18.5180278885164],
+                  [32.67333984375, -18.54406964882523],
+                  [32.70904541015625, -18.57791800149771],
+                  [32.748870849609375, -18.484167672952875],
+                  [32.80242919921875, -18.451603463715788],
+                  [32.751617431640625, -18.419033078010983],
+                  [32.713165283203125, -18.439878835902757],
+                  [32.702178955078125, -18.424244754396895]]]),
+            {
+              "class": 1,
+              "system:index": "0"
+            }),
+        ee.Feature(
+            ee.Geometry.Polygon(
+                [[[32.757110595703125, -18.299121024456245],
+                  [32.7008056640625, -18.33041045540997],
+                  [32.662353515625, -18.316070168322526],
+                  [32.65411376953125, -18.359087461734603],
+                  [32.63763427734375, -18.402094039609786],
+                  [32.6513671875, -18.415124217111945],
+                  [32.682952880859375, -18.404700154006118],
+                  [32.702178955078125, -18.426850533373585],
+                  [32.713165283203125, -18.435970448824882],
+                  [32.751617431640625, -18.419033078010983],
+                  [32.762603759765625, -18.35126693205101],
+                  [32.7777099609375, -18.326499585907882],
+                  [32.773590087890625, -18.305640122258644],
+                  [32.803802490234375, -18.291297783298646],
+                  [32.790069580078125, -18.280866245832026]]]),
+            {
+              "class": 1,
+              "system:index": "1"
+            }),
+        ee.Feature(
+            ee.Geometry.Polygon(
+                [[[32.7667236328125, -18.03097474989002],
+                  [32.8271484375, -18.002243755759384],
+                  [32.816162109375, -17.90818234273346],
+                  [32.7447509765625, -17.91602270387767]]]),
+            {
+              "class": 1,
+              "system:index": "2"
+            }),
+        ee.Feature(
+            ee.Geometry.Polygon(
+                [[[32.76397705078125, -18.06492351528255],
+                  [32.838134765625, -18.0884226646362],
+                  [32.81890869140625, -18.117139572348528],
+                  [32.750244140625, -18.171949679910593],
+                  [32.8546142578125, -18.234568732871686],
+                  [32.90130615234375, -18.085811803412266],
+                  [32.7996826171875, -18.028363034996826]]]),
+            {
+              "class": 1,
+              "system:index": "3"
+            }),
+        ee.Feature(
+            ee.Geometry.Polygon(
+                [[[32.783203125, -18.273694199841284],
+                  [32.65960693359375, -18.258045070589603],
+                  [32.6568603515625, -18.33106225839584],
+                  [32.72552490234375, -18.34931174429645]]]),
+            {
+              "class": 1,
+              "system:index": "4"
+            }),
+        ee.Feature(
+            ee.Geometry.Polygon(
+                [[[32.40966796875, -18.367559302479307],
+                  [32.38494873046875, -18.39883634115472],
+                  [32.41790771484375, -18.432713391700844],
+                  [32.46734619140625, -18.39883634115472]]]),
+            {
+              "class": 1,
+              "system:index": "5"
+            }),
+        ee.Feature(
+            ee.Geometry.Polygon(
+                [[[32.65960693359375, -18.695683837078622],
+                  [32.7337646484375, -18.815317689624983],
+                  [32.7996826171875, -18.781516724349693],
+                  [32.8875732421875, -18.760712758499565],
+                  [32.9205322265625, -18.690480443017552],
+                  [32.8216552734375, -18.633232565431218]]]),
+            {
+              "class": 1,
+              "system:index": "6"
+            }),
+        ee.Feature(
+            ee.Geometry.Polygon(
+                [[[32.783203125, -19.41608763433027],
+                  [32.72003173828125, -19.41608763433027],
+                  [32.7392578125, -19.50672569282638],
+                  [32.75299072265625, -19.693021277630713],
+                  [32.70904541015625, -19.817098134865034],
+                  [32.77496337890625, -19.873934390594805],
+                  [32.882080078125, -19.801593808411436],
+                  [32.92327880859375, -19.703364698733452],
+                  [32.84637451171875, -19.685263273173714],
+                  [32.85736083984375, -19.478244906718302],
+                  [32.80517578125, -19.423858594979777]]]),
+            {
+              "class": 1,
+              "system:index": "7"
+            })]),
+    image = ee.Image("users/kindgard/Forest_Plantations_v2"),
+    plant_1 = /* color: #98ff00 */ee.FeatureCollection(
+        [ee.Feature(
+            ee.Geometry.Point([32.76054382324219, -19.793841078591583]),
+            {
+              "class": 1,
+              "system:index": "0"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([32.85942077636719, -19.756364230752375]),
+            {
+              "class": 1,
+              "system:index": "1"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([32.85118103027344, -19.73439094891938]),
+            {
+              "class": 1,
+              "system:index": "2"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([32.79762268066406, -19.826141627230633]),
+            {
+              "class": 1,
+              "system:index": "3"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([32.78663635253906, -19.811930193969296]),
+            {
+              "class": 1,
+              "system:index": "4"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([32.80860900878906, -19.81451418541125]),
+            {
+              "class": 1,
+              "system:index": "5"
+            })]),
+    no_plant1 = /* color: #0b4a8b */ee.FeatureCollection(
+        [ee.Feature(
+            ee.Geometry.Point([32.77702331542969, -19.74731677515577]),
+            {
+              "class": 2,
+              "system:index": "0"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([32.78251647949219, -19.65552077552]),
+            {
+              "class": 2,
+              "system:index": "1"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([32.77427673339844, -19.71112182576983]),
+            {
+              "class": 2,
+              "system:index": "2"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([32.82234191894531, -19.695607195577008]),
+            {
+              "class": 2,
+              "system:index": "3"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([32.82783508300781, -19.705950449542815]),
+            {
+              "class": 2,
+              "system:index": "4"
+            })]);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+
+
+var Plantaciones = Forest_plantations_mask.reduceToImage(['class'], ee.Reducer.first());
+
+
+
+
+
+//Tutorial 1---------------------------------------------------------------------------------------------
+
+
+
+//N.B. Before starting to write our script, we will Save the new script and then drag the saved script in the Shared folder, like that it will be visible to everyone
+
+
+
+//Lesson 1: shapefile/vector upload and visualisation 
+
+
+
+
+
+
+
+//Exercise 1: change name (chack the Layers box)
+
+
+
+
+
+//Lesson 2: raster
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var countries = ee.FeatureCollection('ft:1tdSwUL7MVpOauSgRzqVTOwdfy17KDbw-1d9omPw');
+
+var Country = countries.filterMetadata('Country', 'equals','Zimbabwe');
+
+
+
+//Exercise 3: choose another country and visualize
+
+
+
+
+
+
+
+
+
+
+
+//Tutorial 2---------------------------------------------------------------------------------------------------------
+
+
+
+//Lesson 1: upload landsat images preferred Raw images
+
+var Landsat8 = ee.ImageCollection('LANDSAT/LC08/C01/T1_RT');
+
+//Exercise 1: search and upload on the script the images of landsat 5 and 7 
+
+
+
+
+
+
+
+
+
+
+
+//Lesson 2: filter landsat images
+
+var Landsat8Filtered = Landsat8.filterBounds(Country)
+
+.filterDate('2016-01-01', '2017-12-31')
+
+.filter(ee.Filter.calendarRange(305, 120, 'day_of_year')) //WET SEASON (Oct-Apr)
+
+.filterMetadata('CLOUD_COVER','less_than', 10);
+
+//Exercise 2: change season and year 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Lesson 3: create a polygon 
+
+// >left box on map > last symbol >draw >change name
+
+//Exercise 3: filter the satellite images as before but substituting the name with the name of polygon created 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+print(Landsat8Filtered); //obtain information about a particular element >features >Image >id
+
+var ImagenL8 =	ee.Image('LANDSAT/LC08/C01/T1_RT/LC08_170075_20170329');
+
+
+
+
+
+
+
+
+
+
+
+//Tutorial 3----------------------------------------------------------------------------------------------------------
+
+
+
+//Lesson 1: Mosaic with Algorithm Landsat simple Composite
+
+//Carring on from the Lesson 2 of Tutorial 2 and adding ratio bands to visualise better:
+
+var Landsat8FilteredW = Landsat8.filterBounds(Country)
+
+.filterDate('2015-06-01', '2017-12-31')
+
+.filter(ee.Filter.calendarRange(305, 120, 'day_of_year')) //WET SEASON (Nov-Apr)
+
+.filterMetadata('CLOUD_COVER','less_than', 10);
+
+var mosaicZ = ee.Algorithms.Landsat.simpleComposite(Landsat8FilteredW, 60, 10, 40, true).clip(Country);
+
+
+
+var rat43_2015 = mosaicZ.select('B4').divide(mosaicZ.select('B3'));
+
+var rat73_2015 = mosaicZ.select('B7').divide(mosaicZ.select('B3'));
+
+var rat54_2015 = mosaicZ.select('B5').divide(mosaicZ.select('B4'));
+
+var rat53_2015 = mosaicZ.select('B5').divide(mosaicZ.select('B3'));
+
+var image8 = mosaicZ.addBands(rat43_2015).addBands(rat73_2015).addBands(rat54_2015).addBands(rat53_2015);
+
+
+
+
+
+
+
+//Exercise 1.2: do the best cloud-free mosaic for the dry season
+
+var Landsat8FilteredD = Landsat8.filterBounds(Country)
+
+.filterDate('2016-06-01', '2017-12-31')
+
+.filter(ee.Filter.calendarRange(91, 304, 'day_of_year')) //DRY SEASON (April-Sept)
+
+.filterMetadata('CLOUD_COVER','less_than', 10);
+
+var mosaicZ2 = ee.Algorithms.Landsat.simpleComposite(Landsat8FilteredD, 60, 90, 40, true).clip(Country);
+
+var rat43_2015 = mosaicZ2.select('B4').divide(mosaicZ2.select('B3'));
+
+var rat73_2015 = mosaicZ2.select('B7').divide(mosaicZ2.select('B3'));
+
+var rat54_2015 = mosaicZ2.select('B5').divide(mosaicZ2.select('B4'));
+
+var rat53_2015 = mosaicZ2.select('B5').divide(mosaicZ2.select('B3'));
+
+var image82 = mosaicZ2.addBands(rat43_2015).addBands(rat73_2015).addBands(rat54_2015).addBands(rat53_2015);
+
+Map.addLayer (image82, {bands: ['B5','B6','B4'],min: [0.01,0.1,0.01],max: [0.4, 0.4, 0.4] },'Zimbabwe dry season',true );
+
+
+
+//Exercise 1.3: do mosaic of one month
+
+
+
+
+
+
+
+
+
+
+
+
+
+var mosaico_LC8_plantaciones = image82.mask(Plantaciones)
+
+
+
+Map.addLayer (mosaico_LC8_plantaciones, {bands: ['B5','B6','B4'],min: [0.01,0.1,0.01],max: [0.4, 0.4, 0.4] },'Zimbabwe dry season',true );
+
+
+
+
+
+//Tutorial 4----------------------------------------------------------------------------------------------------------
+
+
+
+//Lesson 1:	Appropriate training points choice >drawing tool tab on the map >add a marker
+
+// create the forestry class (Tutorial 4 page 1)
+
+//Exercise 1: create the other 2 classes, 10 training points each
+
+
+
+//Clasificacion Plantaciones
+
+var puntosp = [plant_1, no_plant1];
+
+
+
+var samplesp = mosaico_LC8_plantaciones.sampleRegions({
+
+  collection: ee.FeatureCollection(puntosp).flatten(),
+
+  properties: ['class'],
+
+  scale: 30
+
+});
+
+
+
+var trainedClassifier = ee.Classifier.cart(10,40).train(samplesp, 'class', mosaico_LC8_plantaciones.bandNames());
+
+var classified_p = mosaico_LC8_plantaciones.classify(trainedClassifier).mask(Plantaciones)
+
+
+
+var plantaciones_02 = classified_p.eq(1)
+
+var pastizal_02 = classified_p.eq(2)
+
+
+
+
+
+//Lesson 2: unite all the training points in one variable 
+
+
+
+var points = ee.FeatureCollection([Forest, Crops_Soil, Shrubland]).flatten();
+
+//Exercise 2: unite your training points in one variable
+
+
+
+
+
+
+
+//Lesson 3: Appropriate classification algorithm selection and classification
+
+var classZimbabwe = mosaicZ.trainClassifier({'training_features': points,
+
+                                          'training_property':'class',
+
+                                          'classifier_name': 'Cart',
+
+                                          'crs':'EPSG:4326',
+
+                                          'crs_transform':[0.0002694945852358564,0,-180,0,-0.0002694945852358564,90],
+
+                                          });
+
+
+
+var classing_Zimbabwe = mosaicZ.classify(classZimbabwe);
+
+//Exercise 3: visualise with 3 classes
+
+
+
+
+
+
+
+//Lesson 4: Post-classification editing 
+
+var corrector = function(geom, mal, bien, clasif) {
+
+  var binario = geom.reduceToImage(['class'], ee.Reducer.first());
+
+  var condicion = binario.and(clasif.eq(mal));
+
+  var clasC = clasif.where(condicion, bien);
+
+  return clasC};
+
+
+
+var correction  = corrector (c3t2, 3, 2, classing_Zimbabwe);
+
+var correction01 = corrector (c3t1, 3, 1, correction);
+
+var correction1 = correction01.where(plantaciones_02.eq(1),5)
+
+var correction1 = correction1.where(pastizal_02.eq(2),3)
+
+
+
+//Exercise 4: Visualise the correction and add correction if needed
+
+
+
+
+
+
+
+//Lesson 5: Use fo masks
+
+//Mask Cities
+
+var city = ee.Image('users/christinacorbane/MT_comp_proj').clip(Country);
+
+var cities = city.gte(3);
+
+//Mask Water
+
+var water = ee.Image('JRC/GSW1_0/GlobalSurfaceWater').clip(Country);
+
+//Exercise 5: Select simple basic functions to personalize the water mask
+
+//(page 6 tutorial 4 https://code.earthengine.google.com/dataset/JRC/GSW1_0/GlobalSurfaceWater)
+
+//eq (),    neq (),   gt (),           gte (),   lt (), lte () 
+
+//equal, not equal, greater, greater or equal, smaller, less or equal
+
+var water2 = water.select('transition').lte(2).or(water.select('transition').eq(7)).or(water.select('transition').eq(8)); 
+
+
+
+//FOREST MASK
+
+
+
+
+
+
+
+//Lesson 6 Mask Use
+
+var classified_correct = correction1.where(water2.eq(1),4);
+
+var classified_correct2 = classified_correct.where(cities.eq(1),6);//, 'c922cc'
+
+
+
+
+
+
+
+//Exercise 6 Visualisation of classified mosaic with masks
+
+Map.addLayer(correction01,{ min:1, max:6, palette: ['078a11','e7e125', 'a56313', '14e2d8', 'd60000', '00ff00'] },'Classification with Masks_V1');
+
+Map.addLayer(classified_correct2,{ min:1, max:6, palette: ['078a11','e7e125', 'a56313', '14e2d8', 'd60000', '00ff00'] },'Classification with Masks_v2');
+
+
+
+
+
+
+
+
+

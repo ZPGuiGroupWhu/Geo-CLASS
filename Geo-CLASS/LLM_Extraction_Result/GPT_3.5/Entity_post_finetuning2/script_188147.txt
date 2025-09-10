@@ -1,0 +1,33 @@
+{
+    "Summary": [
+        "Geoprocessing workflow combining Landsat and Sentinel data for forest/non-forest classification in Zimbabwe."
+    ],
+    "Theme": [
+        "FOREST MANAGEMENT",
+        "WATER MANAGEMENT"
+    ],
+    "DataSource": [
+        "users/kindgard/Asia/Asia",
+        "users/kindgard/Africa",
+        "users/kindgard/SUD",
+        "users/kindgard/AfricaS",
+        "users/kindgard/AmericaN",
+        "users/kindgard/Asia2",
+        "JRC/GSW1_0/GlobalSurfaceWater",
+        "users/kindgard/ESACCI-LC-L4-LC10-Map-20m-P1Y-2016-v10",
+        "users/ValeriaContessa/Map_1992_rast",
+        "LANDSAT/LT5_L1T",
+        "LANDSAT/LE7_L1T",
+        "LANDSAT/LC08/C01/T1_RT",
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "Binary Image Creation",
+        "Cloud And Water Masking",
+        "Filter And Mosaic Landsat Images",
+        "Mosaic Landsat Images",
+        "Mosaic Landsat Images",
+        "Image Band Normalization",
+        "Image Band Manipulation"
+    ]
+}

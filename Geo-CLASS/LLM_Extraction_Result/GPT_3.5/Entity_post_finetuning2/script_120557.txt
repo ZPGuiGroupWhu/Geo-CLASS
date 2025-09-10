@@ -1,0 +1,17 @@
+{
+    "Summary": [
+        "Selecting and analyzing Landsat imagery for water and vegetation frequency in Florida."
+    ],
+    "Theme": [
+        "DROUGHT FREQUENCY",
+        "VEGETATION OPTICAL DEPTH"
+    ],
+    "DataSource": [
+        "TIGER/2016/States",
+        "LANDSAT/LC08/C01/T1_SR"
+    ],
+    "Function": [
+        "Cloud And Cloud Shadow Masking",
+        "Training And Sampling For Land Cover Classification"
+    ]
+}

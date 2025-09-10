@@ -1,0 +1,20 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1"
+        ],
+        "Function": [
+            "Filtering Landsat 8 images by date range",
+            "Calculating median of Landsat 8 images",
+            "Creating a simple composite of Landsat 8 images",
+            "Calculating NDVI for a specific image",
+            "Creating a custom composite of Landsat 8 images",
+            "Calculating NDVI for a collection of images",
+            "Creating a quality mosaic of NDVI images",
+            "Calculating the mean day of year for NDVI images",
+            "Exporting NDVI image to Google Drive",
+            "Calculating pixel area for NDVI images",
+            "Creating a histogram of NDVI images"
+        ]
+    }
+}

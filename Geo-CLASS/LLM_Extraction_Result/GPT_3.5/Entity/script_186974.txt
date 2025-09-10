@@ -1,0 +1,6 @@
+{
+  "Summary": ["The script processes Landsat 5, 7, and 8 data to create NDWI and MNDWI composites for the study area."],
+  "Theme": ["Water body analysis"],
+  "DataSource": ["LANDSAT/LT05/C01/T1_SR", "LANDSAT/LE07/C01/T1_SR", "LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Cloud masking for Landsat 5 and 7", "Band selection and renaming", "NDWI and MNDWI calculation", "Collection filtering and mean calculation"]
+}

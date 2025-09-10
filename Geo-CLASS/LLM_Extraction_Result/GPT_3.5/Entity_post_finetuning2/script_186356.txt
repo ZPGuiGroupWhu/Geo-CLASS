@@ -1,0 +1,19 @@
+{
+    "Summary": [
+        "The script processes Sentinel-1 SAR data for land cover classification."
+    ],
+    "Theme": [
+        "LAND USE/LAND COVER CLASSIFICATION"
+    ],
+    "DataSource": [
+        "COPERNICUS/S1_GRD",
+        "urban",
+        "forest",
+        "water"
+    ],
+    "Function": [
+        "Refined Lee Speckle Filtering",
+        "Enhancing Image Visualization",
+        "Training CART Classifier"
+    ]
+}

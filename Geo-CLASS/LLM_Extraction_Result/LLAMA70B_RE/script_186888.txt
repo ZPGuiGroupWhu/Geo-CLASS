@@ -1,0 +1,32 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Land surface temperature and vegetation analysis"],
+  "DataSource": ["LANDSAT/LE7_L1T/LE71440512001014SGS00", "LANDSAT/LE7_L1T_TOA_FMASK/LE71440512001014SGS00"],
+  "Function": ["Cloud masking using fmask", "Incoming shortwave radiation calculation", "Radiance calculation", "NDVI and NDWI calculation", "Land surface temperature calculation", "Scatter plot creation"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LE7_L1T/LE71440512001014SGS00"],
+        "Function": ["Cloud masking using fmask", "Radiance calculation", "NDVI and NDWI calculation", "Land surface temperature calculation"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LE7_L1T_TOA_FMASK/LE71440512001014SGS00"],
+        "Function": ["Cloud masking using fmask"]
+    },
+    "relation_3": {
+        "DataSource": ["LANDSAT/LE7_L1T/LE71440512001014SGS00"],
+        "Function": ["Scatter plot creation"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 6185, 'completion_tokens': 370, 'total_tokens': 6555}

@@ -1,0 +1,128 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var imageCollection = ee.ImageCollection("COPERNICUS/S1_GRD"),
+    regions = ee.FeatureCollection("FAO/GAUL_SIMPLIFIED_500m/2015/level2");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+
+var regions = ee.FeatureCollection(
+  'FAO/GAUL_SIMPLIFIED_500m/2015/level2');
+var hue = regions.filter(
+  ee.Filter.eq('ADM1_NAME', 'Thua Thien - Hue'));
+Map.addLayer(hue, {color: 'yellow'}, 'Admin2 Boundaries');
+
+
+//STEP 1: Create individual image collections of the polarizations before the flood and after the flood
+
+//Create Reference Image Collection, set date range
+
+var startRef = ee.Date ('2020-02-01');
+var endRef = ee.Date ('2020-09-16');
+
+var RefVH = ee.ImageCollection("COPERNICUS/S1_GRD")
+.filterBounds(hue)
+.filterDate (startRef, endRef)
+.filterMetadata('orbitProperties_pass', 'equals', 'ASCENDING')
+.filter(ee.Filter.listContains('transmitterReceiverPolarisation', 'VH'))
+        .filter(ee.Filter.eq('instrumentMode', 'IW'))
+        .select('VH');
+
+//Print number of images in Refernce image collection 
+
+var count = RefVH.size();
+print ('size of collection Reference in VH', count);
+
+//Print metadata for the image collection to look at properties
+print (RefVH);
+
+//Create Flood Image Collection, set date range
+
+var startFlood = ee.Date('2020-10-08');
+var endFlood = ee.Date ('2020-10-30');
+
+var FloodVH = ee.ImageCollection("COPERNICUS/S1_GRD")
+.filterBounds(hue)
+.filterDate(startFlood, endFlood)
+.filterMetadata('orbitProperties_pass', 'equals', 'ASCENDING')
+.filter(ee.Filter.listContains('transmitterReceiverPolarisation', 'VH'))
+        .filter(ee.Filter.eq('instrumentMode', 'IW'))
+        .select('VH');
+
+//Print number of images in the flood image collection
+
+var count = FloodVH.size();
+print('size of collection FloodVH', count);
+
+//Print metadata for the image collection to look at properties
+print (FloodVH);
+
+
+// STEP 2: Mosaic image collections and create RGB composite
+
+var RefVHmosaic = RefVH.mosaic();
+var FloodVVmosaic = FloodVV.mosaic();
+var FloodVHmosaic = FloodVH.mosaic();
+
+//Display combined images
+
+Map.addLayer(RefVVmosaic, {min:-15, max:0}, 'Before flood VV', 0);
+Map.addLayer(RefVHmosaic, {min:-25, max:0}, 'Before flood VH', 0);
+Map.addLayer(FloodVVmosaic, {min:-15, max:0}, 'After flood VV', 0);
+Map.addLayer(FloodVHmosaic, {min:-25, max:0}, 'After flood VH', 0);
+
+//Display RGB composite
+
+Map.addLayer(RefVHmosaic.addBands(FloodVHmosaic).addBands(RefVHmosaic), {min: -25, max: 0}, 'RefVH/FloodVH/RefVH composite', 0);
+
+//Apply speckle filter
+
+var smoothing_radius = 25;
+
+var RefVHmosaic_filtered = RefVHmosaic.focal_mean(smoothing_radius, 'circle', 'meters');
+var FloodVHmosaic_filtered = FloodVHmosaic.focal_mean(smoothing_radius, 'circle', 'meters');
+
+// display filtered images
+
+Map.addLayer(RefVHmosaic_filtered, {min:-25, max: 0}, 'Before Flood VH filtered', 0);
+Map.addLayer(FloodVHmosaic_filtered, {min:-25, max: 0}, 'After Flood VH filtered', 0);
+
+//Display RGB composite
+
+Map.addLayer(RefVHmosaic.addBands(FloodVHmosaic).addBands(RefVHmosaic), {min: -25, max: 0}, 'RefVH/FloodVH/RefVH composite', 0);
+
+//Calculate difference between before and after
+var differenceVH = FloodVHmosaic_filtered.subtract(RefVHmosaic_filtered);
+
+Map.addLayer(differenceVH, {min:0, max:2}, 'Difference VH filtered', 0);
+
+//Apply threshold
+
+var DIFF_THRES =-3;
+var differenceVH_thres = differenceVH.lt(DIFF_THRES);
+
+Map.addLayer (differenceVH_thres.updateMask(differenceVH_thres),{palette:"0000FF"}, 'flooded areas - blue', 1);
+
+ //Refine flood result using additional datasets
+      
+      // Include JRC layer on surface water seasonality to mask flood pixels from areas
+      // of "permanent" water (where there is water > 10 months of the year)
+      var permwater = ee.Image('JRC/GSW1_0/GlobalSurfaceWater').select('seasonality');
+      var permwater_mask = permwater.gte(10).updateMask(permwater.gte(10));
+      
+      //Flooded layer where perennial water bodies (water > 10 mo/yr) is assigned a 0 value
+      var flooded_mask = differenceVH_thres.where(permwater_mask,0);
+      
+      // final flooded area without pixels in perennial waterbodies
+      var flooded = flooded_mask.updateMask(flooded_mask);
+      
+      // Compute connectivity of pixels to eliminate those connected to 8 or fewer neighbours
+      // This operation reduces noise of the flood extent product 
+      var connections = flooded.connectedPixelCount();
+      print (connections, 'connected pixels');
+      var flooded = flooded.updateMask(connections.gte(10));
+      
+      // Mask out areas with more than 5 percent slope using a Digital Elevation Model 
+      var DEM = ee.Image('WWF/HydroSHEDS/03VFDEM');
+      var terrain = ee.Algorithms.Terrain(DEM);
+      var slope = terrain.select('slope');
+      var flooded = flooded.updateMask(slope.lt(5));
+      
+      Map.addLayer (flooded,{palette:"0000FF"}, 'flooded', 1);

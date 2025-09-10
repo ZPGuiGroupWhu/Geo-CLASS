@@ -1,0 +1,31 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Wildfire analysis and monitoring in the Chaco region"],
+  "DataSource": ["users/diegogmzd/CHACO", "COPERNICUS/S2", "COPERNICUS/S3/OLCI"],
+  "Function": ["Filtering image collections by date and bounds", "Applying cloud mask to images", "Calculating median of image collection", "Computing normalized difference indices", "Clipping images to a specific region", "Mosaicking images", "Visualizing results with custom palettes"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/diegogmzd/CHACO"],
+        "Function": ["Filtering image collections by date and bounds", "Clipping images to a specific region"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Applying cloud mask to images", "Calculating median of image collection", "Computing normalized difference indices"]
+    },
+    "relation_3": {
+        "DataSource": ["COPERNICUS/S3/OLCI"],
+        "Function": ["Mosaicking images", "Visualizing results with custom palettes"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3451, 'completion_tokens': 291, 'total_tokens': 3742}

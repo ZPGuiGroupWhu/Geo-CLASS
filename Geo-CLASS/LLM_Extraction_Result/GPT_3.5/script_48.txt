@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Script implements annual change detection processing."],
+  "Theme": ["Land cover change detection"],
+  "DataSource": ["USDOS/LSIB/2017", "users/ak_glaciers/ltop_snic_seed_points75k_kmeans_cambodia_c2_1990", "users/ak_glaciers/LTOP_Cambodia_config_selected_220_kmeans_pts_new_weights", "users/ak_glaciers/Optimized_LT_1990_start_Cambodia_remapped_cluster_ids", "projects/servir-mekong/composites/"],
+  "Function": ["Image collection preparation", "LandTrendr fit algorithm execution", "Segment length calculation", "Time since last vertex calculation"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["USDOS/LSIB/2017"],
+        "Function": ["Image collection preparation"]
+    },
+    "relation_2": {
+        "DataSource": ["users/ak_glaciers/ltop_snic_seed_points75k_kmeans_cambodia_c2_1990", "users/ak_glaciers/LTOP_Cambodia_config_selected_220_kmeans_pts_new_weights", "users/ak_glaciers/Optimized_LT_1990_start_Cambodia_remapped_cluster_ids"],
+        "Function": ["LandTrendr fit algorithm execution"]
+    },
+    "relation_3": {
+        "DataSource": ["projects/servir-mekong/composites/"],
+        "Function": ["Segment length calculation", "Time since last vertex calculation"]
+    }
+}
+```

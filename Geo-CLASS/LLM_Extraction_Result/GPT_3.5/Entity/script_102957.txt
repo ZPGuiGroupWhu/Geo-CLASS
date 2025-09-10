@@ -1,0 +1,6 @@
+{
+  "Summary": ["Generate true color composite image for Los Angeles County from Landsat data."],
+  "Theme": ["Land cover classification"],
+  "DataSource": ["LANDSAT/LC09/C02/T1_L2", "FAO/GAUL_SIMPLIFIED_500m/2015/level2"],
+  "Function": ["Clear pixel mask application", "Cloud and cloud shadow mask application", "Digital number to surface reflectance conversion", "Image collection filtering by location and date"]
+}

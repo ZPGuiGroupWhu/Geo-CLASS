@@ -1,0 +1,29 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Entity Recognition": {
+    "Theme": ["Wildfire analysis and monitoring"],
+    "DataSource": ["users/diegogmzd/CHACO", "COPERNICUS/S2", "COPERNICUS/S3/OLCI"],
+    "Function": ["Image collection filtering", "Cloud masking", "Image compositing", "Index calculation", "Image visualization"]
+  },
+  "Relation Extraction": {
+    "relation_1": {
+      "DataSource": ["users/diegogmzd/CHACO"],
+      "Function": ["Image collection filtering", "Cloud masking"]
+    },
+    "relation_2": {
+      "DataSource": ["COPERNICUS/S2"],
+      "Function": ["Image collection filtering", "Cloud masking", "Image compositing", "Index calculation"]
+    },
+    "relation_3": {
+      "DataSource": ["COPERNICUS/S3/OLCI"],
+      "Function": ["Image collection filtering", "Image compositing"]
+    }
+  }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3435, 'completion_tokens': 253, 'total_tokens': 3688}

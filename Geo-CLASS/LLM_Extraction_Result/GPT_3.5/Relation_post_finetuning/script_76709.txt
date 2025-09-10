@@ -1,0 +1,34 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/cxliu2015/BYDwater20210325"
+        ],
+        "Function": [
+            "Cloud Masking And Quality Filtering",
+            "NDVI (Normalized Difference Vegetation Index calculation)",
+            "MNDWI (Modified Normalized Difference Water Index calculation)",
+            "NDWI (Normalized Difference Water Index calculation)",
+            "Vegetation And Water Indices Calculation",
+            "NDWI (Normalized Difference Water Index calculation)",
+            "NDWI (Normalized Difference Water Index calculation)",
+            "Data Standardization",
+            "Image Band Manipulation"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Cloud Masking And Quality Filtering",
+            "NDVI (Normalized Difference Vegetation Index calculation)",
+            "MNDWI (Modified Normalized Difference Water Index calculation)",
+            "NDWI (Normalized Difference Water Index calculation)",
+            "Vegetation And Water Indices Calculation",
+            "NDWI (Normalized Difference Water Index calculation)",
+            "NDWI (Normalized Difference Water Index calculation)",
+            "Data Standardization",
+            "Image Band Manipulation"
+        ]
+    }
+}

@@ -1,0 +1,5 @@
+{
+  "Theme": ["Fire monitoring", "Burn severity analysis", "Burned area calculation"],
+  "DataSource": ["FAO/GAUL/2015/level0", "COPERNICUS/S2", "LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Select study area", "Set time frame", "Select satellite platform", "Filter image collection by date", "Filter image collection by location", "Apply cloud mask", "Mosaic images", "Clip images to study area", "Calculate normalized burn ratio", "Calculate difference in burn ratio", "Add layers to map", "Calculate burned area", "Export image", "Export burned area statistics"]
+}

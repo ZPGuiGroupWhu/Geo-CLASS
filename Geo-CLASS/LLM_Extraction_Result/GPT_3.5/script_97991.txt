@@ -1,0 +1,35 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Script focuses on uploading, visualizing shapefiles, rasters, Landsat images, and Sentinel images, performing geoprocessing tasks, classification, and masking before exporting the final image."],
+  "Theme": ["Land cover classification", "Image filtering", "Image masking"],
+  "DataSource": ["users/EL/TrinidadandTobago", "users/EL/trinidad_forest_type_landcover_28july2011", "users/EL/tobago_forest_type_landcover_06may2011", "LANDSAT/LC8_L1T", "COPERNICUS/S2", "JRC/GSW1_0/GlobalSurfaceWater"],
+  "Function": ["Filtering Landsat images by bounds, date, and cloud cover", "Creating a composite image using Landsat simple composite algorithm", "Training a classifier for image classification", "Creating masks for water bodies and cities"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/EL/TrinidadandTobago"],
+        "Function": ["Filtering Landsat images by bounds, date, and cloud cover", "Creating a composite image using Landsat simple composite algorithm", "Training a classifier for image classification", "Creating masks for water bodies and cities"]
+    },
+    "relation_2": {
+        "DataSource": ["users/EL/trinidad_forest_type_landcover_28july2011", "users/EL/tobago_forest_type_landcover_06may2011"],
+        "Function": ["Filtering Landsat images by bounds, date, and cloud cover", "Creating a composite image using Landsat simple composite algorithm", "Training a classifier for image classification", "Creating masks for water bodies and cities"]
+    },
+    "relation_3": {
+        "DataSource": ["LANDSAT/LC8_L1T"],
+        "Function": ["Filtering Landsat images by bounds, date, and cloud cover", "Creating a composite image using Landsat simple composite algorithm", "Training a classifier for image classification", "Creating masks for water bodies and cities"]
+    },
+    "relation_4": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Filtering Landsat images by bounds, date, and cloud cover", "Creating a composite image using Landsat simple composite algorithm", "Training a classifier for image classification", "Creating masks for water bodies and cities"]
+    },
+    "relation_5": {
+        "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+        "Function": ["Creating masks for water bodies and cities"]
+    }
+}
+```

@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+"Theme": ["Vegetation monitoring using NDVI"],
+"DataSource": ["COPERNICUS/S2"],
+"Function": ["Filtering image collection by date and cloud coverage", "Masking clouds and cirrus from Sentinel-2 images", "Calculating NDVI from Sentinel-2 bands", "Adding date information to NDVI images", "Sorting NDVI images by value", "Extracting maximum NDVI value and corresponding date"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response that organizes the extracted information into a structured format:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Filtering image collection by date and cloud coverage", "Masking clouds and cirrus from Sentinel-2 images", "Calculating NDVI from Sentinel-2 bands", "Adding date information to NDVI images"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Sorting NDVI images by value", "Extracting maximum NDVI value and corresponding date"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3439, 'completion_tokens': 251, 'total_tokens': 3690}

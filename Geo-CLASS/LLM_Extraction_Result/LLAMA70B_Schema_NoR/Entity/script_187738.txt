@@ -1,0 +1,25 @@
+{
+    "Theme": [
+        "Crop land classification and object-based image analysis"
+    ],
+    "DataSource": [
+        "USDA/NAIP/DOQQ",
+        "USDA/NASS/CDL/2016",
+        "users/saicheems/classification",
+        "users/saicheems/classification_snic"
+    ],
+    "Function": [
+        "Filter image collection by date and bounds",
+        "Clip image to ROI",
+        "Normalize image values",
+        "Extract specific bands from image",
+        "Perform object-based image segmentation",
+        "Compute cluster means",
+        "Train random forest classifier",
+        "Classify image using trained classifier",
+        "Compute standard deviation of clusters",
+        "Compute area of clusters",
+        "Compute perimeter of clusters",
+        "Compute width and height of clusters"
+    ]
+}

@@ -1,0 +1,469 @@
+// Define area of interest (AOI) from feature collection 'regions'
+
+
+
+var AOI = regions.filter(
+
+  ee.Filter.eq('ADM1_NAME', 'Thua Thien - Hue'));
+
+Map.addLayer(AOI, {color: 'yellow'}, 'Hue AdmBoundaries',0, 1);
+
+
+
+//Find flood images in the flood period 
+
+
+
+var FloodD = ee.ImageCollection("COPERNICUS/S1_GRD")
+
+.filterBounds(AOI)
+
+.filterDate ('2020-10-08', '2020-11-15')
+
+.filterMetadata('instrumentMode', 'equals', 'IW')
+
+.filterMetadata ('orbitProperties_pass', 'equals', 'DESCENDING');
+
+
+
+print (FloodD.size(), 'Flood Image Count Total DES');
+
+print (FloodD, 'Flood Image Collection DES');
+
+
+
+var FloodA = ee.ImageCollection("COPERNICUS/S1_GRD")
+
+.filterBounds(AOI)
+
+.filterDate ('2020-10-08', '2020-11-15')
+
+.filterMetadata('instrumentMode', 'equals', 'IW')
+
+.filterMetadata ('orbitProperties_pass', 'equals', 'ASCENDING');
+
+
+
+print (FloodA.size(), 'Flood Image Count Total ASC');
+
+print (FloodA, 'Flood Image Collection ASC');
+
+
+
+
+
+//Create Flood Images over time
+
+
+
+var Flood1 = ee.ImageCollection("COPERNICUS/S1_GRD")
+
+.filterBounds(AOI)
+
+.filterDate ('2020-10-08', '2020-10-12')
+
+.filterMetadata('instrumentMode', 'equals', 'IW')
+
+.filterMetadata ('orbitProperties_pass', 'equals', 'DESCENDING')
+
+.mosaic()
+
+.clip(AOI);
+
+
+
+//set visualisation parameters
+
+var vis_param = {min:-33, max:-4, bands:['VH'], opacity:1.0
+
+};
+
+
+
+//display Flood image on the map
+
+Map.centerObject (Flood1, 10);
+
+Map.addLayer (Flood1,
+
+{min:-32, max:0, bands:['VH'], opacity:1.0
+
+},'Flood 10.10.2020', 0, 1 );
+
+
+
+//Flood progress over the days with a second flood image
+
+var Flood2 = ee.ImageCollection("COPERNICUS/S1_GRD")
+
+.filterBounds(AOI)
+
+.filterDate ('2020-10-15', '2020-10-18')
+
+.filterMetadata('instrumentMode', 'equals', 'IW')
+
+.filterMetadata ('orbitProperties_pass', 'equals', 'DESCENDING')
+
+.mosaic()
+
+.clip(AOI);
+
+
+
+//display Flood Image 2 on the map
+
+Map.centerObject (Flood2, 10);
+
+Map.addLayer (Flood2,
+
+{min:-23, max:25, bands:['VH'], opacity:1.0
+
+},'Flood Image 13.10.2020', 0, 1 );
+
+
+
+//Flood progress over the days with a third flood image
+
+var Flood3 = ee.ImageCollection("COPERNICUS/S1_GRD")
+
+.filterBounds(AOI)
+
+.filterDate ('2020-10-20', '2020-10-24')
+
+.filterMetadata('instrumentMode', 'equals', 'IW')
+
+.filterMetadata ('orbitProperties_pass', 'equals', 'DESCENDING');
+
+
+
+//display Flood Image 3 on the map
+
+Map.centerObject (Flood3, 10);
+
+Map.addLayer (Flood3,
+
+{min:-23, max:25, bands:['VH'], opacity:1.0
+
+},'Flood Image 22.10.2020',0, 1 );
+
+
+
+
+
+//Flood progress over the days with a fourth flood image
+
+var Flood4 = ee.ImageCollection("COPERNICUS/S1_GRD")
+
+.filterBounds(AOI)
+
+.filterDate ('2020-10-28', '2020-10-30')
+
+.filterMetadata('instrumentMode', 'equals', 'IW')
+
+.filterMetadata ('orbitProperties_pass', 'equals', 'DESCENDING')
+
+.mosaic()
+
+.clip(AOI);
+
+
+
+//display Flood Image 4 on the map
+
+Map.centerObject (Flood4, 10);
+
+Map.addLayer (Flood4,
+
+{min:-23, max:25, bands:['VH'], opacity:1.0
+
+},'Flood Image 28.10.2020',0, 1 );
+
+
+
+//Flood progress over the days with a fifth flood image
+
+var Flood5 = ee.ImageCollection("COPERNICUS/S1_GRD")
+
+.filterBounds(AOI)
+
+.filterDate ('2020-11-03', '2020-11-05')
+
+.filterMetadata('instrumentMode', 'equals', 'IW')
+
+.filterMetadata ('orbitProperties_pass', 'equals','DESCENDING')
+
+.mosaic()
+
+.clip(AOI);
+
+
+
+//display Flood Image 5 on the map
+
+Map.centerObject (Flood5, 10);
+
+Map.addLayer (Flood5,
+
+{min:-23, max:25, bands:['VH'], opacity:1.0
+
+},'Flood Image 03.11.2020',0, 1 );
+
+
+
+//Flood progress over the days with a sixth flood image
+
+var Flood6 = ee.ImageCollection("COPERNICUS/S1_GRD")
+
+.filterBounds(AOI)
+
+.filterDate ('2020-11-09', '2020-11-11')
+
+.filterMetadata('instrumentMode', 'equals', 'IW')
+
+.filterMetadata ('orbitProperties_pass', 'equals', 'DESCENDING')
+
+.mosaic()
+
+.clip(AOI);
+
+
+
+//display Flood Image 6 on the map
+
+Map.centerObject (Flood6, 10);
+
+Map.addLayer (Flood6,
+
+{min:-23, max:25, bands:['VH'], opacity:1.0
+
+},'Flood Image 09.11.2020',0, 1);
+
+
+
+
+
+
+
+//Create Image collection as Reference for the period before the flooding
+
+
+
+var Ref = ee.ImageCollection("COPERNICUS/S1_GRD")
+
+.filterBounds(AOI)
+
+.filterDate ('2020-03-01', '2020-09-01')
+
+.filterMetadata('orbitProperties_pass', 'equals', 'DESCENDING')
+
+.filterMetadata('instrumentMode', 'equals', 'IW');
+
+
+
+print (Ref.size(), 'Reference Collection Count');
+
+print (Ref, 'Reference Collection');
+
+
+
+//display on the map
+
+Map.centerObject (Ref, 10);
+
+Map.addLayer (Ref,
+
+{min:-32, max:0, bands:['VH'], opacity:1.0
+
+},'Ref Images', 0, 1);
+
+
+
+//PART2 - EXAMPLE CALCULATION FOR FLOOD IMAGE 1
+
+
+
+
+
+
+
+var mergedColle = Ref.merge(Flood1);
+
+
+
+Map.addLayer (mergedColle, vis_param, 'Flood + Reference', 0, 1);
+
+
+
+//creating bands for NDFI
+
+var mean = Ref.mean();
+
+var min = mergedColle.min();
+
+
+
+print (mean, 'mean of Reference');
+
+print (min, 'minimum of merged Collection');
+
+
+
+//add these bands to map and inspect
+
+
+
+Map.addLayer(mean, {bands: ['VH'], min:-32, max: 0}, 'mean', 0, 1);
+
+Map.addLayer(min, {bands: ['VH'], min:-35, max: -7, gamma:0.35}, 'min', 0, 1);
+
+
+
+//calculate NDFI
+
+
+
+var ndfi = (mean.subtract(min).divide(mean.add(min)));
+
+
+
+Map.addLayer(ndfi, {min:-0.4, max: 0.01, bands: ['VH'], gamma: 0.15}, 'NDFI', 0, 1);
+
+
+
+//find threshold according to Cian et al. (2018)
+
+
+
+//Threshold for masking flood
+
+
+
+var pol = 'VH';
+
+
+
+// Mean and standard deviation reducers.
+
+var meanReducer = ee.Reducer.mean();
+
+var stdReducer = ee.Reducer.stdDev();
+
+
+
+// Use the reducer to get the mean and SD of the image.
+
+var meanNDFI = ee.Number(ndfi.reduceRegion({
+
+  reducer: meanReducer,
+
+  bestEffort: true,
+
+  scale: 10,
+
+  geometry: AOI,
+
+}).get(pol));
+
+
+
+var stdDevNDFI = ee.Number(ndfi.reduceRegion({
+
+  reducer: stdReducer,
+
+  bestEffort: true,
+
+  scale: 10,
+
+  geometry: AOI,
+
+}).get(pol));
+
+
+
+print(meanNDFI, 'mean NDFI', stdDevNDFI, 'std Deviation NDFI'); 
+
+
+
+var th = (meanNDFI.subtract(stdDevNDFI.multiply(0.2)));
+
+print (th, 'threshold NDFI');
+
+
+
+var Flood_thres = ndfi.lt(th);
+
+
+
+Map.addLayer (Flood_thres.updateMask(Flood_thres), {min:-1, max: 1},'flooded areas', 0);
+
+
+
+// decreasing the factor leads to flood areas with larger extent (standard should be 1.5)
+
+// for the flood in Nov 2017, the value 0.7 brings visually good results
+
+var thresNDFI = meanNDFI.subtract(stdDevNDFI.multiply(1.5));
+
+
+
+
+
+
+
+
+
+// Get the mean and SD of the image
+
+var mean_ndfi = ee.Number(ndfi.reduceRegion({
+
+  reducer: ee.Reducer.mean(),
+
+  geometry: AOI,
+
+  scale: 10,
+
+  bestEffort: true,
+
+  maxPixels: 1e9,
+
+  tileScale: 4,
+
+}));
+
+
+
+var std_ndfi = ee.Number(ndfi.reduceRegion({
+
+  reducer: ee.Reducer.stdDev(),
+
+  geometry: AOI,
+
+  scale: 10,
+
+  maxPixels: 1e9,
+
+  bestEffort: true,
+
+  tileScale: 4,
+
+}));
+
+
+
+// Print it.
+
+print(mean_ndfi, 'mean NDFI');
+
+print(std_ndfi, 'std Deviation NDVI');
+
+
+
+
+
+
+
+var th = mean_ndfi.subtract(std_ndfi.multiply(1.5));
+
+
+
+print (th, 'threshold');

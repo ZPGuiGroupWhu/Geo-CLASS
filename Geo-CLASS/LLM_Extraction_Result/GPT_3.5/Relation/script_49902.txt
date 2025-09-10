@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["NDVI calculation using NIR and Red bands", "NDMI calculation using B8 and B11 bands"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2_SR/20200928T140101_20200928T140058_T20HNE"],
+        "Function": ["NDVI calculation using NIR and Red bands", "NDMI calculation using B8 and B11 bands"]
+    }
+}

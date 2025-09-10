@@ -1,0 +1,22 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/ce15btech11022/Final_Cities/Ahmedabad"
+        ],
+        "Function": [
+            "Data Fusion And Mosaicking",
+            "NDWI (Normalized Difference Water Index calculation)",
+            "Time Series Analysis"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Data Fusion And Mosaicking",
+            "NDWI (Normalized Difference Water Index calculation)",
+            "Time Series Analysis"
+        ]
+    }
+}

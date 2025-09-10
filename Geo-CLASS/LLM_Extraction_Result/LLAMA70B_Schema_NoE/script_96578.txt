@@ -1,0 +1,29 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land surface temperature analysis", "Fire detection and monitoring"],
+  "DataSource": ["COPERNICUS/S2_SR", "MODIS/006/MOD14A1", "MODIS/006/MOD11A1"],
+  "Function": ["Filtering and masking of image collections", "Conversion of Kelvin to Celsius", "Calculation of maximum temperature", "Unmasking of fire probability image collection", "Calculation of NDVI", "Fire detection using NDVI difference"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["Filtering and masking of image collections", "Calculation of NDVI"]
+    },
+    "relation_2": {
+        "DataSource": ["MODIS/006/MOD14A1", "MODIS/006/MOD11A1"],
+        "Function": ["Conversion of Kelvin to Celsius", "Calculation of maximum temperature", "Fire detection using NDVI difference", "Unmasking of fire probability image collection"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3494, 'completion_tokens': 277, 'total_tokens': 3771}

@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Masking water and clouds in MODIS dataset, generating true color images."],
+  "Theme": ["Water masking", "Cloud masking", "True color image generation"],
+  "DataSource": ["MODIS/006/MOD09GA", "TIGER/2018/States", "USGS/GMTED2010"],
+  "Function": ["Cloud masking operation", "Water masking operation", "Hillshade generation", "True color image visualization"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["MODIS/006/MOD09GA"],
+        "Function": ["Cloud masking operation", "Water masking operation"]
+    },
+    "relation_2": {
+        "DataSource": ["TIGER/2018/States"],
+        "Function": ["Hillshade generation"]
+    },
+    "relation_3": {
+        "DataSource": ["USGS/GMTED2010"],
+        "Function": ["True color image visualization"]
+    }
+}
+```

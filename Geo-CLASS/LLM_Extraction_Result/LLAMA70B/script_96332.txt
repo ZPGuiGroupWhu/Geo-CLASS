@@ -1,0 +1,26 @@
+Entity Recognition:
+```
+{
+  "Theme": ["Land cover classification", "Water quality monitoring"],
+  "DataSource": ["users/cesarnon/datos_cba_2017/Cordoba_limite", "COPERNICUS/S2"],
+  "Function": ["Filtering image collections by date and cloud cover", "Renaming image bands", "Calculating normalized difference water index", "Creating mosaic images", "Adding layers to the map"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/cesarnon/datos_cba_2017/Cordoba_limite"],
+        "Function": ["Filtering image collections by date and cloud cover", "Renaming image bands", "Creating mosaic images", "Adding layers to the map"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Calculating normalized difference water index"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3592, 'completion_tokens': 233, 'total_tokens': 3825}

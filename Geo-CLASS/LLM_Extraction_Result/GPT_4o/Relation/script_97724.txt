@@ -1,0 +1,14 @@
+{
+  "relation_1": {
+    "DataSource": ["TIGER/2018/States"],
+    "Function": ["Filter state by name", "Draw state outline"]
+  },
+  "relation_2": {
+    "DataSource": ["users/eisen520/chinesePrivet"],
+    "Function": ["Center map on feature", "Add layer to map", "Map feature collection", "Filter image collection by bounds", "Create image series chart", "Reduce regions", "Join feature collections"]
+  },
+  "relation_3": {
+    "DataSource": ["COPERNICUS/S2_SR"],
+    "Function": ["Mask clouds and snow", "Add NDVI band", "Filter image collection by date", "Filter image collection by bounds", "Create image series chart", "Reduce regions"]
+  }
+}

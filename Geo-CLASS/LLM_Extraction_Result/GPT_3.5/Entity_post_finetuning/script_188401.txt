@@ -1,0 +1,16 @@
+{
+    "Summary": [
+        "Extracts GFS temperature data for a specific date range and region, visualizing it through an animation."
+    ],
+    "Theme": [
+        "WEATHER EVENTS"
+    ],
+    "DataSource": [
+        "NOAA/GFS0P25"
+    ],
+    "Function": [
+        "Cloud Masking And Quality Filtering",
+        "Vegetation And Water Indices Calculation",
+        "Visualization And Output Generation"
+    ]
+}

@@ -1,0 +1,5 @@
+{
+  "Theme": ["Water quality analysis using Sentinel-2 imagery"],
+  "DataSource": ["users/cxliu2015/BYDwater20210325", "COPERNICUS/S2"],
+  "Function": ["Filtering image collection by date and cloud coverage", "Calculating NDVI and other vegetation indices", "Masking clouds and cirrus", "Computing percentiles of vegetation indices", "Creating a mosaic of median bands", "Exporting images to Google Drive"]
+}

@@ -1,0 +1,47 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "MODIS/006/MOD11A2",
+            "MODIS/006/MOD13A1"
+        ],
+        "Function": [
+            "Calculation of land surface temperature",
+            "Calculation of NDVI",
+            "Calculation of NMDI"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "USGS/SRTMGL1_003"
+        ],
+        "Function": [
+            "Clipping of elevation data"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "MODIS/MOD09GA_006_BAI"
+        ],
+        "Function": [
+            "Calculation of BAI"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "LC8_L1T"
+        ],
+        "Function": [
+            "Filtering and compositing of Landsat 8 images",
+            "Training of classifiers",
+            "Classification of images using different classifiers"
+        ]
+    },
+    "relation_5": {
+        "DataSource": [
+            "ft:1rpd6kIewFWHrgX84jKwW30jeazmuiQJgXg-Pv759"
+        ],
+        "Function": [
+            "None"
+        ]
+    }
+}

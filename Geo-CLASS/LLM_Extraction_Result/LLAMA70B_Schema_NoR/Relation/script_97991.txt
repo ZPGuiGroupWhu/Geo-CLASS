@@ -1,0 +1,60 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/EL/TrinidadandTobago"
+        ],
+        "Function": [
+            "Upload and visualize shapefile",
+            "Create a polygon"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "users/EL/trinidad_forest_type_landcover_28july2011"
+        ],
+        "Function": [
+            "Upload and filter Landsat images",
+            "Classify image using training points"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "users/EL/tobago_forest_type_landcover_06may2011"
+        ],
+        "Function": [
+            "Upload and filter Landsat images",
+            "Classify image using training points"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "LANDSAT/LC8_L1T"
+        ],
+        "Function": [
+            "Upload and filter Landsat images",
+            "Create a mosaic with Landsat simple Composite and ratio bands"
+        ]
+    },
+    "relation_5": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Filter Sentinel images and quality Bands"
+        ]
+    },
+    "relation_6": {
+        "DataSource": [
+            "users/christinacorbane/MT_comp_proj"
+        ],
+        "Function": []
+    },
+    "relation_7": {
+        "DataSource": [
+            "JRC/GSW1_0/GlobalSurfaceWater"
+        ],
+        "Function": [
+            "Use masks for cities and water"
+        ]
+    }
+}

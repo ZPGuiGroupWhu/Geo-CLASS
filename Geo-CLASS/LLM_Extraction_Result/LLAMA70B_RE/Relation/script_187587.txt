@@ -1,0 +1,19 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "MODIS/006/MOD13Q1"
+        ],
+        "Function": [
+            "Filter image collection by date",
+            "Calculate average of MODIS EVI"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "MODIS/006/MOD13Q1"
+        ],
+        "Function": [
+            "Perform principal component analysis"
+        ]
+    }
+}

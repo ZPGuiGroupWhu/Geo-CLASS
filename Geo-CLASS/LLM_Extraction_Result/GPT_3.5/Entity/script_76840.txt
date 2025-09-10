@@ -1,0 +1,6 @@
+{
+  "Summary": ["Generate NDVI and LSWI for Yege region from Landsat data."],
+  "Theme": ["Vegetation health monitoring"],
+  "DataSource": ["users/cxliu2015/QHPA_Yege", "LANDSAT/LT05/C01/T1_SR", "LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Cloud and shadow masking", "NDVI and LSWI computation"]
+}

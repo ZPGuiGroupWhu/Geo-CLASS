@@ -1,0 +1,29 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_TOA"
+        ],
+        "Function": [
+            "Filtering image collection by date and spatial bounds",
+            "Calculating median image",
+            "Masking image based on threshold value"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Calculating normalized difference index",
+            "Generating histogram for threshold value"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "users/chaitanyaks/Maharashtra/Pune_District"
+        ],
+        "Function": [
+            "Clipping image to feature collection"
+        ]
+    }
+}

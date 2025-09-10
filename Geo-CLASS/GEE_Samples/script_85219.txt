@@ -1,0 +1,168 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var CHACO = ee.FeatureCollection("users/diegogmzd/CHACO");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+// COMPARADOR DE IMÁGENES A FALSO COLOR E INDICE NBR
+
+
+
+//SENTINEL 2  PARA COMPARAR CON INDICES ESPECTRALES
+
+
+
+function MascaraNubesS(image) {
+
+  var qa = image.select('QA60');
+
+  var RecorteNubesMascaraS = 1 << 10;
+
+  var RecorteCirrosMascaraS = 1 << 11;
+
+  var MascaraS = qa.bitwiseAnd(RecorteNubesMascaraS).eq(0)
+
+      .and(qa.bitwiseAnd(RecorteCirrosMascaraS).eq(0));
+
+  return image.updateMask(MascaraS);}
+
+var PreIncendio = ee.ImageCollection('COPERNICUS/S2') // Mejor respuesta visual con productos de nivel 2A frente 1C
+
+   .filterDate('2019-07-01', '2019-07-31')
+
+   .filterBounds(CHACO)
+
+   .map(MascaraNubesS);
+
+var medianPreIncendio = PreIncendio.reduce(ee.Reducer.median()); 
+
+var Incendio = ee.ImageCollection('COPERNICUS/S2') // Mejor respuesta visual con productos de nivel 2A frente 1C
+
+   .filterDate('2019-08-01', '2019-08-31')
+
+   .filterBounds(CHACO)
+
+   .map(MascaraNubesS);
+
+var mosaicIncendio = Incendio.mosaic(); // Mejor respuesta visual frente a .median()
+
+var FalsoColor = {min: 500.0,  max: 3000.0,
+
+  bands: ['B11', 'B8A', 'B2'],}; //Composición RGB 11,8,2 (SWIR,NIR,BLUE)
+
+var FalsoColor2 = {min: 500.0,  max: 3000.0,
+
+  bands: ['B11', 'B8A', 'B2'],}; //Composición RGB 11,8,2 (SWIR,NIR,BLUE)
+
+
+
+var clip_chaco = mosaicIncendio.clip(CHACO)
+
+
+
+Map.addLayer(clip_chaco, FalsoColor );
+
+
+
+//NBR
+
+
+
+var NBRIncendio= clip_chaco.normalizedDifference (['B8','B12']); 
+
+var NBRPreIncendio= medianPreIncendio.normalizedDifference (['B8_median','B12_median']); 
+
+var IndiceSeveridad = NBRPreIncendio.subtract(NBRIncendio); // Diferencia entre momentos temporales
+
+var SimbolPreNBR = {max: 0.4,min: -0.1,
+
+  palette: ['#7F0010', '#D99143', '#C04529', '#E02E20', '#EC6521', '#F6D53B']};
+
+var SimbolPostNBR = {max: 0.4, min: -0.1,
+
+  palette: ['#7F0010', '#D99143', '#C04529', '#E02E20', '#EC6521', '#F6D53B']};
+
+var SimbolSeveridad = {max: 1.0, min: -0.4,
+
+  palette: ['011301', '011D01', '012E01', '023B01', '004C00', '056201', '207401', '3E8601',
+
+    '529400', '74A901', '99B718', 'FCD163', 'F1B555', 'DF923D', 'CE7E45', '66A000']};
+
+
+
+//NDVI
+
+
+
+var NDVIIncendio= clip_chaco.normalizedDifference (['B8','B4']); 
+
+var NDVIPreIncendio= medianPreIncendio.normalizedDifference (['B8_median','B4_median']); 
+
+var SimbolNDVI= {max: 1.0, min: 0,
+
+    palette: ['CE7E45', 'DF923D', 'F1B555', 'FCD163', '99B718', '74A901', '66A000', '529400', '3E8601',
+
+    '207401', '056201', '004C00', '023B01', '012E01', '011D01', '011301']};
+
+
+
+
+
+
+
+var Sentinel3Septiembre = ee.ImageCollection('COPERNICUS/S3/OLCI')
+
+  .filterDate ('2019-07-01' ,'2019-07-31')
+
+  .filterBounds (CHACO);
+
+var mosaicSN3 = Sentinel3Septiembre.mosaic();
+
+var clip_SN3 = mosaicSN3.clip(CHACO);
+
+var Sentinel3SeptiembreMedian = Sentinel3Septiembre.reduce(ee.Reducer.median());
+
+var Sentinel3Agosto = ee.ImageCollection('COPERNICUS/S3/OLCI')
+
+  .filterDate ('2019-08-01' ,'2019-08-31');
+
+var Sentinel3AgostoMedian = Sentinel3Agosto.reduce(ee.Reducer.median());
+
+var SimbolSentinel3 = {min: 20, max: 100, gamma: 1.0,
+
+  bands: ['Oa08_radiance','Oa06_radiance','Oa04_radiance']}; 
+
+
+
+// A LA VISUALIZACION TAMBIEN SE LE PUEDE AGREGAR LA PALETA DE COLORES CONTENIDAS EN EL GIT DE COLORBREWER
+
+
+
+var Comparador = ui.Map();
+
+Comparador.addLayer (NBRIncendio, SimbolPostNBR, 'NBR');
+
+Comparador.addLayer (NDVIIncendio, SimbolNDVI, 'NDVI');
+
+Comparador.addLayer (clip_SN3, SimbolSentinel3, 'SENTINEL3');
+
+var SWIPE = ui.Map.Linker([ui.root.widgets().get(0), Comparador]);
+
+var SWIPE2 = ui.SplitPanel({
+
+  firstPanel: SWIPE.get(0),
+
+  secondPanel: SWIPE.get(1),
+
+  orientation: 'horizontal', // Cambio a horizontal o vertical
+
+  wipe: true,
+
+  style: {stretch: 'both'}});
+
+ui.root.widgets().reset([SWIPE2]);
+
+
+
+
+
+
+
+Map.setCenter(-59.68, -20.41, 8);

@@ -1,0 +1,29 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Fire analysis and classification"],
+  "DataSource": ["users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016", "COPERNICUS/S2"],
+  "Function": ["Filtering and mapping fire features", "Creating image collections for before and after fire", "Calculating indices for image classification", "Classifying images using different classifiers"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016"],
+        "Function": ["Filtering and mapping fire features", "Creating image collections for before and after fire", "Calculating indices for image classification", "Classifying images using different classifiers"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Filtering and mapping fire features", "Creating image collections for before and after fire", "Calculating indices for image classification", "Classifying images using different classifiers"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 5387, 'completion_tokens': 288, 'total_tokens': 5675}

@@ -1,0 +1,283 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var test = /* color: #d63000 */ee.Geometry.Polygon(
+        [[[-9.407877577479667, 38.94716798854047],
+          [-9.384385971911911, 38.66111582557556],
+          [-8.941183552992811, 38.650880479559255],
+          [-8.957023705080474, 38.94716354816979]]]),
+    urban = /* color: #d909ff */ee.FeatureCollection(
+        [ee.Feature(
+            ee.Geometry.Polygon(
+                [[[-9.143543243408203, 38.73547314475953],
+                  [-9.149551391601562, 38.72462615542391],
+                  [-9.139423370361328, 38.7256975363094],
+                  [-9.135818481445312, 38.72958115735101]]]),
+            {
+              "landcover": 0,
+              "system:index": "0"
+            })]),
+    forest = /* color: #55c80d */ee.FeatureCollection(
+        [ee.Feature(
+            ee.Geometry.Polygon(
+                [[[-9.195899963378906, 38.7299828992031],
+                  [-9.202423095703125, 38.72248334545944],
+                  [-9.193496704101562, 38.720206539465465],
+                  [-9.189891815185547, 38.72663498140611]]]),
+            {
+              "landcover": 1,
+              "system:index": "0"
+            })]),
+    water = /* color: #0fd2ff */ee.FeatureCollection(
+        [ee.Feature(
+            ee.Geometry.Polygon(
+                [[[-9.054107666015625, 38.78085193143006],
+                  [-9.0582275390625, 38.76693348394693],
+                  [-9.043807983398438, 38.770145674423965],
+                  [-9.038314819335938, 38.77656962147866]]]),
+            {
+              "landcover": 2,
+              "system:index": "0"
+            })]);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+// Refined Lee Speckle - by Guido Lemoine
+// Coded as in SNAP 3.0 S1TBX https://goo.gl/cJmzvj
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+function RefinedLee(img) {
+  var bandNames = img.bandNames()
+  
+  // img must be in natural units, i.e. not in dB!
+  // Set up 3x3 kernels 
+  var weights3 = ee.List.repeat(ee.List.repeat(1,3),3);
+  var kernel3 = ee.Kernel.fixed(3,3, weights3, 1, 1, false);
+
+  var mean3 = img.reduceNeighborhood(ee.Reducer.mean(), kernel3);
+  var variance3 = img.reduceNeighborhood(ee.Reducer.variance(), kernel3);
+
+  // Use a sample of the 3x3 windows inside a 7x7 windows to determine gradients and directions
+  var sample_weights = ee.List([[0,0,0,0,0,0,0], [0,1,0,1,0,1,0],[0,0,0,0,0,0,0], [0,1,0,1,0,1,0], [0,0,0,0,0,0,0], [0,1,0,1,0,1,0],[0,0,0,0,0,0,0]]);
+
+  var sample_kernel = ee.Kernel.fixed(7,7, sample_weights, 3,3, false);
+
+  // Calculate mean and variance for the sampled windows and store as 9 bands
+  var sample_mean = mean3.neighborhoodToBands(sample_kernel); 
+  var sample_var = variance3.neighborhoodToBands(sample_kernel);
+
+  // Determine the 4 gradients for the sampled windows
+  var gradients = sample_mean.select(1).subtract(sample_mean.select(7)).abs();
+  gradients = gradients.addBands(sample_mean.select(6).subtract(sample_mean.select(2)).abs());
+  gradients = gradients.addBands(sample_mean.select(3).subtract(sample_mean.select(5)).abs());
+  gradients = gradients.addBands(sample_mean.select(0).subtract(sample_mean.select(8)).abs());
+
+  // And find the maximum gradient amongst gradient bands
+  var max_gradient = gradients.reduce(ee.Reducer.max());
+
+  // Create a mask for band pixels that are the maximum gradient
+  var gradmask = gradients.eq(max_gradient);
+
+  // duplicate gradmask bands: each gradient represents 2 directions
+  gradmask = gradmask.addBands(gradmask);
+
+  // Determine the 8 directions
+  var directions = sample_mean.select(1).subtract(sample_mean.select(4)).gt(sample_mean.select(4).subtract(sample_mean.select(7))).multiply(1);
+  directions = directions.addBands(sample_mean.select(6).subtract(sample_mean.select(4)).gt(sample_mean.select(4).subtract(sample_mean.select(2))).multiply(2));
+  directions = directions.addBands(sample_mean.select(3).subtract(sample_mean.select(4)).gt(sample_mean.select(4).subtract(sample_mean.select(5))).multiply(3));
+  directions = directions.addBands(sample_mean.select(0).subtract(sample_mean.select(4)).gt(sample_mean.select(4).subtract(sample_mean.select(8))).multiply(4));
+  // The next 4 are the not() of the previous 4
+  directions = directions.addBands(directions.select(0).not().multiply(5));
+  directions = directions.addBands(directions.select(1).not().multiply(6));
+  directions = directions.addBands(directions.select(2).not().multiply(7));
+  directions = directions.addBands(directions.select(3).not().multiply(8));
+
+
+  // Mask all values that are not 1-8
+  directions = directions.updateMask(gradmask);
+
+  // "collapse" the stack into a singe band image (due to masking, each pixel has just one value (1-8) in it's directional band, and is otherwise masked)
+  directions = directions.reduce(ee.Reducer.sum());  
+
+  
+  
+
+  var sample_stats = sample_var.divide(sample_mean.multiply(sample_mean));
+
+  // Calculate localNoiseVariance
+  var sigmaV = sample_stats.toArray().arraySort().arraySlice(0,0,5).arrayReduce(ee.Reducer.mean(), [0]);
+
+  
+
+  // Set up the 7*7 kernels for directional statistics
+  var rect_weights = ee.List.repeat(ee.List.repeat(0,7),3).cat(ee.List.repeat(ee.List.repeat(1,7),4));
+
+  var diag_weights = ee.List([[1,0,0,0,0,0,0], [1,1,0,0,0,0,0], [1,1,1,0,0,0,0], 
+    [1,1,1,1,0,0,0], [1,1,1,1,1,0,0], [1,1,1,1,1,1,0], [1,1,1,1,1,1,1]]);
+
+  var rect_kernel = ee.Kernel.fixed(7,7, rect_weights, 3, 3, false);
+  var diag_kernel = ee.Kernel.fixed(7,7, diag_weights, 3, 3, false);
+
+  // Create stacks for mean and variance using the original kernels. Mask with relevant direction.
+  var dir_mean = img.reduceNeighborhood(ee.Reducer.mean(), rect_kernel).updateMask(directions.eq(1));
+  var dir_var = img.reduceNeighborhood(ee.Reducer.variance(), rect_kernel).updateMask(directions.eq(1));
+
+  dir_mean = dir_mean.addBands(img.reduceNeighborhood(ee.Reducer.mean(), diag_kernel).updateMask(directions.eq(2)));
+  dir_var = dir_var.addBands(img.reduceNeighborhood(ee.Reducer.variance(), diag_kernel).updateMask(directions.eq(2)));
+
+  // and add the bands for rotated kernels
+  for (var i=1; i<4; i++) {
+    dir_mean = dir_mean.addBands(img.reduceNeighborhood(ee.Reducer.mean(), rect_kernel.rotate(i)).updateMask(directions.eq(2*i+1)));
+    dir_var = dir_var.addBands(img.reduceNeighborhood(ee.Reducer.variance(), rect_kernel.rotate(i)).updateMask(directions.eq(2*i+1)));
+    dir_mean = dir_mean.addBands(img.reduceNeighborhood(ee.Reducer.mean(), diag_kernel.rotate(i)).updateMask(directions.eq(2*i+2)));
+    dir_var = dir_var.addBands(img.reduceNeighborhood(ee.Reducer.variance(), diag_kernel.rotate(i)).updateMask(directions.eq(2*i+2)));
+  }
+
+  // "collapse" the stack into a single band image (due to masking, each pixel has just one value in it's directional band, and is otherwise masked)
+  dir_mean = dir_mean.reduce(ee.Reducer.sum());
+  dir_var = dir_var.reduce(ee.Reducer.sum());
+
+  // A finally generate the filtered value
+  var varX = dir_var.subtract(dir_mean.multiply(dir_mean).multiply(sigmaV)).divide(sigmaV.add(1.0));
+
+  var b = varX.divide(dir_var);
+
+  var result = dir_mean.add(b.multiply(img.subtract(dir_mean)));
+
+  
+
+  //TYLER CORRECTION:
+  // Convert the array image to a scaler image.
+  
+  
+
+  //BUT WHAT IF:
+  result = result
+                  .arrayFlatten([bandNames]);   //convert the resultant Array back to a multi-band image
+  
+  
+  
+  return(result); 
+}
+
+
+//Function to convert from dB ('cuz all scenes are dB on EE)
+function toNatural(img) {
+  return ee.Image(10.0).pow(img.divide(10.0));
+}
+//Function to convert to dB (for final step)
+function toDB(img) {
+  return ee.Image(img).log10().multiply(10.0);
+}
+
+var roi = test;
+Map.centerObject(roi, 11);
+
+//Sentinel-1 Collection ()
+var S1 =  ee.ImageCollection('COPERNICUS/S1_GRD')
+.filter(ee.Filter.listContains('transmitterReceiverPolarisation', 'VH'))
+.filter(ee.Filter.listContains('transmitterReceiverPolarisation', 'VV'))
+.filter(ee.Filter.eq('orbitProperties_pass', 'DESCENDING'))
+.filter(ee.Filter.eq('instrumentMode', 'IW'))
+.filterDate('2015-12-01', '2016-01-01')
+.filterBounds(roi)
+
+print('Image count: ', S1.size())
+
+function composite(useRefinedLee) {
+  return function(image) {
+    var vv = image.select('VV')
+    var vh = image.select('VH')
+    
+    if(useRefinedLee) {
+      vv = RefinedLee(vv)
+      vh = RefinedLee(vh)
+      
+      
+    }
+  
+    var vvmvh = vv.subtract(vh).rename('VV-VH');
+    var vvdvh = vv.divide(vh).rename('VV/VH');
+    var list = [vv, vh, vvmvh, vvdvh];
+    
+    return image.addBands(list, null, true);
+  }
+}
+
+
+//VISUALIZE RESULTS
+var useRefinedLee = false
+var S1composite = S1.map(composite(useRefinedLee));
+var S1mean = ee.Image(S1composite.mean()).clip(roi);
+Map.addLayer(S1mean, {bands: ['VV', 'VH', 'VV'], min:-25.0, max:0.0}, 'S1 Mean');
+
+var useRefinedLee = true
+var S1compositeLee = S1.map(composite(useRefinedLee));
+var S1meanLee = ee.Image(S1compositeLee.mean()).clip(roi);
+Map.addLayer(S1meanLee, {bands: ['VV', 'VH', 'VV'], min:-25.0, max:0.0}, 'S1 Mean Lee filtered');
+
+Map.addLayer(S1meanLee.subtract(S1mean), {bands: ['VV', 'VH', 'VV'], min:-0.1, max:0.1}, 'diff', false);
+
+
+
+
+
+
+
+
+
+
+
+
+//CLASSIFICATION OF S1 
+
+
+var polygons = urban.merge(forest).merge(water);
+var training = polygons;
+var bandsS1 = ['VV', 'VH'];
+
+// Creation of training data 
+var training = S1mean.select(bandsS1).sampleRegions({
+  collection: polygons, 
+  properties: ['landcover'], 
+  scale: 30
+});
+
+// Training a CART classifier with default parameters.
+var trained = ee.Classifier.cart().train(training, 'landcover', bandsS1);
+
+// Classify the image with the same bands used for training.
+var classified = S1mean.select(bandsS1).classify(trained);
+
+var palette = ['pink', 'green', 'blue'];
+Map.addLayer(classified, {min: 0, max:2, palette: palette}, 'Classification');
+
+
+
+
+//CLASSIFICATION OF S1 WITH LEE FILTER
+
+
+
+var polygons = urban.merge(forest).merge(water);
+var training = polygons;
+var bandsS1Lee = ['VV', 'VH'/*, "VV-VH", 'VV/VH'*/];   /////I needed to change this too
+
+// Creation of training data 
+var training = S1meanLee.select(bandsS1Lee).sampleRegions({
+  collection: polygons, 
+  properties: ['landcover'], 
+  scale: 30
+});
+
+print('Number of training points: ', training.size())
+
+// Training a CART classifier with default parameters.
+var trained = ee.Classifier.cart().train(training, 'landcover', bandsS1Lee);
+
+// Classify the image with the same bands used for training.
+var classified = S1meanLee.select(bandsS1Lee).classify(trained);
+
+var palette = ['pink', 'green', 'blue'];
+Map.addLayer(classified, {min: 0, max:2, palette: palette}, 'Classification (w/Lee Filter)');
+
+print('S1mean', S1mean);
+print('S1meanLee', S1meanLee);

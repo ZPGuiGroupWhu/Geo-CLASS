@@ -1,0 +1,48 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/felixgeooperations/Drin/20210112_Drin_flood"
+        ],
+        "Function": [
+            "MNDWI (Modified Normalized Difference Water Index calculation)",
+            "Calculating terrain slope and aspect from DEMs",
+            "MNDWI (Modified Normalized Difference Water Index calculation)",
+            "NDWI (Normalized Difference Water Index calculation)"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S1_GRD"
+        ],
+        "Function": [
+            "MNDWI (Modified Normalized Difference Water Index calculation)",
+            "Calculating terrain slope and aspect from DEMs",
+            "MNDWI (Modified Normalized Difference Water Index calculation)",
+            "NDWI (Normalized Difference Water Index calculation)"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "JRC/GSW1_0/GlobalSurfaceWater"
+        ],
+        "Function": [
+            "MNDWI (Modified Normalized Difference Water Index calculation)"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "WWF/HydroSHEDS/03VFDEM"
+        ],
+        "Function": [
+            "NDWI (Normalized Difference Water Index calculation)"
+        ]
+    },
+    "relation_5": {
+        "DataSource": [
+            "JRC/GHSL/P2016/POP_GPW_GLOBE_V1/2015"
+        ],
+        "Function": [
+            "NDVI (Normalized Difference Vegetation Index calculation)"
+        ]
+    }
+}

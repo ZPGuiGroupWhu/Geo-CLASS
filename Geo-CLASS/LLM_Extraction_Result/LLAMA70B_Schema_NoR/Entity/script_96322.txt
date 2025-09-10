@@ -1,0 +1,21 @@
+{
+    "Theme": [
+        "Land use and land cover classification",
+        "Crop monitoring",
+        "Environmental monitoring"
+    ],
+    "DataSource": [
+        "users/eemapascordoba/LCLU_2021/recetas_ago20_abr21_pstxcultivo_masLCollect_buffer2306",
+        "users/eemapascordoba/var_ambientales_rindes/rindes_alf_rol_training_zona",
+        "users/capas/provincia_wgs",
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "Filtering image collection by date and cloud cover",
+        "Renaming image bands",
+        "Calculating vegetation indices",
+        "Creating quality mosaic",
+        "Clipping images to a specific area",
+        "Sampling regions for training data"
+    ]
+}

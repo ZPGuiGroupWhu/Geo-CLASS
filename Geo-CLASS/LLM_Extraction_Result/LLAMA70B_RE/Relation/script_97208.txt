@@ -1,0 +1,21 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016"
+        ],
+        "Function": [
+            "Filtering image collection",
+            "Classifying burned areas"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Filtering image collection",
+            "Calculating vegetation indices",
+            "Evaluating classification accuracy"
+        ]
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "Summary": [
+        "Generates weekly Sentinel-1 composites for floods in Gujarat and allows user comparison."
+    ],
+    "Theme": [
+        "FLOOD FREQUENCY"
+    ],
+    "DataSource": [
+        "users/hrishippatel/IndiaStates",
+        "COPERNICUS/S1_GRD"
+    ],
+    "Function": [
+        "MNDWI (Modified Normalized Difference Water Index calculation)",
+        "Cloud Masking And Quality Filtering"
+    ]
+}

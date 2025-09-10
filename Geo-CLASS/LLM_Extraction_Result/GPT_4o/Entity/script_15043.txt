@@ -1,0 +1,5 @@
+{
+  "Theme": ["Land cover classification", "Variable importance analysis", "Accuracy assessment"],
+  "DataSource": ["users/abuhafsgaa/Makarfi", "users/abuhafsgaa/ALLsample", "users/abuhafsgaa/DATASET_COMPOSITION_2017_21", "users/abuhafsgaa/TEST_SAR_2017_DATASET_BOXCAR"],
+  "Function": ["Sample pixel values", "Split data into training and testing", "Train Random Forest classifier", "Train CART classifier", "Explain classifier results", "Compute variable importance", "Display variable importance", "Classify imagery", "Classify test data", "Compute confusion matrix", "Print validation accuracy", "Print training accuracy", "Visualize classification results", "Combine optical and SAR data"]
+}

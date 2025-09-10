@@ -1,0 +1,17 @@
+{
+  "relation_1": {
+    "DataSource": ["COPERNICUS/S2_SR"],
+    "Function": [
+      "Load Sentinel-2 image collection",
+      "Filter images by cloud percentage",
+      "Filter images by date range",
+      "Remove clouds from images",
+      "Compute NDVI and add as new band",
+      "Add NDVI band to image collection",
+      "Compute NDWI and add as new band",
+      "Add NDWI band to image collection",
+      "Plot NDVI time series",
+      "Plot NDWI time series"
+    ]
+  }
+}

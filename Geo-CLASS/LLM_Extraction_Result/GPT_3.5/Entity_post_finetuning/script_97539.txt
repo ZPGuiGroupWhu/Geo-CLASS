@@ -1,0 +1,17 @@
+{
+    "Summary": [
+        "Script extracts Landsat 8 data, calculates NDVI and SAVI, and exports images."
+    ],
+    "Theme": [
+        "VEGETATION RECONSTRUCTION"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C01/T1_SR"
+    ],
+    "Function": [
+        "Vegetation And Water Indices Calculation",
+        "NDVI (Normalized Difference Vegetation Index calculation)",
+        "NDVI (Normalized Difference Vegetation Index calculation)",
+        "Exporting And Data Conversion"
+    ]
+}

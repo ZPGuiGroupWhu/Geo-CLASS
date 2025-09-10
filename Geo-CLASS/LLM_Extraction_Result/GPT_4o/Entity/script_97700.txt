@@ -1,0 +1,5 @@
+{
+  "Theme": ["Vegetation Index Calculation", "Water Index Calculation", "SAR Analysis"],
+  "DataSource": ["COPERNICUS/S2", "COPERNICUS/S1_GRD"],
+  "Function": ["Filter image collection by date", "Filter image collection by location", "Filter image collection by metadata", "Calculate median image", "Clip image to geometry", "Select image bands", "Add bands to image", "Sample image for training data", "Train KMeans clusterer", "Cluster image using trained clusterer", "Display image layer", "Apply focal mean filter", "Export image to Drive"]
+}

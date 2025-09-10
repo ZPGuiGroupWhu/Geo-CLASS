@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Filtering image collection by date and polarisation", "Applying focal median smoothing to images", "Calculating band ratio images", "Generating histograms of image values", "Creating composite RGB images", "Masking and visualizing flood and river images"]
+    },
+    "relation_2": {
+        "DataSource": ["ft:1nWJr3XY3hcsRSvydLLyK47W-r6N1bB7JHhTYuLle"],
+        "Function": ["Filtering image collection by date and polarisation", "Applying focal median smoothing to images", "Calculating band ratio images", "Generating histograms of image values", "Creating composite RGB images", "Masking and visualizing flood and river images"]
+    }
+}

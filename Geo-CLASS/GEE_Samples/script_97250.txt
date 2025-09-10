@@ -1,0 +1,108 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var india = ee.FeatureCollection("users/ujavalgandhi/public/soi_india_boundary");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+// Calculate Night Light Statistics by Landcover
+// using Grouped Reducers
+ 
+// How is the distribution of Nighttime Lights is 
+// different for urban vs. agricultural areas?
+
+// Using collection 'NOAA/DMSP-OLS/NIGHTTIME_LIGHTS'
+var dmsp = ee.ImageCollection('NOAA/DMSP-OLS/NIGHTTIME_LIGHTS');
+// Using collection 'MODIS/006/MCD12Q1' for landcover
+var modis = ee.ImageCollection('MODIS/006/MCD12Q1');
+
+var geometry = india.geometry();
+Map.centerObject(geometry);
+var year = 2009;
+var startDate = ee.Date.fromYMD(year, 1, 1);
+var endDate = startDate.advance(1, 'year')
+
+var scale = ee.Image(dmsp.first()).projection().nominalScale();
+print('DMSP Scale', scale)
+
+// We filter for dates and select the appropriate band
+// Available bands: avg_vis and stable_lights
+// Selecting 'stable_lights'
+var band = 'stable_lights';
+var filtered = dmsp
+  .filter(ee.Filter.date(startDate, endDate))
+  .select(band);
+var ntl = ee.Image(filtered.first());
+
+Map.addLayer(ntl.clip(geometry), {min:0, max:63}, 'DMSP Night Lights')
+
+// Extract Landcover Classification for the year
+// Using the IGBP classification
+var classification = 'LC_Type1';
+var filtered = modis
+  .filter(ee.Filter.date(startDate, endDate))
+  .select(classification)
+var landcover = ee.Image(filtered.first());
+// Extract relevant landcover classes
+
+// Agriculture
+// 10: Grasses/Cereleas
+// 12: Croplands
+// 14: Cropland/Natural Vegetaion
+var agriculture = landcover.eq(10)
+  .or(landcover.eq(12))
+  .or(landcover.eq(14))
+Map.addLayer(agriculture.selfMask().clip(geometry), {max:1, palette: ['green']}, 'Agriculture')
+
+// 13: Urban
+var urban = landcover.eq(13);
+Map.addLayer(urban.selfMask().clip(geometry), {max:1, palette: ['blue']}, 'Urban')
+
+// Create a image agriculture and urban zones
+
+var zones = ee.Image(0)
+  .where(agriculture.eq(1), 1)
+  .where(urban.eq(1), 2)
+  .selfMask()
+
+Map.addLayer(zones.clip(geometry), {min:1, max:2, palette: ['green', 'blue']}, 'Zones')
+
+// We want to find the distribution of pixel values
+// in the following range
+
+// We classify the nightlights image into these
+// categorical values
+var classified = ntl
+  .where(ntl.eq(0), 1)
+  .where(ntl.gt(0).and(ntl.lte(5)), 2)
+  .where(ntl.gt(5).and(ntl.lte(10)), 3)
+  .where(ntl.gt(10), 4)
+
+// We now compute statistics on the classified image
+// in each zone using a grouped reducer
+var zonalStats = classified.addBands(zones).reduceRegion({
+    reducer: ee.Reducer.frequencyHistogram().unweighted()
+      .group({groupField: 1, groupName: 'zone'}),
+    geometry: geometry,
+    scale: scale,
+    maxPixels: 1e10
+  })
+var zoneHistograms = ee.List(zonalStats.get('groups'))
+var zoneStatLists = zoneHistograms.map(function(item) {
+  var zoneDict = ee.Dictionary(item)
+  var zoneNumber = ee.Number(zoneDict.get('zone')).format()
+  var histogram = ee.List(zoneDict.get('histogram'));
+  var classes = ee.List([1, 2, 3, 4]);
+  var counts = classes.map(function(item) {
+    var count = ee.Dictionary(histogram).get(item, 0)
+    return count
+  })
+  var total = counts.reduce(ee.Reducer.sum());
+  var percentages = counts.map(function(item) {
+    return ee.Number(item).divide(total).multiply(100).format('%.1f')
+  })
+  var stats = ee.Dictionary.fromLists(
+    ['DN0', 'DN1-5', 'DN6-10', 'DN>10'], percentages)
+  return stats
+})
+print(zoneStatLists)
+
+
+print('Distribution of pixels for Agriculture', zoneStatLists.get(0))
+print('Distribution of pixels for Urban', zoneStatLists.get(1))

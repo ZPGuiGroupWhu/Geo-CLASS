@@ -1,0 +1,24 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Landsat 8 Surface Reflectance Analysis"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Filter image collection by date", "Filter image collection by bounds", "Apply cloud mask", "Calculate image statistics", "Visualize images"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Filter image collection by date", "Filter image collection by bounds", "Apply cloud mask", "Calculate image statistics", "Visualize images"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3599, 'completion_tokens': 176, 'total_tokens': 3775}

@@ -1,0 +1,148 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var geometry = 
+    /* color: #d63000 */
+    /* displayProperties: [
+      {
+        "type": "rectangle"
+      }
+    ] */
+    ee.Geometry.Polygon(
+        [[[100.29315421342655, 14.324487788151659],
+          [100.29315421342655, 14.271257662679483],
+          [100.36868521928592, 14.271257662679483],
+          [100.36868521928592, 14.324487788151659]]], null, false);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+//---------------------------------------------------------------------------------------
+
+// Lab 04-2_Export_Reprojection
+
+// GEE Lab By Mr. Chaipat Ncm. #Thai Opensource GIS Community
+
+// 10/10/2022
+
+//----------------------------------------------------------------------------------------
+
+
+
+// ------------ Reprojection Remark !!!  ---------
+
+//Code Editor = mercator (EPSG:3857) projection
+
+// Some bands of the specified image contain different projections. Use Image.select to pick a single band.
+
+
+
+
+
+
+
+//---------------------- Sentinel2 Image collection ----------------------------
+
+var s2 = ee.ImageCollection("COPERNICUS/S2");
+
+var filtered = s2.filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE', 20))
+
+  .filter(ee.Filter.date('2022-01-01', '2022-01-05'))
+
+  .filter(ee.Filter.bounds(geometry))
+
+  
+
+print('Searching Found=',filtered.size())
+
+
+
+var res_img = filtered.first().select('B.+');
+
+print('Raw Image Metadata:',res_img);
+
+
+
+
+
+//---------------------- Reprojection Image --------------------------------
+
+
+
+// Checking Image Projection & CRS
+
+var projection = res_img.select('B2').projection();
+
+print('Raw Image Projection, CRS, and CRS Transform:',projection);
+
+print('Raw Image Scale (meters):',projection.nominalScale());
+
+
+
+// Reprojection 
+
+/**/
+
+var res_img_rp = res_img.reproject('EPSG:4326', null, 10);
+
+print('Reprojection Image Metadata:',res_img_rp);
+
+// Checking result
+
+var reprojection = res_img_rp.select('B2').projection();
+
+print('Raw Image Projection, CRS, and CRS Transform:',reprojection);
+
+print('Raw Image Scale (meters):',reprojection.nominalScale());
+
+  
+
+//----------------------- Export to Google Drive----------------------------
+
+Export.image.toDrive({
+
+    image: res_img,
+
+    description: 'Sentinel2_reproj_4326',
+
+    folder: 'earthengine_data',
+
+    fileNamePrefix: 'S2_reproj_4326',
+
+    crs: reprojection.getInfo().crs,
+
+    crsTransform: reprojection.getInfo().transform,
+
+    region: geometry,
+
+    maxPixels: 1e9,
+
+    //pyramidingPolicy: {'.default':'sample'},
+
+    fileFormat: 'GeoTIFF'
+
+});
+
+
+
+//----------------------- Show Result with Google Map API ----------------------
+
+
+
+var visualization = {
+
+  min: 0.0,
+
+  max: 3000,
+
+  bands: ['B4', 'B3', 'B2'],
+
+};
+
+
+
+Map.centerObject(geometry, 10)
+
+Map.addLayer(res_img, visualization, 'Raw Sentinel Image')
+
+Map.addLayer(res_img_rp, visualization, 'Sentinel2 Reprojection')
+
+
+
+
+

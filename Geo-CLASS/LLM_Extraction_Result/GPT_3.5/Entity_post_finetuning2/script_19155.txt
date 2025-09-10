@@ -1,0 +1,20 @@
+{
+    "Summary": [
+        "Script classifies land cover using Sentinel-2 imagery."
+    ],
+    "Theme": [
+        "LAND USE/LAND COVER CLASSIFICATION"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2",
+        "cultivado",
+        "nocultivado",
+        "urbano",
+        "suelo_desnudo"
+    ],
+    "Function": [
+        "Filter Image Collection",
+        "Sampling Image",
+        "Random Forest Classification"
+    ]
+}

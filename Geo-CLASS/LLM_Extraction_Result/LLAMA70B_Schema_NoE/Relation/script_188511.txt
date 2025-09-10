@@ -1,0 +1,30 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "UCSB-CHG/CHIRPS/PENTAD"
+        ],
+        "Function": [
+            "Filtering and reducing image collections",
+            "Calculating cloud probability and precipitation"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2_CLOUD_PROBABILITY"
+        ],
+        "Function": [
+            "Clipping and masking images",
+            "Calculating cloud probability and precipitation"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "users/kitmyfaceplease2/eastsouth_asia",
+            "projects/ee-kitmyfaceplease2/assets/EAST_SOUTH_SPLIT2"
+        ],
+        "Function": [
+            "Performing cross-correlation analysis",
+            "Exporting images to Drive"
+        ]
+    }
+}

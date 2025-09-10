@@ -1,0 +1,22 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S1_GRD"
+        ],
+        "Function": [
+            "Refined Lee speckle filtering",
+            "Image conversion between dB and natural units",
+            "Image filtering using mean and variance calculations"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "User-defined polygons for urban, forest, and water areas"
+        ],
+        "Function": [
+            "CART classification",
+            "Image clipping",
+            "Image visualization"
+        ]
+    }
+}

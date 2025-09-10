@@ -1,0 +1,16 @@
+{
+    "Theme": [
+        "Flood monitoring and analysis"
+    ],
+    "DataSource": [
+        "COPERNICUS/S1_GRD",
+        "regions"
+    ],
+    "Function": [
+        "Filtering image collections",
+        "Mosaicking images",
+        "Clipping images",
+        "Calculating NDFI",
+        "Thresholding flood areas"
+    ]
+}

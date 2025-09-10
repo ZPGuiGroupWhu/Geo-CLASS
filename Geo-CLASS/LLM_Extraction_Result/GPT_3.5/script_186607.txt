@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["The script collects satellite images and calculates NDVI and NBR, then detects forest loss, degradation, and fires in a specific area using Landsat 8 data."],
+  "Theme": ["Forest monitoring using Landsat 8 imagery"],
+  "DataSource": ["LANDSAT/LC8_SR", "LANDSAT/LC8_L1T_TOA", "LANDSAT/LT5_L1T_TOA_FMASK", "LANDSAT/LE7_L1T_TOA_FMASK", "COPERNICUS/S2"],
+  "Function": ["Calculates NDVI for vegetation health assessment", "Calculates NBR for burn severity mapping"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC8_SR", "LANDSAT/LC8_L1T_TOA", "LANDSAT/LT5_L1T_TOA_FMASK", "LANDSAT/LE7_L1T_TOA_FMASK"],
+        "Function": ["Calculates NDVI for vegetation health assessment", "Calculates NBR for burn severity mapping"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Calculates NDVI for vegetation health assessment"]
+    }
+}
+```

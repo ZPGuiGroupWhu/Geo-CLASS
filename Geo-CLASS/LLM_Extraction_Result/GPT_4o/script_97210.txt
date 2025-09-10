@@ -1,0 +1,25 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Fire analysis", "Burned area detection", "Pre and post-fire imagery"],
+  "DataSource": ["users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016", "COPERNICUS/S2"],
+  "Function": ["Set date range", "Define fire area", "Filter features by date", "Filter features by location", "Calculate image indices", "Create image collections", "Mask invalid zones", "Compute mean images", "Clip images", "Divide image values", "Add bands to images", "Sample training data", "Sample validation data", "Train classifiers", "Classify images", "Compute confusion matrix", "Visualize classification"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016"],
+    "Function": ["Filter features by date", "Filter features by location", "Mask invalid zones", "Sample training data", "Sample validation data", "Visualize classification"]
+  },
+  "relation_2": {
+    "DataSource": ["COPERNICUS/S2"],
+    "Function": ["Create image collections", "Calculate image indices", "Compute mean images", "Clip images", "Divide image values", "Add bands to images", "Classify images", "Compute confusion matrix"]
+  }
+}
+```
+
+Total_Token_Usage:
+10020

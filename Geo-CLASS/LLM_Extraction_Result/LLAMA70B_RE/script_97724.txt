@@ -1,0 +1,29 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Entity Recognition": {
+    "Theme": ["Vegetation monitoring and NDVI analysis"],
+    "DataSource": ["TIGER/2018/States", "users/eisen520/chinesePrivet", "COPERNICUS/S2_SR"],
+    "Function": ["Filtering image collection", "Masking cloud and snow pixels", "Adding NDVI band", "Reducing regions", "Joining tables", "Merging observations"]
+  },
+  "Relation Extraction": {
+    "relation_1": {
+      "DataSource": ["TIGER/2018/States"],
+      "Function": ["Filtering image collection"]
+    },
+    "relation_2": {
+      "DataSource": ["users/eisen520/chinesePrivet"],
+      "Function": ["Reducing regions", "Joining tables", "Merging observations"]
+    },
+    "relation_3": {
+      "DataSource": ["COPERNICUS/S2_SR"],
+      "Function": ["Masking cloud and snow pixels", "Adding NDVI band"]
+    }
+  }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3724, 'completion_tokens': 270, 'total_tokens': 3994}

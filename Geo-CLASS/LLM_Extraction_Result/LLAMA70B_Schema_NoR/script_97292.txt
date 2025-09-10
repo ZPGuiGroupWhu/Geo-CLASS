@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover classification and object-based image analysis"],
+  "DataSource": ["USDA/NAIP/DOQQ", "USDA/NASS/CDL/2016"],
+  "Function": ["Filtering image collection by date and bounds", "Clipping image to area of interest", "Segmenting image using SNIC algorithm", "Computing per-cluster standard deviation", "Calculating cluster area and perimeter", "Classifying objects using random forest classifier", "Computing spectral angle between pixels and cluster means"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response that organizes the extracted information into a structured format:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["USDA/NAIP/DOQQ"],
+        "Function": ["Filtering image collection by date and bounds", "Clipping image to area of interest", "Segmenting image using SNIC algorithm"]
+    },
+    "relation_2": {
+        "DataSource": ["USDA/NASS/CDL/2016"],
+        "Function": ["Computing per-cluster standard deviation", "Calculating cluster area and perimeter", "Classifying objects using random forest classifier", "Computing spectral angle between pixels and cluster means"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3240, 'completion_tokens': 279, 'total_tokens': 3519}

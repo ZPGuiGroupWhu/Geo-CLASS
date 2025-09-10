@@ -1,0 +1,25 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land Surface Temperature Analysis", "NDVI Calculation", "Cloud Masking"],
+  "DataSource": ["users/KARTIKA_EAA/Semarang", "LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Apply cloud mask", "Set visualization parameters", "Load image collection", "Filter images by date", "Filter images by location", "Calculate median image", "Clip image to geometry", "Add image layer to map", "Set map center", "Create and style legend", "Add legend to map", "Calculate NDVI", "Select thermal band", "Calculate min and max NDVI", "Calculate fractional vegetation", "Calculate emissivity", "Calculate land surface temperature", "Add LST layer to map"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["users/KARTIKA_EAA/Semarang"],
+    "Function": ["Filter images by location", "Clip image to geometry", "Calculate min and max NDVI"]
+  },
+  "relation_2": {
+    "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+    "Function": ["Apply cloud mask", "Load image collection", "Filter images by date", "Calculate median image", "Calculate NDVI", "Select thermal band", "Calculate fractional vegetation", "Calculate emissivity", "Calculate land surface temperature"]
+  }
+}
+```
+
+Total_Token_Usage:
+5898

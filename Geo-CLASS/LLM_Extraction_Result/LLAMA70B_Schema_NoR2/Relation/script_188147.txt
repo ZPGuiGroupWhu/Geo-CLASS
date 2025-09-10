@@ -1,0 +1,18 @@
+{
+    "relation_1": {
+        "DataSource": ["users/kindgard/Asia/Asia", "users/kindgard/Africa", "users/kindgard/SUD", "users/kindgard/AfricaS", "users/kindgard/AmericaN", "users/kindgard/Asia2"],
+        "Function": ["Filtering image collections by date and cloud cover", "Clipping images to a specific country boundary", "Merging image collections"]
+    },
+    "relation_2": {
+        "DataSource": ["ft:1tdSwUL7MVpOauSgRzqVTOwdfy17KDbw-1d9omPw", "ft:1gvizfsdJL2f4cr0OSI5744HnaAeWU39w4cDO9aLh", "ft:1VyLhtXjayg1nD2auTSF73e-94uuuqEe0dLXkqk-y"],
+        "Function": ["Applying simple compositing to image collections", "Calculating spectral ratios"]
+    },
+    "relation_3": {
+        "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater", "users/kindgard/ESACCI-LC-L4-LC10-Map-20m-P1Y-2016-v10", "users/ValeriaContessa/Map_1992_rast"],
+        "Function": ["Classifying land cover using CART algorithm", "Masking cities and water bodies"]
+    },
+    "relation_4": {
+        "DataSource": ["LANDSAT/LT5_L1T", "LANDSAT/LE7_L1T", "LANDSAT/LC08/C01/T1_RT", "COPERNICUS/S2"],
+        "Function": ["Creating a mosaic of images"]
+    }
+}

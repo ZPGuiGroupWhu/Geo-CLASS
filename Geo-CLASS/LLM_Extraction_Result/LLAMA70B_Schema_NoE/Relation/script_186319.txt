@@ -1,0 +1,53 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LC8_SR",
+            "LANDSAT/LC8_L1T_TOA",
+            "LANDSAT/LE7_L1T_TOA_FMASK"
+        ],
+        "Function": [
+            "Filtering and sorting image collections",
+            "Calculating NDVI and NBR indices",
+            "Mosaicking and exporting images"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Visualizing and comparing images",
+            "Detecting forest loss and deforestation"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "ft:1Oaa3b2LdFGrAXL4jqFJzA-3iBeiNq6AQZkyFLVvp",
+            "ft:1tAjm5bGsh0TWPSawKIsX-iWXd7vocIoG_98QjhU1"
+        ],
+        "Function": [
+            "Filtering and sorting image collections",
+            "Calculating NDVI and NBR indices"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "ft:1iovW6_vHSX3JOx5OvcFr-ljJdx5mGmqK6Q_ETiSO",
+            "ft:1zmsdCSa-do_XXh6-w6bpfXpz_kN7nGBGmKAcBRFQ"
+        ],
+        "Function": [
+            "Mosaicking and exporting images",
+            "Visualizing and comparing images"
+        ]
+    },
+    "relation_5": {
+        "DataSource": [
+            "ft:12Ca5CZlFISuiE7Nf-3fpuTcvFgYNobv-4EJdCkGh",
+            "ft:1-uk71GdY0SUx0Gf4oX2C0LWSvdns18hkRVz7D8C4",
+            "ft:1ovvyN_dzo01mRw8uSNMIYNg-HKyGTrqLErfg26X0"
+        ],
+        "Function": [
+            "Detecting forest loss and deforestation"
+        ]
+    }
+}

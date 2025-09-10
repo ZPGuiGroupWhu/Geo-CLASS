@@ -1,0 +1,24 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "FAO/GAUL_SIMPLIFIED_500m/2015/level2"
+        ],
+        "Function": [
+            "Filtering image collection by bounds and date",
+            "Clipping image to boundary"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LT05/C01/T1_SR"
+        ],
+        "Function": [
+            "Filtering image collection by bounds and date",
+            "Calculating NDWI",
+            "Computing histogram",
+            "Charting histogram",
+            "Otsu thresholding",
+            "Classifying image"
+        ]
+    }
+}

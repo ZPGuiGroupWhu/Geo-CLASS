@@ -1,0 +1,37 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Flood mapping", "Damage assessment", "Population exposure"],
+  "DataSource": ["users/felixgeooperations/Drin/20210112_Drin_flood", "COPERNICUS/S1_GRD", "JRC/GSW1_0/GlobalSurfaceWater", "WWF/HydroSHEDS/03VFDEM", "JRC/GHSL/P2016/POP_GPW_GLOBE_V1/2015"],
+  "Function": ["Filter image collection by parameters", "Select images by date", "Create mosaic and clip to area", "Smooth radar images", "Calculate image difference", "Apply threshold to difference image", "Mask permanent water areas", "Eliminate noise from flood extent", "Mask areas with high slope", "Calculate flood extent area", "Calculate exposed population", "Export images and vectors", "Display results on map"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["users/felixgeooperations/Drin/20210112_Drin_flood"],
+    "Function": ["Display results on map"]
+  },
+  "relation_2": {
+    "DataSource": ["COPERNICUS/S1_GRD"],
+    "Function": ["Filter image collection by parameters", "Select images by date", "Create mosaic and clip to area", "Smooth radar images", "Calculate image difference", "Apply threshold to difference image", "Calculate flood extent area", "Export images and vectors", "Display results on map"]
+  },
+  "relation_3": {
+    "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+    "Function": ["Mask permanent water areas"]
+  },
+  "relation_4": {
+    "DataSource": ["WWF/HydroSHEDS/03VFDEM"],
+    "Function": ["Mask areas with high slope"]
+  },
+  "relation_5": {
+    "DataSource": ["JRC/GHSL/P2016/POP_GPW_GLOBE_V1/2015"],
+    "Function": ["Calculate exposed population"]
+  }
+}
+```
+
+Total_Token_Usage:
+11809

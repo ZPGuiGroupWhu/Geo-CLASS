@@ -1,0 +1,33 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Arctic treeline project in Russia"],
+  "DataSource": ["users/cxliu2015/Arctic_treeline_Project_Russia", "ft:1XXheLy1fnGiQKRtkcP9iD9s3gqdcx2PqtkKJP7Ig", "LANDSAT/LT04/C01/T1_TOA", "LANDSAT/LT05/C01/T1_TOA", "LANDSAT/LE07/C01/T1_TOA", "LANDSAT/LC08/C01/T1_TOA"],
+  "Function": ["Cloud removal for Landsat images", "NDVI calculation for Landsat images", "Image collection filtering by date and bounds", "Image masking using quality band", "Harmonization of Landsat 8 and Landsat 7 images", "Image count calculation for summer images"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LT04/C01/T1_TOA", "LANDSAT/LT05/C01/T1_TOA", "LANDSAT/LE07/C01/T1_TOA", "LANDSAT/LC08/C01/T1_TOA"],
+        "Function": ["Cloud removal for Landsat images", "NDVI calculation for Landsat images", "Harmonization of Landsat 8 and Landsat 7 images"]
+    },
+    "relation_2": {
+        "DataSource": ["ft:1XXheLy1fnGiQKRtkcP9iD9s3gqdcx2PqtkKJP7Ig"],
+        "Function": ["Image collection filtering by date and bounds", "Image masking using quality band"]
+    },
+    "relation_3": {
+        "DataSource": ["users/cxliu2015/Arctic_treeline_Project_Russia"],
+        "Function": ["Image count calculation for summer images"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4573, 'completion_tokens': 489, 'total_tokens': 5062}

@@ -1,0 +1,13 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LC08/C02/T1_L2"
+        ],
+        "Function": [
+            "Filtering image collection by date and extent",
+            "Applying scale factors to optical and thermal bands",
+            "Visualizing images in different bands and combinations",
+            "Exporting images to Google Drive"
+        ]
+    }
+}

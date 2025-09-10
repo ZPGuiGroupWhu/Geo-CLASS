@@ -1,0 +1,74 @@
+var HimachalPradesh = ee.Geometry.Rectangle(76.00, 31.20, 78.36, 33.00);
+var Settlement = ee.FeatureCollection([
+  ee.Feature(ee.Geometry.Point([77.23313933,32.4169078]), {label: 'Damphug'}), 
+  ee.Feature(ee.Geometry.Point([77.1119691, 31.9608654]), {label: 'Sarvari'}), 
+  ee.Feature(ee.Geometry.Point([76.99551101, 31.78148423]), {label: 'IIT Mandi'}), 
+  ee.Feature(ee.Geometry.Point([77.1868959, 32.2445586]), {label: 'Manali'}), 
+  ee.Feature(ee.Geometry.Point([77.0324116, 32.5707555]), {label: 'Keylong'}),
+  ee.Feature(ee.Geometry.Point([76.891223782, 31.53559727]), {label: 'Bhojpur'})
+  ]);
+
+var modis = ee.ImageCollection("MODIS/006/MOD11A1");
+
+var filtered = modis
+  .filter(ee.Filter.bounds(HimachalPradesh))
+  .filter(ee.Filter.date('2013-01-01', '2021-01-01'))
+  .map(function(image){return image.clip(HimachalPradesh)});
+  
+
+var modisLST = filtered.select('LST_Night_1km')
+var scaledLST = modisLST.map(function(image){
+  return image.multiply(0.02)
+    .subtract(273.15)
+  .copyProperties(image,['system:time_start','system:time_end']);
+});
+
+Map.addLayer(scaledLST, {palette: ['blue', 'limegreen', 'yellow', 
+'darkorange', 'red']},'MODIS LST');
+    
+
+var Tbl = scaledLST.map(function(image) {
+  var withStats = image.reduceRegions({
+  collection: Settlement,
+  reducer: ee.Reducer.mean().setOutputs(['LST_Night_1km']),
+  scale: 250
+  }).map(function(feature) {
+    return feature.set('imageId', image.id())
+  })
+  return withStats
+}).flatten()
+
+var format = function(table, colId,rowId ) {
+  var cols = table.distinct(colId); 
+  var joined = ee.Join.saveAll('matches').apply({
+    primary: cols, 
+    secondary: table, 
+    condition: ee.Filter.equals({
+      leftField: colId, 
+      rightField: colId
+    })
+  });
+         
+  return joined.map(function(col) {
+      var values = ee.List(col.get('matches'))
+        .map(function(feature) {
+          feature = ee.Feature(feature);
+          var LST = ee.List([feature.get('LST_Night_1km'), -9999])
+            .reduce(ee.Reducer.firstNonNull())
+          return [feature.get(rowId), ee.Number(LST).format('%.2f')];
+        });
+      return col.select([colId]).set(ee.Dictionary(values.flatten()));
+    });
+};
+
+var timeSeriesResults = format(Tbl, 'label', 'imageId');
+print(timeSeriesResults.first()) 
+
+
+Export.table.toDrive({
+  collection: timeSeriesResults,
+  description: 'MODIS_LST_Night_Settlement',
+  folder: 'Mini Project Results',
+  fileNamePrefix: 'modis_LST_Night_Settlement',
+  fileFormat: 'CSV'})
+

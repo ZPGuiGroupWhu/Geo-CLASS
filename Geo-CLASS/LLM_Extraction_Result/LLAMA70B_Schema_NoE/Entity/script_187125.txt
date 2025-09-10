@@ -1,0 +1,17 @@
+{
+    "Theme": [
+        "Water detection and river boundary extraction using Sentinel-2 and JRC data"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2",
+        "JRC/GSW1_0/MonthlyHistory",
+        "users/christinacorbane/MT_comp_proj"
+    ],
+    "Function": [
+        "Process Sentinel-2 image by filtering, resampling, and normalizing bands",
+        "Compute NDWI and MNDWI indices for water detection",
+        "Apply Otsu thresholding method for automatic threshold selection",
+        "Detect water bodies using Canny edge detection and thresholding",
+        "Compute JRC monthly water occurrence for a few months"
+    ]
+}

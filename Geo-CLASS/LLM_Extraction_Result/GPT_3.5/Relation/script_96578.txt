@@ -1,0 +1,18 @@
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2_SR", "MODIS/006/MOD14A1", "MODIS/006/MOD11A1"],
+        "Function": ["Image collection filtering by date and bands", "NDVI calculation and change detection"]
+    },
+    "relation_2": {
+        "DataSource": ["MODIS/006/MOD14A1"],
+        "Function": ["Unmasking fire probability image collection"]
+    },
+    "relation_3": {
+        "DataSource": ["MODIS/006/MOD11A1"],
+        "Function": ["Temperature conversion from Kelvin to Celsius"]
+    },
+    "relation_4": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["Image collection filtering by date and bands", "NDVI calculation and change detection"]
+    }
+}

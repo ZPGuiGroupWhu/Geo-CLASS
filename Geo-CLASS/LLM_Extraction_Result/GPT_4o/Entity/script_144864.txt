@@ -1,0 +1,5 @@
+{
+  "Theme": ["Satellite image processing", "Cloud masking", "NDVI classification"],
+  "DataSource": ["users/thao226355/share/VietNam_Ranh_gioi_tinh", "COPERNICUS/S2_SR"],
+  "Function": ["Filter boundary by metadata", "Add boundary layer to map", "Select QA60 band", "Create cloud mask", "Apply cloud mask", "Filter images by boundary", "Filter images by date", "Filter images by cloud percentage", "Apply cloud mask and merge images", "Select specific bands", "Clip images by boundary", "Add satellite image layer to map", "Calculate NDVI", "Mask NDVI values", "Classify NDVI values", "Add classified NDVI layer to map", "Calculate image area"]
+}

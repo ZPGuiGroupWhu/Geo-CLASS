@@ -1,0 +1,18 @@
+{
+    "Theme": [
+        "Cloud probability analysis",
+        "Land cover classification"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2_CLOUD_PROBABILITY",
+        "users/kitmyfaceplease2/eastsouth_asia"
+    ],
+    "Function": [
+        "Filtering image collection by cloud probability",
+        "Creating a mosaic of images",
+        "Counting images in a collection",
+        "Masking clouds in an image",
+        "Calculating the sum of a collection",
+        "Calculating the percentage of cloud probability"
+    ]
+}

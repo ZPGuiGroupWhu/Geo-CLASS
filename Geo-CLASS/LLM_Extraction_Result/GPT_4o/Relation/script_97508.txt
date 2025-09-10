@@ -1,0 +1,21 @@
+{
+  "relation_1": {
+    "DataSource": ["LANDSAT/LC08/C02/T1_L2"],
+    "Function": [
+      "Create NDVI time series",
+      "Filter images by cloud cover",
+      "Filter images by path and row",
+      "Filter images by date",
+      "Calculate NDVI",
+      "Map NDVI calculation",
+      "Create chart series by region",
+      "Set chart series names",
+      "Set chart type",
+      "Set chart options",
+      "Load Landsat image",
+      "Center map on regions",
+      "Add true color layer",
+      "Add polygon layers"
+    ]
+  }
+}

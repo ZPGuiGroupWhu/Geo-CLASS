@@ -1,0 +1,73 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/cxliu2015/Arctic_treeline_Project_Russia"
+        ],
+        "Function": [
+            "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover",
+            "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover",
+            "Fractional Vegetation Cover (FVC) Classification",
+            "Feature Filtering And Mapping",
+            "Image Band Manipulation",
+            "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover",
+            "Export Processed Images To Google Drive"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LT04/C01/T1_TOA"
+        ],
+        "Function": [
+            "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover",
+            "Feature Filtering And Mapping",
+            "Image Band Manipulation"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "LANDSAT/LT05/C01/T1_TOA"
+        ],
+        "Function": [
+            "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover",
+            "Feature Filtering And Mapping",
+            "Image Band Manipulation"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "LANDSAT/LE07/C01/T1_TOA"
+        ],
+        "Function": [
+            "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover",
+            "Feature Filtering And Mapping",
+            "Image Band Manipulation"
+        ]
+    },
+    "relation_5": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_TOA"
+        ],
+        "Function": [
+            "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover",
+            "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover",
+            "Feature Filtering And Mapping",
+            "Image Band Manipulation",
+            "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover",
+            "Export Processed Images To Google Drive"
+        ]
+    },
+    "relation_6": {
+        "DataSource": [
+            "ft:1XXheLy1fnGiQKRtkcP9iD9s3gqdcx2PqtkKJP7Ig"
+        ],
+        "Function": [
+            "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover",
+            "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover",
+            "Fractional Vegetation Cover (FVC) Classification",
+            "Feature Filtering And Mapping",
+            "Image Band Manipulation",
+            "Filter And Mosaic Landsat Images For Specific Dates And Cloud Cover",
+            "Export Processed Images To Google Drive"
+        ]
+    }
+}

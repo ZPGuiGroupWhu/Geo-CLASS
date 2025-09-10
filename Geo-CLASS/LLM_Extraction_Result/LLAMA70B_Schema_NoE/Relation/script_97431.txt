@@ -1,0 +1,28 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_TOA"
+        ],
+        "Function": [
+            "Add MNDWI band to Landsat 8 image",
+            "Simple cloud score calculation",
+            "Masking of cloudy pixels",
+            "Quality mosaic calculation",
+            "Median calculation",
+            "Filtering by month and cloud cover"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "users/eggenm/chad_rivers"
+        ],
+        "Function": [
+            "Add MNDWI band to Landsat 8 image",
+            "Simple cloud score calculation",
+            "Masking of cloudy pixels",
+            "Quality mosaic calculation",
+            "Median calculation",
+            "Filtering by month and cloud cover"
+        ]
+    }
+}

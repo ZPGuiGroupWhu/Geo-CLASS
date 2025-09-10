@@ -1,0 +1,17 @@
+{
+  "relation_1": {
+    "DataSource": ["LANDSAT/LC08/C02/T1_L2"],
+    "Function": [
+      "Filter image collection by date",
+      "Filter image collection by bounds",
+      "Display dataset layers",
+      "Select first image from collection",
+      "Clip image to extent",
+      "Convert bands to reflectance",
+      "Display image layers",
+      "Visualize image in true color",
+      "Visualize image in color infrared",
+      "Export image to Google Drive"
+    ]
+  }
+}

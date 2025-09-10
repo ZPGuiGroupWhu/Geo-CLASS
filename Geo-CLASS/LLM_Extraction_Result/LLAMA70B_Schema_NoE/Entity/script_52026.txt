@@ -1,0 +1,15 @@
+{
+    "Theme": [
+        "Ozone concentration analysis"
+    ],
+    "DataSource": [
+        "users/bkkumarbittu371/Andhra_Pradesht",
+        "COPERNICUS/S5P/OFFL/L3_O3"
+    ],
+    "Function": [
+        "Mean ozone concentration calculation for each month of 2019",
+        "Clipping of ozone concentration data to the region of interest",
+        "Filtering of ozone concentration data by date and bounds",
+        "Reduction of ozone concentration data to mean values"
+    ]
+}

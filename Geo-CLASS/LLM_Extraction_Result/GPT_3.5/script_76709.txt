@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Generates NDVI, MNDWI, NDMI, NBR, NDVIreln, NDVIrel, CI, and composite images from Sentinel-2 data for a specific study area."],
+  "Theme": ["Vegetation health monitoring"],
+  "DataSource": ["users/cxliu2015/BYDwater20210325", "COPERNICUS/S2"],
+  "Function": ["Cloud masking", "NDVI computation", "MNDWI computation", "NDMI computation", "NBR computation", "NDVIreln computation", "NDVIrel computation", "CI computation", "Image export"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/cxliu2015/BYDwater20210325"],
+        "Function": ["Cloud masking", "NDVI computation", "MNDWI computation", "NDMI computation", "NBR computation", "NDVIreln computation", "NDVIrel computation", "CI computation", "Image export"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Cloud masking", "NDVI computation", "MNDWI computation", "NDMI computation", "NBR computation", "NDVIreln computation", "NDVIrel computation", "CI computation", "Image export"]
+    }
+}
+```

@@ -1,0 +1,139 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var aoi = ee.FeatureCollection("users/eijulio/valles_altos_estados");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+// AOI from FAO GAUL
+var admin2 = ee.FeatureCollection("FAO/GAUL_SIMPLIFIED_500m/2015/level2");
+
+
+//Start and End Dates
+var startDate = '2022-01-01';
+var endDate = '2023-01-01';
+var startMonth = 1
+var endMonth = 12;
+
+//Datasets
+var era5 = ee.ImageCollection('ECMWF/ERA5/DAILY')
+  .filter(ee.Filter.date(startDate, endDate));
+var chirps = ee.ImageCollection("UCSB-CHG/CHIRPS/PENTAD")
+
+var lpaYears = ee.List.sequence(1989, 2020)
+var months = ee.List.sequence(1, 12)
+
+// Map over the years and create a monthly totals collection
+var monthlyImages = lpaYears.map(function(year) {
+  return months.map(function(month) {
+    var filtered = chirps
+      .filter(ee.Filter.calendarRange(year, year, 'year'))
+      .filter(ee.Filter.calendarRange(month, month, 'month'))
+    var monthly = filtered.sum()
+    return monthly.set({'month': month, 'year': year})
+  })
+}).flatten()
+
+// We now have 1 image per month for entire long-period duration
+var monthlyCol = ee.ImageCollection.fromImages(monthlyImages)
+
+// We can compute average for each month across all years
+// i.e. Average July precipitation for all July months in the collection
+var longTermMeans = months.map(function(month) {
+    var filtered = monthlyCol.filter(ee.Filter.eq('month', month))
+    var monthlyMean = filtered.mean()
+    return monthlyMean.set('month', month)
+})
+var monthlyRainfall = ee.ImageCollection.fromImages(longTermMeans)
+// Now we take any year data and compute monthly average
+var filtered = chirps
+  .filter(ee.Filter.date(startDate, endDate))
+
+// Calculate monthly average rainfall
+
+var monthlyTotals = months
+  .map(function(month) {
+    return filtered
+      .filter(ee.Filter.calendarRange(month, month, 'month'))
+        .sum()
+        .set('month', month);
+});
+var currentRainfall = ee.ImageCollection.fromImages(monthlyTotals)
+
+
+
+// Seasonal Deviation
+var combinedFilter = ee.Filter.and(
+  ee.Filter.gte('month', startMonth), ee.Filter.lte('month', endMonth))
+var rainfallNormal = monthlyRainfall.filter(combinedFilter).sum()
+var rainfallObserved = currentRainfall.filter(combinedFilter).sum()
+var seasonalDeviation = (rainfallObserved.subtract(rainfallNormal)
+    .divide(rainfallNormal)).multiply(100)
+
+var rainfallObserved = rainfallObserved.clip(aoi);
+
+var visParams = {
+  min:-60,
+  max:20,
+  palette: ['d7191c','fdae61','ffffbf','abdda4','2b83ba']
+}
+var visParams2 = {
+  min:0,
+  max:1000,
+  palette: ['d7191c','fdae61','ffffbf','abdda4','2b83ba']
+}
+Map.addLayer(seasonalDeviation.clip(aoi), visParams, 'Deviation')
+Map.centerObject(aoi,7);
+Map.addLayer(rainfallNormal.clip(aoi), visParams2, 'rainfallNormal');
+Map.addLayer(rainfallObserved.clip(aoi), visParams2, 'rainfallObserved');
+
+var districtDeviation = seasonalDeviation.reduceRegions({
+  collection: aoi,
+  reducer: ee.Reducer.mean(),
+  scale: 5000})
+
+  
+
+// To style vectors, we have to create empty image and 'paint' it.
+var empty = ee.Image().byte();
+
+var styledImage = empty.paint({
+  featureCollection: districtDeviation,
+  color: 'mean',
+});
+
+
+
+// Paint all the polygon edges with the same number and width, display.
+var outline = styledImage.paint({
+  featureCollection: districtDeviation,
+  color: -70,
+  width: 1
+});
+
+var visParams = {
+  min:-70,
+  max:20,
+  palette: ['bdbdbd','d7191c','fdae61','ffffbf','abdda4','2b83ba']
+}
+ Map.addLayer(outline, visParams, 'District Boundaries');
+
+var featureVis = {color: 'red', fillColor: '00000000'};
+Map.addLayer(aoi.style(featureVis));
+
+
+
+// Image Export Function
+Export.image.toDrive({
+  image: rainfallObserved,
+  description: 'SeasonalObservedPrecip',
+  folder: 'earthengine',
+  fileNamePrefix: 'SeasonalObservedPrecip',
+  scale: 5000,
+  region: aoi
+  });
+
+
+// Table Export Function
+Export.table.toDrive({
+  collection: districtDeviation,
+  description: 'DroughtMonitorTable',
+  folder: 'earthengine',
+  fileNamePrefix: 'DroughtMonitorTable'
+});

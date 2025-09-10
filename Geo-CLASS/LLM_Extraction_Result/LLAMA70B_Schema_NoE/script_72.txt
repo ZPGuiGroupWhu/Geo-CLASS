@@ -1,0 +1,41 @@
+Entity Recognition:
+```
+{
+  "Theme": ["LandTrendr analysis for land cover change detection"],
+  "DataSource": ["USDOS/LSIB/2017"],
+  "Function": [
+    "Buffering the area of interest (AOI) by 5000 meters",
+    "Running LandTrendr temporal segmentation",
+    "Building a spectral response collection",
+    "Calculating the Normalized Burn Ratio (NBR) index",
+    "Running LandTrendr fit",
+    "Converting LandTrendr fit output to LandTrendr prem",
+    "Performing change detection",
+    "Exporting the change detection image to an asset"
+  ]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["USDOS/LSIB/2017"],
+        "Function": [
+            "Buffering the area of interest (AOI) by 5000 meters",
+            "Running LandTrendr temporal segmentation",
+            "Building a spectral response collection",
+            "Calculating the Normalized Burn Ratio (NBR) index",
+            "Running LandTrendr fit",
+            "Converting LandTrendr fit output to LandTrendr prem",
+            "Performing change detection",
+            "Exporting the change detection image to an asset"
+        ]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3348, 'completion_tokens': 319, 'total_tokens': 3667}

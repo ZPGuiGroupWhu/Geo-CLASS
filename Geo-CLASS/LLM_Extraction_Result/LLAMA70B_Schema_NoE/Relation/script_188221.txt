@@ -1,0 +1,13 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "ECMWF/ERA5_LAND/MONTHLY"
+        ],
+        "Function": [
+            "Filtering image collection by date range and selecting variables",
+            "Reducing region to get mean values of variables within a geometry",
+            "Mapping over image collection to extract mean values of variables",
+            "Exporting feature collection as a CSV to Google Drive"
+        ]
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["users/cesarnon/datos_cba_2017/Cordoba_limite"],
+        "Function": ["Filtering image collections by date and cloud cover", "Renaming image bands", "Creating mosaic images", "Adding layers to the map"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Calculating normalized difference water index"]
+    }
+}

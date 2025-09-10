@@ -1,0 +1,31 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Script processes Landsat imagery for land change classification in Grenada."],
+  "Theme": ["Land cover change detection"],
+  "DataSource": ["users/EL/Grenada", "LANDSAT/LE7_L1T", "LANDSAT/LC08/C01/T1_RT", "users/EL/G_forest"],
+  "Function": ["Image collection filtering based on date and cloud cover", "Buffer creation around country borders", "Composite creation for Landsat 7 and Landsat 8", "Band ratio calculation for different spectral bands", "Land change classification using CART classifier"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/EL/Grenada"],
+        "Function": ["Buffer creation around country borders"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LE7_L1T"],
+        "Function": ["Image collection filtering based on date and cloud cover", "Composite creation for Landsat 7"]
+    },
+    "relation_3": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_RT"],
+        "Function": ["Image collection filtering based on date and cloud cover", "Composite creation for Landsat 8"]
+    },
+    "relation_4": {
+        "DataSource": ["users/EL/G_forest"],
+        "Function": ["Land change classification using CART classifier"]
+    }
+}
+```

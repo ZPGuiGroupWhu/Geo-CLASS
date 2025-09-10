@@ -1,0 +1,19 @@
+{
+    "Summary": [
+        "Extracts and processes ERA5 temperature data for Sinaloa region."
+    ],
+    "Theme": [
+        "ANTHOZOANS/HEXACORALS"
+    ],
+    "DataSource": [
+        "ECMWF/ERA5/DAILY",
+        "FAO/GAUL_SIMPLIFIED_500m/2015/level2"
+    ],
+    "Function": [
+        "Filter And Process Images For Water Detection",
+        "Maximum, Minimum And Mean Statistical Analysis (Temperature)",
+        "Filter And Process Images For Water Detection",
+        "Visualize Data Layers",
+        "Export Processed Data To Google Drive"
+    ]
+}

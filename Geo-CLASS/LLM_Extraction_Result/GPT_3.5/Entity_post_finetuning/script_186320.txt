@@ -1,0 +1,16 @@
+{
+    "Summary": [
+        "The script collects and processes Sentinel-2 image data for geoprocessing modeling."
+    ],
+    "Theme": [
+        "NORMALIZED DIFFERENCE VEGETATION INDEX (NDVI)"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2",
+        "ft:1ovvyN_dzo01mRw8uSNMIYNg-HKyGTrqLErfg26X0"
+    ],
+    "Function": [
+        "NDVI (Normalized Difference Vegetation Index calculation)",
+        "NDWI (Normalized Difference Water Index calculation)"
+    ]
+}

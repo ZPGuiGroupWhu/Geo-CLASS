@@ -1,0 +1,19 @@
+{
+    "Theme": [
+        "Flood area detection and population analysis"
+    ],
+    "DataSource": [
+        "COPERNICUS/S1_GRD",
+        "CIESIN/GPWv4/population-count"
+    ],
+    "Function": [
+        "Image collection filtering",
+        "Mosaicking",
+        "Focal median smoothing",
+        "Thresholding",
+        "Topological intersection",
+        "Image visualization",
+        "Vectorization",
+        "Population counting"
+    ]
+}

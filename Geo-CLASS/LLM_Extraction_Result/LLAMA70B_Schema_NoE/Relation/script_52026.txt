@@ -1,0 +1,20 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/bkkumarbittu371/Andhra_Pradesht"
+        ],
+        "Function": [
+            "Clipping of ozone concentration data to the region of interest",
+            "Filtering of ozone concentration data by date and bounds"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S5P/OFFL/L3_O3"
+        ],
+        "Function": [
+            "Mean ozone concentration calculation for each month of 2019",
+            "Reduction of ozone concentration data to mean values"
+        ]
+    }
+}

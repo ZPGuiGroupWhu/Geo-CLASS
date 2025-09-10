@@ -1,0 +1,19 @@
+{
+    "Summary": [
+        "Sentinel-1 flood mapping in Lower Ayeyarwaddy region."
+    ],
+    "Theme": [
+        "SHORELINE MAPPING",
+        "RADAR BACKSCATTER",
+        "GEOMAGNETIC ACTIVITY"
+    ],
+    "DataSource": [
+        "COPERNICUS/S1_GRD"
+    ],
+    "Function": [
+        "Filter Image Collection By Date And Region",
+        "Focal Median Smoothing",
+        "Fractional Vegetation Calculation",
+        "Generate Histograms For Image Data Analysis"
+    ]
+}

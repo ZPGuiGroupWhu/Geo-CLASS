@@ -1,0 +1,19 @@
+{
+    "Theme": [
+        "Forest change and temperature analysis in Amazon region"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C01/T2_SR",
+        "UMD/hansen/global_forest_change_2017_v1_5",
+        "Oxford/MAP/LST_Day_5km_Monthly",
+        "NCEP_RE/surface_temp"
+    ],
+    "Function": [
+        "Filtering image collection by region",
+        "Creating binary mask for forested areas",
+        "Updating composite mask with water mask",
+        "Calculating mean air surface temperature",
+        "Reducing regions to mean values",
+        "Exporting feature collection to CSV"
+    ]
+}

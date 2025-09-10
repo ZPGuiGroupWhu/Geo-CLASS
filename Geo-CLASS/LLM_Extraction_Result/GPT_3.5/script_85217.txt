@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Script classifies land cover using Landsat 8 imagery."],
+  "Theme": ["Land cover classification"],
+  "DataSource": ["LANDSAT/LC08/C01/T1"],
+  "Function": ["Generate cloud-free composite", "Merge geometry layers", "Sample training data", "Train CART classifier", "Classify composite", "Accuracy assessment"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C01/T1"],
+        "Function": ["Generate cloud-free composite", "Merge geometry layers", "Sample training data", "Classify composite"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1"],
+        "Function": ["Train CART classifier"]
+    },
+    "relation_3": {
+        "DataSource": ["LANDSAT/LC08/C01/T1"],
+        "Function": ["Accuracy assessment"]
+    }
+}
+```

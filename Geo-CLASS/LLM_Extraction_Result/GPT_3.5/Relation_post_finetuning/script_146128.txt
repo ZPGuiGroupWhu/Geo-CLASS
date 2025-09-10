@@ -1,0 +1,23 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Visualization And Output Generation",
+            "Merging (Combining multiple bands into one dataset)",
+            "Visualization And Output Generation"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "Burnedscar",
+            "vegetation",
+            "Bare_Soil",
+            "Water"
+        ],
+        "Function": [
+            "Merging (Combining multiple bands into one dataset)"
+        ]
+    }
+}

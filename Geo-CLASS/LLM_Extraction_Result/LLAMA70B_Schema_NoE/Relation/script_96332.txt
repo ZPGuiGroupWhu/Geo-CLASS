@@ -1,0 +1,23 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/cesarnon/datos_cba_2017/Cordoba_limite"
+        ],
+        "Function": [
+            "Filtering and renaming Sentinel 2 image collections",
+            "Mosaicking image collections",
+            "Adding layers to the map"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Filtering and renaming Sentinel 2 image collections",
+            "Calculating normalized difference water index",
+            "Mosaicking image collections",
+            "Adding layers to the map"
+        ]
+    }
+}

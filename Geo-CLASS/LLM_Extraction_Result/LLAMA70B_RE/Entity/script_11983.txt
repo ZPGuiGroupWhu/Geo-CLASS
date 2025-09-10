@@ -1,0 +1,15 @@
+{
+    "Theme": [
+        "Vegetation Index Analysis"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C01/T1_SR"
+    ],
+    "Function": [
+        "Image Collection Filtering",
+        "Cloud Masking",
+        "NDVI Calculation",
+        "Image Differencing",
+        "Standard Anomaly Calculation"
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["GOOGLE/DYNAMICWORLD/V1"],
+        "Function": ["Filtering image collections by region and date", "Extracting example images", "Creating visualization of class label with probability", "Applying hillshade to probability image"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Joining corresponding images by system index", "Combining RGB image with hillshade"]
+    }
+}

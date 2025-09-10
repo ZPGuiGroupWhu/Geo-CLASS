@@ -1,0 +1,18 @@
+{
+    "relation_1": {
+        "DataSource": ["users/kindgard/ZWE_Forest_Plantations"],
+        "Function": ["Create feature collections"]
+    },
+    "relation_2": {
+        "DataSource": ["users/kindgard/Forest_Plantations_v2"],
+        "Function": ["Create feature collections", "Sample regions", "Train classifier", "Classify images", "Apply masks"]
+    },
+    "relation_3": {
+        "DataSource": ["users/christinacorbane/MT_comp_proj"],
+        "Function": ["Apply masks"]
+    },
+    "relation_4": {
+        "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+        "Function": ["Apply masks"]
+    }
+}

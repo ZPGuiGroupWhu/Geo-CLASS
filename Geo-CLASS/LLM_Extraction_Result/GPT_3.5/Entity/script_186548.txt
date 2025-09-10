@@ -1,0 +1,6 @@
+{
+  "Summary": ["Script processes Sentinel-1 SAR images for water detection."],
+  "Theme": ["Water detection using SAR imagery"],
+  "DataSource": ["COPERNICUS/S1_GRD"],
+  "Function": ["Edge detection using Canny Edge detector", "Threshold computation using Otsu method", "Filtering using Perona-Malik filter"]
+}

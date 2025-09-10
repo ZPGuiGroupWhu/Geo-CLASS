@@ -1,0 +1,15 @@
+{
+    "Theme": [
+        "Land cover classification in Florida"
+    ],
+    "DataSource": [
+        "TIGER/2016/States",
+        "LANDSAT/LC08/C01/T1_SR"
+    ],
+    "Function": [
+        "Filtering image collection by region",
+        "Masking cloudy pixels",
+        "Calculating water and vegetation indices",
+        "Classifying land cover"
+    ]
+}

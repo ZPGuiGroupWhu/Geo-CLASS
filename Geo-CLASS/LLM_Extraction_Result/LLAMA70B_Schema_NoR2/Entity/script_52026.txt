@@ -1,0 +1,5 @@
+{
+  "Theme": ["Ozone concentration analysis"],
+  "DataSource": ["users/bkkumarbittu371/Andhra_Pradesht", "COPERNICUS/S5P/OFFL/L3_O3"],
+  "Function": ["Filtering image collection by date and bounds", "Calculating mean ozone column number density", "Clipping dataset to region of interest", "Reducing region to mean value"]
+}

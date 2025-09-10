@@ -1,0 +1,5 @@
+{
+  "Theme": ["Flood detection using Sentinel-1 SAR data"],
+  "DataSource": ["COPERNICUS/S1_GRD", "CIESIN/GPWv4/population-count"],
+  "Function": ["Define region of interest", "Center map on region", "Set working scale", "Load Sentinel-1 image collection", "Filter image collection by date", "Mosaic images", "Apply median filter", "Subtract images", "Apply threshold", "Update mask", "Visualize images", "Clip images", "Convert pixels to polygons", "Clip population data", "Map population data", "Sample regions", "Export data to Drive"]
+}

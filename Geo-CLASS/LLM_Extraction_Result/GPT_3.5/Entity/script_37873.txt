@@ -1,0 +1,6 @@
+{
+  "Summary": ["Script classifies land cover types using Landsat imagery."],
+  "Theme": ["Land cover classification"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR", "builtup", "water", "agriculture", "barren"],
+  "Function": ["Training data creation for classification", "Classifier training", "Image classification"]
+}

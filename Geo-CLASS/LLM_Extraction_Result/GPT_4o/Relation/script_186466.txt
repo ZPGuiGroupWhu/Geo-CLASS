@@ -1,0 +1,29 @@
+{
+  "relation_1": {
+    "DataSource": ["COPERNICUS/S1_GRD"],
+    "Function": [
+      "Load image collection",
+      "Filter images by polarization",
+      "Filter images by date",
+      "Filter images by location",
+      "Print image collection",
+      "Calculate image collection size",
+      "Filter images by orbit direction",
+      "Create image composite",
+      "Display composite on map",
+      "Export composite to Drive",
+      "Convert image collection to list",
+      "Map image IDs",
+      "Map image properties",
+      "Export image properties to Drive",
+      "Export images to Drive",
+      "Create linked maps",
+      "Display image on map",
+      "Add layer to map",
+      "Set map center",
+      "Register map click callback",
+      "Update coordinates on click",
+      "Add marker on click"
+    ]
+  }
+}

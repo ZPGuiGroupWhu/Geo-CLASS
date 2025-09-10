@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/edimilsonrodriguessantos/MAPBIOMAS/INFRAURBANA6-FT-v6/"
+        ],
+        "Function": [
+            "Classify Images Based On Trained Model"
+        ]
+    }
+}

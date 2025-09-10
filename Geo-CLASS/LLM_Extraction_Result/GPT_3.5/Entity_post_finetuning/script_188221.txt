@@ -1,0 +1,16 @@
+{
+    "Summary": [
+        "Extracts monthly climate data for a specified area in India."
+    ],
+    "Theme": [
+        "CLIMATE INDICATORS"
+    ],
+    "DataSource": [
+        "ECMWF/ERA5_LAND/MONTHLY"
+    ],
+    "Function": [
+        "Cloud Masking And Quality Filtering",
+        "Vegetation And Water Indices Calculation",
+        "Exporting And Data Conversion"
+    ]
+}

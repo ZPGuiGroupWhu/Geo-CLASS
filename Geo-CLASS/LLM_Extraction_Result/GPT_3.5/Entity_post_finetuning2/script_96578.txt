@@ -1,0 +1,23 @@
+{
+    "Summary": [
+        "Geoprocessing workflow analyzing thermal data and fire probability in Tasmania."
+    ],
+    "Theme": [
+        "CHEMICAL WEATHERING",
+        "FIRE MANAGEMENT",
+        "NORMALIZED DIFFERENCE VEGETATION INDEX (NDVI)"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2_SR",
+        "MODIS/006/MOD14A1",
+        "MODIS/006/MOD11A1"
+    ],
+    "Function": [
+        "Derive Land Surface Temperature Using Thermal Properties",
+        "Filter Image Collection By Date And Region",
+        "Generate ColumnChart For Precipitation",
+        "Unsupervised Clustering",
+        "Visualize NDVI And Date Information",
+        "Generate Time Series Data For NDVI Changes"
+    ]
+}

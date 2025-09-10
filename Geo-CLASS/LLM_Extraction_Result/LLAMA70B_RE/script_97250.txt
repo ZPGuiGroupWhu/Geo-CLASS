@@ -1,0 +1,33 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Entity Recognition": {
+    "Theme": ["Night Light Statistics by Landcover"],
+    "DataSource": ["users/ujavalgandhi/public/soi_india_boundary", "NOAA/DMSP-OLS/NIGHTTIME_LIGHTS", "MODIS/006/MCD12Q1"],
+    "Function": ["Filter image collection by date", "Select image band", "Clip image to geometry", "Extract landcover classification", "Compute zonal statistics", "Classify nightlights image"]
+  },
+  "Relation Extraction": {
+    "relation_1": {
+      "DataSource": ["users/ujavalgandhi/public/soi_india_boundary"],
+      "Function": ["Clip image to geometry"]
+    },
+    "relation_2": {
+      "DataSource": ["NOAA/DMSP-OLS/NIGHTTIME_LIGHTS"],
+      "Function": ["Filter image collection by date", "Select image band", "Classify nightlights image"]
+    },
+    "relation_3": {
+      "DataSource": ["MODIS/006/MCD12Q1"],
+      "Function": ["Extract landcover classification"]
+    },
+    "relation_4": {
+      "DataSource": ["NOAA/DMSP-OLS/NIGHTTIME_LIGHTS", "MODIS/006/MCD12Q1"],
+      "Function": ["Compute zonal statistics"]
+    }
+  }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2765, 'completion_tokens': 353, 'total_tokens': 3118}

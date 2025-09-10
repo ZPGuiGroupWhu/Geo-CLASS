@@ -1,0 +1,25 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Temperature analysis in Sinaloa"],
+  "DataSource": ["ECMWF/ERA5/DAILY", "FAO/GAUL_SIMPLIFIED_500m/2015/level2"],
+  "Function": ["Filter image collection by date", "Filter image collection by region", "Convert temperature from Kelvin to Celsius", "Get minimum temperature", "Get maximum temperature", "Get average temperature", "Clip image to region", "Visualize data on map", "Export image to Google Drive"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["ECMWF/ERA5/DAILY"],
+        "Function": ["Filter image collection by date", "Filter image collection by region", "Convert temperature from Kelvin to Celsius", "Get minimum temperature", "Get maximum temperature", "Get average temperature", "Clip image to region", "Visualize data on map", "Export image to Google Drive"]
+    },
+    "relation_2": {
+        "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2"],
+        "Function": ["Filter image collection by region", "Clip image to region", "Visualize data on map"]
+    }
+}
+```
+
+Total_Token_Usage:
+4503

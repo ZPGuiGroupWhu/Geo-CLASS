@@ -1,0 +1,21 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["NDVI analysis", "Time series analysis", "Cloud masking", "Image differencing", "Anomaly detection"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Define study area", "Filter image collection by bounds", "Mask clouds and shadows", "Compute median composite", "Calculate NDVI", "Clip images to study area", "Create time series charts", "Generate GIF animation", "Compute image difference", "Calculate mean image", "Compute standard deviation", "Calculate anomalies"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+    "Function": ["Filter image collection by bounds", "Mask clouds and shadows", "Compute median composite", "Calculate NDVI", "Clip images to study area", "Create time series charts", "Generate GIF animation", "Compute image difference", "Calculate mean image", "Compute standard deviation", "Calculate anomalies"]
+  }
+}
+```
+
+Total_Token_Usage:
+8414

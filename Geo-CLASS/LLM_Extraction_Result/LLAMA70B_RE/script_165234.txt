@@ -1,0 +1,25 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Entity Recognition": {
+    "Theme": ["MODIS data analysis for vegetation monitoring"],
+    "DataSource": ["MODIS/006/MOD09GA", "users/giswqs/public/countries"],
+    "Function": ["Image collection filtering", "Cloud masking", "Image scaling", "NDVI calculation", "Date extraction", "Month extraction", "Day of year extraction", "Quality mosaic creation"]
+  },
+  "Relation Extraction": {
+    "relation_1": {
+      "DataSource": ["MODIS/006/MOD09GA"],
+      "Function": ["Image collection filtering", "Cloud masking", "Image scaling", "NDVI calculation", "Date extraction", "Month extraction", "Day of year extraction"]
+    },
+    "relation_2": {
+      "DataSource": ["users/giswqs/public/countries"],
+      "Function": ["Region of interest filtering"]
+    }
+  }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2424, 'completion_tokens': 230, 'total_tokens': 2654}

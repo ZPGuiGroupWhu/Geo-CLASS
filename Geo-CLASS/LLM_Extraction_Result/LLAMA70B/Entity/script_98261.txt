@@ -1,0 +1,5 @@
+{
+  "Theme": ["Flood extent analysis"],
+  "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2", "LANDSAT/LC08/C01/T1_SR", "JRC/GSW1_0/GlobalSurfaceWater", "WWF/HydroSHEDS/03VFDEM"],
+  "Function": ["Filter image collection by bounds and date", "Sort image collection by cloud cover", "Create mosaic image and clip to boundary", "Calculate normalized difference water index", "Compute difference image of NDWI", "Refine flood result using additional datasets", "Mask out clouds classified as flooded", "Compute connectivity of pixels to eliminate noise"]
+}

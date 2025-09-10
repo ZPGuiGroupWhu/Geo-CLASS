@@ -1,0 +1,13 @@
+{
+    "Theme": [
+        "Landsat 7 image processing and cloud masking"
+    ],
+    "DataSource": [
+        "LANDSAT/LE07/C01/T1_SR"
+    ],
+    "Function": [
+        "Image collection filtering",
+        "Cloud masking",
+        "Image exporting"
+    ]
+}

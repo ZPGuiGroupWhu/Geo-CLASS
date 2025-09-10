@@ -1,0 +1,155 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var geometry = 
+    /* color: #d63000 */
+    /* shown: false */
+    /* displayProperties: [
+      {
+        "type": "rectangle"
+      }
+    ] */
+    ee.Geometry.Polygon(
+        [[[-90.22427381845476, 14.426558650939823],
+          [-90.22427381845476, 14.425930022864009],
+          [-90.22356839748385, 14.425930022864009],
+          [-90.22356839748385, 14.426558650939823]]], null, false);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+/*TAREA SENSORES REMOTOS
+
+NOMBRE: CANDY ESTRELLITA HOENES TUT
+
+CARNET: 201843020*/
+
+
+
+/*Evaluar la zona de deslizamiento en aldea Las Minas, ubicada en Casillas, Santa Rosa.*/
+
+
+
+var punto = ee.Geometry.Point(-90.22396, 14.426395)
+
+Map.centerObject(punto,18)
+
+Map.addLayer(punto)
+
+Map.setOptions("satellite")
+
+
+
+var pre = ee.ImageCollection('COPERNICUS/S2_HARMONIZED')
+
+                  .filterDate('2023-01-26', '2023-02-26')
+
+                  .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE', 20))
+
+                  .filterBounds(geometry);
+
+
+
+
+
+var post = ee.ImageCollection('COPERNICUS/S2_HARMONIZED')
+
+                  .filterDate('2023-03-26', '2023-05-06')
+
+                  .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE', 20))
+
+                  .filterBounds(geometry);
+
+
+
+
+
+print(pre,"Pre")
+
+print(post,"Post")
+
+
+
+//Paleta RGB//
+
+var rgbVis = {
+
+  min: 0.0,
+
+  max: 3000,
+
+  bands: ['B4', 'B3', 'B2'],
+
+};
+
+
+
+//Paleta NDVI//
+
+var viz_ndvi = {
+
+  bands: "NDVI",
+
+  min: 0.0,
+
+  max: 1.0,
+
+  palette: [
+
+    '#0A1BEA', 'CE7E45', 'DF923D', 'F1B555', 'FCD163', '99B718', '74A901',
+
+    '66A000', '529400', '3E8601', '207401', '056201', '004C00', '023B01',
+
+    '012E01', '011D01', '011301'
+
+  ],
+
+};
+
+
+
+//INDICE
+
+var i_ndvi = function(img){
+
+  var ndvi = img.normalizedDifference(["B8","B4"]).rename("NDVI");
+
+  return img.addBands(ndvi)
+
+}
+
+
+
+//NDVI PRE
+
+
+
+var prendvi = pre.map(i_ndvi).select("NDVI");
+
+print(prendvi);
+
+
+
+Map.addLayer(prendvi, viz_ndvi,"NDVI PRE",0);
+
+
+
+var caspre = ui.Chart.image.seriesByRegion(prendvi, geometry, ee.Reducer.median(), "NDVI", 10, "system:time_start")
+
+print(caspre)
+
+
+
+//NDVI POST
+
+var postndvi = post.map(i_ndvi).select("NDVI");
+
+print(postndvi);
+
+
+
+Map.addLayer(postndvi, viz_ndvi,"NDVI POST",0);
+
+
+
+var caspost= ui.Chart.image.seriesByRegion(postndvi, geometry, ee.Reducer.median(), "NDVI", 10, "system:time_start")
+
+print(caspost)
+
+
+

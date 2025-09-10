@@ -1,0 +1,14 @@
+{
+    "relation_1": {
+        "DataSource": ["USDOS/LSIB/2017"],
+        "Function": ["Random point generation", "Training data creation"]
+    },
+    "relation_2": {
+        "DataSource": ["UMD/hansen/global_forest_change_2020_v1_8"],
+        "Function": ["Image classification based on trained model"]
+    },
+    "relation_3": {
+        "DataSource": ["users/ak_glaciers/NDVI_fitted_image_stack_from_LTOP_1990_start", "users/ak_glaciers/NBR_fitted_image_stack_from_LTOP_1990_start"],
+        "Function": ["Model training with Random Forest algorithm", "Image classification based on trained model"]
+    }
+}

@@ -1,0 +1,6 @@
+{
+  "Summary": ["Sentinel-1 flood mapping geoprocessing workflow script."],
+  "Theme": ["Flood mapping using Sentinel-1 backscatter data."],
+  "DataSource": ["COPERNICUS/S1_GRD"],
+  "Function": ["Backscatter value filtering for flood detection", "Image smoothing for better visualization"]
+}

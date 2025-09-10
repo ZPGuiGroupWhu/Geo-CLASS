@@ -1,0 +1,16 @@
+{
+    "Theme": [
+        "Vegetation Index Analysis"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "Image Collection Filtering",
+        "Cloud Masking",
+        "NDVI Calculation",
+        "Median Composite Image Creation",
+        "Time Series Chart Generation",
+        "Image Export"
+    ]
+}

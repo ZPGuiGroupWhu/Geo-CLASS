@@ -1,0 +1,21 @@
+{
+    "Theme": [
+        "Crop classification and land use analysis in Maharashtra, India"
+    ],
+    "DataSource": [
+        "MODIS/006/MOD09Q1"
+    ],
+    "Function": [
+        "Image collection filtering",
+        "NDVI calculation",
+        "Image clustering",
+        "Unsupervised classification",
+        "Image masking",
+        "Buffer creation",
+        "Image sampling",
+        "Clusterer training",
+        "Image clustering",
+        "Image remapping",
+        "Image visualization"
+    ]
+}

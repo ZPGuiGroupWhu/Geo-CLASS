@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Identifying flood areas using Sentinel-1 data in Thua Thien - Hue region."],
+  "Theme": ["Flood monitoring"],
+  "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2", "COPERNICUS/S1_GRD"],
+  "Function": ["Filtering flood images by date and location", "Creating flood image composites over time", "Calculating NDFI for flood detection", "Setting threshold for identifying flooded areas"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2"],
+        "Function": ["Filtering flood images by date and location", "Creating flood image composites over time", "Calculating NDFI for flood detection", "Setting threshold for identifying flooded areas"]
+    },
+    "relation_2": {
+        "DataSource": ["COPERNICUS/S1_GRD"],
+        "Function": ["Filtering flood images by date and location", "Creating flood image composites over time", "Calculating NDFI for flood detection", "Setting threshold for identifying flooded areas"]
+    }
+}
+```

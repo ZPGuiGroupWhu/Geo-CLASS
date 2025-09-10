@@ -1,0 +1,39 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover classification and land use analysis in Zimbabwe"],
+  "DataSource": ["users/kindgard/Asia/Asia", "users/kindgard/Africa", "users/kindgard/SUD", "users/kindgard/AfricaS", "users/kindgard/AmericaN", "users/kindgard/Asia2", "LANDSAT/LT5_L1T", "LANDSAT/LE7_L1T", "LANDSAT/LC08/C01/T1_RT", "COPERNICUS/S2", "ft:1tdSwUL7MVpOauSgRzqVTOwdfy17KDbw-1d9omPw", "JRC/GSW1_0/GlobalSurfaceWater", "users/ValeriaContessa/Map_1992_rast", "users/kindgard/ESACCI-LC-L4-LC10-Map-20m-P1Y-2016-v10"],
+  "Function": ["Filtering image collections by date and cloud cover", "Mosaicking images", "Calculating spectral indices", "Classifying land cover using Cart algorithm", "Applying masks to classified image", "Clipping images to country boundary"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/kindgard/Asia/Asia", "users/kindgard/Africa", "users/kindgard/SUD", "users/kindgard/AfricaS", "users/kindgard/AmericaN", "users/kindgard/Asia2"],
+        "Function": ["Filtering image collections by date and cloud cover", "Mosaicking images"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LT5_L1T", "LANDSAT/LE7_L1T", "LANDSAT/LC08/C01/T1_RT"],
+        "Function": ["Calculating spectral indices"]
+    },
+    "relation_3": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Classifying land cover using Cart algorithm"]
+    },
+    "relation_4": {
+        "DataSource": ["ft:1tdSwUL7MVpOauSgRzqVTOwdfy17KDbw-1d9omPw"],
+        "Function": ["Applying masks to classified image"]
+    },
+    "relation_5": {
+        "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater", "users/ValeriaContessa/Map_1992_rast", "users/kindgard/ESACCI-LC-L4-LC10-Map-20m-P1Y-2016-v10"],
+        "Function": ["Clipping images to country boundary"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 5846, 'completion_tokens': 658, 'total_tokens': 6504}

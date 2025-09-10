@@ -1,0 +1,21 @@
+{
+    "Summary": [
+        "Masking water and clouds in MODIS dataset, generating true color images."
+    ],
+    "Theme": [
+        "WATER MANAGEMENT",
+        "CHEMICAL WEATHERING",
+        "DENITRIFICATION RATE"
+    ],
+    "DataSource": [
+        "MODIS/006/MOD09GA",
+        "TIGER/2018/States",
+        "USGS/GMTED2010"
+    ],
+    "Function": [
+        "Image Cloud Masking",
+        "Cloud And Water Masking",
+        "Hillshade Generation",
+        "Visualize True Color Images"
+    ]
+}

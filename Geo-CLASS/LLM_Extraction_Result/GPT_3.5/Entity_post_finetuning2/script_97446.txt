@@ -1,0 +1,15 @@
+{
+    "Summary": [
+        "Script extracts Sentinel-2 imagery for Central Kalimantan regions."
+    ],
+    "Theme": [
+        "LAND USE/LAND COVER CLASSIFICATION"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "Cloud And Snow Masking",
+        "Filter Image Collection By Date And Region"
+    ]
+}

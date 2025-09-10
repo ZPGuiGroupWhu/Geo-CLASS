@@ -1,0 +1,19 @@
+{
+    "Theme": [
+        "Vegetation Index Analysis",
+        "SAR Image Analysis"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2",
+        "COPERNICUS/S1_GRD"
+    ],
+    "Function": [
+        "Filtering Image Collection by Date",
+        "Clipping Image to Geometry",
+        "Computing Normalized Difference Vegetation Index",
+        "Applying K-Means Clustering",
+        "Filtering SAR Image by Date",
+        "Applying Speckle Reduction Filter",
+        "Mosaicking SAR Images"
+    ]
+}

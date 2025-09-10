@@ -1,0 +1,39 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "projects/ee-kimmmydanny/assets/tingxialiuyu"
+        ],
+        "Function": [
+            "Image collection filtering",
+            "Cloud masking",
+            "MNDWI calculation",
+            "Otsu thresholding",
+            "Water body extraction",
+            "Area calculation"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_RT_TOA"
+        ],
+        "Function": [
+            "Cloud masking",
+            "MNDWI calculation",
+            "Otsu thresholding",
+            "Water body extraction",
+            "Area calculation"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "COPERNICUS/S2_SR"
+        ],
+        "Function": [
+            "Cloud masking",
+            "MNDWI calculation",
+            "Otsu thresholding",
+            "Water body extraction",
+            "Area calculation"
+        ]
+    }
+}

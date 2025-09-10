@@ -1,0 +1,37 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/eijulio/valles_altos_estados",
+            "FAO/GAUL_SIMPLIFIED_500m/2015/level2"
+        ],
+        "Function": [
+            "NDWI (Normalized Difference Water Index calculation)",
+            "Time Series Graphs And Statistics"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "ECMWF/ERA5/DAILY"
+        ],
+        "Function": [
+            "Vegetation And Water Indices Calculation"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "UCSB-CHG/CHIRPS/PENTAD"
+        ],
+        "Function": [
+            "NDWI (Normalized Difference Water Index calculation)",
+            "Time Series Graphs And Statistics"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "users/eijulio/valles_altos_estados"
+        ],
+        "Function": [
+            "Exporting And Data Conversion"
+        ]
+    }
+}

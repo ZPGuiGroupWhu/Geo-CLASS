@@ -1,0 +1,23 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["The script processes Landsat imagery to derive NDVI, LST, and EM."],
+  "Theme": ["Land surface temperature (LST) analysis", "Normalized Difference Vegetation Index (NDVI) calculation"],
+  "DataSource": ["users/KARTIKA_EAA/Semarang", "LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Cloud masking for image preprocessing", "NDVI calculation for vegetation analysis", "LST calculation for temperature mapping"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/KARTIKA_EAA/Semarang"],
+        "Function": ["Cloud masking for image preprocessing", "NDVI calculation for vegetation analysis", "LST calculation for temperature mapping"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Cloud masking for image preprocessing", "NDVI calculation for vegetation analysis", "LST calculation for temperature mapping"]
+    }
+}
+```

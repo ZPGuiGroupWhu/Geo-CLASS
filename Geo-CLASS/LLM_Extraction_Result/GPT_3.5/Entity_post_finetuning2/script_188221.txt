@@ -1,0 +1,16 @@
+{
+    "Summary": [
+        "Extracts monthly climate data for a specified area in India."
+    ],
+    "Theme": [
+        "CLIMATE INDICATORS"
+    ],
+    "DataSource": [
+        "ECMWF/ERA5_LAND/MONTHLY"
+    ],
+    "Function": [
+        "Filter Image Collection By Date And Region",
+        "Creating Median Composites For Specific Time Periods",
+        "Export Processed Data To Google Drive"
+    ]
+}

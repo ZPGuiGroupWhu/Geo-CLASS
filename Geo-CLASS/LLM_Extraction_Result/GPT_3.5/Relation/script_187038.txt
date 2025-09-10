@@ -1,0 +1,6 @@
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC8_SR", "LANDSAT/LE7_SR", "LANDSAT/LT5_SR", "USGS/NED"],
+        "Function": ["Image collection filtering based on path, row, date, and cloud cover", "Cloud cover calculation and filtering", "Land cover classification based on band thresholds", "Exporting final classified image and metadata"]
+    }
+}

@@ -1,0 +1,25 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land Surface Temperature Analysis", "NDVI Calculation", "Cloud Masking"],
+  "DataSource": ["users/khoirurrizqi/Jawa", "LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Center map on geometry", "Mask clouds in image collection", "Set visualization parameters", "Filter image collection by date", "Filter image collection by bounds", "Calculate median image", "Calculate NDVI", "Select thermal band", "Find min NDVI", "Find max NDVI", "Calculate fractional vegetation", "Calculate emissivity", "Calculate land surface temperature", "Add layer to map", "Create and add legend", "Add sidebar", "Handle map click event"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/khoirurrizqi/Jawa"],
+        "Function": ["Center map on geometry", "Add layer to map", "Calculate NDVI", "Find min NDVI", "Find max NDVI", "Calculate fractional vegetation", "Calculate emissivity", "Calculate land surface temperature", "Create and add legend", "Add sidebar", "Handle map click event"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+        "Function": ["Mask clouds in image collection", "Set visualization parameters", "Filter image collection by date", "Filter image collection by bounds", "Calculate median image", "Select thermal band"]
+    }
+}
+```
+
+Total_Token_Usage:
+7859

@@ -1,0 +1,214 @@
+////////// Input Stuff 
+print('Hello World');
+
+// create AOIs of PathRow IDs
+var aoi_19223 = ee.Geometry.Rectangle(13.15847,51.99912,16.81240,54.18329);
+var aoi_19224 = ee.Geometry.Rectangle(12.55205,50.58047,16.09115,52.77566);
+var aoi_19323 = ee.Geometry.Rectangle(11.54610,51.96357,15.24544,54.20486);
+var aoi_19324 = ee.Geometry.Rectangle(10.93904,50.54516,14.54390,52.80706);
+var aoi_19423 = ee.Geometry.Rectangle(10.18295,51.98536,13.80190,54.18767);
+var aoi_19424 = ee.Geometry.Rectangle(9.586754,50.582506,13.06968,52.77137);
+var aoi_19523 = ee.Geometry.Rectangle(8.633602,51.990479,12.24836,54.17790);
+var aoi_19524 = ee.Geometry.Rectangle(7.965403,50.590970,11.46345,52.76487);
+
+
+
+// 192_23
+var l7_19223 = ee.ImageCollection ('LANDSAT/LE07/C01/T1_SR')
+  .filterDate('2014-10-01','2014-12-31')
+    .filter(ee.Filter.eq('WRS_PATH', 192))
+    .filter(ee.Filter.eq('WRS_ROW', 23));
+
+
+// 192_24
+var l7_19224 = ee.ImageCollection ('LANDSAT/LE07/C01/T1_SR')
+    .filterDate('2014-10-01','2014-12-31')
+    .filter(ee.Filter.eq('WRS_PATH', 192))
+    .filter(ee.Filter.eq('WRS_ROW', 24));
+
+print(l7_19224)
+
+// 193_23
+var l7_19323 = ee.ImageCollection ('LANDSAT/LE07/C01/T1_SR')
+    .filterDate('2014-10-01','2014-12-31')
+    .filter(ee.Filter.eq('WRS_PATH', 193))
+    .filter(ee.Filter.eq('WRS_ROW', 23));
+    
+print(l7_19323)
+    
+// 193_24
+var l7_19324 = ee.ImageCollection ('LANDSAT/LE07/C01/T1_SR')
+    .filterDate('2014-10-01','2014-12-31')
+    .filter(ee.Filter.eq('WRS_PATH', 193))
+    .filter(ee.Filter.eq('WRS_ROW', 24));
+    
+print(l7_19324)    
+
+// 194_23
+var l7_19423 = ee.ImageCollection ('LANDSAT/LE07/C01/T1_SR')
+    .filterDate('2014-10-01','2014-12-31')
+    .filter(ee.Filter.eq('WRS_PATH', 194))
+    .filter(ee.Filter.eq('WRS_ROW', 23))
+ 
+// 194_24
+var l7_19424 = ee.ImageCollection ('LANDSAT/LE07/C01/T1_SR')
+    .filterDate('2014-10-01','2014-12-31')
+    .filter(ee.Filter.eq('WRS_PATH', 194))
+    .filter(ee.Filter.eq('WRS_ROW', 24));
+// 195_23
+var l7_19523 = ee.ImageCollection ('LANDSAT/LE07/C01/T1_SR')
+    .filterDate('2014-10-01','2014-12-31')
+    .filter(ee.Filter.eq('WRS_PATH', 195))
+    .filter(ee.Filter.eq('WRS_ROW', 23));
+// 195_24
+var l7_19524 = ee.ImageCollection ('LANDSAT/LE07/C01/T1_SR')
+    .filterDate('2014-10-01','2014-12-31')
+    .filter(ee.Filter.eq('WRS_PATH', 195))
+    .filter(ee.Filter.eq('WRS_ROW', 24))
+
+//Function to mask occluded pixels ---------------------------------------------------------
+
+ function maskclouds(image) {
+  // create an image only from BQA-Band
+  var qa = image.select('pixel_qa');
+  // get a string representation of the date.
+  var dateString = ee.Date(image.get('system:time_start')).format('yyyy-MM-dd');   
+/*
+'pixel_qa band is created with the CFMask algorithm and is likely to present more accurate 
+results than the internal tests LaSRC uses for cloud, cloud shadow, snow/ice and water.'
+(source: https://landsat.usgs.gov/landsat-surface-reflectance-quality-assessment)
+
+Bit0 - Fill
+Bit1 - Clear
+Bit2 - Water
+Bit3 - Cloud shadow
+Bit4 - Snow
+Bit5 - Cloud
+Bit6/7 - Cloud confidence
+(00 - none
+ 01 - low
+ 10 - medium
+ 11 - high)
+ Bit10 - Terrain occlusion
+*/
+
+  // cloud confidence 
+  var cloudconf7BitMask = ee.Number(2).pow(7).int();  // cloud confidence
+  var cloudconf6BitMask = ee.Number(2).pow(6).int();  // cloud confidence
+  // cloud shadow
+  var shadow3BitMask = ee.Number(2).pow(3).int();     // cloud shadow
+  // cloud
+  var cloud5BitMask = ee.Number(2).pow(5).int();      // cloud 
+  // snow
+  var snow4BitMask = ee.Number(2).pow(4).int();       // snow 
+  // water
+  var water2BitMask = ee.Number(2).pow(2).int();      // water 
+  // terrain
+  var terrain10BitMask = ee.Number(2).pow(10).int();  // terrain
+  // fill
+  var fill0BitMask = ee.Number(2).pow(0).int();       // fill
+  
+  
+  // cloud confidence             
+  var cloudconf = ((qa.bitwiseAnd(cloudconf7BitMask).eq(0)).and(
+            qa.bitwiseAnd(cloudconf6BitMask).neq(0)));
+  // cloud
+  var cloud = ((qa.bitwiseAnd(cloud5BitMask).eq(0)))
+    
+  // shadow
+  var shadow = ((qa.bitwiseAnd(shadow3BitMask).eq(0)))
+  
+   // water
+  var water = ((qa.bitwiseAnd(water2BitMask).eq(0)))
+  
+  // terrain
+  var terrain = ((qa.bitwiseAnd(terrain10BitMask).eq(0)))
+  
+  // fill
+  var fill = ((qa.bitwiseAnd(fill0BitMask).eq(0)))
+  
+  // snow
+  var snow = ((qa.bitwiseAnd(snow4BitMask).eq(0)))
+    
+  
+  var composite1 = (cloudconf.eq(0).or(shadow.eq(0))
+                    .or(cloud.eq(0)).or(water.eq(0)).or(terrain.eq(0))
+                    .or(fill.eq(0)).or(snow.eq(0)));
+
+  var composite = composite1.eq(0)
+
+  // Return the mask including date of the images taken
+  return composite.rename(dateString);
+}
+
+// Apply mask.l7clouds to image collections ---------------------------------------------------------
+
+var coll_19223 = l7_19223.map(maskclouds)
+print(coll_19223)
+var coll_19224 = l7_19224.map(maskclouds) 
+
+var coll_19323 = l7_19323.map(maskclouds)
+var coll_19324 = l7_19324.map(maskclouds)  
+
+var coll_19423 = l7_19423.map(maskclouds)
+var coll_19424 = l7_19424.map(maskclouds) 
+
+var coll_19523 = l7_19523.map(maskclouds)
+var coll_19524 = l7_19524.map(maskclouds)
+
+// export results ------------------------------------------------------------------------------------
+
+var ExportCol = function (col, folder, region, type, nimg, maxPixels) {
+    type = type || "float";
+    nimg = nimg || 500;
+    maxPixels = maxPixels || 1e10;
+    
+    
+    var colList = col.toList(nimg);
+    var n = colList.size().getInfo();
+
+    for (var i = 0; i < n; i++) {
+      var img = ee.Image(colList.get(i));
+      //get id of image
+      var id = img.id().getInfo();
+      // for offset-correction
+      var info = img.select(0).getInfo();
+      
+      var transform = info.bands[0].crs_transform;
+      
+      var crs = info.bands[0].crs;
+      
+      
+      
+
+      var imgtype = {"float":img.toFloat(), 
+                     "byte":img.toByte(), 
+                     "int":img.toInt(),
+                     "double":img.toDouble(),
+                     'uint':img.toUint8()
+                    };
+
+      Export.image.toDrive({
+        image:imgtype[type],
+        description: id,
+        folder: folder,
+        
+        region: region,
+        //removes offset from Landsat Pixels
+        crs: crs,
+        crsTransform : transform, 
+        maxPixels: maxPixels});
+    }
+  };
+  
+// Export whole Image collection
+
+
+
+
+ExportCol(coll_19423, "LS7_19423_autum",aoi_19423, "uint");
+ExportCol(coll_19424, "LS7_19424_autum",aoi_19424, "uint");
+ExportCol(coll_19523, "LS7_19523_autum",aoi_19523, "uint");
+ExportCol(coll_19524, "LS7_19524_autum",aoi_19524, "uint");
+
+

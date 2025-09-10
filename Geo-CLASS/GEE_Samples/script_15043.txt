@@ -1,0 +1,762 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var aoi = ee.FeatureCollection("users/abuhafsgaa/Makarfi"),
+    ceo = ee.FeatureCollection("users/abuhafsgaa/ALLsample"),
+    image = ee.Image("users/abuhafsgaa/DATASET_COMPOSITION_2017_21"),
+    image2 = ee.Image("users/abuhafsgaa/TEST_SAR_2017_DATASET_BOXCAR");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+//print(ceo.limit(10))
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Training data preparation
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Get the values for all pixels in the study area for the training
+
+var training = image.sampleRegions({
+
+  collection: ceo,
+
+  properties: ['LULC'],
+
+  scale: 10
+
+});
+
+
+
+// Add a column of random uniforms to the training dataset
+
+var withRandom = training.randomColumn('random');
+
+
+
+// We want to reserve some of the data for testing, to avoid overfitting the model
+
+var split = 0.7;  // Roughly 70% training, 30% testing.
+
+var trainingPartition = withRandom.filter(ee.Filter.lt('random', split));
+
+var testingPartition = withRandom.filter(ee.Filter.gte('random', split));
+
+
+
+// Define bands
+
+var bands = ['B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8', 'B8A', 'B11','B12',
+
+               'NDVI', 'NDVI_STD', 'BSI', 'MNDWI', 'REP', 'MCARI', 'WDVI', 'SLAVI',
+
+               'EVI','SIWSI','SAVI'];
+
+               
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+// Feature Importance
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+// Define RF and CART classifiers
+
+var classif_rf = ee.Classifier.smileRandomForest(100).setOutputMode('CLASSIFICATION').train(trainingPartition,"LULC",bands);
+
+var classif_cart = ee.Classifier.smileCart().train(trainingPartition,"LULC",bands);
+
+
+
+var dict_rf = classif_rf.explain();
+
+var dict_cart = classif_cart.explain();
+
+
+
+print('RF Explain:',dict_rf);
+
+print('CART Explain:',dict_cart);
+
+
+
+// Compute variable importance
+
+var variable_importance_rf = ee.Feature(null, ee.Dictionary(dict_rf).get('importance'));
+
+var variable_importance_cart = ee.Feature(null, ee.Dictionary(dict_cart).get('importance'));
+
+
+
+// Display variable importance results
+
+var chart_rf =
+
+  ui.Chart.feature.byProperty(variable_importance_rf)
+
+    .setChartType('ColumnChart')
+
+    .setOptions({
+
+      title: 'Random Forest Variable Importance',
+
+      legend: {position: 'none'},
+
+      hAxis: {title: 'Bands'},
+
+      vAxis: {title: 'Importance'}
+
+    });
+
+
+
+var chart_cart =
+
+  ui.Chart.feature.byProperty(variable_importance_cart)
+
+    .setChartType('ColumnChart')
+
+    .setOptions({
+
+      title: 'CART Variable Importance',
+
+      legend: {position: 'none'},
+
+      hAxis: {title: 'Bands'},
+
+      vAxis: {title: 'Importance'}
+
+    });
+
+   
+
+print(chart_rf);
+
+print(chart_cart);
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+// RF and CART classification
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+// Classify the imagery
+
+var classified_rf = image.classify(classif_rf);
+
+var classified_cart = image.classify(classif_cart);
+
+
+
+// Classify the test data using the trained classifiers
+
+var test_rf = testingPartition.classify(classif_rf);
+
+var test_cart = testingPartition.classify(classif_cart);
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+// Accuracy assessment
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+// Get confusion matrices for all 3 models
+
+var confusionMatrix_rf = test_rf.errorMatrix('LULC', 'classification');
+
+var confusionMatrix_cart = test_cart.errorMatrix('LULC', 'classification');
+
+
+
+print('RF Confusion Matrix', confusionMatrix_rf);
+
+print('CART Confusion Matrix', confusionMatrix_cart);
+
+
+
+// Print validation accuracy
+
+print('RF Validation overall accuracy: ', confusionMatrix_rf.accuracy());
+
+print('CART Validation overall accuracy: ', confusionMatrix_cart.accuracy());
+
+
+
+// Get confusion matrives representing resubstitution accuracy
+
+var trainAccuracy_rf = classif_rf.confusionMatrix();
+
+var trainAccuracy_cart = classif_cart.confusionMatrix();
+
+
+
+print('RF Resubstitution error matrix: ', trainAccuracy_rf);
+
+print('CART Resubstitution error matrix: ', trainAccuracy_cart);
+
+
+
+// Print overall training accuracy
+
+print('RF Training overall accuracy: ', trainAccuracy_rf.accuracy());
+
+print('CART Training overall accuracy: ', trainAccuracy_cart.accuracy());
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+// Visualize results
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+var pal_lc = {min: 1, max: 6, palette: ['magenta','yellow','green','red','blue']}; // Bare Soil, Build_UP, Grassland, Maize, others, water
+
+
+
+Map.centerObject(aoi);
+
+Map.addLayer(classified_rf, pal_lc, 'RF');
+
+Map.addLayer(classified_cart, pal_lc, 'CART');
+
+
+
+
+
+//print(ceo.limit(10))
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Training data preparation
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Get the values for all pixels in the study area for the training
+
+var training = image2.sampleRegions({
+
+  collection: ceo,
+
+  properties: ['LULC'],
+
+  scale: 10
+
+});
+
+
+
+// Add a column of random uniforms to the training dataset
+
+var withRandom = training.randomColumn('random');
+
+
+
+// We want to reserve some of the data for testing, to avoid overfitting the model
+
+var split = 0.7;  // Roughly 70% training, 30% testing.
+
+var trainingPartition = withRandom.filter(ee.Filter.lt('random', split));
+
+var testingPartition = withRandom.filter(ee.Filter.gte('random', split));
+
+
+
+// Define bands
+
+var bands = ['VH_1','VV_1','VH_2','VV_2','VH_3','VV_3','VH_4','VV_4','VH_5','VV_5','VH_6','VV_6',
+
+             'VH_7','VV_7','VH_8','VV_8','VH_9','VV_9','VH_10','VV_10','VH_11','VV_11','VH_12','VV_12',
+
+             'VH_13','VV_13','VH_14','VV_14','VH_15','VV_15','VH_16','VV_16','VH_17','VV_17','VH_18','VV_18',
+
+             'VH_19','VV_19','VH_20','VV_20','VH_21','VV_21','VH_22','VV_22','VH_23','VV_23','VH_24','VV_24',
+
+             'VH_25','VV_25','VH_26','VV_26','VH_27','VV_27','VH_28','VV_28','VH','VV'];
+
+               
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+// Feature Importance
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+// Define RF and CART classifiers
+
+var classif_rf = ee.Classifier.smileRandomForest(100).setOutputMode('CLASSIFICATION').train(trainingPartition,"LULC",bands);
+
+var classif_cart = ee.Classifier.smileCart().train(trainingPartition,"LULC",bands);
+
+
+
+var dict_rf = classif_rf.explain();
+
+var dict_cart = classif_cart.explain();
+
+
+
+print('RF Explain:',dict_rf);
+
+print('CART Explain:',dict_cart);
+
+
+
+// Compute variable importance
+
+var variable_importance_rf = ee.Feature(null, ee.Dictionary(dict_rf).get('importance'));
+
+var variable_importance_cart = ee.Feature(null, ee.Dictionary(dict_cart).get('importance'));
+
+
+
+// Display variable importance results
+
+var chart_rf =
+
+  ui.Chart.feature.byProperty(variable_importance_rf)
+
+    .setChartType('ColumnChart')
+
+    .setOptions({
+
+      title: 'Random Forest Variable Importance',
+
+      legend: {position: 'none'},
+
+      hAxis: {title: 'Bands'},
+
+      vAxis: {title: 'Importance'}
+
+    });
+
+
+
+var chart_cart =
+
+  ui.Chart.feature.byProperty(variable_importance_cart)
+
+    .setChartType('ColumnChart')
+
+    .setOptions({
+
+      title: 'CART Variable Importance',
+
+      legend: {position: 'none'},
+
+      hAxis: {title: 'Bands'},
+
+      vAxis: {title: 'Importance'}
+
+    });
+
+   
+
+print(chart_rf);
+
+print(chart_cart);
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+// RF and CART classification
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+// Classify the imagery
+
+var classified_rf = image2.classify(classif_rf);
+
+var classified_cart = image2.classify(classif_cart);
+
+
+
+// Classify the test data using the trained classifiers
+
+var test_rf = testingPartition.classify(classif_rf);
+
+var test_cart = testingPartition.classify(classif_cart);
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+// Accuracy assessment
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+// Get confusion matrices for all 3 models
+
+var confusionMatrix_rf = test_rf.errorMatrix('LULC', 'classification');
+
+var confusionMatrix_cart = test_cart.errorMatrix('LULC', 'classification');
+
+
+
+print('RF Confusion Matrix', confusionMatrix_rf);
+
+print('CART Confusion Matrix', confusionMatrix_cart);
+
+
+
+// Print validation accuracy
+
+print('RF Validation overall accuracy: ', confusionMatrix_rf.accuracy());
+
+print('CART Validation overall accuracy: ', confusionMatrix_cart.accuracy());
+
+
+
+// Get confusion matrives representing resubstitution accuracy
+
+var trainAccuracy_rf = classif_rf.confusionMatrix();
+
+var trainAccuracy_cart = classif_cart.confusionMatrix();
+
+
+
+print('RF Resubstitution error matrix: ', trainAccuracy_rf);
+
+print('CART Resubstitution error matrix: ', trainAccuracy_cart);
+
+
+
+// Print overall training accuracy
+
+print('RF Training overall accuracy: ', trainAccuracy_rf.accuracy());
+
+print('CART Training overall accuracy: ', trainAccuracy_cart.accuracy());
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+// Visualize results
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+var pal_lc = {min: 1, max: 6, palette: ['magenta','yellow','green','red','blue']}; // Bare Soil, Build_UP, Grassland, Maize, others, water
+
+
+
+Map.centerObject(aoi);
+
+Map.addLayer(classified_rf, pal_lc, 'RF_SAR');
+
+Map.addLayer(classified_cart, pal_lc, 'CART_SAR');
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+// Optical and SAR combination
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//Define both optical and SAR to train your data
+
+var opt_sar = image.addBands(image2);
+
+print(opt_sar)
+
+
+
+//print(ceo.limit(10))
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Training data preparation
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Get the values for all pixels in the study area for the training
+
+var training = opt_sar.sampleRegions({
+
+  collection: ceo,
+
+  properties: ['LULC'],
+
+  scale: 10
+
+});
+
+
+
+// Add a column of random uniforms to the training dataset
+
+var withRandom = training.randomColumn('random');
+
+
+
+// We want to reserve some of the data for testing, to avoid overfitting the model
+
+var split = 0.7;  // Roughly 70% training, 30% testing.
+
+var trainingPartition = withRandom.filter(ee.Filter.lt('random', split));
+
+var testingPartition = withRandom.filter(ee.Filter.gte('random', split));
+
+
+
+// Define bands
+
+var bands = ['B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8', 'B8A', 'B11','B12',
+
+               'NDVI', 'NDVI_STD', 'BSI', 'MNDWI', 'REP', 'MCARI', 'WDVI', 'SLAVI',
+
+               'EVI','SIWSI','SAVI','VH_1','VV_1','VH_2','VV_2','VH_3','VV_3','VH_4','VV_4','VH_5','VV_5','VH_6','VV_6',
+
+             'VH_7','VV_7','VH_8','VV_8','VH_9','VV_9','VH_10','VV_10','VH_11','VV_11','VH_12','VV_12',
+
+             'VH_13','VV_13','VH_14','VV_14','VH_15','VV_15','VH_16','VV_16','VH_17','VV_17','VH_18','VV_18',
+
+             'VH_19','VV_19','VH_20','VV_20','VH_21','VV_21','VH_22','VV_22','VH_23','VV_23','VH_24','VV_24',
+
+             'VH_25','VV_25','VH_26','VV_26','VH_27','VV_27','VH_28','VV_28','VH','VV'];
+
+
+
+
+
+// Define RF and CART classifiers
+
+var classif_rf = ee.Classifier.smileRandomForest(100).setOutputMode('CLASSIFICATION').train(trainingPartition,"LULC",bands);
+
+var classif_cart = ee.Classifier.smileCart().train(trainingPartition,"LULC",bands);
+
+
+
+var dict_rf = classif_rf.explain();
+
+var dict_cart = classif_cart.explain();
+
+
+
+print('RF Explain:',dict_rf);
+
+print('CART Explain:',dict_cart);
+
+
+
+// Compute variable importance
+
+var variable_importance_rf = ee.Feature(null, ee.Dictionary(dict_rf).get('importance'));
+
+var variable_importance_cart = ee.Feature(null, ee.Dictionary(dict_cart).get('importance'));
+
+
+
+// Display variable importance results
+
+var chart_rf =
+
+  ui.Chart.feature.byProperty(variable_importance_rf)
+
+    .setChartType('ColumnChart')
+
+    .setOptions({
+
+      title: 'Random Forest Variable Importance',
+
+      legend: {position: 'none'},
+
+      hAxis: {title: 'Bands'},
+
+      vAxis: {title: 'Importance'}
+
+    });
+
+
+
+var chart_cart =
+
+  ui.Chart.feature.byProperty(variable_importance_cart)
+
+    .setChartType('ColumnChart')
+
+    .setOptions({
+
+      title: 'CART Variable Importance',
+
+      legend: {position: 'none'},
+
+      hAxis: {title: 'Bands'},
+
+      vAxis: {title: 'Importance'}
+
+    });
+
+   
+
+print(chart_rf);
+
+print(chart_cart);
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+// RF and CART classification
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+// Classify the imagery
+
+var classified_rf = opt_sar.classify(classif_rf);
+
+var classified_cart = opt_sar.classify(classif_cart);
+
+
+
+// Classify the test data using the trained classifiers
+
+var test_rf = testingPartition.classify(classif_rf);
+
+var test_cart = testingPartition.classify(classif_cart);
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+// Accuracy assessment
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+// Get confusion matrices for all 3 models
+
+var confusionMatrix_rf = test_rf.errorMatrix('LULC', 'classification');
+
+var confusionMatrix_cart = test_cart.errorMatrix('LULC', 'classification');
+
+
+
+print('RF Confusion Matrix', confusionMatrix_rf);
+
+print('CART Confusion Matrix', confusionMatrix_cart);
+
+
+
+// Print validation accuracy
+
+print('RF Validation overall accuracy: ', confusionMatrix_rf.accuracy());
+
+print('CART Validation overall accuracy: ', confusionMatrix_cart.accuracy());
+
+
+
+// Get confusion matrives representing resubstitution accuracy
+
+var trainAccuracy_rf = classif_rf.confusionMatrix();
+
+var trainAccuracy_cart = classif_cart.confusionMatrix();
+
+
+
+print('RF Resubstitution error matrix: ', trainAccuracy_rf);
+
+print('CART Resubstitution error matrix: ', trainAccuracy_cart);
+
+
+
+// Print overall training accuracy
+
+print('RF Training overall accuracy: ', trainAccuracy_rf.accuracy());
+
+print('CART Training overall accuracy: ', trainAccuracy_cart.accuracy());
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+// Visualize results
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+var pal_lc = {min: 1, max: 6, palette: ['magenta','yellow','green','red','blue']}; // Bare Soil, Build_UP, Grassland, Maize, others, water
+
+
+
+Map.centerObject(aoi);
+
+Map.addLayer(classified_rf, pal_lc, 'RF_BOTH');
+
+Map.addLayer(classified_cart, pal_lc, 'CART_BOTH');
+
+
+

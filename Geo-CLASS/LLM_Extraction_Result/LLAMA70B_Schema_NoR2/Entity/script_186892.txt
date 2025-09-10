@@ -1,0 +1,5 @@
+{
+  "Theme": ["Forest monitoring and early detection of forest loss and fire in Dak Nong, Vietnam"],
+  "DataSource": ["COPERNICUS/S2", "ft:1Oaa3b2LdFGrAXL4jqFJzA-3iBeiNq6AQZkyFLVvp", "ft:1tAjm5bGsh0TWPSawKIsX-iWXd7vocIoG_98QjhU1", "ft:1iovW6_vHSX3JOx5OvcFr-ljJdx5mGmqK6Q_ETiSO", "ft:1zmsdCSa-do_XXh6-w6bpfXpz_kN7nGBGmKAcBRFQ", "ft:1gGjM2T5JEgKFoxbWORCn3WPqB98p2adAz42eqycf"],
+  "Function": ["Filtering image collection by cloud cover and date", "Calculating NDVI and NBR indices", "Mosaicking images", "Exporting image properties to CSV", "Exporting mosaic to Drive", "Exporting individual scenes to Drive"]
+}

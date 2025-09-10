@@ -1,0 +1,23 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Image collection filtering",
+            "NDVI calculation",
+            "NBR calculation",
+            "Image mosaicking",
+            "Image exporting"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "ft:1ovvyN_dzo01mRw8uSNMIYNg-HKyGTrqLErfg26X0"
+        ],
+        "Function": [
+            "Image collection filtering",
+            "Image exporting"
+        ]
+    }
+}

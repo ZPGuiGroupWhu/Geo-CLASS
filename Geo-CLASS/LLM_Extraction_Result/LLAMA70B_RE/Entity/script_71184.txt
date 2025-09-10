@@ -1,0 +1,14 @@
+{
+    "Theme": [
+        "Lake water quality analysis"
+    ],
+    "DataSource": [
+        "LANDSAT/LE7_L1T_32DAY_TOA"
+    ],
+    "Function": [
+        "Cloud scoring",
+        "MNDWI calculation",
+        "Image filtering",
+        "Cloud filling"
+    ]
+}

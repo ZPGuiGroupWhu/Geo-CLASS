@@ -1,0 +1,21 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Entity Recognition": {
+    "Theme": ["Flood monitoring and analysis"],
+    "DataSource": ["COPERNICUS/S1_GRD"],
+    "Function": ["Composite Sentinel-1 images", "Filter image collection", "Visualize image"]
+  },
+  "Relation Extraction": {
+    "relation_1": {
+      "DataSource": ["COPERNICUS/S1_GRD"],
+      "Function": ["Composite Sentinel-1 images", "Filter image collection", "Visualize image"]
+    }
+  }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2392, 'completion_tokens': 141, 'total_tokens': 2533}

@@ -1,0 +1,33 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["NDVI analysis", "Vegetation monitoring", "Temporal analysis"],
+  "DataSource": ["users/nicolasalejandromari/Sitios_NDVI_Tessi", "users/franciscoalaggia/Transectas", "LANDSAT/LC08/C01/T1_SR", "COPERNICUS/S2_SR"],
+  "Function": ["Load feature collection", "Define region of interest", "Filter image collection by date", "Filter image collection by bounds", "Mask clouds", "Add NDVI band", "Add time band", "Sort images by date", "Generate NDVI time series chart", "Generate NDVI temporal signature chart"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["users/nicolasalejandromari/Sitios_NDVI_Tessi"],
+    "Function": ["Load feature collection"]
+  },
+  "relation_2": {
+    "DataSource": ["users/franciscoalaggia/Transectas"],
+    "Function": ["Load feature collection"]
+  },
+  "relation_3": {
+    "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+    "Function": ["Filter image collection by date", "Filter image collection by bounds", "Mask clouds", "Add NDVI band", "Add time band", "Sort images by date", "Generate NDVI time series chart"]
+  },
+  "relation_4": {
+    "DataSource": ["COPERNICUS/S2_SR"],
+    "Function": ["Filter image collection by date", "Filter image collection by bounds", "Mask clouds", "Add NDVI band", "Add time band", "Sort images by date", "Generate NDVI temporal signature chart"]
+  }
+}
+```
+
+Total_Token_Usage:
+23195

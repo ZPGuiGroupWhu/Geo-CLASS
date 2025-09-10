@@ -1,0 +1,23 @@
+{
+    "Theme": [
+        "Flood extent calculation and damage assessment"
+    ],
+    "DataSource": [
+        "users/felixgeooperations/Drin/20210112_Drin_flood",
+        "COPERNICUS/S1_GRD",
+        "JRC/GSW1_0/GlobalSurfaceWater",
+        "WWF/HydroSHEDS/03VFDEM",
+        "JRC/GHSL/P2016/POP_GPW_GLOBE_V1/2015"
+    ],
+    "Function": [
+        "Filtering Sentinel-1 GRD data by predefined parameters",
+        "Selecting images by predefined dates",
+        "Creating a mosaic of selected tiles and clipping to study area",
+        "Applying reduce radar speckle by smoothing",
+        "Calculating flood extent",
+        "Refining flood result using additional datasets",
+        "Calculating flood extent area",
+        "Damage assessment",
+        "Exposed population density calculation"
+    ]
+}

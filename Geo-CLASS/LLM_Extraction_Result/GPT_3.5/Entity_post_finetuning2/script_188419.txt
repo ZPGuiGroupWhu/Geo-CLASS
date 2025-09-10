@@ -1,0 +1,19 @@
+{
+    "Summary": [
+        "The script processes Landsat 8 satellite imagery to calculate NDVI and Land Surface Temperature (LST) for a specific region in February 2020."
+    ],
+    "Theme": [
+        "NORMALIZED DIFFERENCE VEGETATION INDEX (NDVI)",
+        "AGE DETERMINATIONS"
+    ],
+    "DataSource": [
+        "LANDSAT/LC08/C01/T1_SR",
+        "pixel_qa",
+        "system:time_start"
+    ],
+    "Function": [
+        "Image Cloud Masking",
+        "Seasonal NDVI Analysis",
+        "Area Calculation"
+    ]
+}

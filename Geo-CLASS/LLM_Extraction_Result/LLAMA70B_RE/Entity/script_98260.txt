@@ -1,0 +1,18 @@
+{
+    "Theme": [
+        "Flood analysis and monitoring"
+    ],
+    "DataSource": [
+        "FAO/GAUL_SIMPLIFIED_500m/2015/level2",
+        "LANDSAT/LT05/C01/T1_SR"
+    ],
+    "Function": [
+        "Filtering image collection by bounds and date",
+        "Calculating NDWI",
+        "Clipping image to boundary",
+        "Computing histogram",
+        "Charting histogram",
+        "Otsu thresholding",
+        "Classifying image"
+    ]
+}

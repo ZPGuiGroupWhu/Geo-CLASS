@@ -1,0 +1,21 @@
+{
+    "Theme": [
+        "Land Surface Temperature Analysis"
+    ],
+    "DataSource": [
+        "projects/ee-kimiachenaary/assets/msh",
+        "LANDSAT/LC08/C01/T1_TOA"
+    ],
+    "Function": [
+        "Filtering image collection by bounds",
+        "Converting Kelvin to Celsius",
+        "Clipping images to geometry",
+        "Calculating seasonal temperatures",
+        "Reducing image collection to mean",
+        "Exporting to CSV",
+        "Calculating NDVI",
+        "Filtering by count range",
+        "Reducing columns to max",
+        "Charting image series"
+    ]
+}

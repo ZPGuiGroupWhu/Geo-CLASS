@@ -1,0 +1,16 @@
+{
+    "Summary": [
+        "Calculate MODIS EVI averages and perform PCA on the results."
+    ],
+    "Theme": [
+        "LAMPREYS/HAGFISHES",
+        "NORMALIZED DIFFERENCE VEGETATION INDEX (NDVI)"
+    ],
+    "DataSource": [
+        "MODIS/006/MOD13Q1"
+    ],
+    "Function": [
+        "NDWI (Normalized Difference Water Index calculation)",
+        "Spatial Statistics And Cluster Analysis"
+    ]
+}

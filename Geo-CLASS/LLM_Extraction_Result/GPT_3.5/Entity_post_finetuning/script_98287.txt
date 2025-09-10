@@ -1,0 +1,15 @@
+{
+    "Summary": [
+        "The script processes Sentinel-2 imagery to calculate NDVI and NDWI, then visualizes the results."
+    ],
+    "Theme": [
+        "VEGETATION INDEX"
+    ],
+    "DataSource": [
+        "COPERNICUS/S2_SR"
+    ],
+    "Function": [
+        "Calculating terrain slope and aspect from DEMs",
+        "NDWI (Normalized Difference Water Index calculation)"
+    ]
+}

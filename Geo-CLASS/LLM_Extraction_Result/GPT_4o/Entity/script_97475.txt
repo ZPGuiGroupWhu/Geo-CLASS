@@ -1,0 +1,5 @@
+{
+  "Theme": ["Land cover classification", "Cloud masking", "Cluster analysis", "Terrain analysis"],
+  "DataSource": ["COPERNICUS/S2", "USGS/NED"],
+  "Function": ["Mask clouds and cirrus", "Filter image collection by date and location", "Select specific bands", "Calculate median composite", "Clip image to region", "Rename bands", "Generate slope and aspect", "Add terrain data to image", "Sample image for training data", "Train clustering algorithm", "Apply clustering to image", "Visualize clusters", "Generate cluster means", "Create scatter plots", "Create frequency histogram", "Generate signature plots"]
+}

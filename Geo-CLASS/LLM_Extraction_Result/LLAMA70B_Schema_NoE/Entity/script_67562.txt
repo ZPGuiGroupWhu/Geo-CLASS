@@ -1,0 +1,18 @@
+{
+    "Theme": [
+        "Land cover classification"
+    ],
+    "DataSource": [
+        "users/wangweihappy0/training01/l8ClassifySample",
+        "LANDSAT/LC08/C01/T1_SR",
+        "USGS/SRTMGL1_003"
+    ],
+    "Function": [
+        "rmCloud: remove cloud and cloud shadow from Landsat 8 SR image",
+        "scaleImage: scale Landsat 8 SR image",
+        "NDVI: calculate normalized difference vegetation index",
+        "NDWI: calculate normalized difference water index",
+        "NDBI: calculate normalized difference built-up index",
+        "Terrain: calculate elevation and slope from SRTM DEM"
+    ]
+}

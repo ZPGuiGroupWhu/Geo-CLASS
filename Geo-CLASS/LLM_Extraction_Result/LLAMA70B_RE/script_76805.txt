@@ -1,0 +1,32 @@
+Entity Recognition:
+Here is the JSON response:
+
+Entity Recognition:
+```json
+{
+  "Theme": ["Arctic greening patterns"],
+  "DataSource": ["users/liuchongwhu/Arctic/Arctic_greeness/treeline_country", "MODIS/006/MOD13Q1", "MODIS/006/MOD44W"],
+  "Function": ["Mask pixels with high SummaryQA", "Mask out water", "Calculate NDVI/EVI annual max", "Calculate regression trends", "Calculate average NDVI/EVI in region"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/liuchongwhu/Arctic/Arctic_greeness/treeline_country"],
+        "Function": ["Center and map Arctic domain"]
+    },
+    "relation_2": {
+        "DataSource": ["MODIS/006/MOD13Q1"],
+        "Function": ["Mask pixels with high SummaryQA", "Mask out water", "Calculate NDVI/EVI annual max", "Calculate regression trends"]
+    },
+    "relation_3": {
+        "DataSource": ["MODIS/006/MOD44W"],
+        "Function": ["Mask out water"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3413, 'completion_tokens': 300, 'total_tokens': 3713}

@@ -1,0 +1,27 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Script processes MODIS images to analyze flood extent in Thua Thien - Hue, Vietnam."],
+  "Theme": ["Flood extent analysis"],
+  "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2", "MODIS/006/MOD09GA", "JRC/GSW1_0/GlobalSurfaceWater", "WWF/HydroSHEDS/03VFDEM"],
+  "Function": ["Filter MODIS images by region and date", "Calculate NDWI for flood and reference images", "Refine flood extent using additional datasets"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["FAO/GAUL_SIMPLIFIED_500m/2015/level2", "MODIS/006/MOD09GA"],
+        "Function": ["Filter MODIS images by region and date", "Calculate NDWI for flood and reference images", "Refine flood extent using additional datasets"]
+    },
+    "relation_2": {
+        "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater"],
+        "Function": ["Refine flood extent using additional datasets"]
+    },
+    "relation_3": {
+        "DataSource": ["WWF/HydroSHEDS/03VFDEM"],
+        "Function": ["Refine flood extent using additional datasets"]
+    }
+}
+```

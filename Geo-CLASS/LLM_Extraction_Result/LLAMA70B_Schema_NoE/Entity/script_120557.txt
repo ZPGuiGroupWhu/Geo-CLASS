@@ -1,0 +1,16 @@
+{
+    "Theme": [
+        "Land cover classification and cloud masking"
+    ],
+    "DataSource": [
+        "TIGER/2016/States",
+        "LANDSAT/LC08/C01/T1_SR"
+    ],
+    "Function": [
+        "Filtering the region of interest (Florida) from the TIGER/2016/States feature collection",
+        "Filtering Landsat 8 images within the region of interest and date range",
+        "Extracting QA bits for cloud masking",
+        "Masking out cloudy pixels",
+        "Applying decision tree classification for land cover types (water and vegetation)"
+    ]
+}

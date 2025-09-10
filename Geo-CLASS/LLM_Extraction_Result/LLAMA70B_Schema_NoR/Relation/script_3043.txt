@@ -1,0 +1,46 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_SR",
+            "LANDSAT/LE07/C01/T1_SR",
+            "LANDSAT/LT05/C01/T1_SR"
+        ],
+        "Function": [
+            "Image collection filtering",
+            "Image renaming and band selection",
+            "Cloud and shadow masking"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "users/1915303017/CNBBW_SL_10kmBuffer"
+        ],
+        "Function": [
+            "NDVI calculation",
+            "mNDWI calculation",
+            "LSWI calculation",
+            "EVI calculation",
+            "AWEInsh calculation"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "USGS/SRTMGL1_003"
+        ],
+        "Function": [
+            "Elevation and slope calculation"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_SR",
+            "LANDSAT/LE07/C01/T1_SR",
+            "LANDSAT/LT05/C01/T1_SR"
+        ],
+        "Function": [
+            "Water body detection",
+            "Vegetation classification",
+            "Land cover classification"
+        ]
+    }
+}

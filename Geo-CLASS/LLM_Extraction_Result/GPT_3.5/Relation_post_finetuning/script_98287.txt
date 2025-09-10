@@ -1,0 +1,11 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "COPERNICUS/S2_SR"
+        ],
+        "Function": [
+            "Calculating terrain slope and aspect from DEMs",
+            "NDWI (Normalized Difference Water Index calculation)"
+        ]
+    }
+}

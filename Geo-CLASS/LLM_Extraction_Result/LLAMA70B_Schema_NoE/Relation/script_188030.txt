@@ -1,0 +1,23 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_TOA"
+        ],
+        "Function": [
+            "Cloud masking using BQA band",
+            "NDVI calculation using Landsat 8 bands",
+            "Filtering dataset by date and bounds",
+            "Visualizing dataset using RGB and NDVI color palettes"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "projects/ee-kimiachenaary/assets/Tehran"
+        ],
+        "Function": [
+            "Clipping dataset according to geometry",
+            "Calculating mean and max values for each polygon",
+            "Exporting results to CSV files"
+        ]
+    }
+}

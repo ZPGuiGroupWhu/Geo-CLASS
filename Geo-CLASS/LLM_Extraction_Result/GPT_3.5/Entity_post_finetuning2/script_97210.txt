@@ -1,0 +1,16 @@
+{
+    "Summary": [
+        "Script focuses on analyzing fire areas using Sentinel-2 images before and after fires."
+    ],
+    "Theme": [
+        "HARMFUL ALGAL BLOOM (HABs)"
+    ],
+    "DataSource": [
+        "users/efafernandes_FCT-UNL/ICNF_AArdida/ICNF_AArdida_2016",
+        "COPERNICUS/S2"
+    ],
+    "Function": [
+        "Buffering Points For Sample Expansion",
+        "Generate Image Composites For Indices/Index"
+    ]
+}

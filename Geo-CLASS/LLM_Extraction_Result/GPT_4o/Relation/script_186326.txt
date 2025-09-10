@@ -1,0 +1,20 @@
+{
+  "relation_1": {
+    "DataSource": ["COPERNICUS/S2"],
+    "Function": [
+      "Define study area",
+      "Filter image collection by date",
+      "Filter image collection by location",
+      "Select specific bands",
+      "Calculate NDVI",
+      "Calculate NBR",
+      "Create mosaic image",
+      "Export image properties",
+      "Export mosaic image",
+      "Export individual images",
+      "Visualize images",
+      "Link maps",
+      "Add markers on map click"
+    ]
+  }
+}

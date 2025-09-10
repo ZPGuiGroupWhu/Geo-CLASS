@@ -1,0 +1,19 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["The script generates an animation of NO2 column density within a specific region."],
+  "Theme": ["Air quality monitoring"],
+  "DataSource": ["COPERNICUS/S5P/NRTI/L3_NO2"],
+  "Function": ["Image collection filtering by date"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S5P/NRTI/L3_NO2"],
+        "Function": ["Image collection filtering by date"]
+    }
+}
+```

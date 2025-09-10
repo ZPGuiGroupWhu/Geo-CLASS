@@ -1,0 +1,14 @@
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC8_SR", "LANDSAT/LC8_L1T_TOA"],
+        "Function": ["Filtering image collection by date", "Calculating NDVI and NBR indices"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LE7_L1T_TOA_FMASK", "LANDSAT/LE7_L1T_TOA"],
+        "Function": ["Mosaicking images", "Calculating NDVI and NBR indices"]
+    },
+    "relation_3": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Exporting image properties to CSV", "Exporting mosaic to Drive"]
+    }
+}

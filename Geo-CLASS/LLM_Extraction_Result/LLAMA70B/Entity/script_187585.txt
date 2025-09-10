@@ -1,0 +1,5 @@
+{
+  "Theme": ["Vegetation monitoring using MODIS EVI"],
+  "DataSource": ["MODIS/006/MOD13Q1"],
+  "Function": ["Filtering image collection by date", "Calculating average of MODIS EVI", "Clipping images to a specific region", "Performing principal component analysis"]
+}

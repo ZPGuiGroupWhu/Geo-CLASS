@@ -1,0 +1,5 @@
+{
+  "Theme": ["Burned area detection", "Vegetation classification", "Water classification", "Bare land classification"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Merge feature collections", "Filter image collection by date", "Apply cloud mask", "Calculate median composite", "Sample regions for training", "Train random forest classifier", "Classify image", "Compute normalized difference", "Calculate spectral distance", "Compute angle between vectors"]
+}

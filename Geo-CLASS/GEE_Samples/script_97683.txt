@@ -1,0 +1,246 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var geometry = 
+    /* color: #d63000 */
+    ee.Geometry.Polygon(
+        [[[-63.42315295965955, -14.408568720590992],
+          [-63.42315295965955, -15.533569787776123],
+          [-61.84112170965955, -15.533569787776123],
+          [-61.84112170965955, -14.408568720590992]]], null, false);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+//EXPORTACIÓN MASIVA DE MOSAICOS DE IMÁGENES SATÉLITE
+///Más info en http://www.gisandbeers.com/script-para-descarga-masiva-de-imagenes-satelitales/
+
+//Imagen para VIIRS NIGHT
+var IMGVIIRSNIGHT= ee.ImageCollection ('NOAA/VIIRS/DNB/MONTHLY_V1/VCMCFG') 
+  .filterDate ('2012-04-01', '2018-05-31') //fechas disponibles ('2012-04-01' - actualidad)
+  .filterBounds (geometry) 
+var VIIRSNIGHTFiltro = ee.Image(IMGVIIRSNIGHT.median());
+var VIIRSNIGHTClip = VIIRSNIGHTFiltro.clip (geometry);
+Map.addLayer (VIIRSNIGHTClip, {
+  max: 20.0, 
+  min: 0.0,
+  gamma: 1.0,
+  bands: ['avg_rad']},
+  'Imagen VIIRS Night');
+print (VIIRSNIGHTFiltro);
+Export.image.toDrive({
+  image: VIIRSNIGHTClip.select("avg_rad"),
+  description: 'VIIRSNIGHT_450m',
+  scale: 450,
+  region: geometry});
+
+
+//Imagen para PROBA-V
+var IMGPROBAV= ee.ImageCollection ('VITO/PROBAV/C1/S1_TOC_100M') 
+  .filterDate ('2018-01-01', '2018-12-30') //fechas disponibles ('2013-12-17' - actualidad)
+  .filterBounds (geometry) 
+  .filterMetadata ('CLOUD_COVER_PERCENTAGE', 'Less_Than', 20);
+var PROBAVFiltro = ee.Image(IMGPROBAV.median());
+var PROBAVClip = PROBAVFiltro.clip (geometry);
+Map.addLayer (PROBAVClip, {
+  min: 20.0,
+  max: 2000.0,
+  gamma: 1.0,
+  bands: ['RED','NIR','BLUE']}, 
+  'Imagen PROBA-V');
+print (PROBAVFiltro);
+Map.centerObject (PROBAVClip);
+Export.image.toDrive({
+  image: PROBAVClip.select("RED", "NIR", "BLUE"),
+  description: 'PROBA-V_100m',
+  scale: 10,
+  region: geometry});
+
+
+//Imagen para VIIRS
+var IMGVIIRS= ee.ImageCollection ('NOAA/VIIRS/001/VNP09GA') 
+  .filterDate ('2018-01-01', '2018-12-30') //fechas disponibles ('2012-01-19' - actualidad)
+  .filterBounds (geometry);
+var VIIRSFiltro = ee.Image(IMGVIIRS.median());
+var VIIRSClip = VIIRSFiltro.clip (geometry);
+Map.addLayer (VIIRSClip, {
+  min: 0.0,
+  max: 3000.0,
+  gamma: 1.0,
+  bands: ['M5', 'M4', 'M3']}, 
+  'Imagen VIIRS');
+print (VIIRSFiltro);
+Export.image.toDrive({
+  image: VIIRSClip.select("B4", "B3", "B2"),
+  description: 'VIIRS_1km',
+  scale: 1000,
+  region: geometry});
+
+
+//Imagen para MODIS
+var IMGMODIS= ee.ImageCollection ('MODIS/006/MCD43A1') 
+  .filterDate ('2018-01-01', '2018-12-30') //fechas disponibles ('2000-02-18' - actualidad)
+  .filterBounds (geometry);
+var MODISFiltro = ee.Image(IMGMODIS.median());
+var MODISClip = MODISFiltro.clip (geometry);
+Map.addLayer (MODISClip, {
+  min: 0.0,
+  max: 1400.0,
+  gamma: 2.0,
+  bands: ['BRDF_Albedo_Parameters_Band1_iso', 'BRDF_Albedo_Parameters_Band4_iso',
+  'BRDF_Albedo_Parameters_Band3_iso']}, 
+     'Imagen MODIS');
+print (MODISFiltro);
+Map.centerObject (MODISClip);
+Export.image.toDrive({
+  image: MODISClip.select("BRDF_Albedo_Parameters_Band1_iso", "BRDF_Albedo_Parameters_Band4_iso", "BRDF_Albedo_Parameters_Band3_iso"),
+  description: 'MODIS_500m',
+  scale: 500,
+  region: geometry});
+
+
+//Imagen para ASTER
+var IMGASTER= ee.ImageCollection ('ASTER/AST_L1T_003') 
+  .filterDate ('2018-01-01', '2018-12-30') //fechas disponibles ('2000-03-04' - actualidad)
+  .filterBounds (geometry) 
+  .filterMetadata ('CLOUDCOVER', 'Less_Than', 20);
+var ASTERFiltro = ee.Image(IMGASTER.median());
+var ASTERClip = ASTERFiltro.clip (geometry);
+Map.addLayer (ASTERClip, {
+  max: 255, 
+  min: 0.0,
+  gamma: 1.0,
+  bands: ['B3N', 'B02', 'B01']},
+  'Imagen ASTER');
+print (ASTERFiltro);
+Map.centerObject (ASTERClip);
+Export.image.toDrive({
+  image: ASTERClip.select("B3N", "B02", "B01"),
+  description: 'ASTER_15m',
+  scale: 15,
+  region: geometry});
+
+
+//Imagen para Landsat 4
+var IMGLandsat4= ee.ImageCollection ('LANDSAT/LT04/C01/T1_TOA') 
+  .filterDate ('1982-08-22', '1993-12-14') //fechas disponibles ('1982-08-22' - '1993-12-14')
+  .filterBounds (geometry) 
+  .filterMetadata ('CLOUD_COVER', 'Less_Than', 20);
+var Landsat4Filtro = ee.Image(IMGLandsat4.median());
+var Landsat4Clip = Landsat4Filtro.clip (geometry);
+Map.addLayer (Landsat4Clip, {
+  min: 0.0,
+  max: 0.4,
+  gamma: 1.0,
+  bands: ['B3','B2','B1']}, 
+  'Imagen Landsat 4');
+print (Landsat4Filtro);
+Map.centerObject (Landsat4Clip);
+Export.image.toDrive({
+  image: Landsat4Clip.select("B3", "B2", "B1"),
+  description: 'Landsat4_30m',
+  scale: 30,
+  region: geometry});
+
+
+//Imagen para Landsat 5
+var IMGLandsat5= ee.ImageCollection ('LANDSAT/LT05/C01/T1_TOA') 
+  .filterDate ('2010-01-01', '2010-12-30') //fechas disponibles ('1984-01-01' - '2012-05-05')
+  .filterBounds (geometry) 
+  .filterMetadata ('CLOUD_COVER', 'Less_Than', 20);
+var Landsat5Filtro = ee.Image(IMGLandsat5.median());
+var Landsat5Clip = Landsat5Filtro.clip (geometry);
+Map.addLayer (Landsat5Clip, {
+  min: 0.0,
+  max: 0.4,
+  gamma: 1.0,
+  bands: ['B3','B2','B1']}, 
+  'Imagen Landsat 5');
+print (Landsat5Filtro);
+Map.centerObject (Landsat5Clip);
+Export.image.toDrive({
+  image: Landsat5Clip.select("B3", "B2", "B1"),
+  description: 'Landsat5_30m',
+  scale: 30,
+  region: geometry});
+
+
+//Imagen para LANDSAT 7
+var IMGLandsat7= ee.ImageCollection ('LANDSAT/LE07/C01/T1_TOA') 
+  .filterDate ('2018-01-01', '2018-12-30') //fechas disponibles ('1999-01-01' - actualidad)
+  .filterBounds (geometry) 
+  .filterMetadata ('CLOUD_COVER', 'Less_Than', 20);
+var Landsat7Filtro = ee.Image(IMGLandsat7.median());
+var Landsat7Clip = Landsat7Filtro.clip (geometry);
+Map.addLayer (Landsat7Clip, {
+  min: 0.0,
+  max: 0.5,
+  gamma: 1.0,
+  bands: ['B3','B2','B1']}, 
+  'Imagen Landsat 7');
+print (Landsat7Filtro);
+Export.image.toDrive({
+  image: Landsat7Clip.select("B3", "B2", "B1"),
+  description: 'Landsat7_30m',
+  scale: 30,
+  region: geometry});
+
+
+//Imagen para LANDSAT 8
+var IMGLandsat8= ee.ImageCollection ('LANDSAT/LC08/C01/T1_TOA') 
+  .filterDate ('2018-08-01', '2019-02-24') //fechas disponibles ('2013-04-11' - actualidad)
+  .filterBounds (geometry) 
+  .filterMetadata ('CLOUD_COVER', 'Less_Than', 20);
+var Landsat8Filtro = ee.Image(IMGLandsat8.median());
+var Landsat8Clip = Landsat8Filtro.clip (geometry);
+Map.addLayer (Landsat8Clip, {
+  min: 0.0,
+  max: 0.5,
+  gamma: 1.0,
+  bands: ['B5','B4','B3']}, 
+  'Imagen Landsat 8');
+print (Landsat8Filtro);
+Export.image.toDrive({
+  image: Landsat8Clip.select("B5", "B4", "B3"),
+  description: 'Landsat8_30m',
+  scale: 30,
+  region: geometry});
+  
+
+//Imagen para SENTINEL 3
+var IMGSentinel3= ee.ImageCollection ('COPERNICUS/S3/OLCI') 
+  .filterDate ('2018-01-01' ,'2018-12-30'); //fechas disponibles ('2016-10-18' - actualidad)
+var Sentinel3Filtro = ee.Image(IMGSentinel3.median());
+var Conversion = IMGSentinel3.select(['Oa08_radiance', 'Oa06_radiance', 'Oa04_radiance'])
+              .median()
+              .multiply(ee.Image([0.00876539, 0.0123538, 0.0115198]));
+var Sentinel3Clip = Conversion.clip (geometry);
+Map.addLayer (Sentinel3Clip, {
+  min: 0,
+  max: 6,
+  gamma: 1.5,
+  bands: ['Oa08_radiance','Oa06_radiance','Oa04_radiance']}, 
+  'Imagen Sentinel 3');
+print (Sentinel3Filtro);
+Export.image.toDrive({
+  image: Sentinel3Clip.select("Oa08_radiance", "Oa06_radiance", "Oa04_radiance"),
+  description: 'Sentinel3_300m',
+  scale: 300,
+  region: geometry});
+  
+
+//Imagen para SENTINEL 2
+var IMGSentinel= ee.ImageCollection ('COPERNICUS/S2') 
+  .filterDate ('2018-12-01', '2019-02-24') //fechas disponibles ('2015-07-01' - actualidad)
+  .filterBounds (geometry) 
+  .filterMetadata ('CLOUDY_PIXEL_PERCENTAGE', 'Less_Than', 30);
+var SentinelFiltro = ee.Image(IMGSentinel.median());
+var SentinelClip = SentinelFiltro.clip (geometry);
+Map.addLayer (SentinelClip, {
+  max: 4000, 
+  min: 0.0, 
+  gamma: 1.0,
+  bands: ["B8","B4", "B3"]}, 
+  'Imagen Sentinel 2');
+print (SentinelFiltro);
+Map.centerObject (SentinelClip);
+Export.image.toDrive({
+  image: SentinelClip.select("B8","B4", "B3"),
+  description: 'Sentinel2_10m',
+  scale: 10,
+  region: geometry});

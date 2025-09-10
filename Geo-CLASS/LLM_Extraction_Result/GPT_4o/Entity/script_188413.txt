@@ -1,0 +1,5 @@
+{
+  "Theme": ["Cloud masking", "NDVI calculation", "LST calculation", "Image export"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Center map on geometry", "Apply cloud mask", "Set visualization parameters", "Load image collection", "Filter images by date", "Filter images by geometry", "Clip images to geometry", "Calculate median image", "Add layer to map", "Calculate NDVI", "Calculate min NDVI", "Calculate max NDVI", "Calculate fractional vegetation", "Calculate emissivity", "Calculate LST", "Export image to Drive"]
+}

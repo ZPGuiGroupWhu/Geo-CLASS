@@ -1,0 +1,22 @@
+Entity Recognition:
+```
+{
+  "Theme": ["Land surface analysis using Landsat 8 imagery"],
+  "DataSource": ["LANDSAT/LC08/C02/T1_L2"],
+  "Function": ["Filtering image collection by date and bounds", "Converting image to reflectance", "Visualizing image bands", "Exporting images to Drive"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+```json
+{
+    "relation_1": {
+        "DataSource": ["LANDSAT/LC08/C02/T1_L2"],
+        "Function": ["Filtering image collection by date and bounds", "Converting image to reflectance", "Visualizing image bands", "Exporting images to Drive"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2865, 'completion_tokens': 168, 'total_tokens': 3033}

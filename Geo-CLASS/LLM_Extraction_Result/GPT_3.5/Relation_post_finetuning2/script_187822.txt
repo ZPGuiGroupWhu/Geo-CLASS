@@ -1,0 +1,89 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "FAO/GAUL/2015/level0"
+        ],
+        "Function": [
+            "Cloud And Snow Masking",
+            "Image Mosaicking"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "Cloud And Snow Masking",
+            "Image Mosaicking"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "Cloud And Snow Masking",
+            "Image Mosaicking"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "FAO/GAUL/2015/level0",
+            "COPERNICUS/S2",
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "Compute Difference Between Pre- And Post-Fire NBR"
+        ]
+    },
+    "relation_5": {
+        "DataSource": [
+            "FAO/GAUL/2015/level0",
+            "COPERNICUS/S2",
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "Calculate dNBR For Fire Severity"
+        ]
+    },
+    "relation_6": {
+        "DataSource": [
+            "FAO/GAUL/2015/level0",
+            "COPERNICUS/S2",
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "Layer Addition To Map"
+        ]
+    },
+    "relation_7": {
+        "DataSource": [
+            "FAO/GAUL/2015/level0",
+            "COPERNICUS/S2",
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "Calculate Burned Area"
+        ]
+    },
+    "relation_8": {
+        "DataSource": [
+            "FAO/GAUL/2015/level0",
+            "COPERNICUS/S2",
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "Calculate dNBR For Fire Severity"
+        ]
+    },
+    "relation_9": {
+        "DataSource": [
+            "FAO/GAUL/2015/level0",
+            "COPERNICUS/S2",
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "Export Burn Severity And Area Data"
+        ]
+    }
+}

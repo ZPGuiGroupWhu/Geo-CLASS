@@ -1,0 +1,6 @@
+{
+  "Summary": ["Script focuses on Landsat and Sentinel imagery mosaicking and classification with water masking."],
+  "Theme": ["Imagery mosaicking", "Classification with water masking"],
+  "DataSource": ["users/EL/mapa_forest_hybrid_Belize", "JRC/GSW1_0/GlobalSurfaceWater", "LANDSAT/LT5_L1T", "LANDSAT/LE7_L1T", "LANDSAT/LC08/C01/T1_RT", "COPERNICUS/S2"],
+  "Function": ["Image mosaicking for Landsat 8", "Image mosaicking for Landsat 7", "Image mosaicking for Sentinel 2", "Quality band addition to Sentinel imagery", "Classification training and application", "Masking of water bodies in classification", "Area calculation for forested regions", "Image export to Google Drive"]
+}

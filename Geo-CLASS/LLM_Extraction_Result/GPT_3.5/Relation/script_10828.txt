@@ -1,0 +1,6 @@
+{
+    "relation_1": {
+        "DataSource": ["MODIS/006/MOD09A1"],
+        "Function": ["Cloud masking to remove cloud, shadow, and snow effects", "Calculation of NDVI and NIRV values", "Linear interpolation for filling missing values", "Feature collection creation for point information extraction"]
+    }
+}

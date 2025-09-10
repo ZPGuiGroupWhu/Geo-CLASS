@@ -1,0 +1,31 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land cover analysis using Landsat imagery"],
+  "DataSource": ["users/Katemiller125/Illilouette", "LANDSAT/LE07/C02/T1_L2", "LANDSAT/LE07/C01/T1_SR"],
+  "Function": ["Filtering image collection by date", "Painting feature collection onto an image", "Buffering points", "Zonal statistics calculation", "Image masking", "Image renaming", "Image preprocessing"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response that organizes the extracted information into a structured format:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/Katemiller125/Illilouette"],
+        "Function": ["Filtering image collection by date", "Image preprocessing"]
+    },
+    "relation_2": {
+        "DataSource": ["LANDSAT/LE07/C02/T1_L2"],
+        "Function": ["Painting feature collection onto an image", "Image masking"]
+    },
+    "relation_3": {
+        "DataSource": ["LANDSAT/LE07/C01/T1_SR"],
+        "Function": ["Buffering points", "Zonal statistics calculation", "Image renaming"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 3365, 'completion_tokens': 303, 'total_tokens': 3668}

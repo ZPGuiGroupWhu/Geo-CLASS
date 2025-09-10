@@ -1,0 +1,23 @@
+{
+    "Summary": [
+        "The script collects satellite images, calculates NDVI and NBR, exports image properties, and creates mosaics."
+    ],
+    "Theme": [
+        "NORMALIZED DIFFERENCE VEGETATION INDEX (NDVI)",
+        "CORONAL MASS EJECTIONS"
+    ],
+    "DataSource": [
+        "LANDSAT/LC8_SR",
+        "LANDSAT/LC8_L1T_TOA",
+        "LANDSAT/LT5_L1T_TOA_FMASK",
+        "LANDSAT/LE7_L1T_TOA_FMASK",
+        "COPERNICUS/S2",
+        "ft:1zmsdCSa-do_XXh6-w6bpfXpz_kN7nGBGmKAcBRFQ"
+    ],
+    "Function": [
+        "Seasonal NDVI Analysis",
+        "Pixel Count Calculation",
+        "Export Selected Image",
+        "Binary Image Creation"
+    ]
+}

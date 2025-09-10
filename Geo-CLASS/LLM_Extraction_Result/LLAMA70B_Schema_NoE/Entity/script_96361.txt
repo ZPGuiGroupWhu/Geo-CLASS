@@ -1,0 +1,20 @@
+{
+    "Theme": [
+        "Landsat 5, 7, 8 image processing and analysis"
+    ],
+    "DataSource": [
+        "LANDSAT/LT05/C01/T1_TOA",
+        "LANDSAT/LE07/C01/T1_RT_TOA",
+        "LANDSAT/LC08/C01/T1_RT_TOA",
+        "LANDSAT/LT05/C01/T1_SR",
+        "LANDSAT/LE07/C01/T1_SR",
+        "LANDSAT/LC08/C01/T1_SR"
+    ],
+    "Function": [
+        "Merging and standardizing Landsat 5, 7, 8 image collections",
+        "Unpacking bit bands and creating Fmask",
+        "Adding texture and predictors to images",
+        "Unpacking quality band and adding Fmask for SR images",
+        "Preparing predictors for TOA and SR images"
+    ]
+}

@@ -1,0 +1,6 @@
+{
+  "Summary": ["Script visualizes water occurrence and cloud cover in a specified area."],
+  "Theme": ["Water occurrence and cloud cover analysis"],
+  "DataSource": ["JRC/GSW1_0/GlobalSurfaceWater", "ee.Geometry.Polygon", "ee.FeatureCollection"],
+  "Function": ["Water level adjustment slider", "Lake shore statistics calculation"]
+}

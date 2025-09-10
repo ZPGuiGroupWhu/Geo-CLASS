@@ -1,0 +1,21 @@
+{
+    "Theme": [
+        "Calculate average spectral indices around marsh bird survey points along the ColRiver"
+    ],
+    "DataSource": [
+        "ft:1QKw5K7582CuFBKiqDcYEPADrvjHTLAkz3EIxL_TI",
+        "ft:1iQ8RECwcWSVF3AkSPVdxgpnENRJc-su6G6c1CZiF",
+        "LANDSAT/LC8_L1T_TOA",
+        "LANDSAT/LE7_L1T_TOA"
+    ],
+    "Function": [
+        "buffer function to clip images to marshbird points",
+        "map over image collection",
+        "create cloud mask using the BQA band in LS 8 TOA imagery",
+        "add variables of interest to landsat 8 imagery",
+        "add variables of interest to landsat 7 imagery",
+        "create cloud score function for LS 7 imagery",
+        "calculate mean values around each marshbird survey point",
+        "generate monthly averages"
+    ]
+}

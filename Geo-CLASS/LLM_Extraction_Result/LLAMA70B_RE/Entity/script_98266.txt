@@ -1,0 +1,19 @@
+{
+    "Theme": [
+        "Flood extent analysis"
+    ],
+    "DataSource": [
+        "COPERNICUS/S1_GRD",
+        "FAO/GAUL_SIMPLIFIED_500m/2015/level2",
+        "JRC/GSW1_0/GlobalSurfaceWater",
+        "WWF/HydroSHEDS/03VFDEM"
+    ],
+    "Function": [
+        "Image collection filtering",
+        "Mosaicking",
+        "Speckle filtering",
+        "Difference image creation",
+        "Thresholding",
+        "Flood extent refinement"
+    ]
+}

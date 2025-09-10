@@ -1,0 +1,37 @@
+Entity Recognition:
+Here is the JSON response:
+
+```json
+{
+  "Theme": ["Land use land cover classification", "Crop monitoring"],
+  "DataSource": ["users/eemapascordoba/LCLU_2021/recetas_ago20_abr21_pstxcultivo_masLCollect_buffer2306", "users/eemapascordoba/var_ambientales_rindes/rindes_alf_rol_training_zona", "COPERNICUS/S2", "users/capas/provincia_wgs"],
+  "Function": ["Filtering image collection by date and cloud cover", "Renaming image bands", "Calculating vegetation indices", "Creating quality mosaic", "Clipping images to a specific area", "Sampling regions for training data"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["users/eemapascordoba/LCLU_2021/recetas_ago20_abr21_pstxcultivo_masLCollect_buffer2306"],
+        "Function": ["Filtering image collection by date and cloud cover", "Renaming image bands", "Calculating vegetation indices"]
+    },
+    "relation_2": {
+        "DataSource": ["users/eemapascordoba/var_ambientales_rindes/rindes_alf_rol_training_zona"],
+        "Function": ["Sampling regions for training data"]
+    },
+    "relation_3": {
+        "DataSource": ["COPERNICUS/S2"],
+        "Function": ["Creating quality mosaic", "Clipping images to a specific area"]
+    },
+    "relation_4": {
+        "DataSource": ["users/capas/provincia_wgs"],
+        "Function": ["None"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 4947, 'completion_tokens': 425, 'total_tokens': 5372}

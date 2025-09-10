@@ -1,0 +1,5 @@
+{
+  "Theme": ["Water body detection", "SSC estimation", "Index calculation", "Landsat data processing"],
+  "DataSource": ["users/hifengxu/TibetanPlateau", "users/KingDr/TPPoints", "LANDSAT/LT05/C02/T1_L2", "LANDSAT/LE07/C02/T1_L2", "LANDSAT/LC08/C02/T1_L2", "CGIAR/SRTM90_V4"],
+  "Function": ["Create Landsat image collection", "Filter images by date and cloud cover", "Mask unwanted pixels", "Apply scaling factors", "Calculate normalized indices", "Calculate water indices", "Calculate SSC", "Export images to Drive", "Reduce regions for zonal statistics", "Export tables to Drive"]
+}

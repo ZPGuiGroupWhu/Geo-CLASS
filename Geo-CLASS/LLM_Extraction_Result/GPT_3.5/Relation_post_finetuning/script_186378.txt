@@ -1,0 +1,27 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "users/khoapv/xatong"
+        ],
+        "Function": [
+            "NDVI (Normalized Difference Vegetation Index calculation)"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "COPERNICUS/S1_GRD",
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "Merging (Combining multiple bands into one dataset)"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "COPERNICUS/S2"
+        ],
+        "Function": [
+            "NDVI (Normalized Difference Vegetation Index calculation)"
+        ]
+    }
+}

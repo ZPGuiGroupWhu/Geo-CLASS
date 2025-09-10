@@ -1,0 +1,29 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "USDOS/LSIB/2017"
+        ],
+        "Function": [
+            "Buffering geometry",
+            "Filtering feature collection"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "users/emaprlab/public:Modules/LandTrendr.js"
+        ],
+        "Function": [
+            "Running LandTrendr temporal segmentation",
+            "Fitting LandTrendr model",
+            "Getting change map layers"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "users/emaprlab/broberts:LTOP_mekong/06lt_Transfer_FTV_modules.js"
+        ],
+        "Function": [
+            "Converting LT fit output"
+        ]
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "JRC/GSW1_0/GlobalSurfaceWater"
+        ],
+        "Function": [
+            "Load and merge lake polygons",
+            "Calculate lake area from water occurrence map",
+            "Extract lake mask"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "users/sntopp/Lakes_ply_20171106"
+        ],
+        "Function": [
+            "Load and merge lake polygons",
+            "Extract lake mask"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "users/sntopp/NCSC_Horsepen_Lake"
+        ],
+        "Function": [
+            "Reconstruct water surface",
+            "Calculate total lake area"
+        ]
+    },
+    "relation_4": {
+        "DataSource": [
+            "users/sarinarinab/CitSci_Washington_Lakes"
+        ],
+        "Function": [
+            "Generate scatter chart of lake area changes"
+        ]
+    }
+}

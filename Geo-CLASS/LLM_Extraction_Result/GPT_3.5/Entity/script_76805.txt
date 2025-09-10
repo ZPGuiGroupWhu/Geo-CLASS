@@ -1,0 +1,6 @@
+{
+  "Summary": ["Analyzing Arctic greening patterns using MODIS data and regression trends."],
+  "Theme": ["Arctic greening patterns"],
+  "DataSource": ["users/liuchongwhu/Arctic/Arctic_greeness/treeline_country", "MODIS/006/MOD13Q1", "MODIS/006/MOD44W"],
+  "Function": ["Masking pixels with high SummaryQA", "Masking out water", "Calculating average NDVI in region from image"]
+}

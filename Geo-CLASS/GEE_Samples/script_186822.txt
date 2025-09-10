@@ -1,0 +1,359 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var SA = ee.FeatureCollection("users/dgilad/SA"),
+    Fields = ee.FeatureCollection("users/dgilad/Fields");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+// GEOMETRY DATA
+
+
+// SA: shape-file of the study area
+
+// Fields: shape-file of validation data (agricultural fields)
+
+// Create three inner-buffers to reduce border effect (-10m, -20m, -30m)
+
+// Create a function for buffering a feature, using the buffer_size
+// property of the feature
+var BufferFeature = function(f) {
+  f = ee.Feature(f);
+  var buffer_size = f.get('buffer_size');
+  return f.buffer(buffer_size);   
+  };
+  var BufferFeaturesByDistance = function (fc, buffer_size) {
+
+  // Set a buffer_size property on a feature. Note that this function needs
+  // to be defined within the BufferFeaturesByDistance function, so it can
+  // make use of the buffer_size parameter
+  var SetBufferSize = function(f) {
+  return f.set({'buffer_size': buffer_size});
+  };
+  return Fields.map(SetBufferSize).map(BufferFeature);
+};
+
+// set variables with different buffer sizes for the fields
+var fb1 = BufferFeaturesByDistance(Fields, -10);
+var fb2 = BufferFeaturesByDistance(Fields, -20);
+var fb3 = BufferFeaturesByDistance(Fields, -30);
+
+
+// --------------------------------------------------------------------------------
+
+// IMPORT SATELITTE DATA
+
+// Create image collection of S1 images filtered by date, polarization, resolution 
+// and orbit (decending)
+
+var s1_des = ee.ImageCollection('COPERNICUS/S1_GRD')
+  // filter images that cover the study area
+	.filterBounds(SA)
+	// filter range of dates to the breeding season
+	.filterDate('2018-02-25', '2018-08-31')
+  .filter(ee.Filter.eq('instrumentMode', 'IW'))
+    // filter the descending data (morning)
+  .filter(ee.Filter.eq('orbitProperties_pass', 'DESCENDING'))
+    // filter both VV and VH polarisation
+	.filterMetadata('transmitterReceiverPolarisation', 'equals', ['VV', 'VH'])
+	// filter resolution of 10m
+	.filterMetadata('resolution_meters', 'equals' , 10);
+
+// Create image collection of S1 images filtered by date, polarization, resolution 
+// and orbit (ascending)
+
+var s1_asc = ee.ImageCollection('COPERNICUS/S1_GRD')
+	.filterBounds(SA)
+	.filterDate('2018-02-25', '2018-08-31')
+  .filter(ee.Filter.eq('instrumentMode', 'IW'))
+  .filter(ee.Filter.eq('orbitProperties_pass', 'ASCENDING'))
+	.filterMetadata('transmitterReceiverPolarisation', 'equals', ['VV', 'VH'])
+	.filterMetadata('resolution_meters', 'equals' , 10);
+	
+// --------------------------------------------------------------------------------
+
+// EXCLUDE DAYS FROM MODEL (E.G. RAINY DAYS)
+
+
+
+// so no dates are excluded at the moment
+var bad_data_filter = ee.Filter.or(
+  ee.Filter.date('2017-02-27','2017-03-01'),
+  ee.Filter.date('2017-03-25','2017-03-30'),
+  ee.Filter.date('2017-07-25','2017-07-30'),
+  ee.Filter.date('2017-08-21','2017-08-30')
+  );
+  
+// Select the bad data (descending and ascending)
+var s1_des_bd = s1_des.filter(bad_data_filter);
+var s1_asc_bd = s1_asc.filter(bad_data_filter);
+
+// filter out the bad data
+// remain with the good data (descending and ascending)
+var s1_des_gd = s1_des.filter(bad_data_filter.not());
+var s1_asc_gd = s1_asc.filter(bad_data_filter.not());
+
+
+// --------------------------------------------------------------------------------
+
+// CONVERT S1 DATA TO NATURAL OR FROM NATURAL TO dB
+
+// function to convert S1 image collection dB values to natural values
+function toNatural(img) {
+  // add the date of the image acquisition
+  var imageDate = ee.Date(img.get('system:time_start')).format("dd-MM-YYYY");
+  // add the time of the image acquisition
+  var imageTime = ee.Date(img.get('system:time_start')).format("HH:mm:ss");
+  // convert dB values to natural values
+  var image = ee.Image(10.0).pow(img.divide(10.0))
+  
+  return image.set({date: imageDate, time: imageTime});
+}
+
+// function to convert feature collection from natural values to dB
+function toDB(feature) {
+  // create variables of mean: VV, VH and angle
+  // as numbers
+  var VV_mean = ee.Number(feature.get('VV_mean'));
+  var VH_mean = ee.Number(feature.get('VH_mean'));
+  var angle_mean = ee.Number(feature.get('angle_mean'));  
+  // convert the variables back to dB values
+  return feature.set({ 
+    VV_mean_dB: VV_mean.log10().multiply(10.0),
+    VH_mean_dB: VH_mean.log10().multiply(10.0),
+    angle_mean_dB: angle_mean.log10().multiply(10.0),
+  })
+}
+
+// convert S1 ascending and descending data to natural values
+var natural_s1_asc = s1_asc_gd.map(toNatural)
+var natural_s1_des = s1_des_gd.map(toNatural)
+
+
+// --------------------------------------------------------------------------------
+
+// MEAN AND STANDARD DEVIATION FOR FB1 - FIELDS BUFFERED IN 10 METRES
+// ASCENDING DATA
+
+// create a combined reducer - so mean and standard deviation
+// will be calculated
+var reducers = ee.Reducer.mean().combine({
+  reducer2: ee.Reducer.stdDev(),
+  sharedInputs: true,
+  });
+
+// create a reduceRegions function to obtain data for the shape-file (Fields)
+// so each field will be given a mean and stdDev value
+// for the entire image collection
+var meanstd_fb1_asc = natural_s1_asc.map(function(image){
+  // run the function on each image
+  var RR_meanstd = image.reduceRegions({
+  // apply it on the buffered shape-file (in this case, -10m)
+  collection: fb1,
+  
+  reducer: reducers,
+  // apply to the scale of S1 images (10m)
+  scale: 10,
+  });
+  // add date information
+  var addDate = function(feature) {
+  // remove the geometry features, as they are unnecessary
+  return feature.setGeometry(null)
+  // add date and time
+  .set({date: image.get('date'), time: image.get('time')});
+  };
+   // apply the toDB function to convert the values back to dB values
+   
+   return RR_meanstd.map(addDate).map(toDB).filter(ee.Filter.notNull(["VV_mean", "VH_mean", "VV_stdDev", "VH_stdDev", "angle_mean", "angle_stdDev"]))
+}).flatten() 
+
+
+print('asc data 10m - dB', meanstd_fb1_asc.limit(1))
+
+// --------------------------------------------------------------------------------
+
+// --------------------------------------------------------------------------------
+
+// MEAN AND STANDARD DEVIATION FOR FB2 - FIELDS BUFFERED IN 20 METRES
+// ASCENDING DATA
+
+var reducers = ee.Reducer.mean().combine({
+  reducer2: ee.Reducer.stdDev(),
+  sharedInputs: true,
+  });
+
+var meanstd_fb2_asc = natural_s1_asc.map(function(image){
+  var RR_meanstd = image.reduceRegions({
+  collection: fb2,
+  reducer: reducers,
+  scale: 10,
+  });
+  var addDate = function(feature) {
+  return feature.setGeometry(null)
+  .set({date: image.get('date'), time: image.get('time')});
+  };
+   return RR_meanstd.map(addDate).map(toDB).filter(ee.Filter.notNull(["VV_mean", "VH_mean", "VV_stdDev", "VH_stdDev", "angle_mean", "angle_stdDev"]))
+}).flatten() 
+
+
+print('asc data 20m - dB', meanstd_fb2_asc.limit(1))
+
+// --------------------------------------------------------------------------------
+
+// --------------------------------------------------------------------------------
+
+// MEAN AND STANDARD DEVIATION FOR FB3 - FIELDS BUFFERED IN 30 METRES
+// ASCENDING DATA
+
+var reducers = ee.Reducer.mean().combine({
+  reducer2: ee.Reducer.stdDev(),
+  sharedInputs: true,
+  });
+
+var meanstd_fb3_asc = natural_s1_asc.map(function(image){
+  var RR_meanstd = image.reduceRegions({
+  collection: fb3,
+  reducer: reducers,
+  scale: 10,
+  });
+  var addDate = function(feature) {
+  return feature.setGeometry(null)
+  .set({date: image.get('date'), time: image.get('time')});
+  };
+   return RR_meanstd.map(addDate).map(toDB).filter(ee.Filter.notNull(["VV_mean", "VH_mean", "VV_stdDev", "VH_stdDev", "angle_mean", "angle_stdDev"]))
+}).flatten() 
+
+
+print('asc data 30m - dB', meanstd_fb3_asc.limit(1))
+
+// --------------------------------------------------------------------------------
+
+// --------------------------------------------------------------------------------
+
+// MEAN AND STANDARD DEVIATION FOR FB1 - FIELDS BUFFERED IN 10 METRES
+// DESCENDING DATA
+
+var reducers = ee.Reducer.mean().combine({
+  reducer2: ee.Reducer.stdDev(),
+  sharedInputs: true,
+  });
+
+var meanstd_fb1_des = natural_s1_des.map(function(image){
+  var RR_meanstd = image.reduceRegions({
+  collection: fb1,
+  reducer: reducers,
+  scale: 10,
+  });
+  var addDate = function(feature) {
+  return feature.setGeometry(null)
+  .set({date: image.get('date'), time: image.get('time')});
+  };
+   return RR_meanstd.map(addDate).map(toDB).filter(ee.Filter.notNull(["VV_mean", "VH_mean", "VV_stdDev", "VH_stdDev", "angle_mean", "angle_stdDev"]))
+}).flatten() 
+
+
+print('des data 10m - dB', meanstd_fb1_des.limit(1))
+
+// --------------------------------------------------------------------------------
+
+// --------------------------------------------------------------------------------
+
+// MEAN AND STANDARD DEVIATION FOR FB2 - FIELDS BUFFERED IN 20 METRES
+// DESCENDING DATA
+
+var reducers = ee.Reducer.mean().combine({
+  reducer2: ee.Reducer.stdDev(),
+  sharedInputs: true,
+  });
+
+var meanstd_fb2_des = natural_s1_des.map(function(image){
+  var RR_meanstd = image.reduceRegions({
+  collection: fb2,
+  reducer: reducers,
+  scale: 10,
+  });
+  var addDate = function(feature) {
+  return feature.setGeometry(null)
+  .set({date: image.get('date'), time: image.get('time')});
+  };
+   return RR_meanstd.map(addDate).map(toDB).filter(ee.Filter.notNull(["VV_mean", "VH_mean", "VV_stdDev", "VH_stdDev", "angle_mean", "angle_stdDev"]))
+}).flatten() 
+
+
+print('des data 20m - dB', meanstd_fb1_des.limit(1))
+
+// --------------------------------------------------------------------------------
+
+// --------------------------------------------------------------------------------
+
+// MEAN AND STANDARD DEVIATION FOR FB3 - FIELDS BUFFERED IN 30 METRES
+// DESCENDING DATA
+
+var reducers = ee.Reducer.mean().combine({
+  reducer2: ee.Reducer.stdDev(),
+  sharedInputs: true,
+  });
+
+var meanstd_fb3_des = natural_s1_des.map(function(image){
+  var RR_meanstd = image.reduceRegions({
+  collection: fb3,
+  reducer: reducers,
+  scale: 10,
+  });
+  var addDate = function(feature) {
+  return feature.setGeometry(null)
+  .set({date: image.get('date'), time: image.get('time')});
+  };
+   return RR_meanstd.map(addDate).map(toDB).filter(ee.Filter.notNull(["VV_mean", "VH_mean", "VV_stdDev", "VH_stdDev", "angle_mean", "angle_stdDev"]))
+}).flatten() 
+
+
+print('des data 30m - dB', meanstd_fb3_des.limit(1))
+
+// --------------------------------------------------------------------------------
+
+// MAP SETTINGS
+
+
+Map.setCenter(7.3,46.75,10.5)
+
+// --------------------------------------------------------------------------------
+
+// EXPORT FILES
+
+// Export ascending data tables to drive
+// 10m
+Export.table.toDrive({
+  collection: meanstd_fb1_asc,
+  description:'meanstd_fb1_asc',
+  fileFormat: 'CSV'
+});
+// 20m
+Export.table.toDrive({
+  collection: meanstd_fb2_asc,
+  description:'meanstd_fb2_asc',
+  fileFormat: 'CSV'
+});
+// 30m
+Export.table.toDrive({
+  collection: meanstd_fb3_asc,
+  description:'meanstd_fb3_asc',
+  fileFormat: 'CSV'
+});
+
+// Export descending data tables to drive
+// 10m
+Export.table.toDrive({
+  collection: meanstd_fb1_des,
+  description:'meanstd_fb1_des',
+  fileFormat: 'CSV'
+});
+// 20m
+Export.table.toDrive({
+  collection: meanstd_fb2_des,
+  description:'meanstd_fb2_des',
+  fileFormat: 'CSV'
+});
+// 30m
+Export.table.toDrive({
+  collection: meanstd_fb3_des,
+  description:'meanstd_fb3_des',
+  fileFormat: 'CSV'
+});
+

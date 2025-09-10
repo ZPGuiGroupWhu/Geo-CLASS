@@ -1,0 +1,14 @@
+{
+    "Theme": [
+        "Water body area change analysis"
+    ],
+    "DataSource": [
+        "COPERNICUS/S1_GRD"
+    ],
+    "Function": [
+        "Filtering image collection by bounds and date",
+        "Applying OTSU thresholding for water detection",
+        "Calculating water body area",
+        "Generating time series chart of water body area change"
+    ]
+}

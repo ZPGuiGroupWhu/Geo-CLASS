@@ -1,0 +1,6 @@
+{
+  "Summary": ["Extracting MODIS LST data for Himachal Pradesh settlements."],
+  "Theme": ["Land surface temperature analysis"],
+  "DataSource": ["MODIS/006/MOD11A1", "Settlement"],
+  "Function": ["Filtering MODIS images by location and date", "Scaling MODIS LST data", "Calculating mean LST for settlements", "Formatting and exporting time series data"]
+}

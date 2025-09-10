@@ -1,0 +1,13 @@
+{
+    "Theme": [
+        "Air quality analysis"
+    ],
+    "DataSource": [
+        "COPERNICUS/S5P/NRTI/L3_NO2"
+    ],
+    "Function": [
+        "Image collection filtering",
+        "Image clipping",
+        "Visualization with custom palette"
+    ]
+}

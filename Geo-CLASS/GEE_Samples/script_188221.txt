@@ -1,0 +1,166 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var era5_precip = ee.ImageCollection("ECMWF/ERA5_LAND/MONTHLY"),
+    imageVisParam = {"opacity":1,"bands":["total_precipitation"],"min":-0.00002569026252672267,"max":0.03529521228363706,"gamma":1},
+    geometry = 
+    /* color: #00ff00 */
+    ee.Geometry.Polygon(
+        [[[90.46332407781063, 25.738977408716163],
+          [90.46332407781063, 25.00441150892125],
+          [91.33124399968563, 25.00441150892125],
+          [91.33124399968563, 25.738977408716163]]], null, false);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+// Inputs to code
+/*
+era5_precip - a collection of images (aka an ImageCollection) that is monthly global climate data, 
+where each image represents a month
+geometry - a geometry polygon that represents the area that you want to download data for. 
+*/
+
+// Step 1. Filter the image collection to the date range you want, and filter it to the variables you 
+// are interested in--in this case precipitation. 
+var era5_filter = era5_precip.filterDate("1982-09-01", "2022-09-01")
+  .select(["total_precipitation","total_evaporation", "surface_runoff", "dewpoint_temperature_2m", "temperature_2m", "forecast_albedo", "surface_latent_heat_flux","surface_sensible_heat_flux","surface_solar_radiation_downwards","surface_thermal_radiation_downwards"]).aside(print)
+  
+// Step 2. Practice getting the date and the mean precipitation within the geometry for one image. 
+var precip = ee.Image(era5_filter.first()) // select the first image in the image collection, and make sure that GEE knows it is an image
+  .reduceRegion({ 
+    geometry: geometry, // the geometry of your study area
+    reducer: ee.Reducer.mean() // how you want to summarise the data in your geometry, in this case we want the mean precipitation in the geometry region
+}).get("total_precipitation").aside(print) //reduceRegion results in a 'Dictionary' object, and we just want the number that is the mean precip, not an object, so this is how we get that number
+
+var evap = ee.Image(era5_filter.first()) // select the first image in the image collection, and make sure that GEE knows it is an image
+  .reduceRegion({ 
+    geometry: geometry, // the geometry of your study area
+    reducer: ee.Reducer.mean() // how you want to summarise the data in your geometry, in this case we want the mean precipitation in the geometry region
+}).get("total_evaporation").aside(print)
+
+var runoff = ee.Image(era5_filter.first()) // select the first image in the image collection, and make sure that GEE knows it is an image
+  .reduceRegion({ 
+    geometry: geometry, // the geometry of your study area
+    reducer: ee.Reducer.mean() // how you want to summarise the data in your geometry, in this case we want the mean precipitation in the geometry region
+}).get("surface_runoff").aside(print)
+
+var dewpoint = ee.Image(era5_filter.first()) // select the first image in the image collection, and make sure that GEE knows it is an image
+  .reduceRegion({ 
+    geometry: geometry, // the geometry of your study area
+    reducer: ee.Reducer.mean() // how you want to summarise the data in your geometry, in this case we want the mean precipitation in the geometry region
+}).get("dewpoint_temperature_2m").aside(print)
+
+var temp = ee.Image(era5_filter.first()) // select the first image in the image collection, and make sure that GEE knows it is an image
+  .reduceRegion({ 
+    geometry: geometry, // the geometry of your study area
+    reducer: ee.Reducer.mean() // how you want to summarise the data in your geometry, in this case we want the mean precipitation in the geometry region
+}).get("temperature_2m").aside(print)
+
+var albedo = ee.Image(era5_filter.first()) // select the first image in the image collection, and make sure that GEE knows it is an image
+  .reduceRegion({ 
+    geometry: geometry, // the geometry of your study area
+    reducer: ee.Reducer.mean() // how you want to summarise the data in your geometry, in this case we want the mean precipitation in the geometry region
+}).get("forecast_albedo").aside(print)
+
+var latent = ee.Image(era5_filter.first()) // select the first image in the image collection, and make sure that GEE knows it is an image
+  .reduceRegion({ 
+    geometry: geometry, // the geometry of your study area
+    reducer: ee.Reducer.mean() // how you want to summarise the data in your geometry, in this case we want the mean precipitation in the geometry region
+}).get("surface_latent_heat_flux").aside(print)
+
+var sensible = ee.Image(era5_filter.first()) // select the first image in the image collection, and make sure that GEE knows it is an image
+  .reduceRegion({ 
+    geometry: geometry, // the geometry of your study area
+    reducer: ee.Reducer.mean() // how you want to summarise the data in your geometry, in this case we want the mean precipitation in the geometry region
+}).get("surface_sensible_heat_flux").aside(print)
+
+var solardown = ee.Image(era5_filter.first()) // select the first image in the image collection, and make sure that GEE knows it is an image
+  .reduceRegion({ 
+    geometry: geometry, // the geometry of your study area
+    reducer: ee.Reducer.mean() // how you want to summarise the data in your geometry, in this case we want the mean precipitation in the geometry region
+}).get("surface_solar_radiation_downwards").aside(print)
+
+var thermaldown = ee.Image(era5_filter.first()) // select the first image in the image collection, and make sure that GEE knows it is an image
+  .reduceRegion({ 
+    geometry: geometry, // the geometry of your study area
+    reducer: ee.Reducer.mean() // how you want to summarise the data in your geometry, in this case we want the mean precipitation in the geometry region
+}).get("surface_thermal_radiation_downwards").aside(print)
+
+var date = ee.Image(era5_filter.first()).get("system:index").aside(print) // get the month/year of the image
+
+var feat = ee.Feature(null) //put the month/year and the total precip amount as properties of a feature object (that is just the format you need things in for the next step). Features usually correspond to a geometry that has properties about the geometry, like date and total precip! In this case, the geometry can be empty (aka, null)
+  .set("date", date)
+  .set("precip_mean", precip)
+  .set("evap_mean", evap)
+  .set("runoff_mean", runoff)
+  .set("dewpoint_mean", dewpoint)
+  .set("temp_mean", temp)
+  .set("albedo_mean", albedo)
+  .set("latent_mean", latent)
+  .set("sensible_mean", sensible)
+  .set("solar_meam", solardown)
+  .set("thermal_mean", thermaldown).aside(print)
+
+
+var reduce_images = era5_filter.map(function(img){
+  var precip = img.reduceRegion({
+    geometry: geometry,
+    reducer: ee.Reducer.mean()
+  }).get("total_precipitation")
+   var evap = img.reduceRegion({
+    geometry: geometry,
+    reducer: ee.Reducer.mean()
+  }).get("total_evaporation")
+   var runoff = img.reduceRegion({
+    geometry: geometry,
+    reducer: ee.Reducer.mean()
+  }).get("surface_runoff")
+  var dewpoint = img.reduceRegion({
+    geometry: geometry,
+    reducer: ee.Reducer.mean()
+  }).get("dewpoint_temperature_2m")
+  var temp = img.reduceRegion({
+    geometry: geometry,
+    reducer: ee.Reducer.mean()
+  }).get("temperature_2m")
+  var albedo = img.reduceRegion({
+    geometry: geometry,
+    reducer: ee.Reducer.mean()
+  }).get("forecast_albedo")
+  var latent = img.reduceRegion({
+    geometry: geometry,
+    reducer: ee.Reducer.mean()
+  }).get("surface_latent_heat_flux")
+  var sensible = img.reduceRegion({
+    geometry: geometry,
+    reducer: ee.Reducer.mean()
+  }).get("surface_sensible_heat_flux")
+  var solardown = img.reduceRegion({
+    geometry: geometry,
+    reducer: ee.Reducer.mean()
+  }).get("surface_solar_radiation_downwards")
+  var thermaldown = img.reduceRegion({
+    geometry: geometry,
+    reducer: ee.Reducer.mean()
+  }).get("surface_thermal_radiation_downwards")
+  var date = img.get("system:index")
+  var feat = ee.Feature(null)
+    .set("date", date)
+    .set("precip_mean", precip)
+    .set("evap_mean", evap)
+    .set("runoff_mean", runoff)
+    .set("dewpoint_mean", dewpoint)
+    .set("temp_mean", temp)
+    .set("albedo_mean", albedo)
+    .set("latent_mean", latent)
+    .set("sensible_mean", sensible)
+    .set("solar_mean", solardown)
+    .set("thermal_mean", thermaldown)
+  return ee.Feature(feat)
+}).aside(print)
+
+// Step 4. Export that featurecollection as a CSV to your google drive
+Export.table.toDrive({
+  collection: reduce_images,
+  description: "ERA5_India_Precip_11_07",
+  selectors:["date", "precip_mean","evap_mean","runoff_mean","dewpoint_mean","temp_mean","albedo_mean","latent_mean","sensible_mean", "solar_mean","thermal_mean" ], //select the properties you are interested in: date and precipitation
+  fileFormat: "CSV"
+})
+var sept_precip_1992 = era5_filter.filterDate("1992-09-01", "1992-10-01")
+Map.addLayer(sept_precip_1992)

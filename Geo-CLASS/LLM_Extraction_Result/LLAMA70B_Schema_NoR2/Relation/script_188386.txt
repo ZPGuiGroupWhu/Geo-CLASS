@@ -1,0 +1,10 @@
+{
+    "relation_1": {
+        "DataSource": ["USDA/NASS/CDL"],
+        "Function": ["Image collection creation"]
+    },
+    "relation_2": {
+        "DataSource": ["USDA/NASS/CDL"],
+        "Function": ["Geometry definition"]
+    }
+}

@@ -1,0 +1,30 @@
+{
+  "Theme": ["NDVI and LSWI analysis in Qinghai region"],
+  "DataSource": [
+    "LANDSAT/LT05/C01/T1_SR",
+    "LANDSAT/LC08/C01/T1_SR",
+    "users/cxliu2015/PA_Qinghai_EnglishNames",
+    "users/cxliu2015/PA_Qinghai_cdm_studiedRectangle"
+  ],
+  "Function": [
+    "Add edges to map",
+    "Load surface reflectance images",
+    "Rename bands",
+    "Merge image collections",
+    "Filter image collection by date",
+    "Filter image collection by location",
+    "Sort image collection by time",
+    "Mask clouds, shadows, snow, and fill",
+    "Apply cloud mask to image collection",
+    "Select specific bands",
+    "Calculate median of bands",
+    "Compute NDVI",
+    "Compute LSWI",
+    "Add bands to image",
+    "Visualize RGB composite",
+    "Visualize NDVI",
+    "Visualize LSWI",
+    "Export NDVI to Google Drive",
+    "Export LSWI to Google Drive"
+  ]
+}

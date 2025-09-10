@@ -1,0 +1,31 @@
+Entity Recognition:
+```json
+{
+  "Summary": ["Geoprocessing workflow analyzing thermal data and fire probability in Tasmania."],
+  "Theme": ["Thermal data analysis", "Fire probability assessment", "NDVI change detection"],
+  "DataSource": ["COPERNICUS/S2_SR", "MODIS/006/MOD14A1", "MODIS/006/MOD11A1"],
+  "Function": ["Temperature conversion from Kelvin to Celsius", "Image collection filtering by date and bands", "Chart generation for temperature and radiative power", "Unmasking fire probability image collection", "NDVI calculation and change detection", "Fire mask creation based on NDVI change"]
+}
+```
+
+Relation Extraction:
+```json
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2_SR", "MODIS/006/MOD14A1", "MODIS/006/MOD11A1"],
+        "Function": ["Image collection filtering by date and bands", "NDVI calculation and change detection"]
+    },
+    "relation_2": {
+        "DataSource": ["MODIS/006/MOD14A1"],
+        "Function": ["Unmasking fire probability image collection"]
+    },
+    "relation_3": {
+        "DataSource": ["MODIS/006/MOD11A1"],
+        "Function": ["Temperature conversion from Kelvin to Celsius"]
+    },
+    "relation_4": {
+        "DataSource": ["COPERNICUS/S2_SR"],
+        "Function": ["Image collection filtering by date and bands", "NDVI calculation and change detection"]
+    }
+}
+```

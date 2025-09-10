@@ -1,0 +1,27 @@
+{
+    "Theme": [
+        "Forest monitoring and land cover change detection"
+    ],
+    "DataSource": [
+        "LANDSAT/LC8_SR",
+        "LANDSAT/LC8_L1T_TOA",
+        "LANDSAT/LC08/C01/T1_TOA",
+        "LANDSAT/LT5_L1T_TOA_FMASK",
+        "LANDSAT/LE7_L1T_TOA_FMASK",
+        "LANDSAT/LE7_L1T_TOA",
+        "users/khoapv/xatong",
+        "ft:1Fp3oWwAiWxh1XyXIc1HYl_eWBP9Uh8froBiiC9CG"
+    ],
+    "Function": [
+        "Image collection filtering",
+        "Image sorting",
+        "Image filtering by bounds",
+        "Image filtering by cloud cover",
+        "NDVI calculation",
+        "NBR calculation",
+        "Image casting",
+        "Image exporting",
+        "Mosaic creation",
+        "Image visualization"
+    ]
+}

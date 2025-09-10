@@ -1,0 +1,35 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Forest cover classification in Cambodia"],
+  "DataSource": ["USDOS/LSIB/2017", "UMD/hansen/global_forest_change_2020_v1_8", "users/ak_glaciers/NDVI_fitted_image_stack_from_LTOP_1990_start", "users/ak_glaciers/NBR_fitted_image_stack_from_LTOP_1990_start"],
+  "Function": ["Get user inputs and imports", "Get AOI geometry", "Get forest cover data", "Get LTOP fitted outputs", "Create training data", "Train a model", "Run classification"]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["USDOS/LSIB/2017"],
+        "Function": ["Get AOI geometry", "Get forest cover data"]
+    },
+    "relation_2": {
+        "DataSource": ["UMD/hansen/global_forest_change_2020_v1_8"],
+        "Function": ["Get forest cover data"]
+    },
+    "relation_3": {
+        "DataSource": ["users/ak_glaciers/NDVI_fitted_image_stack_from_LTOP_1990_start"],
+        "Function": ["Get LTOP fitted outputs", "Create training data"]
+    },
+    "relation_4": {
+        "DataSource": ["users/ak_glaciers/NBR_fitted_image_stack_from_LTOP_1990_start"],
+        "Function": ["Get LTOP fitted outputs", "Create training data"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2554, 'completion_tokens': 406, 'total_tokens': 2960}

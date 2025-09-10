@@ -1,0 +1,5 @@
+{
+  "Theme": ["Land cover classification and vegetation index analysis"],
+  "DataSource": ["users/zolokiala/parthenium1", "users/zolokiala/buffer", "users/zolokiala/training", "users/zolokiala/test", "COPERNICUS/S2"],
+  "Function": ["Cloud masking using Sentinel-2 QA band", "Vegetation index computation", "Image collection filtering", "Image classification using SVM", "Accuracy assessment and charting"]
+}

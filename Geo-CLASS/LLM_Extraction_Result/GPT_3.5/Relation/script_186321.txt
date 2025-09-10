@@ -1,0 +1,6 @@
+{
+    "relation_1": {
+        "DataSource": ["COPERNICUS/S2", "ft:1ovvyN_dzo01mRw8uSNMIYNg-HKyGTrqLErfg26X0"],
+        "Function": ["Calculates NDVI for image collection", "Calculates NBR for image collection", "Exports image properties to CSV", "Creates and exports mosaic images", "Filters and exports individual scenes"]
+    }
+}

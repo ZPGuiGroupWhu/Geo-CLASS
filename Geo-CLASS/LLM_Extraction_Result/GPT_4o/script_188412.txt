@@ -1,0 +1,36 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Land Surface Temperature Analysis", "NDVI Calculation", "Cloud Masking"],
+  "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+  "Function": ["Define region of interest", "Mask clouds and shadows", "Set visualization parameters", "Load image collection", "Filter images by date and region", "Clip images to region", "Calculate median image", "Add layer to map", "Calculate NDVI", "Calculate fractional vegetation", "Calculate emissivity", "Calculate land surface temperature", "Export image collection", "Export reduced image"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["LANDSAT/LC08/C01/T1_SR"],
+    "Function": [
+      "Define region of interest",
+      "Mask clouds and shadows",
+      "Set visualization parameters",
+      "Load image collection",
+      "Filter images by date and region",
+      "Clip images to region",
+      "Calculate median image",
+      "Add layer to map",
+      "Calculate NDVI",
+      "Calculate fractional vegetation",
+      "Calculate emissivity",
+      "Calculate land surface temperature",
+      "Export image collection",
+      "Export reduced image"
+    ]
+  }
+}
+```
+
+Total_Token_Usage:
+6574

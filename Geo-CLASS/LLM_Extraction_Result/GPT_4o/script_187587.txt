@@ -1,0 +1,21 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["MODIS EVI analysis", "Principal Component Analysis"],
+  "DataSource": ["MODIS/006/MOD13Q1"],
+  "Function": ["Filter image collection by date", "Calculate mean of images", "Select specific band", "Clip image to region", "Visualize image on map", "Export image to Google Drive", "Mean center data", "Compute covariance", "Perform eigen analysis", "Normalize principal components"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["MODIS/006/MOD13Q1"],
+    "Function": ["Filter image collection by date", "Calculate mean of images", "Select specific band", "Clip image to region", "Visualize image on map", "Export image to Google Drive", "Mean center data", "Compute covariance", "Perform eigen analysis", "Normalize principal components"]
+  }
+}
+```
+
+Total_Token_Usage:
+5829

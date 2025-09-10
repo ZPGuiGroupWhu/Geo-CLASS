@@ -1,0 +1,6 @@
+{
+  "Summary": ["Script extracts NDVI from Sentinel-2 images and visualizes it with a gradient bar, frame, and scalebar."],
+  "Theme": ["NDVI extraction and visualization"],
+  "DataSource": ["COPERNICUS/S2_SR"],
+  "Function": ["Calculate NDVI band", "Filter Sentinel-2 images by date and cloud cover", "Generate median composite image", "Clip image to testing area", "Visualize NDVI with color palette", "Calculate min and max values", "Create gradient bar for visualization", "Add frame for visualization", "Add scalebar for visualization"]
+}

@@ -1,0 +1,10 @@
+{
+  "relation_1": {
+    "DataSource": ["users/ce15btech11022/Final_Cities/Ahmedabad"],
+    "Function": ["Filter image collection by date and region", "Filter collection by bounds and date", "Calculate sum over region"]
+  },
+  "relation_2": {
+    "DataSource": ["COPERNICUS/S2"],
+    "Function": ["Filter image collection by date and region", "Create date sequence", "Iterate over dates to create mosaics", "Reproject image", "Add bands to image", "Filter collection by bounds and date", "Calculate sum over region", "Export data to Google Drive"]
+  }
+}

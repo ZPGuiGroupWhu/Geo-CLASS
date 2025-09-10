@@ -1,0 +1,17 @@
+{
+    "Summary": [
+        "Script extracts zonal statistics from Landsat images for specific points."
+    ],
+    "Theme": [
+        "GAS HYDRATES PHYSICAL/OPTICAL PROPERTIES"
+    ],
+    "DataSource": [
+        "users/Katemiller125/Illilouette",
+        "LANDSAT/LE07/C02/T1_L2",
+        "LANDSAT/LE07/C01/T1_SR"
+    ],
+    "Function": [
+        "Buffer Analysis",
+        "Spatial Statistics And Cluster Analysis"
+    ]
+}

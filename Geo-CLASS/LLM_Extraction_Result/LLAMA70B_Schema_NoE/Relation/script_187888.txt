@@ -1,0 +1,33 @@
+{
+    "relation_1": {
+        "DataSource": [
+            "LANDSAT/LC08/C01/T1_SR"
+        ],
+        "Function": [
+            "Cloud masking and NDVI calculation for Landsat 8 images",
+            "Merging NDVI images into a single image",
+            "Sampling NDVI values at intermediate points for a single image"
+        ]
+    },
+    "relation_2": {
+        "DataSource": [
+            "LANDSAT/LE07/C01/T1_SR",
+            "LANDSAT/LT05/C01/T1_SR",
+            "LANDSAT/LT04/C01/T1_SR"
+        ],
+        "Function": [
+            "Cloud masking and NDVI calculation for Landsat 4, 5, and 7 images",
+            "Merging NDVI images into a single image",
+            "Sampling NDVI values at intermediate points"
+        ]
+    },
+    "relation_3": {
+        "DataSource": [
+            "users/kimambo/00_INPUT_TRAINING_VALIDATION/Tanzania_SouthernHighlands_reference_point_36LYR_13DEC2019_230_upto799_75PCTTRAINING"
+        ],
+        "Function": [
+            "Merging and renaming NDVI collections",
+            "Sampling NDVI values at intermediate points"
+        ]
+    }
+}

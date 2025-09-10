@@ -1,0 +1,5 @@
+{
+  "Theme": ["Crop classification"],
+  "DataSource": ["USDA/NASS/CDL"],
+  "Function": ["Load image collection", "Define geometry"]
+}

@@ -1,0 +1,29 @@
+Entity Recognition:
+```
+{
+  "Theme": ["MODIS data processing and analysis"],
+  "DataSource": ["MODIS/006/MOD09A1"],
+  "Function": [
+    "getGlobalRoi: generates a global region of interest",
+    "maskClouds: masks clouds in MODIS images",
+    "cal_nirv: calculates NIRV values from MODIS images",
+    "pkg_smooth.linearInterp: performs linear interpolation on NIRV values",
+    "fill: extracts point information from NIRV images"
+  ]
+}
+```
+
+Relation Extraction:
+Here is the JSON response:
+
+```json
+{
+    "relation_1": {
+        "DataSource": ["MODIS/006/MOD09A1"],
+        "Function": ["getGlobalRoi: generates a global region of interest", "maskClouds: masks clouds in MODIS images", "cal_nirv: calculates NIRV values from MODIS images", "pkg_smooth.linearInterp: performs linear interpolation on NIRV values", "fill: extracts point information from NIRV images"]
+    }
+}
+```
+
+Total_Usage:
+{'prompt_tokens': 2971, 'completion_tokens': 251, 'total_tokens': 3222}

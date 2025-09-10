@@ -1,0 +1,29 @@
+Entity Recognition:
+```json
+{
+  "Theme": ["Cloud probability analysis", "Region-specific cloud masking"],
+  "DataSource": ["users/kitmyfaceplease2/eastsouth_asia", "projects/ee-kitmyfaceplease2/assets/EAST_SOUTH_SPLIT2", "COPERNICUS/S2_CLOUD_PROBABILITY"],
+  "Function": ["Define visualization parameters", "Define region of interest", "Filter image collection by date", "Create daily mosaics", "Count images in collection", "Convert feature collection to image", "Mask clouds in images", "Sum image bands", "Calculate percentage image"]
+}
+```
+
+Relation Extraction:
+```json
+{
+  "relation_1": {
+    "DataSource": ["users/kitmyfaceplease2/eastsouth_asia"],
+    "Function": ["Define region of interest", "Convert feature collection to image"]
+  },
+  "relation_2": {
+    "DataSource": ["projects/ee-kitmyfaceplease2/assets/EAST_SOUTH_SPLIT2"],
+    "Function": ["Define region of interest"]
+  },
+  "relation_3": {
+    "DataSource": ["COPERNICUS/S2_CLOUD_PROBABILITY"],
+    "Function": ["Filter image collection by date", "Create daily mosaics", "Count images in collection", "Mask clouds in images", "Sum image bands", "Calculate percentage image"]
+  }
+}
+```
+
+Total_Token_Usage:
+7581
