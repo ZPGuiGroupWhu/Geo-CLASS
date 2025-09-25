@@ -54,6 +54,7 @@ Output file storage of preliminary extraction results of large models.
 
 ### 02 Json2csv
 Convert the txt file of the large model output result into a csv file for storage.
+When working with results from different experiments or LLMs, remember to update the input and output file paths accordingly.
 1. `result_split_entity_relation.py`: Splits the **entity** and **relation** parts from LLM-generated json results in `.txt` files into separate outputs.  
    Usage Examples:
    ```bash
