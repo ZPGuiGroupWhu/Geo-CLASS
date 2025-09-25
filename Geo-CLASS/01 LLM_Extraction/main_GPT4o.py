@@ -1,16 +1,16 @@
-# 用openAI的方式调用GPT系列模型
+# Calling GPT series models using openAI
 import os
 import openai
 import Extractor_Constant
 from dotenv import load_dotenv, find_dotenv
 from Script_preprocessing import read_and_clean_file
 
-# find_dotenv()寻找并定位.env文件的路径
-# load_dotenv()读取该.env文件，并将其中的环境变量加载到当前的运行环境中
-# 如果你设置的是全局的环境变量，这行代码则没有任何作用。
+# find_dotenv() finds and locates the path to the .env file.
+# load_dotenv() reads the .env file and loads the environment variables into the current running environment.
+# If you are setting global environment variables, this line of code has no effect
 _ = load_dotenv(find_dotenv())
 
-# 获取环境变量 OPENAI_API_KEY
+# Get the environment variable OPENAI_API_KEY
 openai.api_key = os.environ['OPENAI_API_KEY']
 openai.api_base = os.environ["BASE_URL"]
 
@@ -18,7 +18,7 @@ input_folder = r".\GEE_Samples"
 output_folder = r".\LLM_Extraction_Result\GPT_4o"
 
 
-# 检查输出文件夹是否存在，如果不存在则创建
+# Check if the output folder exists and create it if it doesn't
 if not os.path.exists(output_folder):
     os.makedirs(output_folder)
 
@@ -52,15 +52,15 @@ def get_completion(prompt, model="gpt-4o", temperature=0.2, messages=None):
     return response_content, tokens, messages
 
 
-# 获取两个文件夹中的文件名
+# Get the file names in two folders
 sample_files = set(os.listdir(input_folder))
 result_files = set(os.listdir(output_folder))
 
-# 找出只在sample_dir中存在的文件
+# Find files that only exist in sample_dir
 files_to_process = sample_files - result_files
 print(files_to_process)
 
-# 处理这些文件
+# Process these files
 for file_name in files_to_process:
     if file_name.endswith('.txt'):
         file_path = os.path.join(input_folder, file_name)
