@@ -54,6 +54,18 @@ Output file storage of preliminary extraction results of large models.
 
 ### 02 Json2csv
 Convert the txt file of the large model output result into a csv file for storage.
+1. `result_split_entity_relation.py`: Splits the **entity** and **relation** parts from LLM-generated json results in `.txt` files into separate outputs.  
+   Usage Examples:
+   ```bash
+   python result_split_entity_relation.py
+2. `entity2csv`: This script converts the extracted **entity** part from JSON format into structured CSV files.
+   Usage Examples:
+   ```bash
+   python entity2csv.py
+3. `relation2csv`: This script converts the extracted **relation** part from JSON format into structured CSV files.
+   Usage Examples:
+   ```bash
+   python relation2csv.py
 
 ### 03 SLM_Standerlization
 1. `embedder_corpus`: Vectorize the concept ontology in the knowledge base using a small model.
