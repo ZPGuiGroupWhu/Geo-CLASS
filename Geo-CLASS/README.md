@@ -76,7 +76,7 @@ Convert the txt file of the large model output result into a csv file for storag
 Entity descriptions extracted by different LLMs and the results after standardization by different SLMs
 
 ### 04 Estimation
-1. `get_concept_information_content and get_similarity`: calculate the Lin similarity between the standerlized result and the true value
+1. get_concept_information_content and get_similarity: calculate the Lin similarity between the standerlized result and the true value
    Usage Examples:
    ```bash 
    scripts_similarity.bat
