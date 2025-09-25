@@ -70,7 +70,7 @@ Convert the txt file of the large model output result into a csv file for storag
    python func_theme_update.py --model 'BAAI/bge-m3' --input '.\Data\GPT3.5\function_sample.csv' --output '.\Data\GPT3.5\function_sample.csv' --embeddings '.\03 SLM_Standerlization\function_baai.pth'
    python func_theme_update.py --model 'sentence-transformers/sentence-t5-large' --input '.\Data\GPT3.5\theme_sample.csv' --output '.\Data\GPT3.5\theme_sample.csv' --embeddings '.\03 SLM_Standerlization\theme_sentence-t5-large.pth'
    python func_theme_update.py --model 'BAAI/bge-m3' --input '.\Data\GPT3.5\theme_sample.csv' --output '.\Data\GPT3.5\theme_sample.csv' --embeddings '.\03 SLM_Standerlization\theme_baai.pth'
-3. `relation_update`:Match the head entity and tail entity descriptions in the relationship triple with the concepts in the ontology library.
+3. `relation_update`: Match the head entity and tail entity descriptions in the relationship triple with the concepts in the ontology library.
 
 ### Data
 Entity descriptions extracted by different LLMs and the results after standardization by different SLMs
@@ -89,5 +89,5 @@ Entity descriptions extracted by different LLMs and the results after standardiz
 ### Output
 Evaluation results
 
-### figures.ipynb
+### Figures
 Integrate and draw the Output
