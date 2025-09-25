@@ -90,8 +90,9 @@ def process_files(directory, batch_size=500):
     return theme_entries, function_entries, datasource_entries, geoscope_entries, timescope_entries, error_files
 
 def main():
-    directory = r'F:\GEE\GEE量化样本01\Experiment\sample_241_ERNIE\Entity'
-    output_directory = r'F:\GEE\GEE量化样本01\Experiment\sample_241_ERNIE\Entity\Entity2CSV'
+    # Modify the input and output paths according to the result directories of different LLMs
+    directory = r'.\LLM_Extraction_Result\GPT3.5\Entity'
+    output_directory = r'.\LLM_Extraction_Result\GPT3.5\Entity\Entityn2CSV'
     theme_entries, function_entries, datasource_entries, geoscope_entries, timescope_entries, error_files = process_files(directory)
     
     print("Final results after processing all files:")
