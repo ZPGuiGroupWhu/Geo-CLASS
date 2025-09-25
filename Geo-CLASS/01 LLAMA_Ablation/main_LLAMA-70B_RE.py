@@ -1,10 +1,10 @@
-# 用千帆大模型的方式调用Meta-Llama-3-70B,消融实验之：实体、关系不分步处理
+# Calling Meta-Llama-3-70B using the Qianfan model, ablation experiment: entities and relationships are not processed step by step
 import os
 import qianfan
 import Extractor_Constant_LLAMA_RE
 from Script_preprocessing import read_and_clean_file
 
-# 设置认证信息
+# Set authentication information
 os.environ["QIANFAN_ACCESS_KEY"] = "BAIDU_API_KEY"
 os.environ["QIANFAN_SECRET_KEY"] = "BAIDU_SECRET_KEY"
 
@@ -13,19 +13,19 @@ chat_comp = qianfan.ChatCompletion()
 input_folder = r".\GEE_Samples"
 output_folder = r".\LLM_Extraction_Result\LLAMA70B_RE"
 
-# 检查输出文件夹是否存在，如果不存在则创建
+# Check if the output folder exists and create it if it doesn't exist
 if not os.path.exists(output_folder):
     os.makedirs(output_folder)
 
-# 获取两个文件夹中的文件名
+# Get the file names in two folders
 sample_files = set(os.listdir(input_folder))
 result_files = set(os.listdir(output_folder))
 
-# 找出只在sample_dir中存在的文件
+# Find files that only exist in sample_dir
 files_to_process = sample_files - result_files
 print(len(files_to_process))
 
-# 处理这些文件
+# Process these files
 for file_name in files_to_process:
     if file_name.endswith('.txt'):
         file_path = os.path.join(input_folder, file_name)
