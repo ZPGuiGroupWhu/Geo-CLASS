@@ -29,7 +29,7 @@ def extract_keys(data, keys_list, depth=1, max_depth=None):
             extract_keys(item, keys_list, depth + 1, max_depth)
 
 
-# Loading function dictionary
+# Loading GCMD.json
 Function_path = r'.\00 Corpus\GCMD.json'
 with open(Function_path, 'r', encoding='utf-8') as f:
     Function_data = json.load(f)
