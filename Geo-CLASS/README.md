@@ -17,16 +17,32 @@ GEE scripts used in the experiment.
 ### 00 Corpus  
 Constructed Knowledge Base, including the dimension in Theme, Function and Data Source.
 ### 01 LLM_Extraction
-1. Based on CoT idea, we build Schema-aware program, namely "Extender_Constant.py"
+1. Based on CoT idea, we build Schema-aware program, namely "Extractor_Constant.py"
 2. Call different large language models for preliminary knowledge extraction.
-   Usage Examples:
+   Please make sure to replace the API KEY in your `.env` file with your own.
+   Since this code calls the LLAMA-70B model via Qianfan, you also need to replace the placeholders with your own `QIANFAN_ACCESS_KEY` and `QIANFAN_SECRET_KEY` before running the related scripts.
+   
+   Usage Examples (run under the current folder, i.e., `./01 LLM_Extraction`):
    ```bash 
    python main_GPT3.5.py
    python main_GPT4O.py
    python main_LLAMA-70B.py
 ### 01 LLAMA_Ablation
-Ablation experiment for no CoT thinking, no entity constraints, no relation constraints, respectively.
-### 01 LLAMA_Comparation
+Ablation experiments for disabling CoT reasoning, entity constraints, and relation constraints are implemented in  
+`Extractor_Constant_LLAMA_RE.py`, `Extractor_Constant_LLAMA_Schema_NoE.py`, and `Extractor_Constant_LLAMA_Schema_NoR.py`, respectively.
+
+`Script_preprocessing`: remove commented-out code while keeping annotation texts, in order to reduce token usage, minimize misinterpretation by large models, and improve accuracy.  
+
+For different ablation experiments, please make sure to replace the API KEY in your `.env` file with your own.  
+Since this code calls the LLAMA-70B model via Qianfan, you also need to replace the placeholders with your own `QIANFAN_ACCESS_KEY` and `QIANFAN_SECRET_KEY` before running the related scripts.
+
+Usage Examples (run under the current folder, i.e., `./01_LLAMA_Ablation`):
+   ```bash 
+   python main_LLAMA-70B_RE.py
+   python main_LLAMA-70B_Schema_NoE.py
+   python main_LLAMA-70B_Schema_NoR.py
+
+### 01 LLAMA_Extraction_Comparation
 Comparative analysis for directly inputting the ontology concepts in the knowledge base as prompts into different large language models for preliminary knowledge extraction.
 ### LLM_Extraction_Result
 Output file storage of preliminary extraction results of large models.
