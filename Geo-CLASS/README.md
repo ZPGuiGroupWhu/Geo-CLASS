@@ -69,21 +69,29 @@ When working with results from different experiments or LLMs, remember to update
    python relation2csv.py
 
 ### 03 SLM_Standerlization
-1. `embedder_corpus`: Vectorize the concept ontology in the knowledge base using a small model.
+1. `embedder_corpus.py`: Vectorize the concept ontology in the knowledge base using a small model.
    Usage Examples:
    ```bash 
    python embedder_corpus.py --model 'sentence-transformers/sentence-t5-large' --input '.\00 Corpus\Function_Dictionary.txt' --output '.\03 SLM_Standerlization\function_sentence-t5-large.pth'
    python embedder_corpus.py --model 'sentence-transformers/sentence-t5-large' --input '.\00 Corpus\GCMD.json' --output '.\03 SLM_Standerlization\theme_sentence-t5-large.pth'
    python embedder_corpus.py --model 'BAAI/bge-m3' --input '.\00 Corpus\Function_Dictionary.txt' --output '.\03 SLM_Standerlization\function_baai.pth'
    python embedder_corpus.py --model 'BAAI/bge-m3' --input '.\00 Corpus\GCMD.json' --output '.\03 SLM_Standerlization\theme_baai.pth'
-2. `func_them_update`: Use the small model to vectorize the entity description extracted from the large model, calculate the similarity with the concept vector library of the corresponding ontology library, and pair the entity description with the highest similarity with the ontology concept.
+   
+2. `func_them_update.py`: Use the small model to vectorize the entity description extracted from the large model, calculate the similarity with the concept vector library of the corresponding ontology library, and pair the entity description with the highest similarity with the ontology concept.
+   Note: For different experiments, you need to update the input and output file paths according to the corresponding LLM results.
+   For detailed usage, please refer to `scripts.bat`.
    Usage Examples:
    ```bash 
    python func_theme_update.py --model 'sentence-transformers/sentence-t5-large' --input '.\Data\GPT3.5\function_sample.csv' --output '.\Data\GPT3.5\function_sample.csv' --embeddings '.\03 SLM_Standerlization\function_sentence-t5-large.pth'
    python func_theme_update.py --model 'BAAI/bge-m3' --input '.\Data\GPT3.5\function_sample.csv' --output '.\Data\GPT3.5\function_sample.csv' --embeddings '.\03 SLM_Standerlization\function_baai.pth'
    python func_theme_update.py --model 'sentence-transformers/sentence-t5-large' --input '.\Data\GPT3.5\theme_sample.csv' --output '.\Data\GPT3.5\theme_sample.csv' --embeddings '.\03 SLM_Standerlization\theme_sentence-t5-large.pth'
    python func_theme_update.py --model 'BAAI/bge-m3' --input '.\Data\GPT3.5\theme_sample.csv' --output '.\Data\GPT3.5\theme_sample.csv' --embeddings '.\03 SLM_Standerlization\theme_baai.pth'
-3. `relation_update`: Match the head entity and tail entity descriptions in the relationship triple with the concepts in the ontology library.
+   
+4. `relation_update.py`: Match the head entity and tail entity descriptions in the relationship triple with the concepts in the ontology library.
+    Note: For different experiments, you need to update the input and output file paths according to the corresponding LLM results.
+    Usage Examples:
+    ```bash
+    python relation_update.py  
 
 ### Data
 Entity descriptions extracted by different LLMs and the results after standardization by different SLMs
