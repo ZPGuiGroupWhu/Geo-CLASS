@@ -1,5 +1,6 @@
 """
-把完整语料库Function_Dictionary.txt以及GCMD.json通过小模型BAAI/bge-m3和sentence-transformers/sentence-t5-large进行句子嵌入转换成语义向量，
+Convert the complete corpus Function_Dictionary.txt and GCMD.json into semantic vectors 
+through sentence embeddings using small models BAAI/bge-m3 and sentence-transformers/sentence-t5-large.
 """
 import os
 import json
@@ -11,7 +12,7 @@ import time
 import pickle
 import argparse
 
-# 递归函数来提取所有的键
+# Recursive function to extract all keys
 def extract_keys(data, keys_list):
     if isinstance(data, dict):
         for key, value in data.items():
@@ -39,10 +40,10 @@ class KeywordEmbedder:
             start_time = time.time()
 
             if self.model_name.startswith('sentence-transformers'):
-                # 嵌入整个关键词字符串 (sentence-transformers)
+                # Embed the entire keyword string (sentence-transformers)
                 embedding = self.model.encode(keyword, show_progress_bar=False)
             else:
-                # 嵌入整个关键词字符串 (BAAI/bge-m3)
+                # Embed the entire keyword string (BAAI/bge-m3)
                 tokens_input = self.tokenizer(keyword, padding=True, return_tensors='pt', truncation=True, max_length=512)
                 with torch.no_grad():
                     outputs = self.model(**tokens_input)
@@ -57,7 +58,7 @@ class KeywordEmbedder:
         end_total_time = time.time()
         print(f"Total time taken for all embeddings: {end_total_time - start_total_time:.2f} seconds")
 
-        # 保存嵌入字典
+        # Save the embedding dictionary
         self.save_embeddings(embeddings_index, output_file_path)
 
         return embeddings_index
@@ -68,9 +69,9 @@ class KeywordEmbedder:
             pickle.dump(embeddings, f)
         print(f"Embeddings saved successfully to {file_name}.")
 
-# 外部知识库的嵌入处理
+# Embedding processing of external knowledge base
 def embedding_knowledge_base(input_file_path, output_file_path, model_name):
-    # 读取输入文件，并将所有 key 保存到 theme 列表中
+    # Read the input file and save all keys to the keys list
     with open(input_file_path, 'r', encoding='utf-8') as f:
         input_data = json.load(f)
 
@@ -78,11 +79,11 @@ def embedding_knowledge_base(input_file_path, output_file_path, model_name):
     extract_keys(input_data, keys)
     print(f"Total number of keys: {len(keys)}")
 
-    # 实例化嵌入生成器并生成嵌入
+    # Instantiate the embedder and generate embeddings
     embedder = KeywordEmbedder(model_name)
     embeddings_index = embedder.embed_keywords(keys, output_file_path)
 
-    # 打印每个嵌入的大小
+    # Print the size of each embedding
     for keyword, embedding in embeddings_index.items():
         print(f"Keyword: {keyword}, Embedding size: {embedding.shape}")
 
@@ -94,7 +95,7 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    # 检查输出路径
+    # Check and create output path if not exists
     if not os.path.exists(os.path.dirname(args.output)):
         os.makedirs(os.path.dirname(args.output))
         print(f"Created output directory {os.path.dirname(args.output)}")
@@ -102,7 +103,7 @@ if __name__ == "__main__":
     embedding_knowledge_base(args.input, args.output, args.model)
 
 # bash
-# python embedder_corpus.py --model 'sentence-transformers/sentence-t5-large' --input 'F:\Knowledge Extraction_v2\03 SLM_Standerlization\Function_Dictionary.txt' --output 'F:\Knowledge Extraction_v2\03 SLM_Standerlization\function_sentence-t5-large.pth'
-# python embedder_corpus.py --model 'sentence-transformers/sentence-t5-large' --input 'F:\Knowledge Extraction_v2\03 SLM_Standerlization\GCMD.json' --output 'F:\Knowledge Extraction_v2\03 SLM_Standerlization\theme_sentence-t5-large.pth'
-# python embedder_corpus.py --model 'BAAI/bge-m3' --input 'F:\Knowledge Extraction_v2\03 SLM_Standerlization\Function_Dictionary.txt' --output 'F:\Knowledge Extraction_v2\03 SLM_Standerlization\function_baai.pth'
-# python embedder_corpus.py --model 'BAAI/bge-m3' --input 'F:\Knowledge Extraction_v2\03 SLM_Standerlization\GCMD.json' --output 'F:\Knowledge Extraction_v2\03 SLM_Standerlization\theme_baai.pth'
+# python embedder_corpus.py --model 'sentence-transformers/sentence-t5-large' --input '.\03 SLM_Standerlization\Function_Dictionary.txt' --output '.\03 SLM_Standerlization\function_sentence-t5-large.pth'
+# python embedder_corpus.py --model 'sentence-transformers/sentence-t5-large' --input '.\03 SLM_Standerlization\GCMD.json' --output '.\03 SLM_Standerlization\theme_sentence-t5-large.pth'
+# python embedder_corpus.py --model 'BAAI/bge-m3' --input '.\03 SLM_Standerlization\Function_Dictionary.txt' --output '.\03 SLM_Standerlization\function_baai.pth'
+# python embedder_corpus.py --model 'BAAI/bge-m3' --input '.\03 SLM_Standerlization\GCMD.json' --output '.\03 SLM_Standerlization\theme_baai.pth'
