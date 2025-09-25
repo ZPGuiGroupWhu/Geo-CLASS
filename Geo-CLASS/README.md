@@ -2,10 +2,10 @@
 
 Geoprocessing Modeling Knowledge Extraction from Crowdsourced Google Earth Engine Scripts by Collaborating Large and Small Language Models.
 
-## 目录
+## Catalogue
 
-- [Background](#Background)
-- [Project Description](#Project Description)
+- [Background](#background)
+- [Project Description](#project-description)
 
 ## Background
 
@@ -28,26 +28,33 @@ Constructed Knowledge Base, including the dimension in Theme, Function and Data 
    python main_GPT4O.py
    python main_LLAMA-70B.py
 ### 01 LLAMA_Ablation
-Ablation experiments for disabling CoT reasoning, entity constraints, and relation constraints are implemented in  
+1. Ablation experiments for disabling CoT reasoning, entity constraints, and relation constraints are implemented in  
 `Extractor_Constant_LLAMA_RE.py`, `Extractor_Constant_LLAMA_Schema_NoE.py`, and `Extractor_Constant_LLAMA_Schema_NoR.py`, respectively.
-
-`Script_preprocessing`: remove commented-out code while keeping annotation texts, in order to reduce token usage, minimize misinterpretation by large models, and improve accuracy.  
-
-For different ablation experiments, please make sure to replace the API KEY in your `.env` file with your own.  
+2. `Script_preprocessing`: remove commented-out code while keeping annotation texts, in order to reduce token usage, minimize misinterpretation by large models, and improve accuracy.  
+3. For different ablation experiments, please make sure to replace the API KEY in your `.env` file with your own.  
 Since this code calls the LLAMA-70B model via Qianfan, you also need to replace the placeholders with your own `QIANFAN_ACCESS_KEY` and `QIANFAN_SECRET_KEY` before running the related scripts.
-
-Usage Examples (run under the current folder, i.e., `./01_LLAMA_Ablation`):
+   Usage Examples (run under the current folder, i.e., `./01_LLAMA_Ablation`):
    ```bash 
    python main_LLAMA-70B_RE.py
    python main_LLAMA-70B_Schema_NoE.py
    python main_LLAMA-70B_Schema_NoR.py
 
 ### 01 LLAMA_Extraction_Comparation
-Comparative analysis for directly inputting the ontology concepts in the knowledge base as prompts into different large language models for preliminary knowledge extraction.
+1. Comparative analysis for directly inputting the ontology concepts in the knowledge base as prompts into different large language models for preliminary knowledge extraction.
+2. Please make sure to replace the API KEY in your `.env` file with your own.
+   Since this code calls the LLAMA-70B model via Qianfan, you also need to replace the placeholders with your own `QIANFAN_ACCESS_KEY` and `QIANFAN_SECRET_KEY` before running the related scripts.
+   
+   Usage Examples (run under the current folder, i.e., `./01 LLM_Extraction_Comparation`):
+   ```bash 
+   python main_GPT3.5-function.py
+   python main_GPT3.5-theme.py
+
 ### LLM_Extraction_Result
 Output file storage of preliminary extraction results of large models.
+
 ### 02 Json2csv
 Convert the txt file of the large model output result into a csv file for storage.
+
 ### 03 SLM_Standerlization
 1. embedder_corpus:Vectorize the concept ontology in the knowledge base using a small model.
    Usage Examples:
@@ -67,6 +74,7 @@ Convert the txt file of the large model output result into a csv file for storag
 Match the head entity and tail entity descriptions in the relationship triple with the concepts in the ontology library.
 ### Data
 Entity descriptions extracted by different LLMs and the results after standardization by different SLMs
+
 ### 04 Estimation
 1. get_concept_information_content and get_similarity: calculate the Lin similarity between the standerlized result and the true value
    Usage Examples:
@@ -77,7 +85,9 @@ Entity descriptions extracted by different LLMs and the results after standardiz
    ```bash 
    scripts_metrics.bat
    scripts_metrics_relation.bat
+
 ### Output
 Evaluation results
+
 ### figures.ipynb
 Integrate and draw the Output
