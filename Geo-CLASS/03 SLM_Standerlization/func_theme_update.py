@@ -119,3 +119,9 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
     main(args)
+
+# bash
+# python func_theme_update.py --model 'sentence-transformers/sentence-t5-large' --input '.\Data\GPT3.5\function_sample.csv' --output '.\Data\GPT3.5\function_sample.csv' --embeddings '.\03 SLM_Standerlization\function_sentence-t5-large.pth'
+# python func_theme_update.py --model 'BAAI/bge-m3' --input '.\Data\GPT3.5\function_sample.csv' --output '.\Data\GPT3.5\function_sample.csv' --embeddings '.\03 SLM_Standerlization\function_baai.pth'
+# python func_theme_update.py --model 'sentence-transformers/sentence-t5-large' --input '.\Data\GPT3.5\theme_sample.csv' --output '.\Data\GPT3.5\theme_sample.csv' --embeddings '.\03 SLM_Standerlization\theme_sentence-t5-large.pth'
+# python func_theme_update.py --model 'BAAI/bge-m3' --input '.\Data\GPT3.5\theme_sample.csv' --output '.\Data\GPT3.5\theme_sample.csv' --embeddings '.\03 SLM_Standerlization\theme_baai.pth'
