@@ -97,11 +97,11 @@ When working with results from different experiments or LLMs, remember to update
 Entity descriptions extracted by different LLMs and the results after standardization by different SLMs
 
 ### 04 Estimation
-1. get_concept_information_content and get_similarity: calculate the Lin similarity between the standerlized result and the true value
+1. `get_concept_information_content` and `get_similarity3`: calculate the Lin similarity between the standerlized result and the true value.
    Usage Examples:
    ```bash 
    scripts_similarity.bat
-2. metrics: evaluate the results of collaborative knowledge extraction between large and small models with precision, recall, and F1-score
+2. `metrics`: evaluate the results of collaborative knowledge extraction between LLMs and SLMs with precision, recall, and F1-score.
    Usage Examples:
    ```bash 
    scripts_metrics.bat
