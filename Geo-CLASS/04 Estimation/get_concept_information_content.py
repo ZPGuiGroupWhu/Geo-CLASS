@@ -9,7 +9,8 @@ def save_json(data, filename):
         json.dump(data, f, ensure_ascii=False, indent=4)
 
 # Loading ontology data
-with open("F:/Knowledge Extraction_v2/03 SLM_Standerlization/GCMD.json", 'r', encoding='utf-8') as file:
+# with open("./03 SLM_Standerlization/Function_Dictionary.txt", 'r', encoding='utf-8') as file:
+with open("./03 SLM_Standerlization/GCMD.json", 'r', encoding='utf-8') as file:
     ontology = json.load(file)
 
 # Direct Ancestor Dictionary
@@ -122,4 +123,5 @@ def calculate_info_content_recursively(ontology, direct_ancestors, root_concept,
 
 # Initialize and start calculation
 calculate_info_content_recursively(ontology, direct_ancestors, root_concept, max_depth, max_nodes, max_leaves_num)
+# save_json(concept_information_content, 'concept_information_content_function.json')
 save_json(concept_information_content, 'concept_information_content_theme.json')
