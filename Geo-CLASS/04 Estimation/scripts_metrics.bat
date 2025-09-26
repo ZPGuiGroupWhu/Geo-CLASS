@@ -1,5 +1,5 @@
 @echo off
-set BASE_PATH=F:\Knowledge Extraction_v2\Output_true3
+set BASE_PATH=.\Output
 
 python metrics2.py --function_output_path "%BASE_PATH%\output_LLAMA70B\output_path_function_baai.csv" --function_txt_path "%BASE_PATH%\output_LLAMA70B\output_path_function_baai_0.5.txt" --theme_output_path "%BASE_PATH%\output_LLAMA70B\output_path_theme_baai.csv" --theme_txt_path "%BASE_PATH%\output_LLAMA70B\output_path_theme_baai_0.5.txt"
 python metrics2.py --function_output_path "%BASE_PATH%\output_LLAMA70B\output_path_function_sentence-t5-large.csv" --function_txt_path "%BASE_PATH%\output_LLAMA70B\output_path_function_sentence-t5-large_0.5.txt" --theme_output_path "%BASE_PATH%\output_LLAMA70B\output_path_theme_sentence-t5-large.csv" --theme_txt_path "%BASE_PATH%\output_LLAMA70B\output_path_theme_sentence-t5-large_0.5.txt"
