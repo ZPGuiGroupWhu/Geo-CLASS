@@ -1,5 +1,5 @@
-# 计算转换后的抽取结果（标准化后的抽取结果）与真值之间的相似度
-# 如果是THEME还是FUNCTION，都用Lin相似度进行计算
+# Calculate the similarity between the transformed extraction result (normalized extraction result) and the true value
+# If it is THEME or FUNCTION, Lin similarity is used for calculation
 import pandas as pd
 import json
 import argparse
@@ -162,16 +162,16 @@ if __name__ == '__main__':
     main(args)
 
 # Example usage:
-# python get_similarity3.py --task function --file_4 'F:\Knowledge Extraction_v2\Data\GPT4.0\function_sample.csv' --file_35 'F:\Knowledge Extraction_v2\Data\GPT3.5\function_sample.csv' --value_column 'Value_sentence-t5-large' --output 'F:\Knowledge Extraction_v2\Output_sim3\output_3.5\output_path_function_sentence-t5-large.csv'
-# python get_similarity3.py --task theme --file_4 'F:\Knowledge Extraction_v2\Data\GPT4.0\theme_sample.csv' --file_35 'F:\Knowledge Extraction_v2\Data\GPT3.5\theme_sample.csv' --value_column 'Value_sentence-t5-large' --output 'F:\Knowledge Extraction_v2\Output_sim3\output_3.5\output_path_theme_sentence-t5-large.csv'
-# python get_similarity3.py --task function --file_4 'F:\Knowledge Extraction_v2\Data\GPT4.0\function_sample.csv' --file_35 'F:\Knowledge Extraction_v2\Data\GPT3.5\function_sample.csv' --value_column 'Value_BAAI' --output 'F:\Knowledge Extraction_v2\Output_sim3\output_3.5\output_path_function_baai.csv'
-# python get_similarity3.py --task theme --file_4 'F:\Knowledge Extraction_v2\Data\GPT4.0\theme_sample.csv' --file_35 'F:\Knowledge Extraction_v2\Data\GPT3.5\theme_sample.csv' --value_column 'Value_BAAI' --output 'F:\Knowledge Extraction_v2\Output_sim3\output_3.5\output_path_theme_baai.csv'
-# python get_similarity3.py --task function --file_4 'F:\Knowledge Extraction_v2\Data\GPT4.0\function_sample.csv' --file_35 'F:\Knowledge Extraction_v2\Data\GPT3.5\function_sample.csv' --value_column 'Value_GPT3.5' --output 'F:\Knowledge Extraction_v2\Output_sim3\output_3.5\output_path_function_gpt3.5.csv'
-# python get_similarity3.py --task theme --file_4 'F:\Knowledge Extraction_v2\Data\GPT4.0\theme_sample.csv' --file_35 'F:\Knowledge Extraction_v2\Data\GPT3.5\theme_sample.csv' --value_column 'Value_GPT3.5' --output 'F:\Knowledge Extraction_v2\Output_sim3\output_3.5\output_path_theme_gpt3.5.csv'
+# python get_similarity3.py --task function --file_4 '.\Data\GPT4.0\function_sample.csv' --file_35 '.\Data\GPT3.5\function_sample.csv' --value_column 'Value_sentence-t5-large' --output '.\Output\output_3.5\output_path_function_sentence-t5-large.csv'
+# python get_similarity3.py --task theme --file_4 '.\Data\GPT4.0\theme_sample.csv' --file_35 '.\Data\GPT3.5\theme_sample.csv' --value_column 'Value_sentence-t5-large' --output '.\Output\output_3.5\output_path_theme_sentence-t5-large.csv'
+# python get_similarity3.py --task function --file_4 '.\Data\GPT4.0\function_sample.csv' --file_35 '.\Data\GPT3.5\function_sample.csv' --value_column 'Value_BAAI' --output '.\Output\output_3.5\output_path_function_baai.csv'
+# python get_similarity3.py --task theme --file_4 '.\Data\GPT4.0\theme_sample.csv' --file_35 '.\Data\GPT3.5\theme_sample.csv' --value_column 'Value_BAAI' --output '.\Output\output_3.5\output_path_theme_baai.csv'
+# python get_similarity3.py --task function --file_4 '.\Data\GPT4.0\function_sample.csv' --file_35 '.\Data\GPT3.5\function_sample.csv' --value_column 'Value_GPT3.5' --output '.\Output\output_3.5\output_path_function_gpt3.5.csv'
+# python get_similarity3.py --task theme --file_4 '.\Data\GPT4.0\theme_sample.csv' --file_35 '.\Data\GPT3.5\theme_sample.csv' --value_column 'Value_GPT3.5' --output '.\Output\output_3.5\output_path_theme_gpt3.5.csv'
 
-# python get_similarity3.py --task function --file_4 'F:\Knowledge Extraction_v2\Data\GPT4.0\function_sample.csv' --file_35 'F:\Knowledge Extraction_v2\Data\LLAMA70B\function_sample.csv' --value_column 'Value_sentence-t5-large' --output 'F:\Knowledge Extraction_v2\Output_sim3\output_LLAMA70B\output_path_function_sentence-t5-large.csv'
-# python get_similarity3.py --task theme --file_4 'F:\Knowledge Extraction_v2\Data\GPT4.0\theme_sample.csv' --file_35 'F:\Knowledge Extraction_v2\Data\LLAMA70B\theme_sample.csv' --value_column 'Value_sentence-t5-large' --output 'F:\Knowledge Extraction_v2\Output_sim3\output_LLAMA70B\output_path_theme_sentence-t5-large.csv'
-# python get_similarity3.py --task function --file_4 'F:\Knowledge Extraction_v2\Data\GPT4.0\function_sample.csv' --file_35 'F:\Knowledge Extraction_v2\Data\LLAMA70B\function_sample.csv' --value_column 'Value_BAAI' --output 'F:\Knowledge Extraction_v2\Output_sim3\output_LLAMA70B\output_path_function_baai.csv'
-# python get_similarity3.py --task theme --file_4 'F:\Knowledge Extraction_v2\Data\GPT4.0\theme_sample.csv' --file_35 'F:\Knowledge Extraction_v2\Data\LLAMA70B\theme_sample.csv' --value_column 'Value_BAAI' --output 'F:\Knowledge Extraction_v2\Output_sim3\output_LLAMA70B\output_path_theme_baai.csv'
-# python get_similarity3.py --task function --file_4 'F:\Knowledge Extraction_v2\Data\GPT4.0\function_sample.csv' --file_35 'F:\Knowledge Extraction_v2\Data\LLAMA70B\function_sample.csv' --value_column 'Value_LLAMA70B' --output 'F:\Knowledge Extraction_v2\Output_sim3\output_LLAMA70B\output_path_function_llama70b.csv'
-# python get_similarity3.py --task theme --file_4 'F:\Knowledge Extraction_v2\Data\GPT4.0\theme_sample.csv' --file_35 'F:\Knowledge Extraction_v2\Data\LLAMA70B\theme_sample.csv' --value_column 'Value_LLAMA70B' --output 'F:\Knowledge Extraction_v2\Output_sim3\output_LLAMA70B\output_path_theme_llama70b.csv'
+# python get_similarity3.py --task function --file_4 '.\Data\GPT4.0\function_sample.csv' --file_35 '.\Data\LLAMA70B\function_sample.csv' --value_column 'Value_sentence-t5-large' --output '.\Output\output_LLAMA70B\output_path_function_sentence-t5-large.csv'
+# python get_similarity3.py --task theme --file_4 '.\Data\GPT4.0\theme_sample.csv' --file_35 '.\Data\LLAMA70B\theme_sample.csv' --value_column 'Value_sentence-t5-large' --output '.\Output\output_LLAMA70B\output_path_theme_sentence-t5-large.csv'
+# python get_similarity3.py --task function --file_4 '.\Data\GPT4.0\function_sample.csv' --file_35 '.\Data\LLAMA70B\function_sample.csv' --value_column 'Value_BAAI' --output '.\Output\output_LLAMA70B\output_path_function_baai.csv'
+# python get_similarity3.py --task theme --file_4 '.\Data\GPT4.0\theme_sample.csv' --file_35 '.\Data\LLAMA70B\theme_sample.csv' --value_column 'Value_BAAI' --output '.\Output\output_LLAMA70B\output_path_theme_baai.csv'
+# python get_similarity3.py --task function --file_4 '.\Data\GPT4.0\function_sample.csv' --file_35 '.\Data\LLAMA70B\function_sample.csv' --value_column 'Value_LLAMA70B' --output '.\Output\output_LLAMA70B\output_path_function_llama70b.csv'
+# python get_similarity3.py --task theme --file_4 '.\Data\GPT4.0\theme_sample.csv' --file_35 '.\Data\LLAMA70B\theme_sample.csv' --value_column 'Value_LLAMA70B' --output '.\Output\output_LLAMA70B\output_path_theme_llama70b.csv'
