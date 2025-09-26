@@ -31,8 +31,10 @@ def fill_ancestors(ontology, concept, parent=None, ancestors={}):
 
 root_concept = next(iter(ontology))  # Assume the root node is the top-level key
 root_concept_data = {"Root Concept": root_concept}
+# save_json(root_concept_data, 'root_concept_function.json')
 save_json(root_concept_data, 'root_concept_theme.json')
 fill_ancestors(ontology, root_concept, None, direct_ancestors)
+# save_json(direct_ancestors, 'direct_ancestors_function.json')
 save_json(direct_ancestors, 'direct_ancestors_theme.json')
 
 
