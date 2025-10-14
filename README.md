@@ -12,10 +12,9 @@ Online geoinformation platforms produce numerous scripts for specific geospatial
 
 ## Project Description
 > **⚠️ Note**: This project involves API calls to different Large Language Models (LLMs).
-> 
 > You must replace the API endpoints, your own API keys, and ensure you have the proper **Access permissions** before running the code.
 > 
-> The experiments were conducted in a Windows environment. If you are running the code on a different operating system, please adjust the corresponding file paths as needed.
+> **⚠️ Note**: The experiments were conducted in a Windows environment. If you are running the code on a different operating system, please adjust the corresponding file paths as needed.
 
 ### GEE_Samples
 GEE scripts used in the experiment.
