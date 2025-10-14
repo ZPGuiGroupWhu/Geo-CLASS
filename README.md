@@ -30,7 +30,7 @@ Constructed Knowledge Base, including the dimension in Theme, Function and Data 
    Usage Examples (run under the current folder, i.e., `./01 LLM_Extraction`):
    ```bash 
    python main_GPT3.5.py
-   python main_GPT4O.py
+   python main_GPT4o.py
    python main_LLAMA-70B.py
 
 ### 01 LLAMA_Extraction_Comparation
