@@ -11,7 +11,7 @@ os.environ["QIANFAN_SECRET_KEY"] = "BAIDU_SECRET_KEY"
 chat_comp = qianfan.ChatCompletion()
 
 input_folder = r"./GEE_Samples"
-output_folder = r"./LLM_Extraction_Result\LLAMA70B_RE"
+output_folder = r"./LLM_Extraction_Result/LLAMA70B_RE"
 
 # Check if the output folder exists and create it if it doesn't exist
 if not os.path.exists(output_folder):
