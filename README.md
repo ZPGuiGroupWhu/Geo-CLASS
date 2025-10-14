@@ -11,8 +11,10 @@ Extraction of Geoprocessing Modeling Knowledge from Crowdsourced Google Earth En
 Online geoinformation platforms produce numerous scripts for specific geospatial analyses. To overcome challenges with large language models in understanding scripts, we propose Geo-CLASS, a framework that integrates the strengths of both large and small language models for knowledge extraction. This repository provides the Python implementation of the Geo-CLASS framework.
 
 ## Project Description
-> **⚠️ Note**: This project involves API calls to different Large Language Models (LLMs).  
+> **⚠️ Note**: This project involves API calls to different Large Language Models (LLMs).
+> 
 > You must replace the API endpoints, your own API keys, and ensure you have the proper **Access permissions** before running the code.
+> 
 > The experiments were conducted in a Windows environment. If you are running the code on a different operating system, please adjust the corresponding file paths as needed.
 
 ### GEE_Samples
