@@ -15,7 +15,7 @@ openai.api_key = os.environ['OPENAI_API_KEY']
 openai.api_base = os.environ["BASE_URL"]
 
 input_folder = r"./GEE_Samples"
-output_folder = r"./LLM_Extraction_Result\GPT_4o"
+output_folder = r"./LLM_Extraction_Result/GPT_4o"
 
 
 # Check if the output folder exists and create it if it doesn't
