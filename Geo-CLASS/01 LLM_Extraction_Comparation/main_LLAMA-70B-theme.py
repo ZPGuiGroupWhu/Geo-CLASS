@@ -20,7 +20,7 @@ def extract_keys(data, keys_list, depth=1, max_depth=None):
             extract_keys(item, keys_list, depth + 1, max_depth)
 
 
-GCMD_path = r'.\00 Corpus\GCMD.json'  # Input file path
+GCMD_path = r'./00 Corpus/GCMD.json'  # Input file path
 with open(GCMD_path, 'r', encoding='utf-8') as f:
     GCMD_data = json.load(f)
 GCMD_corpus = []
@@ -29,7 +29,7 @@ print(len(GCMD_corpus))
 # print(GCMD_corpus)
 
 # Reading CSV Files
-csv_path = r'.\Data\LLAMA70B\theme_sample.csv'
+csv_path = r'./Data/LLAMA70B/theme_sample.csv'
 df = pd.read_csv(csv_path)
 
 # Make sure the newly added column exists
