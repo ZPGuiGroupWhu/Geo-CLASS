@@ -17,8 +17,8 @@ os.environ["HTTP_PROXY"] = 'http://127.0.0.1:7890'
 # Get the environment variable OPENAI_API_KEY
 openai.api_key = os.environ['OPENAI_API_KEY']
 
-input_folder = r".\GEE_Samples"
-output_folder = r".\LLM_Extraction_Result\GPT_3.5"
+input_folder = r"./GEE_Samples"
+output_folder = r"./LLM_Extraction_Result/GPT_3.5"
 
 # Check if the output folder exists and create it if it doesn't
 if not os.path.exists(output_folder):
