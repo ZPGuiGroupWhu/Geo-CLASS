@@ -20,7 +20,7 @@ def extract_keys(data, keys_list, depth=1, max_depth=None):
             extract_keys(item, keys_list, depth + 1, max_depth)
 
 
-Function_path = r'.\00 Corpus\Function_Dictionary.txt'  # Input file path
+Function_path = r'./00 Corpus/Function_Dictionary.txt'  # Input file path
 with open(Function_path, 'r', encoding='utf-8') as f:
     Function_data = json.load(f)
 Function_corpus = []
@@ -29,7 +29,7 @@ print(len(Function_corpus))
 # print(GCMD_corpus)
 
 # Reading CSV Files
-csv_path = r'.\Data\LLAMA70B\function_sample.csv'
+csv_path = r'./Data/LLAMA70B/function_sample.csv'
 df = pd.read_csv(csv_path)
 
 # Make sure the newly added column exists
