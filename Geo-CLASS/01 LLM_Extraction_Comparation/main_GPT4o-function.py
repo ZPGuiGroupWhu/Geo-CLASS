@@ -31,7 +31,7 @@ def extract_keys(data, keys_list, depth=1, max_depth=None):
 
 
 # Loading function dictionary
-Function_path = r'.\Corpus\Function_Dictionary.txt'
+Function_path = r'./Corpus/Function_Dictionary.txt'
 with open(Function_path, 'r', encoding='utf-8') as f:
     Function_data = json.load(f)
 Function_corpus = []
@@ -39,7 +39,7 @@ extract_keys(Function_data, Function_corpus)
 print(len(Function_corpus))
 
 # Reading CSV Files
-csv_path = r'.\Data\GPT4o\function_sample.csv'
+csv_path = r'./Data/GPT4o/function_sample.csv'
 df = pd.read_csv(csv_path)
 
 
