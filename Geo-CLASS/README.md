@@ -16,6 +16,11 @@ Online geoinformation platforms produce numerous scripts for specific geospatial
 >
 > **⚠️ Note**: The experiments were conducted in a Windows environment. If you are running the code on a different operating system, please adjust the corresponding file paths as needed.
 
+**Before running the code, please install all required dependencies using**:
+```bash
+pip install -r requirements.txt
+```
+
 ### GEE_Samples
 GEE scripts used in the experiment.
 ### 00 Corpus  
