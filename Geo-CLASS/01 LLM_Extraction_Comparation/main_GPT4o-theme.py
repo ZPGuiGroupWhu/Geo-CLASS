@@ -33,7 +33,7 @@ def extract_keys(data, keys_list, depth=1, max_depth=None):
 
 
 # Loading GCMD.json
-Function_path = r'./00 Corpus/GCMD.json'
+Function_path = r'.\00 Corpus\GCMD.json'
 with open(Function_path, 'r', encoding='utf-8') as f:
     Function_data = json.load(f)
 Function_corpus = []
@@ -41,7 +41,7 @@ extract_keys(Function_data, Function_corpus, max_depth=4)
 print(len(Function_corpus))
 
 # Reading CSV Files
-csv_path = r'./Data/GPT4o/theme_sample.csv'
+csv_path = r'.\Data\GPT4o\theme_sample.csv'
 df = pd.read_csv(csv_path)
 
 
